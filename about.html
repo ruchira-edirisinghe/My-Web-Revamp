@@ -4,6 +4,13 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Me — Ruchira Edirisinghe</title>
+  <link rel="icon" type="image/x-icon"       href="./images/favicon/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="16x16"  href="./images/favicon/favicon-16x16.png"/>
+  <link rel="icon" type="image/png" sizes="32x32"  href="./images/favicon/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" sizes="180x180"     href="./images/favicon/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon/android-chrome-192x192.png"/>
+  <link rel="icon" type="image/png" sizes="512x512" href="./images/favicon/android-chrome-512x512.png"/>
+  <link rel="manifest" href="./images/favicon/site.webmanifest"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -78,6 +85,10 @@
       font-size:11px; font-weight:400;
       letter-spacing:0.18em; text-transform:uppercase;
       color:rgba(255,255,255,0.38); text-align:center;
+    }
+    .tagline-br { display:none; }
+    @media (max-width:768px) {
+      .tagline-br { display:block; }
     }
     #split-top, #split-bottom {
       position:fixed; left:0; right:0; z-index:99998;
@@ -299,7 +310,7 @@
 }
 
 .mobile-logo {
-  height: 28px;
+  height: 36px;
   width: auto;
   display: block;
   filter: brightness(0) invert(1);
@@ -690,6 +701,41 @@ body.menu-open {
       animation:fadeUp 0.8s cubic-bezier(0.22,0.61,0.36,1) 0.9s forwards;
       opacity:0; transform:translateY(20px);
     }
+
+    /* ══════════════════════════════════════
+       NAV FADE MASK — content vanishes near nav
+    ══════════════════════════════════════ */
+    /* Fixed top gradient that sits above page content but below the nav */
+    #nav-fade-mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 110px;          /* desktop: covers navbar area + soft fade */
+      z-index: 299;           /* just below #navbar-wrap (z:300) */
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        rgba(2,3,10,1)   0%,
+        rgba(2,3,10,0.92) 45%,
+        rgba(2,3,10,0.55) 72%,
+        rgba(2,3,10,0)    100%
+      );
+    }
+
+    @media (max-width: 768px) {
+      #nav-fade-mask {
+        height: 90px;         /* mobile: covers topbar area */
+        z-index: 440;         /* below mobile-topbar (z:450) */
+        background: linear-gradient(
+          to bottom,
+          rgba(2,3,10,1)    0%,
+          rgba(2,3,10,0.90) 50%,
+          rgba(2,3,10,0.45) 78%,
+          rgba(2,3,10,0)    100%
+        );
+      }
+    }
     .social-links { display:flex; gap:16px; align-items:center; }
     .social-links a {
       color:rgba(255,255,255,0.55);
@@ -772,6 +818,9 @@ body.menu-open {
 
   <canvas id="space-canvas"></canvas>
 
+  <!-- ══════════ NAV FADE MASK ══════════ -->
+  <div id="nav-fade-mask"></div>
+
   <!-- ══════════ SPLIT PANELS ══════════ -->
   <div id="split-top"></div>
   <div id="split-bottom"></div>
@@ -782,7 +831,7 @@ body.menu-open {
     <div id="progress-track">
       <div id="progress-fill"></div>
     </div>
-    <p id="preloader-tagline">Getting to know more about Ruchira Edirisinghe</p>
+    <p id="preloader-tagline">Getting to know more about<br class="tagline-br"/> <span class="tagline-name">Ruchira Edirisinghe</span></p>
   </div>
 
 <!-- ══════════ FLOATING NAV BAR ══════════ -->
