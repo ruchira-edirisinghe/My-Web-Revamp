@@ -12,11 +12,9 @@
   <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon/android-chrome-192x192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="./images/favicon/android-chrome-512x512.png" />
   <link rel="manifest" href="./images/favicon/site.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Squada+One&display=swap" rel="stylesheet" />
   <style>
     *,
     *::before,
@@ -627,6 +625,12 @@
         gap: 32px;
       }
 
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+      }
+
       .nav-logo {
         height: 26px;
       }
@@ -644,10 +648,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 160px 40px 80px;
+      padding: 160px 24px 80px;
       position: relative;
       z-index: 2;
-      max-width: 1100px;
+      max-width: 1400px;
       margin: 0 auto;
       width: 100%;
     }
@@ -679,92 +683,43 @@
 
     /* ── Two-column layout ── */
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 52px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
       width: 100%;
-      align-items: start;
       animation: fadeUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.6s forwards;
       opacity: 0;
       transform: translateY(28px);
     }
 
-    /* Photo column */
+    /* Hide the photo/pills column entirely */
     .about-photo-wrap {
-      position: relative;
+      display: none;
     }
 
-    .about-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.65);
-      position: relative;
-    }
-
-    .about-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: brightness(0.88) contrast(1.05);
-    }
-
-    /* Gradient overlay on photo bottom */
-    .about-photo::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(2, 3, 10, 0.55) 0%, transparent 50%);
-      border-radius: 16px;
-    }
-
-    /* Floating stat pills */
-    .stat-pills {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .stat-pill {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 50px;
-      padding: 8px 18px;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.72);
-      transition: background 0.3s ease, color 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .stat-pill:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    /* Content column */
+    /* Three cards side by side on desktop */
     .about-content {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      width: 95%;
+      margin: 0 auto;
     }
 
+    /* Service card — reference layout: icon top-right, content bottom-left */
     .about-block {
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-radius: 20px;
-      padding: 28px 32px;
+      padding: 32px 32px 60px;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 320px;
       transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
@@ -785,21 +740,67 @@
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
     }
 
+    /* Icon — top-right, large, no background box */
+    .block-icon {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(140, 210, 255, 0.9);
+      flex-shrink: 0;
+    }
+
+    .block-icon svg {
+      width: 36px;
+      height: 36px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Card header — pushed down so icon area at top feels open */
+    .block-header {
+      display: block;
+      margin-bottom: 0;
+      margin-top: 80px;
+      /* pushes all content below the icon */
+    }
+
+    .block-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
     .block-label {
       font-size: 9px;
       font-weight: 700;
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: rgba(140, 210, 255, 0.7);
-      margin-bottom: 12px;
     }
 
+    /* Title — large, left-aligned */
     .block-title {
       font-family: 'Great Vibes', cursive;
-      font-size: clamp(28px, 3vw, 38px);
+      font-size: clamp(32px, 3.2vw, 44px);
       color: var(--white);
       line-height: 1.2;
-      margin-bottom: 14px;
+      margin-bottom: 0;
+    }
+
+    /* Bottom section: text + view more */
+    .block-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 28px;
     }
 
     .block-text {
@@ -808,6 +809,30 @@
       line-height: 1.85;
       color: rgba(255, 255, 255, 0.65);
       letter-spacing: 0.01em;
+    }
+
+    /* View More link */
+    .block-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(140, 210, 255, 0.85);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(140, 210, 255, 0.35);
+      padding-bottom: 2px;
+      width: fit-content;
+      transition: color 0.3s ease, border-color 0.3s ease, gap 0.3s ease;
+    }
+
+    .block-link:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.6);
+      gap: 10px;
     }
 
     /* Skills grid */
@@ -1034,6 +1059,12 @@
       .about-grid {
         grid-template-columns: 1fr;
         gap: 32px;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
       }
 
       .page {
@@ -1375,7 +1406,8 @@
       /* Photo centred and enlarged */
       .hero-intro-photo-wrap {
         order: 1;
-        width: min(484px, 84vw);   /* ← MOBILE IMAGE SIZE — change this to resize the image */
+        width: min(484px, 84vw);
+        /* ← MOBILE IMAGE SIZE — change this to resize the image */
         margin-bottom: 0;
         align-self: center;
         display: flex;
@@ -1756,55 +1788,78 @@
     </div>
 
     <div class="about-grid">
-      <div class="about-photo-wrap">
-        <div class="about-photo">
-          <img src="./Images/mynew.jpg" alt="Ruchira Edirisinghe" />
-        </div>
-        <div class="stat-pills">
-          <span class="stat-pill">UI / UX Engineer</span>
-          <span class="stat-pill">UX Consultant</span>
-          <span class="stat-pill">Vibe Coder</span>
-          <span class="stat-pill">Available for work</span>
-        </div>
-      </div>
-
-      <!-- Right: Content blocks -->
       <div class="about-content">
 
+        <!-- Card 1: UI UX Engineering & Consulting -->
         <div class="about-block">
-          <p class="block-label">Who I am</p>
-          <h2 class="block-title">Hello, I'm Ruchira</h2>
-          <p class="block-text">
-            I'm a UI/UX Engineer and Consultant passionate about crafting digital experiences
-            that feel alive. I bridge the gap between beautiful design and functional code —
-            turning ideas into interfaces that people actually love to use.
-          </p>
+          <div class="block-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="3" />
+              <path d="M9 9h.01M15 9h.01M9 15h6" />
+            </svg>
+          </div>
+          <div class="block-header">
+            <div class="block-header-left">
+              <p class="block-label">Design &amp; Strategy</p>
+<h2 class="block-title" style="font-family: 'Squada One', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0px;">
+  <span style="white-space: nowrap;">UI UX Engineering</span><br />
+  &amp; UX Consulting
+</h2>
+            </div>
+          </div>
+          <div class="block-bottom">
+            <p class="block-text">End-to-end UI/UX design and engineering — from research and wireframes to
+              pixel-perfect interfaces and interactive prototypes. I consult with startups and businesses to build
+              intuitive, user-centred digital products that perform.</p>
+          </div>
         </div>
 
+        <!-- Card 2: Vibe Coding & Development -->
         <div class="about-block">
-          <p class="block-label">What I do</p>
-          <h2 class="block-title">My Craft</h2>
-          <p class="block-text">
-            From wireframes to working products, I specialise in user-centred design,
-            interactive prototyping, and front-end development. I work with startups,
-            agencies and individuals to create cohesive digital identities that stand out.
-          </p>
+          <div class="block-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          </div>
+          <div class="block-header">
+            <div class="block-header-left">
+              <p class="block-label">Development</p>
+<h2 class="block-title" style="font-family: 'Squada One', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0px;">
+  <span style="white-space: nowrap;">VIBE CODING (AI)</span><br />
+  &amp; WEB DEVELOPMENT
+</h2>
+            </div>
+          </div>
+          <div class="block-bottom">
+            <p class="block-text">Creative front-end development with a feel for design — HTML, CSS, JavaScript, React
+              and beyond. I bring interfaces to life with smooth animations, clean code and an eye for detail that
+              bridges design and engineering.</p>
+          </div>
         </div>
 
+        <!-- Card 3: Graphics & 3D Designing -->
         <div class="about-block">
-          <p class="block-label">Skills &amp; tools</p>
-          <h2 class="block-title">Toolbox</h2>
-          <div class="skills-grid">
-            <span class="skill-tag">Figma</span>
-            <span class="skill-tag">UI Design</span>
-            <span class="skill-tag">UX Research</span>
-            <span class="skill-tag">Prototyping</span>
-            <span class="skill-tag">HTML / CSS</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Framer</span>
-            <span class="skill-tag">Design Systems</span>
-            <span class="skill-tag">Vibe Coding</span>
+          <div class="block-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div class="block-header">
+            <div class="block-header-left">
+              <p class="block-label">Visual Arts</p>
+<h2 class="block-title" style="font-family: 'Squada One', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0px;">
+  <span style="white-space: nowrap;">GRAPHIC DESIGNING</span><br />
+  &amp; 3D MODELING
+</h2>
+            </div>
+          </div>
+          <div class="block-bottom">
+            <p class="block-text">Bold graphic design, brand identities and 3D visual experiences. From logo design and
+              motion graphics to immersive 3D renders — I craft visuals that tell a story and leave a lasting
+              impression.</p>
           </div>
         </div>
 
