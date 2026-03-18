@@ -435,12 +435,31 @@
     #split-bottom.open { transform:translateY(100%); }
     #split-top.gone, #split-bottom.gone { display:none; }
 
+    /* Desktop: standalone vibe line hidden; inline span visible */
+    .subtitle-vibe { display:none; }
+    .vibe-inline   { display:inline; }
+
+    /* Desktop only — extra breathing room between subtitle and name */
+    @media (min-width:601px) {
+      .name { margin-top:36px; }
+    }
+
     @media (max-width:600px) {
       .photo-wrapper { width:85vw; }
       footer { padding:16px 24px 24px; }
       .cta-row { gap:12px; }
       .btn { padding:14px 32px; font-size:11px; }
       .menu-item-title { font-size:clamp(30px,8vw,48px); }
+
+      /* Hide the inline portion on mobile */
+      .vibe-inline { display:none; }
+
+      /* Show and animate the dedicated mobile line */
+      .subtitle-vibe {
+        display:block;
+        margin-top:6px;
+        animation:fadeUp 0.8s cubic-bezier(0.22,0.61,0.36,1) 0.35s forwards;
+      }
     }
   </style>
 </head>
@@ -467,7 +486,8 @@
         <img id="hero-img" src="./Images/mynew.jpg" alt="Ruchira Edirisinghe"/>
       </div>
       <div class="hero-text-group">
-        <p class="subtitle">UI UX Engineer &nbsp;|&nbsp; UI UX Consultant</p>
+        <p class="subtitle">UI UX Engineer &nbsp;|&nbsp; UI UX Consultant<span class="vibe-inline"> &nbsp;|&nbsp; Vibe Coding Enthusiast</span></p>
+        <p class="subtitle subtitle-vibe">Vibe Coding Enthusiast</p>
         <h1 class="name">Ruchira Edirisinghe</h1>
       </div>
       <div class="cta-row">

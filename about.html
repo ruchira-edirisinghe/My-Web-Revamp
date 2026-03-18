@@ -122,6 +122,12 @@
       filter: brightness(0) invert(1);
       flex-shrink: 0;
     }
+    a:has(.nav-logo) {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
 
     /* The pill itself */
     #navbar {
@@ -299,18 +305,22 @@
   filter: brightness(0) invert(1);
 }
 
+/* ── Mobile menu overlay — Great Vibes style matching index.html ── */
 #mobile-menu {
   position: fixed;
   inset: 0;
   z-index: 430;
   background:
-    radial-gradient(circle at top center, rgba(120,180,255,0.12), transparent 35%),
-    rgba(2,3,10,0.62);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+    radial-gradient(circle at top center, rgba(120,180,255,0.10), transparent 40%),
+    rgba(2,3,10,0.72);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #mobile-menu.open {
@@ -319,53 +329,124 @@
 }
 
 .mobile-menu-panel {
-  min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 14px;
-  padding: 120px 24px 40px;
+  gap: 18px;
+  padding: 20px 24px 40px;
 }
 
+/* Menu item — Great Vibes style */
 .mobile-menu-link {
-  min-width: min(86vw, 360px);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
-  color: rgba(255,255,255,0.68);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 16px 24px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.11);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  transition:
-    color 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  padding: 10px 48px;
+  position: relative;
+  opacity: 0;
+  transform: scale(0.2);
+  background: transparent;
+  border: none;
+  white-space: nowrap;
+  text-align: center;
+  transition: transform 0.38s cubic-bezier(0.34,1.56,0.64,1);
 }
 
 .mobile-menu-link:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.09);
-  border-color: rgba(255,255,255,0.18);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.04);
 }
 
-.mobile-menu-link.active {
-  color: #fff;
-  background: rgba(255,255,255,0.14);
-  border-color: rgba(140,210,255,0.35);
-  box-shadow: 0 0 20px rgba(100,180,255,0.08);
+.mobile-menu-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(38px, 10vw, 68px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  transition: color 0.38s ease, text-shadow 0.38s ease, letter-spacing 0.45s cubic-bezier(0.34,1.56,0.64,1);
 }
 
-.mobile-menu-cta {
-  margin-top: 10px;
+.mobile-menu-link:hover .mobile-menu-title {
+  color: #fff;
+  letter-spacing: 0.07em;
+  text-shadow:
+    0 0 16px rgba(140,215,255,0.9),
+    0 0 40px rgba(80,165,255,0.55),
+    0 0 80px rgba(60,120,255,0.28);
+}
+
+.mobile-menu-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(10px, 2.5vw, 12px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 2px;
+  transition: color 0.38s ease, transform 0.38s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.mobile-menu-link:hover .mobile-menu-desc {
+  color: rgba(255,255,255,0.62);
+  transform: translateY(-1px);
+}
+
+/* Active / selected state */
+.mobile-menu-link.active .mobile-menu-title {
+  color: #fff;
+  text-shadow:
+    0 0 12px rgba(140,215,255,0.7),
+    0 0 32px rgba(80,165,255,0.4);
+}
+
+.mobile-menu-link.active .mobile-menu-desc {
+  color: rgba(140,210,255,0.65);
+}
+
+.mobile-menu-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(140,210,255,0.85);
+}
+
+/* Close button for mobile menu */
+#menu-close-mobile {
+  position: fixed;
+  top: 18px;
+  right: 16px;
+  z-index: 460;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.16);
+  color: #fff;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, background 0.3s ease, transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#menu-close-mobile.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#menu-close-mobile:hover {
+  background: rgba(255,255,255,0.15);
+  transform: rotate(90deg) scale(1.1);
 }
 
 body.menu-open {
@@ -392,7 +473,7 @@ body.menu-open {
   }
 
   #mobile-menu {
-    display: block;
+    display: flex;
   }
 
   #music-btn {
@@ -708,7 +789,7 @@ body.menu-open {
 
   <!-- ══════════ DESKTOP NAV ══════════ -->
 <div id="navbar-wrap">
-  <img class="nav-logo" src="./Images/longlogo.svg" alt="Logo"/>
+  <a href="index.html" aria-label="Home"><img class="nav-logo" src="./Images/longlogo.svg" alt="Logo"/></a>
   <nav id="navbar">
     <div class="nav-links">
       <a href="about.html" data-page="about" class="nav-link active">About Me</a>
@@ -723,30 +804,47 @@ body.menu-open {
 
 <!-- ══════════ MOBILE TOP BAR ══════════ -->
 <div id="mobile-topbar">
-  <button id="menu-btn" class="glass-round-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-    <span></span>
-    <span></span>
+  <button id="music-btn" aria-label="Toggle music">
+    <canvas id="spectrum-canvas" width="26" height="18"></canvas>
   </button>
 
   <a href="index.html" class="mobile-logo-link" aria-label="Home">
     <img class="mobile-logo" src="./Images/longlogo.svg" alt="Logo"/>
   </a>
 
-  <button id="music-btn" aria-label="Toggle music">
-    <canvas id="spectrum-canvas" width="26" height="18"></canvas>
+  <button id="menu-btn" class="glass-round-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span>
+    <span></span>
   </button>
 </div>
 
 <!-- ══════════ MOBILE MENU OVERLAY ══════════ -->
 <div id="mobile-menu" aria-hidden="true">
-  <div class="mobile-menu-panel">
-    <a href="about.html" data-page="about" class="mobile-menu-link active">About Me</a>
-    <a href="experience.html" data-page="experience" class="mobile-menu-link">Experience</a>
-    <a href="projects.html" data-page="projects" class="mobile-menu-link">Projects</a>
-    <a href="links.html" data-page="links" class="mobile-menu-link">Other Links</a>
-    <a href="contact.html" data-page="contact" class="mobile-menu-link mobile-menu-cta">Say Hi 👋</a>
-  </div>
+  <nav class="mobile-menu-panel">
+    <a href="about.html"      data-page="about"       class="mobile-menu-link active">
+      <span class="mobile-menu-title">About Me</span>
+      <span class="mobile-menu-desc">Who I am &amp; what drives me</span>
+    </a>
+    <a href="experience.html" data-page="experience"  class="mobile-menu-link">
+      <span class="mobile-menu-title">Experience</span>
+      <span class="mobile-menu-desc">My journey &amp; career highlights</span>
+    </a>
+    <a href="projects.html"   data-page="projects"    class="mobile-menu-link">
+      <span class="mobile-menu-title">Projects</span>
+      <span class="mobile-menu-desc">Work I've crafted &amp; shipped</span>
+    </a>
+    <a href="contact.html"    data-page="contact"     class="mobile-menu-link">
+      <span class="mobile-menu-title">Contact Me</span>
+      <span class="mobile-menu-desc">Let's build something together</span>
+    </a>
+    <a href="links.html"      data-page="links"       class="mobile-menu-link">
+      <span class="mobile-menu-title">Other Links</span>
+      <span class="mobile-menu-desc">More places to find me</span>
+    </a>
+  </nav>
 </div>
+<!-- Close button for mobile menu -->
+<button id="menu-close-mobile" aria-label="Close menu">✕</button>
 
   <!-- ══════════ MAIN CONTENT ══════════ -->
   <main class="page">
@@ -1207,29 +1305,26 @@ body.menu-open {
     /* ══════════════════════════════════════
        MOBILE MENU TOGGLE
     ══════════════════════════════════════ */
-    const menuBtn    = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuLinks  = document.querySelectorAll('.mobile-menu-link');
+    const menuBtn      = document.getElementById('menu-btn');
+    const mobileMenu   = document.getElementById('mobile-menu');
+    const menuCloseMob = document.getElementById('menu-close-mobile');
+    const menuLinks    = document.querySelectorAll('.mobile-menu-link');
 
-    // Detect current page and mark active link in mobile menu
+    // Detect current page and mark active link
     const currentPage = document.body.dataset.page || 'about';
-    document.querySelectorAll('.mobile-menu-link[data-page]').forEach(link => {
-      if (link.dataset.page === currentPage) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
+    menuLinks.forEach(link => {
+      link.classList.toggle('active', link.dataset.page === currentPage);
     });
 
-    // Pop-in animation keyframes injected for mobile menu items
+    // Inject keyframes once
     if (!document.getElementById('mobile-menu-keyframes')) {
       const style = document.createElement('style');
       style.id = 'mobile-menu-keyframes';
       style.textContent = `
         @keyframes mobileMenuPop {
           0%   { opacity:0; transform:scale(0.2); filter:blur(12px); }
-          50%  { opacity:1; transform:scale(1.06); filter:blur(0px); }
-          70%  { transform:scale(0.98); }
+          50%  { opacity:1; transform:scale(1.08); filter:blur(0px); }
+          70%  { transform:scale(0.97); }
           85%  { transform:scale(1.02); }
           100% { opacity:1; transform:scale(1); filter:blur(0px); }
         }
@@ -1243,59 +1338,61 @@ body.menu-open {
       document.head.appendChild(style);
     }
 
-    function openMenu() {
+    function openMobileMenu() {
       mobileMenu.classList.add('open');
       mobileMenu.setAttribute('aria-hidden', 'false');
       menuBtn.classList.add('is-open');
       menuBtn.setAttribute('aria-expanded', 'true');
+      menuCloseMob.classList.add('visible');
       document.body.classList.add('menu-open');
 
-      // Staggered pop-in for each link
       menuLinks.forEach((link, i) => {
         link.style.animation = 'none';
         link.style.opacity   = '0';
         link.style.transform = 'scale(0.2)';
         link.style.filter    = 'blur(12px)';
         void link.offsetWidth;
-        link.style.animation = `mobileMenuPop 0.55s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.08 + 0.05}s forwards`;
+        link.style.animation = `mobileMenuPop 0.6s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.09 + 0.04}s forwards`;
       });
     }
 
-    function closeMenu() {
+    function closeMobileMenu() {
       const total = menuLinks.length;
       menuLinks.forEach((link, i) => {
         link.style.animation = 'none';
         void link.offsetWidth;
-        link.style.animation = `mobileMenuShrink 0.42s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.06}s forwards`;
+        link.style.animation = `mobileMenuShrink 0.5s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.07}s forwards`;
       });
 
-      const closeDur = (total - 1) * 60 + 420;
+      const closeDur = (total - 1) * 70 + 500;
       setTimeout(() => {
         mobileMenu.classList.remove('open');
         mobileMenu.setAttribute('aria-hidden', 'true');
         menuBtn.classList.remove('is-open');
         menuBtn.setAttribute('aria-expanded', 'false');
+        menuCloseMob.classList.remove('visible');
         document.body.classList.remove('menu-open');
-      }, closeDur);
+      }, closeDur - 150);
     }
 
     menuBtn.addEventListener('click', e => {
       e.stopPropagation();
-      if (mobileMenu.classList.contains('open')) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
+      mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
     });
 
-    // Close on overlay click (outside the panel)
+    menuCloseMob.addEventListener('click', e => {
+      e.stopPropagation();
+      closeMobileMenu();
+    });
+
+    // Close on overlay backdrop click
     mobileMenu.addEventListener('click', e => {
-      if (e.target === mobileMenu) closeMenu();
+      if (e.target === mobileMenu) closeMobileMenu();
     });
 
-    // Close on Escape key
+    // Close on Escape
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMobileMenu();
     });
 
   })();
