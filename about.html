@@ -724,7 +724,7 @@
       flex-direction: column;
       justify-content: space-between;
       min-height: 320px;
-      transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22,0.61,0.36,1), border-color 0.35s ease, box-shadow 0.35s ease;
     }
 
     .about-block:hover {
@@ -1961,8 +1961,8 @@
       /* scroll-reveal — starts hidden */
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 0.9s cubic-bezier(0.22,0.61,0.36,1),
-                  transform 0.9s cubic-bezier(0.22,0.61,0.36,1);
+      transition: opacity 0.55s cubic-bezier(0.22,0.61,0.36,1),
+                  transform 0.55s cubic-bezier(0.22,0.61,0.36,1);
     }
 
     .bio-greeting-line.bio-visible {
@@ -2003,8 +2003,8 @@
       /* scroll-reveal */
       opacity: 0;
       transform: translateY(32px);
-      transition: opacity 0.85s cubic-bezier(0.22,0.61,0.36,1) var(--para-delay, 0.1s),
-                  transform 0.85s cubic-bezier(0.22,0.61,0.36,1) var(--para-delay, 0.1s);
+      transition: opacity 0.5s cubic-bezier(0.22,0.61,0.36,1) var(--para-delay, 0.05s),
+                  transform 0.5s cubic-bezier(0.22,0.61,0.36,1) var(--para-delay, 0.05s);
     }
 
     .bio-para.bio-visible {
@@ -2287,6 +2287,236 @@
       .techstack-grid { grid-template-columns: 1fr; gap: 18px; }
       .techstack-section { width: 100%; margin-top: 52px; }
       .stack-nodes { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ══════════════════════════════════════
+       SCROLL REVEAL — fade-up on scroll
+       Elements start hidden, JS adds .sr-vis
+    ══════════════════════════════════════ */
+
+    /* about-grid: override the load-time animation */
+    .about-grid {
+      animation: none !important;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s cubic-bezier(0.22,0.61,0.36,1),
+                  transform 0.6s cubic-bezier(0.22,0.61,0.36,1);
+    }
+    .about-grid.sr-vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* techstack-heading: override load-time animation */
+    .techstack-heading {
+      animation: none !important;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s cubic-bezier(0.22,0.61,0.36,1),
+                  transform 0.55s cubic-bezier(0.22,0.61,0.36,1);
+    }
+    .techstack-heading.sr-vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* stack-panel: override load-time animation, keep hover intact */
+    .stack-panel {
+      animation: none !important;
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s cubic-bezier(0.22,0.61,0.36,1) var(--sr-delay, 0s),
+                  transform 0.6s cubic-bezier(0.22,0.61,0.36,1) var(--sr-delay, 0s),
+                  border-color 0.4s ease,
+                  box-shadow 0.4s ease;
+    }
+    .stack-panel.sr-vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* restore hover lift after reveal */
+    .stack-panel.sr-vis:hover {
+      transform: translateY(-6px);
+    }
+
+    /* snode: override load-time animation, keep float & hover intact */
+    .snode {
+      animation: none !important;
+      opacity: 0;
+      transform: scale(0.75) translateY(12px);
+      transition: opacity 0.45s cubic-bezier(0.34,1.56,0.64,1) var(--sr-delay, 0s),
+                  transform 0.45s cubic-bezier(0.34,1.56,0.64,1) var(--sr-delay, 0s);
+    }
+    .snode.sr-vis {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    /* restore float animation on the icon once visible */
+    .snode.sr-vis .snode-icon {
+      animation: snodeFloat var(--float-dur, 3.8s) ease-in-out var(--float-off, 0s) infinite;
+    }
+
+    /* ══════════════════════════════════════
+       STATS SECTION
+    ══════════════════════════════════════ */
+    .stats-section {
+      width: 95%;
+      margin: 140px auto 0;
+      position: relative;
+    }
+
+    .stats-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    /* Each stat card */
+    .stat-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding: 36px 36px 40px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s cubic-bezier(0.22,0.61,0.36,1) var(--sr-delay, 0s),
+                  transform 0.55s cubic-bezier(0.22,0.61,0.36,1) var(--sr-delay, 0s),
+                  border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    /* Top specular line per card */
+    .stat-item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    }
+
+    /* Bottom-left accent glow blob */
+    .stat-item::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -20px;
+      width: 160px; height: 120px;
+      border-radius: 50%;
+      background: var(--stat-glow, radial-gradient(ellipse, rgba(140,210,255,0.1) 0%, transparent 70%));
+      pointer-events: none;
+    }
+
+    .stat-item:nth-child(1) { --stat-glow: radial-gradient(ellipse, rgba(100,180,255,0.13) 0%, transparent 70%); }
+    .stat-item:nth-child(3) { --stat-glow: radial-gradient(ellipse, rgba(160,100,255,0.12) 0%, transparent 70%); }
+    .stat-item:nth-child(5) { --stat-glow: radial-gradient(ellipse, rgba(80,220,180,0.10) 0%, transparent 70%); }
+
+    .stat-item:hover {
+      border-color: rgba(255,255,255,0.22);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 20px rgba(100,180,255,0.06);
+      transform: translateY(-3px);
+    }
+
+    .stat-item.sr-vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stat-item.sr-vis:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Eyebrow label above number */
+    .stat-eyebrow {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(140,210,255,0.65);
+      margin-bottom: 14px;
+    }
+
+    /* Number row */
+    .stat-number-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .stat-number {
+      font-family: 'Squada One', sans-serif;
+      font-size: clamp(48px, 6vw, 76px);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      line-height: 1;
+      display: block;
+    }
+
+    .stat-plus {
+      font-family: 'Squada One', sans-serif;
+      font-size: clamp(24px, 3vw, 38px);
+      font-weight: 400;
+      color: rgba(140,210,255,0.8);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(11px, 1.05vw, 13px);
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    /* Decorative large background numeral */
+    .stat-bg-numeral {
+      position: absolute;
+      bottom: -12px; right: 20px;
+      font-family: 'Squada One', sans-serif;
+      font-size: 120px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Remove old divider — not used in new layout */
+    .stat-divider { display: none; }
+
+    @media (max-width: 768px) {
+      .stats-inner { grid-template-columns: 1fr; gap: 16px; }
+      .stats-section { width: 100%; margin: 80px auto 0; }
+      .stat-item { padding: 28px 28px 32px; }
+    }
+
+    /* about-block: individual staggered fade-in */
+    .about-block {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s cubic-bezier(0.22,0.61,0.36,1) var(--sr-delay, 0s),
+                  transform 0.55s cubic-bezier(0.22,0.61,0.36,1) var(--sr-delay, 0s),
+                  border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+    .about-block.sr-vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .about-block.sr-vis:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(100, 180, 255, 0.06);
+      transform: translateY(-3px);
     }
 
     @media (max-width: 768px) {
@@ -2773,15 +3003,15 @@ Choose how you’d like to continue.
           Hi 👋, I'm <span class="bio-name-underline">Ruchira Edirisinghe</span>
         </h2>
 
-        <p class="bio-para" style="--para-delay:0.5s;">
-          I Am A UI/UX Engineer Dedicated To Bridging The Gap Between Sophisticated Design And Functional Engineering. With A Strong Foundation In Both User Interface Design And Front-End Development, I Specialize In Creating Digital Experiences That Are Not Only Visually Compelling But Also Technically Robust And Easy To Navigate.
+        <p class="bio-para" style="--para-delay:0.1s;">
+          I Am A UI/UX Engineer With Nearly 4 Years Of Experience Dedicated To Bridging The Gap Between Sophisticated Design And Functional Engineering. With A Strong Foundation In Both User Interface Design And Front-End Development, I Specialize In Creating Digital Experiences That Are Not Only Visually Compelling But Also Technically Robust And Easy To Navigate.
         </p>
 
-        <p class="bio-para" style="--para-delay:0.85s;">
+        <p class="bio-para" style="--para-delay:0.22s;">
           My Approach Centers On Problem-Solving Through Empathy. I Believe That Great Design Starts With Understanding The User's Needs And Ends With A Seamless, High-Performance Product. By Leveraging My Technical Expertise In Modern Web Technologies And Hosting Environments, I Ensure That Every Pixel-Perfect Design Transitions Smoothly Into A Live, Scalable Application.
         </p>
 
-        <p class="bio-para" style="--para-delay:1.2s;">
+        <p class="bio-para" style="--para-delay:0.34s;">
           I Am Constantly Exploring The Intersection Of Technology And Human Behavior, Staying Ahead Of Industry Trends In Hardware, Web Accessibility, And Interactive Design. Whether I'm Collaborating With A Cross-Functional Team Or Taking A Project From Concept To Deployment, I Prioritize Efficiency, Clean Code, And User-Centric Results.
         </p>
 
@@ -2868,6 +3098,40 @@ Choose how you’d like to continue.
 
       </div>
     </div>
+
+    <!-- ══════════ STATS SECTION ══════════ -->
+    <section class="stats-section" aria-label="Stats">
+      <div class="stats-inner">
+
+        <div class="stat-item" style="--sr-delay:0s">
+          <span class="stat-eyebrow">Track Record</span>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="50">0</span><span class="stat-plus">+</span>
+          </div>
+          <p class="stat-label">Projects<br>Completed</p>
+          <span class="stat-bg-numeral" aria-hidden="true">50</span>
+        </div>
+
+        <div class="stat-item" style="--sr-delay:0.12s">
+          <span class="stat-eyebrow">In the Field</span>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
+          </div>
+          <p class="stat-label">Years of<br>Experience</p>
+          <span class="stat-bg-numeral" aria-hidden="true">3</span>
+        </div>
+
+        <div class="stat-item" style="--sr-delay:0.24s">
+          <span class="stat-eyebrow">Satisfaction</span>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="100">0</span><span class="stat-plus">+</span>
+          </div>
+          <p class="stat-label">Happy<br>Customers</p>
+          <span class="stat-bg-numeral" aria-hidden="true">100</span>
+        </div>
+
+      </div>
+    </section>
 
     <!-- ══════════ TECH STACK SECTION ══════════ -->
     <section class="techstack-section" aria-label="Tech Stack">
@@ -3670,7 +3934,7 @@ Choose how you’d like to continue.
             revealObs.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
       bioTargets.forEach(el => revealObs.observe(el));
     } else {
       // Fallback — show everything immediately
@@ -3773,6 +4037,100 @@ Choose how you’d like to continue.
       }
     }, { threshold: 0 });
     canvasObs.observe(bioSection);
+  })();
+  </script>
+
+  <!-- ══════════ SCROLL REVEAL OBSERVER ══════════ -->
+  <script>
+  (function () {
+    var showAll = function () {
+      document.querySelectorAll('.about-grid, .about-block, .techstack-heading, .stack-panel, .snode')
+        .forEach(function (el) { el.classList.add('sr-vis'); });
+    };
+
+    if (!('IntersectionObserver' in window)) { showAll(); return; }
+
+    var opts = { threshold: 0.07, rootMargin: '0px 0px -30px 0px' };
+
+    // about-grid wrapper (just makes it visible so layout works)
+    var gridObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('sr-vis'); gridObs.unobserve(e.target); }
+      });
+    }, opts);
+    document.querySelectorAll('.about-grid').forEach(function (el) { gridObs.observe(el); });
+
+    // about-block cards — staggered individually
+    var blockObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('sr-vis'); blockObs.unobserve(e.target); }
+      });
+    }, opts);
+    document.querySelectorAll('.about-block').forEach(function (el, i) {
+      el.style.setProperty('--sr-delay', (i * 0.12) + 's');
+      blockObs.observe(el);
+    });
+
+    // techstack heading
+    var headObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('sr-vis'); headObs.unobserve(e.target); }
+      });
+    }, opts);
+    document.querySelectorAll('.techstack-heading').forEach(function (el) { headObs.observe(el); });
+
+    // stack panels — staggered
+    var panelObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('sr-vis'); panelObs.unobserve(e.target); }
+      });
+    }, opts);
+    document.querySelectorAll('.stack-panel').forEach(function (el, i) {
+      el.style.setProperty('--sr-delay', (i * 0.1) + 's');
+      panelObs.observe(el);
+    });
+
+    // snodes — staggered within each panel
+    var snodeObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('sr-vis'); snodeObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -10px 0px' });
+    document.querySelectorAll('.snode').forEach(function (el, i) {
+      el.style.setProperty('--sr-delay', ((i % 9) * 0.06) + 's');
+      snodeObs.observe(el);
+    });
+
+    // stat items — count-up animation on scroll
+    var statObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var item = e.target;
+        item.classList.add('sr-vis');
+        var numEl = item.querySelector('.stat-number');
+        if (!numEl) { statObs.unobserve(item); return; }
+        var target = parseInt(numEl.getAttribute('data-target'), 10);
+        var duration = 1400;
+        var start = null;
+        var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); };
+        var delay = parseFloat(item.style.getPropertyValue('--sr-delay') || '0') * 1000;
+        setTimeout(function () {
+          requestAnimationFrame(function step(ts) {
+            if (!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            numEl.textContent = Math.floor(easeOut(progress) * target);
+            if (progress < 1) requestAnimationFrame(step);
+            else numEl.textContent = target;
+          });
+        }, delay);
+        statObs.unobserve(item);
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.stat-item').forEach(function (el) {
+      el.classList.remove('sr-vis'); // let observer control reveal
+      statObs.observe(el);
+    });
+
   })();
   </script>
 
