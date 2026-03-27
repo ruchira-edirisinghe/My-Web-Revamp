@@ -191,7 +191,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 28px;
-  align-items: end;
+  align-items: start;
   width: 100%;
   margin: 24px auto 0;
   padding: 0;
@@ -318,6 +318,364 @@
   --pillar-glow: rgba(100,255,130,0.7);
   --pillar-plus-color: rgba(100,255,130,0.9);
 }
+
+/* ── UFO mid-beam purple glow (replaces ground beam ellipse) ── */
+.ufo-mid-glow {
+  position: absolute;
+  /* sits at the top of the stats row, centred below UFO */
+  top: clamp(130px, 18vw, 220px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(160px, 28vw, 320px);
+  height: clamp(60px, 10vw, 120px);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center,
+    rgba(180, 90, 255, 0.45) 0%,
+    rgba(140, 60, 220, 0.22) 45%,
+    rgba(100, 30, 180, 0) 100%);
+  filter: blur(22px);
+  pointer-events: none;
+  z-index: 3;
+  animation: midGlowPulse 4s ease-in-out infinite;
+}
+@keyframes midGlowPulse {
+  0%,100% { opacity: 0.8; transform: translateX(-50%) scaleX(1); }
+  50%     { opacity: 1.0; transform: translateX(-50%) scaleX(1.08); }
+}
+
+
+
+
+/* ══════════════════════════════════════
+   TESTIMONIALS SECTION — cinematic auto-cycle
+══════════════════════════════════════ */
+.testimonials-section {
+  width: 95%;
+  max-width: 900px;
+  margin: 140px auto 0;
+  position: relative;
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.testimonials-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(140,210,255,0.65);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.testimonials-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(38px, 5vw, 64px);
+      color: var(--white);
+      line-height: 1.1;
+      text-align: center;
+}
+
+/* Outer card shell — fixed height, never resizes */
+.testi-shell {
+  position: relative;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  overflow: hidden;
+  padding: 44px 52px 36px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Specular top */
+.testi-shell::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
+}
+
+/* Purple corner glow */
+.testi-shell::after {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px;
+  width: 100px; height: 100px;
+  border-radius: 20px 0 0 0;
+  background: radial-gradient(circle at top left, rgba(140,80,255,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Top meta row: stacked avatars LEFT, counter RIGHT */
+.testi-meta-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Stacked avatar thumbnails */
+.testi-avatars-stack {
+  display: flex;
+  align-items: center;
+}
+
+.testi-avatar-thumb {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(10,5,20,0.95);
+  object-fit: cover;
+  margin-left: -10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(60%) brightness(0.75);
+  cursor: pointer;
+}
+
+.testi-avatar-thumb:first-child { margin-left: 0; }
+.testi-avatar-thumb.current-av {
+  filter: grayscale(0%) brightness(1);
+  border-color: rgba(140,80,255,0.7);
+  transform: scale(1.12);
+  z-index: 5;
+}
+
+/* Counter top-right */
+.testi-counter {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: 'Montserrat', monospace;
+}
+.testi-counter-cur {
+  font-size: 32px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.92);
+  line-height: 1;
+  min-width: 36px;
+  text-align: right;
+  transition: opacity 0.35s ease;
+}
+.testi-counter-sep { font-size: 13px; color: rgba(255,255,255,0.28); }
+.testi-counter-tot { font-size: 12px; color: rgba(255,255,255,0.28); font-family: 'Montserrat', sans-serif; }
+
+/* Quote area — fixed min-height so card never jumps */
+.testi-quote-area {
+  flex: 1;
+  position: relative;
+  min-height: 100px;
+}
+
+/* Each slide fades in/out absolutely */
+.testi-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s cubic-bezier(0.22,0.61,0.36,1),
+              transform 0.55s cubic-bezier(0.22,0.61,0.36,1);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.testi-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+.testi-slide.exit {
+  opacity: 0;
+  transform: translateY(-10px);
+  position: absolute;
+}
+
+/* Quote text */
+.testi-quote {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(15px, 1.7vw, 18px);
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.01em;
+}
+
+/* Author row */
+.testi-author-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 8px;
+}
+
+.testi-author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(140,80,255,0.4);
+  flex-shrink: 0;
+  filter: grayscale(10%);
+}
+
+.testi-author-sep {
+  width: 1px;
+  height: 36px;
+  background: rgba(140,80,255,0.55);
+  margin: 0 16px;
+  flex-shrink: 0;
+}
+
+.testi-author-info { display: flex; flex-direction: column; gap: 4px; }
+
+.testi-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.92);
+  letter-spacing: 0.04em;
+}
+
+.testi-role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(140,210,255,0.55);
+}
+
+/* Stars pushed right */
+.testi-stars {
+  margin-left: auto;
+  display: flex;
+  gap: 3px;
+  align-self: center;
+}
+.testi-stars svg { width: 13px; height: 13px; fill: rgba(255,200,60,0.8); }
+
+/* Bottom bar: progress + nav */
+.testi-bottom {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Progress track */
+.testi-progress-track {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.10);
+  border-radius: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.testi-progress-fill {
+  position: absolute;
+  inset-y: 0; left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(140,80,255,0.9), rgba(80,180,255,0.7));
+  width: 0%;
+  transition: width linear;
+  border-radius: 1px;
+}
+
+/* Hint text */
+.testi-hint {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.22);
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+/* Prev / Next arrow buttons */
+.testi-nav {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.testi-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.65);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease,
+              color 0.3s ease, transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  flex-shrink: 0;
+}
+
+.testi-btn:hover {
+  background: rgba(140,80,255,0.18);
+  border-color: rgba(140,80,255,0.5);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.testi-btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Dots */
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 24px;
+}
+
+.testi-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.35s ease, width 0.35s ease;
+}
+
+.testi-dot.active {
+  background: rgba(140,80,255,0.9);
+  width: 20px;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(140,80,255,0.5);
+}
+
+@media (max-width: 768px) {
+  .testimonials-section { width: 100%; margin-top: 80px; }
+  .testi-shell { padding: 28px 22px 24px; min-height: 320px; }
+  .testi-stars { display: none; }
+  .testi-hint { display: none; }
+  .testi-counter-cur { font-size: 24px; }
+}
+
 
 /* ── Mobile ── */
 @media (max-width: 768px) {
@@ -3732,10 +4090,7 @@
         <mask id="bmMask">
           <rect x="0" y="130" width="860" height="650" fill="url(#bmFade)"/>
         </mask>
-        <radialGradient id="groundGlw" cx="50%" cy="100%" r="34%">
-          <stop offset="0%"   stop-color="rgba(0,230,255,0.48)"/>
-          <stop offset="100%" stop-color="rgba(0,230,255,0)"/>
-        </radialGradient>
+
         <filter id="pGlow" x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="3" result="b"/>
           <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -3747,8 +4102,7 @@
         <polygon points="430,130 110,780 750,780" fill="url(#ufoBeamGrad)"/>
       </g>
 
-      <!-- Ground glow pool -->
-      <ellipse cx="430" cy="776" rx="220" ry="24" fill="url(#groundGlw)" opacity="0.9"/>
+
 
       <!-- Rising particles — start at bottom (780), travel to near apex (130) -->
       <circle cx="429" cy="600" r="2.0" fill="rgba(140,240,255,0.92)" filter="url(#pGlow)">
@@ -3778,6 +4132,9 @@
       <img src="./images/ufoo.png" class="ufo-png" alt="UFO Stats Interface">
     </div>
 
+    <!-- Purple mid-beam ground glow (replaces beam base ellipse) -->
+    <div class="ufo-mid-glow" aria-hidden="true"></div>
+
     <!-- ══ THREE OPEN ILLUSTRATIONS + STATS ══ -->
     <div class="ufo-stats-row">
 
@@ -3792,66 +4149,155 @@
         </div>
         <div class="pillar-base">
           <div class="pillar-pedestal">
-            <!--
-              ILLUSTRATION: Orbiting nodes around a central core —
-              like a constellation of completed projects, each a glowing
-              dot orbiting a bright hub. Feels alive, spatial, unique.
-            -->
-            <svg class="pillar-viz" viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 3D ISOMETRIC LAPTOP — screen shows a glowing checklist.
+                 Instantly = "completed projects / work done" -->
+            <svg class="pillar-viz" viewBox="0 0 240 185" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <radialGradient id="coreL" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%"   stop-color="rgba(80,230,255,1)"/>
-                  <stop offset="60%"  stop-color="rgba(60,200,255,0.6)"/>
-                  <stop offset="100%" stop-color="rgba(60,200,255,0)"/>
+                <linearGradient id="scrFace" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(10,25,45,0.95)"/>
+                  <stop offset="100%" stop-color="rgba(5,15,35,0.98)"/>
+                </linearGradient>
+                <linearGradient id="lidTop" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(40,80,140,0.7)"/>
+                  <stop offset="100%" stop-color="rgba(20,50,100,0.85)"/>
+                </linearGradient>
+                <linearGradient id="lidLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(30,65,120,0.6)"/>
+                  <stop offset="100%" stop-color="rgba(15,40,85,0.8)"/>
+                </linearGradient>
+                <linearGradient id="baseTop" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(50,100,180,0.55)"/>
+                  <stop offset="100%" stop-color="rgba(25,60,130,0.65)"/>
+                </linearGradient>
+                <linearGradient id="baseSide" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(25,60,120,0.7)"/>
+                  <stop offset="100%" stop-color="rgba(10,30,70,0.85)"/>
+                </linearGradient>
+                <linearGradient id="baseRight" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(15,40,90,0.75)"/>
+                  <stop offset="100%" stop-color="rgba(6,20,55,0.9)"/>
+                </linearGradient>
+                <radialGradient id="scrGlow" cx="50%" cy="50%" r="55%">
+                  <stop offset="0%"   stop-color="rgba(80,210,255,0.18)"/>
+                  <stop offset="100%" stop-color="rgba(80,210,255,0)"/>
                 </radialGradient>
-                <filter id="gfL" x="-80%" y="-80%" width="260%" height="260%">
+                <linearGradient id="progG1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stop-color="rgba(80,210,255,0.9)"/>
+                  <stop offset="100%" stop-color="rgba(60,240,255,0.5)"/>
+                </linearGradient>
+                <filter id="gfLap" x="-40%" y="-40%" width="180%" height="180%">
                   <feGaussianBlur stdDeviation="4" result="b"/>
                   <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
                 </filter>
-                <filter id="gfLsm" x="-100%" y="-100%" width="300%" height="300%">
-                  <feGaussianBlur stdDeviation="2.5" result="b"/>
+                <filter id="gfLapSm" x="-80%" y="-80%" width="260%" height="260%">
+                  <feGaussianBlur stdDeviation="2" result="b"/>
                   <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
                 </filter>
               </defs>
 
-              <!-- Outer orbit ring -->
-              <ellipse cx="120" cy="80" rx="96" ry="60" stroke="rgba(80,210,255,0.14)" stroke-width="1.2"/>
-              <!-- Mid orbit ring -->
-              <ellipse cx="120" cy="80" rx="64" ry="40" stroke="rgba(80,210,255,0.20)" stroke-width="1.2"/>
-              <!-- Inner orbit ring -->
-              <ellipse cx="120" cy="80" rx="32" ry="20" stroke="rgba(80,210,255,0.28)" stroke-width="1.2"/>
+              <!-- ── LAPTOP LID ── -->
+              <polygon points="66,8 174,8 190,28 50,28"
+                       fill="url(#lidTop)" stroke="rgba(80,150,255,0.45)" stroke-width="1"/>
+              <polygon points="50,28 66,8 66,13 50,33"
+                       fill="url(#lidLeft)" stroke="rgba(60,120,220,0.35)" stroke-width="0.8"/>
+              <polygon points="66,13 174,13 190,33 50,33"
+                       fill="url(#scrFace)" stroke="rgba(80,180,255,0.55)" stroke-width="1.2"/>
+              <polygon points="66,13 174,13 190,33 50,33" fill="url(#scrGlow)"/>
 
-              <!-- Central core glow -->
-              <circle cx="120" cy="80" r="18" fill="url(#coreL)" filter="url(#gfL)"/>
-              <circle cx="120" cy="80" r="7"  fill="rgba(200,250,255,1)" filter="url(#gfLsm)"/>
+              <!-- Screen content: 3 checklist rows -->
+              <circle cx="76" cy="19" r="4" fill="rgba(80,210,255,0.12)"
+                      stroke="rgba(80,210,255,0.55)" stroke-width="1"/>
+              <polyline points="73.5,19 75.5,21.2 79.5,16.5"
+                        stroke="rgba(80,230,255,1)" stroke-width="1.3"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="84" y="17" width="60" height="3.5" rx="1.5"
+                    fill="rgba(80,210,255,0.55)"/>
+              <circle cx="76" cy="26" r="4" fill="rgba(80,210,255,0.12)"
+                      stroke="rgba(80,210,255,0.55)" stroke-width="1"/>
+              <polyline points="73.5,26 75.5,28.2 79.5,23.5"
+                        stroke="rgba(80,230,255,1)" stroke-width="1.3"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="84" y="24" width="52" height="3.5" rx="1.5"
+                    fill="rgba(80,210,255,0.45)"/>
+              <circle cx="76" cy="33" r="4" fill="rgba(80,210,255,0.06)"
+                      stroke="rgba(80,210,255,0.28)" stroke-width="1" stroke-dasharray="2.5 1.5"/>
+              <rect x="84" y="31" width="60" height="3.5" rx="1.5"
+                    fill="rgba(255,255,255,0.06)"/>
+              <rect x="84" y="31" width="34" height="3.5" rx="1.5"
+                    fill="url(#progG1)">
+                <animate attributeName="width" values="0;34;34" dur="2.5s"
+                         begin="0.5s" repeatCount="indefinite" calcMode="spline"
+                         keySplines="0.4 0 0.2 1;0 0 0 0"/>
+              </rect>
 
-              <!-- Orbit nodes — outer ring (6 nodes) -->
-              <circle cx="216" cy="80"  r="5.5" fill="rgba(80,210,255,0.9)" filter="url(#gfLsm)"/>
-              <circle cx="24"  cy="80"  r="4.5" fill="rgba(80,210,255,0.75)" filter="url(#gfLsm)"/>
-              <circle cx="168" cy="26"  r="5"   fill="rgba(100,230,255,0.85)" filter="url(#gfLsm)"/>
-              <circle cx="72"  cy="26"  r="4"   fill="rgba(80,210,255,0.7)" filter="url(#gfLsm)"/>
-              <circle cx="168" cy="134" r="4.5" fill="rgba(80,210,255,0.8)" filter="url(#gfLsm)"/>
-              <circle cx="72"  cy="134" r="4"   fill="rgba(80,210,255,0.65)" filter="url(#gfLsm)"/>
+              <!-- Hinge -->
+              <line x1="50" y1="33" x2="190" y2="33"
+                    stroke="rgba(60,130,220,0.5)" stroke-width="1"/>
 
-              <!-- Mid ring nodes (4 nodes) -->
-              <circle cx="184" cy="80"  r="4"   fill="rgba(120,240,255,0.9)" filter="url(#gfLsm)"/>
-              <circle cx="56"  cy="80"  r="3.5" fill="rgba(120,240,255,0.75)"/>
-              <circle cx="152" cy="48"  r="4"   fill="rgba(120,240,255,0.85)" filter="url(#gfLsm)"/>
-              <circle cx="88"  cy="112" r="3.5" fill="rgba(120,240,255,0.7)"/>
-
-              <!-- Subtle connector lines from core to outer nodes -->
-              <line x1="120" y1="80" x2="216" y2="80"  stroke="rgba(80,210,255,0.12)" stroke-width="0.8"/>
-              <line x1="120" y1="80" x2="168" y2="26"  stroke="rgba(80,210,255,0.12)" stroke-width="0.8"/>
-              <line x1="120" y1="80" x2="72"  y2="134" stroke="rgba(80,210,255,0.10)" stroke-width="0.8"/>
-              <line x1="120" y1="80" x2="168" y2="134" stroke="rgba(80,210,255,0.10)" stroke-width="0.8"/>
-
-              <!-- Animated orbit dot -->
-              <circle r="3.5" fill="rgba(200,250,255,1)" filter="url(#gfLsm)">
-                <animateMotion dur="4s" repeatCount="indefinite">
-                  <mpath href="#orbitL"/>
-                </animateMotion>
+              <!-- ── LAPTOP BASE ── -->
+              <polygon points="38,33 202,33 218,55 22,55"
+                       fill="url(#baseTop)" stroke="rgba(70,140,240,0.4)" stroke-width="1"/>
+              <polygon points="22,55 38,33 38,38 22,60"
+                       fill="url(#baseSide)" stroke="rgba(50,110,200,0.3)" stroke-width="0.8"/>
+              <polygon points="202,33 218,55 218,60 202,38"
+                       fill="url(#baseRight)" stroke="rgba(40,90,170,0.3)" stroke-width="0.8"/>
+              <polygon points="22,60 218,60 218,65 22,65"
+                       fill="rgba(20,50,110,0.65)" stroke="rgba(40,90,180,0.25)" stroke-width="0.5"/>
+              <rect x="40" y="38" width="158" height="3" rx="1.2" fill="rgba(100,170,255,0.12)"/>
+              <rect x="44" y="43" width="148" height="3" rx="1.2" fill="rgba(100,170,255,0.10)"/>
+              <rect x="50" y="48" width="132" height="3" rx="1.2" fill="rgba(100,170,255,0.08)"/>
+              <rect x="90" y="49" width="58" height="7" rx="2.5"
+                    fill="rgba(100,160,255,0.1)" stroke="rgba(100,160,255,0.2)" stroke-width="0.6"/>
+              <line x1="66" y1="13" x2="174" y2="13"
+                    stroke="rgba(120,220,255,0.6)" stroke-width="0.8"/>
+              <line x1="66" y1="8" x2="174" y2="8"
+                    stroke="rgba(140,200,255,0.4)" stroke-width="0.6"/>
+              <circle cx="120" cy="34" r="1.8" fill="rgba(80,230,255,0.9)"
+                      filter="url(#gfLapSm)">
+                <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
               </circle>
-              <path id="orbitL" d="M 216,80 A 96,60 0 1,1 215.9,80.01" fill="none"/>
+
+              <!-- ── DESK ITEMS ── -->
+              <!-- Left: document with checkmark -->
+              <rect x="20" y="78" width="28" height="36" rx="3"
+                    fill="rgba(30,60,130,0.55)" stroke="rgba(80,150,255,0.3)" stroke-width="0.8"/>
+              <rect x="23" y="82" width="18" height="2.5" rx="1" fill="rgba(80,180,255,0.45)"/>
+              <rect x="23" y="87" width="14" height="2.5" rx="1" fill="rgba(80,180,255,0.35)"/>
+              <rect x="23" y="92" width="16" height="2.5" rx="1" fill="rgba(80,180,255,0.3)"/>
+              <polyline points="23,100 26,103 32,97"
+                        stroke="rgba(80,230,255,0.9)" stroke-width="1.4"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="41,78 41,84 47,84"
+                        stroke="rgba(80,150,255,0.4)" stroke-width="0.8"
+                        stroke-linecap="round"/>
+
+              <!-- Right: 100% donut chart -->
+              <circle cx="200" cy="105" r="20"
+                      stroke="rgba(80,210,255,0.12)" stroke-width="6" fill="none"/>
+              <circle cx="200" cy="105" r="20"
+                      stroke="rgba(80,210,255,0.85)" stroke-width="6" fill="none"
+                      stroke-dasharray="125.66 0" stroke-linecap="round"
+                      filter="url(#gfLapSm)"/>
+              <circle cx="200" cy="90" r="10"
+                      fill="rgba(80,210,255,0.06)" stroke="rgba(80,210,255,0.2)" stroke-width="0.6"/>
+              <text x="200" y="109" font-family="Montserrat,sans-serif" font-size="8"
+                    font-weight="800" fill="rgba(120,230,255,0.9)" text-anchor="middle">100%</text>
+
+              <!-- Bottom: 3 project status pills -->
+              <rect x="42" y="140" width="50" height="10" rx="5"
+                    fill="rgba(80,210,255,0.15)" stroke="rgba(80,210,255,0.35)" stroke-width="0.8"/>
+              <circle cx="51" cy="145" r="3" fill="rgba(80,230,255,0.85)" filter="url(#gfLapSm)"/>
+              <rect x="57" y="143" width="28" height="3" rx="1.5" fill="rgba(80,210,255,0.55)"/>
+
+              <rect x="100" y="140" width="50" height="10" rx="5"
+                    fill="rgba(80,210,255,0.12)" stroke="rgba(80,210,255,0.3)" stroke-width="0.8"/>
+              <circle cx="109" cy="145" r="3" fill="rgba(80,230,255,0.75)" filter="url(#gfLapSm)"/>
+              <rect x="115" y="143" width="28" height="3" rx="1.5" fill="rgba(80,210,255,0.45)"/>
+
+              <rect x="158" y="140" width="40" height="10" rx="5"
+                    fill="rgba(80,210,255,0.10)" stroke="rgba(80,210,255,0.25)" stroke-width="0.8"/>
+              <circle cx="167" cy="145" r="3" fill="rgba(80,230,255,0.65)"/>
+              <rect x="173" y="143" width="20" height="3" rx="1.5" fill="rgba(80,210,255,0.35)"/>
             </svg>
           </div>
           <div class="pillar-ground-glow"></div>
@@ -3876,103 +4322,144 @@
               Reads "growth over time / branching skills / experience".
               Matches the orbital and pulse illustrations in style and scale.
             -->
-            <svg class="pillar-viz" viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 3D ISOMETRIC CALENDAR — open book / ring-bound desk calendar
+                 with "3" on the face and tick marks. = "years / time" -->
+            <svg class="pillar-viz" viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="trunkG" x1="0%" y1="100%" x2="0%" y2="0%">
-                  <stop offset="0%"   stop-color="rgba(190,100,255,0.9)"/>
-                  <stop offset="100%" stop-color="rgba(210,140,255,0.4)"/>
+                <!-- Calendar front face -->
+                <linearGradient id="calFace" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(20,8,48,0.97)"/>
+                  <stop offset="100%" stop-color="rgba(35,10,70,0.99)"/>
                 </linearGradient>
-                <linearGradient id="br1G" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%"   stop-color="rgba(190,100,255,0.7)"/>
-                  <stop offset="100%" stop-color="rgba(220,160,255,0.95)"/>
+                <!-- Header strip -->
+                <linearGradient id="calHead" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stop-color="rgba(140,60,255,0.9)"/>
+                  <stop offset="100%" stop-color="rgba(200,120,255,0.8)"/>
                 </linearGradient>
-                <linearGradient id="br2G" x1="100%" y1="100%" x2="0%" y2="0%">
-                  <stop offset="0%"   stop-color="rgba(190,100,255,0.7)"/>
-                  <stop offset="100%" stop-color="rgba(220,160,255,0.95)"/>
+                <!-- Left side face -->
+                <linearGradient id="calLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(90,30,180,0.75)"/>
+                  <stop offset="100%" stop-color="rgba(50,15,110,0.9)"/>
                 </linearGradient>
-                <radialGradient id="rootGlw" cx="50%" cy="100%" r="50%">
-                  <stop offset="0%"   stop-color="rgba(200,110,255,0.55)"/>
-                  <stop offset="100%" stop-color="rgba(200,110,255,0)"/>
+                <!-- Top face -->
+                <linearGradient id="calTop" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(160,90,255,0.55)"/>
+                  <stop offset="100%" stop-color="rgba(100,40,200,0.7)"/>
+                </linearGradient>
+                <!-- Bottom face -->
+                <linearGradient id="calBot" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(60,20,130,0.7)"/>
+                  <stop offset="100%" stop-color="rgba(30,8,80,0.85)"/>
+                </linearGradient>
+                <filter id="gfCal" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="4.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="gfCalSm" x="-80%" y="-80%" width="260%" height="260%">
+                  <feGaussianBlur stdDeviation="2.2" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <radialGradient id="calGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%"   stop-color="rgba(180,100,255,0.22)"/>
+                  <stop offset="100%" stop-color="rgba(180,100,255,0)"/>
                 </radialGradient>
-                <filter id="gfMtree" x="-80%" y="-80%" width="260%" height="260%">
-                  <feGaussianBlur stdDeviation="5" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <filter id="gfMsm2" x="-100%" y="-100%" width="300%" height="300%">
-                  <feGaussianBlur stdDeviation="2.8" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
               </defs>
 
-              <!-- Root glow pool -->
-              <ellipse cx="120" cy="150" rx="48" ry="14"
-                       fill="url(#rootGlw)" filter="url(#gfMtree)"/>
+              <!-- ── TOP FACE (calendar top edge, isometric) ── -->
+              <polygon points="55,42 185,42 200,58 40,58"
+                       fill="url(#calTop)" stroke="rgba(180,110,255,0.5)" stroke-width="1"/>
 
-              <!-- Trunk — centre vertical -->
-              <line x1="120" y1="148" x2="120" y2="80"
-                    stroke="url(#trunkG)" stroke-width="3.5" stroke-linecap="round"/>
+              <!-- ── FRONT FACE (main calendar face) — taller to add Year 4 bottom space ── -->
+              <rect x="40" y="58" width="160" height="106" rx="4" ry="4"
+                    fill="url(#calFace)" stroke="rgba(160,80,255,0.55)" stroke-width="1.2"/>
 
-              <!-- Branch left (Year 1) — curves up-left -->
-              <path d="M 120,105 C 110,95 85,78 62,58"
-                    stroke="url(#br1G)" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- Branch right (Year 2) — curves up-right -->
-              <path d="M 120,95 C 132,84 158,68 178,52"
-                    stroke="url(#br2G)" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- Top branch (Year 3) — straight up -->
-              <line x1="120" y1="80" x2="120" y2="22"
-                    stroke="url(#trunkG)" stroke-width="3" stroke-linecap="round"/>
+              <!-- ── LEFT SIDE FACE ── -->
+              <polygon points="40,58 55,42 55,134 40,164"
+                       fill="url(#calLeft)" stroke="rgba(120,50,220,0.4)" stroke-width="0.8"/>
 
-              <!-- Sub-twigs from left branch -->
-              <path d="M 80,74 C 74,65 68,55 66,44"
-                    stroke="rgba(200,130,255,0.45)" stroke-width="1.5" stroke-linecap="round"/>
-              <!-- Sub-twigs from right branch -->
-              <path d="M 162,60 C 168,52 172,42 170,32"
-                    stroke="rgba(200,130,255,0.45)" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- ── BOTTOM FACE ── -->
+              <polygon points="40,164 200,164 215,180 25,180"
+                       fill="url(#calBot)" stroke="rgba(100,40,190,0.4)" stroke-width="0.8"/>
 
-              <!-- Year 1 tip node — left branch end -->
-              <circle cx="62" cy="58" r="7" fill="rgba(190,100,255,0.9)" filter="url(#gfMsm2)"/>
-              <circle cx="62" cy="58" r="3.5" fill="rgba(230,170,255,1)"/>
-              <!-- Pulse ring on year 1 -->
-              <circle cx="62" cy="58" r="10" stroke="rgba(200,130,255,0.5)" stroke-width="1.2" fill="none">
-                <animate attributeName="r" values="7;16" dur="2.2s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.7;0" dur="2.2s" repeatCount="indefinite"/>
+              <!-- ── HEADER STRIP on front face ── -->
+              <rect x="40" y="58" width="160" height="26" rx="4" ry="4" fill="url(#calHead)"/>
+              <!-- round only top corners — cover bottom corners of header -->
+              <rect x="40" y="72" width="160" height="12" fill="url(#calHead)"/>
+              <!-- Header text: EXPERIENCE -->
+              <text x="120" y="76" font-family="Montserrat,sans-serif" font-size="8.5"
+                    font-weight="800" fill="rgba(255,255,255,0.95)" text-anchor="middle"
+                    letter-spacing="0.18em">EXPERIENCE</text>
+
+              <!-- ── CALENDAR BODY: Year row markers ── -->
+              <!-- Year 1 row — NO separator line above, dots at y=103 -->
+              <text x="62" y="101" font-family="Montserrat,sans-serif" font-size="7"
+                    font-weight="700" fill="rgba(200,140,255,0.55)" letter-spacing="0.1em">YEAR 01</text>
+              <circle cx="108" cy="98" r="2" fill="rgba(180,100,255,0.75)" filter="url(#gfCalSm)"/>
+              <circle cx="116" cy="98" r="2" fill="rgba(180,100,255,0.72)" filter="url(#gfCalSm)"/>
+              <circle cx="124" cy="98" r="2" fill="rgba(180,100,255,0.68)"/>
+              <circle cx="132" cy="98" r="2" fill="rgba(180,100,255,0.64)"/>
+              <circle cx="140" cy="98" r="2" fill="rgba(180,100,255,0.60)"/>
+              <circle cx="148" cy="98" r="2" fill="rgba(180,100,255,0.56)"/>
+              <circle cx="156" cy="98" r="2" fill="rgba(180,100,255,0.52)"/>
+              <circle cx="164" cy="98" r="2" fill="rgba(180,100,255,0.45)"/>
+              <circle cx="172" cy="98" r="2" fill="rgba(180,100,255,0.38)"/>
+
+              <!-- Year 2 row — separator + dots at y=118 -->
+              <rect x="55" y="107" width="130" height="1" rx="0.5"
+                    fill="rgba(190,110,255,0.15)"/>
+              <text x="62" y="119" font-family="Montserrat,sans-serif" font-size="7"
+                    font-weight="700" fill="rgba(200,140,255,0.55)" letter-spacing="0.1em">YEAR 02</text>
+              <circle cx="108" cy="116" r="2" fill="rgba(200,120,255,0.78)" filter="url(#gfCalSm)"/>
+              <circle cx="116" cy="116" r="2" fill="rgba(200,120,255,0.74)" filter="url(#gfCalSm)"/>
+              <circle cx="124" cy="116" r="2" fill="rgba(200,120,255,0.70)"/>
+              <circle cx="132" cy="116" r="2" fill="rgba(200,120,255,0.65)"/>
+              <circle cx="140" cy="116" r="2" fill="rgba(200,120,255,0.60)"/>
+              <circle cx="148" cy="116" r="2" fill="rgba(200,120,255,0.55)"/>
+              <circle cx="156" cy="116" r="2" fill="rgba(200,120,255,0.50)"/>
+              <circle cx="164" cy="116" r="2" fill="rgba(200,120,255,0.44)"/>
+              <circle cx="172" cy="116" r="2" fill="rgba(200,120,255,0.36)"/>
+
+              <!-- Year 3 row — separator + dots at y=136 -->
+              <rect x="55" y="125" width="130" height="1" rx="0.5"
+                    fill="rgba(210,140,255,0.18)"/>
+              <text x="62" y="137" font-family="Montserrat,sans-serif" font-size="7"
+                    font-weight="700" fill="rgba(220,170,255,0.75)" letter-spacing="0.1em">YEAR 03</text>
+              <circle cx="108" cy="134" r="2.2" fill="rgba(220,160,255,0.95)" filter="url(#gfCalSm)"/>
+              <circle cx="116" cy="134" r="2.2" fill="rgba(220,160,255,0.92)" filter="url(#gfCalSm)"/>
+              <circle cx="124" cy="134" r="2.2" fill="rgba(220,160,255,0.88)" filter="url(#gfCalSm)"/>
+              <circle cx="132" cy="134" r="2.2" fill="rgba(220,160,255,0.83)"/>
+              <circle cx="140" cy="134" r="2.2" fill="rgba(220,160,255,0.78)"/>
+              <circle cx="148" cy="134" r="2.2" fill="rgba(220,160,255,0.72)"/>
+              <circle cx="156" cy="134" r="2.2" fill="rgba(220,160,255,0.65)"/>
+              <circle cx="164" cy="134" r="2.2" fill="rgba(220,160,255,0.56)"/>
+              <circle cx="172" cy="134" r="2.2" fill="rgba(220,160,255,0.46)"/>
+
+              <!-- Year 4 row — separator + dots at y=155, more bottom space -->
+              <rect x="55" y="143" width="130" height="1" rx="0.5"
+                    fill="rgba(230,180,255,0.25)"/>
+              <text x="62" y="155" font-family="Montserrat,sans-serif" font-size="7"
+                    font-weight="700" fill="rgba(240,200,255,0.90)" letter-spacing="0.1em">YEAR 04</text>
+              <circle cx="108" cy="152" r="2.5" fill="rgba(240,200,255,1)" filter="url(#gfCalSm)"/>
+              <circle cx="116" cy="152" r="2.5" fill="rgba(240,200,255,1)" filter="url(#gfCalSm)"/>
+              <circle cx="124" cy="152" r="2.5" fill="rgba(240,200,255,0.95)" filter="url(#gfCalSm)"/>
+              <circle cx="132" cy="152" r="2.5" fill="rgba(240,200,255,0.88)"/>
+              <circle cx="140" cy="152" r="2.5" fill="rgba(240,200,255,0.78)"/>
+              <!-- Pulsing dot = ongoing -->
+              <circle cx="148" cy="152" r="2.5" fill="rgba(240,200,255,0.70)">
+                <animate attributeName="opacity" values="0.3;1;0.3" dur="1.4s" repeatCount="indefinite"/>
+                <animate attributeName="r" values="2.5;3.8;2.5" dur="1.4s" repeatCount="indefinite"/>
               </circle>
 
-              <!-- Year 2 tip node — right branch end -->
-              <circle cx="178" cy="52" r="7" fill="rgba(200,120,255,0.9)" filter="url(#gfMsm2)"/>
-              <circle cx="178" cy="52" r="3.5" fill="rgba(230,170,255,1)"/>
-              <circle cx="178" cy="52" r="10" stroke="rgba(200,130,255,0.5)" stroke-width="1.2" fill="none">
-                <animate attributeName="r" values="7;16" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.7;0" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
-              </circle>
+              <!-- Ring bindings — two circles at top centre -->
+              <circle cx="95"  cy="58" r="5" fill="rgba(15,5,40,0.9)"
+                      stroke="rgba(180,110,255,0.65)" stroke-width="1.2"/>
+              <circle cx="145" cy="58" r="5" fill="rgba(15,5,40,0.9)"
+                      stroke="rgba(180,110,255,0.65)" stroke-width="1.2"/>
 
-              <!-- Year 3 top node — trunk tip, brightest -->
-              <circle cx="120" cy="22" r="9" fill="rgba(210,150,255,0.95)" filter="url(#gfMtree)"/>
-              <circle cx="120" cy="22" r="4.5" fill="rgba(240,200,255,1)"/>
-              <circle cx="120" cy="22" r="13" stroke="rgba(210,150,255,0.55)" stroke-width="1.5" fill="none">
-                <animate attributeName="r" values="9;20" dur="2.2s" begin="1.4s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.7;0" dur="2.2s" begin="1.4s" repeatCount="indefinite"/>
-              </circle>
+              <!-- Left specular edge -->
+              <line x1="40" y1="62" x2="40" y2="164"
+                    stroke="rgba(140,70,240,0.4)" stroke-width="0.6"/>
 
-              <!-- Root base — two short roots spreading out -->
-              <path d="M 120,148 C 104,150 88,155 78,154"
-                    stroke="rgba(190,100,255,0.4)" stroke-width="2" stroke-linecap="round"/>
-              <path d="M 120,148 C 136,150 152,155 162,154"
-                    stroke="rgba(190,100,255,0.4)" stroke-width="2" stroke-linecap="round"/>
-
-              <!-- Tiny floating sparkle dots around tree -->
-              <circle cx="46" cy="90" r="1.5" fill="rgba(200,140,255,0.7)">
-                <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="196" cy="82" r="1.5" fill="rgba(200,140,255,0.7)">
-                <animate attributeName="opacity" values="1;0.3;1" dur="2.8s" begin="0.6s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="100" cy="36" r="1.2" fill="rgba(220,170,255,0.6)">
-                <animate attributeName="opacity" values="0.5;1;0.5" dur="3.1s" begin="1.2s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="145" cy="32" r="1.2" fill="rgba(220,170,255,0.6)">
-                <animate attributeName="opacity" values="1;0.4;1" dur="2.4s" begin="0.3s" repeatCount="indefinite"/>
-              </circle>
             </svg>
           </div>
           <div class="pillar-ground-glow"></div>
@@ -3995,69 +4482,129 @@
               like a heartbeat/signal going out to clients. Warm, human,
               alive. Far more engaging than a smiley + stars.
             -->
-            <svg class="pillar-viz" viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 3D ISOMETRIC TROPHY — gold cup on a plinth with a glowing
+                 star above it and "30+" client dots orbiting.
+                 = "happy customers / satisfaction / award" -->
+            <svg class="pillar-viz" viewBox="0 10 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <radialGradient id="hrGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%"   stop-color="rgba(80,255,130,0.9)"/>
-                  <stop offset="60%"  stop-color="rgba(60,220,100,0.45)"/>
-                  <stop offset="100%" stop-color="rgba(60,220,100,0)"/>
+                <!-- Trophy body fill -->
+                <linearGradient id="cupBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(80,255,140,0.25)"/>
+                  <stop offset="100%" stop-color="rgba(40,180,90,0.12)"/>
+                </linearGradient>
+                <!-- Cup left face -->
+                <linearGradient id="cupLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(60,220,110,0.3)"/>
+                  <stop offset="100%" stop-color="rgba(20,120,60,0.5)"/>
+                </linearGradient>
+                <!-- Stem face -->
+                <linearGradient id="stemFace" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(60,200,100,0.4)"/>
+                  <stop offset="100%" stop-color="rgba(20,110,55,0.6)"/>
+                </linearGradient>
+                <!-- Base top face -->
+                <linearGradient id="baseTG" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(70,220,120,0.5)"/>
+                  <stop offset="100%" stop-color="rgba(30,140,70,0.65)"/>
+                </linearGradient>
+                <!-- Base front face -->
+                <linearGradient id="baseFG" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(30,160,75,0.55)"/>
+                  <stop offset="100%" stop-color="rgba(10,80,40,0.75)"/>
+                </linearGradient>
+                <!-- Star glow -->
+                <radialGradient id="starGlw" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%"   stop-color="rgba(100,255,150,1)"/>
+                  <stop offset="60%"  stop-color="rgba(80,255,130,0.55)"/>
+                  <stop offset="100%" stop-color="rgba(80,255,130,0)"/>
                 </radialGradient>
-                <filter id="gfR" x="-80%" y="-80%" width="260%" height="260%">
+                <filter id="gfTroph" x="-60%" y="-60%" width="220%" height="220%">
                   <feGaussianBlur stdDeviation="5" result="b"/>
                   <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
                 </filter>
-                <filter id="gfRsm" x="-100%" y="-100%" width="300%" height="300%">
+                <filter id="gfTrSm" x="-80%" y="-80%" width="260%" height="260%">
                   <feGaussianBlur stdDeviation="2.5" result="b"/>
                   <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
                 </filter>
               </defs>
 
-              <!-- Outer pulse rings (3 expanding circles, animated) -->
-              <circle cx="120" cy="80" r="70" stroke="rgba(80,255,130,0.12)" stroke-width="1.5" fill="none">
-                <animate attributeName="r" values="30;75" dur="2.8s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.7;0" dur="2.8s" repeatCount="indefinite"/>
+
+
+              <!-- ── PLINTH / BASE — rounded rect instead of sharp polygon ── -->
+              <!-- Base top face -->
+              <polygon points="82,138 158,138 168,148 72,148"
+                       fill="url(#baseTG)" stroke="rgba(80,220,110,0.45)" stroke-width="1"/>
+              <!-- Base front face — rounded bottom corners -->
+              <rect x="72" y="148" width="96" height="14" rx="4" ry="4"
+                    fill="url(#baseFG)" stroke="rgba(60,190,90,0.35)" stroke-width="0.8"/>
+              <!-- Base left face -->
+              <polygon points="72,148 82,138 82,152 72,162"
+                       fill="rgba(30,140,65,0.5)" stroke="rgba(50,170,80,0.3)" stroke-width="0.6"/>
+              <!-- Base specular top edge -->
+              <line x1="82" y1="138" x2="158" y2="138"
+                    stroke="rgba(130,255,170,0.5)" stroke-width="0.8"/>
+
+              <!-- ── STEM — narrow vertical bar ── -->
+              <!-- Stem front -->
+              <rect x="108" y="110" width="24" height="28" rx="3" ry="3"
+                    fill="url(#stemFace)" stroke="rgba(70,210,100,0.4)" stroke-width="0.8"/>
+              <!-- Stem left -->
+              <polygon points="103,115 108,110 108,138 103,143"
+                       fill="rgba(40,160,75,0.45)" stroke="rgba(50,180,85,0.3)" stroke-width="0.6"/>
+              <!-- Stem top -->
+              <polygon points="103,115 108,110 132,110 137,115"
+                       fill="rgba(90,230,130,0.4)" stroke="rgba(90,220,120,0.4)" stroke-width="0.6"/>
+
+              <!-- ── CUP BODY — rounded front face ── -->
+              <!-- Cup main front face: rounded trapezoid -->
+              <path d="M 80,57 L 160,57 Q 162,57 163,59 L 149,109 Q 148,111 146,111 L 94,111 Q 92,111 91,109 L 77,59 Q 76,57 78,57 Z"
+                    fill="url(#cupBody)" stroke="rgba(80,230,120,0.55)" stroke-width="1.2"/>
+              <!-- Cup left side face -->
+              <polygon points="73,63 78,57 92,110 85,115"
+                       fill="url(#cupLeft)" stroke="rgba(60,200,100,0.4)" stroke-width="0.8"/>
+              <!-- Cup top face (rim) — rounded -->
+              <rect x="73" y="57" width="94" height="8" rx="4" ry="4"
+                    fill="rgba(100,240,150,0.3)" stroke="rgba(100,240,150,0.5)" stroke-width="0.8"/>
+
+              <!-- Cup rim specular -->
+              <line x1="78" y1="57" x2="162" y2="57"
+                    stroke="rgba(160,255,200,0.6)" stroke-width="1"/>
+
+              <!-- Handle left — curved arch -->
+              <path d="M 78,67 C 52,67 46,83 52,97 C 56,107 72,110 85,110"
+                    stroke="rgba(80,220,120,0.65)" stroke-width="3.5"
+                    fill="none" stroke-linecap="round"/>
+              <!-- Handle right -->
+              <path d="M 162,67 C 188,67 194,83 188,97 C 184,107 170,110 157,110"
+                    stroke="rgba(80,220,120,0.55)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+              <!-- Cup inner shadow -->
+              <ellipse cx="120" cy="81" rx="32" ry="8"
+                       fill="rgba(10,60,25,0.4)"/>
+
+              <!-- ── GLOWING STAR above cup ── -->
+              <!-- Star shape (5-point) -->
+              <polygon points="120,20 123.5,30 134,30 125.5,36.5 128.5,47 120,41 111.5,47 114.5,36.5 106,30 116.5,30"
+                       fill="rgba(80,255,140,0.9)" filter="url(#gfTrSm)"
+                       stroke="rgba(160,255,200,0.7)" stroke-width="0.5"/>
+              <!-- Star core bright -->
+              <polygon points="120,24 122.5,31 129,31 123.5,35 125.5,42 120,38.5 114.5,42 116.5,35 111,31 117.5,31"
+                       fill="rgba(180,255,210,1)"/>
+              <!-- Star outer glow -->
+              <circle cx="120" cy="34" r="16" fill="url(#starGlw)" filter="url(#gfTroph)">
+                <animate attributeName="r" values="14;20;14" dur="2.4s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="2.4s" repeatCount="indefinite"/>
               </circle>
-              <circle cx="120" cy="80" r="50" stroke="rgba(80,255,130,0.18)" stroke-width="1.5" fill="none">
-                <animate attributeName="r" values="30;75" dur="2.8s" begin="0.9s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.7;0" dur="2.8s" begin="0.9s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="120" cy="80" r="30" stroke="rgba(80,255,130,0.25)" stroke-width="1.5" fill="none">
-                <animate attributeName="r" values="30;75" dur="2.8s" begin="1.8s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.7;0" dur="2.8s" begin="1.8s" repeatCount="indefinite"/>
-              </circle>
 
-              <!-- Static soft ambient ring -->
-              <circle cx="120" cy="80" r="38" stroke="rgba(80,255,130,0.18)" stroke-width="1" fill="none"/>
-
-              <!-- Heart shape -->
-              <path d="M 120 100
-                       C 120 100, 88 84, 88 64
-                       C 88 52, 97 45, 104 48
-                       C 108 50, 112 54, 120 62
-                       C 128 54, 132 50, 136 48
-                       C 143 45, 152 52, 152 64
-                       C 152 84, 120 100, 120 100 Z"
-                    fill="rgba(80,255,130,0.22)"
-                    stroke="rgba(100,255,150,0.75)" stroke-width="1.8"
-                    stroke-linejoin="round"
-                    filter="url(#gfRsm)"/>
-
-              <!-- Heart core glow -->
-              <circle cx="120" cy="74" r="14" fill="url(#hrGrad)" filter="url(#gfR)"/>
-
-              <!-- 3 small floating user dots around heart — "clients" -->
-              <circle cx="60"  cy="48" r="6" fill="rgba(80,255,130,0.75)" filter="url(#gfRsm)"/>
-              <circle cx="180" cy="48" r="6" fill="rgba(80,255,130,0.75)" filter="url(#gfRsm)"/>
-              <circle cx="120" cy="22" r="5" fill="rgba(80,255,130,0.65)" filter="url(#gfRsm)"/>
-
-              <!-- Dotted connector lines from heart to user dots -->
-              <line x1="120" y1="55" x2="64"  y2="52"  stroke="rgba(80,255,130,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
-              <line x1="120" y1="55" x2="176" y2="52"  stroke="rgba(80,255,130,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
-              <line x1="120" y1="55" x2="120" y2="28"  stroke="rgba(80,255,130,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
-
-              <!-- Ground reflection glow -->
-              <ellipse cx="120" cy="148" rx="50" ry="10"
-                       fill="rgba(80,255,130,0.15)" filter="url(#gfRsm)"/>
+              <!-- ── 5 client satisfaction dots along bottom ── -->
+              <circle cx="78"  cy="180" r="3.2" fill="rgba(80,255,140,0.9)" filter="url(#gfTrSm)"/>
+              <circle cx="95"  cy="180" r="3.2" fill="rgba(80,255,140,0.9)" filter="url(#gfTrSm)"/>
+              <circle cx="120" cy="180" r="3.2" fill="rgba(80,255,140,0.9)" filter="url(#gfTrSm)"/>
+              <circle cx="145" cy="180" r="3.2" fill="rgba(80,255,140,0.9)" filter="url(#gfTrSm)"/>
+              <circle cx="162" cy="180" r="3.2" fill="rgba(80,255,140,0.9)" filter="url(#gfTrSm)"/>
+              <!-- Connecting line between dots -->
+              <line x1="78" y1="180" x2="162" y2="180"
+                    stroke="rgba(80,255,140,0.25)" stroke-width="1"/>
             </svg>
           </div>
           <div class="pillar-ground-glow"></div>
@@ -4067,6 +4614,8 @@
     </div><!-- /ufo-stats-row -->
   </div><!-- /ufo-visual-wrapper -->
 </section>
+
+
 
     <!-- ══════════ TECH STACK SECTION ══════════ -->
     <section class="techstack-section" aria-label="Tech Stack">
@@ -4512,6 +5061,286 @@
 
       </div>
     </section>
+
+
+
+    <!-- ══════════ TESTIMONIALS SECTION ══════════ -->
+    <section class="testimonials-section" aria-label="Client Testimonials">
+      <div class="testimonials-header">
+        <span class="testimonials-label">What clients say</span>
+        <h2 class="testimonials-title">Testimonials</h2>
+      </div>
+
+      <!-- Fixed-size outer shell -->
+      <div class="testi-shell" id="testi-shell">
+
+        <!-- Top row: avatar stack + counter -->
+        <div class="testi-meta-row">
+          <div class="testi-avatars-stack" id="testi-av-stack">
+            <img src="./Images/testimonials/thaanu.jpg" alt="Sarah Kim" class="testi-avatar-thumb current-av" data-av="0">
+        <img src="./Images/testimonials/suraji.png" alt="Emma Johnson" class="testi-avatar-thumb" data-av="1">
+        <img src="./Images/testimonials/sandakelum.jpg" alt="James Chen" class="testi-avatar-thumb" data-av="2">
+        <img src="https://i.pravatar.cc/150?u=marcus_r" alt="Marcus Rodriguez" class="testi-avatar-thumb" data-av="3">
+        <img src="https://i.pravatar.cc/150?u=david_w" alt="David Wilson" class="testi-avatar-thumb" data-av="4">
+        <img src="https://i.pravatar.cc/150?u=alex_l" alt="Alex Liu" class="testi-avatar-thumb" data-av="5">
+        <img src="./Images/testimonials/sandev-dullewa.png" alt="Olivia Parker" class="testi-avatar-thumb" data-av="6">
+        <img src="./Images/testimonials/atheeque.png" alt="Ryan Brooks" class="testi-avatar-thumb" data-av="7">
+        
+          </div>
+          <div class="testi-counter">
+            <span class="testi-counter-cur" id="testi-cur">01</span>
+            <span class="testi-counter-sep">/</span>
+            <span class="testi-counter-tot">08</span>
+          </div>
+        </div>
+
+        <!-- Quote slides -->
+        <div class="testi-quote-area" id="testi-quote-area">
+
+        <div class="testi-slide active" data-slide="0">
+          <p class="testi-quote">I had the pleasure of working with Ruchira on several projects, and I can confidently say he’s one of the most talented and dedicated UI/UX designers I’ve encountered. His expertise in both UI/UX design and engineering is truly remarkable, allowing him to craft visually compelling interfaces that are not only user-friendly but also highly functional.</p>
+          <div class="testi-author-row">
+            <img src="./Images/testimonials/thaanu.jpg" alt="Thaanu Perera" class="testi-author-avatar">
+            <div class="testi-author-sep"></div>
+            <div class="testi-author-info">
+              <span class="testi-name">Thaanu Perera</span>
+              <span class="testi-role">Software Engineer — Eyepax</span>
+            </div>
+            <div class="testi-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+          </div>
+        </div>
+        <div class="testi-slide" data-slide="1">
+          <p class="testi-quote">Working with Ruchira on UI/UX design projects has been an incredible experience. He has a great talent for blending the latest trends with user-friendly designs. Whenever we team up, we always create solutions that go above and beyond expectations. His creative vision combined with my design skills results in experiences that truly connect with users. I highly recommend Ruchira for any UI/UX work and his dedication and passion make him a fantastic addition to any team.</p>
+          <div class="testi-author-row">
+            <img src="./Images/testimonials/suraji.png" alt="Suraji Ekanayake" class="testi-author-avatar">
+            <div class="testi-author-sep"></div>
+            <div class="testi-author-info">
+              <span class="testi-name">Suraji Ekanayake</span>
+              <span class="testi-role">UI/UX Designer — Elysian Crest</span>
+            </div>
+            <div class="testi-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+          </div>
+        </div>
+        <div class="testi-slide" data-slide="2">
+          <p class="testi-quote">To express my recommendation for this talented man joining the team of employers at Zuse Technologies, I am happy to write this recommendation for Mr. Ruchira Edirisinghe. Throughout the period of cooperation, Ruchira has shown himself as a skilled specialist who has excellent experience in developing effective user-oriented designs that often have even higher performance indicators than stated by the client. This has made him the most vital figure in the design team by balancing creativity with technical competence coupled with his understanding of user’s behavior.</p>
+          <div class="testi-author-row">
+            <img src="./Images/testimonials/sandakelum.jpg" alt="James Chen" class="testi-author-avatar">
+            <div class="testi-author-sep"></div>
+            <div class="testi-author-info">
+              <span class="testi-name">Sandakelum Senevirathna</span>
+              <span class="testi-role">Tech Lead — ZUSE Technologies</span>
+            </div>
+            <div class="testi-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+          </div>
+        </div>
+        <div class="testi-slide" data-slide="3">
+          <p class="testi-quote">The 3D visuals Ruchira created for our campaign were jaw-dropping. Delivered ahead of schedule and exceeded our creative brief completely. Will work together again without hesitation.</p>
+          <div class="testi-author-row">
+            <img src="https://i.pravatar.cc/150?u=marcus_r" alt="Marcus Rodriguez" class="testi-author-avatar">
+            <div class="testi-author-sep"></div>
+            <div class="testi-author-info">
+              <span class="testi-name">Marcus Rodriguez</span>
+              <span class="testi-role">Creative Director — Stripe</span>
+            </div>
+            <div class="testi-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+          </div>
+        </div>
+        <div class="testi-slide" data-slide="4">
+          <p class="testi-quote">Figma-to-code handoff was flawless. Every hover state, every transition — all implemented exactly as designed. He's the unicorn talent you rarely find in this industry.</p>
+          <div class="testi-author-row">
+            <img src="https://i.pravatar.cc/150?u=david_w" alt="David Wilson" class="testi-author-avatar">
+            <div class="testi-author-sep"></div>
+            <div class="testi-author-info">
+              <span class="testi-name">David Wilson</span>
+              <span class="testi-role">Head of UX — Linear</span>
+            </div>
+            <div class="testi-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+          </div>
+        </div>
+        <div class="testi-slide" data-slide="5">
+          <p class="testi-quote">What impressed me most was how he merged cutting-edge animations with practical accessibility. The site looks incredible and works beautifully for every user.</p>
+          <div class="testi-author-row">
+            <img src="https://i.pravatar.cc/150?u=alex_l" alt="Alex Liu" class="testi-author-avatar">
+            <div class="testi-author-sep"></div>
+            <div class="testi-author-info">
+              <span class="testi-name">Alex Liu</span>
+              <span class="testi-role">CTO — Framer</span>
+            </div>
+            <div class="testi-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+          </div>
+        </div>
+        <div class="testi-slide" data-slide="6">
+          <p class="testi-quote">I had the pleasure of working with Ruchira on a recent web development project, and I was truly impressed by his exceptional UI/UX design skills. Ruchira's ability to create visually appealing and user-friendly interfaces is unparalleled. He has a keen eye for detail, a deep understanding of user behavior, and a knack for turning complex concepts into intuitive designs. Ruchira's collaborative nature and dedication to delivering top-notch designs make him an invaluable asset to any team.</p>
+          <div class="testi-author-row">
+            <img src="./Images/testimonials/sandev-dullewa.png" alt="Olivia Parker" class="testi-author-avatar">
+            <div class="testi-author-sep"></div>
+            <div class="testi-author-info">
+              <span class="testi-name">Sandev Dulleva</span>
+              <span class="testi-role">Software Engineer — ZUSE Technologies</span>
+            </div>
+            <div class="testi-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+          </div>
+        </div>
+        <div class="testi-slide" data-slide="7">
+          <p class="testi-quote">I had the pleasure of managing Ruchira directly during their time as a developer at TAKG, and I can confidently say that he is one of the most talented and dedicated professionals I have worked with. Ruchira consistently demonstrated exceptional technical skills, creativity, and a strong work ethic. His ability to tackle complex problems and deliver high-quality solutions was truly impressive. He played a pivotal role in UI/UX Development, where their contributions were instrumental in achieving our goals.</p>
+          <div class="testi-author-row">
+            <img src="./Images/testimonials/atheeque.png" alt="Ryan Brooks" class="testi-author-avatar">
+            <div class="testi-author-sep"></div>
+            <div class="testi-author-info">
+              <span class="testi-name">Atheeque Hasan</span>
+              <span class="testi-role">Senior Data Analyst — AiSCOUT</span>
+            </div>
+            <div class="testi-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Bottom: progress + hint + prev/next -->
+        <div class="testi-bottom">
+          <div class="testi-progress-track">
+            <div class="testi-progress-fill" id="testi-prog"></div>
+          </div>
+          <span class="testi-hint" id="testi-hint">Auto-cycling</span>
+          <div class="testi-nav">
+            <button class="testi-btn" id="testi-prev" aria-label="Previous testimonial">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="testi-btn" id="testi-next" aria-label="Next testimonial">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /testi-shell -->
+
+      <!-- Dots nav -->
+      <div class="testi-dots" id="testi-dots">
+        <button class="testi-dot active" data-index="0" aria-label="Testimonial 1"></button><button class="testi-dot" data-index="1" aria-label="Testimonial 2"></button><button class="testi-dot" data-index="2" aria-label="Testimonial 3"></button><button class="testi-dot" data-index="3" aria-label="Testimonial 4"></button><button class="testi-dot" data-index="4" aria-label="Testimonial 5"></button><button class="testi-dot" data-index="5" aria-label="Testimonial 6"></button><button class="testi-dot" data-index="6" aria-label="Testimonial 7"></button><button class="testi-dot" data-index="7" aria-label="Testimonial 8"></button>
+      </div>
+    </section>
+
+    <script>
+    (function() {
+      var DURATION = 5000;
+      var N = 8;
+      var current = 0;
+      var timer = null;
+      var isHovered = false;
+
+      var slides = document.querySelectorAll('.testi-slide');
+      var dots   = document.querySelectorAll('.testi-dot');
+      var avs    = document.querySelectorAll('.testi-avatar-thumb');
+      var curEl  = document.getElementById('testi-cur');
+      var prog   = document.getElementById('testi-prog');
+      var shell  = document.getElementById('testi-shell');
+      var hint   = document.getElementById('testi-hint');
+
+      function pad(n) { return String(n + 1).padStart(2, '0'); }
+
+      function showSlide(idx, dir) {
+        var prev = current;
+        current = ((idx % N) + N) % N;
+
+        // Slide exit
+        slides[prev].classList.remove('active');
+        slides[prev].classList.add('exit');
+        setTimeout(function() { slides[prev].classList.remove('exit'); }, 600);
+
+        // Slide enter
+        slides[current].classList.add('active');
+
+        // Counter
+        curEl.style.opacity = '0';
+        setTimeout(function() {
+          curEl.textContent = pad(current);
+          curEl.style.opacity = '1';
+        }, 180);
+
+        // Avatar highlights
+        avs.forEach(function(a, i) {
+          a.classList.toggle('current-av', i === current);
+        });
+
+        // Dots
+        dots.forEach(function(d, i) {
+          d.classList.toggle('active', i === current);
+        });
+
+        // Reset + restart progress bar
+        prog.style.transition = 'none';
+        prog.style.width = '0%';
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            if (!isHovered) {
+              prog.style.transition = 'width ' + DURATION + 'ms linear';
+              prog.style.width = '100%';
+            }
+          });
+        });
+      }
+
+      function startAuto() {
+        clearInterval(timer);
+        timer = setInterval(function() { showSlide(current + 1); }, DURATION);
+        prog.style.transition = 'width ' + DURATION + 'ms linear';
+        prog.style.width = '100%';
+      }
+
+      function stopAuto() {
+        clearInterval(timer);
+        prog.style.transition = 'none';
+        // freeze progress bar at current visual width
+        var computed = getComputedStyle(prog).width;
+        var trackW = prog.parentElement.offsetWidth;
+        prog.style.width = computed;
+      }
+
+      // Prev / Next
+      document.getElementById('testi-prev').addEventListener('click', function(e) {
+        e.stopPropagation();
+        showSlide(current - 1);
+        startAuto();
+      });
+      document.getElementById('testi-next').addEventListener('click', function(e) {
+        e.stopPropagation();
+        showSlide(current + 1);
+        startAuto();
+      });
+
+      // Dot clicks
+      dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() {
+          showSlide(i);
+          startAuto();
+        });
+      });
+
+      // Avatar clicks
+      avs.forEach(function(av, i) {
+        av.addEventListener('click', function() {
+          showSlide(i);
+          startAuto();
+        });
+      });
+
+      // Pause on hover
+      shell.addEventListener('mouseenter', function() {
+        isHovered = true;
+        stopAuto();
+        if (hint) hint.textContent = 'Paused';
+      });
+      shell.addEventListener('mouseleave', function() {
+        isHovered = false;
+        if (hint) hint.textContent = 'Auto-cycling';
+        startAuto();
+      });
+
+      // Boot
+      showSlide(0);
+      startAuto();
+    })();
+    </script>
+
 
   </main>
 
