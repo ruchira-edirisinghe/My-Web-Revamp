@@ -1,7 +1,7 @@
 /* ══════════ 1. SPACE-CANVAS-STARS ══════════ */
 (function () {
         var DURATION = 7000;
-        var N = 8;
+        var N = 9;
         var current = 0;
         var timer = null;
         var wordTimers = [];
