@@ -324,12 +324,6 @@
 
       function drawCursor() {
         cCtx.clearRect(0, 0, W, H);
-        // Disable liquid cursor render on mobile view
-        if (W <= 900) {
-            requestAnimationFrame(drawCursor);
-            return;
-        }
-
         rX += (mX - rX) * 0.1; rY += (mY - rY) * 0.1; currentR += (targetR - currentR) * 0.08;
         const R = currentR, cx = rX, cy = rY;
         if (mX < -200) { requestAnimationFrame(drawCursor); return; }
