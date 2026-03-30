@@ -11,7 +11,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Squada+One&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="./styles/about/about.css" />
+  <link rel="stylesheet" href="./styles/experience/expadditional.css" />
   <style>
     /* ══════════════════════════════════════
        EXPERIENCE PAGE — ADDITIONAL STYLES
@@ -21,7 +21,7 @@
     .exp-section {
       width: 95%;
       max-width: 1500px;
-      margin: 80px auto 0;
+      margin: 44px auto 0;
       position: relative;
     }
 
@@ -414,6 +414,18 @@
       color: rgba(80, 180, 255, 0.85);
     }
 
+    .edu-section #edu-heading {
+      margin-bottom: 42px;
+    }
+
+    .edu-section .bio-para {
+      margin: 0;
+    }
+
+    .edu-section .para-container {
+      padding-bottom: 44px;
+    }
+
     /* ── Skills Section ── */
     .skills-section {
       width: 95%;
@@ -774,7 +786,15 @@
     @media (max-width: 768px) {
       .exp-section {
         width: 100%;
-        margin-top: 60px;
+        margin-top: 36px;
+      }
+
+      .edu-section #edu-heading {
+        margin-bottom: 34px;
+      }
+
+      .edu-section .para-container {
+        padding-bottom: 36px;
       }
 
       .skills-section {
@@ -881,6 +901,16 @@
   <main class="page">
     <p class="section-label">My professional journey</p>
     <h1 class="page-title">Work Experience</h1>
+    <br><br>
+    <div class="para-container">
+      <p class="bio-para" style="--para-delay:0.1s;">
+        With over 3 years of professional experience in the field, I have developed a strong foundation in building
+        robust, scalable, and visually engaging web experiences. My journey has taken me through a variety of roles and
+        projects, allowing me to refine my skills in frontend development, UI/UX design, and collaborating with
+        cross-functional teams. I am passionate about leveraging modern technologies and best practices to deliver
+        high-quality solutions that are both user-focused and technically sound.
+      </p>
+    </div>
 
     <!-- ══════════ WORK EXPERIENCE SECTION ══════════ -->
     <section class="exp-section" aria-label="Work Experience">
@@ -1242,12 +1272,24 @@
       </div>
     </div>
 
+    <br><br><br><br>
+
     <!-- ══════════ EDUCATION SECTION ══════════ -->
     <section class="exp-section edu-section" aria-label="Education">
       <div class="exp-section-heading" id="edu-heading">
-        <span class="exp-section-label">Academic</span>
-        <h2 class="exp-section-title">Education</h2>
+        <span class="exp-section-label">Education</span>
+        <h1 class="page-title">Academic History</h1>
       </div>
+      <div class="para-container">
+        <p class="bio-para" style="--para-delay:0.1s;">
+          My academic journey has been defined by dedication, continuous effort, and a drive to push my boundaries. I
+          invested countless hours into mastering new concepts, tackling complex problems, and pursuing projects that
+          sharpened both my technical abilities and creative thinking. Through perseverance and a commitment to
+          excellence, I was able to achieve personal milestones that reflect my passion for learning and my
+          determination to succeed.
+        </p>
+      </div>
+      <br><br><br>
 
       <div class="timeline">
         <!-- 1: University of Plymouth / NSBM -->
@@ -2096,37 +2138,128 @@
     (function () {
       const menuBtn = document.getElementById("menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
-      const closeBtn = document.getElementById("menu-close-mobile");
-      function openMenu() {
+      const menuCloseMob = document.getElementById("menu-close-mobile");
+      const menuLinks = document.querySelectorAll(".mobile-menu-link");
+      let ignoreBackdropClickUntil = 0;
+      let closeTimer = null;
+
+      const currentPage = document.body.dataset.page || "experience";
+      menuLinks.forEach((link) => {
+        link.classList.toggle("active", link.dataset.page === currentPage);
+      });
+
+      // Ensure menu starts closed even if the browser restores a cached page state.
+      mobileMenu.classList.remove("open");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      menuBtn.classList.remove("is-open");
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuCloseMob.classList.remove("visible");
+      document.body.classList.remove("menu-open");
+      menuLinks.forEach((link) => {
+        link.style.animation = "";
+        link.style.opacity = "";
+        link.style.transform = "";
+        link.style.filter = "";
+      });
+
+      if (!document.getElementById("mobile-menu-keyframes")) {
+        const style = document.createElement("style");
+        style.id = "mobile-menu-keyframes";
+        style.textContent = `
+        @keyframes mobileMenuPop {
+          0%   { opacity:0; transform:scale(0.2); filter:blur(12px); }
+          50%  { opacity:1; transform:scale(1.08); filter:blur(0px); }
+          70%  { transform:scale(0.97); }
+          85%  { transform:scale(1.02); }
+          100% { opacity:1; transform:scale(1); filter:blur(0px); }
+        }
+        @keyframes mobileMenuShrink {
+          0%   { opacity:1; transform:scale(1);   filter:blur(0px); }
+          15%  { transform:scale(1.03); }
+          30%  { transform:scale(0.96); }
+          100% { opacity:0; transform:scale(0.2); filter:blur(12px); }
+        }
+      `;
+        document.head.appendChild(style);
+      }
+
+      function openMobileMenu() {
+        // Prevent the very first tap from immediately being treated as a backdrop click.
+        // (Some mobile browsers fire a follow-up click after the overlay becomes clickable.)
+        ignoreBackdropClickUntil = Date.now() + 450;
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+
         mobileMenu.classList.add("open");
         mobileMenu.setAttribute("aria-hidden", "false");
+        // Delay making the overlay clickable for one frame.
+        // CSS enables pointer-events when `.open` is present, so we override briefly.
+        mobileMenu.style.pointerEvents = "none";
+        requestAnimationFrame(() => {
+          mobileMenu.style.pointerEvents = "";
+        });
         menuBtn.classList.add("is-open");
+        menuBtn.setAttribute("aria-expanded", "true");
+        menuCloseMob.classList.add("visible");
         document.body.classList.add("menu-open");
-        closeBtn.classList.add("visible");
-        Array.from(document.querySelectorAll(".mobile-menu-link")).forEach(
-          (el, i) => {
-            el.style.opacity = "1";
-            el.style.transform = "scale(1)";
-            el.style.transition = `opacity 0.4s ease ${0.08 + i * 0.06}s, transform 0.5s cubic-bezier(0.34,1.56,0.64,1) ${0.08 + i * 0.06}s`;
-          },
-        );
+
+        menuLinks.forEach((link, i) => {
+          link.style.animation = "none";
+          link.style.opacity = "0";
+          link.style.transform = "scale(0.2)";
+          link.style.filter = "blur(12px)";
+          void link.offsetWidth;
+          link.style.animation = `mobileMenuPop 0.6s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.09 + 0.04}s forwards`;
+        });
       }
-      function closeMenu() {
-        mobileMenu.classList.remove("open");
-        mobileMenu.setAttribute("aria-hidden", "true");
-        menuBtn.classList.remove("is-open");
-        document.body.classList.remove("menu-open");
-        closeBtn.classList.remove("visible");
-        Array.from(document.querySelectorAll(".mobile-menu-link")).forEach(
-          (el) => {
-            el.style.opacity = "0";
-            el.style.transform = "scale(0.2)";
-            el.style.transition = "none";
-          },
-        );
+
+      function closeMobileMenu() {
+        if (!mobileMenu.classList.contains("open")) return;
+        if (closeTimer) clearTimeout(closeTimer);
+
+        const total = menuLinks.length;
+        menuLinks.forEach((link, i) => {
+          link.style.animation = "none";
+          void link.offsetWidth;
+          link.style.animation = `mobileMenuShrink 0.5s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.07}s forwards`;
+        });
+
+        const closeDur = (total - 1) * 70 + 500;
+        closeTimer = setTimeout(() => {
+          mobileMenu.classList.remove("open");
+          mobileMenu.setAttribute("aria-hidden", "true");
+          menuBtn.classList.remove("is-open");
+          menuBtn.setAttribute("aria-expanded", "false");
+          menuCloseMob.classList.remove("visible");
+          document.body.classList.remove("menu-open");
+          closeTimer = null;
+        }, closeDur - 150);
       }
-      menuBtn.addEventListener("click", openMenu);
-      closeBtn.addEventListener("click", closeMenu);
+
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.contains("open")
+          ? closeMobileMenu()
+          : openMobileMenu();
+      });
+
+      menuCloseMob.addEventListener("click", (e) => {
+        e.stopPropagation();
+        closeMobileMenu();
+      });
+
+      mobileMenu.addEventListener("click", (e) => {
+        if (e.target !== mobileMenu) return;
+        if (Date.now() < ignoreBackdropClickUntil) return;
+        closeMobileMenu();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu.classList.contains("open"))
+          closeMobileMenu();
+      });
     })();
 
     /* ── Scroll-reveal observer ── */
