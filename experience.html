@@ -377,43 +377,7 @@
       letter-spacing: 0.01em;
     }
 
-    /* ── Education timeline (reuses same classes, different accent color) ── */
-    .edu-section .tl-icon-wrap {
-      border-color: rgba(80, 180, 255, 0.28);
-      background: rgba(80, 180, 255, 0.08);
-      color: rgba(140, 210, 255, 0.9);
-    }
-
-    .edu-section .tl-node {
-      background: radial-gradient(circle,
-          rgba(80, 180, 255, 1) 0%,
-          rgba(140, 80, 255, 0.7) 100%);
-      box-shadow:
-        0 0 16px rgba(80, 180, 255, 0.6),
-        0 0 32px rgba(140, 80, 255, 0.2);
-    }
-
-    .edu-section .tl-card:hover {
-      border-color: rgba(80, 180, 255, 0.28);
-      box-shadow:
-        0 16px 48px rgba(0, 0, 0, 0.4),
-        0 0 40px rgba(80, 180, 255, 0.06);
-    }
-
-    .edu-section .tl-card::after {
-      background: radial-gradient(ellipse,
-          rgba(80, 180, 255, 0.08) 0%,
-          transparent 70%);
-    }
-
-    .edu-section .tl-date {
-      color: rgba(80, 210, 255, 0.65);
-    }
-
-    .edu-section .tl-company {
-      color: rgba(80, 180, 255, 0.85);
-    }
-
+    /* ── Education stacked layout ── */
     .edu-section #edu-heading {
       margin-bottom: 42px;
     }
@@ -424,6 +388,190 @@
 
     .edu-section .para-container {
       padding-bottom: 44px;
+    }
+
+    /* Stack container */
+    .edu-stack {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 0;
+      max-width: 1400px;
+      margin: 16px auto 0;
+      padding: 0 24px;
+    }
+
+    /* Individual education entry */
+    .edu-entry {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      flex: 1;
+      padding: 48px 36px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(36px);
+      transition:
+        opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) var(--edu-delay, 0.05s),
+        transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) var(--edu-delay, 0.05s);
+    }
+
+    .edu-entry.edu-vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Vertical divider between side-by-side entries */
+    .edu-entry+.edu-entry::before {
+      content: "";
+      position: absolute;
+      top: 10%;
+      bottom: 10%;
+      left: 0;
+      width: 1px;
+      background: linear-gradient(180deg,
+          transparent 0%,
+          rgba(80, 180, 255, 0.18) 20%,
+          rgba(140, 80, 255, 0.22) 50%,
+          rgba(80, 180, 255, 0.18) 80%,
+          transparent 100%);
+    }
+
+    /* Logo area — no box, just the image floating */
+    .edu-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 110px;
+      /* fixed height so all three align */
+      margin-bottom: 28px;
+      flex-shrink: 0;
+      background: none;
+      border: none;
+    }
+
+    .edu-logo img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+    }
+
+    /* Wider logo for horizontal logos (e.g. University of Plymouth) */
+    .edu-logo.edu-logo-wide img {
+      width: 180px;
+      height: 80px;
+      /* shorter image, but container stays 110px */
+    }
+
+    /* Year badge */
+    .edu-year {
+      font-family: "Montserrat", sans-serif;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(80, 210, 255, 0.65);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Education level / degree */
+    .edu-degree {
+      font-family: "Squada One", sans-serif;
+      font-size: clamp(20px, 2.2vw, 30px);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    /* Institute name */
+    .edu-institute {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(9px, 0.9vw, 11px);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(80, 180, 255, 0.85);
+      margin-bottom: 8px;
+    }
+
+    /* Location */
+    .edu-location {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 24px;
+    }
+
+    .edu-location svg {
+      width: 10px;
+      height: 10px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    /* Description — matches bio-para font size */
+    .edu-desc {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(12px, 1.15vw, 13.5px);
+      font-weight: 400;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.015em;
+      margin-top: 28px;
+    }
+
+    /* Mobile: stack vertically, centered */
+    @media (max-width: 700px) {
+      .edu-stack {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+        margin-top: 24px;
+      }
+
+      .edu-entry {
+        width: 100%;
+        padding: 44px 0;
+      }
+
+      /* Horizontal divider for mobile stacking */
+      .edu-entry+.edu-entry::before {
+        top: 0;
+        bottom: auto;
+        left: 10%;
+        right: 10%;
+        width: auto;
+        height: 1px;
+        background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(80, 180, 255, 0.18) 20%,
+            rgba(140, 80, 255, 0.22) 50%,
+            rgba(80, 180, 255, 0.18) 80%,
+            transparent 100%);
+      }
+
+      .edu-logo {
+        width: 72px;
+        height: 72px;
+        border-radius: 16px;
+      }
     }
 
     /* ── Skills Section ── */
@@ -983,7 +1131,7 @@
               <div class="tl-desc-box">
                 <p class="tl-desc">
                   Specialized in gamified UI design and frontend development for <strong
-                    style="color: rgba(200, 160, 255, 0.9)">747.LIVE</strong>. Solving
+                    style="color: rgba(3, 187, 101, 0.9)">747.LIVE</strong>. Solving
                   complex UX challenges with critical thinking and technical troubleshooting, transforming standard
                   interfaces into engaging, player-centric experiences that boost retention and develop games for
                   user engagement.
@@ -1168,7 +1316,7 @@
                 <p class="tl-desc">
                   Contributed to immersive learning applications for children
                   on AR/VR gaming platforms. The team achieved
-                  <strong style="color: rgba(200, 160, 255, 0.9)">1st place</strong>
+                  <strong style="color: rgba(109, 215, 247, 0.9)">1st place</strong>
                   in an Inter-Company Global Gaming Solutions Competition for
                   developing <em>MetaLingo</em> — an Immersive Language
                   Learning Platform.
@@ -1277,7 +1425,7 @@
     <!-- ══════════ EDUCATION SECTION ══════════ -->
     <section class="exp-section edu-section" aria-label="Education">
       <div class="exp-section-heading" id="edu-heading">
-        <span class="exp-section-label">Education</span>
+        <span class="exp-section-label">Education Background</span>
         <h1 class="page-title">Academic History</h1>
       </div>
       <div class="para-container">
@@ -1289,131 +1437,81 @@
           determination to succeed.
         </p>
       </div>
-      <br><br><br>
+      <!-- edu stack -->
+      <div class="edu-stack">
 
-      <div class="timeline">
         <!-- 1: University of Plymouth / NSBM -->
-        <div class="tl-item tl-right" style="--tl-delay: 0.05s">
-          <div class="tl-empty"></div>
-          <div class="tl-node-wrap">
-            <div class="tl-node"></div>
+        <div class="edu-entry" style="--edu-delay: 0.05s" id="edu-entry-0">
+          <div class="edu-logo edu-logo-wide">
+            <img src="./Images/experience/Ply.png" alt="University of Plymouth logo" />
           </div>
-          <div class="tl-card-wrap">
-            <div class="tl-card">
-              <div class="tl-company-row">
-                <div class="tl-icon-wrap">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                  </svg>
-                </div>
-                <div class="tl-company-meta">
-                  <span class="tl-date">2020 — 2023</span>
-                  <p class="tl-role">BSc. (Hons) Computer Security</p>
-                  <span class="tl-company">University of Plymouth</span>
-                  <span class="tl-location">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    NSBM Green University, Sri Lanka
-                  </span>
-                </div>
-              </div>
-              <div class="tl-desc-box">
-                <p class="tl-desc">
-                  Accomplished a Second Class Honours degree in Computer
-                  Security from the University of Plymouth at NSBM Green
-                  University, demonstrating dedication and hard work
-                  throughout the academic journey.
-                </p>
-              </div>
-            </div>
-          </div>
+          <span class="edu-year">2020 — 2023</span>
+          <h3 class="edu-degree">BSc. (Hons) Computer Security</h3>
+          <span class="edu-institute">University of Plymouth</span>
+          <span class="edu-location">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            NSBM Green University, Sri Lanka
+          </span>
+          <p class="edu-desc">
+            Accomplished a <strong style="color: rgba(200, 160, 255, 0.9)">Second Class Honours</strong> degree in
+            Computer Security
+            from the University of Plymouth at <strong style="color: rgba(3, 187, 101, 0.9)">NSBM Green
+              University</strong>,
+            demonstrating dedication and hard work throughout the academic journey.
+          </p>
         </div>
 
         <!-- 2: Wayamba Royal College -->
-        <div class="tl-item tl-left" style="--tl-delay: 0.12s">
-          <div class="tl-card-wrap">
-            <div class="tl-card">
-              <div class="tl-company-row">
-                <div class="tl-icon-wrap">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                  </svg>
-                </div>
-                <div class="tl-company-meta">
-                  <span class="tl-date">2012 — 2020</span>
-                  <p class="tl-role">Secondary Education — O/L &amp; A/L</p>
-                  <span class="tl-company">Wayamba Royal College</span>
-                  <span class="tl-location">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    Kurunegala, Sri Lanka
-                  </span>
-                </div>
-              </div>
-              <div class="tl-desc-box">
-                <p class="tl-desc">
-                  Successfully completed both Ordinary Level (O/L) and
-                  Advanced Level (A/L) Examinations at Wayamba Royal College,
-                  Kurunegala, with outstanding academic and non-academic
-                  achievements.
-                </p>
-              </div>
-            </div>
+        <div class="edu-entry" style="--edu-delay: 0.15s" id="edu-entry-1">
+          <div class="edu-logo">
+            <img src="./Images/experience/WRC.png" alt="Wayamba Royal College logo" />
           </div>
-          <div class="tl-node-wrap">
-            <div class="tl-node"></div>
-          </div>
-          <div class="tl-empty"></div>
+          <span class="edu-year">2012 — 2020</span>
+          <h3 class="edu-degree">Secondary Education <br> O/L &amp; A/L</h3>
+          <span class="edu-institute">Wayamba Royal College</span>
+          <span class="edu-location">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Kurunegala, Sri Lanka
+          </span>
+          <p class="edu-desc">
+            Successfully completed both Ordinary Level (O/L) and Advanced Level
+            (A/L) Examinations at Wayamba Royal College, Kurunegala, with
+            outstanding academic and non-academic achievements.
+          </p>
         </div>
 
         <!-- 3: Wickramashila National School -->
-        <div class="tl-item tl-right" style="--tl-delay: 0.2s">
-          <div class="tl-empty"></div>
-          <div class="tl-node-wrap">
-            <div class="tl-node"></div>
+        <div class="edu-entry" style="--edu-delay: 0.25s" id="edu-entry-2">
+          <div class="edu-logo">
+            <img src="./Images/experience/wickra.png" alt="Wickramashila National School logo" />
           </div>
-          <div class="tl-card-wrap">
-            <div class="tl-card">
-              <div class="tl-company-row">
-                <div class="tl-icon-wrap">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                    <path d="M2 17l10 5 10-5" />
-                    <path d="M2 12l10 5 10-5" />
-                  </svg>
-                </div>
-                <div class="tl-company-meta">
-                  <span class="tl-date">2006 — 2011</span>
-                  <p class="tl-role">Primary Education</p>
-                  <span class="tl-company">Wickramashila National School</span>
-                  <span class="tl-location">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    Giriulla, Sri Lanka
-                  </span>
-                </div>
-              </div>
-              <div class="tl-desc-box">
-                <p class="tl-desc">
-                  Received a commendable primary education at Wickramashila
-                  National School, Giriulla, excelling in both academic and
-                  non-academic pursuits from an early age.
-                </p>
-              </div>
-            </div>
-          </div>
+          <span class="edu-year">2006 — 2011</span>
+          <h3 class="edu-degree">Primary Education <br>FOUNDATION STUDIES</h3>
+          <span class="edu-institute">Wickramashila National School</span>
+          <span class="edu-location">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Giriulla, Sri Lanka
+          </span>
+          <p class="edu-desc">
+            Received a commendable primary education at Wickramashila National
+            School, Giriulla, excelling in both academic and non-academic
+            pursuits from an early age.
+          </p>
         </div>
+
       </div>
-      <!-- /edu timeline -->
+      <!-- /edu stack -->
     </section>
+    <br><br>
 
     <!-- ══════════ COSMIC DIVIDER ══════════ -->
     <div class="cosmic-divider" aria-hidden="true">
@@ -2288,6 +2386,10 @@
       });
       document.querySelectorAll(".skill-panel").forEach((el) => {
         el.dataset.visClass = "sk-vis";
+        io.observe(el);
+      });
+      document.querySelectorAll(".edu-entry").forEach((el) => {
+        el.dataset.visClass = "edu-vis";
         io.observe(el);
       });
     })();
