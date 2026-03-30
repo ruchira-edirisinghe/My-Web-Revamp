@@ -2160,8 +2160,10 @@ footer {
 }
 
 /* ── Cursor ── */
-* {
-  cursor: none !important;
+@media (min-width: 901px) {
+  * {
+    cursor: none !important;
+  }
 }
 
 #cursor-dot {
@@ -2176,6 +2178,14 @@ footer {
   z-index: 9999;
   transform: translate(-50%, -50%);
   transition: opacity 0.4s ease;
+}
+
+/* ── Hide custom cursor elements on mobile / touch devices ── */
+@media (max-width: 900px) {
+  #cursor-dot,
+  #cursor-canvas {
+    display: none !important;
+  }
 }
 
 /* ── Click particles ── */

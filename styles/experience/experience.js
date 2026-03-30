@@ -507,99 +507,10 @@
           p.addEventListener('animationend', () => p.remove());
         }
       }
-      document.addEventListener('click', e => { playClick(false); spawnParticles(e.clientX, e.clientY); });
-
-      /* ══════════════════════════════════════
-         MOBILE MENU TOGGLE
-      ══════════════════════════════════════ */
-      const menuBtn = document.getElementById('menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const menuCloseMob = document.getElementById('menu-close-mobile');
-      const menuLinks = document.querySelectorAll('.mobile-menu-link');
-
-      // Detect current page and mark active link
-      const currentPage = document.body.dataset.page || 'about';
-      menuLinks.forEach(link => {
-        link.classList.toggle('active', link.dataset.page === currentPage);
-      });
-
-      // Inject keyframes once
-      if (!document.getElementById('mobile-menu-keyframes')) {
-        const style = document.createElement('style');
-        style.id = 'mobile-menu-keyframes';
-        style.textContent = `
-        @keyframes mobileMenuPop {
-          0%   { opacity:0; transform:scale(0.2); filter:blur(12px); }
-          50%  { opacity:1; transform:scale(1.08); filter:blur(0px); }
-          70%  { transform:scale(0.97); }
-          85%  { transform:scale(1.02); }
-          100% { opacity:1; transform:scale(1); filter:blur(0px); }
-        }
-        @keyframes mobileMenuShrink {
-          0%   { opacity:1; transform:scale(1);   filter:blur(0px); }
-          15%  { transform:scale(1.03); }
-          30%  { transform:scale(0.96); }
-          100% { opacity:0; transform:scale(0.2); filter:blur(12px); }
-        }
-      `;
-        document.head.appendChild(style);
-      }
-
-      function openMobileMenu() {
-        mobileMenu.classList.add('open');
-        mobileMenu.setAttribute('aria-hidden', 'false');
-        menuBtn.classList.add('is-open');
-        menuBtn.setAttribute('aria-expanded', 'true');
-        menuCloseMob.classList.add('visible');
-        document.body.classList.add('menu-open');
-
-        menuLinks.forEach((link, i) => {
-          link.style.animation = 'none';
-          link.style.opacity = '0';
-          link.style.transform = 'scale(0.2)';
-          link.style.filter = 'blur(12px)';
-          void link.offsetWidth;
-          link.style.animation = `mobileMenuPop 0.6s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.09 + 0.04}s forwards`;
-        });
-      }
-
-      function closeMobileMenu() {
-        const total = menuLinks.length;
-        menuLinks.forEach((link, i) => {
-          link.style.animation = 'none';
-          void link.offsetWidth;
-          link.style.animation = `mobileMenuShrink 0.5s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.07}s forwards`;
-        });
-
-        const closeDur = (total - 1) * 70 + 500;
-        setTimeout(() => {
-          mobileMenu.classList.remove('open');
-          mobileMenu.setAttribute('aria-hidden', 'true');
-          menuBtn.classList.remove('is-open');
-          menuBtn.setAttribute('aria-expanded', 'false');
-          menuCloseMob.classList.remove('visible');
-          document.body.classList.remove('menu-open');
-        }, closeDur - 150);
-      }
-
-      menuBtn.addEventListener('click', e => {
-        e.stopPropagation();
-        mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
-      });
-
-      menuCloseMob.addEventListener('click', e => {
-        e.stopPropagation();
-        closeMobileMenu();
-      });
-
-      // Close on overlay backdrop click
-      mobileMenu.addEventListener('click', e => {
-        if (e.target === mobileMenu) closeMobileMenu();
-      });
-
-      // Close on Escape
-      document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMobileMenu();
+      document.addEventListener('click', e => {
+        // Don't fire particles/sounds for menu button or menu overlay clicks
+        if (e.target.closest('#menu-btn') || e.target.closest('#menu-close-mobile') || e.target.closest('#mobile-menu')) return;
+        playClick(false); spawnParticles(e.clientX, e.clientY);
       });
 
     })();
