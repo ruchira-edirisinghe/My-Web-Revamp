@@ -40,28 +40,33 @@
 
   /* ── Start music ── */
   async function startMusic(force = false) {
-    if (musicStarted && !force && !bgAudio.paused) return;
+    if (musicStarted && !force) return;
 
     try {
       await getAC().resume();
 
-      const savedTime  = parseFloat(sessionStorage.getItem('musicTime')  || '0');
-      const savedMuted = sessionStorage.getItem('musicMuted') === 'true';
+      const savedTime = parseFloat(sessionStorage.getItem('musicTime') || '0');
+      // When forced by user interaction, always play — never let saved muted state block it
+      const shouldMute = !force && sessionStorage.getItem('musicMuted') === 'true';
 
-      if (bgAudio.paused) {
-        bgAudio.muted  = false;
-        bgAudio.volume = 0;
-        if (savedTime > 0) bgAudio.currentTime = savedTime;
-        if (!savedMuted) await bgAudio.play();
+      bgAudio.muted  = false;
+      bgAudio.volume = 0;
+      if (savedTime > 0) bgAudio.currentTime = savedTime;
+
+      if (!shouldMute) {
+        await bgAudio.play();
+        // Clear any stale muted flag so future page loads don't inherit it
+        sessionStorage.setItem('musicMuted', 'false');
       }
 
       musicStarted    = true;
-      musicMuted      = savedMuted;
-      spectrumPlaying = !savedMuted;
-      if (!savedMuted) musicBtn.classList.add('playing');
-      if (!savedMuted) fadeAudioTo(MUSIC_VOLUME, 1800);
+      musicMuted      = shouldMute;
+      spectrumPlaying = !shouldMute;
+      if (!shouldMute) musicBtn.classList.add('playing');
+      if (!shouldMute) fadeAudioTo(MUSIC_VOLUME, 1800);
+
     } catch (err) {
-      console.warn('Playback blocked until valid user interaction.', err);
+      console.warn('Playback blocked:', err);
     }
   }
 
@@ -97,38 +102,37 @@
   });
 
   /* ── Start triggers ──
-     Desktop: hover over photo | Mobile/touch: first touch anywhere
+     Desktop: hover over photo OR any button/link, OR click anywhere
+     Mobile/touch: first touch anywhere
   ── */
   function isTouchDevice() {
     return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
   }
 
-  function startMusicFromPhotoHover() {
+  let musicTriggered = false;
+  function triggerMusic() {
+    if (musicTriggered) return;
+    musicTriggered = true;
     startMusic(true);
-    if (photoWrapper) photoWrapper.removeEventListener('mouseenter', startMusicFromPhotoHover);
   }
 
-  function startMusicFromTouch() {
-    startMusic(true);
-    window.removeEventListener('touchstart',  startMusicFromTouch);
-    window.removeEventListener('pointerdown', startMusicFromPointerTouch);
-  }
-
-  function startMusicFromPointerTouch(e) {
-    if (e.pointerType === 'touch') {
-      startMusic(true);
-      window.removeEventListener('touchstart',  startMusicFromTouch);
-      window.removeEventListener('pointerdown', startMusicFromPointerTouch);
-    }
-  }
-
+  // Photo hover (desktop)
   if (photoWrapper) {
-    photoWrapper.addEventListener('mouseenter', startMusicFromPhotoHover, { once: true });
+    photoWrapper.addEventListener('mouseenter', triggerMusic, { once: true });
   }
 
+  // Any button / interactive element hover (desktop)
+  document.querySelectorAll('a, button, .btn, .menu-item').forEach(el => {
+    el.addEventListener('mouseenter', triggerMusic, { once: true });
+  });
+
+  // Any click anywhere (desktop) — the most reliable fallback
+  window.addEventListener('click', triggerMusic, { once: true });
+
+  // Touch devices: first touch or pointer
   if (isTouchDevice()) {
-    window.addEventListener('touchstart',  startMusicFromTouch,        { once: true, passive: true });
-    window.addEventListener('pointerdown', startMusicFromPointerTouch, { once: true, passive: true });
+    window.addEventListener('touchstart',  triggerMusic, { once: true, passive: true });
+    window.addEventListener('pointerdown', triggerMusic, { once: true, passive: true });
   }
 
   /* ════════════════════════════════════════

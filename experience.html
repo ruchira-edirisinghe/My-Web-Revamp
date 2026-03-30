@@ -396,9 +396,10 @@
       flex-direction: row;
       align-items: flex-start;
       gap: 0;
-      max-width: 1400px;
+      width: 110%;
+      max-width: 110%;
       margin: 16px auto 0;
-      padding: 0 24px;
+      padding: 0;
     }
 
     /* Individual education entry */
@@ -457,11 +458,19 @@
       object-fit: contain;
     }
 
-    /* Wider logo for horizontal logos (e.g. University of Plymouth) */
+    /* Wide logo — same bare floating treatment as other logos */
+    .edu-logo.edu-logo-wide {
+      background: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      width: auto;
+    }
+
     .edu-logo.edu-logo-wide img {
-      width: 180px;
-      height: 80px;
-      /* shorter image, but container stays 110px */
+      width: 145px;
+      height: 145px;
+      object-fit: contain;
     }
 
     /* Year badge */
@@ -1446,7 +1455,7 @@
             <img src="./Images/experience/Ply.png" alt="University of Plymouth logo" />
           </div>
           <span class="edu-year">2020 — 2023</span>
-          <h3 class="edu-degree">BSc. (Hons) Computer Security</h3>
+          <h3 class="edu-degree">BSc. (Honors) <br>Computer Security</h3>
           <span class="edu-institute">University of Plymouth</span>
           <span class="edu-location">
             <svg viewBox="0 0 24 24">
@@ -1502,9 +1511,8 @@
             Giriulla, Sri Lanka
           </span>
           <p class="edu-desc">
-            Received a commendable primary education at Wickramashila National
-            School, Giriulla, excelling in both academic and non-academic
-            pursuits from an early age.
+            Accomplished primary education with a focus on academic excellence and holistic growth. Engaged in a wide
+            range of activities, achieving commendable results and developing a disciplined approach to learning.
           </p>
         </div>
 

@@ -2,7 +2,7 @@
    style.css — Ruchira Edirisinghe Portfolio
    ════════════════════════════════════════ */
 
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; cursor:none; }
 
 :root {
   --bg: #02030a;
