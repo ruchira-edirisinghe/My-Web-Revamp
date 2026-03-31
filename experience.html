@@ -1233,6 +1233,175 @@
     }
 
 
+    /* ══════════════════════════════════════
+       VOLUNTEER SECTION — IMPACT CARDS
+    ══════════════════════════════════════ */
+    .vol-section {
+      margin-top: 44px;
+    }
+
+    .vol-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+      width: 100%;
+      perspective: 1000px;
+      /* For 3D tilt effect */
+    }
+
+    .vol-card {
+      background: rgba(12, 14, 28, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+      position: relative;
+      transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+      opacity: 0;
+      transform: translateY(30px) rotateX(5deg);
+    }
+
+    .vol-card.vol-vis {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+    }
+
+    /* 3D Tilt & Glow on Hover */
+    .vol-card:hover {
+      transform: translateY(-12px) rotateY(5deg) rotateX(2deg);
+      border-color: var(--vol-color, rgba(140, 210, 255, 0.6));
+      background: rgba(16, 20, 40, 0.85);
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 20px var(--vol-glow, rgba(140, 210, 255, 0.15));
+    }
+
+    /* Specular Light Top Edge */
+    .vol-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      pointer-events: none;
+    }
+
+    /* "Service Medal" Badge */
+    .vol-badge {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid var(--vol-color, rgba(140, 210, 255, 0.3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: transform 0.4s ease;
+      box-shadow: inset 0 0 15px var(--vol-glow, rgba(140, 210, 255, 0.1));
+    }
+
+    /* Outer glowing ring for the "Medal" */
+    .vol-badge::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 1px dashed var(--vol-color, rgba(140, 210, 255, 0.2));
+      border-radius: 50%;
+      animation: volRotate 12s linear infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes volRotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .vol-card:hover .vol-badge {
+      transform: scale(1.1) rotate(5deg);
+      border-color: var(--vol-color, rgba(140, 210, 255, 0.8));
+    }
+
+    .vol-logo {
+      width: 75%;
+      height: 75%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+    }
+
+    .vol-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .vol-role {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .vol-org {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--vol-color, rgba(140, 210, 255, 0.7));
+    }
+
+    .vol-date {
+      font-family: 'Squada One', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      color: rgba(255, 255, 255, 0.35);
+      margin-top: 4px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .vol-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .vol-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .vol-card {
+        padding: 24px 16px;
+      }
+
+      .vol-badge {
+        width: 56px;
+        height: 56px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .vol-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ── Responsive breakpoints ── */
     @media (max-width: 1100px) {
       .cert-grid {
@@ -1263,6 +1432,14 @@
       .cert-grid {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
+      }
+      .testi-progress-fill.run-anim {
+        animation: testiProgress 7000ms linear forwards;
+      }
+
+      @keyframes testiProgress {
+        from { width: 0%; }
+        to { width: 100%; }
       }
     }
   </style>
@@ -2229,6 +2406,7 @@
       </div>
     </div>
 
+
     <!-- ══════════ SKILLS SECTION ══════════ -->
     <section class="skills-section" aria-label="Skills">
       <div class="exp-section-heading" id="skills-heading">
@@ -2430,6 +2608,191 @@
         </div>
       </div>
     </section>
+    <br><br><br>
+
+    <!-- ══════════ COSMIC DIVIDER ══════════ -->
+    <div class="cosmic-divider" aria-hidden="true">
+      <div class="cosmic-divider-sweep"></div>
+      <div class="cosmic-divider-core">
+        <span class="cosmic-divider-orb orb-sm"></span>
+        <span class="cosmic-divider-orb"></span>
+        <span class="cosmic-divider-star">✦</span>
+        <span class="cosmic-divider-orb"></span>
+        <span class="cosmic-divider-orb orb-sm"></span>
+      </div>
+    </div>
+
+    <br><br><br>
+
+    <!-- ══════════ VOLUNTEER SECTION ══════════ -->
+    <section class="vol-section exp-section" aria-label="Volunteering Experience">
+      <div class="exp-section-heading" id="vol-heading">
+        <span class="exp-section-label">Community Impact</span>
+        <h2 class="page-title">Voluntary Contributions</h2>
+      </div>
+
+      <div class="para-container">
+        <p class="bio-para" style="--para-delay:0.1s;">
+          Giving back to the community has always been a core part of my journey. Whether through
+          <strong style="color: rgba(100, 220, 160, 0.9)">mentorship</strong>,
+          <strong style="color: rgba(140, 210, 255, 0.9)">open-source contributions</strong>, or
+          <strong style="color: rgba(200, 160, 255, 0.9)">social initiatives</strong>, I strive to use my skills to
+          empower others and create meaningful change. These experiences have shaped my perspective on
+          the power of collective effort and technology for good.
+        </p>
+      </div>
+
+      <div class="vol-grid">
+
+        <!-- 1: Mozilla -->
+        <div class="vol-card" style="--vol-color:rgba(255,78,80,0.8);--vol-glow:rgba(255,78,80,0.2);--vol-delay:0.05s;">
+          <div class="vol-badge">
+            <img src="./Images/experience/isaca.png" alt="Mozilla" class="vol-logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="cert-initials" style="display:none;color:rgba(255,78,80,1);">MF</span>
+          </div>
+          <div class="vol-info">
+            <p class="vol-role">Editor In Chief</p>
+            <span class="vol-org">ISACA NSBM Student Group</span>
+            <span class="vol-date">2022 — 2023</span>
+          </div>
+        </div>
+
+        <!-- 2: Design Buddies -->
+        <div class="vol-card"
+          style="--vol-color:rgba(180,100,255,0.8);--vol-glow:rgba(180,100,255,0.2);--vol-delay:0.1s;">
+          <div class="vol-badge">
+            <img src="./Images/experience/dns.png" alt="Design Buddies" class="vol-logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="cert-initials" style="display:none;color:rgba(180,100,255,1);">DB</span>
+          </div>
+          <div class="vol-info">
+            <p class="vol-role">Associate Vice President</p>
+            <span class="vol-org">Department of Network And Security - NSBM</span>
+            <span class="vol-date">2022 — 2023</span>
+          </div>
+        </div>
+
+        <!-- 3: Red Cross -->
+        <div class="vol-card" style="--vol-color:rgba(255,50,50,0.8);--vol-glow:rgba(255,50,50,0.2);--vol-delay:0.15s;">
+          <div class="vol-badge">
+            <img src="./Images/experience/foss.png" alt="foss" class="vol-logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="cert-initials" style="display:none;color:rgba(255,50,50,1);">RC</span>
+          </div>
+          <div class="vol-info">
+            <p class="vol-role">Coordinator Of Volunteers</p>
+            <span class="vol-org">FOSS Community of NSBM</span>
+            <span class="vol-date">2022 — 2023</span>
+          </div>
+        </div>
+
+        <!-- 4: Code for Good -->
+        <div class="vol-card"
+          style="--vol-color:rgba(100,220,160,0.8);--vol-glow:rgba(100,220,160,0.2);--vol-delay:0.2s;">
+          <div class="vol-badge">
+            <img src="./Images/experience/foss.png" alt="foss" class="vol-logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="cert-initials" style="display:none;color:rgba(100,220,160,1);">CG</span>
+          </div>
+          <div class="vol-info">
+            <p class="vol-role">Community Coordinator</p>
+            <span class="vol-org">FOSS Community of NSBM</span>
+            <span class="vol-date">2021 — 2023</span>
+          </div>
+        </div>
+
+        <!-- 5: Amnesty International -->
+        <div class="vol-card"
+          style="--vol-color:rgba(255,255,0,0.8);--vol-glow:rgba(255,255,0,0.15);--vol-delay:0.25s;">
+          <div class="vol-badge" style="border-style: solid;">
+            <img src="./Images/experience/foss.png" alt="foss" class="vol-logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="cert-initials" style="display:none;color:rgba(255,255,0,1);">AI</span>
+          </div>
+          <div class="vol-info">
+            <p class="vol-role">Volunteer</p>
+            <span class="vol-org">FOSS Community of NSBM</span>
+            <span class="vol-date">2020 — 2023</span>
+          </div>
+        </div>
+
+        <!-- 6: Animal Shelter -->
+        <div class="vol-card"
+          style="--vol-color:rgba(140,210,255,0.8);--vol-glow:rgba(140,210,255,0.2);--vol-delay:0.05s;">
+          <div class="vol-badge">
+            <img src="./Images/experience/wrc-round.png" alt="Animal Shelter" class="vol-logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="cert-initials" style="display:none;color:rgba(140,210,255,1);">AS</span>
+          </div>
+          <div class="vol-info">
+            <p class="vol-role">Senior Prefect</p>
+            <span class="vol-org">Wayamba Royal College</span>
+            <span class="vol-date">2018 — 2020</span>
+          </div>
+        </div>
+
+        <!-- 7: GreenTech -->
+        <div class="vol-card" style="--vol-color:rgba(0,255,127,0.8);--vol-glow:rgba(0,255,127,0.2);--vol-delay:0.1s;">
+          <div class="vol-badge">
+            <img src="./Images/experience/int-blue.png" alt="GreenTech" class="vol-logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="cert-initials" style="display:none;color:rgba(0,255,127,1);">GT</span>
+          </div>
+          <div class="vol-info">
+            <p class="vol-role">Director of Club Service</p>
+            <span class="vol-org">Interact Club Of Wayamba Royal Collage</span>
+            <span class="vol-date">2019 — 2020</span>
+          </div>
+        </div>
+
+        <!-- 8: UNICEF -->
+        <div class="vol-card"
+          style="--vol-color:rgba(30,144,255,0.8);--vol-glow:rgba(30,144,255,0.2);--vol-delay:0.15s;">
+          <div class="vol-badge">
+            <img src="./Images/experience/int-blue.png" alt="UNICEF" class="vol-logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="cert-initials" style="display:none;color:rgba(30,144,255,1);">U</span>
+          </div>
+          <div class="vol-info">
+            <p class="vol-role">Assistant Director Of Community Service</p>
+            <span class="vol-org">Interact Club Of Wayamba Royal Collage</span>
+            <span class="vol-date">2018 — 2019</span>
+          </div>
+        </div>
+
+        <!-- 9: Rotary -->
+        <div class="vol-card" style="--vol-color:rgba(255,165,0,0.8);--vol-glow:rgba(255,165,0,0.2);--vol-delay:0.2s;">
+          <div class="vol-badge">
+            <img src="./Images/experience/int.png" alt="Rotary" class="vol-logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="cert-initials" style="display:none;color:rgba(255,165,0,1);">RI</span>
+          </div>
+          <div class="vol-info">
+            <p class="vol-role">Official Photographer</p>
+            <span class="vol-org">Interact Club of Wayamba Royal Collage</span>
+            <span class="vol-date">2018 — 2020</span>
+          </div>
+        </div>
+
+        <!-- 10: Empowerment -->
+        <div class="vol-card"
+          style="--vol-color:rgba(255,105,180,0.8);--vol-glow:rgba(255,105,180,0.2);--vol-delay:0.25s;">
+          <div class="vol-badge">
+            <img src="./Images/experience/rps.png" alt="Empowerment" class="vol-logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="cert-initials" style="display:none;color:rgba(255,105,180,1);">GE</span>
+          </div>
+          <div class="vol-info">
+            <p class="vol-role">Official Photographer</p>
+            <span class="vol-org">Royalists Photographic Society (WRC)</span>
+            <span class="vol-date">2017 — 2020</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <br><br>
 
     <!-- ══════════ COSMIC DIVIDER ══════════ -->
     <div class="cosmic-divider" aria-hidden="true" style="margin-top: 80px">
@@ -2529,7 +2892,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Suraji Ekanayake</span>
-                <span class="testi-role">UI/UX Designer — Elysian Crest</span>
+                <span class="testi-role">UI/UX Designer — Freelance</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -2568,8 +2931,8 @@
               <img src="./Images/testimonials/sandakelum.jpg" alt="Sandakelum" class="testi-author-avatar" />
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
-                <span class="testi-name">Sandakelum Perera</span>
-                <span class="testi-role">Software Engineer — IFS</span>
+                <span class="testi-name">Sandakelum Senevirathne</span>
+                <span class="testi-role">Tech Lead — ZUSE TECHNOLOGIES</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -2608,8 +2971,8 @@
               <img src="./Images/testimonials/janith.jpg" alt="Janith" class="testi-author-avatar" />
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
-                <span class="testi-name">Janith Lakruwan</span>
-                <span class="testi-role">Full Stack Developer — 99X Technology</span>
+                <span class="testi-name">Janith Perera</span>
+                <span class="testi-role">Software Engineer — RACEDATA</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -2650,7 +3013,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Wenupa Mandinu</span>
-                <span class="testi-role">Cyber Security Engineer — LankaCom</span>
+                <span class="testi-role">Cyber Security Engineer — Freelance</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -2690,7 +3053,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Avishka Dilshan</span>
-                <span class="testi-role">DevOps Engineer — Cambio</span>
+                <span class="testi-role">DevOps Engineer — LSEG</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3100,85 +3463,153 @@
         el.dataset.visClass = "cert-vis";
         io.observe(el);
       });
+      document.querySelectorAll(".vol-card").forEach((el) => {
+        el.dataset.visClass = "vol-vis";
+        io.observe(el);
+      });
     })();
 
     /* ── Testimonials slider ── */
     (function () {
-      const slides = Array.from(document.querySelectorAll(".testi-slide"));
-      const avatars = Array.from(
-        document.querySelectorAll(".testi-avatar-thumb"),
-      );
+      const DURATION = 7000;
+      const N = document.querySelectorAll(".testi-slide").length;
+      let current = 0;
+      let timer = null;
+      let wordTimers = [];
+
+      const slides = document.querySelectorAll(".testi-slide");
+      const avs = document.querySelectorAll(".testi-avatar-thumb");
       const curEl = document.getElementById("testi-cur");
-      const progEl = document.getElementById("testi-prog");
-      const prevBtn = document.getElementById("testi-prev");
-      const nextBtn = document.getElementById("testi-next");
-      const INTERVAL = 6000;
-      let current = 0,
-        timer,
-        startTime,
-        paused = false;
+      const prog = document.getElementById("testi-prog");
+      const shell = document.getElementById("testi-shell");
 
-      function goTo(idx) {
-        slides[current].classList.remove("active");
-        slides[current].classList.add("exit");
-        setTimeout(
-          () =>
-            slides[current < slides.length ? current : 0].classList.remove(
-              "exit",
-            ),
-          550,
-        );
-        avatars[current].classList.remove("current-av");
-        current = (idx + slides.length) % slides.length;
+      function pad(n) {
+        return String(n + 1).padStart(2, "0");
+      }
+
+      /* Wrap each word in a span on first access */
+      function prepareQuote(slide) {
+        const p = slide.querySelector(".testi-quote");
+        if (!p || p.dataset.wrapped) return;
+        const tokens = p.innerText.split(/(\s+)/);
+        p.innerHTML = tokens
+          .map((token) => {
+            if (/^\s+$/.test(token)) return token;
+            return '<span class="tq-word">' + token + "</span>";
+          })
+          .join("");
+        p.dataset.wrapped = "1";
+      }
+
+      /* Cancel any pending word-reveal timers */
+      function cancelWordTimers() {
+        wordTimers.forEach((t) => clearTimeout(t));
+        wordTimers = [];
+      }
+
+      /* Hide all words in a slide instantly */
+      function resetWords(slide) {
+        slide.querySelectorAll(".tq-word").forEach((w) => {
+          w.classList.remove("tq-vis");
+        });
+      }
+
+      /* Staggered word reveal */
+      function animateWords(slide) {
+        cancelWordTimers();
+        const words = slide.querySelectorAll(".tq-word");
+        const stagger = Math.min(30, 2000 / Math.max(words.length, 1));
+        words.forEach((w, i) => {
+          const delay = 120 + i * stagger;
+          w.style.setProperty("--wd", delay + "ms");
+          wordTimers.push(
+            setTimeout(() => {
+              w.classList.add("tq-vis");
+            }, delay),
+          );
+        });
+      }
+
+      /* Reset + restart progress bar visuals */
+      function resetProgressBar() {
+        prog.classList.remove("run-anim");
+        void prog.offsetWidth; // Force reflow
+        prog.classList.add("run-anim");
+      }
+
+      function showSlide(idx) {
+        const prev = current;
+        current = ((idx % N) + N) % N;
+
+        prepareQuote(slides[current]);
+        resetWords(slides[prev]);
+        cancelWordTimers();
+
+        // Slide exit
+        slides[prev].classList.remove("active");
+        slides[prev].classList.add("exit");
+        setTimeout(() => {
+          slides[prev].classList.remove("exit");
+        }, 600);
+
+        // Slide enter
         slides[current].classList.add("active");
-        avatars[current].classList.add("current-av");
-        curEl.textContent = String(current + 1).padStart(2, "0");
-        resetTimer();
+        animateWords(slides[current]);
+
+        // Counter
+        curEl.style.opacity = "0";
+        setTimeout(() => {
+          curEl.textContent = pad(current);
+          curEl.style.opacity = "1";
+        }, 180);
+
+        // Avatar highlights
+        avs.forEach((a, i) => {
+          a.classList.toggle("current-av", i === current);
+        });
+
+        resetProgressBar();
       }
 
-      function tick() {
-        if (paused) return;
-        const elapsed = Date.now() - startTime;
-        const pct = Math.min((elapsed / INTERVAL) * 100, 100);
-        progEl.style.width = pct + "%";
-        if (elapsed >= INTERVAL) {
-          goTo(current + 1);
-        } else {
-          timer = requestAnimationFrame(tick);
-        }
+      function startAuto() {
+        clearInterval(timer);
+        timer = setInterval(() => {
+          showSlide(current + 1);
+        }, DURATION);
       }
 
-      function resetTimer() {
-        cancelAnimationFrame(timer);
-        startTime = Date.now();
-        progEl.style.transition = "none";
-        progEl.style.width = "0%";
-        requestAnimationFrame(() => {
-          progEl.style.transition = "";
-          timer = requestAnimationFrame(tick);
+      // Prev / Next
+      const pBtn = document.getElementById("testi-prev");
+      const nBtn = document.getElementById("testi-next");
+      if (pBtn) {
+        pBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          showSlide(current - 1);
+          startAuto();
+        });
+      }
+      if (nBtn) {
+        nBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          showSlide(current + 1);
+          startAuto();
         });
       }
 
-      prevBtn.addEventListener("click", () => goTo(current - 1));
-      nextBtn.addEventListener("click", () => goTo(current + 1));
-      avatars.forEach((av, i) => av.addEventListener("click", () => goTo(i)));
-
-      document
-        .getElementById("testi-shell")
-        .addEventListener("mouseenter", () => {
-          paused = true;
-          cancelAnimationFrame(timer);
+      // Avatar clicks
+      avs.forEach((av, i) => {
+        av.addEventListener("click", () => {
+          showSlide(i);
+          startAuto();
         });
-      document
-        .getElementById("testi-shell")
-        .addEventListener("mouseleave", () => {
-          paused = false;
-          startTime =
-            Date.now() - (parseFloat(progEl.style.width) / 100) * INTERVAL;
-          timer = requestAnimationFrame(tick);
-        });
+      });
 
-      resetTimer();
+      // Boot
+      prepareQuote(slides[0]);
+      slides[0].classList.add("active");
+      animateWords(slides[0]);
+      startAuto();
+      resetProgressBar();
     })();
 
     /* ── Beautiful Wavy SVM Spine ── */
