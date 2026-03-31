@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Experience â€” Ruchira Edirisinghe</title>
+  <title>Experience - Ruchira Edirisinghe</title>
   <link rel="icon" type="image/x-icon" href="./images/favicon/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,9 +13,9 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="./styles/experience/expadditional.css" />
   <style>
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       EXPERIENCE PAGE â€” ADDITIONAL STYLES
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    /* --------------------------------------
+       EXPERIENCE PAGE - ADDITIONAL STYLES
+    -------------------------------------- */
 
     /* â”€â”€ Timeline container â”€â”€ */
     .exp-section {
@@ -351,7 +351,7 @@
       flex-shrink: 0;
     }
 
-    /* Description box â€” separate darker panel below */
+    /* Description box - separate darker panel below */
     .tl-desc-box {
       margin-top: 28px;
       background: rgba(0, 0, 0, 0.25);
@@ -444,7 +444,7 @@
           transparent 100%);
     }
 
-    /* Logo area â€” no box, just the image floating */
+    /* Logo area - no box, just the image floating */
     .edu-logo {
       display: flex;
       align-items: center;
@@ -463,7 +463,7 @@
       object-fit: contain;
     }
 
-    /* Wide logo â€” same bare floating treatment as other logos */
+    /* Wide logo - same bare floating treatment as other logos */
     .edu-logo.edu-logo-wide {
       background: none;
       border: none;
@@ -540,7 +540,7 @@
       flex-shrink: 0;
     }
 
-    /* Description â€” matches bio-para font size */
+    /* Description - matches bio-para font size */
     .edu-desc {
       font-family: "Montserrat", sans-serif;
       font-size: clamp(12px, 1.15vw, 13.5px);
@@ -631,6 +631,83 @@
       mask-image: linear-gradient(to bottom,
           transparent 0%,
           black 10%);
+    }
+
+
+
+    /* Mobile Skills Grid (Static 4-Column) */
+    @media (max-width: 768px) {
+      .skills-universe {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 60px 5px !important;
+        height: auto !important;
+        padding: 0 10px 30px !important;
+        /* Reduced top padding */
+        margin-top: 0px !important;
+        /* Pull it even closer on mobile */
+        overflow: visible !important;
+        perspective: none !important;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+      }
+
+      /* Hide extra structural spacing in the skills section only */
+      .skills-section>br {
+        display: none !important;
+      }
+
+      .nebula-node-wrap {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+
+      .nebula-node {
+        width: 48px !important;
+        height: 48px !important;
+        margin: 0 auto !important;
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transform: none !important;
+        cursor: default !important;
+        border-radius: 50% !important;
+        aspect-ratio: 1 / 1 !important;
+      }
+
+      .nebula-cloud {
+        width: 150% !important;
+        height: 150% !important;
+        left: -25% !important;
+        top: -25% !important;
+      }
+
+      .ms-label {
+        position: static !important;
+        opacity: 0.9 !important;
+        transform: none !important;
+        font-size: 9.5px !important;
+        text-align: center !important;
+        margin-top: 6px !important;
+        max-width: 85px !important;
+        line-height: 1.2 !important;
+      }
+
+      .nebula-cloud,
+      .nebula-ring {
+        display: none !important;
+        /* Simplify for mobile performance */
+      }
+
+      /* Limit to 12 skills (3 full rows of 4) */
+      .nebula-node-wrap:nth-child(n+13) {
+        display: none !important;
+      }
     }
 
     .nebula-node-wrap {
@@ -916,9 +993,9 @@
       }
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* --------------------------------------
        LICENSES & CERTIFICATIONS SECTION
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    -------------------------------------- */
     .cert-section {
       width: 95%;
       max-width: 1300px;
@@ -933,7 +1010,7 @@
       width: 100%;
     }
 
-    /* 4-column scrollable grid â€” shows 3 rows, scroll for more */
+    /* 4-column scrollable grid - shows 3 rows, scroll for more */
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1084,7 +1161,7 @@
       pointer-events: none;
     }
 
-    /* Logo badge â€” white app-icon box */
+    /* Logo badge - white app-icon box */
     .cert-badge {
       width: 62px;
       height: 62px;
@@ -1123,7 +1200,7 @@
       justify-content: center;
     }
 
-    /* Text info block â€” full width so text wraps properly */
+    /* Text info block - full width so text wraps properly */
     .cert-info {
       display: flex;
       flex-direction: column;
@@ -1161,9 +1238,9 @@
     }
 
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       VOLUNTEER SECTION â€” IMPACT CARDS
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    /* --------------------------------------
+       VOLUNTEER SECTION - IMPACT CARDS
+    -------------------------------------- */
     .vol-section {
       margin-top: 44px;
     }
@@ -1199,14 +1276,16 @@
       transform: translateY(0) rotateX(0);
     }
 
-    /* 3D Tilt & Glow on Hover */
-    .vol-card:hover {
-      transform: translateY(-12px) rotateY(5deg) rotateX(2deg);
-      border-color: var(--vol-color, rgba(140, 210, 255, 0.6));
-      background: rgba(16, 20, 40, 0.85);
-      box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.4),
-        0 0 20px var(--vol-glow, rgba(140, 210, 255, 0.15));
+    /* 3D Tilt & Glow on Hover (Desktop Only) */
+    @media (min-width: 769px) {
+      .vol-card:hover {
+        transform: translateY(-12px) rotateY(5deg) rotateX(2deg);
+        border-color: var(--vol-color, rgba(140, 210, 255, 0.6));
+        background: rgba(16, 20, 40, 0.85);
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.4),
+          0 0 20px var(--vol-glow, rgba(140, 210, 255, 0.15));
+      }
     }
 
     /* Specular Light Top Edge */
@@ -1257,9 +1336,11 @@
       }
     }
 
-    .vol-card:hover .vol-badge {
-      transform: scale(1.1) rotate(5deg);
-      border-color: var(--vol-color, rgba(140, 210, 255, 0.8));
+    @media (min-width: 769px) {
+      .vol-card:hover .vol-badge {
+        transform: scale(1.1) rotate(5deg);
+        border-color: var(--vol-color, rgba(140, 210, 255, 0.8));
+      }
     }
 
     .vol-logo {
@@ -1382,14 +1463,14 @@
 <body data-page="experience">
   <canvas id="space-canvas"></canvas>
 
-  <!-- â•â•â•â•â•â•â•â•â•â• NAV FADE MASK â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ---------- NAV FADE MASK ---------- -->
   <div id="nav-fade-mask"></div>
 
-  <!-- â•â•â•â•â•â•â•â•â•â• SPLIT PANELS â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ---------- SPLIT PANELS ---------- -->
   <div id="split-top"></div>
   <div id="split-bottom"></div>
 
-  <!-- â•â•â•â•â•â•â•â•â•â• PRELOADER â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ---------- PRELOADER ---------- -->
   <div id="preloader">
     <canvas id="preloader-canvas"></canvas>
     <div id="progress-track">
@@ -1401,7 +1482,7 @@
     </p>
   </div>
 
-  <!-- â•â•â•â•â•â•â•â•â•â• DESKTOP NAV â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ---------- DESKTOP NAV ---------- -->
   <div id="navbar-wrap">
     <a href="index.html" aria-label="Home"><img class="nav-logo" src="./Images/longlogo.svg" alt="Logo" /></a>
     <nav id="navbar">
@@ -1416,7 +1497,7 @@
     </nav>
   </div>
 
-  <!-- â•â•â•â•â•â•â•â•â•â• MOBILE TOP BAR â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ---------- MOBILE TOP BAR ---------- -->
   <div id="mobile-topbar">
     <button id="music-btn" aria-label="Toggle music">
       <canvas id="spectrum-canvas" width="26" height="18"></canvas>
@@ -1431,7 +1512,7 @@
     </button>
   </div>
 
-  <!-- â•â•â•â•â•â•â•â•â•â• MOBILE MENU OVERLAY â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ---------- MOBILE MENU OVERLAY ---------- -->
   <div id="mobile-menu" aria-hidden="true">
     <nav class="mobile-menu-panel">
       <a href="about.html" data-page="about" class="mobile-menu-link">
@@ -1458,7 +1539,7 @@
   </div>
   <button id="menu-close-mobile" aria-label="Close menu">âœ•</button>
 
-  <!-- â•â•â•â•â•â•â•â•â•â• MAIN CONTENT â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ---------- MAIN CONTENT ---------- -->
   <main class="page">
     <p class="section-label">My professional journey</p>
     <h1 class="page-title">Work Experience</h1>
@@ -1473,7 +1554,7 @@
       </p>
     </div>
 
-    <!-- â•â•â•â•â•â•â•â•â•â• WORK EXPERIENCE SECTION â•â•â•â•â•â•â•â•â•â• -->
+    <!-- ---------- WORK EXPERIENCE SECTION ---------- -->
     <section class="exp-section" aria-label="Work Experience">
       <div class="timeline">
 
@@ -1486,7 +1567,7 @@
                   <img src="./images/experience/trexlabs.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2025 DEC â€” PRESENT</span>
+                  <span class="tl-date">2025 DEC - PRESENT</span>
                   <p class="tl-role">UI UX CONSULTANT<br />(Part Time)</p>
                   <span class="tl-company">TREX LABS</span>
                   <span class="tl-location">
@@ -1527,7 +1608,7 @@
                   <img src="./images/experience/funextreme.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2025 AUG â€” Present</span>
+                  <span class="tl-date">2025 AUG - Present</span>
                   <p class="tl-role">
                     UI/UX Engineer &amp;<br />Game Developer
                   </p>
@@ -1563,7 +1644,7 @@
                   <img src="./images/experience/ruach.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2024 Sept â€” 2024 Nov</span>
+                  <span class="tl-date">2024 Sept - 2024 Nov</span>
                   <p class="tl-role">Contract UI/UX Engineer</p>
                   <span class="tl-company">Ruach Holdings</span>
                   <span class="tl-location">
@@ -1605,7 +1686,7 @@
                   <img src="./images/experience/zuse.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2023 Nov â€” 2024 Aug</span>
+                  <span class="tl-date">2023 Nov - 2024 Aug</span>
                   <p class="tl-role">UI/UX Engineer &amp;<br />Game Developer</p>
                   <span class="tl-company">ZUSE Technologies</span>
                   <span class="tl-location">
@@ -1639,7 +1720,7 @@
                   <img src="./images/experience/TP.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2023 Aug â€” 2024 Nov</span>
+                  <span class="tl-date">2023 Aug - 2024 Nov</span>
                   <p class="tl-role">Freelance UI/UX Designer</p>
                   <span class="tl-company">TransPerfect</span>
                   <span class="tl-location">
@@ -1680,7 +1761,7 @@
                   <img src="./images/experience/design.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2022 Aug â€” Present</span>
+                  <span class="tl-date">2022 Aug - Present</span>
                   <p class="tl-role">Freelance UI/UX Designer</p>
                   <span class="tl-company">Freelance Upon Reservation</span>
                   <span class="tl-location">
@@ -1713,7 +1794,7 @@
                   <img src="./images/experience/pearson.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2022 Jul â€” 2023 Jun</span>
+                  <span class="tl-date">2022 Jul - 2023 Jun</span>
                   <p class="tl-role">AR/VR Game Dev<br>(Internship)</p>
                   <span class="tl-company">Pearson</span>
                   <span class="tl-location">
@@ -1731,7 +1812,7 @@
                   on AR/VR gaming platforms. The team achieved
                   <strong style="color: rgba(109, 215, 247, 0.9)">1st place</strong>
                   in an Inter-Company Global Gaming Solutions Competition for
-                  developing <em>MetaLingo</em> â€” an Immersive Language
+                  developing <em>MetaLingo</em> - an Immersive Language
                   Learning Platform.
                 </p>
               </div>
@@ -1756,7 +1837,7 @@
                   <img src="./images/experience/takg.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2021 Oct â€” Present</span>
+                  <span class="tl-date">2021 Oct - Present</span>
                   <p class="tl-role">Co-Founder & <br> UX/UI Designer</p>
                   <span class="tl-company">TAKG Solutions</span>
                   <span class="tl-location">
@@ -1789,7 +1870,7 @@
                   <img src="./images/experience/zencreatives.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2021 Jan â€” Present</span>
+                  <span class="tl-date">2021 Jan - Present</span>
                   <p class="tl-role">Graphic Design & <br> UX/UI Developer</p>
                   <span class="tl-company">ZEN CREATIVES</span>
                   <span class="tl-location">
@@ -1821,7 +1902,7 @@
       <!-- /timeline -->
     </section>
 
-    <!-- â•â•â•â•â•â•â•â•â•â• COSMIC DIVIDER â•â•â•â•â•â•â•â•â•â• -->
+    <!-- ---------- COSMIC DIVIDER ---------- -->
     <div class="cosmic-divider" aria-hidden="true">
       <div class="cosmic-divider-sweep"></div>
       <div class="cosmic-divider-core">
@@ -1835,7 +1916,7 @@
 
     <br><br><br><br>
 
-    <!-- â•â•â•â•â•â•â•â•â•â• EDUCATION SECTION â•â•â•â•â•â•â•â•â•â• -->
+    <!-- ---------- EDUCATION SECTION ---------- -->
     <section class="exp-section edu-section" aria-label="Education">
       <div class="exp-section-heading" id="edu-heading">
         <span class="exp-section-label">Education Background</span>
@@ -1858,7 +1939,7 @@
           <div class="edu-logo edu-logo-wide">
             <img src="./Images/experience/Ply.png" alt="University of Plymouth logo" />
           </div>
-          <span class="edu-year">2020 â€” 2023</span>
+          <span class="edu-year">2020 - 2023</span>
           <h3 class="edu-degree">BSc. (Honors) <br>Computer Security</h3>
           <span class="edu-institute">University of Plymouth</span>
           <span class="edu-location">
@@ -1882,7 +1963,7 @@
           <div class="edu-logo">
             <img src="./Images/experience/WRC.png" alt="Wayamba Royal College logo" />
           </div>
-          <span class="edu-year">2012 â€” 2020</span>
+          <span class="edu-year">2012 - 2020</span>
           <h3 class="edu-degree">Secondary Education <br> O/L &amp; A/L</h3>
           <span class="edu-institute">Wayamba Royal College</span>
           <span class="edu-location">
@@ -1904,7 +1985,7 @@
           <div class="edu-logo">
             <img src="./Images/experience/wickra.png" alt="Wickramashila National School logo" />
           </div>
-          <span class="edu-year">2006 â€” 2011</span>
+          <span class="edu-year">2006 - 2011</span>
           <h3 class="edu-degree">Primary Education <br>FOUNDATION STUDIES</h3>
           <span class="edu-institute">Wickramashila National School</span>
           <span class="edu-location">
@@ -1925,7 +2006,7 @@
     </section>
     <br><br>
 
-    <!-- â•â•â•â•â•â•â•â•â•â• COSMIC DIVIDER â•â•â•â•â•â•â•â•â•â• -->
+    <!-- ---------- COSMIC DIVIDER ---------- -->
     <div class="cosmic-divider" aria-hidden="true">
       <div class="cosmic-divider-sweep"></div>
       <div class="cosmic-divider-core">
@@ -1939,7 +2020,7 @@
 
     <br><br><br><br>
 
-    <!-- â•â•â•â•â•â•â•â•â•â• LICENSES & CERTIFICATIONS SECTION â•â•â•â•â•â•â•â•â•â• -->
+    <!-- ---------- LICENSES & CERTIFICATIONS SECTION ---------- -->
     <section class="exp-section cert-section" aria-label="Licenses and Certifications">
       <div class="exp-section-heading" id="cert-heading">
         <span class="exp-section-label">Credentials</span>
@@ -1951,7 +2032,7 @@
           industry-recognised certifications. These credentials reflect my commitment to staying current with evolving
           technologies and best practices across <strong style="color: rgba(140, 210, 255, 0.9)">UI/UX design</strong>,
           <strong style="color: rgba(200, 160, 255, 0.9)">software development</strong>, and
-          <strong style="color: rgba(100, 220, 160, 0.9)">cybersecurity</strong> â€” ensuring I bring both depth and
+          <strong style="color: rgba(100, 220, 160, 0.9)">cybersecurity</strong> - ensuring I bring both depth and
           breadth to every project I take on.
         </p>
       </div>
@@ -2328,7 +2409,7 @@
 
     <br><br>
 
-    <!-- â•â•â•â•â•â•â•â•â•â• COSMIC DIVIDER â•â•â•â•â•â•â•â•â•â• -->
+    <!-- ---------- COSMIC DIVIDER ---------- -->
     <div class="cosmic-divider" aria-hidden="true">
       <div class="cosmic-divider-sweep"></div>
       <div class="cosmic-divider-core">
@@ -2340,8 +2421,10 @@
       </div>
     </div>
 
+    <br><br>
 
-    <!-- â•â•â•â•â•â•â•â•â•â• SKILLS SECTION â•â•â•â•â•â•â•â•â•â• -->
+
+    <!-- -----------------SKILLS SECTION --------------- -->
     <section class="skills-section" aria-label="Skills">
       <div class="exp-section-heading" id="skills-heading">
         <span class="exp-section-label">Expertise</span>
@@ -2488,15 +2571,14 @@
             <div class="nebula-label">Optimization</div>
           </div>
         </div>
-        <div class="nebula-node-wrap theme-game" data-pct="90" data-x="65" data-y="15">
+        <div class="nebula-node-wrap theme-dev" data-pct="98" data-x="75" data-y="20">
           <div class="nebula-node">
             <div class="nebula-cloud"></div>
             <div class="nebula-ring"></div>
             <div class="nebula-core"><svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 6v6l4 2" />
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
               </svg></div>
-            <div class="nebula-label">Real-time Render</div>
+            <div class="nebula-label">Vibe Coding</div>
           </div>
         </div>
 
@@ -2539,14 +2621,15 @@
         </div>
 
         <!-- 2: Vibe Coding -->
-        <div class="nebula-node-wrap theme-dev" data-pct="98" data-x="75" data-y="20">
+        <div class="nebula-node-wrap theme-game" data-pct="90" data-x="65" data-y="15">
           <div class="nebula-node">
             <div class="nebula-cloud"></div>
             <div class="nebula-ring"></div>
             <div class="nebula-core"><svg viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
               </svg></div>
-            <div class="nebula-label">Vibe Coding</div>
+            <div class="nebula-label">Real-time Render</div>
           </div>
         </div>
 
@@ -2622,6 +2705,7 @@
           </div>
         </div>
       </div>
+
 
       <script>
         (function () {
@@ -2739,6 +2823,9 @@
           }
 
           function animate() {
+            // NO ANIMATION ON MOBILE: Guard statement to save resources
+            if (window.innerWidth <= 768) return;
+
             mouseX += (targetMouseX - mouseX) * 0.03;
             mouseY += (targetMouseY - mouseY) * 0.03;
             const rect = universe.getBoundingClientRect();
@@ -2804,9 +2891,10 @@
         })();
       </script>
     </section>
-    <br><br><br>
 
-    <!-- â•â•â•â•â•â•â•â•â•â• COSMIC DIVIDER â•â•â•â•â•â•â•â•â•â• -->
+    <br>
+
+    <!-- ---------- COSMIC DIVIDER ---------- -->
     <div class="cosmic-divider" aria-hidden="true">
       <div class="cosmic-divider-sweep"></div>
       <div class="cosmic-divider-core">
@@ -2818,9 +2906,9 @@
       </div>
     </div>
 
-    <br><br><br>
+    <br><br>
 
-    <!-- â•â•â•â•â•â•â•â•â•â• VOLUNTEER SECTION â•â•â•â•â•â•â•â•â•â• -->
+    <!-- ---------- VOLUNTEER SECTION ---------- -->
     <section class="vol-section exp-section" aria-label="Volunteering Experience">
       <div class="exp-section-heading" id="vol-heading">
         <span class="exp-section-label">Community Impact</span>
@@ -2850,7 +2938,7 @@
           <div class="vol-info">
             <p class="vol-role">Editor In Chief</p>
             <span class="vol-org">ISACA NSBM Student Group</span>
-            <span class="vol-date">2022 â€” 2023</span>
+            <span class="vol-date">2022 - 2023</span>
           </div>
         </div>
 
@@ -2865,7 +2953,7 @@
           <div class="vol-info">
             <p class="vol-role">Associate Vice President</p>
             <span class="vol-org">Department of Network And Security - NSBM</span>
-            <span class="vol-date">2022 â€” 2023</span>
+            <span class="vol-date">2022 - 2023</span>
           </div>
         </div>
 
@@ -2879,7 +2967,7 @@
           <div class="vol-info">
             <p class="vol-role">Coordinator Of Volunteers</p>
             <span class="vol-org">FOSS Community of NSBM</span>
-            <span class="vol-date">2022 â€” 2023</span>
+            <span class="vol-date">2022 - 2023</span>
           </div>
         </div>
 
@@ -2894,7 +2982,7 @@
           <div class="vol-info">
             <p class="vol-role">Community Coordinator</p>
             <span class="vol-org">FOSS Community of NSBM</span>
-            <span class="vol-date">2021 â€” 2023</span>
+            <span class="vol-date">2021 - 2023</span>
           </div>
         </div>
 
@@ -2909,7 +2997,7 @@
           <div class="vol-info">
             <p class="vol-role">Volunteer</p>
             <span class="vol-org">FOSS Community of NSBM</span>
-            <span class="vol-date">2020 â€” 2023</span>
+            <span class="vol-date">2020 - 2023</span>
           </div>
         </div>
 
@@ -2924,7 +3012,7 @@
           <div class="vol-info">
             <p class="vol-role">Senior Prefect</p>
             <span class="vol-org">Wayamba Royal College</span>
-            <span class="vol-date">2018 â€” 2020</span>
+            <span class="vol-date">2018 - 2020</span>
           </div>
         </div>
 
@@ -2938,7 +3026,7 @@
           <div class="vol-info">
             <p class="vol-role">Director of Club Service</p>
             <span class="vol-org">Interact Club Of Wayamba Royal Collage</span>
-            <span class="vol-date">2019 â€” 2020</span>
+            <span class="vol-date">2019 - 2020</span>
           </div>
         </div>
 
@@ -2953,7 +3041,7 @@
           <div class="vol-info">
             <p class="vol-role">Assistant Director Of Community Service</p>
             <span class="vol-org">Interact Club Of Wayamba Royal Collage</span>
-            <span class="vol-date">2018 â€” 2019</span>
+            <span class="vol-date">2018 - 2019</span>
           </div>
         </div>
 
@@ -2967,7 +3055,7 @@
           <div class="vol-info">
             <p class="vol-role">Official Photographer</p>
             <span class="vol-org">Interact Club of Wayamba Royal Collage</span>
-            <span class="vol-date">2018 â€” 2020</span>
+            <span class="vol-date">2018 - 2020</span>
           </div>
         </div>
 
@@ -2982,7 +3070,7 @@
           <div class="vol-info">
             <p class="vol-role">Official Photographer</p>
             <span class="vol-org">Royalists Photographic Society (WRC)</span>
-            <span class="vol-date">2017 â€” 2020</span>
+            <span class="vol-date">2017 - 2020</span>
           </div>
         </div>
 
@@ -2990,7 +3078,7 @@
     </section>
     <br><br>
 
-    <!-- â•â•â•â•â•â•â•â•â•â• COSMIC DIVIDER â•â•â•â•â•â•â•â•â•â• -->
+    <!-- ---------- COSMIC DIVIDER ---------- -->
     <div class="cosmic-divider" aria-hidden="true" style="margin-top: 80px">
       <div class="cosmic-divider-sweep"></div>
       <div class="cosmic-divider-core">
@@ -3002,7 +3090,7 @@
       </div>
     </div>
 
-    <!-- â•â•â•â•â•â•â•â•â•â• TESTIMONIALS SECTION â•â•â•â•â•â•â•â•â•â• -->
+    <!-- ---------- TESTIMONIALS SECTION ---------- -->
     <section class="testimonials-section" aria-label="Client Testimonials">
 
       <!-- Fixed-size outer shell -->
@@ -3046,7 +3134,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Thaanu Perera</span>
-                <span class="testi-role">Software Engineer â€” Eyepax</span>
+                <span class="testi-role">Software Engineer - Eyepax</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3088,7 +3176,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Suraji Ekanayake</span>
-                <span class="testi-role">UI/UX Designer â€” Freelance</span>
+                <span class="testi-role">UI/UX Designer - Freelance</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3128,7 +3216,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Sandakelum Senevirathne</span>
-                <span class="testi-role">Tech Lead â€” ZUSE TECHNOLOGIES</span>
+                <span class="testi-role">Tech Lead - ZUSE TECHNOLOGIES</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3168,7 +3256,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Janith Perera</span>
-                <span class="testi-role">Software Engineer â€” RACEDATA</span>
+                <span class="testi-role">Software Engineer - RACEDATA</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3209,7 +3297,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Wenupa Mandinu</span>
-                <span class="testi-role">Cyber Security Engineer â€” Freelance</span>
+                <span class="testi-role">Cyber Security Engineer - Freelance</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3249,7 +3337,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Avishka Dilshan</span>
-                <span class="testi-role">DevOps Engineer â€” LSEG</span>
+                <span class="testi-role">DevOps Engineer - LSEG</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3291,7 +3379,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Sandev Dulleva</span>
-                <span class="testi-role">Software Engineer â€” ZUSE Technologies</span>
+                <span class="testi-role">Software Engineer - ZUSE Technologies</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3333,7 +3421,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Atheeque Hasan</span>
-                <span class="testi-role">Senior Data Analyst â€” AiSCOUT</span>
+                <span class="testi-role">Senior Data Analyst - AiSCOUT</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3376,7 +3464,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Ramuthu Senanayake</span>
-                <span class="testi-role">Associate Project Manager â€” Sysco LABS Sri Lanka</span>
+                <span class="testi-role">Associate Project Manager - Sysco LABS Sri Lanka</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3428,7 +3516,7 @@
     </section>
   </main>
 
-  <!-- â•â•â•â•â•â•â•â•â•â• FOOTER â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ---------- FOOTER ---------- -->
   <footer>
     <div class="social-links">
       <a href="#" aria-label="Behance">
@@ -3466,7 +3554,7 @@
   <div id="cursor-dot"></div>
   <canvas id="cursor-canvas"></canvas>
 
-  <!-- â•â•â•â•â•â•â•â•â•â• PAGE SCRIPTS â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ---------- PAGE SCRIPTS ---------- -->
   <script>
     /* â”€â”€ Preloader â”€â”€ */
     (function () {
