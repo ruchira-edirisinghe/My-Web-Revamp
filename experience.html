@@ -390,6 +390,19 @@
       padding-bottom: 44px;
     }
 
+    /* ── Certifications section ── */
+    .cert-section #cert-heading {
+      margin-bottom: 42px;
+    }
+
+    .cert-section .bio-para {
+      margin: 0;
+    }
+
+    .cert-section .para-container {
+      padding-bottom: 44px;
+    }
+
     /* Stack container */
     .edu-stack {
       display: flex;
@@ -551,6 +564,8 @@
       .edu-stack {
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        max-width: 100%;
         padding: 0 20px;
         margin-top: 24px;
       }
@@ -970,6 +985,284 @@
       to {
         opacity: 1;
         transform: translateY(0);
+      }
+    }
+
+    /* ══════════════════════════════════════
+       LICENSES & CERTIFICATIONS SECTION
+    ══════════════════════════════════════ */
+    .cert-section {
+      width: 95%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* Scroll wrapper: grid left, custom scrollbar right */
+    .cert-scroll-container {
+      display: flex;
+      gap: 24px;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    /* 4-column scrollable grid — shows 3 rows, scroll for more */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      flex: 1;
+      max-height: 600px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      /* hide native scrollbar */
+      scrollbar-width: none;
+      /* fade cards into void at top & bottom edges */
+      -webkit-mask-image: linear-gradient(to bottom,
+          transparent 0%,
+          black 60px,
+          black calc(100% - 60px),
+          transparent 100%);
+      mask-image: linear-gradient(to bottom,
+          transparent 0%,
+          black 60px,
+          black calc(100% - 60px),
+          transparent 100%);
+      padding-top: 25px;
+      padding-bottom: 30px;
+    }
+
+    .cert-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* ── Custom scrollbar track ── */
+    .cert-custom-scrollbar {
+      width: 10px;
+      flex-shrink: 0;
+      position: relative;
+      cursor: auto !important;
+    }
+
+    .cert-sb-track {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      background: rgba(255, 255, 255, 0.10);
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .cert-sb-thumb {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      min-height: 36px;
+      background: linear-gradient(180deg,
+          rgba(180, 100, 255, 1) 0%,
+          rgba(80, 180, 255, 0.9) 100%);
+      border-radius: 10px;
+      box-shadow:
+        0 0 10px rgba(160, 90, 255, 0.6),
+        0 0 22px rgba(80, 180, 255, 0.25);
+      cursor: grab !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 5px;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .cert-sb-thumb:hover {
+      box-shadow:
+        0 0 16px rgba(180, 100, 255, 0.85),
+        0 0 36px rgba(80, 180, 255, 0.45);
+    }
+
+    .cert-sb-thumb.is-dragging {
+      cursor: grabbing !important;
+      box-shadow:
+        0 0 20px rgba(200, 120, 255, 1),
+        0 0 40px rgba(100, 210, 255, 0.6);
+    }
+
+    /* Glowing dot at bottom of thumb as position indicator */
+    .cert-sb-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 14px rgba(200, 160, 255, 0.7);
+      flex-shrink: 0;
+    }
+
+    /* Individual card */
+    .cert-card {
+      background: rgba(12, 14, 28, 0.85);
+      border: 1.5px solid rgba(255, 255, 255, 0.10);
+      border-radius: 20px;
+      padding: 20px 14px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      gap: 12px;
+      position: relative;
+      overflow: visible;
+      /* allow glow to bleed, never clip content */
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1) var(--cert-delay, 0.05s),
+        transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1) var(--cert-delay, 0.05s),
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+    }
+
+    .cert-card.cert-vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cert-card:hover {
+      border-color: var(--cert-color, rgba(140, 80, 255, 0.55));
+      box-shadow:
+        0 0 0 1px var(--cert-color, rgba(140, 80, 255, 0.2)),
+        0 16px 48px rgba(0, 0, 0, 0.5),
+        0 0 36px var(--cert-glow, rgba(140, 80, 255, 0.12));
+      transform: translateY(-5px);
+    }
+
+    .cert-card.cert-vis:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Subtle top specular line */
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20%;
+      right: 20%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+      border-radius: 20px 20px 0 0;
+      pointer-events: none;
+    }
+
+    /* Logo badge — white app-icon box */
+    .cert-badge {
+      width: 62px;
+      height: 62px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .cert-card:hover .cert-badge {
+      transform: scale(1.06);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.38), 0 0 14px var(--cert-glow, rgba(140, 80, 255, 0.22));
+    }
+
+    /* Actual logo image */
+    .cert-logo-img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Fallback text initials */
+    .cert-initials {
+      font-family: 'Squada One', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(30, 30, 40, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Text info block — full width so text wraps properly */
+    .cert-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      width: 100%;
+    }
+
+    .cert-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.45;
+      margin: 0;
+      width: 100%;
+    }
+
+    .cert-issuer {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cert-color, rgba(140, 210, 255, 0.75));
+      width: 100%;
+    }
+
+    .cert-year {
+      font-family: 'Squada One', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.28);
+    }
+
+
+    /* ── Responsive breakpoints ── */
+    @media (max-width: 1100px) {
+      .cert-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .cert-card {
+        padding: 14px 12px 16px;
+        border-radius: 16px;
+        gap: 10px;
+      }
+
+      .cert-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .cert-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
       }
     }
   </style>
@@ -1519,6 +1812,409 @@
       </div>
       <!-- /edu stack -->
     </section>
+    <br><br>
+
+    <!-- ══════════ COSMIC DIVIDER ══════════ -->
+    <div class="cosmic-divider" aria-hidden="true">
+      <div class="cosmic-divider-sweep"></div>
+      <div class="cosmic-divider-core">
+        <span class="cosmic-divider-orb orb-sm"></span>
+        <span class="cosmic-divider-orb"></span>
+        <span class="cosmic-divider-star">✦</span>
+        <span class="cosmic-divider-orb"></span>
+        <span class="cosmic-divider-orb orb-sm"></span>
+      </div>
+    </div>
+
+    <br><br><br><br>
+
+    <!-- ══════════ LICENSES & CERTIFICATIONS SECTION ══════════ -->
+    <section class="exp-section cert-section" aria-label="Licenses and Certifications">
+      <div class="exp-section-heading" id="cert-heading">
+        <span class="exp-section-label">Credentials</span>
+        <h2 class="page-title">Licenses &amp; Certifications</h2>
+      </div>
+      <div class="para-container">
+        <p class="bio-para" style="--para-delay:0.1s;">
+          Over the years, I have continuously invested in expanding my knowledge and validating my skills through
+          industry-recognised certifications. These credentials reflect my commitment to staying current with evolving
+          technologies and best practices across <strong style="color: rgba(140, 210, 255, 0.9)">UI/UX design</strong>,
+          <strong style="color: rgba(200, 160, 255, 0.9)">software development</strong>, and
+          <strong style="color: rgba(100, 220, 160, 0.9)">cybersecurity</strong> — ensuring I bring both depth and
+          breadth to every project I take on.
+        </p>
+      </div>
+      <br><br>
+
+      <div class="cert-scroll-container">
+        <div class="cert-grid" id="cert-grid">
+
+          <!-- 1 -->
+          <div class="cert-card"
+            style="--cert-delay:0.05s;--cert-color:rgba(80,180,255,0.85);--cert-glow:rgba(80,180,255,0.18);"
+            id="cert-0">
+            <div class="cert-badge" style="--badge-bg:rgba(80,180,255,0.1);--badge-border:rgba(80,180,255,0.25);">
+              <img src="./images/experience/google.jpg" alt="Google" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(80,180,255,0.9);">G</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Google UX Design Professional</p>
+              <span class="cert-issuer">Google (Coursera)</span>
+              <span class="cert-year">2025</span>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="cert-card"
+            style="--cert-delay:0.10s;--cert-color:rgba(140,80,255,0.85);--cert-glow:rgba(140,80,255,0.18);"
+            id="cert-1">
+            <div class="cert-badge" style="--badge-bg:rgba(140,80,255,0.1);--badge-border:rgba(140,80,255,0.25);">
+              <img src="./images/experience/cisco.png" alt="Cisco" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(140,80,255,0.9);">M</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Introduction to Cybersecurity</p>
+              <span class="cert-issuer">Cisco</span>
+              <span class="cert-year">2025</span>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="cert-card"
+            style="--cert-delay:0.15s;--cert-color:rgba(255,140,40,0.85);--cert-glow:rgba(255,140,40,0.18);"
+            id="cert-2">
+            <div class="cert-badge" style="--badge-bg:rgba(255,140,40,0.1);--badge-border:rgba(255,140,40,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="linkedin" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(255,140,40,0.9);">AWS</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Figma Essentials Training</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2023</span>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="cert-card"
+            style="--cert-delay:0.20s;--cert-color:rgba(100,220,160,0.85);--cert-glow:rgba(100,220,160,0.18);"
+            id="cert-3">
+            <div class="cert-badge" style="--badge-bg:rgba(100,220,160,0.1);--badge-border:rgba(100,220,160,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="linkedin" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(100,220,160,0.9);">C</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Understanding AR & VR: Introduction</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2023</span>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="cert-card"
+            style="--cert-delay:0.05s;--cert-color:rgba(255,60,120,0.85);--cert-glow:rgba(255,60,120,0.18);"
+            id="cert-4">
+            <div class="cert-badge" style="--badge-bg:rgba(255,60,120,0.1);--badge-border:rgba(255,60,120,0.25);">
+              <img src="./images/experience/Pearsonlogo.jpg" alt="pearson" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(255,60,120,0.9);">U</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Inclusive Learning Experience Explorer</p>
+              <span class="cert-issuer">Pearson</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="cert-card"
+            style="--cert-delay:0.10s;--cert-color:rgba(80,180,255,0.85);--cert-glow:rgba(80,180,255,0.18);"
+            id="cert-5">
+            <div class="cert-badge" style="--badge-bg:rgba(80,180,255,0.1);--badge-border:rgba(80,180,255,0.25);">
+              <img src="./images/experience/google.jpg" alt="Google" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(80,180,255,0.9);">G</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Google HashCode'22</p>
+              <span class="cert-issuer">Google - Certificate of Participation</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="cert-card"
+            style="--cert-delay:0.15s;--cert-color:rgba(200,160,255,0.85);--cert-glow:rgba(200,160,255,0.18);"
+            id="cert-6">
+            <div class="cert-badge" style="--badge-bg:rgba(200,160,255,0.1);--badge-border:rgba(200,160,255,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(200,160,255,0.9);">F</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Learning REST APIs</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="cert-card"
+            style="--cert-delay:0.20s;--cert-color:rgba(255,200,60,0.85);--cert-glow:rgba(255,200,60,0.18);"
+            id="cert-7">
+            <div class="cert-badge" style="--badge-bg:rgba(255,200,60,0.1);--badge-border:rgba(255,200,60,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(255,200,60,0.9);">U</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">React: Ecosystems</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="cert-card"
+            style="--cert-delay:0.05s;--cert-color:rgba(80,220,180,0.85);--cert-glow:rgba(80,220,180,0.18);"
+            id="cert-8">
+            <div class="cert-badge" style="--badge-bg:rgba(80,220,180,0.1);--badge-border:rgba(80,220,180,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(80,220,180,0.9);">C</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Learning React.js - Learning<br>Fundementals of React</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="cert-card"
+            style="--cert-delay:0.10s;--cert-color:rgba(255,80,80,0.85);--cert-glow:rgba(255,80,80,0.18);" id="cert-9">
+            <div class="cert-badge" style="--badge-bg:rgba(255,80,80,0.1);--badge-border:rgba(255,80,80,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(255,80,80,0.9);">Ps</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Learning Cryptography and Network Security</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 11 -->
+          <div class="cert-card"
+            style="--cert-delay:0.15s;--cert-color:rgba(80,180,255,0.85);--cert-glow:rgba(80,180,255,0.18);"
+            id="cert-10">
+            <div class="cert-badge" style="--badge-bg:rgba(80,180,255,0.1);--badge-border:rgba(80,180,255,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(80,180,255,0.9);">Li</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">How to Motivate Yourself to Do What’s Most Important</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2021</span>
+            </div>
+          </div>
+
+          <!-- 12 -->
+          <div class="cert-card"
+            style="--cert-delay:0.20s;--cert-color:rgba(140,80,255,0.85);--cert-glow:rgba(140,80,255,0.18);"
+            id="cert-11">
+            <div class="cert-badge" style="--badge-bg:rgba(140,80,255,0.1);--badge-border:rgba(140,80,255,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(140,80,255,0.9);">C</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Lean Technology Strategy: Purposeful Organizations</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 13 -->
+          <div class="cert-card"
+            style="--cert-delay:0.05s;--cert-color:rgba(255,140,40,0.85);--cert-glow:rgba(255,140,40,0.18);"
+            id="cert-12">
+            <div class="cert-badge" style="--badge-bg:rgba(255,140,40,0.1);--badge-border:rgba(255,140,40,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(255,140,40,0.9);">UE</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Learning Kali Linux</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 14 -->
+          <div class="cert-card"
+            style="--cert-delay:0.10s;--cert-color:rgba(100,220,160,0.85);--cert-glow:rgba(100,220,160,0.18);"
+            id="cert-13">
+            <div class="cert-badge" style="--badge-bg:rgba(100,220,160,0.1);--badge-border:rgba(100,220,160,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(100,220,160,0.9);">HS</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">What Is Scrum?</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 15 -->
+          <div class="cert-card"
+            style="--cert-delay:0.15s;--cert-color:rgba(255,60,120,0.85);--cert-glow:rgba(255,60,120,0.18);"
+            id="cert-14">
+            <div class="cert-badge" style="--badge-bg:rgba(255,60,120,0.1);--badge-border:rgba(255,60,120,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(255,60,120,0.9);">G</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Java Object-Oriented Programming</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 16 -->
+          <div class="cert-card"
+            style="--cert-delay:0.20s;--cert-color:rgba(80,180,255,0.85);--cert-glow:rgba(80,180,255,0.18);"
+            id="cert-15">
+            <div class="cert-badge" style="--badge-bg:rgba(80,180,255,0.1);--badge-border:rgba(80,180,255,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(80,180,255,0.9);">IBM</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Python for Students</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 17 -->
+          <div class="cert-card"
+            style="--cert-delay:0.05s;--cert-color:rgba(200,160,255,0.85);--cert-glow:rgba(200,160,255,0.18);"
+            id="cert-16">
+            <div class="cert-badge" style="--badge-bg:rgba(200,160,255,0.1);--badge-border:rgba(200,160,255,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(200,160,255,0.9);">U</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Learning Java</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+
+          <!-- 18 -->
+          <div class="cert-card"
+            style="--cert-delay:0.10s;--cert-color:rgba(255,200,60,0.85);--cert-glow:rgba(255,200,60,0.18);"
+            id="cert-17">
+            <div class="cert-badge" style="--badge-bg:rgba(255,200,60,0.1);--badge-border:rgba(255,200,60,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(255,200,60,0.9);">SM</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">AI Accountability Essential Training</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2021</span>
+            </div>
+          </div>
+
+          <!-- 19 -->
+          <div class="cert-card"
+            style="--cert-delay:0.15s;--cert-color:rgba(80,220,180,0.85);--cert-glow:rgba(80,220,180,0.18);"
+            id="cert-18">
+            <div class="cert-badge" style="--badge-bg:rgba(80,220,180,0.1);--badge-border:rgba(80,220,180,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(80,220,180,0.9);">M</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">IoT Foundations: Fundamentals</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2021</span>
+            </div>
+          </div>
+
+          <!-- 20 -->
+          <div class="cert-card"
+            style="--cert-delay:0.20s;--cert-color:rgba(255,80,80,0.85);--cert-glow:rgba(255,80,80,0.18);" id="cert-19">
+            <div class="cert-badge" style="--badge-bg:rgba(255,80,80,0.1);--badge-border:rgba(255,80,80,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(255,80,80,0.9);">C</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Game Design Foundations: 3</p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2021</span>
+            </div>
+          </div>
+
+          <!-- 21 -->
+          <div class="cert-card"
+            style="--cert-delay:0.05s;--cert-color:rgba(80,180,255,0.85);--cert-glow:rgba(80,180,255,0.18);"
+            id="cert-20">
+            <div class="cert-badge" style="--badge-bg:rgba(80,180,255,0.1);--badge-border:rgba(80,180,255,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(80,180,255,0.9);">GH</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Game Design Foundations: 2 </p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2021</span>
+            </div>
+          </div>
+
+          <!-- 22 -->
+          <div class="cert-card"
+            style="--cert-delay:0.10s;--cert-color:rgba(140,80,255,0.85);--cert-glow:rgba(140,80,255,0.18);"
+            id="cert-21">
+            <div class="cert-badge" style="--badge-bg:rgba(140,80,255,0.1);--badge-border:rgba(140,80,255,0.25);">
+              <img src="./images/experience/LinkedIn.png" alt="Figma" class="cert-logo-img"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="cert-initials" style="display:none;color:rgba(140,80,255,0.9);">Li</span>
+            </div>
+            <div class="cert-info">
+              <p class="cert-name">Game Design Foundations: 1 </p>
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <span class="cert-year">2021</span>
+            </div>
+          </div>
+
+        </div>
+        <!-- /cert-grid -->
+
+        <!-- Custom scrollbar -->
+        <div class="cert-custom-scrollbar" id="cert-custom-scrollbar">
+          <div class="cert-sb-track" id="cert-sb-track">
+            <div class="cert-sb-thumb" id="cert-sb-thumb">
+              <div class="cert-sb-dot"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /cert-scroll-container -->
+    </section>
+
     <br><br>
 
     <!-- ══════════ COSMIC DIVIDER ══════════ -->
@@ -2400,6 +3096,10 @@
         el.dataset.visClass = "edu-vis";
         io.observe(el);
       });
+      document.querySelectorAll(".cert-card").forEach((el) => {
+        el.dataset.visClass = "cert-vis";
+        io.observe(el);
+      });
     })();
 
     /* ── Testimonials slider ── */
@@ -2643,6 +3343,71 @@
     window.addEventListener('resize', () => { setTimeout(initTimelineAnimations, 50); });
     window.addEventListener('load', initTimelineAnimations);
     setTimeout(initTimelineAnimations, 150);
+
+    /* ── Custom Cert Scrollbar ── */
+    (function () {
+      const grid = document.getElementById('cert-grid');
+      const thumb = document.getElementById('cert-sb-thumb');
+      const track = document.getElementById('cert-sb-track');
+      if (!grid || !thumb || !track) return;
+
+      let isDragging = false, startY = 0, startScrollTop = 0;
+
+      function updateThumb() {
+        const trackH = track.clientHeight;
+        const ratio = grid.clientHeight / grid.scrollHeight;
+        const thumbH = Math.max(ratio * trackH, 40);
+        const maxScroll = grid.scrollHeight - grid.clientHeight;
+        const maxTop = trackH - thumbH;
+        const top = maxScroll > 0 ? (grid.scrollTop / maxScroll) * maxTop : 0;
+        thumb.style.height = thumbH + 'px';
+        thumb.style.top = top + 'px';
+      }
+
+      grid.addEventListener('scroll', updateThumb);
+      window.addEventListener('resize', updateThumb);
+      updateThumb();
+
+      /* ── Drag the thumb ── */
+      thumb.addEventListener('mousedown', function (e) {
+        isDragging = true;
+        startY = e.clientY;
+        startScrollTop = grid.scrollTop;
+        thumb.classList.add('is-dragging');
+        document.body.style.cursor = 'grabbing';
+        document.body.style.userSelect = 'none';
+        e.preventDefault();
+      });
+
+      document.addEventListener('mousemove', function (e) {
+        if (!isDragging) return;
+        const trackH = track.clientHeight;
+        const thumbH = thumb.clientHeight;
+        const maxTop = trackH - thumbH;
+        const delta = e.clientY - startY;
+        const scrollRatio = maxTop > 0
+          ? (grid.scrollHeight - grid.clientHeight) / maxTop
+          : 0;
+        grid.scrollTop = startScrollTop + delta * scrollRatio;
+      });
+
+      document.addEventListener('mouseup', function () {
+        if (!isDragging) return;
+        isDragging = false;
+        thumb.classList.remove('is-dragging');
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+      });
+
+      /* ── Click on track to jump ── */
+      track.addEventListener('click', function (e) {
+        if (e.target === thumb || thumb.contains(e.target)) return;
+        const rect = track.getBoundingClientRect();
+        const clickY = e.clientY - rect.top;
+        const ratio = clickY / track.clientHeight;
+        grid.scrollTop = ratio * grid.scrollHeight;
+      });
+    })();
   </script>
 
   <script src="./styles/experience/experience.js"></script>
