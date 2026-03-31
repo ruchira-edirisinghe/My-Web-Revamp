@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Experience — Ruchira Edirisinghe</title>
+  <title>Experience â€” Ruchira Edirisinghe</title>
   <link rel="icon" type="image/x-icon" href="./images/favicon/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,11 +13,11 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="./styles/experience/expadditional.css" />
   <style>
-    /* ══════════════════════════════════════
-       EXPERIENCE PAGE — ADDITIONAL STYLES
-    ══════════════════════════════════════ */
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       EXPERIENCE PAGE â€” ADDITIONAL STYLES
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-    /* ── Timeline container ── */
+    /* â”€â”€ Timeline container â”€â”€ */
     .exp-section {
       width: 95%;
       max-width: 1500px;
@@ -51,21 +51,13 @@
       color: rgba(140, 210, 255, 0.75);
     }
 
-    .exp-section-title {
-      font-family: "Great Vibes", cursive;
-      font-size: clamp(38px, 5vw, 64px);
-      color: var(--white);
-      line-height: 1.1;
-      text-align: center;
-    }
-
-    /* ── Timeline track ── */
+    /* â”€â”€ Timeline track â”€â”€ */
     .timeline {
       position: relative;
       padding-left: 0;
     }
 
-    /* ── Single timeline entry ── */
+    /* â”€â”€ Single timeline entry â”€â”€ */
     .tl-item {
       display: grid;
       grid-template-columns: 1fr 100px 1fr;
@@ -109,7 +101,7 @@
       padding-left: 80px;
     }
 
-    /* ── Node ── */
+    /* â”€â”€ Node â”€â”€ */
     .tl-node-wrap {
       display: flex;
       flex-direction: column;
@@ -180,7 +172,7 @@
       --n-glow: rgba(255, 140, 40, 0.6);
     }
 
-    /* ── Card ── */
+    /* â”€â”€ Card â”€â”€ */
     .tl-card-wrap {
       max-width: 650px;
       width: 100%;
@@ -243,7 +235,7 @@
       transform: translateY(-4px);
     }
 
-    /* ── Redesigned Card Layout (reference image style) ── */
+    /* â”€â”€ Redesigned Card Layout (reference image style) â”€â”€ */
 
     /* Top info section: logo + meta side by side */
     .tl-company-row {
@@ -359,7 +351,7 @@
       flex-shrink: 0;
     }
 
-    /* Description box — separate darker panel below */
+    /* Description box â€” separate darker panel below */
     .tl-desc-box {
       margin-top: 28px;
       background: rgba(0, 0, 0, 0.25);
@@ -377,7 +369,7 @@
       letter-spacing: 0.01em;
     }
 
-    /* ── Education stacked layout ── */
+    /* â”€â”€ Education stacked layout â”€â”€ */
     .edu-section #edu-heading {
       margin-bottom: 42px;
     }
@@ -390,7 +382,7 @@
       padding-bottom: 44px;
     }
 
-    /* ── Certifications section ── */
+    /* â”€â”€ Certifications section â”€â”€ */
     .cert-section #cert-heading {
       margin-bottom: 42px;
     }
@@ -452,7 +444,7 @@
           transparent 100%);
     }
 
-    /* Logo area — no box, just the image floating */
+    /* Logo area â€” no box, just the image floating */
     .edu-logo {
       display: flex;
       align-items: center;
@@ -471,7 +463,7 @@
       object-fit: contain;
     }
 
-    /* Wide logo — same bare floating treatment as other logos */
+    /* Wide logo â€” same bare floating treatment as other logos */
     .edu-logo.edu-logo-wide {
       background: none;
       border: none;
@@ -548,7 +540,7 @@
       flex-shrink: 0;
     }
 
-    /* Description — matches bio-para font size */
+    /* Description â€” matches bio-para font size */
     .edu-desc {
       font-family: "Montserrat", sans-serif;
       font-size: clamp(12px, 1.15vw, 13.5px);
@@ -598,277 +590,213 @@
       }
     }
 
-    /* ── Skills Section ── */
+    /* â”€â”€ Skills Section â”€â”€ */
     .skills-section {
       width: 95%;
+      max-width: 1400px;
+      /* Expanded for more cinematic galaxy space */
+      margin: 54px auto 0;
+      position: relative;
+    }
+
+    .skills-section .exp-section-heading {
+      margin-bottom: 50px !important;
+    }
+
+    .skills-section .exp-section-heading,
+    .skills-section .para-container {
       max-width: 1100px;
-      margin: 140px auto 0;
-      position: relative;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 24px;
+    .skills-section .para-container {
+      margin-bottom: 0 !important;
+      /* Only description-to-galaxy should be tight */
     }
 
-    .skill-panel {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-radius: 24px;
-      padding: 32px 28px 36px;
+    .skills-universe {
       position: relative;
+      width: 100%;
+      height: 650px;
+      margin: -50px auto 0;
+      /* Pulled up to counter the top-row node padding */
+      perspective: 1200px;
       overflow: hidden;
-      opacity: 0;
-      transform: translateY(32px);
-      transition:
-        opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1) var(--sk-delay, 0.1s),
-        transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1) var(--sk-delay, 0.1s),
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
+      touch-action: none;
+      /* Cinematic Void Mask: Only fade at top edge */
+      -webkit-mask-image: linear-gradient(to bottom,
+          transparent 0%,
+          black 10%);
+      mask-image: linear-gradient(to bottom,
+          transparent 0%,
+          black 10%);
     }
 
-    .skill-panel.sk-vis {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .skill-panel:hover {
-      border-color: var(--sp-border, rgba(140, 80, 255, 0.3));
-      box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.4),
-        0 0 60px var(--sp-glow, rgba(140, 80, 255, 0.06));
-      transform: translateY(-5px);
-    }
-
-    .skill-panel.sk-vis:hover {
-      transform: translateY(-5px);
-    }
-
-    .skill-panel::before {
-      content: "";
+    .nebula-node-wrap {
       position: absolute;
-      top: 0;
-      left: 12%;
-      right: 12%;
-      height: 1px;
-      background: linear-gradient(90deg,
-          transparent,
-          var(--sp-line, rgba(140, 80, 255, 0.28)),
-          transparent);
+      left: 0 !important;
+      top: 0 !important;
+      width: 0;
+      height: 0;
+      will-change: transform;
+      z-index: 5;
     }
 
-    .skill-panel::after {
-      content: "";
-      position: absolute;
-      bottom: -80px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 240px;
-      height: 160px;
-      border-radius: 50%;
-      background: var(--sp-bloom,
-          radial-gradient(ellipse, rgba(140, 80, 255, 0.07) 0%, transparent 70%));
-      pointer-events: none;
-    }
-
-    /* UI/UX design panel */
-    .skill-panel.sp-uiux {
-      --sp-border: rgba(140, 80, 255, 0.32);
-      --sp-glow: rgba(140, 80, 255, 0.07);
-      --sp-line: rgba(140, 80, 255, 0.3);
-      --sp-bloom: radial-gradient(ellipse,
-          rgba(140, 80, 255, 0.08) 0%,
-          transparent 70%);
-      --sp-accent: rgba(180, 130, 255, 0.9);
-      --sp-icon-border: rgba(140, 80, 255, 0.25);
-      --sp-icon-bg: rgba(140, 80, 255, 0.08);
-    }
-
-    /* Game dev panel */
-    .skill-panel.sp-game {
-      --sp-border: rgba(80, 220, 180, 0.28);
-      --sp-glow: rgba(80, 220, 180, 0.07);
-      --sp-line: rgba(80, 220, 180, 0.28);
-      --sp-bloom: radial-gradient(ellipse,
-          rgba(80, 220, 180, 0.07) 0%,
-          transparent 70%);
-      --sp-accent: rgba(100, 240, 200, 0.9);
-      --sp-icon-border: rgba(80, 220, 180, 0.25);
-      --sp-icon-bg: rgba(80, 220, 180, 0.07);
-    }
-
-    /* Dev panel */
-    .skill-panel.sp-dev {
-      --sp-border: rgba(80, 180, 255, 0.28);
-      --sp-glow: rgba(80, 180, 255, 0.07);
-      --sp-line: rgba(80, 180, 255, 0.28);
-      --sp-bloom: radial-gradient(ellipse,
-          rgba(80, 180, 255, 0.07) 0%,
-          transparent 70%);
-      --sp-accent: rgba(140, 210, 255, 0.9);
-      --sp-icon-border: rgba(80, 180, 255, 0.25);
-      --sp-icon-bg: rgba(80, 180, 255, 0.08);
-    }
-
-    .skill-panel-header {
+    .nebula-node {
+      position: relative;
+      width: 54px;
+      height: 54px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 8px;
+      justify-content: center;
+      cursor: grab;
+      /* Indica interactivity */
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .sp-icon-wrap {
-      width: 44px;
-      height: 44px;
-      border-radius: 13px;
-      border: 1px solid var(--sp-icon-border, rgba(140, 80, 255, 0.25));
-      background: var(--sp-icon-bg, rgba(140, 80, 255, 0.08));
+    .nebula-node:active {
+      cursor: grabbing;
+    }
+
+    .nebula-node:hover {
+      z-index: 20;
+      transform: scale(1.25) translateZ(40px);
+    }
+
+    /* Core Icon */
+    .nebula-core {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      color: var(--sp-accent, rgba(180, 130, 255, 0.9));
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.4s ease;
+      box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
     }
 
-    .sp-icon-wrap svg {
-      width: 20px;
-      height: 20px;
-      stroke: currentColor;
+    .nebula-node:hover .nebula-core {
+      border-color: var(--nebula-accent);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 30px var(--nebula-glow);
+    }
+
+    .nebula-core svg {
+      width: 45%;
+      height: 45%;
+      stroke: var(--nebula-accent);
       fill: none;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      stroke-width: 1.5;
+      transition: all 0.4s ease;
     }
 
-    .sp-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .sp-eyebrow {
-      font-size: 9px;
+    /* Floating Label */
+    .nebula-label {
+      position: absolute;
+      top: calc(100% + 14px);
+      width: 140px;
+      /* Force wrapping width */
+      white-space: normal;
+      /* Allow multiline */
+      text-align: center;
+      line-height: 1.3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--sp-accent, rgba(180, 130, 255, 0.65));
-      opacity: 0.7;
-    }
-
-    .sp-title {
-      font-family: "Squada One", sans-serif;
-      font-size: clamp(15px, 1.5vw, 20px);
-      font-weight: 400;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--white);
-      line-height: 1.1;
+      opacity: 0.7;
+      transition: all 0.4s ease;
+      pointer-events: none;
+      word-wrap: break-word;
     }
 
-    .sp-divider {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg,
-          var(--sp-line, rgba(140, 80, 255, 0.24)),
-          transparent);
-      margin: 20px 0 24px;
+    .nebula-node:hover .nebula-label {
+      opacity: 1;
+      transform: translateY(4px);
+      color: var(--nebula-accent);
     }
 
-    /* Skill tags grid */
-    .sp-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    /* Performance Data Ring */
+    .nebula-ring {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 1px dashed var(--nebula-accent);
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(0.85) rotate(0deg);
+      transition: all 0.5s ease;
+      pointer-events: none;
     }
 
-    .sp-tag {
-      font-family: "Montserrat", sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--sp-accent, rgba(180, 130, 255, 0.85));
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--sp-icon-border, rgba(140, 80, 255, 0.18));
-      border-radius: 30px;
-      padding: 5px 14px;
-      transition:
-        background 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    .nebula-node:hover .nebula-ring {
+      opacity: 0.4;
+      transform: scale(1.15) rotate(90deg);
     }
 
-    .sp-tag:hover {
-      background: var(--sp-icon-bg, rgba(140, 80, 255, 0.1));
-      border-color: var(--sp-border, rgba(140, 80, 255, 0.35));
-      transform: translateY(-2px);
+    /* Glowing Nebula Cloud */
+    .nebula-cloud {
+      position: absolute;
+      width: 180%;
+      height: 180%;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--nebula-glow) 0%, transparent 70%);
+      opacity: 0.2;
+      z-index: -1;
+      pointer-events: none;
+      animation: nebulaPulse 4s ease-in-out infinite;
     }
 
-    /* Skill bar items */
-    .sp-bars {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-top: 4px;
+    /* Category Themes */
+    .theme-uiux {
+      --nebula-accent: rgba(180, 130, 255, 1);
+      --nebula-glow: rgba(140, 80, 255, 0.4);
     }
 
-    .sp-bar-item {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
+    .theme-game {
+      --nebula-accent: rgba(100, 240, 200, 1);
+      --nebula-glow: rgba(80, 220, 180, 0.4);
     }
 
-    .sp-bar-label-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .theme-dev {
+      --nebula-accent: rgba(140, 210, 255, 1);
+      --nebula-glow: rgba(80, 180, 255, 0.4);
     }
 
-    .sp-bar-name {
-      font-family: "Montserrat", sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.65);
+    /* Animations */
+    @keyframes nebulaPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.15;
+      }
+
+      50% {
+        transform: scale(1.15);
+        opacity: 0.3;
+      }
     }
 
-    .sp-bar-pct {
-      font-family: "Squada One", sans-serif;
-      font-size: 12px;
-      color: var(--sp-accent, rgba(180, 130, 255, 0.8));
-    }
-
-    .sp-bar-track {
-      height: 3px;
-      background: rgba(255, 255, 255, 0.07);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-
-    .sp-bar-fill {
-      height: 100%;
-      border-radius: 3px;
-      background: linear-gradient(90deg,
-          var(--sp-accent, rgba(180, 130, 255, 0.9)),
-          rgba(80, 180, 255, 0.6));
-      width: 0%;
-      transition: width 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) var(--bar-delay, 0.4s);
-      box-shadow: 0 0 8px var(--sp-glow, rgba(140, 80, 255, 0.4));
-    }
-
-    .sp-bar-fill.bar-animate {
-      width: var(--bar-w, 80%);
-    }
-
-    /* ── Mobile responsive ── */
     @media (max-width: 900px) {
-      .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+      .skills-universe {
+        height: 800px;
+      }
+
+      .nebula-node {
+        width: 50px;
+        height: 50px;
       }
 
       .timeline::before {
@@ -975,7 +903,7 @@
       }
     }
 
-    /* ── Fade-up keyframe (same as about.css) ── */
+    /* â”€â”€ Fade-up keyframe (same as about.css) â”€â”€ */
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -988,9 +916,9 @@
       }
     }
 
-    /* ══════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        LICENSES & CERTIFICATIONS SECTION
-    ══════════════════════════════════════ */
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .cert-section {
       width: 95%;
       max-width: 1300px;
@@ -1005,7 +933,7 @@
       width: 100%;
     }
 
-    /* 4-column scrollable grid — shows 3 rows, scroll for more */
+    /* 4-column scrollable grid â€” shows 3 rows, scroll for more */
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1036,7 +964,7 @@
       display: none;
     }
 
-    /* ── Custom scrollbar track ── */
+    /* â”€â”€ Custom scrollbar track â”€â”€ */
     .cert-custom-scrollbar {
       width: 10px;
       flex-shrink: 0;
@@ -1156,7 +1084,7 @@
       pointer-events: none;
     }
 
-    /* Logo badge — white app-icon box */
+    /* Logo badge â€” white app-icon box */
     .cert-badge {
       width: 62px;
       height: 62px;
@@ -1195,7 +1123,7 @@
       justify-content: center;
     }
 
-    /* Text info block — full width so text wraps properly */
+    /* Text info block â€” full width so text wraps properly */
     .cert-info {
       display: flex;
       flex-direction: column;
@@ -1233,9 +1161,9 @@
     }
 
 
-    /* ══════════════════════════════════════
-       VOLUNTEER SECTION — IMPACT CARDS
-    ══════════════════════════════════════ */
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       VOLUNTEER SECTION â€” IMPACT CARDS
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .vol-section {
       margin-top: 44px;
     }
@@ -1402,7 +1330,7 @@
       }
     }
 
-    /* ── Responsive breakpoints ── */
+    /* â”€â”€ Responsive breakpoints â”€â”€ */
     @media (max-width: 1100px) {
       .cert-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -1433,13 +1361,19 @@
         grid-template-columns: 1fr 1fr;
         gap: 10px;
       }
+
       .testi-progress-fill.run-anim {
         animation: testiProgress 7000ms linear forwards;
       }
 
       @keyframes testiProgress {
-        from { width: 0%; }
-        to { width: 100%; }
+        from {
+          width: 0%;
+        }
+
+        to {
+          width: 100%;
+        }
       }
     }
   </style>
@@ -1448,14 +1382,14 @@
 <body data-page="experience">
   <canvas id="space-canvas"></canvas>
 
-  <!-- ══════════ NAV FADE MASK ══════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â• NAV FADE MASK â•â•â•â•â•â•â•â•â•â• -->
   <div id="nav-fade-mask"></div>
 
-  <!-- ══════════ SPLIT PANELS ══════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â• SPLIT PANELS â•â•â•â•â•â•â•â•â•â• -->
   <div id="split-top"></div>
   <div id="split-bottom"></div>
 
-  <!-- ══════════ PRELOADER ══════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â• PRELOADER â•â•â•â•â•â•â•â•â•â• -->
   <div id="preloader">
     <canvas id="preloader-canvas"></canvas>
     <div id="progress-track">
@@ -1467,7 +1401,7 @@
     </p>
   </div>
 
-  <!-- ══════════ DESKTOP NAV ══════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â• DESKTOP NAV â•â•â•â•â•â•â•â•â•â• -->
   <div id="navbar-wrap">
     <a href="index.html" aria-label="Home"><img class="nav-logo" src="./Images/longlogo.svg" alt="Logo" /></a>
     <nav id="navbar">
@@ -1478,11 +1412,11 @@
         <a href="comingsoon.html" data-page="links" class="nav-link">Other Links</a>
       </div>
       <div class="nav-divider"></div>
-      <a href="comingsoon.html" data-page="contact" class="nav-cta">Say Hi 👋</a>
+      <a href="comingsoon.html" data-page="contact" class="nav-cta">Say Hi ðŸ‘‹</a>
     </nav>
   </div>
 
-  <!-- ══════════ MOBILE TOP BAR ══════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â• MOBILE TOP BAR â•â•â•â•â•â•â•â•â•â• -->
   <div id="mobile-topbar">
     <button id="music-btn" aria-label="Toggle music">
       <canvas id="spectrum-canvas" width="26" height="18"></canvas>
@@ -1497,7 +1431,7 @@
     </button>
   </div>
 
-  <!-- ══════════ MOBILE MENU OVERLAY ══════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â• MOBILE MENU OVERLAY â•â•â•â•â•â•â•â•â•â• -->
   <div id="mobile-menu" aria-hidden="true">
     <nav class="mobile-menu-panel">
       <a href="about.html" data-page="about" class="mobile-menu-link">
@@ -1522,9 +1456,9 @@
       </a>
     </nav>
   </div>
-  <button id="menu-close-mobile" aria-label="Close menu">✕</button>
+  <button id="menu-close-mobile" aria-label="Close menu">âœ•</button>
 
-  <!-- ══════════ MAIN CONTENT ══════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â• MAIN CONTENT â•â•â•â•â•â•â•â•â•â• -->
   <main class="page">
     <p class="section-label">My professional journey</p>
     <h1 class="page-title">Work Experience</h1>
@@ -1539,7 +1473,7 @@
       </p>
     </div>
 
-    <!-- ══════════ WORK EXPERIENCE SECTION ══════════ -->
+    <!-- â•â•â•â•â•â•â•â•â•â• WORK EXPERIENCE SECTION â•â•â•â•â•â•â•â•â•â• -->
     <section class="exp-section" aria-label="Work Experience">
       <div class="timeline">
 
@@ -1552,7 +1486,7 @@
                   <img src="./images/experience/trexlabs.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2025 DEC — PRESENT</span>
+                  <span class="tl-date">2025 DEC â€” PRESENT</span>
                   <p class="tl-role">UI UX CONSULTANT<br />(Part Time)</p>
                   <span class="tl-company">TREX LABS</span>
                   <span class="tl-location">
@@ -1593,7 +1527,7 @@
                   <img src="./images/experience/funextreme.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2025 AUG — Present</span>
+                  <span class="tl-date">2025 AUG â€” Present</span>
                   <p class="tl-role">
                     UI/UX Engineer &amp;<br />Game Developer
                   </p>
@@ -1629,7 +1563,7 @@
                   <img src="./images/experience/ruach.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2024 Sept — 2024 Nov</span>
+                  <span class="tl-date">2024 Sept â€” 2024 Nov</span>
                   <p class="tl-role">Contract UI/UX Engineer</p>
                   <span class="tl-company">Ruach Holdings</span>
                   <span class="tl-location">
@@ -1671,7 +1605,7 @@
                   <img src="./images/experience/zuse.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2023 Nov — 2024 Aug</span>
+                  <span class="tl-date">2023 Nov â€” 2024 Aug</span>
                   <p class="tl-role">UI/UX Engineer &amp;<br />Game Developer</p>
                   <span class="tl-company">ZUSE Technologies</span>
                   <span class="tl-location">
@@ -1705,7 +1639,7 @@
                   <img src="./images/experience/TP.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2023 Aug — 2024 Nov</span>
+                  <span class="tl-date">2023 Aug â€” 2024 Nov</span>
                   <p class="tl-role">Freelance UI/UX Designer</p>
                   <span class="tl-company">TransPerfect</span>
                   <span class="tl-location">
@@ -1746,7 +1680,7 @@
                   <img src="./images/experience/design.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2022 Aug — Present</span>
+                  <span class="tl-date">2022 Aug â€” Present</span>
                   <p class="tl-role">Freelance UI/UX Designer</p>
                   <span class="tl-company">Freelance Upon Reservation</span>
                   <span class="tl-location">
@@ -1779,7 +1713,7 @@
                   <img src="./images/experience/pearson.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2022 Jul — 2023 Jun</span>
+                  <span class="tl-date">2022 Jul â€” 2023 Jun</span>
                   <p class="tl-role">AR/VR Game Dev<br>(Internship)</p>
                   <span class="tl-company">Pearson</span>
                   <span class="tl-location">
@@ -1797,7 +1731,7 @@
                   on AR/VR gaming platforms. The team achieved
                   <strong style="color: rgba(109, 215, 247, 0.9)">1st place</strong>
                   in an Inter-Company Global Gaming Solutions Competition for
-                  developing <em>MetaLingo</em> — an Immersive Language
+                  developing <em>MetaLingo</em> â€” an Immersive Language
                   Learning Platform.
                 </p>
               </div>
@@ -1822,7 +1756,7 @@
                   <img src="./images/experience/takg.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2021 Oct — Present</span>
+                  <span class="tl-date">2021 Oct â€” Present</span>
                   <p class="tl-role">Co-Founder & <br> UX/UI Designer</p>
                   <span class="tl-company">TAKG Solutions</span>
                   <span class="tl-location">
@@ -1855,7 +1789,7 @@
                   <img src="./images/experience/zencreatives.png" alt="Company Logo" />
                 </div>
                 <div class="tl-company-meta">
-                  <span class="tl-date">2021 Jan — Present</span>
+                  <span class="tl-date">2021 Jan â€” Present</span>
                   <p class="tl-role">Graphic Design & <br> UX/UI Developer</p>
                   <span class="tl-company">ZEN CREATIVES</span>
                   <span class="tl-location">
@@ -1887,13 +1821,13 @@
       <!-- /timeline -->
     </section>
 
-    <!-- ══════════ COSMIC DIVIDER ══════════ -->
+    <!-- â•â•â•â•â•â•â•â•â•â• COSMIC DIVIDER â•â•â•â•â•â•â•â•â•â• -->
     <div class="cosmic-divider" aria-hidden="true">
       <div class="cosmic-divider-sweep"></div>
       <div class="cosmic-divider-core">
         <span class="cosmic-divider-orb orb-sm"></span>
         <span class="cosmic-divider-orb"></span>
-        <span class="cosmic-divider-star">✦</span>
+        <span class="cosmic-divider-star">&#10022;</span>
         <span class="cosmic-divider-orb"></span>
         <span class="cosmic-divider-orb orb-sm"></span>
       </div>
@@ -1901,7 +1835,7 @@
 
     <br><br><br><br>
 
-    <!-- ══════════ EDUCATION SECTION ══════════ -->
+    <!-- â•â•â•â•â•â•â•â•â•â• EDUCATION SECTION â•â•â•â•â•â•â•â•â•â• -->
     <section class="exp-section edu-section" aria-label="Education">
       <div class="exp-section-heading" id="edu-heading">
         <span class="exp-section-label">Education Background</span>
@@ -1924,7 +1858,7 @@
           <div class="edu-logo edu-logo-wide">
             <img src="./Images/experience/Ply.png" alt="University of Plymouth logo" />
           </div>
-          <span class="edu-year">2020 — 2023</span>
+          <span class="edu-year">2020 â€” 2023</span>
           <h3 class="edu-degree">BSc. (Honors) <br>Computer Security</h3>
           <span class="edu-institute">University of Plymouth</span>
           <span class="edu-location">
@@ -1948,7 +1882,7 @@
           <div class="edu-logo">
             <img src="./Images/experience/WRC.png" alt="Wayamba Royal College logo" />
           </div>
-          <span class="edu-year">2012 — 2020</span>
+          <span class="edu-year">2012 â€” 2020</span>
           <h3 class="edu-degree">Secondary Education <br> O/L &amp; A/L</h3>
           <span class="edu-institute">Wayamba Royal College</span>
           <span class="edu-location">
@@ -1970,7 +1904,7 @@
           <div class="edu-logo">
             <img src="./Images/experience/wickra.png" alt="Wickramashila National School logo" />
           </div>
-          <span class="edu-year">2006 — 2011</span>
+          <span class="edu-year">2006 â€” 2011</span>
           <h3 class="edu-degree">Primary Education <br>FOUNDATION STUDIES</h3>
           <span class="edu-institute">Wickramashila National School</span>
           <span class="edu-location">
@@ -1991,13 +1925,13 @@
     </section>
     <br><br>
 
-    <!-- ══════════ COSMIC DIVIDER ══════════ -->
+    <!-- â•â•â•â•â•â•â•â•â•â• COSMIC DIVIDER â•â•â•â•â•â•â•â•â•â• -->
     <div class="cosmic-divider" aria-hidden="true">
       <div class="cosmic-divider-sweep"></div>
       <div class="cosmic-divider-core">
         <span class="cosmic-divider-orb orb-sm"></span>
         <span class="cosmic-divider-orb"></span>
-        <span class="cosmic-divider-star">✦</span>
+        <span class="cosmic-divider-star">&#10022;</span>
         <span class="cosmic-divider-orb"></span>
         <span class="cosmic-divider-orb orb-sm"></span>
       </div>
@@ -2005,7 +1939,7 @@
 
     <br><br><br><br>
 
-    <!-- ══════════ LICENSES & CERTIFICATIONS SECTION ══════════ -->
+    <!-- â•â•â•â•â•â•â•â•â•â• LICENSES & CERTIFICATIONS SECTION â•â•â•â•â•â•â•â•â•â• -->
     <section class="exp-section cert-section" aria-label="Licenses and Certifications">
       <div class="exp-section-heading" id="cert-heading">
         <span class="exp-section-label">Credentials</span>
@@ -2017,7 +1951,7 @@
           industry-recognised certifications. These credentials reflect my commitment to staying current with evolving
           technologies and best practices across <strong style="color: rgba(140, 210, 255, 0.9)">UI/UX design</strong>,
           <strong style="color: rgba(200, 160, 255, 0.9)">software development</strong>, and
-          <strong style="color: rgba(100, 220, 160, 0.9)">cybersecurity</strong> — ensuring I bring both depth and
+          <strong style="color: rgba(100, 220, 160, 0.9)">cybersecurity</strong> â€” ensuring I bring both depth and
           breadth to every project I take on.
         </p>
       </div>
@@ -2195,7 +2129,7 @@
               <span class="cert-initials" style="display:none;color:rgba(80,180,255,0.9);">Li</span>
             </div>
             <div class="cert-info">
-              <p class="cert-name">How to Motivate Yourself to Do What’s Most Important</p>
+              <p class="cert-name">How to Motivate Yourself to Do Whatâ€™s Most Important</p>
               <span class="cert-issuer">LinkedIn Learning</span>
               <span class="cert-year">2021</span>
             </div>
@@ -2394,229 +2328,491 @@
 
     <br><br>
 
-    <!-- ══════════ COSMIC DIVIDER ══════════ -->
+    <!-- â•â•â•â•â•â•â•â•â•â• COSMIC DIVIDER â•â•â•â•â•â•â•â•â•â• -->
     <div class="cosmic-divider" aria-hidden="true">
       <div class="cosmic-divider-sweep"></div>
       <div class="cosmic-divider-core">
         <span class="cosmic-divider-orb orb-sm"></span>
         <span class="cosmic-divider-orb"></span>
-        <span class="cosmic-divider-star">✦</span>
+        <span class="cosmic-divider-star">&#10022;</span>
         <span class="cosmic-divider-orb"></span>
         <span class="cosmic-divider-orb orb-sm"></span>
       </div>
     </div>
 
 
-    <!-- ══════════ SKILLS SECTION ══════════ -->
+    <!-- â•â•â•â•â•â•â•â•â•â• SKILLS SECTION â•â•â•â•â•â•â•â•â•â• -->
     <section class="skills-section" aria-label="Skills">
       <div class="exp-section-heading" id="skills-heading">
         <span class="exp-section-label">Expertise</span>
-        <h2 class="exp-section-title">Skills I Specialise In</h2>
+        <h2 class="page-title">Specialized Skills</h2>
       </div>
 
-      <div class="skills-grid">
-        <!-- Panel 1: UI/UX Design -->
-        <div class="skill-panel sp-uiux" style="--sk-delay: 0.1s" id="sk-panel-0">
-          <div class="skill-panel-header">
-            <div class="sp-icon-wrap">
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="3" width="18" height="18" rx="3" />
-                <path d="M9 9h.01M15 9h.01M9 15h6" />
-              </svg>
-            </div>
-            <div class="sp-meta">
-              <span class="sp-eyebrow">Design</span>
-              <span class="sp-title">UI / UX</span>
-            </div>
+      <div class="para-container">
+        <p class="bio-para" style="--para-delay:0.1s;">
+          Throughout my career, I have cultivated a diverse and specialized set of technical skills, ranging from
+          <strong style="color: rgba(140, 210, 255, 0.9)">UI/UX architecture</strong> and
+          <strong style="color: rgba(80, 220, 180, 0.9)">indie game development</strong> to
+          <strong style="color: rgba(200, 160, 255, 0.9)">modern frontend engineering</strong>. My approach blends
+          aesthetic precision with technical robustness, ensuring that every project I touch is not only visually
+          stunning but also highly functional and user-centric.
+        </p>
+      </div>
+
+      <br><br>
+
+      <div id="skills-universe" class="skills-universe">
+        <!-- UI/UX (Purple) -->
+        <div class="nebula-node-wrap theme-uiux" data-pct="95" data-x="10" data-y="8">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg></div>
+            <div class="nebula-label">UI/UX Design</div>
           </div>
-          <div class="sp-divider"></div>
-          <div class="sp-bars">
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">Figma</span>
-                <span class="sp-bar-pct">95%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 95%; --bar-delay: 0.5s"></div>
-              </div>
-            </div>
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">User Research</span>
-                <span class="sp-bar-pct">88%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 88%; --bar-delay: 0.65s"></div>
-              </div>
-            </div>
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">Prototyping</span>
-                <span class="sp-bar-pct">92%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 92%; --bar-delay: 0.8s"></div>
-              </div>
-            </div>
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">Mobile App Design</span>
-                <span class="sp-bar-pct">90%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 90%; --bar-delay: 0.95s"></div>
-              </div>
-            </div>
+        </div>
+        <div class="nebula-node-wrap theme-uiux" data-pct="92" data-x="25" data-y="25">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path
+                  d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5zM5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5zM5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0zM12 9h3.5A3.5 3.5 0 1 1 12 12.5V9zM15.5 2A3.5 3.5 0 0 1 19 5.5 3.5 3.5 0 0 1 15.5 9H12V2h3.5z" />
+              </svg></div>
+            <div class="nebula-label">Figma</div>
           </div>
-          <div class="sp-divider" style="margin-top: 24px"></div>
-          <div class="sp-tags">
-            <span class="sp-tag">UI Design</span>
-            <span class="sp-tag">UX Design</span>
-            <span class="sp-tag">Wireframing</span>
-            <span class="sp-tag">Design Systems</span>
-            <span class="sp-tag">Accessibility</span>
+        </div>
+        <div class="nebula-node-wrap theme-uiux" data-pct="90" data-x="15" data-y="50">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg></div>
+            <div class="nebula-label">Prototyping</div>
+          </div>
+        </div>
+        <div class="nebula-node-wrap theme-uiux" data-pct="88" data-x="5" data-y="40">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v8M8 12h8" />
+              </svg></div>
+            <div class="nebula-label">Wireframing</div>
+          </div>
+        </div>
+        <div class="nebula-node-wrap theme-uiux" data-pct="85" data-x="20" data-y="75">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg></div>
+            <div class="nebula-label">UX Research</div>
+          </div>
+        </div>
+        <div class="nebula-node-wrap theme-uiux" data-pct="90" data-x="30" data-y="60">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg></div>
+            <div class="nebula-label">Design Systems</div>
           </div>
         </div>
 
-        <!-- Panel 2: Game Development -->
-        <div class="skill-panel sp-game" style="--sk-delay: 0.22s" id="sk-panel-1">
-          <div class="skill-panel-header">
-            <div class="sp-icon-wrap">
-              <svg viewBox="0 0 24 24">
+        <!-- Game Dev (Green) -->
+        <div class="nebula-node-wrap theme-game" data-pct="85" data-x="45" data-y="10">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <rect x="2" y="6" width="20" height="12" rx="2" />
+                <path d="M6 12h4m-2-2v4M15 11h.01M18 13h.01" />
+              </svg></div>
+            <div class="nebula-label">Indie Games</div>
+          </div>
+        </div>
+        <div class="nebula-node-wrap theme-game" data-pct="85" data-x="55" data-y="45">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path d="M12 3v18M3 12h18M5.3 5.3l13.4 13.4M5.3 18.7L18.7 5.3" />
+              </svg></div>
+            <div class="nebula-label">Unity</div>
+          </div>
+        </div>
+        <div class="nebula-node-wrap theme-game" data-pct="82" data-x="40" data-y="70">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg></div>
+            <div class="nebula-label">AR/VR</div>
+          </div>
+        </div>
+        <div class="nebula-node-wrap theme-game" data-pct="88" data-x="50" data-y="60">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
                 <line x1="6" y1="12" x2="10" y2="12" />
                 <line x1="8" y1="10" x2="8" y2="14" />
                 <circle cx="15" cy="11" r="1" />
                 <circle cx="17.5" cy="13" r="1" />
                 <path d="M3 6h18a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" />
-              </svg>
-            </div>
-            <div class="sp-meta">
-              <span class="sp-eyebrow">Development</span>
-              <span class="sp-title">Game Dev</span>
-            </div>
+              </svg></div>
+            <div class="nebula-label">C# Scripting</div>
           </div>
-          <div class="sp-divider"></div>
-          <div class="sp-bars">
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">Indie Game Dev</span>
-                <span class="sp-bar-pct">85%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 85%; --bar-delay: 0.5s"></div>
-              </div>
-            </div>
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">AR / VR Development</span>
-                <span class="sp-bar-pct">82%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 82%; --bar-delay: 0.65s"></div>
-              </div>
-            </div>
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">Visual Scripting</span>
-                <span class="sp-bar-pct">88%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 88%; --bar-delay: 0.8s"></div>
-              </div>
-            </div>
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">Game Optimisation</span>
-                <span class="sp-bar-pct">80%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 80%; --bar-delay: 0.95s"></div>
-              </div>
-            </div>
+        </div>
+        <div class="nebula-node-wrap theme-game" data-pct="80" data-x="60" data-y="80">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg></div>
+            <div class="nebula-label">Optimization</div>
           </div>
-          <div class="sp-divider" style="margin-top: 24px"></div>
-          <div class="sp-tags">
-            <span class="sp-tag">Game Design</span>
-            <span class="sp-tag">Beta Testing</span>
-            <span class="sp-tag">AR / VR</span>
-            <span class="sp-tag">Unity</span>
-            <span class="sp-tag">Immersive XR</span>
+        </div>
+        <div class="nebula-node-wrap theme-game" data-pct="90" data-x="65" data-y="15">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg></div>
+            <div class="nebula-label">Real-time Render</div>
           </div>
         </div>
 
-        <!-- Panel 3: Frontend & Graphic Design -->
-        <div class="skill-panel sp-dev" style="--sk-delay: 0.34s" id="sk-panel-2">
-          <div class="skill-panel-header">
-            <div class="sp-icon-wrap">
-              <svg viewBox="0 0 24 24">
+        <!-- Engineering (Blue) -->
+        <div class="nebula-node-wrap theme-dev" data-pct="87" data-x="75" data-y="10">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
                 <polyline points="16 18 22 12 16 6" />
                 <polyline points="8 6 2 12 8 18" />
-              </svg>
-            </div>
-            <div class="sp-meta">
-              <span class="sp-eyebrow">Engineering</span>
-              <span class="sp-title">Dev &amp; Design</span>
-            </div>
+              </svg></div>
+            <div class="nebula-label">Front-End</div>
           </div>
-          <div class="sp-divider"></div>
-          <div class="sp-bars">
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">Front-End Dev</span>
-                <span class="sp-bar-pct">87%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 87%; --bar-delay: 0.5s"></div>
-              </div>
-            </div>
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">Graphic Design</span>
-                <span class="sp-bar-pct">93%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 93%; --bar-delay: 0.65s"></div>
-              </div>
-            </div>
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">HTML / CSS / JS</span>
-                <span class="sp-bar-pct">85%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 85%; --bar-delay: 0.8s"></div>
-              </div>
-            </div>
-            <div class="sp-bar-item">
-              <div class="sp-bar-label-row">
-                <span class="sp-bar-name">Adobe Suite</span>
-                <span class="sp-bar-pct">90%</span>
-              </div>
-              <div class="sp-bar-track">
-                <div class="sp-bar-fill" style="--bar-w: 90%; --bar-delay: 0.95s"></div>
-              </div>
-            </div>
+        </div>
+        <div class="nebula-node-wrap theme-dev" data-pct="88" data-x="85" data-y="40">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="2" />
+                <path
+                  d="M12 5.5a18.2 18.2 0 0 0-11 5.5 18.2 18.2 0 0 0 11 5.5 18.2 18.2 0 0 0 11-5.5 18.2 18.2 0 0 0-11-5.5z" />
+              </svg></div>
+            <div class="nebula-label">React</div>
           </div>
-          <div class="sp-divider" style="margin-top: 24px"></div>
-          <div class="sp-tags">
-            <span class="sp-tag">React</span>
-            <span class="sp-tag">Branding</span>
-            <span class="sp-tag">Motion Design</span>
-            <span class="sp-tag">Illustration</span>
-            <span class="sp-tag">Web Apps</span>
+        </div>
+        <!-- 1: Game Dev -->
+        <div class="nebula-node-wrap theme-dev" data-pct="95" data-x="20" data-y="25">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <rect x="6" y="3" width="12" height="15" rx="2" />
+                <path d="M9 21h6v-3H9v3z" />
+                <circle cx="12" cy="10" r="2" />
+              </svg></div>
+            <div class="nebula-label">Game Development</div>
+          </div>
+        </div>
+
+        <!-- 2: Vibe Coding -->
+        <div class="nebula-node-wrap theme-dev" data-pct="98" data-x="75" data-y="20">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+              </svg></div>
+            <div class="nebula-label">Vibe Coding</div>
+          </div>
+        </div>
+
+        <!-- 3: UI/UX Engineering -->
+        <div class="nebula-node-wrap theme-dev" data-pct="90" data-x="50" data-y="45">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6-1.6 1.6a1 1 0 0 0 1.4 1.4l2.3-2.3a1 1 0 0 0 0-1.4l-2.3-2.3a1 1 0 0 0-1.4 0z" />
+                <path
+                  d="M9.3 17.7a1 1 0 0 0 0-1.4l-1.6-1.6 1.6-1.6a1 1 0 0 0-1.4-1.4l-2.3 2.3a1 1 0 0 0 0 1.4l2.3 2.3a1 1 0 0 0 1.4 0z" />
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+              </svg></div>
+            <div class="nebula-label">UI/UX<br>Engineering</div>
+          </div>
+        </div>
+
+        <!-- 4: Graphic Design -->
+        <div class="nebula-node-wrap theme-dev" data-pct="93" data-x="25" data-y="75">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+              </svg></div>
+            <div class="nebula-label">Graphic Design</div>
+          </div>
+        </div>
+
+        <!-- 5: Visual Coding -->
+        <div class="nebula-node-wrap theme-dev" data-pct="88" data-x="80" data-y="75">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+              </svg></div>
+            <div class="nebula-label">Visual Coding</div>
+          </div>
+        </div>
+
+        <!-- 6: Product Design -->
+        <div class="nebula-node-wrap theme-dev" data-pct="85" data-x="45" data-y="18">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg></div>
+            <div class="nebula-label">Product Design</div>
+          </div>
+        </div>
+
+        <!-- 8: Frontend Dev -->
+        <div class="nebula-node-wrap theme-dev" data-pct="92" data-x="10" data-y="50">
+          <div class="nebula-node">
+            <div class="nebula-cloud"></div>
+            <div class="nebula-ring"></div>
+            <div class="nebula-core"><svg viewBox="0 0 24 24">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg></div>
+            <div class="nebula-label">Frontend Development</div>
           </div>
         </div>
       </div>
+
+      <script>
+        (function () {
+          const universe = document.getElementById("skills-universe");
+          if (!universe) return;
+
+          const nodes = universe.querySelectorAll(".nebula-node-wrap");
+          const data = [];
+          const MIN_DIST = 260; // Increased to 260 for multiline labels
+          const FRICTION = 0.95;
+
+          let dragOffset = { x: 0, y: 0 };
+
+          nodes.forEach((node) => {
+            const d = {
+              el: node,
+              baseX: 15 + Math.random() * 70, // Randomized initial home
+              baseY: 15 + Math.random() * 65, // Biased slightly higher
+              x: Math.random() * 800,
+              y: Math.random() * 400,
+              vx: (Math.random() - 0.5) * 8,
+              vy: (Math.random() - 0.5) * 8,
+              phaseX: Math.random() * Math.PI * 2,
+              phaseY: Math.random() * Math.PI * 2,
+              speedX: 0.01 + Math.random() * 0.01,
+              speedY: 0.01 + Math.random() * 0.01,
+              amplitude: 30 + Math.random() * 30, // More wandering range
+              depth: 0.5 + Math.random() * 1.5,
+              isDragging: false
+            };
+
+            node.addEventListener("pointerdown", (e) => {
+              e.preventDefault();
+              d.isDragging = true;
+              node.setPointerCapture(e.pointerId);
+              const rect = universe.getBoundingClientRect();
+              dragOffset.x = d.x - (e.clientX - rect.left);
+              dragOffset.y = d.y - (e.clientY - rect.top);
+            });
+
+            node.addEventListener("pointermove", (e) => {
+              if (d.isDragging) {
+                const rect = universe.getBoundingClientRect();
+                const targetX = (e.clientX - rect.left) + dragOffset.x;
+                const targetY = (e.clientY - rect.top) + dragOffset.y;
+                d.vx = (targetX - d.x) * 0.8;
+                d.vy = (targetY - d.y) * 0.8;
+                d.x = targetX;
+                d.y = targetY;
+              }
+            });
+
+            const onRelease = () => {
+              if (d.isDragging) {
+                d.isDragging = false;
+                const rect = universe.getBoundingClientRect();
+                d.baseX = (d.x / rect.width) * 100;
+                d.baseY = (d.y / rect.height) * 100;
+              }
+            };
+            node.addEventListener("pointerup", onRelease);
+            node.addEventListener("pointercancel", onRelease);
+
+            data.push(d);
+          });
+
+          let mouseX = 0, mouseY = 0, targetMouseX = 0, targetMouseY = 0;
+
+          universe.addEventListener("mousemove", (e) => {
+            const rect = universe.getBoundingClientRect();
+            targetMouseX = ((e.clientX - rect.left) / rect.width) - 0.5;
+            targetMouseY = ((e.clientY - rect.top) / rect.height) - 0.5;
+          });
+
+          universe.addEventListener("mouseleave", () => {
+            targetMouseX = 0; targetMouseY = 0;
+          });
+
+          function resolveCollisions() {
+            for (let i = 0; i < data.length; i++) {
+              for (let j = i + 1; j < data.length; j++) {
+                const a = data[i], b = data[j];
+                const dx = b.x - a.x, dy = b.y - a.y;
+                const distance = Math.hypot(dx, dy);
+
+                if (distance < MIN_DIST && distance > 0) {
+                  const overlap = MIN_DIST - distance;
+                  const nx = dx / distance, ny = dy / distance;
+
+                  // 1. SOFT RELAXATION (Position)
+                  const relaxation = overlap * 0.08; // Even softer
+                  const rx = nx * relaxation, ry = ny * relaxation;
+                  if (!a.isDragging) { a.x -= rx * 0.5; a.y -= ry * 0.5; }
+                  if (!b.isDragging) { b.x += rx * 0.5; b.y += ry * 0.5; }
+
+                  // 2. SILK DEFLECTION (Force-based)
+                  // Instead of snapping, we gently adjust velocities
+                  const force = overlap * 0.04;
+                  if (!a.isDragging) { a.vx -= nx * force; a.vy -= ny * force; }
+                  if (!b.isDragging) { b.vx += nx * force; b.vy += ny * force; }
+
+                  // 3. ENHANCED TANGENTIAL GLIDE (Beautiful sliding)
+                  const tx = -ny, ty = nx;
+                  const relativeVelocityT = (a.vx * tx + a.vy * ty) - (b.vx * tx + b.vy * ty);
+                  const glide = relativeVelocityT * 0.15; // Increased for 'slide-off' feel
+                  if (!a.isDragging) { a.vx -= tx * glide; a.vy -= ty * glide; }
+                  if (!b.isDragging) { b.vx += tx * glide; b.vy += ty * glide; }
+
+                  // Subtle friction during contact for calm feel
+                  if (!a.isDragging) { a.vx *= 0.99; a.vy *= 0.99; }
+                  if (!b.isDragging) { b.vx *= 0.99; b.vy *= 0.99; }
+                }
+              }
+            }
+          }
+
+          function animate() {
+            mouseX += (targetMouseX - mouseX) * 0.03;
+            mouseY += (targetMouseY - mouseY) * 0.03;
+            const rect = universe.getBoundingClientRect();
+            const w = rect.width, h = rect.height;
+
+            data.forEach((d) => {
+              if (d.isDragging) return;
+
+              // 1. SILK DRIFT: Oscillation + Mouse Parallax
+              d.phaseX += d.speedX; d.phaseY += d.speedY;
+              const ox = Math.sin(d.phaseX) * d.amplitude;
+              const oy = Math.cos(d.phaseY) * d.amplitude;
+              const px = mouseX * 60 * d.depth;
+              const py = mouseY * 60 * d.depth;
+
+              // 2. SOFT HOME-SEEKING: Low-stiffness spring to avoid wiggling
+              const hx = (d.baseX / 100) * w, hy = (d.baseY / 100) * h;
+              const homeForce = 0.025; // Gentler seeking
+              d.vx += (hx + ox + px - d.x) * homeForce;
+              d.vy += (hy + oy + py - d.y) * homeForce;
+
+              // 3. MOTION GUARANTEE: Keep them moving moderately
+              const minSpeed = 1.2;
+              const speed = Math.hypot(d.vx, d.vy);
+              if (speed < minSpeed) {
+                d.vx += (Math.random() - 0.5) * 0.2;
+                d.vy += (Math.random() - 0.5) * 0.2;
+              }
+
+              d.vx *= FRICTION; d.vy *= FRICTION;
+              d.x += d.vx; d.y += d.vy;
+
+              // 4. TEXT-SAFE SOFT BOUNDARY (Asymmetric)
+              const padX = 140; // Labels are 140px wide
+              const padYTop = 80;
+              const padYBot = 160; // Labels hang below node
+              const ef = 0.08;
+
+              // Left Repulsion
+              if (d.x < padX) d.vx += (padX - d.x) * ef;
+              // Right Repulsion 
+              if (d.x > w - padX) d.vx -= (d.x - (w - padX)) * ef;
+              // Top Repulsion
+              if (d.y < padYTop) d.vy += (padYTop - d.y) * ef;
+              // Bottom Repulsion
+              if (d.y > h - padYBot) d.vy -= (d.y - (h - padYBot)) * ef;
+
+              // Final hard-wall safety (Large enough to keep text in)
+              const safeX = 100;
+              const safeYTop = 40;
+              const safeYBot = 110;
+              if (d.x < safeX) { d.x = safeX; d.vx *= 0.5; }
+              if (d.x > w - safeX) { d.x = w - safeX; d.vx *= 0.5; }
+              if (d.y < safeYTop) { d.y = safeYTop; d.vy *= 0.5; }
+              if (d.y > h - safeYBot) { d.y = h - safeYBot; d.vy *= 0.5; }
+            });
+
+            resolveCollisions();
+            data.forEach((d) => { d.el.style.transform = "translate3d(" + d.x + "px, " + d.y + "px, 0)"; });
+            requestAnimationFrame(animate);
+          }
+          animate();
+        })();
+      </script>
     </section>
     <br><br><br>
 
-    <!-- ══════════ COSMIC DIVIDER ══════════ -->
+    <!-- â•â•â•â•â•â•â•â•â•â• COSMIC DIVIDER â•â•â•â•â•â•â•â•â•â• -->
     <div class="cosmic-divider" aria-hidden="true">
       <div class="cosmic-divider-sweep"></div>
       <div class="cosmic-divider-core">
         <span class="cosmic-divider-orb orb-sm"></span>
         <span class="cosmic-divider-orb"></span>
-        <span class="cosmic-divider-star">✦</span>
+        <span class="cosmic-divider-star">&#10022;</span>
         <span class="cosmic-divider-orb"></span>
         <span class="cosmic-divider-orb orb-sm"></span>
       </div>
@@ -2624,11 +2820,11 @@
 
     <br><br><br>
 
-    <!-- ══════════ VOLUNTEER SECTION ══════════ -->
+    <!-- â•â•â•â•â•â•â•â•â•â• VOLUNTEER SECTION â•â•â•â•â•â•â•â•â•â• -->
     <section class="vol-section exp-section" aria-label="Volunteering Experience">
       <div class="exp-section-heading" id="vol-heading">
         <span class="exp-section-label">Community Impact</span>
-        <h2 class="page-title">Voluntary Contributions</h2>
+        <h2 class="page-title">Volunteer Experience</h2>
       </div>
 
       <div class="para-container">
@@ -2654,7 +2850,7 @@
           <div class="vol-info">
             <p class="vol-role">Editor In Chief</p>
             <span class="vol-org">ISACA NSBM Student Group</span>
-            <span class="vol-date">2022 — 2023</span>
+            <span class="vol-date">2022 â€” 2023</span>
           </div>
         </div>
 
@@ -2669,7 +2865,7 @@
           <div class="vol-info">
             <p class="vol-role">Associate Vice President</p>
             <span class="vol-org">Department of Network And Security - NSBM</span>
-            <span class="vol-date">2022 — 2023</span>
+            <span class="vol-date">2022 â€” 2023</span>
           </div>
         </div>
 
@@ -2683,7 +2879,7 @@
           <div class="vol-info">
             <p class="vol-role">Coordinator Of Volunteers</p>
             <span class="vol-org">FOSS Community of NSBM</span>
-            <span class="vol-date">2022 — 2023</span>
+            <span class="vol-date">2022 â€” 2023</span>
           </div>
         </div>
 
@@ -2698,7 +2894,7 @@
           <div class="vol-info">
             <p class="vol-role">Community Coordinator</p>
             <span class="vol-org">FOSS Community of NSBM</span>
-            <span class="vol-date">2021 — 2023</span>
+            <span class="vol-date">2021 â€” 2023</span>
           </div>
         </div>
 
@@ -2713,7 +2909,7 @@
           <div class="vol-info">
             <p class="vol-role">Volunteer</p>
             <span class="vol-org">FOSS Community of NSBM</span>
-            <span class="vol-date">2020 — 2023</span>
+            <span class="vol-date">2020 â€” 2023</span>
           </div>
         </div>
 
@@ -2728,7 +2924,7 @@
           <div class="vol-info">
             <p class="vol-role">Senior Prefect</p>
             <span class="vol-org">Wayamba Royal College</span>
-            <span class="vol-date">2018 — 2020</span>
+            <span class="vol-date">2018 â€” 2020</span>
           </div>
         </div>
 
@@ -2742,7 +2938,7 @@
           <div class="vol-info">
             <p class="vol-role">Director of Club Service</p>
             <span class="vol-org">Interact Club Of Wayamba Royal Collage</span>
-            <span class="vol-date">2019 — 2020</span>
+            <span class="vol-date">2019 â€” 2020</span>
           </div>
         </div>
 
@@ -2757,7 +2953,7 @@
           <div class="vol-info">
             <p class="vol-role">Assistant Director Of Community Service</p>
             <span class="vol-org">Interact Club Of Wayamba Royal Collage</span>
-            <span class="vol-date">2018 — 2019</span>
+            <span class="vol-date">2018 â€” 2019</span>
           </div>
         </div>
 
@@ -2771,7 +2967,7 @@
           <div class="vol-info">
             <p class="vol-role">Official Photographer</p>
             <span class="vol-org">Interact Club of Wayamba Royal Collage</span>
-            <span class="vol-date">2018 — 2020</span>
+            <span class="vol-date">2018 â€” 2020</span>
           </div>
         </div>
 
@@ -2786,7 +2982,7 @@
           <div class="vol-info">
             <p class="vol-role">Official Photographer</p>
             <span class="vol-org">Royalists Photographic Society (WRC)</span>
-            <span class="vol-date">2017 — 2020</span>
+            <span class="vol-date">2017 â€” 2020</span>
           </div>
         </div>
 
@@ -2794,19 +2990,19 @@
     </section>
     <br><br>
 
-    <!-- ══════════ COSMIC DIVIDER ══════════ -->
+    <!-- â•â•â•â•â•â•â•â•â•â• COSMIC DIVIDER â•â•â•â•â•â•â•â•â•â• -->
     <div class="cosmic-divider" aria-hidden="true" style="margin-top: 80px">
       <div class="cosmic-divider-sweep"></div>
       <div class="cosmic-divider-core">
         <span class="cosmic-divider-orb orb-sm"></span>
         <span class="cosmic-divider-orb"></span>
-        <span class="cosmic-divider-star">✦</span>
+        <span class="cosmic-divider-star">&#10022;</span>
         <span class="cosmic-divider-orb"></span>
         <span class="cosmic-divider-orb orb-sm"></span>
       </div>
     </div>
 
-    <!-- ══════════ TESTIMONIALS SECTION ══════════ -->
+    <!-- â•â•â•â•â•â•â•â•â•â• TESTIMONIALS SECTION â•â•â•â•â•â•â•â•â•â• -->
     <section class="testimonials-section" aria-label="Client Testimonials">
 
       <!-- Fixed-size outer shell -->
@@ -2850,7 +3046,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Thaanu Perera</span>
-                <span class="testi-role">Software Engineer — Eyepax</span>
+                <span class="testi-role">Software Engineer â€” Eyepax</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -2892,7 +3088,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Suraji Ekanayake</span>
-                <span class="testi-role">UI/UX Designer — Freelance</span>
+                <span class="testi-role">UI/UX Designer â€” Freelance</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -2932,7 +3128,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Sandakelum Senevirathne</span>
-                <span class="testi-role">Tech Lead — ZUSE TECHNOLOGIES</span>
+                <span class="testi-role">Tech Lead â€” ZUSE TECHNOLOGIES</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -2972,7 +3168,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Janith Perera</span>
-                <span class="testi-role">Software Engineer — RACEDATA</span>
+                <span class="testi-role">Software Engineer â€” RACEDATA</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3013,7 +3209,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Wenupa Mandinu</span>
-                <span class="testi-role">Cyber Security Engineer — Freelance</span>
+                <span class="testi-role">Cyber Security Engineer â€” Freelance</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3053,7 +3249,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Avishka Dilshan</span>
-                <span class="testi-role">DevOps Engineer — LSEG</span>
+                <span class="testi-role">DevOps Engineer â€” LSEG</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3095,7 +3291,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Sandev Dulleva</span>
-                <span class="testi-role">Software Engineer — ZUSE Technologies</span>
+                <span class="testi-role">Software Engineer â€” ZUSE Technologies</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3137,7 +3333,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Atheeque Hasan</span>
-                <span class="testi-role">Senior Data Analyst — AiSCOUT</span>
+                <span class="testi-role">Senior Data Analyst â€” AiSCOUT</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3180,7 +3376,7 @@
               <div class="testi-author-sep"></div>
               <div class="testi-author-info">
                 <span class="testi-name">Ramuthu Senanayake</span>
-                <span class="testi-role">Associate Project Manager — Sysco LABS Sri Lanka</span>
+                <span class="testi-role">Associate Project Manager â€” Sysco LABS Sri Lanka</span>
               </div>
               <div class="testi-stars">
                 <svg viewBox="0 0 20 20">
@@ -3232,7 +3428,7 @@
     </section>
   </main>
 
-  <!-- ══════════ FOOTER ══════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â• FOOTER â•â•â•â•â•â•â•â•â•â• -->
   <footer>
     <div class="social-links">
       <a href="#" aria-label="Behance">
@@ -3260,7 +3456,7 @@
         </svg>
       </a>
     </div>
-    <span class="copyright">© 2026 Ruchira Edirisinghe</span>
+    <span class="copyright">Â© 2026 Ruchira Edirisinghe</span>
   </footer>
 
   <button id="music-btn-desktop" aria-label="Toggle music">
@@ -3270,9 +3466,9 @@
   <div id="cursor-dot"></div>
   <canvas id="cursor-canvas"></canvas>
 
-  <!-- ══════════ PAGE SCRIPTS ══════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â• PAGE SCRIPTS â•â•â•â•â•â•â•â•â•â• -->
   <script>
-    /* ── Preloader ── */
+    /* â”€â”€ Preloader â”€â”€ */
     (function () {
       const preloader = document.getElementById("preloader");
       const fill = document.getElementById("progress-fill");
@@ -3299,7 +3495,7 @@
       }, 80);
     })();
 
-    /* ── Mobile menu ── */
+    /* â”€â”€ Mobile menu â”€â”€ */
     (function () {
       const menuBtn = document.getElementById("menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
@@ -3427,7 +3623,7 @@
       });
     })();
 
-    /* ── Scroll-reveal observer ── */
+    /* â”€â”€ Scroll-reveal observer â”€â”€ */
     (function () {
       const io = new IntersectionObserver(
         (entries) => {
@@ -3469,7 +3665,7 @@
       });
     })();
 
-    /* ── Testimonials slider ── */
+    /* â”€â”€ Testimonials slider â”€â”€ */
     (function () {
       const DURATION = 7000;
       const N = document.querySelectorAll(".testi-slide").length;
@@ -3612,8 +3808,8 @@
       resetProgressBar();
     })();
 
-    /* ── Beautiful Wavy SVM Spine ── */
-    /* ── Beautiful Animated Fluid SVM Spine ── */
+    /* â”€â”€ Beautiful Wavy SVM Spine â”€â”€ */
+    /* â”€â”€ Beautiful Animated Fluid SVM Spine â”€â”€ */
     function initTimelineAnimations() {
       const timelines = document.querySelectorAll('.timeline');
 
@@ -3775,7 +3971,7 @@
     window.addEventListener('load', initTimelineAnimations);
     setTimeout(initTimelineAnimations, 150);
 
-    /* ── Custom Cert Scrollbar ── */
+    /* â”€â”€ Custom Cert Scrollbar â”€â”€ */
     (function () {
       const grid = document.getElementById('cert-grid');
       const thumb = document.getElementById('cert-sb-thumb');
@@ -3799,7 +3995,7 @@
       window.addEventListener('resize', updateThumb);
       updateThumb();
 
-      /* ── Drag the thumb ── */
+      /* â”€â”€ Drag the thumb â”€â”€ */
       thumb.addEventListener('mousedown', function (e) {
         isDragging = true;
         startY = e.clientY;
@@ -3830,7 +4026,7 @@
         document.body.style.userSelect = '';
       });
 
-      /* ── Click on track to jump ── */
+      /* â”€â”€ Click on track to jump â”€â”€ */
       track.addEventListener('click', function (e) {
         if (e.target === thumb || thumb.contains(e.target)) return;
         const rect = track.getBoundingClientRect();
