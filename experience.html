@@ -24,7 +24,6 @@
        EXPERIENCE PAGE - ADDITIONAL STYLES
     -------------------------------------- */
 
-    /* --- Timeline Container --- */
     .exp-section {
       width: 95%;
       max-width: 1500px;
@@ -58,13 +57,11 @@
       color: rgba(140, 210, 255, 0.75);
     }
 
-    /* --- Timeline Track --- */
     .timeline {
       position: relative;
       padding-left: 0;
     }
 
-    /* --- Timeline Item --- */
     .tl-item {
       display: grid;
       grid-template-columns: 1fr 100px 1fr;
@@ -108,7 +105,6 @@
       padding-left: 80px;
     }
 
-    /* --- Node Styling --- */
     .tl-node-wrap {
       display: flex;
       flex-direction: column;
@@ -179,7 +175,6 @@
       --n-glow: rgba(255, 140, 40, 0.6);
     }
 
-    /* --- Card Styling --- */
     .tl-card-wrap {
       max-width: 650px;
       width: 100%;
@@ -3918,7 +3913,7 @@
 
   <!-- ---------- PAGE SCRIPTS ---------- -->
   <script>
-    /* â”€â”€ Preloader â”€â”€ */
+    /* Preloader */
     (function () {
       const preloader = document.getElementById("preloader");
       const fill = document.getElementById("progress-fill");
@@ -3945,7 +3940,7 @@
       }, 80);
     })();
 
-    /* â”€â”€ Mobile menu â”€â”€ */
+    /* Mobile menu */
     (function () {
       const menuBtn = document.getElementById("menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
@@ -4073,7 +4068,7 @@
       });
     })();
 
-    /* â”€â”€ Scroll-reveal observer â”€â”€ */
+    /* Scroll-reveal observer */
     (function () {
       const io = new IntersectionObserver(
         (entries) => {
@@ -4115,7 +4110,7 @@
       });
     })();
 
-    /* â”€â”€ Testimonials slider â”€â”€ */
+    /* Testimonials slider */
     (function () {
       const DURATION = 7000;
       const N = document.querySelectorAll(".testi-slide").length;
@@ -4487,9 +4482,7 @@
     })();
   </script>
 
-  <!-- =========================================================================
-       CERTIFICATION REDIRECT MODAL
-  ========================================================================== -->
+  <!-- Certification Redirect -->
   <div id="cert-prompt-overlay" class="modal-overlay">
     <div class="modal-card">
       <img id="modal-logo" class="modal-header-logo" src="" alt="Issuer logo">
@@ -4504,9 +4497,6 @@
     </div>
   </div>
 
-  <!-- =========================================================================
-       CERTIFICATION REDIRECT LOGIC
-  ========================================================================== -->
   <script>
     (function () {
       const overlay = document.getElementById('cert-prompt-overlay');

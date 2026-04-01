@@ -63,7 +63,6 @@
       background: radial-gradient(ellipse at center, transparent 30%, rgba(2,3,10,0.5) 100%);
     }
 
-    /* ── Canvases ── */
     #space-canvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
     #cursor-canvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100001; }
     #cursor-dot {
@@ -78,7 +77,6 @@
       mix-blend-mode: difference;
     }
 
-    /* ── Split panels ── */
     #split-top, #split-bottom { position: fixed; left: 0; right: 0; z-index: 99998; background: #02030a; transition: transform 0.85s cubic-bezier(0.76,0,0.24,1); }
     #split-top { top: 0; height: 50%; transform: translateY(0); }
     #split-bottom { bottom: 0; height: 50%; transform: translateY(0); }
@@ -86,7 +84,6 @@
     #split-bottom.open { transform: translateY(100%); }
     #split-top.gone, #split-bottom.gone { display: none; }
 
-    /* ── Preloader ── */
     #preloader { position: fixed; inset: 0; z-index: 99999; background: #02030a; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; }
     #preloader-canvas { display: block; width: min(500px, 72vw); height: auto; }
     #progress-track { width: min(500px, 72vw); height: 2px; background: rgba(255, 255, 255, 0.1); border-radius: 2px; overflow: hidden; position: relative; }
@@ -96,7 +93,6 @@
     .tagline-br { display: none; }
     @media (max-width: 768px) { .tagline-br { display: block; } }
 
-    /* ── NAV ── */
     #nav-fade-mask {
       position: fixed; top: 0; left: 0; right: 0; height: 110px;
       background: linear-gradient(to bottom, rgba(2,3,10,0.75) 0%, transparent 100%);
@@ -154,7 +150,6 @@
       width: 3px; height: 3px; border-radius: 50%; background: rgba(140,210,255,0.9);
     }
 
-    /* ── Mobile nav ── */
     #mobile-topbar, #mobile-menu { display: none; }
     .glass-round-btn, #music-btn {
       width: 46px; height: 46px; border-radius: 50%;
@@ -176,7 +171,6 @@
       opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.22,0.61,0.36,1) 0.25s forwards;
     }
 
-    /* ── Desktop music button ── */
     #music-btn-desktop {
       position: fixed; top: 28px; left: 36px; z-index: 400;
       width: 46px; height: 46px; border-radius: 50%;
@@ -411,9 +405,7 @@
     @keyframes cosmicPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.55;transform:scale(0.75)} }
     @keyframes cosmicSpin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
 
-    /* ══════════════════════════
-       CONTACT CHANNELS GRID
-    ══════════════════════════ */
+    /* CONTACT CHANNELS GRID */
     .channels-section {
       width: 95%; max-width: 1100px;
       margin: 80px auto 0;
@@ -514,9 +506,7 @@
     .channel-card:hover .cc-arrow { opacity: 1; transform: translate(0, 0); }
     .cc-arrow svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 
-    /* =========================================================================
-       GLASSMORPHIC REDIRECTION MODAL
-    ========================================================================= */
+    /* GLASSMORPHIC REDIRECTION MODAL */
     .modal-overlay { 
       position: fixed; inset: 0; 
       background: radial-gradient(circle at center, var(--modal-glow, rgba(0,0,0,0.4)) 0%, rgba(2,3,10,0.85) 100%);
@@ -569,9 +559,33 @@
     .btn-primary { background: #ffffff; color: #000; font-weight: 800; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15); }
     .btn-primary:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255, 255, 255, 0.2); }
 
-    /* ══════════════════════════
-       ORBIT / "HOW I WORK" SECTION
-    ══════════════════════════ */
+    /* Mobile modal adjustments */
+    @media (max-width: 600px) {
+      .modal-card {
+        padding: 32px 20px;
+        width: 88%;
+        max-width: 340px;
+        border-radius: 26px;
+      }
+      .modal-icon-wrap {
+        width: 56px; height: 56px;
+        border-radius: 16px;
+        margin-bottom: 18px;
+      }
+      .modal-icon-wrap svg { width: 24px; height: 24px; }
+      .modal-card h3 { margin-bottom: 8px; }
+      .modal-destination-wrap { margin: 18px 0 24px; }
+      .modal-dest-box {
+        padding: 10px 14px;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+      .modal-card p.modal-instruction { font-size: 12.5px; }
+      .modal-actions { gap: 10px; margin-top: 28px; }
+      .modal-btn { padding: 12px 20px; font-size: 11px; }
+    }
+
+    /* ORBIT / "HOW I WORK" SECTION */
     .orbit-section {
       width: 95%; max-width: 1100px;
       margin: 120px auto 0;

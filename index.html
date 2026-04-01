@@ -27,11 +27,11 @@
 
 <body>
 
-  <!-- ══════════ SPLIT PANELS (sit behind preloader, reveal the page) ══════════ -->
+  <!-- Split panels reveal the page behind the preloader -->
   <div id="split-top"></div>
   <div id="split-bottom"></div>
 
-  <!-- ══════════ WATER FILL PRELOADER ══════════ -->
+  <!-- Preloader logic -->
   <div id="preloader">
     <canvas id="preloader-canvas"></canvas>
     <div id="progress-track">
@@ -43,7 +43,6 @@
   <canvas id="space-canvas"></canvas>
   <canvas id="scatter-canvas"></canvas>
 
-  <!-- ══════════ MAIN CONTENT ══════════ -->
   <main class="page">
     <div class="hero">
       <div class="photo-wrapper" id="photo-wrapper">
@@ -69,7 +68,6 @@
     </div>
   </main>
 
-  <!-- ══════════ FOOTER ══════════ -->
   <footer>
     <div class="social-links">
       <a href="https://www.behance.net/ruchiraedirisinghe" target="_blank" aria-label="Behance">
@@ -100,7 +98,7 @@
     <span class="copyright">© 2026 Ruchira Edirisinghe</span>
   </footer>
 
-  <!-- ══════════ MENU OVERLAY ══════════ -->
+  <!-- Overlay navigation -->
   <div id="menu-overlay">
     <nav class="menu-nav">
       <a href="./about.html" class="menu-item">
@@ -128,7 +126,6 @@
 
   <button id="menu-close" aria-label="Close">✕</button>
 
-  <!-- ══════════ MUSIC TOGGLE ══════════ -->
   <button id="music-btn" aria-label="Toggle music">
     <canvas id="spectrum-canvas" width="26" height="18"></canvas>
   </button>
@@ -136,8 +133,7 @@
   <div id="cursor-dot"></div>
   <canvas id="cursor-canvas"></canvas>
 
-  <!-- ══════════ SCRIPTS ══════════ -->
-  <!-- Load order matters: space bg first (no deps), then scatter/menu/cursor, then preloader, then sound -->
+  <!-- Script load order: space bg (no deps), then scatter/menu/cursor, preloader, then sound -->
   <script src="./styles/home/space-background.js"></script>
   <script src="./styles/home/scatter-menu-cursor.js"></script>
   <script src="./styles/home/preloader.js"></script>
