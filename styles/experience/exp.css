@@ -1125,7 +1125,7 @@
       box-shadow:
         0 0 0 1px var(--cert-color, rgba(140, 80, 255, 0.2)),
         0 16px 48px rgba(0, 0, 0, 0.5),
-        0 0 36px var(--cert-glow, rgba(140, 80, 255, 0.12));
+        0 0 36px var(--cert-glow, rgba(140, 80, 255, 0.06));
       transform: translateY(-5px);
     }
 
@@ -1163,7 +1163,7 @@
 
     .cert-card:hover .cert-badge {
       transform: scale(1.06);
-      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.38), 0 0 14px var(--cert-glow, rgba(140, 80, 255, 0.22));
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.38), 0 0 14px var(--cert-glow, rgba(140, 80, 255, 0.12));
     }
 
     /* Actual logo image */
