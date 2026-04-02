@@ -2052,6 +2052,10 @@
       .tz-card {
         min-width: unset;
       }
+
+      footer {
+        padding: 16px 24px 24px;
+      }
     }
 
     /* Scroll-reveal base */
