@@ -1719,7 +1719,7 @@
       display: block;
       margin: 0 auto;
       filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.4));
-      animation: astronautFloat 6s ease-in-out infinite;
+      animation: astronautFloat 5s ease-in-out infinite;
       position: relative;
       z-index: 2;
     }
@@ -1729,10 +1729,10 @@
         transform: translateY(0) rotate(0deg);
       }
       33% {
-        transform: translateY(-15px) rotate(2deg);
+        transform: translateY(-30px) rotate(4deg);
       }
       66% {
-        transform: translateY(5px) rotate(-1deg);
+        transform: translateY(15px) rotate(-2deg);
       }
     }
 
