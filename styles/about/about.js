@@ -1014,3 +1014,62 @@ const observer = new IntersectionObserver((entries) => {
         gcCards.forEach(function (c) { c.classList.add('gc-vis'); });
       }
     })();
+
+/* ══════════ 9. REDIRECTION MODAL SYSTEM ══════════ */
+(function() {
+  const modalOverlay = document.getElementById('cert-prompt-overlay');
+  const modalIconWrap = document.getElementById('modal-icon-wrap');
+  const modalDetailBox = document.getElementById('modal-detail-box');
+  const modalActionText = document.getElementById('modal-action-text');
+  const modalCancel = document.getElementById('modal-cancel');
+  const modalConfirm = document.getElementById('modal-confirm');
+  
+  if (!modalOverlay) return;
+
+  var pendingUrl = "";
+
+  document.querySelectorAll('.platform-card').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      if (this.dataset.url) {
+        e.preventDefault();
+        pendingUrl = this.dataset.url;
+        
+        // Sync Icon
+        var iconSource = this.querySelector('.pc-icon-wrap');
+        if (iconSource) modalIconWrap.innerHTML = iconSource.innerHTML;
+        
+        // Sync Details
+        modalDetailBox.textContent = this.dataset.detail || this.dataset.name || "External Link";
+        modalActionText.textContent = this.dataset.action || "the application";
+        
+        // Dynamic Theme Colors based on platform card CSS variables
+        var computed = getComputedStyle(this);
+        var color = computed.getPropertyValue('--pc-color').trim() || '#fff';
+        var glow = computed.getPropertyValue('--pc-glow').trim() || 'rgba(255,255,255,0.2)';
+        
+        document.documentElement.style.setProperty('--cc-color', color);
+        document.documentElement.style.setProperty('--cc-glow', glow);
+        
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  const closeModal = function() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  if (modalCancel) modalCancel.addEventListener('click', closeModal);
+  if (modalConfirm) {
+    modalConfirm.addEventListener('click', function() {
+      if (pendingUrl) window.open(pendingUrl, '_blank');
+      closeModal();
+    });
+  }
+
+  modalOverlay.addEventListener('click', function(e) {
+    if (e.target === modalOverlay) closeModal();
+  });
+})();
