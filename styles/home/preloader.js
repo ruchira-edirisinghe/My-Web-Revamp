@@ -25,6 +25,30 @@
 
   function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
 
+  // Generate stars for Aurora Background
+  const starsContainer = document.getElementById('preloader-stars');
+  if (starsContainer) {
+    const starCount = 80;
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'preloader-star';
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        const size = 1 + Math.random() * 2;
+        const delay = Math.random() * 5;
+        const duration = 2 + Math.random() * 3;
+        const opacity = 0.4 + Math.random() * 0.5;
+
+        star.style.left = `${x}%`;
+        star.style.top = `${y}%`;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.setProperty('--star-opacity', opacity);
+        star.style.animation = `star-twinkle ${duration}s infinite ${delay}s ease-in-out`;
+        starsContainer.appendChild(star);
+    }
+  }
+
   function drawFrame(ts) {
     if (!startTime) startTime = ts;
     const raw = Math.min((ts - startTime) / DURATION, 1);
