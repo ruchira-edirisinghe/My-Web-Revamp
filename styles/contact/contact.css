@@ -838,6 +838,9 @@
       align-items: center;
       justify-content: center;
       overflow: visible;
+      pointer-events: none;
+      will-change: transform;
+      contain: strict;
     }
 
     /* ══════════════════════════
@@ -1451,6 +1454,7 @@
 
     .mobile-lottie-wrap {
       display: none;
+      pointer-events: none;
     }
 
     /* ORBIT / "HOW I WORK" SECTION */
