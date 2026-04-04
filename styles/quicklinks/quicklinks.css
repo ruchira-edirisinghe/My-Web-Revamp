@@ -1049,7 +1049,7 @@ main {
 .pc-icon-wrap {
   width: 58px;
   height: 58px;
-  border-radius: 50%;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1527,7 +1527,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px 0px;
+  padding: 20px 40px 28px;
   position: relative;
   z-index: 200;
   margin-top: auto;
@@ -1590,7 +1590,13 @@ footer {
   .about-block { padding: 24px; }
   .block-title { font-size: 1.4rem; }
   .links-grid { grid-template-columns: 1fr; }
-  footer { flex-direction: column; gap: 20px; text-align: center; }
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 16px 24px 24px;
+  }
+  .sc-desc, .pc-stats, .pc-link { display: none; }
 }
 
 @media (max-width: 480px) {
