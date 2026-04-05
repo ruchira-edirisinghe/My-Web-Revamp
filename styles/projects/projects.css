@@ -252,12 +252,74 @@ body::after {
   top: 18px;
   left: 16px;
   right: 16px;
-  z-index: 450;
+  z-index: 20000;
   display: none;
   align-items: center;
   justify-content: space-between;
   opacity: 0;
   animation: fadeUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.25s forwards;
+}
+
+@media (max-width: 768px) {
+  #mobile-topbar { display: flex !important; opacity: 1 !important; }
+}
+
+/* Stretched Link for Clickable Cards */
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+}
+
+.project-card { cursor: pointer; }
+
+/* ── Back Navigation (Global) ── */
+.back-nav-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 20px;
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.back-link span { 
+  color: var(--accent-cyan); 
+  font-size: 14px; 
+  transition: transform 0.4s ease;
+}
+
+.back-link:hover { 
+  background: rgba(255, 255, 255, 0.1); 
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(140, 210, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.back-link:hover span {
+  transform: translateX(-4px);
 }
 
 .mobile-logo-link {
@@ -319,7 +381,7 @@ body::after {
 #mobile-menu {
   position: fixed;
   inset: 0;
-  z-index: 430;
+  z-index: 20001;
   background: radial-gradient(circle at top center, rgba(120, 180, 255, 0.10), transparent 40%), rgba(2, 3, 10, 0.72);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
@@ -426,7 +488,6 @@ main {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 #hero-heading { text-align: center; margin-bottom: 30px; width: 100%; }
@@ -611,13 +672,55 @@ main {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   margin-top: 40px;
 }
 
+.projects-grid.grid-2x2 {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.projects-grid.grid-mixed {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 32px;
+}
+
+/* Mixed Grid Spanning: 2 over 3 */
+.grid-mixed .project-card:nth-child(1),
+.grid-mixed .project-card:nth-child(2) {
+  grid-column: span 3;
+}
+
+.grid-mixed .project-card:nth-child(n+3) {
+  grid-column: span 2;
+}
+
+/* Aspect ratio adjustment for the wider Row 1 cards */
+.grid-mixed .project-card:nth-child(-n+2) .project-image-wrap {
+  aspect-ratio: 21 / 9;
+}
+
+/* Standard Responsive for Mixed Grid */
+@media (max-width: 1200px) {
+  .projects-grid.grid-mixed { grid-template-columns: repeat(2, 1fr); }
+  .grid-mixed .project-card:nth-child(n) { grid-column: auto; }
+  .grid-mixed .project-card .project-image-wrap { aspect-ratio: 16 / 9 !important; }
+}
+
+@media (max-width: 900px) {
+  .projects-grid.grid-mixed { grid-template-columns: 1fr; }
+}
+
+.projects-grid.grid-2x2 .project-image-wrap {
+  aspect-ratio: 21 / 9;
+}
+
 .project-card {
   position: relative;
+  cursor: pointer; /* Clickable affordance */
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 32px;
@@ -776,11 +879,19 @@ footer {
 }
 
 @media (max-width: 900px) {
-  #navbar-wrap { display: none; }
-  #mobile-topbar { display: flex; }
+  #navbar-wrap { display: none !important; }
+  #mobile-topbar { 
+    display: flex !important; 
+    opacity: 1 !important; 
+  }
   #music-btn-desktop { display: none !important; }
   main { padding: 120px 24px 60px; }
-  .projects-grid { grid-template-columns: 1fr; gap: 24px; }
+  .projects-grid,
+  .projects-grid.grid-2x2 { 
+    grid-template-columns: 1fr; 
+    gap: 24px; 
+  }
+  .projects-grid.grid-2x2 .project-image-wrap { aspect-ratio: 16 / 9; }
   .divide-panel { height: 320px; }
   .panel-title { font-size: 28px; }
   .panel-desc { display: none; }

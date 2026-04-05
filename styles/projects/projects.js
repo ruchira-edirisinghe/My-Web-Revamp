@@ -1,6 +1,10 @@
 (function () {
   "use strict";
 
+  // Determine path based on page depth
+  const isSubpage = window.location.pathname.includes('/all-projects/');
+  const basePath = isSubpage ? '../' : './';
+
   /* ══════════ 1. SPACE BACKGROUND (AURORA VERSION) ══════════ */
   (function () {
     const canvas = document.getElementById('space-canvas');
@@ -156,7 +160,7 @@
       }
     }
     logoImg.onload = () => { logoReady = true; requestAnimationFrame(drawFrame); };
-    logoImg.src = './Images/longlogo.svg';
+    logoImg.src = basePath + 'Images/longlogo.svg';
   })();
 
   /* ══════════ 3. CURSOR & INTERACTION SFX ══════════ */
@@ -223,7 +227,7 @@
   /* ══════════ 4. AUDIO PERSISTENCE ══════════ */
   (function () {
     const bgAudio = new Audio();
-    bgAudio.src = './Audio/ambient.mp3'; bgAudio.loop = true; bgAudio.volume = 0;
+    bgAudio.src = basePath + 'Audio/ambient.mp3'; bgAudio.loop = true; bgAudio.volume = 0;
     const MUSIC_VOLUME = 0.35;
     let musicStarted = false, musicMuted = false, spectrumPlaying = false;
 
@@ -402,6 +406,23 @@
 
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMobileMenu();
+    });
+  })();
+
+  // ── Project Cards: Universal Clickability ──
+  (function() {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            const primaryLink = card.querySelector('.project-link-btn');
+            // If the user clicked the button itself, let it handle the event naturally
+            if (e.target.closest('.project-link-btn')) return;
+            
+            // Otherwise, trigger the primary link behavior
+            if (primaryLink && primaryLink.href && primaryLink.href !== '#' && !primaryLink.href.includes('javascript:void')) {
+                window.location.href = primaryLink.href;
+            }
+        });
     });
   })();
 
