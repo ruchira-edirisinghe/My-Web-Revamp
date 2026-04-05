@@ -38,6 +38,11 @@ body {
   overflow-x: hidden;
 }
 
+body[data-page="projects"] {
+  height: 100vh;
+  overflow: hidden;
+}
+
 /* ── Grain ── */
 body::before {
   content: '';
@@ -404,15 +409,19 @@ body.menu-open { overflow: hidden; }
    PROJECT NAKED HUB
    ══════════════════════════════════════ */
 main {
-  padding: 160px 24px 80px;
-  max-width: 1200px;
+  flex: 1;
+  padding: 140px 40px 60px;
+  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-#hero-heading { text-align: center; margin-bottom: 60px; width: 100%; }
+#hero-heading { text-align: center; margin-bottom: 30px; width: 100%; }
 
 .section-label {
   font-size: 9px;
@@ -453,6 +462,145 @@ main {
 }
 
 /* ── Project Grid ── */
+/* ── High-Fidelity Hub Divide ── */
+.hub-divide-container {
+  display: flex;
+  width: 100%;
+  flex: 1; /* Stretch to fill all vertical space in main */
+  gap: 30px;
+  perspective: 1000px;
+  align-items: stretch;
+}
+
+.divide-panel {
+  flex: 1;
+  position: relative;
+  border-radius: 40px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: flex 0.8s cubic-bezier(0.25, 1, 0.33, 1), transform 0.6s cubic-bezier(0.25, 1, 0.33, 1), box-shadow 0.6s ease;
+  opacity: 1;
+  animation: panelEntry 1.2s cubic-bezier(0.22, 1, 0.36, 1) calc(0.15s * var(--panel-index) + 0.5s) both;
+}
+
+@keyframes panelEntry {
+  from { opacity: 0; transform: translateY(30px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.divide-panel:hover {
+  flex: 1.6;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), 0 0 60px var(--panel-glow);
+  z-index: 10;
+}
+
+.panel-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.33, 1), filter 0.8s ease;
+}
+
+.divide-panel:hover .panel-bg {
+  transform: scale(1.15);
+  filter: brightness(0.6);
+}
+
+.panel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(2, 3, 10, 0.4) 40%, rgba(2, 3, 10, 0.9) 100%);
+  transition: opacity 0.6s ease;
+}
+
+.panel-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 60px 50px;
+  z-index: 5;
+}
+
+.panel-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+  opacity: 0.8;
+  transform: translateY(10px);
+  transition: transform 0.6s ease;
+}
+
+.panel-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(32px, 3.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.panel-line {
+  width: 40px;
+  height: 2px;
+  background: #fff;
+  margin-bottom: 24px;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.33, 1);
+}
+
+.divide-panel:hover .panel-line {
+  width: 80px;
+  background: var(--accent-cyan);
+}
+
+.panel-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 320px;
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.33, 1) 0.1s;
+}
+
+.divide-panel:hover .panel-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.panel-cta {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s ease;
+}
+
+.divide-panel:hover .panel-cta {
+  gap: 14px;
+  color: var(--accent-cyan);
+}
+
+/* Panel Variants */
+.type-web { --panel-glow: rgba(140, 210, 255, 0.2); }
+.type-design { --panel-glow: rgba(188, 111, 255, 0.2); }
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -612,6 +760,10 @@ footer {
 
 @media (max-width: 1200px) {
   .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .hub-divide-container { height: auto; min-height: auto; flex-direction: column; }
+  .divide-panel { height: 400px; flex: none; width: 100%; }
+  .divide-panel:hover { flex: none; transform: translateY(-8px); }
+  .panel-content { padding: 40px; }
   .project-card { padding: 32px; }
 }
 
@@ -621,6 +773,9 @@ footer {
   #music-btn-desktop { display: none !important; }
   main { padding: 120px 24px 60px; }
   .projects-grid { grid-template-columns: 1fr; gap: 24px; }
+  .divide-panel { height: 320px; }
+  .panel-title { font-size: 28px; }
+  .panel-desc { display: none; }
   .project-card { padding: 28px; }
   footer { flex-direction: column; gap: 20px; text-align: center; }
 }
