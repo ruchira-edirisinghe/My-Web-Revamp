@@ -38,9 +38,17 @@ body {
   overflow-x: hidden;
 }
 
-body[data-page="projects"] {
+body[data-page="projects-hub"] {
   height: 100vh;
   overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  body[data-page="projects-hub"],
+  body[data-page="projects-hub"] main {
+    height: auto;
+    overflow: visible;
+  }
 }
 
 /* ── Grain ── */
