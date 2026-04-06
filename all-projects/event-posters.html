@@ -4,16 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Other Stuff | Ruchira Edirisinghe</title>
+  <title>Event Posters | Ruchira Edirisinghe</title>
 
-  <link rel="icon" type="image/x-icon" href="./images/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Squada+One&family=JetBrains+Mono:wght@400;700&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="./styles/projects/projects.css">
+  <link rel="stylesheet" href="../styles/projects/projects.css">
+  <link rel="stylesheet" href="../styles/projects/artworks.css">
 </head>
 
 <body data-page="projects">
@@ -34,7 +35,7 @@
       <div id="progress-track">
         <div id="progress-fill"></div>
       </div>
-      <p id="preloader-tagline">Materializing My <span class="tagline-name">Creative Constellation</span></p>
+      <p id="preloader-tagline">Materializing My <span class="tagline-name">Artistic Nebula</span></p>
     </div>
   </div>
 
@@ -43,16 +44,16 @@
   <canvas id="space-canvas"></canvas>
 
   <div id="navbar-wrap">
-    <a href="index.html" aria-label="Home"><img class="nav-logo" src="./Images/longlogo.svg" alt="Logo" /></a>
+    <a href="../index.html" aria-label="Home"><img class="nav-logo" src="../Images/longlogo.svg" alt="Logo" /></a>
     <nav id="navbar">
       <div class="nav-links">
-        <a href="about.html" class="nav-link">About Me</a>
-        <a href="experience.html" class="nav-link">Experience</a>
-        <a href="projects.html" class="nav-link active">Projects</a>
-        <a href="quicklinks.html" class="nav-link">Quick Links</a>
+        <a href="../about.html" class="nav-link">About Me</a>
+        <a href="../experience.html" class="nav-link">Experience</a>
+        <a href="../projects.html" class="nav-link active">Projects</a>
+        <a href="../quicklinks.html" class="nav-link">Quick Links</a>
       </div>
       <div class="nav-divider"></div>
-      <a href="contact.html" class="nav-cta">Say Hi 👋</a>
+      <a href="../contact.html" class="nav-cta">Say Hi 👋</a>
     </nav>
   </div>
 
@@ -60,8 +61,8 @@
     <button id="music-btn" aria-label="Toggle music">
       <canvas id="spectrum-canvas" width="26" height="18"></canvas>
     </button>
-    <a href="index.html" class="mobile-logo-link" aria-label="Home">
-      <img class="mobile-logo" src="./Images/longlogo.svg" alt="Logo" />
+    <a href="../index.html" class="mobile-logo-link" aria-label="Home">
+      <img class="mobile-logo" src="../Images/longlogo.svg" alt="Logo" />
     </a>
     <button id="menu-btn" class="glass-round-btn" aria-label="Open menu" aria-expanded="false"
       aria-controls="mobile-menu">
@@ -71,23 +72,23 @@
 
   <div id="mobile-menu" aria-hidden="true">
     <nav class="mobile-menu-panel">
-      <a href="about.html" data-page="about" class="mobile-menu-link">
+      <a href="../about.html" data-page="about" class="mobile-menu-link">
         <span class="mobile-menu-title">About Me</span>
         <span class="mobile-menu-desc">Who I am &amp; what drives me</span>
       </a>
-      <a href="experience.html" data-page="experience" class="mobile-menu-link">
+      <a href="../experience.html" data-page="experience" class="mobile-menu-link">
         <span class="mobile-menu-title">Experience</span>
         <span class="mobile-menu-desc">My journey &amp; career highlights</span>
       </a>
-      <a href="projects.html" data-page="projects" class="mobile-menu-link active">
+      <a href="../projects.html" data-page="projects" class="mobile-menu-link active">
         <span class="mobile-menu-title">Projects</span>
         <span class="mobile-menu-desc">Work I've crafted &amp; shipped</span>
       </a>
-      <a href="quicklinks.html" data-page="links" class="mobile-menu-link">
+      <a href="../quicklinks.html" data-page="links" class="mobile-menu-link">
         <span class="mobile-menu-title">Quick Links</span>
         <span class="mobile-menu-desc">Digital Constellation</span>
       </a>
-      <a href="contact.html" data-page="contact" class="mobile-menu-link">
+      <a href="../contact.html" data-page="contact" class="mobile-menu-link">
         <span class="mobile-menu-title">Contact Me</span>
         <span class="mobile-menu-desc">Let's build something cosmic</span>
       </a>
@@ -101,121 +102,87 @@
   </div>
 
   <main>
-    <header id="hero-heading">
-      <div class="back-nav-wrap">
-        <a href="projects.html" class="back-link"><span>←</span> Back to Project Categories</a>
-      </div>
-      <p class="section-label">Visual Artistry</p>
-      <h1 class="page-title">Graphic Design</h1>
-      <br>
-      <p class="bio-para">
-        A collection of visual narratives, brand identities, and digital art pieces crafted with precision and cosmic
-        inspiration.
+    <header class="page-header">
+      <a href="../graphic-projects.html" class="back-link"><span>←</span> Back to Graphic Projects</a>
+      <p class="section-label">High-Impact Visuals</p>
+      <h1 class="page-title">Event Posters</h1>
+      <p class="bio-para" style="text-align: left; margin: 0;">
+        A showcase of high-impact visual design for corporate events, hackathons, and creative gatherings.
       </p>
     </header>
 
-    <div class="projects-grid grid-mixed">
-      <!-- 1. LOGO DESIGNS -->
-      <div class="project-card type-design" style="--card-index: 0;">
-        <div class="project-image-wrap">
-          <img src="./Images/projects/4.png" alt="Logo Designs" class="project-card-img" />
+    <div class="gallery-container">
+      <div class="poster-grid">
+        <!-- Poster 1 -->
+        <div class="poster-item" style="--item-index: 1;">
+          <img src="../Images/artworks/event-posters/thumbs/AGM-2.jpg"
+            data-highres="../Images/artworks/event-posters/AGM-2.png" alt="Event Poster" class="artwork-img"
+            loading="lazy" decoding="async">
         </div>
-        <div class="project-content">
-          <span class="project-label">Identity Design</span>
-          <h3 class="project-title">Logo Designs</h3>
-          <p class="project-desc">Crafting iconic visual signatures that define brands and leave lasting impressions.
-          </p>
-          <div class="project-tags">
-            <span class="tech-tag">Vector Art</span>
-            <span class="tech-tag">Branding</span>
-          </div>
+        <!-- Poster 2 -->
+        <div class="poster-item" style="--item-index: 2;">
+          <img src="../Images/artworks/event-posters/thumbs/Coming-Soon-Final.jpg"
+            data-highres="../Images/artworks/event-posters/Coming-Soon-Final.jpg" alt="Event Poster" class="artwork-img"
+            loading="lazy" decoding="async">
         </div>
-        <div class="project-links">
-          <a href="#" class="project-link-btn stretched-link">View Gallery ↗</a>
+        <!-- Poster 3 -->
+        <div class="poster-item" style="--item-index: 3;">
+          <img src="../Images/artworks/event-posters/thumbs/HackToNight.jpg"
+            data-highres="../Images/artworks/event-posters/HackToNight.png" alt="Event Poster" class="artwork-img"
+            loading="lazy" decoding="async">
+        </div>
+        <!-- Poster 4 -->
+        <div class="poster-item" style="--item-index: 4;">
+          <img src="../Images/artworks/event-posters/thumbs/Happening-now.jpg"
+            data-highres="../Images/artworks/event-posters/Happening-now.png" alt="Event Poster" class="artwork-img"
+            loading="lazy" decoding="async">
+        </div>
+        <!-- Poster 5 -->
+        <div class="poster-item" style="--item-index: 5;">
+          <img src="../Images/artworks/event-posters/thumbs/Live Now Final.jpg"
+            data-highres="../Images/artworks/event-posters/Live Now Final.png" alt="Event Poster" class="artwork-img"
+            loading="lazy" decoding="async">
+        </div>
+        <!-- Poster 6 -->
+        <div class="poster-item" style="--item-index: 6;">
+          <img src="../Images/artworks/event-posters/thumbs/OSD-Final.jpg"
+            data-highres="../Images/artworks/event-posters/OSD-Final.jpg" alt="Event Poster" class="artwork-img"
+            loading="lazy" decoding="async">
+        </div>
+        <!-- Poster 7 -->
+        <div class="poster-item" style="--item-index: 7;">
+          <img src="../Images/artworks/event-posters/thumbs/Step-into-GO.jpg"
+            data-highres="../Images/artworks/event-posters/Step-into-GO.png" alt="Event Poster" class="artwork-img"
+            loading="lazy" decoding="async">
+        </div>
+        <!-- Poster 8 -->
+        <div class="poster-item" style="--item-index: 8;">
+          <img src="../Images/artworks/event-posters/thumbs/Technosphere - Registrations closed.jpg"
+            data-highres="../Images/artworks/event-posters/Technosphere - Registrations closed.png" alt="Event Poster"
+            class="artwork-img" loading="lazy" decoding="async">
+        </div>
+        <!-- Poster 9 -->
+        <div class="poster-item" style="--item-index: 9;">
+          <img src="../Images/artworks/event-posters/thumbs/dive.jpg"
+            data-highres="../Images/artworks/event-posters/dive.png" alt="Event Poster" class="artwork-img"
+            loading="lazy" decoding="async">
+        </div>
+        <!-- Poster 10 -->
+        <div class="poster-item" style="--item-index: 10;">
+          <img src="../Images/artworks/event-posters/thumbs/esthetique1.jpg"
+            data-highres="../Images/artworks/event-posters/esthetique1.jpg" alt="Event Poster" class="artwork-img"
+            loading="lazy" decoding="async">
+        </div>
+        <!-- Poster 11 -->
+        <div class="poster-item" style="--item-index: 11;">
+          <img src="../Images/artworks/event-posters/thumbs/esthetique2.jpg"
+            data-highres="../Images/artworks/event-posters/esthetique2.png" alt="Event Poster" class="artwork-img"
+            loading="lazy" decoding="async">
         </div>
       </div>
+    </div>
 
-      <!-- 2. DIGITAL ARTS -->
-      <div class="project-card type-app" style="--card-index: 1;">
-        <div class="project-image-wrap">
-          <img src="./Images/projects/digital_art.png" alt="Digital Arts" class="project-card-img" />
-        </div>
-        <div class="project-content">
-          <span class="project-label">Fine Art</span>
-          <h3 class="project-title">Digital Arts</h3>
-          <p class="project-desc">Experimental digital creations exploring themes of light, shadow, and cosmic geometry.
-          </p>
-          <div class="project-tags">
-            <span class="tech-tag">Digital Paint</span>
-            <span class="tech-tag">3D Render</span>
-          </div>
-        </div>
-        <div class="project-links">
-          <a href="./all-projects/artworks.html" class="project-link-btn stretched-link">View Gallery ↗</a>
-        </div>
-      </div>
-
-      <!-- 3. EVENT POSTERS -->
-      <div class="project-card type-web" style="--card-index: 2;">
-        <div class="project-image-wrap">
-          <img src="./Images/projects/event_posters.png" alt="Event Posters" class="project-card-img" />
-        </div>
-        <div class="project-content">
-          <span class="project-label">Print Design</span>
-          <h3 class="project-title">Event Posters</h3>
-          <p class="project-desc">Striking visual communications designed to capture attention and spark curiosity for
-            unique events.</p>
-          <div class="project-tags">
-            <span class="tech-tag">Typography</span>
-            <span class="tech-tag">Layout</span>
-          </div>
-        </div>
-        <div class="project-links">
-          <a href="./all-projects/event-posters.html" class="project-link-btn stretched-link">View Gallery ↗</a>
-        </div>
-      </div>
-
-      <!-- 4. MOBILE WALLPAPERS -->
-      <div class="project-card type-ai" style="--card-index: 3;">
-        <div class="project-image-wrap">
-          <img src="./Images/projects/mobile_wallpapers.png" alt="Mobile Wallpapers" class="project-card-img" />
-        </div>
-        <div class="project-content">
-          <span class="project-label">Digital Personalization</span>
-          <h3 class="project-title">Mobile Wallpapers</h3>
-          <p class="project-desc">A curated collection of minimalist, high-fidelity wallpapers optimized for modern
-            AMOLED displays.</p>
-          <div class="project-tags">
-            <span class="tech-tag">Minimalism</span>
-            <span class="tech-tag">AMOLED</span>
-            <span class="tech-tag">4K Assets</span>
-          </div>
-        </div>
-        <div class="project-links">
-          <a href="./all-projects/mobile-wallpapers.html" class="project-link-btn stretched-link">Explore Collection
-            ↗</a>
-        </div>
-      </div>
-
-      <!-- 5. OTHER STUFF -->
-      <div class="project-card type-design" style="--card-index: 4;">
-        <div class="project-image-wrap">
-          <img src="./Images/projects/other_stuff.png" alt="Other Stuff" class="project-card-img" />
-        </div>
-        <div class="project-content">
-          <span class="project-label">Miscellaneous</span>
-          <h3 class="project-title">Other Stuff</h3>
-          <p class="project-desc">A diverse collection of creative experiments, icon sets, and unique visual
-            explorations.</p>
-          <div class="project-tags">
-            <span class="tech-tag">Icons</span>
-            <span class="tech-tag">Experiments</span>
-          </div>
-        </div>
-        <div class="project-links">
-          <a href="./all-projects/other-stuff.html" class="project-link-btn stretched-link">View Gallery ↗</a>
-        </div>
-      </div>
+    </div>
     </div>
   </main>
 
@@ -244,8 +211,6 @@
     <span class="copyright">© 2026 Ruchira Edirisinghe</span>
   </footer>
 
-
-
   <button id="music-btn-desktop" aria-label="Toggle music">
     <canvas id="spectrum-canvas-desktop" width="26" height="18"></canvas>
   </button>
@@ -253,7 +218,21 @@
   <div id="cursor-dot"></div>
   <canvas id="cursor-canvas"></canvas>
 
-  <script src="./styles/projects/projects.js"></script>
+  <!-- ── IMAGE MODAL ── -->
+  <div id="artwork-modal" class="modal-overlay" aria-hidden="true">
+    <button id="modal-close" aria-label="Close modal">×</button>
+    <div class="modal-content">
+      <img id="modal-img" src="" alt="Full size preview">
+      <div id="modal-info">
+        <span id="modal-tag"></span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../styles/projects/projects.js"></script>
+  <script src="../styles/projects/artworks-modal.js"></script>
 </body>
 
 </html>

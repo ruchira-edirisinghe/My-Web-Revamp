@@ -291,6 +291,69 @@
   .wallpaper-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }
 
+/* ── Poster Grid Layout (3 Per Row) ── */
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+}
+
+.poster-item {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: starBirth 0.8s cubic-bezier(0.22, 1, 0.36, 1) calc(0.1s * var(--item-index)) forwards;
+  cursor: pointer;
+  aspect-ratio: auto; 
+}
+
+/* ── Aspect Ratio Utility Classes ── */
+.ratio-1-1 { aspect-ratio: 1 / 1; }
+.ratio-16-10 { aspect-ratio: 16 / 10; }
+.ratio-3-2 { aspect-ratio: 3 / 2; }
+.ratio-4-5 { aspect-ratio: 4 / 5; }
+
+.branding-fixed-row { 
+  height: 360px; 
+  aspect-ratio: auto; 
+}
+
+.poster-item:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px var(--neon-glow);
+  z-index: 5;
+}
+
+.poster-item .artwork-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.poster-item:hover .artwork-img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+  .poster-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+
+@media (max-width: 600px) {
+  .poster-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
 /* ──────────────────────────────────────────────────────────
    7. IMAGE MODAL (POPUP)
    ────────────────────────────────────────────────────────── */
@@ -425,4 +488,111 @@
   body.modal-active .top-content-fade {
     display: none !important;
   }
+}
+
+/* ══════════════════════════════════════
+   COSMIC DIVIDER
+══════════════════════════════════════ */
+.cosmic-divider {
+  position: relative;
+  width: 95%;
+  max-width: 900px;
+  margin: 100px auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  clear: both;
+}
+
+.cosmic-divider::before,
+.cosmic-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(140, 80, 255, 0.2) 30%,
+      rgba(80, 180, 255, 0.45) 60%,
+      transparent 100%);
+}
+
+.cosmic-divider::after {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(80, 180, 255, 0.45) 40%,
+      rgba(140, 80, 255, 0.2) 70%,
+      transparent 100%);
+}
+
+.cosmic-divider-core {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+}
+
+.cosmic-divider-orb {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(140, 80, 255, 1) 0%, rgba(80, 180, 255, 0.6) 60%, transparent 100%);
+  box-shadow: 0 0 10px rgba(140, 80, 255, 0.7), 0 0 22px rgba(80, 180, 255, 0.35);
+  animation: cosmicPulse 2.8s ease-in-out infinite;
+}
+
+.cosmic-divider-orb.orb-sm {
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(80, 200, 255, 0.9) 0%, transparent 100%);
+  box-shadow: 0 0 6px rgba(80, 200, 255, 0.6);
+  animation-delay: 0.4s;
+}
+
+.cosmic-divider-star {
+  font-size: 13px;
+  color: rgba(200, 160, 255, 0.85);
+  text-shadow: 0 0 8px rgba(140, 80, 255, 0.7), 0 0 18px rgba(80, 180, 255, 0.4);
+  animation: cosmicSpin 8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes cosmicPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.75); }
+}
+
+@keyframes cosmicSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cosmic-divider-sweep {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cosmic-divider-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 160, 255, 0.9), transparent);
+  animation: shootingStar 4s ease-in-out infinite 1.5s;
+}
+
+@keyframes shootingStar {
+  0% { left: -40%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 140%; opacity: 0; }
 }

@@ -11,7 +11,7 @@
     const modalTitle = document.getElementById('modal-title');
     const modalDesc = document.getElementById('modal-desc');
     const closeBtn = document.getElementById('modal-close');
-    const masonryItems = document.querySelectorAll('.masonry-item, .wallpaper-item');
+    const masonryItems = document.querySelectorAll('.masonry-item, .wallpaper-item, .poster-item');
 
     if (!modal || !modalImg || !closeBtn) return;
 
