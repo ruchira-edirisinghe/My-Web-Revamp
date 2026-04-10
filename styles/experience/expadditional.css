@@ -1496,6 +1496,17 @@ a:has(.nav-logo) {
   -webkit-backdrop-filter: blur(10px);
 }
 
+#menu-close-mobile svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+}
+
 #menu-close-mobile.visible {
   opacity: 1;
   pointer-events: all;

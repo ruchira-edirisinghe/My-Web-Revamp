@@ -790,6 +790,17 @@
       cursor: none;
     }
 
+    #menu-close-mobile svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      display: block;
+    }
+
     #menu-close-mobile.visible {
       opacity: 1;
       pointer-events: all;
@@ -1703,7 +1714,11 @@
           Links</span><span class="mobile-menu-desc">More places to find me</span></a>
     </nav>
   </div>
-  <button id="menu-close-mobile" aria-label="Close menu">✕</button>
+  <button id="menu-close-mobile" class="menu-close-btn" aria-label="Close menu">
+    <svg viewBox="0 0 24 24">
+      <path d="M18 6L6 18M6 6l12 12" />
+    </svg>
+  </button>
 
   <!-- Constellation SVG overlay -->
   <svg id="cs-constellation" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"></svg>
