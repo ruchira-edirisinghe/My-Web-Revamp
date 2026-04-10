@@ -836,25 +836,21 @@
         <path d="M11 8v6M8 11h6" />
       </svg>
     </button>
-
     <button id="cs-modal-close" class="cs-modal-btn" aria-label="Close modal">
       <svg viewBox="0 0 24 24">
         <path d="M18 6L6 18M6 6l12 12" />
       </svg>
     </button>
-
     <button id="cs-modal-prev" class="cs-modal-nav-btn" aria-label="Previous image">
       <svg viewBox="0 0 24 24">
         <path d="M15 18l-6-6 6-6" />
       </svg>
     </button>
-
     <button id="cs-modal-next" class="cs-modal-nav-btn" aria-label="Next image">
       <svg viewBox="0 0 24 24">
         <path d="M9 18l6-6-6-6" />
       </svg>
     </button>
-
     <div class="cs-modal-container">
       <div class="cs-modal-content">
         <img id="cs-modal-img" src="" alt="Case Study Preview">
@@ -862,6 +858,25 @@
           <div id="cs-modal-counter" class="cs-modal-counter">0 / 0</div>
           <h3 id="cs-modal-title" class="cs-modal-title"></h3>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── REDIRECTION MODAL ── -->
+  <div id="redirect-modal" class="redirect-modal-overlay" aria-hidden="true">
+    <div class="redirect-modal-card">
+      <div class="redirect-modal-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          <polyline points="15 3 21 3 21 9" />
+          <line x1="10" y1="14" x2="21" y2="3" />
+        </svg>
+      </div>
+      <h3 id="redirect-title" class="redirect-title">Exiting Habitat</h3>
+      <p id="redirect-msg" class="redirect-msg">Do you wish to continue to view this project on Behance?</p>
+      <div class="redirect-cta-row">
+        <button id="redirect-cancel" class="redirect-btn ghost">Stay Here</button>
+        <a id="redirect-confirm" href="#" target="_blank" rel="noopener" class="redirect-btn primary">Continue ↗</a>
       </div>
     </div>
   </div>
@@ -955,6 +970,43 @@
           const target = document.querySelector(item.getAttribute('href'));
           if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
+      });
+
+      /* ── Redirection Modal Logic ── */
+      const redirectModal = document.getElementById('redirect-modal');
+      const redirectMsg = document.getElementById('redirect-msg');
+      const redirectConfirm = document.getElementById('redirect-confirm');
+      const redirectCancel = document.getElementById('redirect-cancel');
+      const ctaBtns = document.querySelectorAll('.cs-cta-btn');
+
+      ctaBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const url = btn.getAttribute('href');
+          const isFigma = btn.textContent.toLowerCase().includes('figma');
+          const platform = isFigma ? 'Figma' : 'Behance';
+
+          redirectMsg.textContent = `Do you wish to continue to view this project on ${platform}?`;
+          redirectConfirm.setAttribute('href', url);
+          redirectConfirm.setAttribute('target', '_blank');
+          redirectConfirm.setAttribute('rel', 'noopener');
+          
+          redirectModal.classList.add('active');
+          redirectModal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      const closeRedirect = () => {
+        redirectModal.classList.remove('active');
+        redirectModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      redirectCancel.addEventListener('click', closeRedirect);
+      redirectConfirm.addEventListener('click', closeRedirect);
+      redirectModal.addEventListener('click', (e) => {
+        if (e.target === redirectModal) closeRedirect();
       });
     })();
   </script>
