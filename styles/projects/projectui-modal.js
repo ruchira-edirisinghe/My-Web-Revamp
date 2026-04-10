@@ -20,7 +20,7 @@
         const galleryItems = [];
         const seenUrls = new Set();
         
-        const uiCards = document.querySelectorAll('.ui-card');
+        const uiCards = document.querySelectorAll('.ui-card, #onboarding-grid .cs-card');
         uiCards.forEach(card => {
             const fullUrl = card.getAttribute('data-full');
             const title = card.querySelector('.ui-card-label')?.textContent || '';
