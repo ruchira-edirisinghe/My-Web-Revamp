@@ -172,6 +172,7 @@
             modal.classList.add('open');
             modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
+            document.body.classList.add('modal-open'); // Hide website header
             console.log('Lyceum Modal Opened at index:', index);
         }
 
@@ -182,6 +183,7 @@
             modal.classList.remove('open');
             modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            document.body.classList.remove('modal-open');
             resetZoom();
             
             // Reset src after transition
