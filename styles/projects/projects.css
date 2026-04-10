@@ -896,7 +896,7 @@ footer {
     opacity: 1 !important; 
   }
   #music-btn-desktop { display: none !important; }
-  main { padding: 120px 24px 60px; }
+  main { padding: 140px 24px 60px; }
   .projects-grid,
   .projects-grid.grid-2x2 { 
     grid-template-columns: 1fr; 
