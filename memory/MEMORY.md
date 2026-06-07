@@ -1,0 +1,2 @@
+- [Design: avoid generic-AI UI](design-avoid-generic-ai-look.md) — how the user wants case-study pages to feel
+- [GitHub Pages case-sensitivity](github-pages-case-sensitivity.md) — asset paths must match `Images/` & `audio/` casing or they 404 in prod

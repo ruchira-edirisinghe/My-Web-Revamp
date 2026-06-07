@@ -227,7 +227,7 @@
   /* ══════════ 4. AUDIO PERSISTENCE ══════════ */
   (function () {
     const bgAudio = new Audio();
-    bgAudio.src = basePath + 'Audio/ambient.mp3'; bgAudio.loop = true; bgAudio.volume = 0;
+    bgAudio.src = basePath + 'audio/ambient.mp3'; bgAudio.loop = true; bgAudio.volume = 0;
     const MUSIC_VOLUME = 0.35;
     let musicStarted = false, musicMuted = false, spectrumPlaying = false;
 

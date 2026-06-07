@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coming Soon — Ruchira Edirisinghe</title>
   <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="./images/favicon/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon/android-chrome-192x192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="./images/favicon/android-chrome-512x512.png" />
-  <link rel="manifest" href="./images/favicon/site.webmanifest" />
+  <link rel="icon" type="image/x-icon" href="./Images/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./Images/favicon/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./Images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./Images/favicon/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./Images/favicon/android-chrome-512x512.png" />
+  <link rel="manifest" href="./Images/favicon/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -2070,7 +2070,7 @@
       document.querySelectorAll('a,button,.cs-tag').forEach(el => { el.addEventListener('mouseenter', () => { tR = RH; }); el.addEventListener('mouseleave', () => { tR = RN; }); });
 
       let ac = null; function gAC() { if (!ac) ac = new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === 'suspended') ac.resume(); return ac; }
-      const bg = new Audio(); bg.src = './Audio/ambient.mp3'; bg.loop = true; bg.volume = 0; bg.preload = 'auto'; const MV = 0.35; let mm = false, ms = false;
+      const bg = new Audio(); bg.src = './audio/ambient.mp3'; bg.loop = true; bg.volume = 0; bg.preload = 'auto'; const MV = 0.35; let mm = false, ms = false;
       function fade(t, d) { const s = 50, sm = d / s, dl = (t - bg.volume) / s; let c = 0; const iv = setInterval(() => { c++; bg.volume = Math.max(0, Math.min(1, bg.volume + dl)); if (c >= s) { clearInterval(iv); bg.volume = t; } }, sm); }
       let sp = false;
       function startM() { if (ms) return; ms = true; bg.volume = 0; const st = parseFloat(sessionStorage.getItem('musicTime') || '0'), sm = sessionStorage.getItem('musicMuted') === 'true'; if (st > 0) bg.currentTime = st; if (sm) { mm = true; sp = false; return; } bg.play().then(() => { fade(MV, 800); document.querySelectorAll('#music-btn-desktop,#music-btn').forEach(b => b && b.classList.add('playing')); sp = true; }).catch(() => { ms = false; }); }

@@ -64,25 +64,32 @@ main {
 }
 
 .cs-hero-title {
-  font-family: 'Cinzel Decorative', cursive;
-  font-size: clamp(2.4rem, 8vw, 3.6rem);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.1rem, 8.5vw, 4.4rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
   color: #fff;
-  margin-bottom: 14px;
-  text-shadow: 0 0 60px rgba(74,158,255,0.2);
+  margin-bottom: 18px;
+  text-shadow: 0 0 60px rgba(74,158,255,0.25);
   opacity: 0;
   animation: csRevealUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.35s forwards;
 }
 
 .cs-hero-subtitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(0.72rem, 2.6vw, 0.85rem);
   font-weight: 400;
   color: var(--lyc-cyan);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   opacity: 0;
   animation: csRevealUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.5s forwards;
+}
+.cs-hero-subtitle::before {
+  content: '// ';
+  color: var(--lyc-gold);
 }
 
 /* Cover image banner */
@@ -112,9 +119,25 @@ main {
 .cs-cover-shine {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 50%);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, rgba(56,217,245,0.035) 0 1px, transparent 1px 3px);
   pointer-events: none;
 }
+/* Technical viewport brackets framing the cover */
+.cs-cover-banner::before,
+.cs-cover-banner::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: rgba(56,217,245,0.5);
+  border-style: solid;
+  z-index: 2;
+  pointer-events: none;
+}
+.cs-cover-banner::before { top: 14px; left: 14px; border-width: 1px 0 0 1px; }
+.cs-cover-banner::after { bottom: 14px; right: 14px; border-width: 0 1px 1px 0; }
 
 @keyframes csRevealUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -150,8 +173,8 @@ main {
 .cs-meta-card {
   background: linear-gradient(145deg, rgba(20, 24, 34, 0.7) 0%, rgba(10, 14, 23, 0.4) 100%);
   border: 1px solid rgba(74,158,255,0.1);
-  border-radius: 20px;
-  padding: 24px 24px;
+  border-radius: 14px;
+  padding: 24px 22px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease, border-color 0.4s ease;
@@ -160,16 +183,16 @@ main {
   box-shadow: inset 0 0 20px rgba(74,158,255,0.03), 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* Subtle corner glow in the background of the card */
+/* Accent hairline that draws across on hover (spec-sheet feel) */
 .cs-meta-card::after {
   content: '';
   position: absolute;
-  top: -20px; left: -20px;
-  width: 80px; height: 80px;
-  background: radial-gradient(circle, rgba(74,158,255,0.15) 0%, transparent 70%);
-  border-radius: 50%;
+  top: 0; left: 0;
+  width: 34px; height: 2px;
+  background: var(--lyc-cyan);
+  box-shadow: 0 0 12px rgba(56,217,245,0.5);
   pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: width 0.45s cubic-bezier(0.22,1,0.36,1);
 }
 
 .cs-meta-card:hover {
@@ -179,16 +202,16 @@ main {
 }
 
 .cs-meta-card:hover::after {
-  opacity: 1;
-  transform: scale(1.5);
+  width: 100%;
 }
 .cs-meta-label {
-  font-family: 'Squada One', system-ui;
-  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
   color: var(--lyc-cyan);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .cs-meta-value {
   font-family: 'Montserrat', sans-serif;
@@ -208,7 +231,7 @@ main {
   content: '“';
   position: absolute;
   top: -10px; left: -15px;
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 9rem;
   background: linear-gradient(135deg, var(--lyc-cyan), rgba(123,111,255,0.8));
   background-clip: text;
@@ -259,40 +282,66 @@ footer {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
 .cs-section-num {
-  font-family: 'Squada One', system-ui;
-  font-size: 18px;
-  letter-spacing: 0.1em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   color: var(--lyc-cyan);
-  opacity: 0.9;
   white-space: nowrap;
   text-transform: uppercase;
+}
+.cs-section-num:first-child {
+  color: var(--lyc-gold);
 }
 .cs-section-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, rgba(74,158,255,0.3), transparent);
+  background: linear-gradient(90deg, rgba(56,217,245,0.4), transparent);
+  position: relative;
+}
+.cs-section-line::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 1px;
+  height: 7px;
+  background: var(--lyc-cyan);
+  box-shadow: 0 0 8px rgba(56,217,245,0.6);
 }
 
 .cs-section-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
   font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
   color: #fff;
   margin-bottom: 32px;
-  line-height: 1.35;
+  line-height: 1.1;
 }
 
 .cs-sub-heading {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.16em;
+  color: var(--lyc-cyan);
   margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cs-sub-heading::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--lyc-cyan);
+  flex-shrink: 0;
 }
 
 /* ── Body text ── */
@@ -345,13 +394,13 @@ footer {
   position: relative;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
   width: 320px;
   height: 480px;
   flex-shrink: 0;
-  cursor: default;
-  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s ease, box-shadow 0.5s ease;
 }
 .ui-card:hover {
   transform: translateY(-8px) scale(1.02);
@@ -370,19 +419,27 @@ footer {
 .ui-card-label {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  padding: 24px 20px 16px;
-  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4) 40%, transparent);
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
+  padding: 44px 18px 16px;
+  background: linear-gradient(to top, rgba(2,3,10,0.92), rgba(2,3,10,0.45) 45%, transparent);
+  color: rgba(255,255,255,0.82);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.4s ease;
+  letter-spacing: 0.14em;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transition: color 0.4s ease;
 }
-.ui-card:hover .ui-card-label { opacity: 1; transform: translateY(0); }
+.ui-card-label::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--lyc-cyan);
+  box-shadow: 0 0 8px rgba(56,217,245,0.7);
+  flex-shrink: 0;
+}
+.ui-card:hover .ui-card-label { color: #fff; }
 
 /* ── INTERACTION DEMO ── */
 .cs-cards-grid {
@@ -407,38 +464,58 @@ footer {
 .cs-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 18px;
+  border-radius: 14px;
   padding: 28px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: all 0.5s cubic-bezier(0.22,1,0.36,1);
+  transition: transform 0.45s cubic-bezier(0.22,1,0.36,1), border-color 0.45s ease, box-shadow 0.45s ease;
   position: relative;
   overflow: hidden;
 }
-.cs-card::before {
+/* Signature "targeting bracket" corners — reveal on hover */
+.cs-card::before,
+.cs-card::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 0% 0%, rgba(74,158,255,0.06) 0%, transparent 70%);
+  width: 13px;
+  height: 13px;
+  border-color: var(--lyc-cyan);
+  border-style: solid;
+  opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+.cs-card::before {
+  top: 13px; left: 13px;
+  border-width: 1px 0 0 1px;
+  transform: translate(-5px, -5px);
+}
+.cs-card::after {
+  bottom: 13px; right: 13px;
+  border-width: 0 1px 1px 0;
+  transform: translate(5px, 5px);
 }
 .cs-card:hover {
-  border-color: rgba(74,158,255,0.3);
+  border-color: rgba(56,217,245,0.3);
   transform: translateY(-5px);
-  box-shadow: 0 24px 48px rgba(0,0,0,0.4), 0 0 24px rgba(74,158,255,0.08);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.4);
+}
+.cs-card:hover::before,
+.cs-card:hover::after {
+  opacity: 0.85;
+  transform: translate(0, 0);
 }
 .cs-card-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(74,158,255,0.12), rgba(123,111,255,0.12));
-  border: 1px solid rgba(74,158,255,0.18);
+  width: 46px;
+  height: 46px;
+  border-radius: 14px 4px 14px 4px;
+  background: rgba(56,217,245,0.07);
+  border: 1px solid rgba(56,217,245,0.22);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  margin-bottom: 18px;
+  font-size: 19px;
+  margin-bottom: 20px;
 }
 .cs-card h4 {
   font-family: 'Squada One', system-ui;
@@ -816,7 +893,8 @@ footer {
 }
 .insight-card:hover { border-color: rgba(74,158,255,0.25); transform: translateY(-4px); }
 .insight-num {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
   font-size: 2.8rem;
   color: rgba(74,158,255,0.08);
   position: absolute;
@@ -1218,8 +1296,10 @@ footer {
   box-shadow: 0 24px 48px rgba(0,0,0,0.3), 0 0 24px rgba(74,158,255,0.08);
 }
 .outcome-metric {
-  font-family: 'Cinzel Decorative', cursive;
-  font-size: 2.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--lyc-cyan);
   margin-bottom: 10px;
   text-shadow: 0 0 24px rgba(56,217,245,0.3);
@@ -1555,8 +1635,11 @@ body.modal-open #navbar-wrap {
 }
 
 .cs-modal-title {
-  font-family: 'Cinzel Decorative', cursive;
-  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: #fff;
   margin: 0;
   text-shadow: 0 0 20px rgba(255,255,255,0.2);

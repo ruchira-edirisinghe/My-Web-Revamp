@@ -14,7 +14,7 @@
   let musicStarted  = false;
   let spectrumPlaying = false;
 
-  const bgAudio = new Audio('./Audio/ambient.mp3');
+  const bgAudio = new Audio('./audio/ambient.mp3');
   bgAudio.loop      = true;
   bgAudio.volume    = 0;
   bgAudio.preload   = 'auto';

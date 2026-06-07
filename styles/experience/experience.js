@@ -385,7 +385,7 @@
       function getAC() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); if (audioCtx.state === 'suspended') audioCtx.resume(); return audioCtx; }
 
       const bgAudio = new Audio();
-      bgAudio.src = './Audio/ambient.mp3'; bgAudio.loop = true; bgAudio.volume = 0; bgAudio.preload = 'auto';
+      bgAudio.src = './audio/ambient.mp3'; bgAudio.loop = true; bgAudio.volume = 0; bgAudio.preload = 'auto';
       const MUSIC_VOLUME = 0.35;
       let musicMuted = false, musicStarted = false;
 
