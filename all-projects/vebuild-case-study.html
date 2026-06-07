@@ -104,19 +104,28 @@
   ═══════════════════════════════ -->
   <nav class="cs-toc" id="cs-toc" aria-label="Case study navigation">
     <div class="cs-toc-track">
-      <a class="cs-toc-item" href="#sec-problem"><span class="cs-toc-label">Problem</span><span
+      <a class="cs-toc-item" href="#" data-target="problem"><span class="cs-toc-label">Problem</span><span
           class="cs-toc-dot"></span></a>
-      <a class="cs-toc-item" href="#sec-research"><span class="cs-toc-label">Research</span><span
+      <a class="cs-toc-item" href="#" data-target="research"><span class="cs-toc-label">Research</span><span
           class="cs-toc-dot"></span></a>
-      <a class="cs-toc-item" href="#sec-ideation"><span class="cs-toc-label">Ideation</span><span
+      <a class="cs-toc-item" href="#" data-target="ideation"><span class="cs-toc-label">Ideation</span><span
           class="cs-toc-dot"></span></a>
-      <a class="cs-toc-item" href="#sec-design"><span class="cs-toc-label">Design</span><span
+      <a class="cs-toc-item" href="#" data-target="design"><span class="cs-toc-label">Design</span><span
           class="cs-toc-dot"></span></a>
-      <a class="cs-toc-item" href="#sec-vibe"><span class="cs-toc-label">Vibe</span><span class="cs-toc-dot"></span></a>
-      <a class="cs-toc-item" href="#sec-results"><span class="cs-toc-label">Results</span><span
+      <a class="cs-toc-item" href="#" data-target="vibe"><span class="cs-toc-label">Vibe</span><span class="cs-toc-dot"></span></a>
+      <a class="cs-toc-item" href="#" data-target="results"><span class="cs-toc-label">Results</span><span
           class="cs-toc-dot"></span></a>
     </div>
   </nav>
+
+  <!-- ═══════════════════════════════
+       FLOATING A/B VERSION SWITCHER
+  ═══════════════════════════════ -->
+  <div class="cs-tabs" id="version-switch" data-active="clean" role="tablist" aria-label="Design version">
+    <span class="cs-tab-glider" aria-hidden="true"></span>
+    <button class="cs-tab active" type="button" data-panel="clean" role="tab" aria-selected="true">Clean &amp; Sleek UI</button>
+    <button class="cs-tab" type="button" data-panel="blocked" role="tab" aria-selected="false">Block Appearance UI</button>
+  </div>
 
   <main>
 
@@ -171,11 +180,13 @@
         </p>
       </div>
 
+      <!-- ═══════════════ PANEL A — CLEAN & SLEEK (current) ═══════════════ -->
+      <div class="cs-panel active" id="panel-clean">
 
       <!-- ═══════════════════════════════
            01 — THE PROBLEM
       ═══════════════════════════════ -->
-      <section class="cs-section" id="sec-problem">
+      <section class="cs-section" id="sec-problem" data-sec="problem">
         <div class="cs-section-divider">
           <span class="cs-section-num">01 ——</span>
           <span class="cs-section-num">The Problem</span>
@@ -214,7 +225,7 @@
       <!-- ═══════════════════════════════
            02 — RESEARCH
       ═══════════════════════════════ -->
-      <section class="cs-section" id="sec-research">
+      <section class="cs-section" id="sec-research" data-sec="research">
         <div class="cs-section-divider">
           <span class="cs-section-num">02 ——</span>
           <span class="cs-section-num">Discovery &amp; Research</span>
@@ -353,7 +364,7 @@
       <!-- ═══════════════════════════════
            03 — IDEATION
       ═══════════════════════════════ -->
-      <section class="cs-section" id="sec-ideation">
+      <section class="cs-section" id="sec-ideation" data-sec="ideation">
         <div class="cs-section-divider">
           <span class="cs-section-num">03 ——</span>
           <span class="cs-section-num">Structure &amp; Flow</span>
@@ -425,7 +436,7 @@
       <!-- ═══════════════════════════════
            04 — VISUAL DESIGN
       ═══════════════════════════════ -->
-      <section class="cs-section" id="sec-design">
+      <section class="cs-section" id="sec-design" data-sec="design">
         <div class="cs-section-divider">
           <span class="cs-section-num">04 ——</span>
           <span class="cs-section-num">The Solution</span>
@@ -434,7 +445,7 @@
         <h2 class="cs-section-title">Visual Design &amp; Style Guide</h2>
 
         <p class="cs-body">
-          VEBUILD's interface was guided by three principles — elegance, simplicity, and accessibility — achieved through balanced whitespace, bold typography, and a carefully curated palette. Warm amber accents against deep, neutral tones create a clean, sleek aesthetic that signals reliability and modern craftsmanship.
+          VEBUILD's interface was guided by three principles — elegance, simplicity, and accessibility — achieved through balanced whitespace, bold typography, and a carefully curated palette. A green-and-bluish scheme drawn straight from the company's logo pairs a deep navy with a vibrant teal, creating a clean, sleek aesthetic that signals reliability and modern craftsmanship.
         </p>
 
         <div class="creative-styleguide">
@@ -445,15 +456,16 @@
               <div class="typo-hero">Poppins</div>
 
               <div class="typo-scale-row">
-                <span class="typo-scale-item">58pt</span>
-                <span class="typo-scale-item">32pt</span>
+                <span class="typo-scale-item">65pt</span>
+                <span class="typo-scale-item">60pt</span>
+                <span class="typo-scale-item">35pt</span>
+                <span class="typo-scale-item">30pt</span>
+                <span class="typo-scale-item">25pt</span>
                 <span class="typo-scale-item">20pt</span>
                 <span class="typo-scale-item">18pt</span>
-                <span class="typo-scale-item">16pt</span>
                 <span class="typo-scale-item">15pt</span>
                 <span class="typo-scale-item">14pt</span>
-                <span class="typo-scale-item">13pt</span>
-                <span class="typo-scale-item">11pt</span>
+                <span class="typo-scale-item">12pt</span>
               </div>
 
               <div class="typo-weights-row">
@@ -462,6 +474,7 @@
                 <span class="typo-weight-item">Medium</span>
                 <span class="typo-weight-item">Semi Bold</span>
                 <span class="typo-weight-item">Bold</span>
+                <span class="typo-weight-item">Heavy</span>
               </div>
             </div>
           </div>
@@ -469,10 +482,11 @@
           <!-- Color Section -->
           <div class="sg-unit">
             <div class="glass-box">
+              <div class="sg-unit-title">Color</div>
+              <p class="sg-unit-desc">A green and bluish-toned palette was used — these are the colours of the company's logo and overall brand theme.</p>
               <div class="color-strip">
-                <div class="color-block" style="background: #0F1115;"><span class="color-hex">#0F1115</span></div>
-                <div class="color-block" style="background: #F6A21E;"><span class="color-hex">#F6A21E</span></div>
-                <div class="color-block" style="background: #5C7C99;"><span class="color-hex">#5C7C99</span></div>
+                <div class="color-block" style="background: #1F394F;"><span class="color-hex">#1F394F</span></div>
+                <div class="color-block" style="background: #01A59E;"><span class="color-hex">#01A59E</span></div>
                 <div class="color-block" style="background: #FFFFFF;"><span class="color-hex">#FFFFFF</span></div>
               </div>
             </div>
@@ -574,7 +588,7 @@
       <!-- ═══════════════════════════════
            05 — VIBE & INTERACTIONS
       ═══════════════════════════════ -->
-      <section class="cs-section" id="sec-vibe">
+      <section class="cs-section" id="sec-vibe" data-sec="vibe">
         <div class="cs-section-divider">
           <span class="cs-section-num">05 ——</span>
           <span class="cs-section-num">The Vibe</span>
@@ -600,12 +614,12 @@
           <div class="cs-card">
             <div class="cs-card-icon">🎨</div>
             <h4>Visual Hierarchy</h4>
-            <p>Warm amber accents against deep neutral tones direct attention to projects and CTAs, while generous whitespace keeps the experience calm, premium, and easy to scan.</p>
+            <p>Vibrant teal accents against deep navy tones direct attention to projects and CTAs, while generous whitespace keeps the experience calm, premium, and easy to scan.</p>
           </div>
         </div>
       </section>
 
-      <section class="cs-section" id="sec-results">
+      <section class="cs-section" id="sec-results" data-sec="results">
         <div class="cs-section-divider">
           <span class="cs-section-num">06 ——</span>
           <span class="cs-section-num">Results &amp; Reflection</span>
@@ -656,6 +670,465 @@
             rel="noopener" class="cs-cta-btn ghost">Open in Figma</a>
         </div>
       </section>
+
+      </div><!-- /#panel-clean -->
+
+
+      <!-- ═══════════════ PANEL B — BLOCK APPEARANCE (earlier concept) ═══════════════ -->
+      <div class="cs-panel" id="panel-blocked">
+
+        <!-- 01 — THE PROBLEM -->
+        <section class="cs-section" data-sec="problem">
+          <div class="cs-section-divider">
+            <span class="cs-section-num">01 ——</span>
+            <span class="cs-section-num">The Problem</span>
+            <div class="cs-section-line"></div>
+          </div>
+          <h2 class="cs-section-title">Context &amp; The Problem</h2>
+
+          <p class="cs-body">
+            VEBUILD INNOVATIONS began as a digital-transformation initiative for a construction firm looking to modernise how it communicates with clients and engages stakeholders. The core challenge: construction firms struggle to present complex, technical information accessibly — and research revealed friction points hurting both the client and recruitment journeys.
+          </p>
+
+          <div class="cs-highlight">
+            <p>"Construction firms struggle to present complex technical information accessibly — friction that affects both winning clients and attracting talent."</p>
+          </div>
+
+          <div class="cs-cards-grid">
+            <div class="cs-card">
+              <div class="cs-card-icon">🎯</div>
+              <h4>Problem Statement</h4>
+              <p>Dense technical content and slow, heavy galleries made it hard for clients to evaluate the firm and for candidates to apply.</p>
+            </div>
+            <div class="cs-card">
+              <div class="cs-card-icon">🏁</div>
+              <h4>The Goal</h4>
+              <p>Modernise client communication and stakeholder engagement with a structured, modular interface that makes complex information scannable and trustworthy.</p>
+            </div>
+            <div class="cs-card">
+              <div class="cs-card-icon">👥</div>
+              <h4>Target Audience</h4>
+              <p>Commercial clients vetting portfolios, qualifications and compliance — and job candidates exploring careers, culture and how to apply.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- 02 — RESEARCH -->
+        <section class="cs-section" data-sec="research">
+          <div class="cs-section-divider">
+            <span class="cs-section-num">02 ——</span>
+            <span class="cs-section-num">Discovery &amp; Research</span>
+            <div class="cs-section-line"></div>
+          </div>
+          <h2 class="cs-section-title">Discovery &amp; Research</h2>
+
+          <p class="cs-body">
+            Discovery combined qualitative and behavioural data — 32 interviews with construction professionals and analysis of 150+ user sessions. The numbers exposed exactly where the old experience broke down.
+          </p>
+
+          <h3 class="cs-sub-heading">Pain Points vs. Opportunities</h3>
+
+          <div class="cs-compare">
+            <div class="cs-compare-side fail">
+              <div class="cs-compare-label"><i>✕</i> Research Pain Points</div>
+              <div class="cs-compare-body">
+                <ul class="cs-list">
+                  <li><div class="cs-list-bullet"></div>73% struggled to find relevant case studies</li>
+                  <li><div class="cs-list-bullet"></div>8s+ gallery load times on mobile</li>
+                  <li><div class="cs-list-bullet"></div>68% abandoned the careers page</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cs-compare-side success">
+              <div class="cs-compare-label"><i>✓</i> Block-UI Opportunities</div>
+              <div class="cs-compare-body">
+                <ul class="cs-list">
+                  <li><div class="cs-list-bullet"></div>Card-based taxonomy with clear entry filters</li>
+                  <li><div class="cs-list-bullet"></div>Adaptive image loading for fast galleries</li>
+                  <li><div class="cs-list-bullet"></div>A streamlined, modular application flow</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="cs-sub-heading">User Personas</h3>
+
+          <div class="cs-personas-grid">
+            <div class="persona-card">
+              <div class="persona-avatar">🏢</div>
+              <div>
+                <div class="persona-name">Commercial Client</div>
+                <div class="persona-role">Primary — Buyer / Decision-Maker</div>
+                <div class="persona-traits">
+                  <span class="persona-trait">Portfolio-seeker</span>
+                  <span class="persona-trait">Compliance-minded</span>
+                  <span class="persona-trait">ROI-driven</span>
+                </div>
+                <p class="persona-quote">"Show me proof — project portfolios, team qualifications and compliance — without making me dig."</p>
+              </div>
+            </div>
+            <div class="persona-card">
+              <div class="persona-avatar">💼</div>
+              <div>
+                <div class="persona-name">Job Candidate</div>
+                <div class="persona-role">Secondary — Applicant</div>
+                <div class="persona-traits">
+                  <span class="persona-trait">Career-focused</span>
+                  <span class="persona-trait">Mobile-first</span>
+                  <span class="persona-trait">Impatient</span>
+                </div>
+                <p class="persona-quote">"I want to understand the culture and apply quickly — not abandon a slow careers page."</p>
+              </div>
+            </div>
+            <div class="persona-card">
+              <div class="persona-avatar">📐</div>
+              <div>
+                <div class="persona-name">Architect / Specifier</div>
+                <div class="persona-role">Tertiary — Technical Partner</div>
+                <div class="persona-traits">
+                  <span class="persona-trait">Technical</span>
+                  <span class="persona-trait">Detail-driven</span>
+                  <span class="persona-trait">Visual</span>
+                </div>
+                <p class="persona-quote">"The blueprint tool shows the construction approach instantly."</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="cs-sub-heading">Cross-Persona Insights</h3>
+
+          <div class="cs-insight-comp">
+            <div class="cs-comp-col labels">
+              <div class="cs-comp-header empty"></div>
+              <div class="cs-comp-row-label">Primary Goal</div>
+              <div class="cs-comp-row-label">Core Frustration</div>
+              <div class="cs-comp-row-label highlight">Design Insight</div>
+            </div>
+            <div class="cs-comp-col">
+              <div class="cs-comp-header">🏢 The Client</div>
+              <div class="cs-comp-cell" data-label="Primary Goal">Evaluate portfolio, qualifications and compliance.</div>
+              <div class="cs-comp-cell" data-label="Core Frustration">Couldn't find relevant case studies (73%).</div>
+              <div class="cs-comp-cell highlight" data-label="Design Insight">Card taxonomy filtered by Type, Service, Location &amp; Size.</div>
+            </div>
+            <div class="cs-comp-col">
+              <div class="cs-comp-header">💼 The Candidate</div>
+              <div class="cs-comp-cell" data-label="Primary Goal">Explore careers and apply fast.</div>
+              <div class="cs-comp-cell" data-label="Core Frustration">68% abandoned a slow careers page.</div>
+              <div class="cs-comp-cell highlight" data-label="Design Insight">A modular flow that cut apply time to 3.2 min.</div>
+            </div>
+            <div class="cs-comp-col">
+              <div class="cs-comp-header">📐 The Architect</div>
+              <div class="cs-comp-cell" data-label="Primary Goal">Understand the build approach technically.</div>
+              <div class="cs-comp-cell" data-label="Core Frustration">Static specs that are hard to interpret.</div>
+              <div class="cs-comp-cell highlight" data-label="Design Insight">Interactive Blueprint Explorer &amp; Material Selector.</div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- 03 — IDEATION -->
+        <section class="cs-section" data-sec="ideation">
+          <div class="cs-section-divider">
+            <span class="cs-section-num">03 ——</span>
+            <span class="cs-section-num">Structure &amp; Flow</span>
+            <div class="cs-section-line"></div>
+          </div>
+          <h2 class="cs-section-title">Ideation &amp; Structure</h2>
+
+          <h3 class="cs-sub-heading">User Flow: Filter, Explore, Verify, Act</h3>
+
+          <div class="cs-flow">
+            <div class="flow-step"><div class="flow-node">🏠</div><div class="flow-label">Landing</div></div>
+            <div class="flow-arrow"></div>
+            <div class="flow-step"><div class="flow-node">🗂️</div><div class="flow-label">Filter Projects</div></div>
+            <div class="flow-arrow"></div>
+            <div class="flow-step"><div class="flow-node">📐</div><div class="flow-label">Blueprint Explorer</div></div>
+            <div class="flow-arrow"></div>
+            <div class="flow-step"><div class="flow-node">✅</div><div class="flow-label">Verify Team</div></div>
+            <div class="flow-arrow"></div>
+            <div class="flow-step"><div class="flow-node">📝</div><div class="flow-label">Apply / Enquire</div></div>
+          </div>
+
+          <div class="cs-callout">
+            <div class="cs-callout-icon">💡</div>
+            <p class="cs-callout-text">A <strong style="color:#fff;">card-based information architecture</strong> with four entry filters — Project Type, Service, Location and Project Size — let users slice a complex portfolio quickly, while interactive tools turned dense data into something explorable.</p>
+          </div>
+
+          <h3 class="cs-sub-heading">Architecture &amp; Interaction</h3>
+
+          <div class="ia-grid">
+            <div class="cs-card">
+              <div class="cs-card-icon">🗂️</div>
+              <h4>Card Filters</h4>
+              <p>Type · Service · Location · Size</p>
+            </div>
+            <div class="cs-card">
+              <div class="cs-card-icon">📐</div>
+              <h4>Blueprint Explorer</h4>
+              <p>Interactive floorplan tool</p>
+            </div>
+            <div class="cs-card">
+              <div class="cs-card-icon">🧱</div>
+              <h4>Material Selector</h4>
+              <p>Visual materials browser</p>
+            </div>
+            <div class="cs-card">
+              <div class="cs-card-icon">✅</div>
+              <h4>Credentials Portal</h4>
+              <p>Quick team verification</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- 04 — VISUAL DESIGN -->
+        <section class="cs-section" data-sec="design">
+          <div class="cs-section-divider">
+            <span class="cs-section-num">04 ——</span>
+            <span class="cs-section-num">The Solution</span>
+            <div class="cs-section-line"></div>
+          </div>
+          <h2 class="cs-section-title">Visual Design &amp; Style Guide</h2>
+
+          <p class="cs-body">
+            The visual system leaned into a deliberate "Block Appearance" — card-based, grid-structured layouts with distinct modular components rather than fluid, minimal surfaces. A construction-themed palette and bold, structured type reinforced a sturdy, industrial feel while holding to WCAG 2.1 AA contrast.
+          </p>
+
+          <div class="creative-styleguide">
+            <div class="sg-unit">
+              <div class="glass-box">
+                <div class="typo-hero">Poppins</div>
+                <div class="typo-scale-row">
+                  <span class="typo-scale-item">65pt</span>
+                  <span class="typo-scale-item">60pt</span>
+                  <span class="typo-scale-item">35pt</span>
+                  <span class="typo-scale-item">30pt</span>
+                  <span class="typo-scale-item">25pt</span>
+                  <span class="typo-scale-item">20pt</span>
+                  <span class="typo-scale-item">18pt</span>
+                  <span class="typo-scale-item">15pt</span>
+                  <span class="typo-scale-item">14pt</span>
+                  <span class="typo-scale-item">12pt</span>
+                </div>
+                <div class="typo-weights-row">
+                  <span class="typo-weight-item">Light</span>
+                  <span class="typo-weight-item">Regular</span>
+                  <span class="typo-weight-item">Medium</span>
+                  <span class="typo-weight-item">Semi Bold</span>
+                  <span class="typo-weight-item">Bold</span>
+                  <span class="typo-weight-item">Heavy</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sg-unit">
+              <div class="glass-box">
+                <div class="sg-unit-title">Color</div>
+                <p class="sg-unit-desc">A green and bluish-toned palette was used — these are the colours of the company's logo and overall brand theme.</p>
+                <div class="color-strip">
+                  <div class="color-block" style="background: #1F394F;"><span class="color-hex">#1F394F</span></div>
+                  <div class="color-block" style="background: #01A59E;"><span class="color-hex">#01A59E</span></div>
+                  <div class="color-block" style="background: #FFFFFF;"><span class="color-hex">#FFFFFF</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="cs-sub-heading">High-Fidelity Project Deliverables</h3>
+          <p class="cs-body">The block-appearance screens leaned on modular cards and a structured grid to make a dense construction portfolio easy to scan.</p>
+
+          <div class="ui-gallery">
+            <!-- Row 1: Moving Right -->
+            <div class="ui-marquee-track ui-track-2" id="marquee-3">
+              <!-- Set 1 -->
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Home%20Sceen%20-%20Main%20View.png">
+                <img src="../Images/projects/vebuild/block/Home%20Sceen%20-%20Main%20View.png" alt="Home — Main View" class="ui-thumb">
+                <div class="ui-card-label">Home · Main View</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Our%20Company%20-%20Company%20Description.png">
+                <img src="../Images/projects/vebuild/block/Our%20Company%20-%20Company%20Description.png" alt="Our Company — Description" class="ui-thumb">
+                <div class="ui-card-label">Our Company · Description</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Our%20Company%20-%20Gallery.png">
+                <img src="../Images/projects/vebuild/block/Our%20Company%20-%20Gallery.png" alt="Our Company — Gallery" class="ui-thumb">
+                <div class="ui-card-label">Our Company · Gallery</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Our%20Company%20-%20Organization%20Structure.png">
+                <img src="../Images/projects/vebuild/block/Our%20Company%20-%20Organization%20Structure.png" alt="Our Company — Organization Structure" class="ui-thumb">
+                <div class="ui-card-label">Our Company · Org Structure</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Our%20Company%20-%20Certifications.png">
+                <img src="../Images/projects/vebuild/block/Our%20Company%20-%20Certifications.png" alt="Our Company — Certifications" class="ui-thumb">
+                <div class="ui-card-label">Our Company · Certifications</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Projects.png">
+                <img src="../Images/projects/vebuild/block/Projects.png" alt="Projects" class="ui-thumb">
+                <div class="ui-card-label">Projects</div>
+              </div>
+              <!-- Set 2 (Duplicate for loop) -->
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Home%20Sceen%20-%20Main%20View.png">
+                <img src="../Images/projects/vebuild/block/Home%20Sceen%20-%20Main%20View.png" alt="Home — Main View" class="ui-thumb">
+                <div class="ui-card-label">Home · Main View</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Our%20Company%20-%20Company%20Description.png">
+                <img src="../Images/projects/vebuild/block/Our%20Company%20-%20Company%20Description.png" alt="Our Company — Description" class="ui-thumb">
+                <div class="ui-card-label">Our Company · Description</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Our%20Company%20-%20Gallery.png">
+                <img src="../Images/projects/vebuild/block/Our%20Company%20-%20Gallery.png" alt="Our Company — Gallery" class="ui-thumb">
+                <div class="ui-card-label">Our Company · Gallery</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Our%20Company%20-%20Organization%20Structure.png">
+                <img src="../Images/projects/vebuild/block/Our%20Company%20-%20Organization%20Structure.png" alt="Our Company — Organization Structure" class="ui-thumb">
+                <div class="ui-card-label">Our Company · Org Structure</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Our%20Company%20-%20Certifications.png">
+                <img src="../Images/projects/vebuild/block/Our%20Company%20-%20Certifications.png" alt="Our Company — Certifications" class="ui-thumb">
+                <div class="ui-card-label">Our Company · Certifications</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Projects.png">
+                <img src="../Images/projects/vebuild/block/Projects.png" alt="Projects" class="ui-thumb">
+                <div class="ui-card-label">Projects</div>
+              </div>
+            </div>
+
+            <!-- Row 2: Moving Left -->
+            <div class="ui-marquee-track ui-track-1" id="marquee-4">
+              <!-- Set 1 -->
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Our%20Products.png">
+                <img src="../Images/projects/vebuild/block/Our%20Products.png" alt="Our Products" class="ui-thumb">
+                <div class="ui-card-label">Our Products</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/group%20of%20companies.png">
+                <img src="../Images/projects/vebuild/block/group%20of%20companies.png" alt="Group of Companies" class="ui-thumb">
+                <div class="ui-card-label">Group of Companies</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/CSR.png">
+                <img src="../Images/projects/vebuild/block/CSR.png" alt="Corporate Social Responsibility" class="ui-thumb">
+                <div class="ui-card-label">CSR</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/careers.png">
+                <img src="../Images/projects/vebuild/block/careers.png" alt="Careers" class="ui-thumb">
+                <div class="ui-card-label">Careers</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/contact%20us.png">
+                <img src="../Images/projects/vebuild/block/contact%20us.png" alt="Contact Us" class="ui-thumb">
+                <div class="ui-card-label">Contact Us</div>
+              </div>
+              <!-- Set 2 (Duplicate for loop) -->
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/Our%20Products.png">
+                <img src="../Images/projects/vebuild/block/Our%20Products.png" alt="Our Products" class="ui-thumb">
+                <div class="ui-card-label">Our Products</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/group%20of%20companies.png">
+                <img src="../Images/projects/vebuild/block/group%20of%20companies.png" alt="Group of Companies" class="ui-thumb">
+                <div class="ui-card-label">Group of Companies</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/CSR.png">
+                <img src="../Images/projects/vebuild/block/CSR.png" alt="Corporate Social Responsibility" class="ui-thumb">
+                <div class="ui-card-label">CSR</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/careers.png">
+                <img src="../Images/projects/vebuild/block/careers.png" alt="Careers" class="ui-thumb">
+                <div class="ui-card-label">Careers</div>
+              </div>
+              <div class="ui-card" data-full="../Images/projects/vebuild/block/contact%20us.png">
+                <img src="../Images/projects/vebuild/block/contact%20us.png" alt="Contact Us" class="ui-thumb">
+                <div class="ui-card-label">Contact Us</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- 05 — VIBE & INTERACTIONS -->
+        <section class="cs-section" data-sec="vibe">
+          <div class="cs-section-divider">
+            <span class="cs-section-num">05 ——</span>
+            <span class="cs-section-num">The Vibe</span>
+            <div class="cs-section-line"></div>
+          </div>
+          <h2 class="cs-section-title">Interaction Design &amp; Emotional Intent</h2>
+
+          <p class="cs-body">
+            Where the later direction went fluid and minimal, this earlier concept embraced structure — modular blocks, defined edges, and an "Expert Mode" toggle that let power users dial up detail. The intent: make industrial complexity feel organised and trustworthy.
+          </p>
+
+          <div class="cs-cards-grid">
+            <div class="cs-card">
+              <div class="cs-card-icon">🧱</div>
+              <h4>Modular Blocks</h4>
+              <p>Distinct, card-based components give every piece of information a clear container — reducing overwhelm when data gets dense.</p>
+            </div>
+            <div class="cs-card">
+              <div class="cs-card-icon">🎚️</div>
+              <h4>Progressive Disclosure</h4>
+              <p>Simplified project cards with expandable specifications and an "Expert Mode" toggle reveal depth only when the user wants it.</p>
+            </div>
+            <div class="cs-card">
+              <div class="cs-card-icon">🛠️</div>
+              <h4>Interactive Tools</h4>
+              <p>A Blueprint Explorer and Material Selector turn static specs into something clients can explore and understand instantly.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- 06 — RESULTS -->
+        <section class="cs-section" data-sec="results">
+          <div class="cs-section-divider">
+            <span class="cs-section-num">06 ——</span>
+            <span class="cs-section-num">Results &amp; Reflection</span>
+            <div class="cs-section-line"></div>
+          </div>
+          <h2 class="cs-section-title">Outcome &amp; Impact</h2>
+
+          <h3 class="cs-sub-heading">Key Outcomes</h3>
+
+          <div class="outcome-grid">
+            <div class="outcome-card">
+              <div class="outcome-metric" data-count="62" data-suffix="%">0</div>
+              <div class="outcome-label">Increase in project-page engagement</div>
+            </div>
+            <div class="outcome-card">
+              <div class="outcome-metric" data-count="81" data-suffix="%">0</div>
+              <div class="outcome-label">Reduction in support queries</div>
+            </div>
+          </div>
+
+          <div class="cs-highlight" style="margin-top:28px;">
+            <p>"The blueprint tool shows our construction approach instantly… it doesn't make me feel technologically challenged."</p>
+          </div>
+
+          <div class="reflection-grid">
+            <div class="reflection-card">
+              <h4>📈 Outcome</h4>
+              <p>Project-page engagement rose 62% and support queries dropped 81%, while application time fell from 7.5 to 3.2 minutes — with the mobile gallery loading in under 1.5s and a 98/100 PageSpeed score.</p>
+            </div>
+            <div class="reflection-card">
+              <h4>💡 What Worked</h4>
+              <p>The block, card-based system made dense construction data scannable, and interactive tools like the Blueprint Explorer turned complexity into engagement.</p>
+            </div>
+            <div class="reflection-card">
+              <h4>🚀 Next Steps</h4>
+              <p>Planned evolution included AR project visualisation, BIM model integration, and multilingual support.</p>
+            </div>
+            <div class="reflection-card">
+              <h4>💬 Conclusion</h4>
+              <p>This concept showed how UX engineering can transform industrial complexity into intuitive digital experiences that educate clients, empower partners, and engage talent.</p>
+            </div>
+          </div>
+
+          <div class="cs-cta-row">
+            <a href="https://www.behance.net/gallery/198687327/VEBUILD-Web-UI-Design" target="_blank" rel="noopener"
+              class="cs-cta-btn primary">View on Behance →</a>
+            <a href="https://www.figma.com/design/zwKbWePPKM1ujfCR418sg1/VEBUILD?node-id=0%3A1&t=hNPTrYJYqBC6AXRC-1" target="_blank"
+              rel="noopener" class="cs-cta-btn ghost">Open in Figma</a>
+          </div>
+        </section>
+
+      </div><!-- /#panel-blocked -->
 
     </div>
   </main>
@@ -801,37 +1274,64 @@
       }, { threshold: 0.5 });
       document.querySelectorAll('.outcome-metric[data-count], .outcome-metric[data-text]').forEach(el => counterObs.observe(el));
 
-      /* ── Floating TOC tracking ── */
+      /* ── A/B Tabs (Clean & Sleek vs Block Appearance) ── */
+      const tabs = document.querySelectorAll('.cs-tab');
+      const panels = document.querySelectorAll('.cs-panel');
+      const tabsEl = document.querySelector('.cs-tabs');
+      const activePanel = () => document.querySelector('.cs-panel.active');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const key = tab.dataset.panel;
+          if (tabsEl) tabsEl.dataset.active = key;   // slides the glider
+          tabs.forEach(t => {
+            const on = t === tab;
+            t.classList.toggle('active', on);
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+          });
+          panels.forEach(p => p.classList.toggle('active', p.id === 'panel-' + key));
+
+          // Reveal the newly shown panel's sections immediately, then scroll
+          // to the top of the chosen version's content.
+          const ap = activePanel();
+          if (ap) {
+            ap.querySelectorAll('.cs-section').forEach(s => s.classList.add('visible'));
+            const y = ap.getBoundingClientRect().top + window.scrollY - 130;
+            window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+          }
+          updateToc();
+        });
+      });
+
+      /* ── Floating TOC tracking (panel-aware) ── */
       const toc = document.getElementById('cs-toc');
       const tocItems = toc ? toc.querySelectorAll('.cs-toc-item') : [];
       function updateToc() {
-        if (!toc) return;
         const scrollY = window.scrollY;
         const heroBottom = heroBanner ? heroBanner.offsetTop + heroBanner.offsetHeight : 600;
+        // Reveal the floating version switcher once past the hero
+        if (tabsEl) tabsEl.classList.toggle('visible', scrollY > heroBottom - 220);
+        if (!toc) return;
+        toc.classList.toggle('active', scrollY > heroBottom - 200);
 
-        if (scrollY > heroBottom - 200) {
-          toc.classList.add('active');
-        } else {
-          toc.classList.remove('active');
-        }
-
-        let activeId = '';
-        sections.forEach(sec => {
-          if (sec.offsetTop - 300 <= scrollY) activeId = sec.id;
-        });
+        const ap = activePanel();
+        const secs = ap ? ap.querySelectorAll('.cs-section[data-sec]') : [];
+        let activeKey = '';
+        secs.forEach(sec => { if (sec.offsetTop - 300 <= scrollY) activeKey = sec.dataset.sec; });
 
         tocItems.forEach(item => {
-          item.classList.toggle('active', item.getAttribute('href') === '#' + activeId);
+          item.classList.toggle('active', item.dataset.target === activeKey);
         });
       }
       window.addEventListener('scroll', updateToc, { passive: true });
       updateToc();
 
-      /* ── Smooth scroll for TOC clicks ── */
+      /* ── Smooth scroll for TOC clicks (within active panel) ── */
       tocItems.forEach(item => {
         item.addEventListener('click', (e) => {
           e.preventDefault();
-          const target = document.querySelector(item.getAttribute('href'));
+          const ap = activePanel();
+          const target = ap && ap.querySelector('[data-sec="' + item.dataset.target + '"]');
           if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
       });

@@ -16,23 +16,26 @@
 
         if (!modal || !modalImg) return;
 
-        // Collect unique images from the gallery
-        const galleryItems = [];
-        const seenUrls = new Set();
-        
+        // Collect unique images from the gallery.
+        // Scope can be narrowed to a single .cs-panel (used by tabbed case studies)
+        // so the lightbox only navigates within the active version's screens.
+        let galleryItems = [];
         const uiCards = document.querySelectorAll('.ui-card, #onboarding-grid .cs-card');
-        uiCards.forEach(card => {
-            const fullUrl = card.getAttribute('data-full');
-            const title = card.querySelector('.ui-card-label')?.textContent || '';
-            
-            if (fullUrl && !seenUrls.has(fullUrl)) {
-                seenUrls.add(fullUrl);
-                galleryItems.push({
-                    url: fullUrl,
-                    title: title
-                });
-            }
-        });
+
+        function buildGallery(scope) {
+            const root = scope || document;
+            const seenUrls = new Set();
+            galleryItems = [];
+            root.querySelectorAll('.ui-card, #onboarding-grid .cs-card').forEach(card => {
+                const fullUrl = card.getAttribute('data-full');
+                const title = card.querySelector('.ui-card-label')?.textContent || '';
+                if (fullUrl && !seenUrls.has(fullUrl)) {
+                    seenUrls.add(fullUrl);
+                    galleryItems.push({ url: fullUrl, title: title });
+                }
+            });
+        }
+        buildGallery(document);
 
         let currentIndex = 0;
         let isZoomed = false;
@@ -209,9 +212,12 @@
 
         // Attach listeners to cards
         uiCards.forEach(card => {
-            card.style.cursor = 'pointer'; 
+            card.style.cursor = 'pointer';
             card.addEventListener('click', (e) => {
                 e.preventDefault();
+                // Rebuild the gallery scoped to this card's panel (if any) so
+                // prev/next stays within the active version's screens.
+                buildGallery(card.closest('.cs-panel') || document);
                 const url = card.getAttribute('data-full');
                 const index = galleryItems.findIndex(item => item.url === url);
                 if (index !== -1) openModal(index);
