@@ -45,9 +45,6 @@
     document.body.appendChild(btn);
 
     /* ── Animated "reverse scroll" back to the top ── */
-    var prefersReduced = window.matchMedia &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
     // Matches the old site's jQuery "easeInOutExpo" — slow start, fast middle, slow stop
     function easeInOutExpo(t) {
       if (t <= 0) return 0;
@@ -68,7 +65,6 @@
     function scrollToTop() {
       var start = window.scrollY || window.pageYOffset || 0;
       if (start <= 0) return;
-      if (prefersReduced) { window.scrollTo(0, 0); return; }
 
       stopAnim(); // cancel any run already in flight
       var duration = 900; // fixed 900ms easeInOutExpo, matching the old site
@@ -82,7 +78,7 @@
       function frame(now) {
         if (startTime === null) startTime = now;
         var t = Math.min((now - startTime) / duration, 1);
-        window.scrollTo(0, Math.round(start * (1 - easeInOutCubic(t))));
+        window.scrollTo(0, Math.round(start * (1 - easeInOutExpo(t))));
         if (t < 1) {
           animId = requestAnimationFrame(frame);
         } else {
