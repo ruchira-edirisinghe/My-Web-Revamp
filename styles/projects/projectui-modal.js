@@ -217,7 +217,7 @@
                 e.preventDefault();
                 // Rebuild the gallery scoped to this card's panel (if any) so
                 // prev/next stays within the active version's screens.
-                buildGallery(card.closest('.cs-panel') || document);
+                buildGallery(card.closest('.cs-panel, .device-gallery') || document);
                 const url = card.getAttribute('data-full');
                 const index = galleryItems.findIndex(item => item.url === url);
                 if (index !== -1) openModal(index);

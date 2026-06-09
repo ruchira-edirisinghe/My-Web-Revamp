@@ -1915,3 +1915,10 @@ body.modal-open #navbar-wrap {
 /* ── LYA Portal style-guide tweaks (visible heading + always-on swatches) ── */
 .sg-unit-title { color: var(--lyc-cyan); }
 .color-block .color-hex { opacity: 1; transform: none; }
+
+/* ── Landscape (16:9, 1920×1080) UI screens — override portrait cards ── */
+.ui-card { width: 560px; height: 315px; }
+.ui-thumb { object-position: center; }
+@media (max-width: 768px) {
+  .ui-card { width: 300px; height: 169px; }
+}

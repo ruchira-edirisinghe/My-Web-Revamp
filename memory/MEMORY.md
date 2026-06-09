@@ -1,2 +1,3 @@
 - [Design: avoid generic-AI UI](design-avoid-generic-ai-look.md) — how the user wants case-study pages to feel
 - [GitHub Pages case-sensitivity](github-pages-case-sensitivity.md) — asset paths must match `Images/` & `audio/` casing or they 404 in prod
+- [Future web projects](future-web-projects.md) — Horse Racing Game, Lottogram, Social Casino to add + the web-projects category filter scheme
