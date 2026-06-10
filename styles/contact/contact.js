@@ -182,6 +182,7 @@
     document.addEventListener('visibilitychange', () => { hidden = document.visibilityState === 'hidden'; });
 
     function spawnShooter() {
+      if (shooters.length >= 6) return; // cap — prevents buildup while drawing is paused
       const a = (Math.random() * 30 + 10) * Math.PI / 180, sp = Math.random() * 5 + 4;
       shooters.push({
         x: Math.random() * W, y: Math.random() * H * 0.4, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
@@ -630,7 +631,15 @@
     });
 
     cancelBtn.addEventListener('click', (e) => { e.stopPropagation(); closeModal(); });
-    confirmBtn.addEventListener('click', (e) => { e.stopPropagation(); if (pendingUrl) window.open(pendingUrl, '_blank'); closeModal(); });
+    confirmBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (pendingUrl) {
+        // mailto:/tel: must navigate in-place so the OS handler opens (a blank tab otherwise)
+        if (/^(mailto:|tel:)/i.test(pendingUrl)) window.location.href = pendingUrl;
+        else window.open(pendingUrl, '_blank', 'noopener');
+      }
+      closeModal();
+    });
     overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
   })();
 

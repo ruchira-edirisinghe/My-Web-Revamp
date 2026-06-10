@@ -1031,3 +1031,20 @@ footer {
 @media (max-width: 600px) {
   .filter-btn { font-size: 10px; padding: 9px 15px; letter-spacing: 0.08em; }
 }
+
+
+/* ════════════════════════════════════════
+   QA polish — keyboard focus & touch cursor (appended)
+   ════════════════════════════════════════ */
+
+/* Keyboard focus visibility */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid rgba(160,210,255,0.9);
+  outline-offset: 3px;
+}
+
+/* Touch devices: restore native cursor, hide custom cursor layers */
+@media (hover: none), (pointer: coarse) {
+  *, *::before, *::after { cursor: auto !important; }
+  #cursor-dot, #cursor-canvas { display: none !important; }
+}

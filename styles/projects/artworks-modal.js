@@ -21,16 +21,22 @@
      * @param {string} title - Title text
      * @param {string} desc - Description text
      */
+    let lastFocused = null;
+
     function openModal(src, tag, title, desc) {
         modalImg.src = src;
         if (modalTag) modalTag.textContent = tag || '';
         if (modalTitle) modalTitle.textContent = title || '';
         if (modalDesc) modalDesc.textContent = desc || '';
-        
+
         modal.classList.add('open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden'; // Lock scroll
         document.body.classList.add('modal-active'); // For hiding other elements
+
+        // Move keyboard focus into the dialog; remember where it came from
+        lastFocused = document.activeElement;
+        closeBtn.focus();
     }
 
     /**
@@ -41,6 +47,9 @@
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = ''; // Restore scroll
         document.body.classList.remove('modal-active');
+
+        // Return focus to the element that opened the dialog
+        if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
         
         // Clear src and text after transition to prevent "flash" of previous data next time
         setTimeout(() => {

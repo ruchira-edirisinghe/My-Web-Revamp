@@ -160,13 +160,14 @@
       }));
       const shooters = [];
       function spawnShooter() {
+        if (shooters.length >= 6) return; // cap — prevents buildup while rAF is paused
         const a = (Math.random() * 30 + 10) * Math.PI / 180, sp = Math.random() * 5 + 4;
         shooters.push({
           x: Math.random() * W, y: Math.random() * H * 0.4, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
           len: Math.random() * 100 + 50, alpha: 1, decay: Math.random() * 0.014 + 0.009
         });
       }
-      setInterval(() => { if (Math.random() < 0.35) spawnShooter(); }, 3000);
+      setInterval(() => { if (!document.hidden && Math.random() < 0.35) spawnShooter(); }, 3000);
 
       const aC = [[0, 220, 160], [90, 70, 240], [0, 180, 110], [50, 165, 240]];
       const auroras = Array.from({ length: 3 }, (_, i) => ({
@@ -180,7 +181,9 @@
       window.addEventListener('resize', () => { auroraSteps = Math.ceil(window.innerWidth / 5); });
 
       let lt = 0;
+      let running = true;
       function draw(ts) {
+        if (!running) return;
         const dt = Math.min(ts - lt, 50); lt = ts;
         ctx.fillStyle = '#02030a'; ctx.fillRect(0, 0, W, H);
         auroras.forEach(a => {
@@ -222,6 +225,12 @@
         requestAnimationFrame(draw);
       }
       requestAnimationFrame(draw);
+
+      // Zero background CPU: pause the loop while the tab is hidden
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) { running = false; }
+        else if (!running) { running = true; lt = performance.now(); requestAnimationFrame(draw); }
+      });
     })();
 
 

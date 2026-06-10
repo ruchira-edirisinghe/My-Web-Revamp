@@ -160,13 +160,14 @@
       }));
       const shooters = [];
       function spawnShooter() {
+        if (shooters.length >= 6) return; // cap — prevents buildup while rAF is paused
         const a = (Math.random() * 30 + 10) * Math.PI / 180, sp = Math.random() * 5 + 4;
         shooters.push({
           x: Math.random() * W, y: Math.random() * H * 0.4, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
           len: Math.random() * 100 + 50, alpha: 1, decay: Math.random() * 0.014 + 0.009
         });
       }
-      setInterval(() => { if (Math.random() < 0.35) spawnShooter(); }, 3000);
+      setInterval(() => { if (!document.hidden && Math.random() < 0.35) spawnShooter(); }, 3000);
 
       const aC = [[0, 220, 160], [90, 70, 240], [0, 180, 110], [50, 165, 240]];
       const auroras = Array.from({ length: 3 }, (_, i) => ({
@@ -180,7 +181,9 @@
       window.addEventListener('resize', () => { auroraSteps = Math.ceil(window.innerWidth / 5); });
 
       let lt = 0;
+      let running = true;
       function draw(ts) {
+        if (!running) return;
         const dt = Math.min(ts - lt, 50); lt = ts;
         ctx.fillStyle = '#02030a'; ctx.fillRect(0, 0, W, H);
         auroras.forEach(a => {
@@ -222,6 +225,12 @@
         requestAnimationFrame(draw);
       }
       requestAnimationFrame(draw);
+
+      // Zero background CPU: pause the loop while the tab is hidden
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) { running = false; }
+        else if (!running) { running = true; lt = performance.now(); requestAnimationFrame(draw); }
+      });
     })();
 
 
@@ -346,7 +355,16 @@
       let mX = -300, mY = -300, rX = -300, rY = -300, currentR = 26, targetR = 26;
       const R_NORMAL = 26, R_HOVER = 36;
 
+      let cursorRunning = false;
+      function startCursor() {
+        if (cursorRunning || W <= 900 || document.hidden) return;
+        cursorRunning = true;
+        requestAnimationFrame(drawCursor);
+      }
+      function stopCursor() { cursorRunning = false; cCtx.clearRect(0, 0, W, H); }
+
       function drawCursor() {
+        if (!cursorRunning) return;
         cCtx.clearRect(0, 0, W, H);
         rX += (mX - rX) * 0.1; rY += (mY - rY) * 0.1; currentR += (targetR - currentR) * 0.08;
         const R = currentR, cx = rX, cy = rY;
@@ -372,7 +390,9 @@
         cCtx.shadowBlur = 0;
         requestAnimationFrame(drawCursor);
       }
-      requestAnimationFrame(drawCursor);
+      startCursor();
+      window.addEventListener('resize', () => { if (W <= 900) stopCursor(); else startCursor(); });
+      document.addEventListener('visibilitychange', () => { if (document.hidden) stopCursor(); else startCursor(); });
       document.addEventListener('mousemove', e => { mX = e.clientX; mY = e.clientY; });
       document.addEventListener('mouseleave', () => { mX = -300; mY = -300; });
       document.querySelectorAll('a,button,.nav-link,.nav-cta,.skill-tag,.stat-pill,.about-block').forEach(el => {

@@ -157,7 +157,9 @@
   }));
 
   let lastSpec = 0;
+  let specRunning = true;
   function drawSpectrum(ts) {
+    if (!specRunning) return;
     const dt = Math.min((ts - lastSpec) / 1000, 0.05);
     lastSpec = ts;
 
@@ -189,6 +191,17 @@
     requestAnimationFrame(drawSpectrum);
   }
   requestAnimationFrame(drawSpectrum);
+
+  // Idle the spectrum loop while the tab is hidden
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      specRunning = false;
+    } else if (!specRunning) {
+      specRunning = true;
+      lastSpec = performance.now();
+      requestAnimationFrame(drawSpectrum);
+    }
+  });
 
   /* ════════════════════════════════════════
      CLICK SOUND
@@ -258,6 +271,8 @@
   }
 
   function spawnParticles(x, y) {
+    // Cap concurrent particles so rapid clicking can't flood the DOM
+    if (document.querySelectorAll('.click-particle').length > 24) return;
     const colors = [
       'rgba(255,255,255,0.7)',
       'rgba(180,220,255,0.65)',

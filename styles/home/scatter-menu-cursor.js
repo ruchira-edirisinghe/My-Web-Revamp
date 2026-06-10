@@ -17,9 +17,9 @@
   function resize() {
     W = sc.width = cursorCanvas.width  = window.innerWidth;
     H = sc.height = cursorCanvas.height = window.innerHeight;
+    // (Re)start or stop the cursor loop to match the new viewport
+    if (W <= 900) stopCursor(); else startCursor();
   }
-  resize();
-  window.addEventListener('resize', resize);
 
   /* ─────────────────────────────────
      LIQUID GLASS CURSOR
@@ -29,13 +29,20 @@
   const R_NORMAL = 26, R_HOVER = 36, R_IMAGE = 56, R_MENU = 56;
   let currentR = R_NORMAL, targetR = R_NORMAL;
 
-  function drawCursor() {
+  let cursorRunning = false;
+  function startCursor() {
+    if (cursorRunning || W <= 900 || document.hidden) return;
+    cursorRunning = true;
+    requestAnimationFrame(drawCursor);
+  }
+  function stopCursor() {
+    cursorRunning = false;
     cCtx.clearRect(0, 0, W, H);
-    // Disable liquid cursor render on mobile view
-    if (W <= 900) {
-        requestAnimationFrame(drawCursor);
-        return;
-    }
+  }
+
+  function drawCursor() {
+    if (!cursorRunning) return;
+    cCtx.clearRect(0, 0, W, H);
 
     rX += (mX - rX) * 0.1;
     rY += (mY - rY) * 0.1;
@@ -122,7 +129,14 @@
 
     requestAnimationFrame(drawCursor);
   }
-  requestAnimationFrame(drawCursor);
+  resize();
+  window.addEventListener('resize', resize);
+  startCursor();
+
+  // Cursor canvas idles completely when the tab is hidden
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopCursor(); else startCursor();
+  });
 
   document.addEventListener('mousemove', e => { mX = e.clientX; mY = e.clientY; });
   document.addEventListener('mouseleave', () => { mX = -300; mY = -300; });
@@ -294,4 +308,7 @@
   btnEx.addEventListener('click', explode);
   wrapper.addEventListener('click', explode);
   closeBtn.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay.classList.contains('visible')) closeMenu();
+  });
 })();

@@ -18,13 +18,14 @@
     }));
     const shooters = [];
     function spawnShooter() {
+      if (shooters.length >= 6) return; // cap — prevents buildup while rAF is paused
       const a = (Math.random() * 30 + 10) * Math.PI / 180, sp = Math.random() * 5 + 4;
       shooters.push({
         x: Math.random() * W, y: Math.random() * H * 0.4, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
         len: Math.random() * 100 + 50, alpha: 1, decay: Math.random() * 0.014 + 0.009
       });
     }
-    setInterval(() => { if (Math.random() < 0.35) spawnShooter(); }, 3000);
+    setInterval(() => { if (!document.hidden && Math.random() < 0.35) spawnShooter(); }, 3000);
 
     const aC = [[0, 220, 160], [90, 70, 240], [0, 180, 110], [50, 165, 240]];
     const auroras = Array.from({ length: 3 }, (_, i) => ({
@@ -156,7 +157,11 @@
         }, HOLD_MS);
       }
     }
-    logoImg.onload = () => { logoReady = true; requestAnimationFrame(drawFrame); };
+    let frameStarted = false;
+    function startFrames() { if (!frameStarted) { frameStarted = true; requestAnimationFrame(drawFrame); } }
+    logoImg.onload = () => { logoReady = true; startFrames(); };
+    // If the logo fails, still run (and finish) the preloader so the page is never stuck
+    logoImg.onerror = () => { startFrames(); };
     logoImg.src = './Images/longlogo.svg';
   })();
 
@@ -173,9 +178,18 @@
     let mX = -300, mY = -300, rX = -300, rY = -300, currentR = 26, targetR = 26;
     const R_NORMAL = 26, R_HOVER = 36;
 
+    let cursorRunning = false;
+    function startCursor() {
+      if (cursorRunning || W <= 900 || document.hidden) return;
+      cursorRunning = true;
+      requestAnimationFrame(drawCursor);
+    }
+    function stopCursor() { cursorRunning = false; cCtx.clearRect(0, 0, W, H); }
+
     function drawCursor() {
+      if (!cursorRunning) return;
       cCtx.clearRect(0, 0, W, H);
-      if (W <= 900) { requestAnimationFrame(drawCursor); return; }
+      if (W <= 900) { stopCursor(); return; }
       rX += (mX - rX) * 0.1; rY += (mY - rY) * 0.1; currentR += (targetR - currentR) * 0.08;
       const R = currentR, cx = rX, cy = rY;
       if (mX < -200) { requestAnimationFrame(drawCursor); return; }
@@ -201,7 +215,9 @@
       if (cursorDot) { cursorDot.style.left = mX + 'px'; cursorDot.style.top = mY + 'px'; }
       requestAnimationFrame(drawCursor);
     }
-    requestAnimationFrame(drawCursor);
+    startCursor();
+    window.addEventListener('resize', () => { if (W <= 900) stopCursor(); else startCursor(); });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stopCursor(); else startCursor(); });
 
     document.addEventListener('mousemove', e => { mX = e.clientX; mY = e.clientY; });
     document.querySelectorAll('a, button, .social-card, .platform-card, .stream-card').forEach(el => {
@@ -403,7 +419,15 @@
     });
 
     cancelBtn.addEventListener('click', (e) => { e.stopPropagation(); closeModal(); });
-    confirmBtn.addEventListener('click', (e) => { e.stopPropagation(); if (pendingUrl) window.open(pendingUrl, '_blank'); closeModal(); });
+    confirmBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (pendingUrl) {
+        // mailto:/tel: must navigate in-place so the OS handler opens (a blank tab otherwise)
+        if (/^(mailto:|tel:)/i.test(pendingUrl)) window.location.href = pendingUrl;
+        else window.open(pendingUrl, '_blank', 'noopener');
+      }
+      closeModal();
+    });
     overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
   })();
 

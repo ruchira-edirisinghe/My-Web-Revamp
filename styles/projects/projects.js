@@ -21,14 +21,15 @@
       driftX: (Math.random() - 0.5) * 0.00007, driftY: (Math.random() - 0.5) * 0.00003,
     }));
     const shooters = [];
+    let shooterTimer = 0;
     function spawnShooter() {
+      if (shooters.length >= 6) return;
       const a = (Math.random() * 30 + 10) * Math.PI / 180, sp = Math.random() * 5 + 4;
       shooters.push({
         x: Math.random() * W, y: Math.random() * H * 0.4, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
         len: Math.random() * 100 + 50, alpha: 1, decay: Math.random() * 0.014 + 0.009
       });
     }
-    setInterval(() => { if (Math.random() < 0.35) spawnShooter(); }, 3000);
 
     const aC = [[0, 220, 160], [90, 70, 240], [0, 180, 110], [50, 165, 240]];
     const auroras = Array.from({ length: 3 }, (_, i) => ({
@@ -42,8 +43,12 @@
     window.addEventListener('resize', () => { auroraSteps = Math.ceil(window.innerWidth / 5); });
 
     let lt = 0;
+    let running = true;
     function draw(ts) {
+      if (!running) return;
       const dt = Math.min(ts - lt, 50); lt = ts;
+      shooterTimer += dt;
+      if (shooterTimer >= 3000) { shooterTimer = 0; if (Math.random() < 0.35) spawnShooter(); }
       ctx.fillStyle = '#02030a'; ctx.fillRect(0, 0, W, H);
       auroras.forEach(a => {
         if (!a.showing) { a.timer += dt; if (a.timer >= a.nextShow) { a.showing = true; a.timer = 0; a.targetA = 0.11 + Math.random() * 0.08; } }
@@ -84,6 +89,12 @@
       requestAnimationFrame(draw);
     }
     requestAnimationFrame(draw);
+
+    // Zero background CPU: pause the loop while the tab is hidden
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { running = false; }
+      else if (!running) { running = true; lt = performance.now(); requestAnimationFrame(draw); }
+    });
   })();
 
   /* ══════════ 2. PRELOADER (High Fidelity) ══════════ */
@@ -159,7 +170,11 @@
         }, HOLD_MS);
       }
     }
-    logoImg.onload = () => { logoReady = true; requestAnimationFrame(drawFrame); };
+    let frameStarted = false;
+    function startFrames() { if (!frameStarted) { frameStarted = true; requestAnimationFrame(drawFrame); } }
+    logoImg.onload = () => { logoReady = true; startFrames(); };
+    // If the logo fails, still run (and finish) the preloader so the page is never stuck
+    logoImg.onerror = () => { startFrames(); };
     logoImg.src = basePath + 'Images/longlogo.svg';
   })();
 
@@ -176,9 +191,18 @@
     let mX = -300, mY = -300, rX = -300, rY = -300, currentR = 26, targetR = 26;
     const R_NORMAL = 26, R_HOVER = 36;
 
+    let cursorRunning = false;
+    function startCursor() {
+      if (cursorRunning || W <= 900 || document.hidden) return;
+      cursorRunning = true;
+      requestAnimationFrame(drawCursor);
+    }
+    function stopCursor() { cursorRunning = false; cCtx.clearRect(0, 0, W, H); }
+
     function drawCursor() {
+      if (!cursorRunning) return;
       cCtx.clearRect(0, 0, W, H);
-      if (W <= 900) { requestAnimationFrame(drawCursor); return; }
+      if (W <= 900) { stopCursor(); return; }
       rX += (mX - rX) * 0.1; rY += (mY - rY) * 0.1; currentR += (targetR - currentR) * 0.08;
       const R = currentR, cx = rX, cy = rY;
       if (mX < -200) { requestAnimationFrame(drawCursor); return; }
@@ -200,7 +224,9 @@
       if (cursorDot) { cursorDot.style.left = mX + 'px'; cursorDot.style.top = mY + 'px'; }
       requestAnimationFrame(drawCursor);
     }
-    requestAnimationFrame(drawCursor);
+    startCursor();
+    window.addEventListener('resize', () => { if (W <= 900) stopCursor(); else startCursor(); });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stopCursor(); else startCursor(); });
 
     document.addEventListener('mousemove', e => { mX = e.clientX; mY = e.clientY; });
     document.querySelectorAll('a, button, .social-card, .platform-card, .stream-card, .project-card').forEach(el => {
@@ -274,7 +300,9 @@
 
     const bars = Array.from({ length: 7 }, (_, i) => ({ phase: i * (Math.PI * 2 / 7) + Math.random() * 0.5, speed: 1.2 + Math.random() * 1.5, currentH: 1, targetH: 1 }));
     let lastSpec = 0;
+    let specRunning = true;
     function drawSpectrum(ts) {
+      if (!specRunning) return;
       const dt = Math.min((ts - lastSpec) / 1000, 0.05); lastSpec = ts;
       [spCtx, spCtxM].forEach(ctx => {
         if (!ctx) return; ctx.clearRect(0, 0, 26, 18);
@@ -293,6 +321,11 @@
       requestAnimationFrame(drawSpectrum);
     }
     requestAnimationFrame(drawSpectrum);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { specRunning = false; }
+      else if (!specRunning) { specRunning = true; lastSpec = performance.now(); requestAnimationFrame(drawSpectrum); }
+    });
 
     document.querySelectorAll('#music-btn-desktop, #music-btn').forEach(btn => btn.addEventListener('click', e => {
       e.stopPropagation();
