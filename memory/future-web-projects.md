@@ -10,6 +10,7 @@ metadata:
 **Already added** (both use the Desktop/Mobile gallery switcher — `.device-toggle` + `.device-gallery.is-desktop`/`.is-mobile`, desktop = landscape cards, mobile = portrait phone cards; the lightbox in `projectui-modal.js` scopes to `.cs-panel, .device-gallery`):
 - **Lottogram** (`lottogram-case-study.html`, `data-category="web mobile"`) — betting/lottery iGaming platform.
 - **747 Social Casino** (`747social-case-study.html`, `data-category="web mobile"`) — social-network + casino platform.
+- **Fun Extreme Technology** (`funxt-case-study.html`, `data-category="web mobile"`, added 2026-06-10) — gaming-tech corporate site (red gradient #FF5757→#CD0505 + blue-ash, Gilroy); assets in `Images/projects/funxt/` (filenames contain spaces → `%20`-encoded refs); live at funextreme-web.vercel.app.
 
 **One project the user will add later** — add as a `.project-card` entry (and likely a case-study page):
 - **Horse Racing Game** → `data-category="dev"` (Development)
