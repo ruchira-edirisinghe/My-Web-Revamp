@@ -16,4 +16,4 @@ metadata:
 **One project the user will add later** — add as a `.project-card` entry (and likely a case-study page):
 - **Horse Racing Game** → `data-category="dev"` (Development)
 
-Until **Development** has a project (Horse Racing Game), that filter shows an empty "coming soon" state (`#filter-empty`). Mobile UI/UX is covered by Lottogram + 747. Cover-banner/card category tags follow the same design+development convention — see [[design-avoid-generic-ai-look]] for the overall case-study system, and remember [[github-pages-case-sensitivity]] when wiring their image paths.
+**Development** filter is now populated: **PhURL** and **Technosphere** were given `data-category="web dev"` (2026-06-10) so they appear under Development as well as Web UI/UX. Horse Racing Game (still to come) will be `dev`-only. Mobile UI/UX is covered by Lottogram + 747 (+ Fun Extreme). Cover-banner/card category tags follow the same design+development convention — see [[design-avoid-generic-ai-look]] for the overall case-study system, and remember [[github-pages-case-sensitivity]] when wiring their image paths.
