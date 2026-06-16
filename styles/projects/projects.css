@@ -1048,3 +1048,27 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   *, *::before, *::after { cursor: auto !important; }
   #cursor-dot, #cursor-canvas { display: none !important; }
 }
+
+
+/* ════════════════════════════════════════
+   Mobile horizontal-overflow guard — case studies (appended)
+
+   The case-study layout sits in a shrink-to-fit flex column, so .cs-wrap
+   grows to its widest descendant. On phones, long code specimens, wide
+   display-type words and unbreakable strings (URLs/tokens) could push the
+   page wider than the viewport and trigger horizontal scrolling. Pin the
+   column to the viewport and let those elements scroll / wrap / scale to fit.
+   (Selectors below only exist on case-study pages, so gallery pages ignore them.)
+   ════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Pin the content column so internal overflow handling actually engages */
+  .cs-wrap { width: 100%; overflow-wrap: anywhere; }
+
+  /* Code specimens scroll inside their own box instead of widening the page */
+  .cs-code { max-width: 100%; }
+
+  /* Type-specimen heading scales down so long display words (e.g. "ORBITRON")
+     stay on one line — the per-page mobile rule pins it to a fixed 3.5rem,
+     which is too wide for some specimens on narrow screens. */
+  .typo-hero { font-size: clamp(2rem, 11vw, 3.5rem) !important; }
+}
