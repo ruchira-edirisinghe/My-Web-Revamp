@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { NavKey } from './Navbar';
 
 /**
@@ -13,9 +14,9 @@ export default function MobileMenu({ active = null }: { active?: NavKey }) {
         <button id="music-btn" aria-label="Toggle music">
           <canvas id="spectrum-canvas" width="26" height="18"></canvas>
         </button>
-        <a href="/" className="mobile-logo-link" aria-label="Home">
+        <Link href="/" className="mobile-logo-link" aria-label="Home">
           <img className="mobile-logo" src="/Images/longlogo.svg" alt="Logo" />
-        </a>
+        </Link>
         <button id="menu-btn" className="glass-round-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span></span><span></span>
         </button>
@@ -23,26 +24,26 @@ export default function MobileMenu({ active = null }: { active?: NavKey }) {
 
       <div id="mobile-menu" aria-hidden="true">
         <nav className="mobile-menu-panel">
-          <a href="/about" data-page="about" className={cls('about')}>
+          <Link href="/about" data-page="about" className={cls('about')}>
             <span className="mobile-menu-title">About Me</span>
             <span className="mobile-menu-desc">Who I am &amp; what drives me</span>
-          </a>
-          <a href="/experience" data-page="experience" className={cls('experience')}>
+          </Link>
+          <Link href="/experience" data-page="experience" className={cls('experience')}>
             <span className="mobile-menu-title">Experience</span>
             <span className="mobile-menu-desc">My journey &amp; career highlights</span>
-          </a>
-          <a href="/projects" data-page="projects" className={cls('projects')}>
+          </Link>
+          <Link href="/projects" data-page="projects" className={cls('projects')}>
             <span className="mobile-menu-title">Projects</span>
             <span className="mobile-menu-desc">Work I&apos;ve crafted &amp; shipped</span>
-          </a>
-          <a href="/links" data-page="links" className={cls('links')}>
+          </Link>
+          <Link href="/links" data-page="links" className={cls('links')}>
             <span className="mobile-menu-title">Quick Links</span>
             <span className="mobile-menu-desc">Digital Constellation</span>
-          </a>
-          <a href="/contact" data-page="contact" className={cls('contact')}>
+          </Link>
+          <Link href="/contact" data-page="contact" className={cls('contact')}>
             <span className="mobile-menu-title">Contact Me</span>
             <span className="mobile-menu-desc">Let&apos;s build something cosmic</span>
-          </a>
+          </Link>
         </nav>
 
         <button id="menu-close-mobile" className="menu-close-btn" aria-label="Close menu">

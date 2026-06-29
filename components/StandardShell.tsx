@@ -1,5 +1,6 @@
 'use client';
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect, useLayoutEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Preloader from './Preloader';
 import Navbar, { type NavKey } from './Navbar';
 import MobileMenu from './MobileMenu';
@@ -27,6 +28,41 @@ interface StandardShellProps {
  */
 export default function StandardShell({ active = null, dataPage, tagline, children }: StandardShellProps) {
   useBodyDataPage(dataPage);
+  const pathname = usePathname();
+  const isFirstMount = useRef(true);
+
+  // Skip the full preloader on revisits within the same session
+  useLayoutEffect(() => {
+    if (sessionStorage.getItem('site_visited')) {
+      const hide = (id: string) => {
+        const el = document.getElementById(id);
+        if (el) { el.style.cssText = 'display:none!important;opacity:0;'; }
+      };
+      hide('preloader'); hide('split-top'); hide('split-bottom');
+      document.body.classList.add('skip-preloader');
+    } else {
+      sessionStorage.setItem('site_visited', '1');
+    }
+  }, []);
+
+  // Smooth page-enter transition on client-side navigations + close mobile menu
+  useEffect(() => {
+    if (isFirstMount.current) { isFirstMount.current = false; return; }
+    // Close any open mobile menu
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu?.classList.contains('open')) {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.getElementById('menu-btn')?.classList.remove('is-open');
+      document.getElementById('menu-btn')?.setAttribute('aria-expanded', 'false');
+      document.getElementById('menu-close-mobile')?.classList.remove('visible');
+      document.body.classList.remove('menu-open');
+    }
+    // Trigger page entry animation
+    document.body.classList.add('page-transitioning');
+    const t = setTimeout(() => document.body.classList.remove('page-transitioning'), 550);
+    return () => clearTimeout(t);
+  }, [pathname]);
 
   return (
     <>

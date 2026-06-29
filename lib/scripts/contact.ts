@@ -49,6 +49,7 @@ export function initContact(): () => void {
         dismiss();
         return;
       }
+      if (pl.style.display === 'none') return;
 
       const cx = cv.getContext('2d');
       const CW = 900, CH = 240;

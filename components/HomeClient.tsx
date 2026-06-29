@@ -1,5 +1,6 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
+import Link from 'next/link';
 import SiteFooter from './SiteFooter';
 import ScrollTop from './ScrollTop';
 import { initSpaceBackground } from '@/lib/scripts/space-background';
@@ -8,6 +9,19 @@ import { initPreloader } from '@/lib/scripts/preloader';
 import { initSoundMusic } from '@/lib/scripts/sound-music';
 
 export default function HomeClient() {
+  useLayoutEffect(() => {
+    if (sessionStorage.getItem('site_visited')) {
+      const hide = (id: string) => {
+        const el = document.getElementById(id);
+        if (el) { el.style.cssText = 'display:none!important;opacity:0;'; }
+      };
+      hide('preloader'); hide('split-top'); hide('split-bottom');
+      document.body.classList.add('skip-preloader');
+    } else {
+      sessionStorage.setItem('site_visited', '1');
+    }
+  }, []);
+
   useEffect(() => {
     // Load order matches the original index.html: space bg (no deps),
     // scatter/menu/cursor, preloader, then sound.
@@ -62,13 +76,13 @@ export default function HomeClient() {
           </div>
           <div className="cta-row">
             <a href="#" className="btn btn-outline" id="btn-explore">Explore</a>
-            <a href="/projects" className="btn btn-solid" id="btn-work">
+            <Link href="/projects" className="btn btn-solid" id="btn-work">
               See My Work
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </main>
@@ -78,26 +92,26 @@ export default function HomeClient() {
       {/* Overlay navigation */}
       <div id="menu-overlay">
         <nav className="menu-nav">
-          <a href="/about" className="menu-item">
+          <Link href="/about" className="menu-item">
             <span className="menu-item-title">About Me</span>
             <span className="menu-item-desc">Who I am &amp; what drives me</span>
-          </a>
-          <a href="/experience" className="menu-item">
+          </Link>
+          <Link href="/experience" className="menu-item">
             <span className="menu-item-title">Experience</span>
             <span className="menu-item-desc">My journey &amp; career highlights</span>
-          </a>
-          <a href="/projects" className="menu-item">
+          </Link>
+          <Link href="/projects" className="menu-item">
             <span className="menu-item-title">Projects</span>
             <span className="menu-item-desc">Work I&apos;ve crafted &amp; shipped</span>
-          </a>
-          <a href="/contact" className="menu-item">
+          </Link>
+          <Link href="/contact" className="menu-item">
             <span className="menu-item-title">Contact Me</span>
             <span className="menu-item-desc">Let&apos;s build something together</span>
-          </a>
-          <a href="/links" className="menu-item">
+          </Link>
+          <Link href="/links" className="menu-item">
             <span className="menu-item-title">Quick Links</span>
             <span className="menu-item-desc">More places to find me</span>
-          </a>
+          </Link>
         </nav>
       </div>
 

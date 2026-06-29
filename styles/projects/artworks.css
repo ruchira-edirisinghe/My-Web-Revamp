@@ -112,8 +112,11 @@
 }
 
 .info-title {
-  font-family: 'Cinzel Decorative', cursive;
-  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: #fff;
   margin-bottom: 4px;
 }
@@ -478,8 +481,11 @@
 }
 
 #modal-title {
-  font-family: 'Cinzel Decorative', cursive;
-  font-size: 1.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: #fff;
   margin-bottom: 12px;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
