@@ -28,6 +28,7 @@ export function initPreloader(): () => void {
   const SPLIT_MS = 900; // matches CSS transition
 
   let startTime = null;
+  let lastTs    = 0;
   let fillPct   = 0;
   let wavePhase = 0;
   let logoImg   = new Image();
@@ -68,10 +69,11 @@ export function initPreloader(): () => void {
 
   function drawFrame(ts) {
     if (!alive) return;
-    if (!startTime) startTime = ts;
+    if (!startTime) { startTime = ts; lastTs = ts; }
+    const dt = Math.min(ts - lastTs, 50); lastTs = ts;
     const raw = Math.min((ts - startTime) / DURATION, 1);
     fillPct   = ease(raw);
-    wavePhase += 0.045;
+    wavePhase += 0.045 * (dt / 16.667);
 
     progressFill.style.width = (fillPct * 100) + '%';
 

@@ -182,7 +182,6 @@ export function initContact(): () => void {
     let W, H;
     let hidden = false;
     let lastDraw = 0;
-    const INTERVAL = 1000 / 24; // ~24fps — imperceptible for slow animations
 
     // ── AURORA CONFIG ──
     const aC = [[0, 220, 160], [90, 70, 240], [0, 180, 110], [50, 165, 240]];
@@ -214,7 +213,6 @@ export function initContact(): () => void {
         len: Math.random() * 100 + 50, alpha: 1, decay: Math.random() * 0.014 + 0.009
       });
     }
-    // Only spawn shooters when active
     const shooterInterval = setInterval(() => { if (!hidden && Math.random() < 0.35) spawnShooter(); }, 3000);
 
     function res() {
@@ -246,7 +244,6 @@ export function initContact(): () => void {
       if (hidden) return;
 
       const dt = Math.min(ts - lastDraw, 50);
-      if (ts - lastDraw < INTERVAL) return;
       lastDraw = ts;
 
       sctx.fillStyle = '#02030a';

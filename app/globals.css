@@ -7,3 +7,15 @@ body {
   padding: 0;
   background: #02030a;
 }
+
+/* ── Universal micro-interaction polish ──
+   Applied globally so every page benefits without duplication. */
+
+/* Smooth anchor scrolling */
+html { scroll-behavior: smooth; }
+
+/* Remove the blue iOS/Android tap flash — custom interactions own the feedback */
+*, *::before, *::after { -webkit-tap-highlight-color: transparent; }
+
+/* Ensure every button shows a pointer on desktop */
+button { cursor: pointer; }

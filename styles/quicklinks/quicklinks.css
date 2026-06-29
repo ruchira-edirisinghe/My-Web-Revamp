@@ -1784,3 +1784,43 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   *, *::before, *::after { cursor: auto !important; }
   #cursor-dot, #cursor-canvas { display: none !important; }
 }
+
+/* ════════════════════════════════════════
+   Micro-interaction polish — active/press states
+   ════════════════════════════════════════ */
+
+/* ── Social & stream cards ── */
+.social-card:active,
+.stream-card:active {
+  transform: translateY(0) scale(0.98) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Platform cards ── */
+.platform-card:active {
+  transform: translateY(0) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Glow / dim call-to-action buttons ── */
+.btn-glow:active,
+.btn-dim:active {
+  transform: translateY(0) scale(0.96) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* ── Social links ── */
+.social-links a:active {
+  transform: translateY(0) scale(0.88) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* ── Music button ── */
+#music-btn:active,
+#music-btn-desktop:active { transform: scale(0.88) !important; transition: transform 0.08s ease !important; }
+
+/* ── Nav CTA ── */
+.nav-cta:active { transform: translateY(0) scale(0.96) !important; transition: transform 0.08s ease !important; }
+
+/* ── Mobile menu close ── */
+#menu-close-mobile:active { transform: rotate(90deg) scale(0.88) !important; transition: transform 0.08s ease !important; }

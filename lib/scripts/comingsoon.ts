@@ -147,7 +147,7 @@ export function initComingSoon(): () => void {
     if (!pl || !cv || !cx || !pf) return;
     const CW = 900, CH = 240; cv.width = CW; cv.height = CH;
     const DUR = 2200, HOLD = 300, SPLIT = 900;
-    let t0 = null, fp = 0, wp = 0, li = new Image(), lr = false;
+    let t0 = null, lt2 = 0, fp = 0, wp = 0, li = new Image(), lr = false;
     let rafId = 0, alive = true;
     const timeouts: any[] = [];
     const later = (fn, ms) => { const id = setTimeout(fn, ms); timeouts.push(id); return id; };
@@ -181,10 +181,11 @@ export function initComingSoon(): () => void {
 
     function frame(ts) {
       if (!alive) return;
-      if (!t0) t0 = ts;
+      if (!t0) { t0 = ts; lt2 = ts; }
+      const dT = Math.min(ts - lt2, 50); lt2 = ts;
       const raw = Math.min((ts - t0) / DUR, 1);
       fp = ease(raw);
-      wp += 0.045;
+      wp += 0.045 * (dT / 16.667);
       pf.style.width = (fp * 100) + '%';
       cx.clearRect(0, 0, CW, CH);
       if (lr) {

@@ -4201,3 +4201,93 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   *, *::before, *::after { cursor: auto !important; }
   #cursor-dot, #cursor-canvas { display: none !important; }
 }
+
+/* ════════════════════════════════════════
+   Micro-interaction polish — active/press states & missing hovers
+   ════════════════════════════════════════ */
+
+/* ── Testimonial dots: add transform to transition, define hover + active ── */
+.testi-dot {
+  transition: background 0.35s ease, width 0.35s ease,
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.testi-dot:hover { background: rgba(255, 255, 255, 0.38); transform: scale(1.35); }
+.testi-dot.active:hover { transform: scale(1.15); }
+.testi-dot:active { transform: scale(0.78); transition: transform 0.08s ease; }
+
+/* ── Testimonial prev/next buttons: active press ── */
+.testi-btn:active {
+  transform: scale(0.86);
+  background: rgba(140, 80, 255, 0.28);
+  transition: transform 0.08s ease, background 0.08s ease;
+}
+
+/* ── Avatar thumbnails: hover lift + active press ── */
+.testi-avatar-thumb:not(.current-av):hover {
+  transform: translateY(-3px) scale(1.18);
+  filter: grayscale(0%) brightness(1.05);
+  z-index: 10;
+}
+.testi-avatar-thumb.current-av:hover {
+  transform: translateY(-3px) scale(1.22);
+  z-index: 10;
+}
+.testi-avatar-thumb:active {
+  transform: scale(0.94) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* ── Stack panels: active press ── */
+.stack-panel:active {
+  transform: translateY(-2px) scale(0.99) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Platform cards: active press ── */
+.platform-card:active {
+  transform: translateY(0) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Skill nodes: active press (targets the icon so float anim isn't disrupted) ── */
+.snode:active .snode-icon {
+  transform: scale(0.88) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* ── About blocks: active press ── */
+.about-block:active {
+  transform: translateY(0) scale(0.99) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Block links: collapse gap on press ── */
+.block-link:active { gap: 2px; transition: gap 0.08s ease, color 0.08s ease; }
+
+/* ── Skill tags: subtle scale on press ── */
+.skill-tag:active { transform: scale(0.93); transition: transform 0.08s ease; }
+
+/* ── Social links: press down ── */
+.social-links a:active {
+  transform: translateY(0) scale(0.88) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* ── CV modal buttons: active press ── */
+.cv-btn-primary:active,
+.cv-btn-ghost:active { transform: translateY(0) scale(0.96); transition: transform 0.08s ease; }
+
+/* ── Primary / secondary CTA buttons ── */
+.btn-primary:active { transform: translateY(0) scale(0.96); transition: transform 0.08s ease; }
+.btn-secondary:active { transform: translateY(0) scale(0.96); transition: transform 0.08s ease; }
+
+/* ── Music / glass round buttons: active press ── */
+.glass-round-btn:active,
+#music-btn:active,
+#music-btn-desktop:active { transform: scale(0.88) !important; transition: transform 0.08s ease !important; }
+
+/* ── Nav CTA: active press ── */
+.nav-cta:active { transform: translateY(0) scale(0.96) !important; transition: transform 0.08s ease !important; }
+
+/* ── Mobile menu close button: active press ── */
+#menu-close-mobile:active { transform: rotate(90deg) scale(0.88) !important; transition: transform 0.08s ease !important; }

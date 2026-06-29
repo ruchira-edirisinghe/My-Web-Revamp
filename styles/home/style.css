@@ -549,3 +549,22 @@ body.exploded .cta-row {
   *, *::before, *::after { cursor:auto; }
   #cursor-dot, #cursor-canvas { display:none; }
 }
+
+/* ════════════════════════════════════════
+   Micro-interaction polish — active/press states
+   ════════════════════════════════════════ */
+
+/* ── Menu items: active press ── */
+.menu-item:active { transform: translateY(-1px) scale(0.97) !important; transition: transform 0.08s ease !important; }
+
+/* ── Social links: press-down ── */
+.social-links a:active { transform: translateY(0) scale(0.88) !important; transition: transform 0.08s ease !important; }
+
+/* ── Music button ── */
+#music-btn:active { transform: scale(0.88) !important; transition: transform 0.08s ease !important; }
+
+/* ── Home menu close ── */
+#menu-close:active { transform: rotate(90deg) scale(0.88) !important; transition: transform 0.08s ease !important; }
+
+/* ── Hero photo wrap: active press effect ── */
+.hero-intro-photo-wrap:active .hero-intro-photo img { transform: scale(1.01); transition: transform 0.1s ease; }
