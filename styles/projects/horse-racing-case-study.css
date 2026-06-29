@@ -1996,3 +1996,99 @@ body.modal-open #navbar-wrap {
 }
 .cs-code .cm { color: var(--text-muted); }
 .cs-code .nm { color: var(--lyc-gold); }
+
+/* ════════════════════════════════════════
+   Micro-interaction polish — active/press states & hover additions
+   ════════════════════════════════════════ */
+
+/* ── CTA buttons: shimmer + active press ── */
+.cs-cta-btn {
+  position: relative;
+  overflow: hidden;
+}
+.cs-cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -60%; width: 40%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-15deg);
+  transition: left 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+.cs-cta-btn:hover::before { left: 130%; }
+.cs-cta-btn.primary:active {
+  transform: translateY(-1px) scale(0.97);
+  transition: transform 0.08s ease;
+}
+.cs-cta-btn.ghost:active {
+  transform: translateY(-1px) scale(0.97);
+  transition: transform 0.08s ease;
+}
+
+/* ── Gallery cards: active press ── */
+.ui-card:active {
+  transform: translateY(0) scale(0.97) !important;
+  transition: transform 0.09s ease !important;
+}
+
+/* ── Info cards: active press ── */
+.cs-card:active {
+  transform: translateY(0) scale(0.98) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Outcome cards ── */
+.outcome-card:active {
+  transform: translateY(0) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Reflection / insight / IA cards ── */
+.reflection-card:active,
+.insight-card:active,
+.ia-card:active {
+  transform: translateY(0) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Persona cards ── */
+.persona-card:active {
+  transform: translateY(0) scale(0.99) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Flow nodes: satisfying bounce back ── */
+.flow-node:active {
+  transform: scale(0.85) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* ── Compare sides ── */
+.cs-compare-side:active {
+  transform: scale(0.99) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Modal buttons: nav and close ── */
+.cs-modal-btn:active { transform: scale(0.82) !important; transition: transform 0.08s ease !important; }
+#cs-modal-prev:active { transform: translateY(-50%) translateX(-5px) scale(0.88) !important; transition: transform 0.08s ease !important; }
+#cs-modal-next:active { transform: translateY(-50%) translateX(5px) scale(0.88) !important; transition: transform 0.08s ease !important; }
+
+/* ── Redirect modal buttons ── */
+.redirect-btn.primary:active { transform: translateY(0) scale(0.97); transition: transform 0.08s ease; }
+.redirect-btn.ghost:active  { transform: translateY(0) scale(0.97); transition: transform 0.08s ease; }
+
+/* ── TOC navigation items ── */
+.cs-toc-item:active .cs-toc-dot {
+  transform: scale(0.8);
+  transition: transform 0.08s ease;
+}
+
+/* ── Back link ── */
+.back-link:active { transform: translateX(0); transition: transform 0.08s ease; }
+
+/* ── Color blocks in style guide ── */
+.color-block:active { transform: scale(0.95); transition: transform 0.08s ease; }
+
+/* ── CS tags ── */
+.cs-tag:active { transform: scale(0.9); transition: transform 0.08s ease; }

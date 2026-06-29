@@ -1799,3 +1799,48 @@
         letter-spacing: 0.08em;
       }
     }
+
+/* ════════════════════════════════════════
+   Micro-interaction polish — active/press states
+   ════════════════════════════════════════ */
+
+/* ── Timeline cards: press-down on click ── */
+.tl-card:active {
+  transform: translateY(-1px) scale(0.99) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Nebula skill nodes: already have :active for cursor grab, add scale ── */
+.nebula-node:active {
+  cursor: grabbing;
+  transform: scale(1.05) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Certificate sidebar thumbnails ── */
+.cert-sb-thumb:active {
+  transform: scale(0.92) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* ── Certificate cards ── */
+.cert-card:active {
+  transform: translateY(0) scale(0.99) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Volunteer cards ── */
+.vol-card:active {
+  transform: translateY(0) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Modal action buttons ── */
+.modal-btn:active {
+  transform: translateY(0) scale(0.96) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* ── Primary / secondary CTA buttons ── */
+.btn-primary:active { transform: translateY(0) scale(0.96); transition: transform 0.08s ease; }
+.btn-secondary:active { transform: translateY(0) scale(0.96); transition: transform 0.08s ease; }

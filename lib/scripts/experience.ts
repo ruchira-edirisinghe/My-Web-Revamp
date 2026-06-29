@@ -85,33 +85,22 @@ export function initExperience(): () => void {
       resetWords(slides[prev]);
       cancelWordTimers();
 
-      // Slide exit
       slides[prev].classList.remove('active');
       slides[prev].classList.add('exit');
       later(function () { slides[prev].classList.remove('exit'); }, 600);
 
-      // Slide enter
       slides[current].classList.add('active');
       animateWords(slides[current]);
 
-      // Counter
       curEl.style.opacity = '0';
       later(function () {
         curEl.textContent = pad(current);
         curEl.style.opacity = '1';
       }, 180);
 
-      // Avatar highlights
-      avs.forEach(function (a, i) {
-        a.classList.toggle('current-av', i === current);
-      });
+      avs.forEach(function (a, i) { a.classList.toggle('current-av', i === current); });
+      dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
 
-      // Dots
-      dots.forEach(function (d, i) {
-        d.classList.toggle('active', i === current);
-      });
-
-      // Reset + restart progress bar
       prog.style.transition = 'none';
       prog.style.width = '0%';
       requestAnimationFrame(function () {
@@ -158,9 +147,6 @@ export function initExperience(): () => void {
         startAuto();
       });
     });
-
-    bag.on(shell, 'mouseenter', function () { });
-    bag.on(shell, 'mouseleave', function () { });
 
     // Boot
     prepareQuote(slides[0]);
@@ -285,7 +271,7 @@ export function initExperience(): () => void {
     const HOLD_MS = 300;
     const SPLIT_MS = 900;
 
-    let startTime = null, fillPct = 0, wavePhase = 0;
+    let startTime = null, lastTs = 0, fillPct = 0, wavePhase = 0;
     let logoImg = new Image(), logoReady = false;
     let rafId = 0, alive = true;
     const timeouts = [];
@@ -321,18 +307,17 @@ export function initExperience(): () => void {
 
     function drawFrame(ts) {
       if (!alive) return;
-      if (!startTime) startTime = ts;
+      if (!startTime) { startTime = ts; lastTs = ts; }
+      const dt = Math.min(ts - lastTs, 50); lastTs = ts;
       const raw = Math.min((ts - startTime) / DURATION, 1);
       fillPct = ease(raw);
-      wavePhase += 0.045;
+      wavePhase += 0.045 * (dt / 16.667);
 
       progressFill.style.width = (fillPct * 100) + '%';
       ctx.clearRect(0, 0, CW, CH);
 
-      // Ghost logo
       if (logoReady) { ctx.save(); ctx.globalAlpha = 0.1; ctx.drawImage(logoImg, 0, 0, CW, CH); ctx.restore(); }
 
-      // Water clip
       const waterTop = CH * (1 - fillPct);
       const amp = 5 + (1 - fillPct) * 9;
       ctx.save(); ctx.beginPath(); ctx.moveTo(0, waterTop);
@@ -345,7 +330,6 @@ export function initExperience(): () => void {
       else { ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.fillRect(0, 0, CW, CH); }
       ctx.restore();
 
-      // Wave shimmer
       ctx.save(); ctx.beginPath(); ctx.moveTo(0, waterTop);
       for (let x = 0; x <= CW; x += 3) {
         const y = waterTop + Math.sin((x / CW) * Math.PI * 5 + wavePhase) * amp + Math.sin((x / CW) * Math.PI * 9 + wavePhase * 1.5) * amp * 0.35;
@@ -356,7 +340,6 @@ export function initExperience(): () => void {
       if (raw < 1) {
         rafId = requestAnimationFrame(drawFrame);
       } else {
-        // Final frame
         ctx.clearRect(0, 0, CW, CH);
         if (logoReady) { ctx.save(); ctx.drawImage(logoImg, 0, 0, CW, CH); ctx.globalCompositeOperation = 'source-atop'; ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, CW, CH); ctx.restore(); }
         progressFill.style.width = '100%';
@@ -468,13 +451,11 @@ export function initExperience(): () => void {
       musicStarted = true;
       bgAudio.volume = 0;
 
-      // Resume from where home page left off
       const savedTime = parseFloat(sessionStorage.getItem('musicTime') || '0');
       const savedMuted = sessionStorage.getItem('musicMuted') === 'true';
       if (savedTime > 0) bgAudio.currentTime = savedTime;
 
       if (savedMuted) {
-        // Was muted — stay muted, don't play
         musicMuted = true;
         spectrumPlaying = false;
         return;
@@ -482,7 +463,6 @@ export function initExperience(): () => void {
 
       bgAudio.play().then(() => {
         fadeAudioTo(MUSIC_VOLUME, 800);
-        // Sync both desktop + mobile buttons
         document.querySelectorAll('#music-btn-desktop, #music-btn').forEach(b => b && b.classList.add('playing'));
         spectrumPlaying = true;
       }).catch(() => { musicStarted = false; });
@@ -507,7 +487,6 @@ export function initExperience(): () => void {
     const musicBtnMobile = document.getElementById('music-btn');
     const allMusicBtns = [musicBtnDesktop, musicBtnMobile].filter(Boolean);
 
-    /* Spectrum on desktop canvas */
     const specCanvas = document.getElementById('spectrum-canvas-desktop');
     const specCanvasM = document.getElementById('spectrum-canvas');
     const spCtx = specCanvas ? specCanvas.getContext('2d') : null;
@@ -616,22 +595,6 @@ export function initExperience(): () => void {
     });
   })();
 
-  /* ══════════ 5. CV-MODAL (experience.js #5 — orphaned: no markup on page) ══════════ */
-  (function () {
-    function _doCloseCVModal() {
-      document.getElementById('cv-close-btn').classList.remove('visible');
-      const overlay = document.getElementById('cv-modal-overlay');
-      overlay.classList.remove('active');
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    // Close on Escape key
-    bag.on(document, 'keydown', function (e) {
-      if (e.key === 'Escape') _doCloseCVModal();
-    });
-  })();
-
   /* ══════════ 6. LOGO-TICKER (experience.js #6) ══════════ */
   (function () {
     const inner = document.getElementById('logo-ticker-inner');
@@ -728,7 +691,9 @@ export function initExperience(): () => void {
     }));
 
     let bioRaf;
+    let bioAlive = true;
     function drawBio(ts) {
+      if (!bioAlive) return;
       bioRaf = requestAnimationFrame(drawBio);
       ctx.clearRect(0, 0, W, H);
 
@@ -780,7 +745,7 @@ export function initExperience(): () => void {
       }
     }, { threshold: 0 });
     canvasObs.observe(bioSection);
-    bag.add(() => { canvasObs.disconnect(); if (bioRaf) cancelAnimationFrame(bioRaf); });
+    bag.add(() => { bioAlive = false; canvasObs.disconnect(); if (bioRaf) cancelAnimationFrame(bioRaf); });
   })();
 
   /* ══════════ 8. SCROLL-REVEAL (experience.js #8 — about-page classes, inert here) ══════════ */
@@ -902,35 +867,6 @@ export function initExperience(): () => void {
       panelObs.disconnect(); snodeObs.disconnect(); statObs.disconnect(); pillarObs.disconnect();
       statTimeouts.forEach(clearTimeout); pillarTimeouts.forEach(clearTimeout);
     });
-  })();
-
-  /* ══════════ 9. STAT-COUNTUP (experience.js #9 — .stat-number, inert here) ══════════ */
-  (function () {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const target = entry.target;
-          const countTo = parseInt(target.getAttribute('data-target'));
-          let count = 0;
-          const step = countTo / 50;
-
-          const updateCount = () => {
-            count += step;
-            if (count < countTo) {
-              target.innerText = Math.floor(count);
-              requestAnimationFrame(updateCount);
-            } else {
-              target.innerText = countTo;
-            }
-          };
-          updateCount();
-          observer.unobserve(target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.stat-number').forEach(num => observer.observe(num));
-    bag.add(() => observer.disconnect());
   })();
 
   /* ══════════ 10. GAMING-REVEAL (experience.js #10 — gaming classes, inert here) ══════════ */
@@ -1152,36 +1088,6 @@ export function initExperience(): () => void {
     }
     animate();
     bag.add(() => { running = false; cancelAnimationFrame(rafId); });
-  })();
-
-  /* ══════════ B1. PRELOADER (inline #2 — interval fill) ══════════ */
-  (function () {
-    const preloader = document.getElementById("preloader");
-    const fill = document.getElementById("progress-fill");
-    const splitTop = document.getElementById("split-top");
-    const splitBottom = document.getElementById("split-bottom");
-    if (!preloader || !fill) return;
-    let progress = 0;
-    const timeouts = [];
-    const timer = setInterval(() => {
-      progress = Math.min(progress + Math.random() * 18, 100);
-      fill.style.width = progress + "%";
-      if (progress >= 100) {
-        clearInterval(timer);
-        timeouts.push(setTimeout(() => {
-          preloader.style.opacity = "0";
-          preloader.style.transition = "opacity 0.4s ease";
-          if (splitTop) splitTop.classList.add("open");
-          if (splitBottom) splitBottom.classList.add("open");
-          timeouts.push(setTimeout(() => {
-            preloader.style.display = "none";
-            if (splitTop) splitTop.classList.add("gone");
-            if (splitBottom) splitBottom.classList.add("gone");
-          }, 900));
-        }, 300));
-      }
-    }, 80);
-    bag.add(() => { clearInterval(timer); timeouts.forEach(clearTimeout); });
   })();
 
   /* ══════════ B2. MOBILE MENU (inline #2) ══════════ */
@@ -1773,7 +1679,6 @@ export function initExperience(): () => void {
         if (url && url !== '#') {
           pendingUrl = url;
 
-          // Extract and Update dynamic content
           const name = card.querySelector('.cert-name')?.textContent || '';
           const issuer = card.querySelector('.cert-issuer')?.textContent || '';
           const logoImg = card.querySelector('.cert-logo-img');
@@ -1785,7 +1690,7 @@ export function initExperience(): () => void {
             modalLogo.src = logoImg.src;
             modalLogo.style.display = 'inline-block';
           } else {
-            // Fallback to initials if img display: none (error handled)
+            // img hidden due to load error — fall back to initials
             modalLogo.style.display = 'none';
           }
 
@@ -1807,7 +1712,6 @@ export function initExperience(): () => void {
       closeModal();
     });
 
-    // Close on clicking overlay background
     bag.on(overlay, 'click', (e) => {
       if (e.target === overlay) closeModal();
     });

@@ -1607,3 +1607,9 @@
       *, *::before, *::after { cursor: auto !important; }
       #cursor-dot, #cursor-canvas { display: none !important; }
     }
+
+    /* ── Micro-interaction polish ── */
+    .cs-notify-btn:active {
+      transform: translateY(0) scale(0.97);
+      transition: transform 0.08s ease !important;
+    }

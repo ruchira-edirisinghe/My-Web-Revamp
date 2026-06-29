@@ -222,7 +222,7 @@ export function initAbout(): () => void {
     const HOLD_MS = 300;
     const SPLIT_MS = 900;
 
-    let startTime = null, fillPct = 0, wavePhase = 0;
+    let startTime = null, lastTs = 0, fillPct = 0, wavePhase = 0;
     const logoImg = new Image(); let logoReady = false;
     let rafId = 0, alive = true;
     const timeouts: any[] = [];
@@ -249,10 +249,11 @@ export function initAbout(): () => void {
 
     function drawFrame(ts) {
       if (!alive) return;
-      if (!startTime) startTime = ts;
+      if (!startTime) { startTime = ts; lastTs = ts; }
+      const dt = Math.min(ts - lastTs, 50); lastTs = ts;
       const raw = Math.min((ts - startTime) / DURATION, 1);
       fillPct = ease(raw);
-      wavePhase += 0.045;
+      wavePhase += 0.045 * (dt / 16.667);
 
       progressFill.style.width = (fillPct * 100) + '%';
       ctx.clearRect(0, 0, CW, CH);
@@ -896,35 +897,6 @@ export function initAbout(): () => void {
     observers.push(pillarObs);
 
     bag.add(() => { alive = false; observers.forEach(o => o.disconnect()); timeouts.forEach(clearTimeout); });
-  })();
-
-  /* ══════════ 9. STAT COUNT-UP (.stat-number) ══════════ */
-  (function () {
-    let alive = true;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const target = entry.target;
-          const countTo = parseInt(target.getAttribute('data-target'));
-          let count = 0;
-          const step = countTo / 50;
-          const updateCount = () => {
-            if (!alive) return;
-            count += step;
-            if (count < countTo) {
-              target.innerText = Math.floor(count);
-              requestAnimationFrame(updateCount);
-            } else {
-              target.innerText = countTo;
-            }
-          };
-          updateCount();
-          observer.unobserve(target);
-        }
-      });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.stat-number').forEach(num => observer.observe(num));
-    bag.add(() => { alive = false; observer.disconnect(); });
   })();
 
   /* ══════════ 10. GAMING REVEAL ══════════ */

@@ -2198,3 +2198,70 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   *, *::before, *::after { cursor: auto !important; }
   #cursor-dot, #cursor-canvas { display: none !important; }
 }
+
+/* ════════════════════════════════════════
+   Micro-interaction polish — active/press states
+   ════════════════════════════════════════ */
+
+/* ── Social & stream cards: press-down click feedback ── */
+.social-card:active,
+.stream-card:active {
+  transform: translateY(0) scale(0.98) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Platform cards ── */
+.platform-card:active {
+  transform: translateY(0) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Channel cards ── */
+.channel-card:active {
+  transform: translateY(0) scale(0.99) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Collaboration items ── */
+.collab-item:not(.active):active {
+  background: rgba(255, 255, 255, 0.07);
+  transition: background 0.08s ease;
+}
+
+/* ── Time-zone cards ── */
+.tz-card:active {
+  transform: translateY(0) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Modal open buttons ── */
+.modal-btn:active {
+  transform: translateY(0) scale(0.96) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* ── Primary / secondary CTA buttons ── */
+.btn-primary:active { transform: translateY(0) scale(0.96); transition: transform 0.08s ease; }
+.btn-secondary:active { transform: translateY(0) scale(0.96); transition: transform 0.08s ease; }
+
+/* ── Social links ── */
+.social-links a:active {
+  transform: translateY(0) scale(0.88) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* ── Music button ── */
+#music-btn:active,
+#music-btn-desktop:active { transform: scale(0.88) !important; transition: transform 0.08s ease !important; }
+
+/* ── Nav CTA ── */
+.nav-cta:active { transform: translateY(0) scale(0.96) !important; transition: transform 0.08s ease !important; }
+
+/* ── Mobile menu close ── */
+#menu-close-mobile:active { transform: rotate(90deg) scale(0.88) !important; transition: transform 0.08s ease !important; }
+
+/* ── Add transform transition to social-card for active release smoothness ── */
+.social-card,
+.stream-card {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}

@@ -1057,6 +1057,55 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   #cursor-dot, #cursor-canvas { display: none !important; }
 }
 
+/* ════════════════════════════════════════
+   Micro-interaction polish — active/press states
+   ════════════════════════════════════════ */
+
+/* ── Project cards: satisfying press-down on click ── */
+.project-card:active {
+  transform: translateY(-4px) scale(0.99) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* ── Filter buttons ── */
+.filter-btn:active {
+  transform: translateY(0) scale(0.93) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* ── Back link ── */
+.back-link:active { transform: translateX(0); transition: transform 0.08s ease; }
+
+/* ── Nav CTA button ── */
+.nav-cta:active { transform: translateY(0) scale(0.96) !important; transition: transform 0.08s ease !important; }
+
+/* ── Project link buttons ("View →") ── */
+.project-link-btn:active { transform: translateX(0); transition: transform 0.08s ease; }
+
+/* ── Tech tags: subtle feedback ── */
+.tech-tag {
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease, color 0.25s ease;
+}
+.tech-tag:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  transform: scale(1.06);
+}
+
+/* ── Split-panel CTA arrow ── */
+.divide-panel:active { transform: translateY(-4px) !important; transition: transform 0.1s ease !important; }
+
+/* ── Mobile menu close ── */
+#menu-close-mobile:active { transform: rotate(90deg) scale(0.88) !important; transition: transform 0.08s ease !important; }
+
+/* ── Music button ── */
+#music-btn:active,
+#music-btn-desktop:active { transform: scale(0.88) !important; transition: transform 0.08s ease !important; }
+
+/* ── Social links ── */
+.social-links a:active { transform: translateY(0) scale(0.88) !important; transition: transform 0.08s ease !important; }
+
 
 /* ════════════════════════════════════════
    Mobile horizontal-overflow guard — case studies (appended)
