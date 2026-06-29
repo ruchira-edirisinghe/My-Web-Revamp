@@ -226,7 +226,7 @@ export default function AboutClient() {
                   <svg className="doodle"
                     style={cssVars({ '--delay': '0.1s', '--rot': '4deg', '--ox': '-135px', '--oy': '35px', top: '38%', right: '1%', width: '78px', height: '52px' })}
                     viewBox="0 0 78 52" fill="none">
-                    <circle cx="39" cy="26" rx="16" ry="16" stroke="rgba(100,60,200,0.9)" strokeWidth="2.4" />
+                    <circle cx="39" cy="26" r="16" stroke="rgba(100,60,200,0.9)" strokeWidth="2.4" />
                     <path d="M6 14 Q39 34 72 14" stroke="rgba(100,60,200,0.78)" strokeWidth="2.3" strokeLinecap="round" />
                   </svg>
       
@@ -1688,17 +1688,17 @@ export default function AboutClient() {
               
               <div className="testi-meta-row">
                 <div className="testi-avatars-stack" id="testi-av-stack">
-                  <img src="/Images/testimonials/thaanu.jpg" alt="Sarah Kim" className="testi-avatar-thumb current-av"
+                  <img src="/Images/testimonials/thaanu.jpg" alt="Thaanu Perera" className="testi-avatar-thumb current-av"
                     data-av="0" />
-                  <img src="/Images/testimonials/suraji.png" alt="Emma Johnson" className="testi-avatar-thumb" data-av="1" />
-                  <img src="/Images/testimonials/sandakelum.jpg" alt="James Chen" className="testi-avatar-thumb" data-av="2" />
-                  <img src="/Images/testimonials/janith.jpg" alt="Marcus Rodriguez" className="testi-avatar-thumb" data-av="3" />
-                  <img src="/Images/testimonials/wenupa.png" alt="David Wilson" className="testi-avatar-thumb" data-av="4" />
-                  <img src="/Images/testimonials/avishka.jpg" alt="Alex Liu" className="testi-avatar-thumb" data-av="5" />
-                  <img src="/Images/testimonials/sandev-dullewa.png" alt="Olivia Parker" className="testi-avatar-thumb"
+                  <img src="/Images/testimonials/suraji.png" alt="Suraji Ekanayake" className="testi-avatar-thumb" data-av="1" />
+                  <img src="/Images/testimonials/sandakelum.jpg" alt="Sandakelum" className="testi-avatar-thumb" data-av="2" />
+                  <img src="/Images/testimonials/janith.jpg" alt="Janith" className="testi-avatar-thumb" data-av="3" />
+                  <img src="/Images/testimonials/wenupa.png" alt="Wenupa" className="testi-avatar-thumb" data-av="4" />
+                  <img src="/Images/testimonials/avishka.jpg" alt="Avishka" className="testi-avatar-thumb" data-av="5" />
+                  <img src="/Images/testimonials/sandev-dullewa.png" alt="Sandev Dulleva" className="testi-avatar-thumb"
                     data-av="6" />
-                  <img src="/Images/testimonials/atheeque.png" alt="Ryan Brooks" className="testi-avatar-thumb" data-av="7" />
-                  <img src="/Images/testimonials/ramuthu.jpg" alt="Ryan Brooks" className="testi-avatar-thumb" data-av="8" />
+                  <img src="/Images/testimonials/atheeque.png" alt="Atheeque" className="testi-avatar-thumb" data-av="7" />
+                  <img src="/Images/testimonials/ramuthu.jpg" alt="Ramuthu Senanayake" className="testi-avatar-thumb" data-av="8" />
       
                 </div>
                 <div className="testi-counter">
@@ -1875,7 +1875,7 @@ export default function AboutClient() {
                     deep understanding of user behavior and meticulous attention to detail make him a rare talent in UI/UX
                     engineering and an invaluable asset to any team.</p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/avishka.jpg" alt="Alex Liu" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/avishka.jpg" alt="Avishka Sooriyapperuma" className="testi-author-avatar" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Avishka Sooriyapperuma</span>
@@ -1906,7 +1906,7 @@ export default function AboutClient() {
                     behavior, and a knack for turning complex concepts into intuitive designs. Ruchira's collaborative nature
                     and dedication to delivering top-notch designs make him an invaluable asset to any team.</p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/sandev-dullewa.png" alt="Olivia Parker" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/sandev-dullewa.png" alt="Sandev Dulleva" className="testi-author-avatar" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Sandev Dulleva</span>
@@ -1938,7 +1938,7 @@ export default function AboutClient() {
                     played a pivotal role in UI/UX Development, where their contributions were instrumental in achieving our
                     goals.</p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/atheeque.png" alt="Ryan Brooks" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/atheeque.png" alt="Atheeque Hasan" className="testi-author-avatar" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Atheeque Hasan</span>
@@ -1970,7 +1970,7 @@ export default function AboutClient() {
                     meticulous attention to detail ensures that every aspect of the user experience is carefully considered.
                   </p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/ramuthu.jpg" alt="Ryan Brooks" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/ramuthu.jpg" alt="Ramuthu Senanayake" className="testi-author-avatar" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Ramuthu Senanayake</span>

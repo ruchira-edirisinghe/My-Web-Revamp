@@ -195,7 +195,7 @@ export default function CaseStudyLms() {
                   <div className="persona-traits">
                     <span className="persona-trait">Mobile-first</span>
                     <span className="persona-trait">Impatient</span>
-                    <span className="persona-trait">Acheiver</span>
+                    <span className="persona-trait">Achiever</span>
                   </div>
                   <p className="persona-quote">"I need to jump in, finish a module during my commute, and know exactly where I
                     left off."</p>

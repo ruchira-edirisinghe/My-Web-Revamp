@@ -48,7 +48,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/trexlabs.png" alt="Company Logo" />
+                        <img src="/Images/experience/trexlabs.png" alt="TREX Labs" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2025 DEC - PRESENT</span>
@@ -89,7 +89,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/funextreme.png" alt="Company Logo" />
+                        <img src="/Images/experience/funextreme.png" alt="FunExtreme Technology" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2025 AUG - Present</span>
@@ -125,7 +125,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/ruach.png" alt="Company Logo" />
+                        <img src="/Images/experience/ruach.png" alt="Ruach Holdings" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2024 Sept - 2024 Nov</span>
@@ -167,7 +167,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/zuse.png" alt="Company Logo" />
+                        <img src="/Images/experience/zuse.png" alt="ZUSE Technologies" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2023 Nov - 2024 Aug</span>
@@ -201,7 +201,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/TP.png" alt="Company Logo" />
+                        <img src="/Images/experience/TP.png" alt="TransPerfect" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2023 Aug - 2024 Nov</span>
@@ -242,7 +242,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/design.png" alt="Company Logo" />
+                        <img src="/Images/experience/design.png" alt="Freelance" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2022 Aug - Present</span>
@@ -275,7 +275,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/pearson.png" alt="Company Logo" />
+                        <img src="/Images/experience/pearson.png" alt="Pearson" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2022 Jul - 2023 Jun</span>
@@ -318,7 +318,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/takg.png" alt="Company Logo" />
+                        <img src="/Images/experience/takg.png" alt="TAKG Solutions" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2021 Oct - Present</span>
@@ -351,7 +351,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/zencreatives.png" alt="Company Logo" />
+                        <img src="/Images/experience/zencreatives.png" alt="ZEN CREATIVES" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2021 Jan - Present</span>
@@ -560,7 +560,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(200,160,255,0.1)', '--badge-border': 'rgba(200,160,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(200,160,255,0.9)' }}>F</span>
                   </div>
@@ -581,7 +581,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,200,60,0.1)', '--badge-border': 'rgba(255,200,60,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,200,60,0.9)' }}>U</span>
                   </div>
@@ -602,12 +602,12 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,220,180,0.1)', '--badge-border': 'rgba(80,220,180,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,220,180,0.9)' }}>C</span>
                   </div>
                   <div className="cert-info">
-                    <p className="cert-name">Learning React.js - Learning<br />Fundementals of React</p>
+                    <p className="cert-name">Learning React.js - Learning<br />Fundamentals of React</p>
                     <span className="cert-issuer">LinkedIn Learning</span>
                     <span className="cert-year">2022</span>
                   </div>
@@ -623,7 +623,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,80,80,0.1)', '--badge-border': 'rgba(255,80,80,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,80,80,0.9)' }}>Ps</span>
                   </div>
@@ -645,7 +645,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,180,255,0.1)', '--badge-border': 'rgba(80,180,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,180,255,0.9)' }}>Li</span>
                   </div>
@@ -667,7 +667,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(140,80,255,0.1)', '--badge-border': 'rgba(140,80,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(140,80,255,0.9)' }}>C</span>
                   </div>
@@ -689,7 +689,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,140,40,0.1)', '--badge-border': 'rgba(255,140,40,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,140,40,0.9)' }}>UE</span>
                   </div>
@@ -711,7 +711,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(100,220,160,0.1)', '--badge-border': 'rgba(100,220,160,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(100,220,160,0.9)' }}>HS</span>
                   </div>
@@ -733,7 +733,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,60,120,0.1)', '--badge-border': 'rgba(255,60,120,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,60,120,0.9)' }}>G</span>
                   </div>
@@ -755,7 +755,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,180,255,0.1)', '--badge-border': 'rgba(80,180,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,180,255,0.9)' }}>IBM</span>
                   </div>
@@ -777,7 +777,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(200,160,255,0.1)', '--badge-border': 'rgba(200,160,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(200,160,255,0.9)' }}>U</span>
                   </div>
@@ -799,7 +799,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,200,60,0.1)', '--badge-border': 'rgba(255,200,60,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,200,60,0.9)' }}>SM</span>
                   </div>
@@ -821,7 +821,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,220,180,0.1)', '--badge-border': 'rgba(80,220,180,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,220,180,0.9)' }}>M</span>
                   </div>
@@ -842,7 +842,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,80,80,0.1)', '--badge-border': 'rgba(255,80,80,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,80,80,0.9)' }}>C</span>
                   </div>
@@ -864,7 +864,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,180,255,0.1)', '--badge-border': 'rgba(80,180,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,180,255,0.9)' }}>GH</span>
                   </div>
@@ -886,7 +886,7 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(140,80,255,0.1)', '--badge-border': 'rgba(140,80,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="Figma" className="cert-logo-img"
+                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
                       onError={imgFallback} />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(140,80,255,0.9)' }}>Li</span>
                   </div>
@@ -1357,7 +1357,7 @@ export default function ExperienceClient() {
               
               <div className="vol-card" style={{ '--vol-color': 'rgba(255,78,80,0.8)', '--vol-glow': 'rgba(255,78,80,0.2)', '--vol-delay': '0.05s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/isaca.png" alt="Mozilla" className="vol-logo"
+                  <img src="/Images/experience/isaca.png" alt="ISACA" className="vol-logo"
                     onError={imgFallback} />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,78,80,1)' }}>MF</span>
                 </div>
@@ -1372,7 +1372,7 @@ export default function ExperienceClient() {
               <div className="vol-card"
                 style={{ '--vol-color': 'rgba(180,100,255,0.8)', '--vol-glow': 'rgba(180,100,255,0.2)', '--vol-delay': '0.1s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/dns.png" alt="Design Buddies" className="vol-logo"
+                  <img src="/Images/experience/dns.png" alt="DNS NSBM" className="vol-logo"
                     onError={imgFallback} />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(180,100,255,1)' }}>DB</span>
                 </div>
@@ -1431,7 +1431,7 @@ export default function ExperienceClient() {
               <div className="vol-card"
                 style={{ '--vol-color': 'rgba(140,210,255,0.8)', '--vol-glow': 'rgba(140,210,255,0.2)', '--vol-delay': '0.05s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/wrc-round.png" alt="Animal Shelter" className="vol-logo"
+                  <img src="/Images/experience/wrc-round.png" alt="Wayamba Royal College" className="vol-logo"
                     onError={imgFallback} />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(140,210,255,1)' }}>AS</span>
                 </div>
@@ -1445,13 +1445,13 @@ export default function ExperienceClient() {
               
               <div className="vol-card" style={{ '--vol-color': 'rgba(0,255,127,0.8)', '--vol-glow': 'rgba(0,255,127,0.2)', '--vol-delay': '0.1s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/int-blue.png" alt="GreenTech" className="vol-logo"
+                  <img src="/Images/experience/int-blue.png" alt="Interact Club" className="vol-logo"
                     onError={imgFallback} />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(0,255,127,1)' }}>GT</span>
                 </div>
                 <div className="vol-info">
                   <p className="vol-role">Director of Club Service</p>
-                  <span className="vol-org">Interact Club Of Wayamba Royal Collage</span>
+                  <span className="vol-org">Interact Club Of Wayamba Royal College</span>
                   <span className="vol-date">2019 - 2020</span>
                 </div>
               </div>
@@ -1460,13 +1460,13 @@ export default function ExperienceClient() {
               <div className="vol-card"
                 style={{ '--vol-color': 'rgba(30,144,255,0.8)', '--vol-glow': 'rgba(30,144,255,0.2)', '--vol-delay': '0.15s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/int-blue.png" alt="UNICEF" className="vol-logo"
+                  <img src="/Images/experience/int-blue.png" alt="Interact Club" className="vol-logo"
                     onError={imgFallback} />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(30,144,255,1)' }}>U</span>
                 </div>
                 <div className="vol-info">
                   <p className="vol-role">Assistant Director Of Community Service</p>
-                  <span className="vol-org">Interact Club Of Wayamba Royal Collage</span>
+                  <span className="vol-org">Interact Club Of Wayamba Royal College</span>
                   <span className="vol-date">2018 - 2019</span>
                 </div>
               </div>
@@ -1474,13 +1474,13 @@ export default function ExperienceClient() {
               
               <div className="vol-card" style={{ '--vol-color': 'rgba(255,165,0,0.8)', '--vol-glow': 'rgba(255,165,0,0.2)', '--vol-delay': '0.2s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/int.png" alt="Rotary" className="vol-logo"
+                  <img src="/Images/experience/int.png" alt="Interact Club" className="vol-logo"
                     onError={imgFallback} />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,165,0,1)' }}>RI</span>
                 </div>
                 <div className="vol-info">
                   <p className="vol-role">Official Photographer</p>
-                  <span className="vol-org">Interact Club of Wayamba Royal Collage</span>
+                  <span className="vol-org">Interact Club of Wayamba Royal College</span>
                   <span className="vol-date">2018 - 2020</span>
                 </div>
               </div>
@@ -1489,7 +1489,7 @@ export default function ExperienceClient() {
               <div className="vol-card"
                 style={{ '--vol-color': 'rgba(255,105,180,0.8)', '--vol-glow': 'rgba(255,105,180,0.2)', '--vol-delay': '0.25s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/rps.png" alt="Empowerment" className="vol-logo"
+                  <img src="/Images/experience/rps.png" alt="Royalists Photographic Society" className="vol-logo"
                     onError={imgFallback} />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,105,180,1)' }}>GE</span>
                 </div>

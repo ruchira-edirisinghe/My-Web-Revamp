@@ -14,7 +14,7 @@ export default function CaseStudyTechnosphere() {
     <StandardShell
       active="projects"
       dataPage="projects"
-      tagline={<>Crafting the <span className="tagline-name">Campus Experience</span></>}
+      tagline={<>Engineering the <span className="tagline-name">Technosphere</span></>}
     >
       {/* FLOATING TABLE OF CONTENTS */}
       <nav className="cs-toc" id="cs-toc" aria-label="Case study navigation">
@@ -608,7 +608,7 @@ export default function CaseStudyTechnosphere() {
             </svg>
           </div>
           <h3 id="redirect-title" className="redirect-title">Exiting Habitat</h3>
-          <p id="redirect-msg" className="redirect-msg">Do you wish to continue to view this project on Behance?</p>
+          <p id="redirect-msg" className="redirect-msg">Do you wish to continue to the external link?</p>
           <div className="redirect-cta-row">
             <button id="redirect-cancel" className="redirect-btn ghost">Stay Here</button>
             <a id="redirect-confirm" href="#" target="_blank" rel="noopener" className="redirect-btn primary">Continue ↗</a>

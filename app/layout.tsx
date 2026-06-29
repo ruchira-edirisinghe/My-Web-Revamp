@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from 'next';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 
 // Union of every Google-Fonts family used across the original site, loaded once
@@ -14,11 +16,13 @@ const GOOGLE_FONTS_HREF =
     'family=Instrument+Sans:wght@400;500;600;700',
     'family=JetBrains+Mono:wght@400;700',
     'family=Lexend:wght@300;400;500;600;700',
+    'family=Marcellus+SC',
     'family=Montserrat:wght@300;400;500;600;700;800',
     'family=Orbitron:wght@500;700;800;900',
     'family=Poppins:wght@300;400;500;600;700',
     'family=Rajdhani:wght@400;500;600;700',
     'family=Sora:wght@300;400;500;600;700',
+    'family=Spectral:wght@300;400;500;600;700',
     'family=Squada+One',
   ].join('&') +
   '&display=swap';
@@ -54,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="stylesheet" href={GOOGLE_FONTS_HREF} />
       </head>
-      <body>{children}</body>
+      <body>{children}<Analytics /><SpeedInsights /></body>
     </html>
   );
 }
