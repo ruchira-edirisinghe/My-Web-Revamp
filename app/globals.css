@@ -1,0 +1,9 @@
+/* Minimal global baseline — keeps the dark theme background painted before a
+   route's own stylesheet loads (prevents a white flash). Each page's CSS under
+   styles/ owns the real styling; this only sets the canvas behind it. */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #02030a;
+}
