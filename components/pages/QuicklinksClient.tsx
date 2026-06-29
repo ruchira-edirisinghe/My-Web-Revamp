@@ -187,7 +187,7 @@ export default function QuicklinksClient() {
 
                 <a className="platform-card pc-fb stream-card" href="https://www.facebook.com/gaming/zenitrongaming"
                   target="_blank" rel="noopener noreferrer" style={cssVars({ '--gc-delay': '0.1s' })}
-                  data-url="https://facebook.com/zenitrongaming" data-name="Facebook"
+                  data-url="https://www.facebook.com/gaming/zenitrongaming" data-name="Facebook"
                   data-action="Facebook to visit Zenitron Gaming page" data-detail="@zenitrongaming">
                   <div className="pc-icon-wrap"><svg viewBox="0 0 24 24" fill="var(--pc-color)">
                     <path

@@ -5,8 +5,8 @@
 :root {
   --lyc-blue: #01A59E; /* Teal (ambient accent) */
   --lyc-indigo: #1F394F; /* Deep Navy */
-  --lyc-cyan: #01A59E; /* Teal (bright accent) */
-  --lyc-gold: #01A59E; /* Teal (signal) */
+  --lyc-cyan: #00CFC8; /* Teal (bright accent) */
+  --lyc-gold: #F5A623; /* Amber (signal) */
   --lyc-glow: rgba(1,165,158, 0.35);
   --card-bg: rgba(255, 255, 255, 0.03);
   --card-border: rgba(255, 255, 255, 0.08);

@@ -529,8 +529,8 @@
       flex-direction: row;
       align-items: flex-start;
       gap: 0;
-      width: 110%;
-      max-width: 110%;
+      width: 100%;
+      max-width: 100%;
       margin: 16px auto 0;
       padding: 0;
     }
@@ -1600,19 +1600,19 @@
         grid-template-columns: 1fr 1fr;
         gap: 10px;
       }
+    }
 
-      .testi-progress-fill.run-anim {
-        animation: testiProgress 7000ms linear forwards;
+    .testi-progress-fill.run-anim {
+      animation: testiProgress 7000ms linear forwards;
+    }
+
+    @keyframes testiProgress {
+      from {
+        width: 0%;
       }
 
-      @keyframes testiProgress {
-        from {
-          width: 0%;
-        }
-
-        to {
-          width: 100%;
-        }
+      to {
+        width: 100%;
       }
     }
 
