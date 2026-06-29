@@ -1,5 +1,6 @@
 ﻿'use client';
 import { useEffect } from 'react';
+import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
@@ -36,7 +37,7 @@ export default function CaseStudyLottogram() {
 
         <div className="cs-wrap">
 
-          <a href="/projects/web" className="back-link"><span>←</span> Back to Projects</a>
+          <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">Lottogram</h1>

@@ -209,7 +209,7 @@ export function initAbout(): () => void {
   (function () {
     const preloader = document.getElementById('preloader');
     const canvas = document.getElementById('preloader-canvas');
-    if (!preloader || !canvas) return;
+    if (!preloader || !canvas || preloader.style.display === 'none') return;
     const ctx = canvas.getContext('2d');
     const progressFill = document.getElementById('progress-fill');
     const splitTop = document.getElementById('split-top');

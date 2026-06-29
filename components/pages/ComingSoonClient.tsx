@@ -1,5 +1,6 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
+import Link from 'next/link';
 import { initComingSoon } from '@/lib/scripts/comingsoon';
 import ScrollTop from '@/components/ScrollTop';
 
@@ -11,6 +12,16 @@ import ScrollTop from '@/components/ScrollTop';
  * shared <ScrollTop/> component.
  */
 export default function ComingSoonClient() {
+  useLayoutEffect(() => {
+    if (sessionStorage.getItem('site_visited')) {
+      const hide = (id: string) => { const el = document.getElementById(id); if (el) el.style.cssText = 'display:none!important;opacity:0;'; };
+      hide('preloader'); hide('split-top'); hide('split-bottom');
+      document.body.classList.add('skip-preloader');
+    } else {
+      sessionStorage.setItem('site_visited', '1');
+    }
+  }, []);
+
   useEffect(() => initComingSoon(), []);
 
   return (
@@ -51,7 +62,7 @@ export default function ComingSoonClient() {
 
       {/* Desktop nav — logo only, no pill */}
       <div id="navbar-wrap">
-        <a href="/" aria-label="Home"><img className="nav-logo" src="/Images/longlogo.svg" alt="Ruchira Edirisinghe" /></a>
+        <Link href="/" aria-label="Home"><img className="nav-logo" src="/Images/longlogo.svg" alt="Ruchira Edirisinghe" /></Link>
       </div>
 
       <button id="music-btn-desktop" aria-label="Toggle music">
@@ -63,9 +74,9 @@ export default function ComingSoonClient() {
         <button id="music-btn" aria-label="Toggle music">
           <canvas id="spectrum-canvas" width="26" height="18"></canvas>
         </button>
-        <a href="/" className="mobile-logo-link" aria-label="Home">
+        <Link href="/" className="mobile-logo-link" aria-label="Home">
           <img className="mobile-logo" src="/Images/longlogo.svg" alt="Logo" />
-        </a>
+        </Link>
         <button id="menu-btn" className="glass-round-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span></span><span></span>
         </button>
@@ -73,12 +84,12 @@ export default function ComingSoonClient() {
 
       <div id="mobile-menu" aria-hidden="true">
         <nav className="mobile-menu-panel">
-          <a href="/" data-page="index" className="mobile-menu-link"><span className="mobile-menu-title">Home</span><span className="mobile-menu-desc">Back to the beginning</span></a>
-          <a href="/about" data-page="about" className="mobile-menu-link"><span className="mobile-menu-title">About Me</span><span className="mobile-menu-desc">Who I am &amp; what drives me</span></a>
-          <a href="/experience" data-page="experience" className="mobile-menu-link"><span className="mobile-menu-title">Experience</span><span className="mobile-menu-desc">My journey &amp; career highlights</span></a>
-          <a href="/projects" data-page="projects" className="mobile-menu-link"><span className="mobile-menu-title">Projects</span><span className="mobile-menu-desc">Work I've crafted &amp; shipped</span></a>
-          <a href="/contact" data-page="contact" className="mobile-menu-link"><span className="mobile-menu-title">Contact Me</span><span className="mobile-menu-desc">Let's build something together</span></a>
-          <a href="/links" data-page="links" className="mobile-menu-link"><span className="mobile-menu-title">Quick Links</span><span className="mobile-menu-desc">More places to find me</span></a>
+          <Link href="/" data-page="index" className="mobile-menu-link"><span className="mobile-menu-title">Home</span><span className="mobile-menu-desc">Back to the beginning</span></Link>
+          <Link href="/about" data-page="about" className="mobile-menu-link"><span className="mobile-menu-title">About Me</span><span className="mobile-menu-desc">Who I am &amp; what drives me</span></Link>
+          <Link href="/experience" data-page="experience" className="mobile-menu-link"><span className="mobile-menu-title">Experience</span><span className="mobile-menu-desc">My journey &amp; career highlights</span></Link>
+          <Link href="/projects" data-page="projects" className="mobile-menu-link"><span className="mobile-menu-title">Projects</span><span className="mobile-menu-desc">Work I&apos;ve crafted &amp; shipped</span></Link>
+          <Link href="/contact" data-page="contact" className="mobile-menu-link"><span className="mobile-menu-title">Contact Me</span><span className="mobile-menu-desc">Let&apos;s build something together</span></Link>
+          <Link href="/links" data-page="links" className="mobile-menu-link"><span className="mobile-menu-title">Quick Links</span><span className="mobile-menu-desc">More places to find me</span></Link>
         </nav>
       </div>
       <button id="menu-close-mobile" className="menu-close-btn" aria-label="Close menu">
@@ -98,12 +109,12 @@ export default function ComingSoonClient() {
         </div>
 
         {/* Back to Homepage Button */}
-        <a href="/" className="cs-home-btn" aria-label="Back to Homepage">
+        <Link href="/" className="cs-home-btn" aria-label="Back to Homepage">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
             <path d="M10 12L6 8l4-4" />
           </svg>
           Back to Homepage
-        </a>
+        </Link>
 
         {/* Open hero — no card box */}
         <div className="cs-hero">

@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { cssVars } from '@/lib/css';
 import { initQuicklinks } from '@/lib/scripts/quicklinks';
@@ -34,7 +35,7 @@ export default function QuicklinksClient() {
           <section className="tier-section">
             <div className="about-block">
               <div className="links-grid grid-1">
-                <a href="/" id="portfolio-nexus-link" className="social-card cc-portfolio"
+                <Link href="/" id="portfolio-nexus-link" className="social-card cc-portfolio"
                   data-name="Personal Portfolio" data-action="Return to main portfolio landing page"
                   data-detail="index.html">
                   <div className="cc-arrow"><svg viewBox="0 0 24 24">
@@ -55,7 +56,7 @@ export default function QuicklinksClient() {
                   </div>
                   <p className="sc-desc">The primary hub for my work, experience, and the comprehensive narrative of my journey.
                   </p>
-                </a>
+                </Link>
               </div>
             </div>
           </section>
@@ -170,7 +171,7 @@ export default function QuicklinksClient() {
                   <span className="pc-username">@zenitrongaming</span>
                   <div className="pc-stats">
                     <div className="pc-stat"><span className="pc-stat-label">Subscribers</span><span
-                      className="pc-stat-value">340+</span>
+                      className="pc-stat-value">375+</span>
                     </div>
                     <div className="pc-stat"><span className="pc-stat-label">Videos</span><span className="pc-stat-value">120+</span>
                     </div>

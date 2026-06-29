@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
@@ -53,7 +54,7 @@ export default function WebProjectsClient() {
       <main>
         <header id="hero-heading">
           <div className="back-nav-wrap">
-            <a href="/projects" className="back-link"><span>←</span> Back to Project Categories</a>
+            <Link href="/projects" className="back-link"><span>←</span> Back to Project Categories</Link>
           </div>
           <p className="section-label">Digital Craft</p>
           <h1 className="page-title">Web Projects</h1>
@@ -87,7 +88,7 @@ export default function WebProjectsClient() {
                 </div>
               </div>
               <div className="project-links">
-                <a href={c.href} className="project-link-btn">View Case Study ↗</a>
+                <Link href={c.href} className="project-link-btn">View Case Study ↗</Link>
               </div>
             </div>
           ))}

@@ -145,6 +145,7 @@ export function initComingSoon(): () => void {
   (function () {
     const pl = document.getElementById('preloader'), cv = document.getElementById('preloader-canvas'), cx = cv && cv.getContext('2d'), pf = document.getElementById('progress-fill'), st = document.getElementById('split-top'), sb = document.getElementById('split-bottom');
     if (!pl || !cv || !cx || !pf) return;
+    if (pl.style.display === 'none') return;
     const CW = 900, CH = 240; cv.width = CW; cv.height = CH;
     const DUR = 2200, HOLD = 300, SPLIT = 900;
     let t0 = null, lt2 = 0, fp = 0, wp = 0, li = new Image(), lr = false;

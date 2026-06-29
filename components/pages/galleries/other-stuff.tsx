@@ -1,5 +1,6 @@
-'use client';
+﻿'use client';
 import { useEffect } from 'react';
+import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
@@ -19,7 +20,7 @@ export default function GalleryOtherStuff() {
     >
       <main>
         <header className="page-header">
-          <a href="/projects/graphic" className="back-link"><span>←</span> Back to Graphic Projects</a>
+          <Link href="/projects/graphic" className="back-link"><span>←</span> Back to Graphic Projects</Link>
           <p className="section-label">Graphic Design & Branding</p>
           <h1 className="page-title">Graphic Assets</h1>
           <p className="bio-para" style={{ textAlign: 'left', margin: 0 }}>

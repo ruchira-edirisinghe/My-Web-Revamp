@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
@@ -37,7 +38,7 @@ export default function GraphicProjectsClient() {
       <main>
         <header id="hero-heading">
           <div className="back-nav-wrap">
-            <a href="/projects" className="back-link"><span>←</span> Back to Project Categories</a>
+            <Link href="/projects" className="back-link"><span>←</span> Back to Project Categories</Link>
           </div>
           <p className="section-label">Visual Artistry</p>
           <h1 className="page-title">Graphic Design</h1>
@@ -63,7 +64,7 @@ export default function GraphicProjectsClient() {
                 </div>
               </div>
               <div className="project-links">
-                <a href={c.href} className="project-link-btn stretched-link">{c.cta}</a>
+                <Link href={c.href} className="project-link-btn stretched-link">{c.cta}</Link>
               </div>
             </div>
           ))}

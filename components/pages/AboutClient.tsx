@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { cssVars } from '@/lib/css';
 import { initAbout } from '@/lib/scripts/about';
@@ -345,7 +346,7 @@ export default function AboutClient() {
                   <polyline points="7 7 17 7 17 17" />
                 </svg>
               </a>
-              <a href="#" className="hero-cta-ghost">View My Work</a>
+              <Link href="/projects" className="hero-cta-ghost">View My Work</Link>
             </div>
       
             
@@ -1545,7 +1546,7 @@ export default function AboutClient() {
                 <span className="pc-name">YouTube</span>
                 <span className="pc-username">@zenitrongaming</span>
                 <div className="pc-stats">
-                  <div className="pc-stat"><span className="pc-stat-label">Subscribers</span><span className="pc-stat-value">340+</span>
+                  <div className="pc-stat"><span className="pc-stat-label">Subscribers</span><span className="pc-stat-value">375+</span>
                   </div>
                   <div className="pc-stat"><span className="pc-stat-label">Videos</span><span className="pc-stat-value">120+</span></div>
                 </div>

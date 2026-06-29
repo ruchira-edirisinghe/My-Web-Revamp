@@ -17,6 +17,7 @@ export function initPreloader(): () => void {
   const splitTop     = document.getElementById('split-top');
   const splitBottom  = document.getElementById('split-bottom');
   if (!preloader || !canvas || !progressFill || !splitTop || !splitBottom) return () => {};
+  if (preloader.style.display === 'none') return () => {};
   const ctx = canvas.getContext('2d');
 
   const CW = 900, CH = 240;

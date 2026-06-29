@@ -1,5 +1,6 @@
 ﻿'use client';
 import { useEffect } from 'react';
+import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
@@ -32,7 +33,7 @@ export default function CaseStudyAgentSystem() {
 
         <div className="cs-wrap">
 
-          <a href="/projects/web" className="back-link"><span>←</span> Back to Projects</a>
+          <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
           {/* HERO — Title + Cover Banner */}
           <header className="cs-hero-header">

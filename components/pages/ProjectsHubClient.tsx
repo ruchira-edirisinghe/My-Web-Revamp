@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
@@ -28,7 +29,7 @@ export default function ProjectsHubClient() {
 
         <div className="hub-divide-container">
           {/* Web Panel */}
-          <a href="/projects/web" className="divide-panel project-card type-web" style={cssVars({ '--panel-index': 0 })}>
+          <Link href="/projects/web" className="divide-panel project-card type-web" style={cssVars({ '--panel-index': 0 })}>
             <div className="panel-bg" style={{ backgroundImage: "url('/Images/projects/web-projects.png')" }}></div>
             <div className="panel-overlay"></div>
             <div className="panel-content">
@@ -38,10 +39,10 @@ export default function ProjectsHubClient() {
               <p className="panel-desc">Engineering high-performance interactive ecosystems with modern ui/ux aesthetics.</p>
               <span className="panel-cta">Enter Portfolio ↗</span>
             </div>
-          </a>
+          </Link>
 
           {/* Graphic Panel */}
-          <a href="/projects/graphic" className="divide-panel project-card type-design" style={cssVars({ '--panel-index': 1 })}>
+          <Link href="/projects/graphic" className="divide-panel project-card type-design" style={cssVars({ '--panel-index': 1 })}>
             <div className="panel-bg" style={{ backgroundImage: "url('/Images/projects/graphic-projects.png')" }}></div>
             <div className="panel-overlay"></div>
             <div className="panel-content">
@@ -51,7 +52,7 @@ export default function ProjectsHubClient() {
               <p className="panel-desc">Crafting vibrant visual narratives and cosmic brand identities that push boundaries.</p>
               <span className="panel-cta">Explore Gallery ↗</span>
             </div>
-          </a>
+          </Link>
         </div>
       </main>
     </StandardShell>
