@@ -423,23 +423,23 @@ export default function AboutClient() {
             <div className="logo-ticker-inner" id="logo-ticker-inner">
               
               <div className="ticker-set" id="ticker-set-a">
-                <img className="ticker-logo" src="/Images/logobar/1.png" alt="Logo 1" />
-                <img className="ticker-logo" src="/Images/logobar/2.png" alt="Logo 2" />
-                <img className="ticker-logo" src="/Images/logobar/3.png" alt="Logo 3" />
-                <img className="ticker-logo" src="/Images/logobar/4.png" alt="Logo 4" />
-                <img className="ticker-logo" src="/Images/logobar/5.png" alt="Logo 5" />
-                <img className="ticker-logo" src="/Images/logobar/6.png" alt="Logo 6" />
-                <img className="ticker-logo" src="/Images/logobar/7.png" alt="Logo 7" />
+                <img className="ticker-logo" src="/Images/logobar/zen-creatives.png" alt="Zen Creatives" />
+                <img className="ticker-logo" src="/Images/logobar/eleetra.png" alt="Eleetra" />
+                <img className="ticker-logo" src="/Images/logobar/livecode.png" alt="LiveCode" />
+                <img className="ticker-logo" src="/Images/logobar/runtime-terror.png" alt="Runtime Terror" />
+                <img className="ticker-logo" src="/Images/logobar/sl-cyber-designs.png" alt="SL Cyber Designs" />
+                <img className="ticker-logo" src="/Images/logobar/takg-solutions.png" alt="TAKG Solutions" />
+                <img className="ticker-logo" src="/Images/logobar/wrc.png" alt="WRC" />
               </div>
-              
+
               <div className="ticker-set" aria-hidden="true">
-                <img className="ticker-logo" src="/Images/logobar/1.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/2.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/3.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/4.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/5.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/6.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/7.png" alt="" />
+                <img className="ticker-logo" src="/Images/logobar/zen-creatives.png" alt="" />
+                <img className="ticker-logo" src="/Images/logobar/eleetra.png" alt="" />
+                <img className="ticker-logo" src="/Images/logobar/livecode.png" alt="" />
+                <img className="ticker-logo" src="/Images/logobar/runtime-terror.png" alt="" />
+                <img className="ticker-logo" src="/Images/logobar/sl-cyber-designs.png" alt="" />
+                <img className="ticker-logo" src="/Images/logobar/takg-solutions.png" alt="" />
+                <img className="ticker-logo" src="/Images/logobar/wrc.png" alt="" />
               </div>
             </div>
           </div>

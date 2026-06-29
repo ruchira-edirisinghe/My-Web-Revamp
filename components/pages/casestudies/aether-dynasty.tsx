@@ -464,17 +464,17 @@ export default function CaseStudyAetherDynasty() {
               {/* Row 1 */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {[
-                  { src: '/Images/projects/aether-dynasty/home.png', alt: 'Aether Dynasty — main game board', label: 'Main Game Board' },
-                  { src: '/Images/projects/aether-dynasty/game.png', alt: 'Aether Dynasty — cascade in progress', label: 'Cascade in Progress' },
-                  { src: '/Images/projects/aether-dynasty/win.png', alt: 'Aether Dynasty — win payout', label: 'Win Payout' },
-                  { src: '/Images/projects/aether-dynasty/autospin.png', alt: 'Aether Dynasty — auto-spin config', label: 'Auto-Spin Config' },
-                  { src: '/Images/projects/aether-dynasty/history.png', alt: 'Aether Dynasty — transaction history', label: 'Transaction History' },
+                  { src: '/Images/projects/aether-dynasty/main-game-board.png', alt: 'Aether Dynasty — main game board', label: 'Main Game Board' },
+                  { src: '/Images/projects/aether-dynasty/cascade-in-progress.png', alt: 'Aether Dynasty — cascade in progress', label: 'Cascade in Progress' },
+                  { src: '/Images/projects/aether-dynasty/win-payout.png', alt: 'Aether Dynasty — win payout', label: 'Win Payout' },
+                  { src: '/Images/projects/aether-dynasty/auto-spin-config.png', alt: 'Aether Dynasty — auto-spin config', label: 'Auto-Spin Config' },
+                  { src: '/Images/projects/aether-dynasty/transaction-history.png', alt: 'Aether Dynasty — transaction history', label: 'Transaction History' },
                 ].concat([
-                  { src: '/Images/projects/aether-dynasty/home.png', alt: 'Aether Dynasty — main game board', label: 'Main Game Board' },
-                  { src: '/Images/projects/aether-dynasty/game.png', alt: 'Aether Dynasty — cascade in progress', label: 'Cascade in Progress' },
-                  { src: '/Images/projects/aether-dynasty/win.png', alt: 'Aether Dynasty — win payout', label: 'Win Payout' },
-                  { src: '/Images/projects/aether-dynasty/autospin.png', alt: 'Aether Dynasty — auto-spin config', label: 'Auto-Spin Config' },
-                  { src: '/Images/projects/aether-dynasty/history.png', alt: 'Aether Dynasty — transaction history', label: 'Transaction History' },
+                  { src: '/Images/projects/aether-dynasty/main-game-board.png', alt: 'Aether Dynasty — main game board', label: 'Main Game Board' },
+                  { src: '/Images/projects/aether-dynasty/cascade-in-progress.png', alt: 'Aether Dynasty — cascade in progress', label: 'Cascade in Progress' },
+                  { src: '/Images/projects/aether-dynasty/win-payout.png', alt: 'Aether Dynasty — win payout', label: 'Win Payout' },
+                  { src: '/Images/projects/aether-dynasty/auto-spin-config.png', alt: 'Aether Dynasty — auto-spin config', label: 'Auto-Spin Config' },
+                  { src: '/Images/projects/aether-dynasty/transaction-history.png', alt: 'Aether Dynasty — transaction history', label: 'Transaction History' },
                 ]).map((item, i) => (
                   <div key={i} className="ui-card" data-full={item.src}>
                     <img src={item.src} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
@@ -486,17 +486,17 @@ export default function CaseStudyAetherDynasty() {
               {/* Row 2 */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {[
-                  { src: '/Images/projects/aether-dynasty/history.png', alt: 'Bet history log', label: 'Bet History' },
-                  { src: '/Images/projects/aether-dynasty/win.png', alt: 'Win celebration overlay', label: 'Win Overlay' },
-                  { src: '/Images/projects/aether-dynasty/autospin.png', alt: 'Auto-spin running', label: 'Auto-Spin Running' },
-                  { src: '/Images/projects/aether-dynasty/game.png', alt: 'Board expanding', label: 'Board Expanding' },
-                  { src: '/Images/projects/aether-dynasty/home.png', alt: 'Sound and settings panel', label: 'Sound Controls' },
+                  { src: '/Images/projects/aether-dynasty/transaction-history.png', alt: 'Bet history log', label: 'Bet History' },
+                  { src: '/Images/projects/aether-dynasty/win-payout.png', alt: 'Win celebration overlay', label: 'Win Overlay' },
+                  { src: '/Images/projects/aether-dynasty/auto-spin-config.png', alt: 'Auto-spin running', label: 'Auto-Spin Running' },
+                  { src: '/Images/projects/aether-dynasty/cascade-in-progress.png', alt: 'Board expanding', label: 'Board Expanding' },
+                  { src: '/Images/projects/aether-dynasty/main-game-board.png', alt: 'Sound and settings panel', label: 'Sound Controls' },
                 ].concat([
-                  { src: '/Images/projects/aether-dynasty/history.png', alt: 'Bet history log', label: 'Bet History' },
-                  { src: '/Images/projects/aether-dynasty/win.png', alt: 'Win celebration overlay', label: 'Win Overlay' },
-                  { src: '/Images/projects/aether-dynasty/autospin.png', alt: 'Auto-spin running', label: 'Auto-Spin Running' },
-                  { src: '/Images/projects/aether-dynasty/game.png', alt: 'Board expanding', label: 'Board Expanding' },
-                  { src: '/Images/projects/aether-dynasty/home.png', alt: 'Sound and settings panel', label: 'Sound Controls' },
+                  { src: '/Images/projects/aether-dynasty/transaction-history.png', alt: 'Bet history log', label: 'Bet History' },
+                  { src: '/Images/projects/aether-dynasty/win-payout.png', alt: 'Win celebration overlay', label: 'Win Overlay' },
+                  { src: '/Images/projects/aether-dynasty/auto-spin-config.png', alt: 'Auto-spin running', label: 'Auto-Spin Running' },
+                  { src: '/Images/projects/aether-dynasty/cascade-in-progress.png', alt: 'Board expanding', label: 'Board Expanding' },
+                  { src: '/Images/projects/aether-dynasty/main-game-board.png', alt: 'Sound and settings panel', label: 'Sound Controls' },
                 ]).map((item, i) => (
                   <div key={i} className="ui-card" data-full={item.src}>
                     <img src={item.src} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
