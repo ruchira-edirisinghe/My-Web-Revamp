@@ -31,3 +31,6 @@ next-env.d.ts.bak
 # editor
 .vscode/*
 !.vscode/extensions.json
+
+# claude memory (stored in ~/.claude/ — local only)
+/memory/

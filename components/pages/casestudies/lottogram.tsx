@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect } from 'react';
 import StandardShell from '@/components/StandardShell';
 import { initProjects } from '@/lib/scripts/projects';
@@ -357,70 +357,70 @@ export default function CaseStudyLottogram() {
 
             <div className="ui-gallery device-gallery is-desktop" data-device="desktop">
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Home%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Home%20-%20Unfolded.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Home - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Home - Unfolded.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Games%20-%20Folded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Games%20-%20Folded.png" alt="Desktop — Games" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Games - Folded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Games - Folded.png" alt="Desktop — Games" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Games</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Live%20Events%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Live%20Events%20-%20Unfolded.png" alt="Desktop — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Live Events - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Live Events - Unfolded.png" alt="Desktop — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Live Events</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Promotions%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Promotions%20-%20Unfolded.png" alt="Desktop — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Promotions - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Promotions - Unfolded.png" alt="Desktop — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Promotions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Home%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Home%20-%20Unfolded.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Home - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Home - Unfolded.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Games%20-%20Folded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Games%20-%20Folded.png" alt="Desktop — Games" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Games - Folded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Games - Folded.png" alt="Desktop — Games" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Games</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Live%20Events%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Live%20Events%20-%20Unfolded.png" alt="Desktop — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Live Events - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Live Events - Unfolded.png" alt="Desktop — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Live Events</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Promotions%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Promotions%20-%20Unfolded.png" alt="Desktop — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Promotions - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Promotions - Unfolded.png" alt="Desktop — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Promotions</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20My%20Profile%20-%20My%20Wallet%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20My%20Profile%20-%20My%20Wallet%20-%20Unfolded.png" alt="Desktop — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Unfolded.png" alt="Desktop — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Wallet</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20My%20Profile%20-%20My%20Wallet%20-%20Bet%20History%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20My%20Profile%20-%20My%20Wallet%20-%20Bet%20History%20-%20Unfolded.png" alt="Desktop — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Bet History - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Bet History - Unfolded.png" alt="Desktop — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bet History</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Messages%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Messages%20-%20Unfolded.png" alt="Desktop — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Messages - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Messages - Unfolded.png" alt="Desktop — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Messages</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Affiliate%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Affiliate%20-%20Unfolded.png" alt="Desktop — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Affiliate - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Affiliate - Unfolded.png" alt="Desktop — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Affiliate</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20My%20Profile%20-%20My%20Wallet%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20My%20Profile%20-%20My%20Wallet%20-%20Unfolded.png" alt="Desktop — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Unfolded.png" alt="Desktop — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Wallet</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20My%20Profile%20-%20My%20Wallet%20-%20Bet%20History%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20My%20Profile%20-%20My%20Wallet%20-%20Bet%20History%20-%20Unfolded.png" alt="Desktop — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Bet History - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Bet History - Unfolded.png" alt="Desktop — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bet History</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Messages%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Messages%20-%20Unfolded.png" alt="Desktop — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Messages - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Messages - Unfolded.png" alt="Desktop — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Messages</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop%20-%20Affiliate%20-%20Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop%20-%20Affiliate%20-%20Unfolded.png" alt="Desktop — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Affiliate - Unfolded.png">
+                  <img src="/Images/projects/lottogram/Desktop - Affiliate - Unfolded.png" alt="Desktop — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Affiliate</div>
                 </div>
               </div>
@@ -428,70 +428,70 @@ export default function CaseStudyLottogram() {
 
             <div className="ui-gallery device-gallery is-mobile" data-device="mobile" hidden>
               <div className="ui-marquee-track ui-track-2" id="marquee-3">
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Home.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Home.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Games.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Games.png" alt="Mobile — Games" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Games.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Games.png" alt="Mobile — Games" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Games</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Live%20Events.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Live%20Events.png" alt="Mobile — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Live Events.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Live Events.png" alt="Mobile — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Live Events</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Promotions.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Promotions.png" alt="Mobile — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Promotions.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Promotions.png" alt="Mobile — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Promotions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Home.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Home.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Games.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Games.png" alt="Mobile — Games" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Games.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Games.png" alt="Mobile — Games" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Games</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Live%20Events.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Live%20Events.png" alt="Mobile — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Live Events.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Live Events.png" alt="Mobile — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Live Events</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Promotions.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Promotions.png" alt="Mobile — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Promotions.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Promotions.png" alt="Mobile — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Promotions</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-4">
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20My%20Profile%20-%20My%20Wallet.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20My%20Profile%20-%20My%20Wallet.png" alt="Mobile — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet.png" alt="Mobile — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Wallet</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20My%20Profile%20-%20My%20Wallet%20-%20Bet%20History.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20My%20Profile%20-%20My%20Wallet%20-%20Bet%20History.png" alt="Mobile — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet - Bet History.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet - Bet History.png" alt="Mobile — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bet History</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Message.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Message.png" alt="Mobile — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Message.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Message.png" alt="Mobile — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Messages</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Affiliate.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Affiliate.png" alt="Mobile — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Affiliate.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Affiliate.png" alt="Mobile — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Affiliate</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20My%20Profile%20-%20My%20Wallet.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20My%20Profile%20-%20My%20Wallet.png" alt="Mobile — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet.png" alt="Mobile — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Wallet</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20My%20Profile%20-%20My%20Wallet%20-%20Bet%20History.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20My%20Profile%20-%20My%20Wallet%20-%20Bet%20History.png" alt="Mobile — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet - Bet History.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet - Bet History.png" alt="Mobile — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bet History</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Message.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Message.png" alt="Mobile — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Message.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Message.png" alt="Mobile — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Messages</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile%20-%20Affiliate.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile%20-%20Affiliate.png" alt="Mobile — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Affiliate.png">
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Affiliate.png" alt="Mobile — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Affiliate</div>
                 </div>
               </div>

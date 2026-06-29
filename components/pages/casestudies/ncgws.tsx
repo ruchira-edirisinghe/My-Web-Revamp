@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect } from 'react';
 import StandardShell from '@/components/StandardShell';
 import { initProjects } from '@/lib/scripts/projects';
@@ -372,20 +372,20 @@ export default function CaseStudyNcgws() {
               {/* Row 1: Moving Right */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/ncgws/HOME%20Screen.png">
-                  <img src="/Images/projects/ncgws/HOME%20Screen.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/HOME Screen.png">
+                  <img src="/Images/projects/ncgws/HOME Screen.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/About%20-_%20About%20Us.png">
-                  <img src="/Images/projects/ncgws/About%20-_%20About%20Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ About Us.png">
+                  <img src="/Images/projects/ncgws/About -_ About Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/About%20-_%20Our%20Team.png">
-                  <img src="/Images/projects/ncgws/About%20-_%20Our%20Team.png" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ Our Team.png">
+                  <img src="/Images/projects/ncgws/About -_ Our Team.png" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Team</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Our%20Operations.png">
-                  <img src="/Images/projects/ncgws/Our%20Operations.png" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Our Operations.png">
+                  <img src="/Images/projects/ncgws/Our Operations.png" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Operations</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Tenders.png">
@@ -393,20 +393,20 @@ export default function CaseStudyNcgws() {
                   <div className="ui-card-label">Tenders</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/ncgws/HOME%20Screen.png">
-                  <img src="/Images/projects/ncgws/HOME%20Screen.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/HOME Screen.png">
+                  <img src="/Images/projects/ncgws/HOME Screen.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/About%20-_%20About%20Us.png">
-                  <img src="/Images/projects/ncgws/About%20-_%20About%20Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ About Us.png">
+                  <img src="/Images/projects/ncgws/About -_ About Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/About%20-_%20Our%20Team.png">
-                  <img src="/Images/projects/ncgws/About%20-_%20Our%20Team.png" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ Our Team.png">
+                  <img src="/Images/projects/ncgws/About -_ Our Team.png" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Team</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Our%20Operations.png">
-                  <img src="/Images/projects/ncgws/Our%20Operations.png" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Our Operations.png">
+                  <img src="/Images/projects/ncgws/Our Operations.png" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Operations</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Tenders.png">
@@ -418,45 +418,45 @@ export default function CaseStudyNcgws() {
               {/* Row 2: Moving Left */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/ncgws/Join%20Us.png">
-                  <img src="/Images/projects/ncgws/Join%20Us.png" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us.png">
+                  <img src="/Images/projects/ncgws/Join Us.png" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Join Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Join%20Us%20-%20Job%20Description.png">
-                  <img src="/Images/projects/ncgws/Join%20Us%20-%20Job%20Description.png" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us - Job Description.png">
+                  <img src="/Images/projects/ncgws/Join Us - Job Description.png" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Job Description</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Login.png">
                   <img src="/Images/projects/ncgws/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Sign%20in.png">
-                  <img src="/Images/projects/ncgws/Sign%20in.png" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Sign in.png">
+                  <img src="/Images/projects/ncgws/Sign in.png" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Sign In</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Contact%20Us.png">
-                  <img src="/Images/projects/ncgws/Contact%20Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Contact Us.png">
+                  <img src="/Images/projects/ncgws/Contact Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/ncgws/Join%20Us.png">
-                  <img src="/Images/projects/ncgws/Join%20Us.png" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us.png">
+                  <img src="/Images/projects/ncgws/Join Us.png" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Join Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Join%20Us%20-%20Job%20Description.png">
-                  <img src="/Images/projects/ncgws/Join%20Us%20-%20Job%20Description.png" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us - Job Description.png">
+                  <img src="/Images/projects/ncgws/Join Us - Job Description.png" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Job Description</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Login.png">
                   <img src="/Images/projects/ncgws/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Sign%20in.png">
-                  <img src="/Images/projects/ncgws/Sign%20in.png" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Sign in.png">
+                  <img src="/Images/projects/ncgws/Sign in.png" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Sign In</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Contact%20Us.png">
-                  <img src="/Images/projects/ncgws/Contact%20Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Contact Us.png">
+                  <img src="/Images/projects/ncgws/Contact Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
               </div>
