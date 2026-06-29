@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect } from 'react';
 import StandardShell from '@/components/StandardShell';
 import { initProjects } from '@/lib/scripts/projects';
@@ -346,99 +346,99 @@ export default function CaseStudyLyaportal() {
                   <img src="/Images/projects/lyaportal/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard%201.png">
-                  <img src="/Images/projects/lyaportal/Dashboard%201.png" alt="Student Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard 1.png">
+                  <img src="/Images/projects/lyaportal/Dashboard 1.png" alt="Student Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Student Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/All%20Exams.png">
-                  <img src="/Images/projects/lyaportal/All%20Exams.png" alt="All Exams" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/All Exams.png">
+                  <img src="/Images/projects/lyaportal/All Exams.png" alt="All Exams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">All Exams</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/My%20Exams.png">
-                  <img src="/Images/projects/lyaportal/My%20Exams.png" alt="My Exams" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/My Exams.png">
+                  <img src="/Images/projects/lyaportal/My Exams.png" alt="My Exams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Exams</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Details%20Confirmation.png">
-                  <img src="/Images/projects/lyaportal/Details%20Confirmation.png" alt="Details Confirmation" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Details Confirmation.png">
+                  <img src="/Images/projects/lyaportal/Details Confirmation.png" alt="Details Confirmation" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Details Confirmation</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/My%20Payments.png">
-                  <img src="/Images/projects/lyaportal/My%20Payments.png" alt="My Payments" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/My Payments.png">
+                  <img src="/Images/projects/lyaportal/My Payments.png" alt="My Payments" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Payments</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Login.png">
                   <img src="/Images/projects/lyaportal/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard%201.png">
-                  <img src="/Images/projects/lyaportal/Dashboard%201.png" alt="Student Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard 1.png">
+                  <img src="/Images/projects/lyaportal/Dashboard 1.png" alt="Student Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Student Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/All%20Exams.png">
-                  <img src="/Images/projects/lyaportal/All%20Exams.png" alt="All Exams" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/All Exams.png">
+                  <img src="/Images/projects/lyaportal/All Exams.png" alt="All Exams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">All Exams</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/My%20Exams.png">
-                  <img src="/Images/projects/lyaportal/My%20Exams.png" alt="My Exams" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/My Exams.png">
+                  <img src="/Images/projects/lyaportal/My Exams.png" alt="My Exams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Exams</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Details%20Confirmation.png">
-                  <img src="/Images/projects/lyaportal/Details%20Confirmation.png" alt="Details Confirmation" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Details Confirmation.png">
+                  <img src="/Images/projects/lyaportal/Details Confirmation.png" alt="Details Confirmation" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Details Confirmation</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/My%20Payments.png">
-                  <img src="/Images/projects/lyaportal/My%20Payments.png" alt="My Payments" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/My Payments.png">
+                  <img src="/Images/projects/lyaportal/My Payments.png" alt="My Payments" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Payments</div>
                 </div>
               </div>
 
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Select%20Payment%20Method.png">
-                  <img src="/Images/projects/lyaportal/Select%20Payment%20Method.png" alt="Select Payment Method" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Select Payment Method.png">
+                  <img src="/Images/projects/lyaportal/Select Payment Method.png" alt="Select Payment Method" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Select Payment</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Bank%20Transfer%20Payment.png">
-                  <img src="/Images/projects/lyaportal/Bank%20Transfer%20Payment.png" alt="Bank Transfer Payment" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Bank Transfer Payment.png">
+                  <img src="/Images/projects/lyaportal/Bank Transfer Payment.png" alt="Bank Transfer Payment" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bank Transfer</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Online%20Payment%20Successful.png">
-                  <img src="/Images/projects/lyaportal/Online%20Payment%20Successful.png" alt="Payment Successful" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Online Payment Successful.png">
+                  <img src="/Images/projects/lyaportal/Online Payment Successful.png" alt="Payment Successful" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Payment Success</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard%20--_%20Notifications.png">
-                  <img src="/Images/projects/lyaportal/Dashboard%20--_%20Notifications.png" alt="Notifications" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard --_ Notifications.png">
+                  <img src="/Images/projects/lyaportal/Dashboard --_ Notifications.png" alt="Notifications" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Notifications</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/teacher-flow/Dashboard%202.png">
-                  <img src="/Images/projects/lyaportal/teacher-flow/Dashboard%202.png" alt="Teacher Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/teacher-flow/Dashboard 2.png">
+                  <img src="/Images/projects/lyaportal/teacher-flow/Dashboard 2.png" alt="Teacher Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Teacher Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/parent-flow/Dashboard%203.png">
-                  <img src="/Images/projects/lyaportal/parent-flow/Dashboard%203.png" alt="Parent Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/parent-flow/Dashboard 3.png">
+                  <img src="/Images/projects/lyaportal/parent-flow/Dashboard 3.png" alt="Parent Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Parent Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Select%20Payment%20Method.png">
-                  <img src="/Images/projects/lyaportal/Select%20Payment%20Method.png" alt="Select Payment Method" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Select Payment Method.png">
+                  <img src="/Images/projects/lyaportal/Select Payment Method.png" alt="Select Payment Method" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Select Payment</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Bank%20Transfer%20Payment.png">
-                  <img src="/Images/projects/lyaportal/Bank%20Transfer%20Payment.png" alt="Bank Transfer Payment" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Bank Transfer Payment.png">
+                  <img src="/Images/projects/lyaportal/Bank Transfer Payment.png" alt="Bank Transfer Payment" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bank Transfer</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Online%20Payment%20Successful.png">
-                  <img src="/Images/projects/lyaportal/Online%20Payment%20Successful.png" alt="Payment Successful" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Online Payment Successful.png">
+                  <img src="/Images/projects/lyaportal/Online Payment Successful.png" alt="Payment Successful" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Payment Success</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard%20--_%20Notifications.png">
-                  <img src="/Images/projects/lyaportal/Dashboard%20--_%20Notifications.png" alt="Notifications" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard --_ Notifications.png">
+                  <img src="/Images/projects/lyaportal/Dashboard --_ Notifications.png" alt="Notifications" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Notifications</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/teacher-flow/Dashboard%202.png">
-                  <img src="/Images/projects/lyaportal/teacher-flow/Dashboard%202.png" alt="Teacher Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/teacher-flow/Dashboard 2.png">
+                  <img src="/Images/projects/lyaportal/teacher-flow/Dashboard 2.png" alt="Teacher Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Teacher Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyaportal/parent-flow/Dashboard%203.png">
-                  <img src="/Images/projects/lyaportal/parent-flow/Dashboard%203.png" alt="Parent Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/lyaportal/parent-flow/Dashboard 3.png">
+                  <img src="/Images/projects/lyaportal/parent-flow/Dashboard 3.png" alt="Parent Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Parent Dashboard</div>
                 </div>
               </div>

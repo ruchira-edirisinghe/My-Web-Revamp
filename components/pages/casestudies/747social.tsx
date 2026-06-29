@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect } from 'react';
 import StandardShell from '@/components/StandardShell';
 import { initProjects } from '@/lib/scripts/projects';
@@ -364,73 +364,73 @@ export default function CaseStudy747Social() {
             <div className="ui-gallery device-gallery is-desktop" data-device="desktop">
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Home.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Home.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Home.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Home.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Login.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Login.png" alt="Desktop — Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Login.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Login.png" alt="Desktop — Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Onboarding%201.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Onboarding%201.png" alt="Desktop — Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png" alt="Desktop — Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Story%20And%20Post%201.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Story%20And%20Post%201.png" alt="Desktop — Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png" alt="Desktop — Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories &amp; Posts</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Home.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Home.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Home.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Home.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Login.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Login.png" alt="Desktop — Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Login.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Login.png" alt="Desktop — Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Onboarding%201.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Onboarding%201.png" alt="Desktop — Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png" alt="Desktop — Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Story%20And%20Post%201.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Story%20And%20Post%201.png" alt="Desktop — Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png" alt="Desktop — Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories &amp; Posts</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Profile%20-%20About%20Me%20Photo.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Profile%20-%20About%20Me%20Photo.png" alt="Desktop — Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png" alt="Desktop — Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Comments.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Comments.png" alt="Desktop — Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Comments.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Comments.png" alt="Desktop — Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Notifications.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Notifications.png" alt="Desktop — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Notifications.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Notifications.png" alt="Desktop — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Prize%20Timer%20Popup%20-%20Ready%20To%20Claim.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Prize%20Timer%20Popup%20-%20Ready%20To%20Claim.png" alt="Desktop — Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png" alt="Desktop — Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Prize Claim</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Profile%20-%20About%20Me%20Photo.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Profile%20-%20About%20Me%20Photo.png" alt="Desktop — Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png" alt="Desktop — Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Comments.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Comments.png" alt="Desktop — Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Comments.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Comments.png" alt="Desktop — Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Notifications.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Notifications.png" alt="Desktop — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Notifications.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Notifications.png" alt="Desktop — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop%20-%20Prize%20Timer%20Popup%20-%20Ready%20To%20Claim.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop%20-%20Prize%20Timer%20Popup%20-%20Ready%20To%20Claim.png" alt="Desktop — Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png" alt="Desktop — Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Prize Claim</div>
                 </div>
               </div>
@@ -440,73 +440,73 @@ export default function CaseStudy747Social() {
             <div className="ui-gallery device-gallery is-mobile" data-device="mobile" hidden>
               <div className="ui-marquee-track ui-track-2" id="marquee-3">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%20Home.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%20Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Home.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%20Login.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%20Login.png" alt="Mobile — Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Login.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Login.png" alt="Mobile — Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%201%20-%20Story.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%201%20-%20Story.png" alt="Mobile — Stories" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png" alt="Mobile — Stories" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%205%20-%20Single%20Post.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%205%20-%20Single%20Post.png" alt="Mobile — Post" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png" alt="Mobile — Post" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Post</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%20Home.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%20Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Home.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%20Login.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%20Login.png" alt="Mobile — Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Login.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Login.png" alt="Mobile — Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%201%20-%20Story.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%201%20-%20Story.png" alt="Mobile — Stories" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png" alt="Mobile — Stories" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%205%20-%20Single%20Post.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%205%20-%20Single%20Post.png" alt="Mobile — Post" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png" alt="Mobile — Post" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Post</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-4">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%20Profile%20-%20About%20Me%20Photo.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%20Profile%20-%20About%20Me%20Photo.png" alt="Mobile — Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png" alt="Mobile — Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%20Comments.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%20Comments.png" alt="Mobile — Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Comments.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Comments.png" alt="Mobile — Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%201%20-%20Notifications%20Full.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%201%20-%20Notifications%20Full.png" alt="Mobile — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png" alt="Mobile — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%20Onboarding%204%20-%20Invite.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%20Onboarding%204%20-%20Invite.png" alt="Mobile — Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png" alt="Mobile — Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding · Invite</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%20Profile%20-%20About%20Me%20Photo.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%20Profile%20-%20About%20Me%20Photo.png" alt="Mobile — Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png" alt="Mobile — Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%20Comments.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%20Comments.png" alt="Mobile — Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Comments.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Comments.png" alt="Mobile — Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%201%20-%20Notifications%20Full.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%201%20-%20Notifications%20Full.png" alt="Mobile — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png" alt="Mobile — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile%20-%20Onboarding%204%20-%20Invite.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile%20-%20Onboarding%204%20-%20Invite.png" alt="Mobile — Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png" alt="Mobile — Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding · Invite</div>
                 </div>
               </div>

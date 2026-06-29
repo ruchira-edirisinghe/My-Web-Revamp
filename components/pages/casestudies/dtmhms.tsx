@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect } from 'react';
 import StandardShell from '@/components/StandardShell';
 import { initProjects } from '@/lib/scripts/projects';
@@ -341,24 +341,24 @@ export default function CaseStudyDtmhms() {
                   <img src="/Images/projects/dtmhms/Home.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Book Your Hall</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Layout.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Layout.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Hall · Layout View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Calendar%20View.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Calendar%20View.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Hall · Calendar View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/About%20Us.png">
-                  <img src="/Images/projects/dtmhms/About%20Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.png">
+                  <img src="/Images/projects/dtmhms/About Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact%20us.png">
-                  <img src="/Images/projects/dtmhms/Contact%20us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.png">
+                  <img src="/Images/projects/dtmhms/Contact us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
@@ -366,24 +366,24 @@ export default function CaseStudyDtmhms() {
                   <img src="/Images/projects/dtmhms/Home.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Book Your Hall</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Layout.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Layout.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Hall · Layout View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Calendar%20View.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Calendar%20View.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Hall · Calendar View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/About%20Us.png">
-                  <img src="/Images/projects/dtmhms/About%20Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.png">
+                  <img src="/Images/projects/dtmhms/About Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact%20us.png">
-                  <img src="/Images/projects/dtmhms/Contact%20us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.png">
+                  <img src="/Images/projects/dtmhms/Contact us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
               </div>
@@ -391,53 +391,53 @@ export default function CaseStudyDtmhms() {
               {/* Row 2: Moving Left */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Calendar%20View.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Calendar%20View.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Calendar View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Layout.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Layout.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Layout View</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/dtmhms/Home.png">
                   <img src="/Images/projects/dtmhms/Home.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/About%20Us.png">
-                  <img src="/Images/projects/dtmhms/About%20Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.png">
+                  <img src="/Images/projects/dtmhms/About Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact%20us.png">
-                  <img src="/Images/projects/dtmhms/Contact%20us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.png">
+                  <img src="/Images/projects/dtmhms/Contact us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Book Your Hall</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Calendar%20View.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Calendar%20View.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Calendar View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Layout.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall%20--_%20Layout.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Layout View</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/dtmhms/Home.png">
                   <img src="/Images/projects/dtmhms/Home.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/About%20Us.png">
-                  <img src="/Images/projects/dtmhms/About%20Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.png">
+                  <img src="/Images/projects/dtmhms/About Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact%20us.png">
-                  <img src="/Images/projects/dtmhms/Contact%20us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.png">
+                  <img src="/Images/projects/dtmhms/Contact us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book%20Your%20Hall.png">
-                  <img src="/Images/projects/dtmhms/Book%20Your%20Hall.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.png">
+                  <img src="/Images/projects/dtmhms/Book Your Hall.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Book Your Hall</div>
                 </div>
               </div>

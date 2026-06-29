@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect } from 'react';
 import StandardShell from '@/components/StandardShell';
 import { initProjects } from '@/lib/scripts/projects';
@@ -408,12 +408,12 @@ export default function CaseStudyVebuild() {
                   <img src="/Images/projects/vebuild/Projects.png" alt="Projects Portfolio" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Projects</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/vebuild/Our%20Company.png">
-                  <img src="/Images/projects/vebuild/Our%20Company.png" alt="Our Company" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/vebuild/Our Company.png">
+                  <img src="/Images/projects/vebuild/Our Company.png" alt="Our Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Company</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/vebuild/Group%20of%20Companies.png">
-                  <img src="/Images/projects/vebuild/Group%20of%20Companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/vebuild/Group of Companies.png">
+                  <img src="/Images/projects/vebuild/Group of Companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Group of Companies</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Certifications.png">
@@ -429,12 +429,12 @@ export default function CaseStudyVebuild() {
                   <img src="/Images/projects/vebuild/Projects.png" alt="Projects Portfolio" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Projects</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/vebuild/Our%20Company.png">
-                  <img src="/Images/projects/vebuild/Our%20Company.png" alt="Our Company" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/vebuild/Our Company.png">
+                  <img src="/Images/projects/vebuild/Our Company.png" alt="Our Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Company</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/vebuild/Group%20of%20Companies.png">
-                  <img src="/Images/projects/vebuild/Group%20of%20Companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/vebuild/Group of Companies.png">
+                  <img src="/Images/projects/vebuild/Group of Companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Group of Companies</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Certifications.png">
@@ -454,12 +454,12 @@ export default function CaseStudyVebuild() {
                   <img src="/Images/projects/vebuild/Careers.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/vebuild/Careers%20--_%20job.png">
-                  <img src="/Images/projects/vebuild/Careers%20--_%20job.png" alt="Careers — Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/vebuild/Careers --_ job.png">
+                  <img src="/Images/projects/vebuild/Careers --_ job.png" alt="Careers — Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers · Job</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/vebuild/Contact%20Us.png">
-                  <img src="/Images/projects/vebuild/Contact%20Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/vebuild/Contact Us.png">
+                  <img src="/Images/projects/vebuild/Contact Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
@@ -471,12 +471,12 @@ export default function CaseStudyVebuild() {
                   <img src="/Images/projects/vebuild/Careers.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/vebuild/Careers%20--_%20job.png">
-                  <img src="/Images/projects/vebuild/Careers%20--_%20job.png" alt="Careers — Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/vebuild/Careers --_ job.png">
+                  <img src="/Images/projects/vebuild/Careers --_ job.png" alt="Careers — Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers · Job</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/vebuild/Contact%20Us.png">
-                  <img src="/Images/projects/vebuild/Contact%20Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/vebuild/Contact Us.png">
+                  <img src="/Images/projects/vebuild/Contact Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
               </div>
@@ -837,24 +837,24 @@ export default function CaseStudyVebuild() {
                 {/* Row 1: Moving Right */}
                 <div className="ui-marquee-track ui-track-2" id="marquee-3">
                   {/* Set 1 */}
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Home%20Sceen%20-%20Main%20View.png">
-                    <img src="/Images/projects/vebuild/block/Home%20Sceen%20-%20Main%20View.png" alt="Home — Main View" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Home Sceen - Main View.png">
+                    <img src="/Images/projects/vebuild/block/Home Sceen - Main View.png" alt="Home — Main View" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Home · Main View</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our%20Company%20-%20Company%20Description.png">
-                    <img src="/Images/projects/vebuild/block/Our%20Company%20-%20Company%20Description.png" alt="Our Company — Description" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Company Description.png">
+                    <img src="/Images/projects/vebuild/block/Our Company - Company Description.png" alt="Our Company — Description" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Description</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our%20Company%20-%20Gallery.png">
-                    <img src="/Images/projects/vebuild/block/Our%20Company%20-%20Gallery.png" alt="Our Company — Gallery" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Gallery.png">
+                    <img src="/Images/projects/vebuild/block/Our Company - Gallery.png" alt="Our Company — Gallery" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Gallery</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our%20Company%20-%20Organization%20Structure.png">
-                    <img src="/Images/projects/vebuild/block/Our%20Company%20-%20Organization%20Structure.png" alt="Our Company — Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Organization Structure.png">
+                    <img src="/Images/projects/vebuild/block/Our Company - Organization Structure.png" alt="Our Company — Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Org Structure</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our%20Company%20-%20Certifications.png">
-                    <img src="/Images/projects/vebuild/block/Our%20Company%20-%20Certifications.png" alt="Our Company — Certifications" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Certifications.png">
+                    <img src="/Images/projects/vebuild/block/Our Company - Certifications.png" alt="Our Company — Certifications" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Certifications</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Projects.png">
@@ -862,24 +862,24 @@ export default function CaseStudyVebuild() {
                     <div className="ui-card-label">Projects</div>
                   </div>
                   {/* Set 2 (Duplicate for loop) */}
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Home%20Sceen%20-%20Main%20View.png">
-                    <img src="/Images/projects/vebuild/block/Home%20Sceen%20-%20Main%20View.png" alt="Home — Main View" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Home Sceen - Main View.png">
+                    <img src="/Images/projects/vebuild/block/Home Sceen - Main View.png" alt="Home — Main View" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Home · Main View</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our%20Company%20-%20Company%20Description.png">
-                    <img src="/Images/projects/vebuild/block/Our%20Company%20-%20Company%20Description.png" alt="Our Company — Description" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Company Description.png">
+                    <img src="/Images/projects/vebuild/block/Our Company - Company Description.png" alt="Our Company — Description" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Description</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our%20Company%20-%20Gallery.png">
-                    <img src="/Images/projects/vebuild/block/Our%20Company%20-%20Gallery.png" alt="Our Company — Gallery" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Gallery.png">
+                    <img src="/Images/projects/vebuild/block/Our Company - Gallery.png" alt="Our Company — Gallery" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Gallery</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our%20Company%20-%20Organization%20Structure.png">
-                    <img src="/Images/projects/vebuild/block/Our%20Company%20-%20Organization%20Structure.png" alt="Our Company — Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Organization Structure.png">
+                    <img src="/Images/projects/vebuild/block/Our Company - Organization Structure.png" alt="Our Company — Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Org Structure</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our%20Company%20-%20Certifications.png">
-                    <img src="/Images/projects/vebuild/block/Our%20Company%20-%20Certifications.png" alt="Our Company — Certifications" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Certifications.png">
+                    <img src="/Images/projects/vebuild/block/Our Company - Certifications.png" alt="Our Company — Certifications" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Certifications</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Projects.png">
@@ -891,12 +891,12 @@ export default function CaseStudyVebuild() {
                 {/* Row 2: Moving Left */}
                 <div className="ui-marquee-track ui-track-1" id="marquee-4">
                   {/* Set 1 */}
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our%20Products.png">
-                    <img src="/Images/projects/vebuild/block/Our%20Products.png" alt="Our Products" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Products.png">
+                    <img src="/Images/projects/vebuild/block/Our Products.png" alt="Our Products" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Products</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/group%20of%20companies.png">
-                    <img src="/Images/projects/vebuild/block/group%20of%20companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/group of companies.png">
+                    <img src="/Images/projects/vebuild/block/group of companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Group of Companies</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/CSR.png">
@@ -907,17 +907,17 @@ export default function CaseStudyVebuild() {
                     <img src="/Images/projects/vebuild/block/careers.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Careers</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/contact%20us.png">
-                    <img src="/Images/projects/vebuild/block/contact%20us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/contact us.png">
+                    <img src="/Images/projects/vebuild/block/contact us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Contact Us</div>
                   </div>
                   {/* Set 2 (Duplicate for loop) */}
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our%20Products.png">
-                    <img src="/Images/projects/vebuild/block/Our%20Products.png" alt="Our Products" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Products.png">
+                    <img src="/Images/projects/vebuild/block/Our Products.png" alt="Our Products" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Products</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/group%20of%20companies.png">
-                    <img src="/Images/projects/vebuild/block/group%20of%20companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/group of companies.png">
+                    <img src="/Images/projects/vebuild/block/group of companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Group of Companies</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/CSR.png">
@@ -928,8 +928,8 @@ export default function CaseStudyVebuild() {
                     <img src="/Images/projects/vebuild/block/careers.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Careers</div>
                   </div>
-                  <div className="ui-card" data-full="/Images/projects/vebuild/block/contact%20us.png">
-                    <img src="/Images/projects/vebuild/block/contact%20us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <div className="ui-card" data-full="/Images/projects/vebuild/block/contact us.png">
+                    <img src="/Images/projects/vebuild/block/contact us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Contact Us</div>
                   </div>
                 </div>
