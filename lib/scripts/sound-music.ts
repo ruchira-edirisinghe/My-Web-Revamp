@@ -319,6 +319,7 @@ export function initSoundMusic(): () => void {
   });
 
   bag.add(() => {
+    saveState();
     specRunning = false;
     cancelAnimationFrame(specRaf);
     try { bgAudio.pause(); } catch {}

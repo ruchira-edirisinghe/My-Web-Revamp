@@ -510,12 +510,15 @@
   right: 30px;
   background: none;
   border: none;
+  outline: none;
   color: #fff;
   font-size: 48px;
   cursor: pointer;
   z-index: 10001;
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0.7;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 #modal-close:hover {

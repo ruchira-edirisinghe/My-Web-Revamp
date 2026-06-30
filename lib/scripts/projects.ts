@@ -279,7 +279,7 @@ export function initProjects(): () => void {
   /* ══════════ 4. AUDIO PERSISTENCE ══════════ */
   (function () {
     const bgAudio = new Audio();
-    bgAudio.src = basePath + 'audio/ambient.mp3'; bgAudio.loop = true; bgAudio.volume = 0;
+    bgAudio.src = basePath + 'audio/ambient.mp3'; bgAudio.loop = true; bgAudio.volume = 0; bgAudio.playsInline = true;
     const MUSIC_VOLUME = 0.35;
     let musicStarted = false, musicMuted = false, spectrumPlaying = false;
 
@@ -317,8 +317,10 @@ export function initProjects(): () => void {
       }).catch(() => {});
     }
 
-    bag.on(window, 'beforeunload', () => { sessionStorage.setItem('musicTime', String(bgAudio.currentTime)); sessionStorage.setItem('musicMuted', String(musicMuted)); });
-    ['click', 'mousemove', 'keydown'].forEach(ev => bag.on(window, ev, startMusic, { once: true }));
+    function saveAudioState() { sessionStorage.setItem('musicTime', String(bgAudio.currentTime)); sessionStorage.setItem('musicMuted', String(musicMuted)); }
+    bag.on(window, 'beforeunload', saveAudioState);
+    bag.on(window, 'pagehide', saveAudioState);
+    ['click', 'mousemove', 'keydown', 'touchstart', 'pointerdown'].forEach(ev => bag.on(window, ev, startMusic, { once: true, passive: true }));
 
     const specCanvas = document.getElementById('spectrum-canvas-desktop');
     const specCanvasM = document.getElementById('spectrum-canvas');
@@ -370,6 +372,7 @@ export function initProjects(): () => void {
     }));
 
     bag.add(() => {
+      saveAudioState();
       specRunning = false; cancelAnimationFrame(specRaf);
       if (fadeInterval) clearInterval(fadeInterval);
       try { bgAudio.pause(); } catch {}
