@@ -32,6 +32,11 @@ a:focus:not(:focus-visible) { outline: none; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 body.skip-preloader main.page,
 body.page-transitioning main.page {
   animation: pageEnter 0.48s cubic-bezier(0.22, 0.61, 0.36, 1) both;
@@ -44,4 +49,236 @@ body.skip-preloader #music-btn-desktop,
 body.page-transitioning #music-btn-desktop {
   opacity: 0;
   animation: fadeUp 0.48s cubic-bezier(0.22, 0.61, 0.36, 1) 0.1s both;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE NAVIGATION SYSTEM — global base
+   Must live here so case study pages and the projects hub have a
+   working mobile nav on first visit, before any other page's CSS
+   has been accumulated in the session.
+   Individual page CSS files duplicate some of these rules — that
+   is harmless since they set the same values.
+═══════════════════════════════════════════════════════════════ */
+
+/* Shared glass circular button — used by #menu-btn in MobileMenu */
+.glass-round-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    background 0.3s ease,
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.3s ease;
+}
+.glass-round-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* Mobile top bar — fixed strip at top of viewport on mobile */
+#mobile-topbar {
+  position: fixed;
+  top: 18px;
+  left: 16px;
+  right: 16px;
+  z-index: 450;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.25s forwards;
+}
+
+.mobile-logo-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.mobile-logo {
+  height: 36px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+/* Hamburger button */
+#menu-btn {
+  position: relative;
+  gap: 5px;
+  flex-direction: column;
+}
+#menu-btn span {
+  width: 16px;
+  height: 1.7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#menu-btn.is-open span:first-child { transform: translateY(3.6px) rotate(45deg); }
+#menu-btn.is-open span:last-child  { transform: translateY(-3.6px) rotate(-45deg); }
+
+/* Mobile menu full-screen overlay */
+#mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 430;
+  background:
+    radial-gradient(circle at top center, rgba(120, 180, 255, 0.10), transparent 40%),
+    rgba(2, 3, 10, 0.72);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+#mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Menu items — Great Vibes style */
+.mobile-menu-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px 40px;
+}
+.mobile-menu-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 48px;
+  position: relative;
+  opacity: 0;
+  transform: scale(0.2);
+  background: transparent;
+  border: none;
+  white-space: nowrap;
+  text-align: center;
+  transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.mobile-menu-link:hover { transform: translateY(-3px) scale(1.04); }
+.mobile-menu-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(38px, 10vw, 68px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  transition: color 0.38s ease, text-shadow 0.38s ease, letter-spacing 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.mobile-menu-link:hover .mobile-menu-title {
+  color: #fff;
+  letter-spacing: 0.07em;
+  text-shadow:
+    0 0 16px rgba(140, 215, 255, 0.9),
+    0 0 40px rgba(80, 165, 255, 0.55),
+    0 0 80px rgba(60, 120, 255, 0.28);
+}
+.mobile-menu-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(10px, 2.5vw, 12px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 2px;
+  transition: color 0.38s ease, transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.mobile-menu-link:hover .mobile-menu-desc {
+  color: rgba(255, 255, 255, 0.62);
+  transform: translateY(-1px);
+}
+.mobile-menu-link.active .mobile-menu-title {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(140, 215, 255, 0.7), 0 0 32px rgba(80, 165, 255, 0.4);
+}
+.mobile-menu-link.active .mobile-menu-desc { color: rgba(140, 210, 255, 0.65); }
+.mobile-menu-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(140, 210, 255, 0.85);
+}
+
+/* Close button shown when the mobile menu is open */
+#menu-close-mobile {
+  position: fixed;
+  top: 18px;
+  right: 16px;
+  z-index: 460;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #fff;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, background 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+#menu-close-mobile svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+}
+#menu-close-mobile.visible { opacity: 1; pointer-events: all; }
+#menu-close-mobile:hover { background: rgba(255, 255, 255, 0.15); transform: rotate(90deg) scale(1.1); }
+#menu-close-mobile:active { transform: rotate(90deg) scale(0.88) !important; transition: transform 0.08s ease !important; }
+
+body.menu-open { overflow: hidden; }
+
+@media (max-width: 900px) {
+  #mobile-topbar { display: flex; }
+  #mobile-menu  { display: flex; }
+
+  /* Reset #music-btn from its fixed desktop position into the topbar's flex layout.
+     Uses 900px to cover the projects hub's wider mobile breakpoint (projects.css
+     shows the topbar at both 768px and 900px). Specificity (0,2,0) beats any
+     single-ID rule such as #music-btn{position:fixed} from home or page CSS. */
+  #mobile-topbar #music-btn {
+    position: static;
+    top: auto;
+    left: auto;
+    animation: none;
+    opacity: 1;
+    flex-shrink: 0;
+  }
 }
