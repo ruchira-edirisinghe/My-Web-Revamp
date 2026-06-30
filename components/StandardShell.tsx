@@ -66,8 +66,17 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
 
   // Smooth page-enter transition on client-side navigations + close mobile menu
   useEffect(() => {
-    if (isFirstMount.current) { isFirstMount.current = false; return; }
-    // Close any open mobile menu
+    const firstMount = isFirstMount.current;
+    if (firstMount) isFirstMount.current = false;
+
+    // Always clear stale modal/overlay state — even on first mount, so a previously
+    // active modal from a gallery page can't bleed in with display:none on main.
+    document.body.classList.remove('modal-active', 'modal-open');
+    document.body.style.overflow = '';
+
+    if (firstMount) return;
+
+    // Close any open mobile menu (only on subsequent client-side navigations)
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu?.classList.contains('open')) {
       mobileMenu.classList.remove('open');
@@ -77,9 +86,6 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
       document.getElementById('menu-close-mobile')?.classList.remove('visible');
       document.body.classList.remove('menu-open');
     }
-    // Clear any stale modal/overlay body state left by the previous page's script
-    document.body.classList.remove('modal-active', 'modal-open');
-    document.body.style.overflow = '';
     // Trigger page entry animation
     document.body.classList.add('page-transitioning');
     const t = setTimeout(() => document.body.classList.remove('page-transitioning'), 550);

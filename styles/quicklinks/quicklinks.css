@@ -678,29 +678,11 @@ main {
   z-index: 1;
 }
 
-.social-card::after, .stream-card::after {
-  content: '';
-  position: absolute;
-  bottom: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 140px;
-  border-radius: 50%;
-  background: var(--cc-bloom, radial-gradient(ellipse, rgba(92, 224, 255, 0.07) 0%, transparent 70%));
-  pointer-events: none;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-}
-
 .social-card:hover, .stream-card:hover {
   border-color: var(--cc-color, #fff);
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65), 0 0 80px var(--cc-glow, rgba(255, 255, 255, 0.12));
   transform: translateY(-10px) scale(1.03);
   background: rgba(255, 255, 255, 0.09);
-}
-
-.social-card:hover::after, .stream-card:hover::after {
-  transform: translateX(-50%) translateY(-10px) scale(1.1);
 }
 
 .sc-icon-wrap, .pc-icon-wrap, .brand-icon { 
@@ -1600,6 +1582,14 @@ footer {
   #mobile-topbar { display: flex; }
   #mobile-menu { display: flex; }
   #music-btn-desktop { display: none !important; }
+  #mobile-topbar #music-btn {
+    position: static;
+    top: auto;
+    left: auto;
+    animation: none;
+    opacity: 1;
+    flex-shrink: 0;
+  }
   main { padding: 112px 24px 60px; }
   .dual-grid { grid-template-columns: 1fr; }
   .grid-2 { grid-template-columns: 1fr; }
