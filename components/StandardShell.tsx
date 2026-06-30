@@ -31,6 +31,25 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
   const pathname = usePathname();
   const isFirstMount = useRef(true);
 
+  // Restore body state if the browser serves this page from bfcache
+  useEffect(() => {
+    function handlePageShow(e: PageTransitionEvent) {
+      if (!e.persisted) return;
+      document.body.classList.remove('modal-active', 'modal-open', 'menu-open', 'page-transitioning');
+      document.body.style.overflow = '';
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu) {
+        mobileMenu.classList.remove('open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+      document.getElementById('menu-btn')?.classList.remove('is-open');
+      document.getElementById('menu-btn')?.setAttribute('aria-expanded', 'false');
+      document.getElementById('menu-close-mobile')?.classList.remove('visible');
+    }
+    window.addEventListener('pageshow', handlePageShow);
+    return () => window.removeEventListener('pageshow', handlePageShow);
+  }, []);
+
   // Skip the full preloader on revisits within the same session
   useLayoutEffect(() => {
     if (sessionStorage.getItem('site_visited')) {
@@ -58,10 +77,17 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
       document.getElementById('menu-close-mobile')?.classList.remove('visible');
       document.body.classList.remove('menu-open');
     }
+    // Clear any stale modal/overlay body state left by the previous page's script
+    document.body.classList.remove('modal-active', 'modal-open');
+    document.body.style.overflow = '';
     // Trigger page entry animation
     document.body.classList.add('page-transitioning');
     const t = setTimeout(() => document.body.classList.remove('page-transitioning'), 550);
-    return () => clearTimeout(t);
+    return () => {
+      clearTimeout(t);
+      // Remove page-transitioning if this shell unmounts mid-transition (e.g. navigating to home)
+      document.body.classList.remove('page-transitioning');
+    };
   }, [pathname]);
 
   return (
