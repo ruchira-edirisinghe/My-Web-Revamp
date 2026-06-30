@@ -382,6 +382,16 @@ body.skip-preloader #music-btn.playing {
     top: 18px;
     left: 16px;
   }
+  /* Close button mirrors the music button position on mobile:
+     right: 16px to match the left: 16px gutter; top matches the music button. */
+  #menu-close {
+    top: 28px;
+    right: 16px;
+  }
+  body.skip-preloader #menu-close {
+    top: 18px;
+    right: 16px;
+  }
 }
 
 /* Prevent other pages' CSS from overriding the home hero layout.

@@ -1001,6 +1001,8 @@ footer {
   justify-content: center;
   gap: 10px;
   margin: 0 0 44px;
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.65s forwards;
 }
 .filter-btn {
   font-family: 'Montserrat', sans-serif;
