@@ -260,7 +260,7 @@ body::after {
   top: 18px;
   left: 16px;
   right: 16px;
-  z-index: 20000;
+  z-index: 450;
   display: none;
   align-items: center;
   justify-content: space-between;
