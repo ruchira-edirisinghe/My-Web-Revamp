@@ -386,8 +386,8 @@
       flex-direction: row;
       align-items: flex-start;
       gap: 0;
-      width: 110%;
-      max-width: 110%;
+      width: 100%;
+      max-width: 100%;
       margin: 16px auto 0;
       padding: 0;
     }
@@ -969,7 +969,7 @@
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(32px);
       }
 
       to {

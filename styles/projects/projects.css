@@ -269,7 +269,7 @@ body::after {
 }
 
 @media (max-width: 768px) {
-  #mobile-topbar { display: flex !important; opacity: 1 !important; }
+  #mobile-topbar { display: flex !important; }
 }
 
 /* Stretched Link for Clickable Cards */
@@ -916,9 +916,8 @@ footer {
 
 @media (max-width: 900px) {
   #navbar-wrap { display: none !important; }
-  #mobile-topbar { 
-    display: flex !important; 
-    opacity: 1 !important; 
+  #mobile-topbar {
+    display: flex !important;
   }
   #music-btn-desktop { display: none !important; }
   main { padding: 140px 24px 60px; }

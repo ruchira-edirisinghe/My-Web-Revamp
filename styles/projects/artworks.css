@@ -530,12 +530,14 @@
   .modal-overlay { padding: 20px; }
   #modal-close { top: 20px; right: 20px; font-size: 40px; }
   
-  /* Hide page elements when modal is active on mobile */
-  body.modal-active #mobile-topbar,
-  body.modal-active #navbar-wrap,
-  body.modal-active main,
-  body.modal-active footer,
-  body.modal-active .top-content-fade {
+  /* Hide page elements when modal is active on mobile.
+     Scoped to data-page="projects" so the rule does not bleed to other pages
+     if the user navigates away while a modal is open. */
+  body[data-page="projects"].modal-active #mobile-topbar,
+  body[data-page="projects"].modal-active #navbar-wrap,
+  body[data-page="projects"].modal-active main,
+  body[data-page="projects"].modal-active footer,
+  body[data-page="projects"].modal-active .top-content-fade {
     display: none !important;
   }
 }

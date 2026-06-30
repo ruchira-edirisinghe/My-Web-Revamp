@@ -1613,7 +1613,7 @@ body.menu-open {
     display: flex;
   }
 
-  #music-btn {
+  #mobile-topbar #music-btn {
     position: static;
     top: auto;
     left: auto;
