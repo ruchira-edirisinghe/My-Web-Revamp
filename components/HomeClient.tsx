@@ -31,7 +31,19 @@ export default function HomeClient() {
       initPreloader(),
       initSoundMusic(),
     ];
-    return () => disposers.forEach((d) => d && d());
+
+    // Restore body state if the browser serves this page from bfcache
+    function handlePageShow(e: PageTransitionEvent) {
+      if (!e.persisted) return;
+      document.body.classList.remove('modal-active', 'modal-open', 'menu-open', 'page-transitioning');
+      document.body.style.overflow = '';
+    }
+    window.addEventListener('pageshow', handlePageShow);
+
+    return () => {
+      disposers.forEach((d) => d && d());
+      window.removeEventListener('pageshow', handlePageShow);
+    };
   }, []);
 
   return (
