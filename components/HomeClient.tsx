@@ -64,7 +64,7 @@ export default function HomeClient() {
       <main className="page">
         <div className="hero">
           <div className="photo-wrapper" id="photo-wrapper">
-            <img id="hero-img" src="/Images/mynew.jpg" alt="Ruchira Edirisinghe" />
+            <img id="hero-img" src="/Images/mynew.png" alt="Ruchira Edirisinghe" />
           </div>
           <div className="hero-text-group">
             <p className="subtitle">

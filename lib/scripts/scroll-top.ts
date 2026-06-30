@@ -14,7 +14,7 @@ export function initScrollTop(): () => void {
   /* ── Styles ── */
   const css =
     '.scroll-top-btn{position:fixed;right:16px;bottom:36px;z-index:390;display:flex;' +
-    'flex-direction:column;align-items:center;gap:12px;background:none;border:0;padding:8px 6px;' +
+    'flex-direction:column;align-items:center;gap:12px;background:none;border:0;outline:none;padding:8px 6px;' +
     'cursor:pointer;color:rgba(255,255,255,0.5);opacity:0;visibility:hidden;transform:translateY(14px);' +
     'transition:opacity .45s ease,visibility .45s ease,transform .45s cubic-bezier(.22,1,.36,1),color .3s ease;' +
     "font-family:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-tap-highlight-color:transparent;}" +
