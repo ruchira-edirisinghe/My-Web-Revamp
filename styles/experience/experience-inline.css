@@ -778,6 +778,7 @@
         perspective: none !important;
         -webkit-mask-image: none !important;
         mask-image: none !important;
+        touch-action: auto !important;
       }
 
       /* Hide extra structural spacing in the skills section only */
