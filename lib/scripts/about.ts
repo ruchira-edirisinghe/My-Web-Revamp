@@ -617,34 +617,7 @@ export function initAbout(): () => void {
     });
   })();
 
-  /* ══════════ 5. CV MODAL ══════════ */
-  (function () {
-    const overlay = document.getElementById('cv-modal-overlay');
-    const closeBtn = document.getElementById('cv-close-btn');
-    const openBtn = document.querySelector('.hero-cta-primary');
-    if (!overlay) return;
-
-    function openCV() {
-      if (closeBtn) closeBtn.classList.add('visible');
-      overlay.setAttribute('aria-hidden', 'false');
-      overlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeCV() {
-      if (closeBtn) closeBtn.classList.remove('visible');
-      overlay.classList.remove('active');
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    if (openBtn) bag.on(openBtn, 'click', e => { e.preventDefault(); openCV(); });
-    if (closeBtn) bag.on(closeBtn, 'click', () => closeCV());
-    bag.on(overlay, 'click', e => { if (e.target === overlay) closeCV(); });
-    overlay.querySelectorAll('.cv-btn').forEach(btn => bag.on(btn, 'click', () => closeCV()));
-    bag.on(document, 'keydown', e => { if (e.key === 'Escape') closeCV(); });
-
-    bag.add(() => { document.body.style.overflow = ''; });
-  })();
+  /* CV modal is controlled by AboutClient React state. */
 
   /* ══════════ 6. LOGO TICKER ══════════ */
   (function () {

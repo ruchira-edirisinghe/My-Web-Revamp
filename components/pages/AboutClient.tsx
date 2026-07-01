@@ -384,7 +384,7 @@ export default function AboutClient() {
                   
       
                   
-                  <button id="cv-close-btn" className="cv-modal-close" aria-label="Close" onClick={() => setIsCvModalOpen(false)}>✕</button>
+                  <button id="cv-close-btn" className={`cv-modal-close ${isCvModalOpen ? 'visible' : ''}`} aria-label="Close" onClick={() => setIsCvModalOpen(false)}>✕</button>
       
                   
                   <div className="cv-modal-glow"></div>
