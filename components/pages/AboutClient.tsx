@@ -1,15 +1,33 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { cssVars } from '@/lib/css';
 import { initAbout } from '@/lib/scripts/about';
 
 export default function AboutClient() {
+  const [isCvModalOpen, setIsCvModalOpen] = useState(false);
+
   useEffect(() => {
     const disposers = [initAbout()];
     return () => disposers.forEach((d) => d && d());
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isCvModalOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isCvModalOpen]);
+
+  useEffect(() => {
+    if (!isCvModalOpen) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsCvModalOpen(false);
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isCvModalOpen]);
 
   return (
     <StandardShell
@@ -339,18 +357,25 @@ export default function AboutClient() {
       
             
             <div className="hero-intro-ctas">
-              <a href="#" className="hero-cta-primary">
+              <button type="button" className="hero-cta-primary" onClick={() => setIsCvModalOpen(true)}>
                 Download CV
                 <svg viewBox="0 0 24 24">
                   <line x1="7" y1="17" x2="17" y2="7" />
                   <polyline points="7 7 17 7 17 17" />
                 </svg>
-              </a>
+              </button>
               <Link href="/projects" className="hero-cta-ghost">View My Work</Link>
             </div>
       
             
-            <div id="cv-modal-overlay" aria-hidden="true">
+            <div
+              id="cv-modal-overlay"
+              className={isCvModalOpen ? 'active' : undefined}
+              aria-hidden={!isCvModalOpen}
+              onClick={(event) => {
+                if (event.target === event.currentTarget) setIsCvModalOpen(false);
+              }}
+            >
               <div className="cv-modal-wrapper">
       
                 <div className="cv-modal-box" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title">
@@ -359,7 +384,7 @@ export default function AboutClient() {
                   
       
                   
-                  <button id="cv-close-btn" aria-label="Close">✕</button>
+                  <button id="cv-close-btn" className="cv-modal-close" aria-label="Close" onClick={() => setIsCvModalOpen(false)}>✕</button>
       
                   
                   <div className="cv-modal-glow"></div>
@@ -392,7 +417,7 @@ export default function AboutClient() {
       
                   
                   <div className="cv-modal-actions">
-                    <a href="/docs/ruchiraedirisinghe-cv.pdf" download="Ruchira_Edirisinghe_CV.pdf"
+                    <a href="/docs/ruchiraedirisinghe-cv.pdf" download="Ruchira_Edirisinghe_CV.pdf" onClick={() => setIsCvModalOpen(false)}
                       className="cv-btn cv-btn-primary">
                       <svg viewBox="0 0 24 24" fill="none">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" strokeWidth="1.7"
@@ -404,7 +429,7 @@ export default function AboutClient() {
                       </svg>
                       Download CV
                     </a>
-                    <a href="https://drive.google.com/file/d/1VOlUmLOLnbNnXnkU8TE6Y9E5qZbVBvOY/view?usp=sharing/view"
+                    <a href="https://drive.google.com/file/d/1VOlUmLOLnbNnXnkU8TE6Y9E5qZbVBvOY/view?usp=sharing/view" onClick={() => setIsCvModalOpen(false)}
                       target="_blank" rel="noopener noreferrer" className="cv-btn cv-btn-ghost">
                       <svg viewBox="0 0 24 24" fill="none">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" strokeWidth="1.7"
