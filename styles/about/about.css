@@ -2551,6 +2551,7 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  border: 0;
   background: rgba(255, 255, 255, 0.14);
   color: #fff;
   font-family: 'Montserrat', sans-serif;
