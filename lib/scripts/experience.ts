@@ -13,6 +13,7 @@
    disconnected; Web Audio closed; appended nodes removed on dispose.
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { wireAmbientControls } from './ambient-audio';
 
 export function initExperience(): () => void {
   const bag = makeBag();
@@ -431,61 +432,11 @@ export function initExperience(): () => void {
     let audioCtx = null;
     function getAC() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); if (audioCtx.state === 'suspended') audioCtx.resume(); return audioCtx; }
 
-    const bgAudio = new Audio();
-    bgAudio.src = basePath + 'audio/ambient.mp3'; bgAudio.loop = true; bgAudio.volume = 0; bgAudio.preload = 'auto';
-    const MUSIC_VOLUME = 0.35;
-    let musicMuted = false, musicStarted = false;
-
-    const fadeIntervals = [];
-    function fadeAudioTo(target, durationMs) {
-      const steps = 50, stepMs = durationMs / steps, delta = (target - bgAudio.volume) / steps;
-      let count = 0;
-      const iv = setInterval(() => { count++; bgAudio.volume = Math.max(0, Math.min(1, bgAudio.volume + delta)); if (count >= steps) { clearInterval(iv); bgAudio.volume = target; } }, stepMs);
-      fadeIntervals.push(iv);
-    }
-
+    /* Ambient music — one shared <audio> (lib/scripts/ambient-audio.ts) plays
+       continuously across every page and remembers its paused state; this engine
+       only mirrors the playing flag into its spectrum visualiser below. */
     let spectrumPlaying = false;
-
-    function startMusic() {
-      if (musicStarted) return;
-      musicStarted = true;
-      bgAudio.volume = 0;
-
-      const savedTime = parseFloat(sessionStorage.getItem('musicTime') || '0');
-      const savedMuted = sessionStorage.getItem('musicMuted') === 'true';
-      if (savedTime > 0) bgAudio.currentTime = savedTime;
-
-      if (savedMuted) {
-        musicMuted = true;
-        spectrumPlaying = false;
-        return;
-      }
-
-      bgAudio.play().then(() => {
-        fadeAudioTo(MUSIC_VOLUME, 800);
-        document.querySelectorAll('#music-btn-desktop, #music-btn').forEach(b => b && b.classList.add('playing'));
-        spectrumPlaying = true;
-      }).catch(() => { musicStarted = false; });
-    }
-
-    // Save position before navigating away
-    function savePos() {
-      sessionStorage.setItem('musicTime', String(bgAudio.currentTime));
-      sessionStorage.setItem('musicMuted', String(musicMuted));
-    }
-    bag.on(window, 'pagehide', savePos);
-    bag.on(window, 'beforeunload', savePos);
-
-    function onFirstInteraction() {
-      ['mousemove', 'mouseenter', 'pointerdown', 'touchstart', 'keydown', 'click'].forEach(ev => window.removeEventListener(ev, onFirstInteraction));
-      startMusic();
-    }
-    ['mousemove', 'mouseenter', 'pointerdown', 'touchstart', 'keydown', 'click'].forEach(ev => bag.on(window, ev, onFirstInteraction, { once: true, passive: ev !== 'keydown' }));
-
-    /* Music btns — desktop fixed button + mobile topbar button, kept in sync */
-    const musicBtnDesktop = document.getElementById('music-btn-desktop');
-    const musicBtnMobile = document.getElementById('music-btn');
-    const allMusicBtns = [musicBtnDesktop, musicBtnMobile].filter(Boolean);
+    bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; }));
 
     const specCanvas = document.getElementById('spectrum-canvas-desktop');
     const specCanvasM = document.getElementById('spectrum-canvas');
@@ -524,24 +475,6 @@ export function initExperience(): () => void {
       specRaf = requestAnimationFrame(drawSpectrum);
     }
     specRaf = requestAnimationFrame(drawSpectrum);
-
-    function setMusicPlaying(playing) {
-      allMusicBtns.forEach(btn => { if (!btn) return; playing ? btn.classList.add('playing') : btn.classList.remove('playing'); });
-      spectrumPlaying = playing;
-    }
-
-    allMusicBtns.forEach(btn => {
-      if (!btn) return;
-      bag.on(btn, 'click', e => {
-        e.stopPropagation();
-        if (!musicStarted) { startMusic(); musicMuted = false; }
-        else {
-          musicMuted = !musicMuted;
-          if (musicMuted) { fadeAudioTo(0, 600); setMusicPlaying(false); }
-          else { bgAudio.play().catch(() => { }); fadeAudioTo(MUSIC_VOLUME, 600); setMusicPlaying(true); }
-        }
-      });
-    });
 
     /* Click & hover sounds */
     function playClick(isBtn) {
@@ -588,8 +521,6 @@ export function initExperience(): () => void {
     bag.add(() => {
       cursorRunning = false; cancelAnimationFrame(cursorRaf);
       specRunning = false; cancelAnimationFrame(specRaf);
-      fadeIntervals.forEach(clearInterval);
-      try { bgAudio.pause(); } catch { }
       try { if (audioCtx) audioCtx.close(); } catch { }
       document.querySelectorAll('.click-particle').forEach(p => p.remove());
     });

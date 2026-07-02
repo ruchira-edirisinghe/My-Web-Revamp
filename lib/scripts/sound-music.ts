@@ -4,6 +4,7 @@
    (faithful port of styles/home/sound-music.js)
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { wireAmbientControls } from './ambient-audio';
 
 export function initSoundMusic(): () => void {
   const bag = makeBag();
@@ -16,117 +17,19 @@ export function initSoundMusic(): () => void {
     return audioCtx;
   }
 
-  let musicMuted    = false;
-  let musicStarted  = false;
   let spectrumPlaying = false;
 
-  const bgAudio = new Audio('/audio/ambient.mp3');
-  bgAudio.loop      = true;
-  bgAudio.volume    = 0;
-  bgAudio.preload   = 'auto';
-  bgAudio.playsInline = true;
-
-  const MUSIC_VOLUME  = 0.25;
-  const musicBtn      = document.getElementById('music-btn');
-  const photoWrapper  = document.getElementById('photo-wrapper');
-  const specCanvas    = document.getElementById('spectrum-canvas');
+  const musicBtn   = document.getElementById('music-btn');
+  const specCanvas = document.getElementById('spectrum-canvas');
   if (!musicBtn || !specCanvas) return () => {};
 
-  /* ── Volume fade helper ── */
-  function fadeAudioTo(target, durationMs) {
-    const start     = bgAudio.volume;
-    const diff      = target - start;
-    const startTime = performance.now();
-
-    function step(now) {
-      const progress  = Math.min((now - startTime) / durationMs, 1);
-      bgAudio.volume  = start + diff * progress;
-      if (progress < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  /* ── Start music ── */
-  async function startMusic(force = false) {
-    if (musicStarted && !force) return;
-    try {
-      await getAC().resume();
-      const savedTime = parseFloat(sessionStorage.getItem('musicTime') || '0');
-      const shouldMute = !force && sessionStorage.getItem('musicMuted') === 'true';
-
-      bgAudio.muted  = false;
-      bgAudio.volume = 0;
-      if (savedTime > 0) bgAudio.currentTime = savedTime;
-
-      if (!shouldMute) {
-        await bgAudio.play();
-        sessionStorage.setItem('musicMuted', 'false');
-      }
-
-      musicStarted    = true;
-      musicMuted      = shouldMute;
-      spectrumPlaying = !shouldMute;
-      if (!shouldMute) musicBtn.classList.add('playing');
-      if (!shouldMute) fadeAudioTo(MUSIC_VOLUME, 1800);
-    } catch (err) {
-      console.warn('Playback blocked:', err);
-    }
-  }
-
-  /* ── Persist playback position across page navigations ── */
-  function saveState() {
-    sessionStorage.setItem('musicTime',  String(bgAudio.currentTime));
-    sessionStorage.setItem('musicMuted', String(musicMuted));
-  }
-  bag.on(window, 'pagehide',     saveState);
-  bag.on(window, 'beforeunload', saveState);
-
-  /* ── Stop music ── */
-  function stopMusic() {
-    fadeAudioTo(0, 500);
-    setTimeout(() => { bgAudio.pause(); }, 520);
-    musicBtn.classList.remove('playing');
-    spectrumPlaying = false;
-    musicMuted      = true;
-  }
-
-  /* ── Toggle ── */
-  function toggleMusic() {
-    if (!musicStarted || bgAudio.paused || musicMuted) {
-      startMusic(true);
-    } else {
-      stopMusic();
-    }
-  }
-
-  bag.on(musicBtn, 'click', e => {
-    e.stopPropagation();
-    toggleMusic();
-  });
-
-  /* ── Start triggers ── */
-  function isTouchDevice() {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
-  }
-
-  let musicTriggered = false;
-  function triggerMusic() {
-    if (musicTriggered) return;
-    musicTriggered = true;
-    startMusic(true);
-  }
-
-  if (photoWrapper) {
-    bag.on(photoWrapper, 'mouseenter', triggerMusic, { once: true });
-  }
-  document.querySelectorAll('a, button, .btn, .menu-item').forEach(el => {
-    bag.on(el, 'mouseenter', triggerMusic, { once: true });
-  });
-  bag.on(window, 'click', triggerMusic, { once: true });
-  if (isTouchDevice()) {
-    bag.on(window, 'touchstart',  triggerMusic, { once: true, passive: true });
-    bag.on(window, 'pointerdown', triggerMusic, { once: true, passive: true });
-  }
+  /* ── Ambient music ──
+     Play/pause, volume fades, and cross-page continuity are owned by the shared
+     singleton (lib/scripts/ambient-audio.ts) — one <audio> element persists for
+     the whole SPA session, so navigating never restarts the track and a pause on
+     any page stays paused on every other page. This engine only mirrors the
+     playing state into `spectrumPlaying` to animate its visualiser. */
+  bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; }));
 
   /* ════════════════════════════════════════
      SPECTRUM ANIMATION
@@ -319,10 +222,8 @@ export function initSoundMusic(): () => void {
   });
 
   bag.add(() => {
-    saveState();
     specRunning = false;
     cancelAnimationFrame(specRaf);
-    try { bgAudio.pause(); } catch {}
     try { if (audioCtx) audioCtx.close(); } catch {}
     document.querySelectorAll('.click-particle').forEach(p => p.remove());
   });

@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { cssVars } from '@/lib/css';
@@ -7,6 +8,12 @@ import { initAbout } from '@/lib/scripts/about';
 
 export default function AboutClient() {
   const [isCvModalOpen, setIsCvModalOpen] = useState(false);
+  // Portal target (document.body) is only available after mount on the client.
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const disposers = [initAbout()];
@@ -368,6 +375,7 @@ export default function AboutClient() {
             </div>
       
             
+            {isMounted && createPortal(
             <div
               id="cv-modal-overlay"
               className={isCvModalOpen ? 'active' : undefined}
@@ -442,8 +450,10 @@ export default function AboutClient() {
       
                 </div>
               </div>
-            </div>
-      
+            </div>,
+            document.body
+            )}
+
           </div>
           <div className="logo-ticker-wrap">
             <div className="logo-ticker-inner" id="logo-ticker-inner">

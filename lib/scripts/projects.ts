@@ -5,6 +5,7 @@
    (faithful port of styles/projects/projects.js)
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { wireAmbientControls } from './ambient-audio';
 
 export function initProjects(): () => void {
   const bag = makeBag();
@@ -278,49 +279,11 @@ export function initProjects(): () => void {
 
   /* ══════════ 4. AUDIO PERSISTENCE ══════════ */
   (function () {
-    const bgAudio = new Audio();
-    bgAudio.src = basePath + 'audio/ambient.mp3'; bgAudio.loop = true; bgAudio.volume = 0; bgAudio.playsInline = true;
-    const MUSIC_VOLUME = 0.35;
-    let musicStarted = false, musicMuted = false, spectrumPlaying = false;
-
-    let fadeInterval = null;
-    function fadeAudio(target, duration = 800) {
-      if (fadeInterval) clearInterval(fadeInterval);
-      const steps = 20;
-      const stepTime = duration / steps;
-      const startVol = bgAudio.volume;
-      const volDiff = target - startVol;
-      let currentStep = 0;
-
-      fadeInterval = setInterval(() => {
-        currentStep++;
-        bgAudio.volume = Math.max(0, Math.min(1, startVol + (volDiff * (currentStep / steps))));
-        if (currentStep >= steps) {
-          clearInterval(fadeInterval);
-          bgAudio.volume = target;
-          if (target === 0 && !musicMuted) bgAudio.pause();
-        }
-      }, stepTime);
-    }
-
-    function startMusic() {
-      if (musicStarted) return;
-      musicStarted = true;
-      const savedTime = parseFloat(sessionStorage.getItem('musicTime') || '0');
-      const savedMuted = sessionStorage.getItem('musicMuted') === 'true';
-      if (savedTime > 0) bgAudio.currentTime = savedTime;
-      if (savedMuted) { musicMuted = true; return; }
-      bgAudio.play().then(() => {
-        fadeAudio(MUSIC_VOLUME, 1000);
-        document.querySelectorAll('#music-btn-desktop, #music-btn').forEach(b => b && b.classList.add('playing'));
-        spectrumPlaying = true;
-      }).catch(() => {});
-    }
-
-    function saveAudioState() { sessionStorage.setItem('musicTime', String(bgAudio.currentTime)); sessionStorage.setItem('musicMuted', String(musicMuted)); }
-    bag.on(window, 'beforeunload', saveAudioState);
-    bag.on(window, 'pagehide', saveAudioState);
-    ['click', 'mousemove', 'keydown', 'touchstart', 'pointerdown'].forEach(ev => bag.on(window, ev, startMusic, { once: true, passive: true }));
+    /* Ambient music — one shared <audio> (lib/scripts/ambient-audio.ts) plays
+       continuously across every page and remembers its paused state; this engine
+       only mirrors the playing flag into its spectrum visualiser below. */
+    let spectrumPlaying = false;
+    bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; }));
 
     const specCanvas = document.getElementById('spectrum-canvas-desktop');
     const specCanvasM = document.getElementById('spectrum-canvas');
@@ -356,26 +319,8 @@ export function initProjects(): () => void {
       else if (!specRunning) { specRunning = true; lastSpec = performance.now(); specRaf = requestAnimationFrame(drawSpectrum); }
     });
 
-    document.querySelectorAll('#music-btn-desktop, #music-btn').forEach(btn => bag.on(btn, 'click', e => {
-      e.stopPropagation();
-      musicMuted = !musicMuted;
-      if (musicMuted) {
-        fadeAudio(0, 600);
-        spectrumPlaying = false;
-        document.querySelectorAll('#music-btn-desktop, #music-btn').forEach(b => b.classList.remove('playing'));
-      } else {
-        bgAudio.play().catch(() => {});
-        fadeAudio(MUSIC_VOLUME, 600);
-        spectrumPlaying = true;
-        document.querySelectorAll('#music-btn-desktop, #music-btn').forEach(b => b.classList.add('playing'));
-      }
-    }));
-
     bag.add(() => {
-      saveAudioState();
       specRunning = false; cancelAnimationFrame(specRaf);
-      if (fadeInterval) clearInterval(fadeInterval);
-      try { bgAudio.pause(); } catch {}
     });
   })();
 

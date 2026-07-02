@@ -6,6 +6,7 @@
    (faithful port of styles/contact/contact.js)
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { wireAmbientControls } from './ambient-audio';
 
 export function initContact(): () => void {
   const bag = makeBag();
@@ -454,62 +455,11 @@ export function initContact(): () => void {
       return audioContext;
     }
 
-    const bgAudio = new Audio(basePath + 'audio/ambient.mp3');
-    bgAudio.loop = true;
-    bgAudio.volume = 0;
-    bgAudio.preload = 'auto';
-
-    let musicMuted = false, musicStarted = false;
+    /* Ambient music — one shared <audio> (lib/scripts/ambient-audio.ts) plays
+       continuously across every page and remembers its paused state; this engine
+       only mirrors the playing flag into its spectrum visualiser below. */
     let spectrumPlaying = false;
-    const TARGET_VOL = 0.35;
-
-    const fadeIntervals: any[] = [];
-    function fadeAudioTo(target, duration) {
-      const steps = 50, stepMs = duration / steps;
-      const delta = (target - bgAudio.volume) / steps;
-      let count = 0;
-      const iv = setInterval(() => {
-        count++;
-        bgAudio.volume = Math.max(0, Math.min(1, bgAudio.volume + delta));
-        if (count >= steps) { clearInterval(iv); bgAudio.volume = target; }
-      }, stepMs);
-      fadeIntervals.push(iv);
-    }
-
-    function startMusic() {
-      if (musicStarted) return;
-      musicStarted = true;
-      bgAudio.volume = 0;
-
-      const savedTime = parseFloat(sessionStorage.getItem('musicTime') || '0');
-      const savedMuted = sessionStorage.getItem('musicMuted') === 'true';
-      if (savedTime > 0) bgAudio.currentTime = savedTime;
-
-      if (savedMuted) {
-        musicMuted = true;
-        spectrumPlaying = false;
-        return;
-      }
-
-      bgAudio.play().then(() => {
-        fadeAudioTo(TARGET_VOL, 800);
-        document.querySelectorAll('#music-btn-desktop, #music-btn').forEach(b => b && b.classList.add('playing'));
-        spectrumPlaying = true;
-      }).catch(() => { musicStarted = false; });
-    }
-
-    function savePos() {
-      sessionStorage.setItem('musicTime', String(bgAudio.currentTime));
-      sessionStorage.setItem('musicMuted', String(musicMuted));
-    }
-    bag.on(window, 'pagehide', savePos);
-    bag.on(window, 'beforeunload', savePos);
-
-    function onFirstInteraction() {
-      ['mousemove', 'mouseenter', 'pointerdown', 'touchstart', 'keydown', 'click'].forEach(ev => window.removeEventListener(ev, onFirstInteraction));
-      startMusic();
-    }
-    ['mousemove', 'mouseenter', 'pointerdown', 'touchstart', 'keydown', 'click'].forEach(ev => bag.on(window, ev, onFirstInteraction, { once: true, passive: true }));
+    bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; }));
 
     // Spectrum bars config
     const SW = 26, SH = 18, BAR_COUNT = 7, BAR_W = 2, BAR_GAP = 2;
@@ -561,27 +511,6 @@ export function initContact(): () => void {
       specRaf = requestAnimationFrame(drawSpectrum);
     }
     specRaf = requestAnimationFrame(drawSpectrum);
-
-    function toggleMusic() {
-      if (!musicStarted) { startMusic(); musicMuted = false; }
-      else {
-        musicMuted = !musicMuted;
-        if (musicMuted) {
-          fadeAudioTo(0, 600);
-          document.querySelectorAll('#music-btn-desktop, #music-btn').forEach(b => b && b.classList.remove('playing'));
-          spectrumPlaying = false;
-        } else {
-          bgAudio.play().catch(() => {});
-          fadeAudioTo(TARGET_VOL, 600);
-          document.querySelectorAll('#music-btn-desktop, #music-btn').forEach(b => b && b.classList.add('playing'));
-          spectrumPlaying = true;
-        }
-      }
-    }
-
-    [musicBtn, musicBtnD].forEach(btn => {
-      if (btn) bag.on(btn, 'click', e => { e.stopPropagation(); toggleMusic(); });
-    });
 
     // Click & hover sounds
     function playSfx(type) {
@@ -638,8 +567,6 @@ export function initContact(): () => void {
     bag.add(() => {
       specRunning = false;
       cancelAnimationFrame(specRaf);
-      fadeIntervals.forEach(clearInterval);
-      try { bgAudio.pause(); } catch {}
       try { if (audioContext) audioContext.close(); } catch {}
       document.querySelectorAll('.click-particle').forEach(p => p.remove());
     });

@@ -10,6 +10,7 @@
    route-unmount-safe. Asset paths rewritten ./Images → /Images, ./audio → /audio.
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { wireAmbientControls } from './ambient-audio';
 
 export function initComingSoon(): () => void {
   const bag = makeBag();
@@ -288,17 +289,11 @@ export function initComingSoon(): () => void {
     document.querySelectorAll('a,button,.cs-tag').forEach(el => { bag.on(el, 'mouseenter', () => { tR = RH; }); bag.on(el, 'mouseleave', () => { tR = RN; }); });
 
     let ac = null; function gAC() { if (!ac) ac = new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === 'suspended') ac.resume(); return ac; }
-    const bg = new Audio(); bg.src = '/audio/ambient.mp3'; bg.loop = true; bg.volume = 0; bg.preload = 'auto'; const MV = 0.35; let mm = false, ms = false;
-    const fadeIvs: any[] = [];
-    function fade(t, d) { const s = 50, sm = d / s, dl = (t - bg.volume) / s; let c = 0; const iv = setInterval(() => { c++; bg.volume = Math.max(0, Math.min(1, bg.volume + dl)); if (c >= s) { clearInterval(iv); bg.volume = t; } }, sm); fadeIvs.push(iv); }
+    // Ambient music — one shared <audio> (lib/scripts/ambient-audio.ts) plays
+    // continuously across every page; this engine only reads the playing flag.
     let sp = false;
-    function startM() { if (ms) return; ms = true; bg.volume = 0; const st = parseFloat(sessionStorage.getItem('musicTime') || '0'), sm = sessionStorage.getItem('musicMuted') === 'true'; if (st > 0) bg.currentTime = st; if (sm) { mm = true; sp = false; return; } bg.play().then(() => { fade(MV, 800); document.querySelectorAll('#music-btn-desktop,#music-btn').forEach(b => b && b.classList.add('playing')); sp = true; }).catch(() => { ms = false; }); }
-    function saveP() { sessionStorage.setItem('musicTime', String(bg.currentTime)); sessionStorage.setItem('musicMuted', String(mm)); }
-    bag.on(window, 'pagehide', saveP); bag.on(window, 'beforeunload', saveP);
-    function fi() { ['mousemove', 'mouseenter', 'pointerdown', 'touchstart', 'keydown', 'click'].forEach(ev => window.removeEventListener(ev, fi)); startM(); }
-    ['mousemove', 'mouseenter', 'pointerdown', 'touchstart', 'keydown', 'click'].forEach(ev => bag.on(window, ev, fi, { once: true, passive: ev !== 'keydown' }));
+    bag.add(wireAmbientControls(playing => { sp = playing; }));
 
-    const bD = document.getElementById('music-btn-desktop'), bM = document.getElementById('music-btn'), aB = [bD, bM].filter(Boolean);
     const sC = document.getElementById('spectrum-canvas-desktop'), sCm = document.getElementById('spectrum-canvas');
     const sX = sC ? sC.getContext('2d') : null, sXm = sCm ? sCm.getContext('2d') : null;
     const SW = 26, SH = 18, BC = 7, BW = 2, BG = 2, TW = BC * BW + (BC - 1) * BG, LO = (SW - TW) / 2;
@@ -306,8 +301,6 @@ export function initComingSoon(): () => void {
     function db(ctx) { if (!ctx) return; ctx.clearRect(0, 0, SW, SH); bars.forEach((b, i) => { const x = LO + i * (BW + BG), h = Math.max(1, b.cH), y = (SH - h) / 2; const g = ctx.createLinearGradient(x, y, x, y + h); g.addColorStop(0, 'rgba(255,255,255,0.95)'); g.addColorStop(0.5, 'rgba(200,225,255,0.75)'); g.addColorStop(1, 'rgba(150,190,255,0.45)'); ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(x, y, BW, h, 1); ctx.fill(); }); }
     let ls = 0, dsRunning = true, dsRaf = 0; function ds(ts) { if (!dsRunning) return; const dt = Math.min((ts - ls) / 1000, 0.05); ls = ts; bars.forEach(b => { if (sp) { b.phase += b.speed * dt; b.tH = 2 + ((Math.sin(b.phase) * 0.5 + 0.5)) * (SH - 3); } else b.tH = 1; b.cH += (b.tH - b.cH) * 0.18; }); db(sX); db(sXm); dsRaf = requestAnimationFrame(ds); } dsRaf = requestAnimationFrame(ds);
     bag.add(() => { dsRunning = false; cancelAnimationFrame(dsRaf); });
-    function sMP(p) { aB.forEach(b => { if (!b) return; p ? b.classList.add('playing') : b.classList.remove('playing'); }); sp = p; }
-    aB.forEach(b => { if (!b) return; bag.on(b, 'click', e => { e.stopPropagation(); if (!ms) { startM(); mm = false; } else { mm = !mm; if (mm) { fade(0, 600); sMP(false); } else { bg.play().catch(() => { }); fade(MV, 600); sMP(true); } } }); });
 
     function pC() { try { const a = gAC(), o = a.createOscillator(), g = a.createGain(), f = a.createBiquadFilter(); o.type = 'sine'; o.frequency.setValueAtTime(660, a.currentTime); o.frequency.exponentialRampToValueAtTime(440, a.currentTime + 0.12); f.type = 'lowpass'; f.frequency.value = 3000; g.gain.setValueAtTime(0, a.currentTime); g.gain.linearRampToValueAtTime(0.2, a.currentTime + 0.008); g.gain.exponentialRampToValueAtTime(0.0001, a.currentTime + 0.18); o.connect(f); f.connect(g); g.connect(a.destination); o.start(); o.stop(a.currentTime + 0.3); } catch (e) { } }
     function pH() { try { const a = gAC(), o = a.createOscillator(), g = a.createGain(), f = a.createBiquadFilter(); o.type = 'sine'; o.frequency.setValueAtTime(440, a.currentTime); o.frequency.linearRampToValueAtTime(520, a.currentTime + 0.08); f.type = 'bandpass'; f.frequency.value = 1000; f.Q.value = 2; g.gain.setValueAtTime(0, a.currentTime); g.gain.linearRampToValueAtTime(0.18, a.currentTime + 0.03); g.gain.exponentialRampToValueAtTime(0.0001, a.currentTime + 0.14); o.connect(f); f.connect(g); g.connect(a.destination); o.start(); o.stop(a.currentTime + 0.15); } catch (e) { } }
@@ -329,9 +322,7 @@ export function initComingSoon(): () => void {
     bag.on(document, 'keydown', e => { if (e.key === 'Escape' && mm2 && mm2.classList.contains('open')) cMM(); });
 
     bag.add(() => {
-      fadeIvs.forEach(clearInterval);
       menuTimeouts.forEach(clearTimeout);
-      try { bg.pause(); } catch {}
       try { if (ac) ac.close(); } catch {}
       document.body.classList.remove('menu-open');
       if (injectedStyle) injectedStyle.remove();
