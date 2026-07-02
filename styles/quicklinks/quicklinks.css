@@ -488,7 +488,9 @@ body.menu-open {
 /* ══════════════════════════════════════
    CONTENT GRID & CARDS
    ══════════════════════════════════════ */
-main {
+/* Scoped to the Quick Links route so this <main> layout doesn't persist and
+   restyle other pages' <main> after an SPA navigation. */
+body[data-page="links"] main {
   padding: 160px 24px 80px;
   max-width: 1200px;
   margin: 0 auto;

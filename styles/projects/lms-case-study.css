@@ -280,7 +280,7 @@ main:has(.cs-wrap) {
 }
 
 /* ── Footer tightness restored ── */
-footer {
+body:has(.cs-wrap) footer {
   margin-top: 80px !important;
   padding-top: 40px !important;
   padding-bottom: 40px !important;

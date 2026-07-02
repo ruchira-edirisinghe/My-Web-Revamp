@@ -589,7 +589,7 @@ export default function CaseStudyTechnosphere() {
         </button>
         <div className="cs-modal-container">
           <div className="cs-modal-content">
-            <img id="cs-modal-img" src="" alt="Case Study Preview" loading="lazy" decoding="async" />
+            <img id="cs-modal-img" alt="Case Study Preview" loading="lazy" decoding="async" />
             <div className="cs-modal-info">
               <div id="cs-modal-counter" className="cs-modal-counter">0 / 0</div>
               <h3 id="cs-modal-title" className="cs-modal-title"></h3>

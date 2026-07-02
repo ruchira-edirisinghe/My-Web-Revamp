@@ -41,7 +41,7 @@ export function initGalleryModal(): () => void {
     document.body.classList.remove('modal-active');
     if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
     const id = setTimeout(() => {
-      modalImg.src = '';
+      modalImg.removeAttribute('src');
       if (modalTag) modalTag.textContent = '';
       if (modalTitle) modalTitle.textContent = '';
       if (modalDesc) modalDesc.textContent = '';

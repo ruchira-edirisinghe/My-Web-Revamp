@@ -65,11 +65,11 @@ export default function WebProjectsClient() {
           </p>
         </header>
 
-        <div className="project-filter" role="tablist" aria-label="Filter projects by category">
-          <button className="filter-btn active" type="button" data-filter="all" aria-selected="true">All</button>
-          <button className="filter-btn" type="button" data-filter="web" aria-selected="false">Web UI/UX</button>
-          <button className="filter-btn" type="button" data-filter="mobile" aria-selected="false">Mobile UI/UX</button>
-          <button className="filter-btn" type="button" data-filter="dev" aria-selected="false">Development</button>
+        <div className="project-filter" role="group" aria-label="Filter projects by category">
+          <button className="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button className="filter-btn" type="button" data-filter="web" aria-pressed="false">Web UI/UX</button>
+          <button className="filter-btn" type="button" data-filter="mobile" aria-pressed="false">Mobile UI/UX</button>
+          <button className="filter-btn" type="button" data-filter="dev" aria-pressed="false">Development</button>
         </div>
 
         <div className="projects-grid">

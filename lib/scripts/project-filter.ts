@@ -34,7 +34,7 @@ export function initProjectFilter(): () => void {
       btns.forEach(function (b) {
         const on = b === btn;
         b.classList.toggle('active', on);
-        b.setAttribute('aria-selected', on ? 'true' : 'false');
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
       apply(btn.getAttribute('data-filter'));
     });

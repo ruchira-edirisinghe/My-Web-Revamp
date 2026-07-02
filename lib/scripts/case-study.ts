@@ -264,7 +264,7 @@ export function initCaseStudy(): () => void {
       document.body.style.overflow = '';
       document.body.classList.remove('modal-open');
       resetZoom();
-      setTimeout(() => { modalImg.src = ''; }, 500);
+      setTimeout(() => { modalImg.removeAttribute('src'); }, 500);
     }
     function showNext() { currentIndex = (currentIndex + 1) % galleryItems.length; resetZoom(); updateModal(); }
     function showPrev() { currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length; resetZoom(); updateModal(); }

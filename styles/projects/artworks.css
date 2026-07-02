@@ -149,7 +149,10 @@
 }
 
 /* ── High-Fidelity Header Overrides ── */
-.page-header {
+/* Scoped to gallery pages (which contain .gallery-container) so this left-align
+   doesn't bleed onto the centered .page-title/.page-header of other routes
+   (About, Contact, Projects hub, Quick Links) after an SPA navigation. */
+main:has(.gallery-container) .page-header {
   text-align: left !important;
   margin-bottom: 40px !important;
 }
@@ -193,7 +196,7 @@
   transform: translateX(-4px);
 }
 
-.page-title {
+main:has(.gallery-container) .page-title {
   text-align: left !important;
 }
 

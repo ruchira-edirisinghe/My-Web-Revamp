@@ -19,148 +19,12 @@ export function initExperience(): () => void {
   const bag = makeBag();
   const basePath = '/'; // assets live at the site root under Next.js public/
 
-  /* ══════════ 1. TESTIMONIAL CAROUSEL (experience.js #1) ══════════ */
-  (function () {
-    var DURATION = 7000;
-    var N = 9;
-    var current = 0;
-    var timer = null;
-    var wordTimers = [];
-    const timeouts = [];
-    const later = (fn, ms) => { const id = setTimeout(fn, ms); timeouts.push(id); return id; };
-
-    var slides = document.querySelectorAll('.testi-slide');
-    var dots = document.querySelectorAll('.testi-dot');
-    var avs = document.querySelectorAll('.testi-avatar-thumb');
-    var curEl = document.getElementById('testi-cur');
-    var prog = document.getElementById('testi-prog');
-    var shell = document.getElementById('testi-shell');
-    var hint = document.getElementById('testi-hint');
-
-    if (!slides.length || !curEl || !prog || !shell) return;
-
-    function pad(n) { return String(n + 1).padStart(2, '0'); }
-
-    /* Wrap each word in a span on first access */
-    function prepareQuote(slide) {
-      var p = slide.querySelector('.testi-quote');
-      if (!p || p.dataset.wrapped) return;
-      var tokens = p.innerText.split(/(\s+)/);
-      p.innerHTML = tokens.map(function (token) {
-        if (/^\s+$/.test(token)) return token;
-        return '<span class="tq-word">' + token + '</span>';
-      }).join('');
-      p.dataset.wrapped = '1';
-    }
-
-    /* Cancel any pending word-reveal timers */
-    function cancelWordTimers() {
-      wordTimers.forEach(function (t) { clearTimeout(t); });
-      wordTimers = [];
-    }
-
-    /* Hide all words in a slide instantly */
-    function resetWords(slide) {
-      slide.querySelectorAll('.tq-word').forEach(function (w) {
-        w.classList.remove('tq-vis');
-      });
-    }
-
-    /* Staggered word reveal */
-    function animateWords(slide) {
-      cancelWordTimers();
-      var words = slide.querySelectorAll('.tq-word');
-      var stagger = Math.min(30, 2000 / Math.max(words.length, 1));
-      words.forEach(function (w, i) {
-        var delay = 120 + i * stagger;
-        w.style.setProperty('--wd', delay + 'ms');
-        wordTimers.push(setTimeout(function () { w.classList.add('tq-vis'); }, delay));
-      });
-    }
-
-    function showSlide(idx) {
-      var prev = current;
-      current = ((idx % N) + N) % N;
-
-      prepareQuote(slides[current]);
-      resetWords(slides[prev]);
-      cancelWordTimers();
-
-      slides[prev].classList.remove('active');
-      slides[prev].classList.add('exit');
-      later(function () { slides[prev].classList.remove('exit'); }, 600);
-
-      slides[current].classList.add('active');
-      animateWords(slides[current]);
-
-      curEl.style.opacity = '0';
-      later(function () {
-        curEl.textContent = pad(current);
-        curEl.style.opacity = '1';
-      }, 180);
-
-      avs.forEach(function (a, i) { a.classList.toggle('current-av', i === current); });
-      dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
-
-      prog.style.transition = 'none';
-      prog.style.width = '0%';
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          prog.style.transition = 'width ' + DURATION + 'ms linear';
-          prog.style.width = '100%';
-        });
-      });
-    }
-
-    function startAuto() {
-      clearInterval(timer);
-      timer = setInterval(function () { showSlide(current + 1); }, DURATION);
-      prog.style.transition = 'width ' + DURATION + 'ms linear';
-      prog.style.width = '100%';
-    }
-
-    // Prev / Next
-    const prevBtn = document.getElementById('testi-prev');
-    const nextBtn = document.getElementById('testi-next');
-    if (prevBtn) bag.on(prevBtn, 'click', function (e) {
-      e.stopPropagation();
-      showSlide(current - 1);
-      startAuto();
-    });
-    if (nextBtn) bag.on(nextBtn, 'click', function (e) {
-      e.stopPropagation();
-      showSlide(current + 1);
-      startAuto();
-    });
-
-    // Dot clicks
-    dots.forEach(function (dot, i) {
-      bag.on(dot, 'click', function () {
-        showSlide(i);
-        startAuto();
-      });
-    });
-
-    // Avatar clicks
-    avs.forEach(function (av, i) {
-      bag.on(av, 'click', function () {
-        showSlide(i);
-        startAuto();
-      });
-    });
-
-    // Boot
-    prepareQuote(slides[0]);
-    slides[0].classList.add('active');
-    animateWords(slides[0]);
-    startAuto();
-
-    bag.add(() => {
-      clearInterval(timer);
-      wordTimers.forEach(clearTimeout);
-      timeouts.forEach(clearTimeout);
-    });
-  })();
+  /* ══════════ 1. TESTIMONIAL CAROUSEL ══════════
+   The testimonial carousel is handled once, below, by section "B4. TESTIMONIALS
+   SLIDER (inline #2)". A second, duplicate carousel used to run here and fought
+   B4 over the same DOM (#testi-* / .testi-slide) — two 7s auto-rotate intervals
+   and doubled prev/next handlers. Removed so only B4 (dynamic slide count +
+   .testi-progress-fill.run-anim, matching the markup/CSS) controls it. */
 
   /* ══════════ 2. SPACE BACKGROUND (experience.js #2) ══════════ */
   (function () {
@@ -734,6 +598,7 @@ export function initExperience(): () => void {
       snodeObs.observe(el);
     });
 
+    let countAlive = true;
     const statTimeouts = [];
     var statObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -749,6 +614,7 @@ export function initExperience(): () => void {
         var delay = parseFloat(item.style.getPropertyValue('--sr-delay') || '0') * 1000;
         statTimeouts.push(setTimeout(function () {
           requestAnimationFrame(function step(ts) {
+            if (!countAlive) return;
             if (!start) start = ts;
             var progress = Math.min((ts - start) / duration, 1);
             numEl.textContent = Math.floor(easeOut(progress) * target);
@@ -779,6 +645,7 @@ export function initExperience(): () => void {
         var delay = parseFloat(pillar.style.getPropertyValue('--pillar-delay') || '0') * 1000;
         pillarTimeouts.push(setTimeout(function () {
           requestAnimationFrame(function step(ts) {
+            if (!countAlive) return;
             if (!start) start = ts;
             var progress = Math.min((ts - start) / duration, 1);
             numEl.textContent = Math.floor(easeOut(progress) * target);
@@ -794,6 +661,7 @@ export function initExperience(): () => void {
     });
 
     bag.add(() => {
+      countAlive = false;
       gridObs.disconnect(); blockObs.disconnect(); headObs.disconnect();
       panelObs.disconnect(); snodeObs.disconnect(); statObs.disconnect(); pillarObs.disconnect();
       statTimeouts.forEach(clearTimeout); pillarTimeouts.forEach(clearTimeout);
@@ -953,8 +821,10 @@ export function initExperience(): () => void {
     let rafId = 0;
     function animate() {
       if (!running) return;
-      // NO ANIMATION ON MOBILE: Guard statement to save resources
-      if (window.innerWidth <= 768) return;
+      // NO ANIMATION ON MOBILE: skip the physics work to save resources, but keep
+      // the loop alive (cheap width check per frame) so it resumes if the viewport
+      // grows back above 768px. Returning outright used to freeze it permanently.
+      if (window.innerWidth <= 768) { rafId = requestAnimationFrame(animate); return; }
 
       mouseX += (targetMouseX - mouseX) * 0.03;
       mouseY += (targetMouseY - mouseY) * 0.03;

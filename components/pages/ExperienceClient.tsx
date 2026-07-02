@@ -1944,7 +1944,7 @@ export default function ExperienceClient() {
 
         <div id="cert-prompt-overlay" className="modal-overlay">
           <div className="modal-card">
-            <img id="modal-logo" className="modal-header-logo" src="" alt="Issuer logo" />
+            <img id="modal-logo" className="modal-header-logo" alt="Issuer logo" />
             <h3 id="modal-title">Certificate Name</h3>
             <span id="modal-issuer" className="modal-issuer-sub">Company Name</span>
             <p>You are going to be redirected to<br />the credentials of this certification.<br />Do you wish to continue?

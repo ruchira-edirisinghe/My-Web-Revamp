@@ -280,7 +280,7 @@ export default function GalleryLogos() {
       <div id="artwork-modal" className="modal-overlay" aria-hidden="true">
         <button id="modal-close" aria-label="Close modal">×</button>
         <div className="modal-content">
-          <img id="modal-img" src="" alt="Full size preview" />
+          <img id="modal-img" alt="Full size preview" />
           <div id="modal-info">
             <span id="modal-tag"></span>
             <h3 id="modal-title"></h3>

@@ -499,7 +499,11 @@ body.menu-open { overflow: hidden; }
 /* ══════════════════════════════════════
    PROJECT NAKED HUB
    ══════════════════════════════════════ */
-main {
+/* Scoped to the projects family (hub + web/graphic lists + galleries + case
+   studies) so this layout doesn't bleed onto other routes in the SPA, where
+   the persisted global stylesheet would otherwise restyle their <main>. */
+body[data-page="projects-hub"] main,
+body[data-page="projects"] main {
   flex: 1;
   padding: 140px 40px 60px;
   max-width: 1400px;
@@ -510,6 +514,12 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+/* Case studies use full-bleed strips (.ui-gallery marquee, modal overlay) sized
+   with `width: 100vw; margin-left: -50vw`. On a page with a vertical scrollbar,
+   100vw is wider than the content box and triggers a horizontal scrollbar.
+   Clip it — scoped via :has() so it only affects case-study routes. */
+body:has(.cs-wrap) { overflow-x: hidden; }
 
 #hero-heading { text-align: center; margin-bottom: 30px; width: 100%; }
 
