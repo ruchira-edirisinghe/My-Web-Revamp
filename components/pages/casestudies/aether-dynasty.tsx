@@ -410,24 +410,17 @@ export default function CaseStudyAetherDynasty() {
 
             <div className="creative-styleguide">
 
-              {/* Typography */}
+              {/* Typography — PhURL-style specimen */}
               <div className="sg-unit">
                 <div className="glass-box">
-                  <div className="sg-unit-title">Typography — Three Registers</div>
-                  <p className="sg-unit-desc">Neon Antiquity uses three typefaces that each carry a distinct era. Orbitron is the machine; Marcellus SC is the temple inscription; Spectral is the scholar's hand — together they hold the aesthetic in tension without breaking it.</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginTop: '20px' }}>
-                    <div>
-                      <div style={{ fontFamily: "'Orbitron', sans-serif", fontSize: 'clamp(18px,3vw,28px)', color: '#43e8ff', letterSpacing: '0.08em', fontWeight: 700 }}>4,096 WAYS ↑ 46,656</div>
-                      <div style={{ fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.35)', marginTop: '4px', textTransform: 'uppercase' }}>Orbitron — HUD readouts, ways counter, balance display</div>
-                    </div>
-                    <div>
-                      <div style={{ fontFamily: "'Marcellus SC', serif", fontSize: 'clamp(14px,2.2vw,22px)', color: '#f4c64a', letterSpacing: '0.06em' }}>Zeus — Guardian of Olympus</div>
-                      <div style={{ fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.35)', marginTop: '4px', textTransform: 'uppercase' }}>Marcellus SC — temple inscriptions, symbol names, section labels</div>
-                    </div>
-                    <div>
-                      <div style={{ fontFamily: "'Spectral', Georgia, serif", fontSize: 'clamp(12px,1.6vw,16px)', color: '#f3e7cf', lineHeight: 1.75 }}>The ancient gods watch as the runes align. Each cascade brings the dynasty closer to its moment of reckoning — 46,656 ways to write its fate.</div>
-                      <div style={{ fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.35)', marginTop: '4px', textTransform: 'uppercase' }}>Spectral — body text, rule descriptions, lore copy</div>
-                    </div>
+                  <div className="typo-hero">Spectral</div>
+                  <div className="typo-weights-row">
+                    <span className="typo-weight-item" style={{ fontWeight: 300 }}>Light</span>
+                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
+                    <span className="typo-weight-item" style={{ fontWeight: 400, fontStyle: 'italic' }}>Italic</span>
+                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
+                    <span className="typo-weight-item" style={{ fontWeight: 600 }}>Semi Bold</span>
+                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
                   </div>
                 </div>
               </div>

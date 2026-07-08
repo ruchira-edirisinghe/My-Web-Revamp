@@ -1,12 +1,13 @@
 /* ══════════════════════════════════════════
-   AETHER DYNASTY CASE STUDY — Neon Antiquity (neon cyan + dynasty gold)
+   PROPBET CASE STUDY — Cockpit HUD (electric sky-blue + altitude amber)
+   Structure ported from the Aether Dynasty case study; same .cs-* system.
    ══════════════════════════════════════════ */
 
 :root {
-  --lyc-blue: #43E8FF; /* Neon Cyan (primary accent) */
-  --lyc-indigo: #1B0F16; /* Dark warm base */
-  --lyc-cyan: #9AF6FF; /* Lighter cyan */
-  --lyc-gold: #F4C64A; /* Dynasty gold */
+  --lyc-blue: #43E8FF; /* Electric sky-blue (primary accent) */
+  --lyc-indigo: #0B1220; /* Deep cockpit base */
+  --lyc-cyan: #9AF6FF; /* Lighter sky */
+  --lyc-gold: #F4C64A; /* Altitude amber */
   --lyc-glow: rgba(67, 232, 255, 0.35);
   --card-bg: rgba(255, 255, 255, 0.03);
   --card-border: rgba(255, 255, 255, 0.08);
@@ -2095,10 +2096,11 @@ body.modal-open #navbar-wrap {
 
 /* ══════════════════════════════════════════
    STYLE-GUIDE TYPOGRAPHY — PhURL-style specimen
-   Renders the typo-hero in the showcased face (Spectral) and keeps the
-   sg-unit title visible on the dark glass.
+   Renders the typo-hero in the showcased face (Orbitron) and keeps
+   the sg-unit title + colour hex readouts visible on the dark glass.
    ══════════════════════════════════════════ */
 .creative-styleguide .typo-hero,
-.creative-styleguide .typo-weight-item { font-family: 'Spectral', Georgia, serif; }
-.creative-styleguide .typo-hero { letter-spacing: 0.01em; }
+.creative-styleguide .typo-weight-item { font-family: 'Orbitron', sans-serif; }
+.creative-styleguide .typo-hero { letter-spacing: 0.02em; }
 .sg-unit-title { color: var(--lyc-cyan); }
+.color-block .color-hex { opacity: 1; transform: none; line-height: 1.5; text-align: center; }
