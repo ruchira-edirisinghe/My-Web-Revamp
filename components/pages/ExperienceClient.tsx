@@ -291,8 +291,8 @@ export default function ExperienceClient() {
                     <div className="tl-desc-box">
                       <p className="tl-desc">
                         Contributed to immersive learning applications for children
-                        on AR/VR gaming platforms. The team achieved
-                        <strong style={{ color: 'rgba(109, 215, 247, 0.9)' }}>1st place</strong>
+                        on AR/VR gaming platforms. The team achieved{' '}
+                        <strong style={{ color: 'rgba(109, 215, 247, 0.9)' }}>1st place</strong>{' '}
                         in an Inter-Company Global Gaming Solutions Competition for
                         developing <em>MetaLingo</em> - an Immersive Language
                         Learning Platform.
@@ -409,8 +409,8 @@ export default function ExperienceClient() {
               <p className="bio-para" style={{ '--para-delay': '0.1s' }}>
                 Over the years, I have continuously invested in expanding my knowledge and validating my skills through
                 industry-recognised certifications. These credentials reflect my commitment to staying current with evolving
-                technologies and best practices across <strong style={{ color: 'rgba(140, 210, 255, 0.9)' }}>UI/UX design</strong>,
-                <strong style={{ color: 'rgba(200, 160, 255, 0.9)' }}>software development</strong>, and
+                technologies and best practices across <strong style={{ color: 'rgba(140, 210, 255, 0.9)' }}>UI/UX design</strong>,{' '}
+                <strong style={{ color: 'rgba(200, 160, 255, 0.9)' }}>software development</strong>, and{' '}
                 <strong style={{ color: 'rgba(100, 220, 160, 0.9)' }}>cybersecurity</strong> - ensuring I bring both depth and
                 breadth to every project I take on.
               </p>
@@ -937,9 +937,9 @@ export default function ExperienceClient() {
 
             <div className="para-container">
               <p className="bio-para" style={{ '--para-delay': '0.1s' }}>
-                Throughout my career, I have cultivated a diverse and specialized set of technical skills, ranging from
-                <strong style={{ color: 'rgba(140, 210, 255, 0.9)' }}>UI/UX architecture</strong> and
-                <strong style={{ color: 'rgba(80, 220, 180, 0.9)' }}>indie game development</strong> to
+                Throughout my career, I have cultivated a diverse and specialized set of technical skills, ranging from{' '}
+                <strong style={{ color: 'rgba(140, 210, 255, 0.9)' }}>UI/UX architecture</strong> and{' '}
+                <strong style={{ color: 'rgba(80, 220, 180, 0.9)' }}>indie game development</strong> to{' '}
                 <strong style={{ color: 'rgba(200, 160, 255, 0.9)' }}>modern frontend engineering</strong>. My approach blends
                 aesthetic precision with technical robustness, ensuring that every project I touch is not only visually
                 stunning but also highly functional and user-centric.
@@ -1341,9 +1341,9 @@ export default function ExperienceClient() {
 
             <div className="para-container">
               <p className="bio-para" style={{ '--para-delay': '0.1s' }}>
-                Giving back to the community has always been a core part of my journey. Whether through
-                <strong style={{ color: 'rgba(100, 220, 160, 0.9)' }}>mentorship</strong>,
-                <strong style={{ color: 'rgba(140, 210, 255, 0.9)' }}>open-source contributions</strong>, or
+                Giving back to the community has always been a core part of my journey. Whether through{' '}
+                <strong style={{ color: 'rgba(100, 220, 160, 0.9)' }}>mentorship</strong>,{' '}
+                <strong style={{ color: 'rgba(140, 210, 255, 0.9)' }}>open-source contributions</strong>, or{' '}
                 <strong style={{ color: 'rgba(200, 160, 255, 0.9)' }}>social initiatives</strong>, I strive to use my skills to
                 empower others and create meaningful change. These experiences have shaped my perspective on
                 the power of collective effort and technology for good.
