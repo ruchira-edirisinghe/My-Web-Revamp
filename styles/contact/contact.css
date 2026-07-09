@@ -680,7 +680,7 @@
     }
 
     .mobile-menu-title {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Burgundia', cursive;
       font-size: clamp(38px, 10vw, 68px);
       line-height: 1.1;
       transition: color 0.38s ease, text-shadow 0.38s ease, letter-spacing 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -802,11 +802,11 @@
     }
 
     .page-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(52px, 8vw, 100px);
+      font-family: 'Burgundia', cursive;
+      font-size: clamp(52px, 8vw, 84px);
       text-align: center;
       line-height: 1.1;
-      margin-top: 10px;
+      margin-top: 24px;
       opacity: 0;
       animation: fadeUp 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.45s forwards;
     }
@@ -840,12 +840,12 @@
     }
 
     .contact-big-text {
-      font-family: 'Squada One', sans-serif;
+      font-family: 'Burgundia', cursive;
       font-size: clamp(44px, 6vw, 80px);
       font-weight: 400;
-      line-height: 1.0;
-      letter-spacing: -0.01em;
-      text-transform: uppercase;
+      line-height: 1.12;
+      letter-spacing: normal;
+      text-transform: none;
     }
 
     .contact-big-text .line-glow {
@@ -855,6 +855,10 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       filter: drop-shadow(0 0 20px rgba(92, 224, 255, 0.3));
+      /* Extend the clip box so Burgundia's decorative S swash / flourishes aren't
+         cut off; the matching negative margin keeps the text's position unchanged. */
+      padding: 0.04em 0.5em;
+      margin: -0.04em -0.5em;
     }
 
     .contact-big-text .line-plain {
@@ -1062,7 +1066,7 @@
     }
 
     .channels-title {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Burgundia', cursive;
       font-size: clamp(38px, 5vw, 64px);
       color: var(--white);
       line-height: 1.1;
@@ -1168,7 +1172,7 @@
     }
 
     .cc-name {
-      font-family: 'Squada One', sans-serif;
+      font-family: 'Epic Pro', sans-serif;
       font-size: clamp(18px, 2vw, 26px);
       font-weight: 400;
       letter-spacing: 0.05em;
@@ -1438,7 +1442,7 @@
       padding: 12px 20px;
       display: inline-block;
       color: var(--cc-color, #fff);
-      font-family: 'Squada One', sans-serif;
+      font-family: 'Epic Pro', sans-serif;
       font-size: 18px;
       letter-spacing: 0.04em;
       box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
@@ -1602,22 +1606,26 @@
     }
 
     .orbit-heading {
-      font-family: 'Squada One', sans-serif;
+      font-family: 'Burgundia', cursive;
       font-size: clamp(40px, 5.5vw, 68px);
       color: var(--white);
-      line-height: 1.0;
+      line-height: 1.1;
       margin-bottom: 28px;
-      text-transform: uppercase;
-      letter-spacing: -0.01em;
+      text-transform: none;
+      letter-spacing: normal;
     }
 
     .orbit-heading .line-glow {
       display: inline;
+      white-space: nowrap;
       background: linear-gradient(135deg, #5ce0ff 0%, #bc6fff 50%, #6dff8a 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       filter: drop-shadow(0 0 20px rgba(92, 224, 255, 0.3));
+      /* extend the clip box so Burgundia swashes aren't cut off */
+      padding: 0 0.15em;
+      margin: 0 -0.15em;
     }
 
     .orbit-heading .line-plain {
@@ -1627,6 +1635,14 @@
 
     .orbit-heading-row {
       display: block;
+    }
+
+    /* Desktop: keep each phrase on a single line so the heading reads as two lines
+       (SOLVING PROBLEMS, / ONE PIXEL AT A TIME) instead of four. Font sized down to
+       fit the ~half-width column; mobile keeps its natural wrapping. */
+    @media (min-width: 901px) {
+      .orbit-heading { font-size: clamp(38px, 4.6vw, 62px); }
+      .orbit-heading-row { white-space: nowrap; }
     }
 
     .orbit-para {
@@ -1759,7 +1775,7 @@
 
     .collab-text strong {
       display: block;
-      font-family: 'Squada One', sans-serif;
+      font-family: 'Epic Pro', sans-serif;
       font-size: 20px;
       font-weight: 400;
       color: rgba(255, 255, 255, 0.9);
@@ -1917,7 +1933,7 @@
     }
 
     .tz-title {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Burgundia', cursive;
       font-size: clamp(36px, 4.5vw, 58px);
       color: var(--white);
       line-height: 1.1;
@@ -1975,7 +1991,7 @@
     }
 
     .tz-time {
-      font-family: 'Squada One', sans-serif;
+      font-family: 'Epic Pro', sans-serif;
       font-size: clamp(30px, 3.5vw, 44px);
       font-weight: 400;
       color: var(--white);

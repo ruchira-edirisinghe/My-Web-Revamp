@@ -30,7 +30,7 @@ export default function ExperienceClient() {
           <br /><br />
           <div className="para-container">
             <p className="bio-para" style={{ '--para-delay': '0.1s' }}>
-              With over 3 years of professional experience in the field, I have developed a strong foundation in building
+              With over 4 years of professional experience in the field, I have developed a strong foundation in building
               robust, scalable, and visually engaging web experiences. My journey has taken me through a variety of roles and
               projects, allowing me to refine my skills in frontend development, UI/UX design, and collaborating with
               cross-functional teams. I am passionate about leveraging modern technologies and best practices to deliver
@@ -93,9 +93,7 @@ export default function ExperienceClient() {
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2025 AUG - Present</span>
-                        <p className="tl-role">
-                          UI/UX Engineer 
-                        </p>
+                        <p className="tl-role">UI/UX Engineer &amp;<br />Game&nbsp;Developer</p>
                         <span className="tl-company">FUNEXTREME TECHNOLOGY LLC</span>
                         <span className="tl-location">
                           <svg viewBox="0 0 24 24">
@@ -171,7 +169,7 @@ export default function ExperienceClient() {
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2023 Nov - 2024 Aug</span>
-                        <p className="tl-role">UI/UX Engineer &amp;<br />Game Developer</p>
+                        <p className="tl-role">UI/UX Engineer</p>
                         <span className="tl-company">ZUSE Technologies</span>
                         <span className="tl-location">
                           <svg viewBox="0 0 24 24">
@@ -355,7 +353,7 @@ export default function ExperienceClient() {
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2021 Jan - Present</span>
-                        <p className="tl-role">Graphic Design & <br /> UX/UI Developer</p>
+                        <p className="tl-role">Graphic Design<br />and UX/UI Dev</p>
                         <span className="tl-company">ZEN CREATIVES</span>
                         <span className="tl-location">
                           <svg viewBox="0 0 24 24">

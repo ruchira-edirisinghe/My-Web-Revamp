@@ -89,6 +89,8 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
 
   return (
     <>
+      {/* Non-fixed scroll target so Next's route auto-scroll doesn't iterate the fixed chrome */}
+      <div aria-hidden="true" style={{ position: 'absolute', height: 0, width: 0 }} />
       <Preloader tagline={tagline} />
 
       <div className="top-content-fade"></div>

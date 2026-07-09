@@ -21,6 +21,8 @@ export default function ComingSoonClient() {
 
   return (
     <>
+      {/* Non-fixed scroll target so Next's route auto-scroll doesn't iterate the fixed chrome */}
+      <div aria-hidden="true" style={{ position: 'absolute', height: 0, width: 0 }} />
       <canvas id="space-canvas"></canvas>
       <canvas id="cursor-canvas"></canvas>
       <div id="cursor-dot"></div>

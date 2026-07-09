@@ -52,6 +52,8 @@ export default function HomeClient() {
 
   return (
     <>
+      {/* Non-fixed scroll target so Next's route auto-scroll doesn't iterate the fixed chrome */}
+      <div aria-hidden="true" style={{ position: 'absolute', height: 0, width: 0 }} />
       {/* Split panels reveal the page behind the preloader */}
       <div id="split-top"></div>
       <div id="split-bottom"></div>

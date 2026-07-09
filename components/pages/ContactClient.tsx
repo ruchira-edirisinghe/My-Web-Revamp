@@ -36,8 +36,10 @@ export default function ContactClient() {
       <div id="nav-fade-mask"></div>
 
       <main className="page">
+        {/* Hidden per request — the hero section below carries the intro instead.
         <span className="section-label">Let's talk</span>
         <h1 className="page-title">Contact Me</h1>
+        */}
 
         {/* ── Hero: big text + constellation ── */}
         <section className="contact-hero">
@@ -110,7 +112,7 @@ export default function ContactClient() {
             </div>
 
             {/* 2. Phone */}
-            <div className="channel-card cc-phone" data-url="https://wa.me/94774009851" data-name="WhatsApp / Call"
+            <div className="channel-card cc-phone" data-url="https://wa.me/94774009851" data-name="WhatsApp/Call"
               data-action="WhatsApp to direct contact Ruchira Edirisinghe" data-detail="+94774009851"
               style={cssVars({ '--cc-delay': '0.2s' })}>
               <div className="cc-arrow"><svg viewBox="0 0 24 24">
@@ -126,7 +128,7 @@ export default function ContactClient() {
               </div>
               <div>
                 <span className="cc-label">Direct contact</span>
-                <p className="cc-name">WhatsApp / Call</p>
+                <p className="cc-name">WhatsApp/Call</p>
                 <p className="cc-handle">+94 77 400 9851</p>
               </div>
               <p className="cc-desc">Direct line for urgent discussions, fast updates, or informal brainstorming sessions.</p>
@@ -283,7 +285,7 @@ export default function ContactClient() {
             <span className="orbit-eyebrow">Collaboration philosophy</span>
             <h2 className="orbit-heading">
               <span className="orbit-heading-row">
-                <span className="line-plain">Solving</span> <span className="line-glow">PROBLEMS,</span>
+                <span className="line-plain">Solving</span> <span className="line-glow">Problems,</span>
               </span>
               <span className="orbit-heading-row">
                 <span className="line-plain">One Pixel </span><span className="line-glow">At A Time</span>

@@ -45,12 +45,12 @@ export default function GalleryArtworks() {
 
             {/* Item 2: Justice or Ego? (Kira) */}
             <div className="masonry-item portrait" style={cssVars({ '--item-index': 2 })}>
-              <img src="/Images/artworks/thumbs/kira1.jpg" alt="Justice or Ego?" className="artwork-img" loading="lazy"
+              <img src="/Images/artworks/thumbs/kira1.jpg" alt="Kira Yukimura from Teen Wolf" className="artwork-img" loading="lazy"
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Character Study</span>
-                <h3 className="info-title">Justice or Ego?</h3>
-                <p className="info-sub">A psychological exploration of Light Yagami and his divine descent.</p>
+                <h3 className="info-title">The Thunder Kitsune</h3>
+                <p className="info-sub">A character study of Kira Yukimura, the thunder kitsune from Teen Wolf.</p>
                 <a href="/Images/artworks/kira1.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>
@@ -81,12 +81,12 @@ export default function GalleryArtworks() {
 
             {/* Item 5: Loki Solo */}
             <div className="masonry-item portrait" style={cssVars({ '--item-index': 5 })}>
-              <img src="/Images/artworks/thumbs/loki.jpg" alt="God of Mischief" className="artwork-img" loading="lazy"
+              <img src="/Images/artworks/thumbs/loki.jpg" alt="Loki with the Tesseract" className="artwork-img" loading="lazy"
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Portrait</span>
                 <h3 className="info-title">God of Mischief</h3>
-                <p className="info-sub">A regal character study of Loki Laufeyjson in his celestial prime.</p>
+                <p className="info-sub">A character study of Loki Laufeyson wielding the Tesseract, from Marvel&apos;s Avengers films.</p>
                 <a href="/Images/artworks/loki.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>
@@ -153,12 +153,12 @@ export default function GalleryArtworks() {
 
             {/* Item 11: The Quiet Grave */}
             <div className="masonry-item portrait" style={cssVars({ '--item-index': 11 })}>
-              <img src="/Images/artworks/thumbs/grave.jpg" alt="The Quiet Grave" className="artwork-img" loading="lazy"
+              <img src="/Images/artworks/thumbs/grave.jpg" alt="Grave of the Fireflies fan art" className="artwork-img" loading="lazy"
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Mood Piece</span>
                 <h3 className="info-title">The Quiet Grave</h3>
-                <p className="info-sub">Atmospheric concept art exploring silence, memory, and the passage of time.</p>
+                <p className="info-sub">Fan art inspired by Studio Ghibli&apos;s Grave of the Fireflies.</p>
                 <a href="/Images/artworks/grave.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>

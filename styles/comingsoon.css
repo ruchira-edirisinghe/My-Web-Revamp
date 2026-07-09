@@ -683,7 +683,7 @@
     }
 
     .mobile-menu-title {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Burgundia', cursive;
       font-size: clamp(38px, 10vw, 68px);
       font-weight: 400;
       color: rgba(255, 255, 255, 0.9);
@@ -1180,7 +1180,7 @@
       letter-spacing: 0.42em;
       text-transform: uppercase;
       color: rgba(160, 210, 255, 0.45);
-      margin-bottom: 22px;
+      margin-bottom: 32px;
       opacity: 0;
       animation: fadeUp 0.7s ease 0.5s forwards;
     }
@@ -1198,7 +1198,7 @@
 
     /* headline */
     .cs-headline {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Burgundia', cursive;
       font-size: clamp(46px, 8.5vw, 96px);
       line-height: 1;
       color: var(--white);
@@ -1311,7 +1311,7 @@
     }
 
     .cs-cd-num {
-      font-family: 'Squada One', sans-serif;
+      font-family: 'Epic Pro', sans-serif;
       font-size: clamp(24px, 4vw, 38px);
       font-weight: 400;
       color: var(--white);
@@ -1497,7 +1497,7 @@
     }
 
     .cs-progress-pct {
-      font-family: 'Squada One', sans-serif;
+      font-family: 'Epic Pro', sans-serif;
       font-size: 12px;
       color: rgba(170, 120, 255, 0.65);
     }

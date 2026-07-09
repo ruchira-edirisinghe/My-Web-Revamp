@@ -494,7 +494,7 @@ export default function AboutClient() {
                 </h2>
       
                 <p className="bio-para" style={cssVars({ '--para-delay': '0.1s' })}>
-                  I Am A UI/UX Engineer With Nearly 4 Years Of Experience Dedicated To Bridging The Gap Between Sophisticated
+                  I Am A UI/UX Engineer With More Than 4 Years Of Experience Dedicated To Bridging The Gap Between Sophisticated
                   Design And Functional Engineering. With A Strong Foundation In Both User Interface Design And Front-End
                   Development, I Specialize In Creating Digital Experiences That Are Not Only Visually Compelling But Also
                   Technically Robust And Easy To Navigate.
@@ -557,8 +557,8 @@ export default function AboutClient() {
                     <p className="block-label">Development</p>
                     <h2 className="block-title"
                       style={{ fontFamily: "'Squada One', sans-serif", fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0px' }}>
-                      <span style={{ whiteSpace: 'nowrap' }}>VIBE CODING (AI)</span><br />
-                      &amp; WEB DEVELOPMENT
+                      <span style={{ whiteSpace: 'nowrap' }}>Vibe Coding and</span><br />
+                      <span style={{ whiteSpace: 'nowrap' }}>Web Development</span>
                     </h2>
                   </div>
                 </div>
@@ -830,7 +830,7 @@ export default function AboutClient() {
                 <div className="ufo-pillar pillar-mid" style={cssVars({ '--pillar-delay': '0.18s' })}>
                   <div className="pillar-float">
                     <div className="pillar-num-row">
-                      <span className="pillar-number" data-target="3">0</span>
+                      <span className="pillar-number" data-target="4">0</span>
                       <span className="pillar-plus">+</span>
                     </div>
                     <p className="pillar-label">Years of<br />Experience</p>
@@ -1573,7 +1573,6 @@ export default function AboutClient() {
               <a className="platform-card pc-yt" href="https://www.youtube.com/@zenitrongaming" target="_blank"
                 rel="noopener noreferrer" style={cssVars({ '--gc-delay': '0.0s' })} data-url="https://www.youtube.com/@zenitrongaming"
                 data-name="YouTube" data-action="visit the Zenitron Gaming YouTube channel" data-detail="@zenitrongaming">
-                <span className="pc-live-badge">Live</span>
                 <div className="pc-icon-wrap"><svg viewBox="0 0 24 24" fill="var(--pc-color)">
                     <path
                       d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -1597,7 +1596,6 @@ export default function AboutClient() {
               <a className="platform-card pc-fb" href="https://www.facebook.com/gaming/zenitrongaming" target="_blank"
                 rel="noopener noreferrer" style={cssVars({ '--gc-delay': '0.1s' })} data-url="https://www.facebook.com/gaming/zenitrongaming"
                 data-name="Facebook" data-action="visit the Zenitron Gaming Facebook page" data-detail="@zenitrongaming">
-                <span className="pc-live-badge">Live</span>
                 <div className="pc-icon-wrap"><svg viewBox="0 0 24 24" fill="var(--pc-color)">
                     <path
                       d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
@@ -1607,7 +1605,7 @@ export default function AboutClient() {
                 <div className="pc-stats">
                   <div className="pc-stat"><span className="pc-stat-label">Followers</span><span className="pc-stat-value">440+</span>
                   </div>
-                  <div className="pc-stat"><span className="pc-stat-label">Category</span><span className="pc-stat-value">Gaming</span>
+                  <div className="pc-stat"><span className="pc-stat-label">Type</span><span className="pc-stat-value">Live</span>
                   </div>
                 </div>
       
@@ -1647,7 +1645,6 @@ export default function AboutClient() {
                 rel="noopener noreferrer" style={cssVars({ '--gc-delay': '0.3s' })} data-url="https://www.twitch.tv/zenitrongaminglive"
                 data-name="Twitch" data-action="visit the Zenitron Gaming Twitch channel"
                 data-detail="@zenitrongaminglive">
-                <span className="pc-live-badge">Live</span>
                 <div className="pc-icon-wrap"><svg viewBox="0 0 24 24" fill="var(--pc-color)">
                     <path
                       d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z" />
@@ -1657,7 +1654,7 @@ export default function AboutClient() {
                 <div className="pc-stats">
                   <div className="pc-stat"><span className="pc-stat-label">Followers</span><span className="pc-stat-value">20+</span>
                   </div>
-                  <div className="pc-stat"><span className="pc-stat-label">Category</span><span className="pc-stat-value">Gaming</span>
+                  <div className="pc-stat"><span className="pc-stat-label">Type</span><span className="pc-stat-value">Live</span>
                   </div>
                 </div>
                 <span className="pc-link" style={{ display: 'inline-block', padding: '10px 0' }}>
@@ -1673,7 +1670,6 @@ export default function AboutClient() {
                 rel="noopener noreferrer" style={cssVars({ '--gc-delay': '0.4s' })} data-url="https://kick.com/zenitrongaminglive"
                 data-name="Kick" data-action="visit the Zenitron Gaming Kick channel"
                 data-detail="@zenitrongaminglive">
-                <span className="pc-live-badge">Live</span>
                 <div className="pc-icon-wrap"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd"
                     clipRule="evenodd" strokeLinejoin="round" strokeMiterlimit="2">
                     <path
@@ -1685,7 +1681,7 @@ export default function AboutClient() {
                 <div className="pc-stats">
                   <div className="pc-stat"><span className="pc-stat-label">Followers</span><span className="pc-stat-value">20+</span>
                   </div>
-                  <div className="pc-stat"><span className="pc-stat-label">Category</span><span className="pc-stat-value">Gaming</span>
+                  <div className="pc-stat"><span className="pc-stat-label">Type</span><span className="pc-stat-value">Live</span>
                   </div>
                 </div>
                 <span className="pc-link" style={{ display: 'inline-block', padding: '10px 0' }}>

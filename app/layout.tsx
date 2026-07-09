@@ -10,11 +10,8 @@ const GOOGLE_FONTS_HREF =
   'https://fonts.googleapis.com/css2?' +
   [
     'family=Cinzel+Decorative:wght@400;700;900',
-    'family=Cormorant+Garamond:wght@300;400;500;600',
-    'family=Great+Vibes',
     'family=Inter:wght@400;500;600;700;800;900',
     'family=Instrument+Sans:wght@400;500;600;700',
-    'family=JetBrains+Mono:wght@400;700',
     'family=Lexend:wght@300;400;500;600;700',
     'family=Marcellus+SC',
     'family=Montserrat:wght@300;400;500;600;700;800',
@@ -23,7 +20,6 @@ const GOOGLE_FONTS_HREF =
     'family=Rajdhani:wght@400;500;600;700',
     'family=Sora:wght@300;400;500;600;700',
     'family=Spectral:wght@300;400;500;600;700',
-    'family=Squada+One',
   ].join('&') +
   '&display=swap';
 
@@ -72,7 +68,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

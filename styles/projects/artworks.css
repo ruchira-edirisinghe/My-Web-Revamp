@@ -104,7 +104,7 @@
 }
 
 .info-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 9px;
   text-transform: uppercase;
   color: var(--accent-cyan);
@@ -113,7 +113,7 @@
 }
 
 .info-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Epic Pro', 'Montserrat', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -476,7 +476,7 @@ main:has(.gallery-container) .page-title {
 
 #modal-tag {
   display: block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   text-transform: uppercase;
   color: var(--accent-cyan);
@@ -485,7 +485,7 @@ main:has(.gallery-container) .page-title {
 }
 
 #modal-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Epic Pro', 'Montserrat', sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
   text-transform: uppercase;

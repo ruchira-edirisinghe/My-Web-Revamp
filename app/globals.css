@@ -1,3 +1,22 @@
+/* Custom display font for the cursive titles + nav menus (replaces Great Vibes).
+   Served from public/docs; declared here so it's available on every route. */
+@font-face {
+  font-family: 'Burgundia';
+  src: url('/docs/Burgundia_PERSONAL_USE_ONLY.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Display font for technical labels / numbers / headings (replaces Squada One). */
+@font-face {
+  font-family: 'Epic Pro';
+  src: url('/docs/epicpro.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Minimal global baseline — keeps the dark theme background painted before a
    route's own stylesheet loads (prevents a white flash). Each page's CSS under
    styles/ owns the real styling; this only sets the canvas behind it. */
@@ -198,7 +217,7 @@ body.page-transitioning #music-btn-desktop {
 }
 .mobile-menu-link:hover { transform: translateY(-3px) scale(1.04); }
 .mobile-menu-title {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Burgundia', cursive;
   font-size: clamp(38px, 10vw, 68px);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
@@ -244,6 +263,14 @@ body.page-transitioning #music-btn-desktop {
   border-radius: 50%;
   background: rgba(140, 210, 255, 0.85);
 }
+
+/* Extra room only for the titles with descenders/tall glyphs (Experience, Projects)
+   that were overlapping — other items keep their original tighter spacing.
+   #mobile-menu prefix (specificity 1,1,0) beats the per-page .mobile-menu-* duplicates. */
+#mobile-menu .mobile-menu-link[data-page="experience"] .mobile-menu-title,
+#mobile-menu .mobile-menu-link[data-page="projects"] .mobile-menu-title { line-height: 1.28; }
+#mobile-menu .mobile-menu-link[data-page="experience"] .mobile-menu-desc,
+#mobile-menu .mobile-menu-link[data-page="projects"] .mobile-menu-desc { margin-top: 6px; }
 
 /* Close button shown when the mobile menu is open */
 #menu-close-mobile {

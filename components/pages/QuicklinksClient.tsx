@@ -199,8 +199,8 @@ export default function QuicklinksClient() {
                   <div className="pc-stats">
                     <div className="pc-stat"><span className="pc-stat-label">Followers</span><span className="pc-stat-value">440+</span>
                     </div>
-                    <div className="pc-stat"><span className="pc-stat-label">Category</span><span
-                      className="pc-stat-value">Gaming</span>
+                    <div className="pc-stat"><span className="pc-stat-label">Type</span><span
+                      className="pc-stat-value">Live</span>
                     </div>
                   </div>
 
@@ -251,8 +251,8 @@ export default function QuicklinksClient() {
                   <div className="pc-stats">
                     <div className="pc-stat"><span className="pc-stat-label">Followers</span><span className="pc-stat-value">20+</span>
                     </div>
-                    <div className="pc-stat"><span className="pc-stat-label">Category</span><span
-                      className="pc-stat-value">Gaming</span>
+                    <div className="pc-stat"><span className="pc-stat-label">Type</span><span
+                      className="pc-stat-value">Live</span>
                     </div>
                   </div>
                   <span className="pc-link" style={{ display: 'inline-block', padding: '10px 0' }}>
@@ -279,8 +279,8 @@ export default function QuicklinksClient() {
                   <div className="pc-stats">
                     <div className="pc-stat"><span className="pc-stat-label">Followers</span><span className="pc-stat-value">20+</span>
                     </div>
-                    <div className="pc-stat"><span className="pc-stat-label">Category</span><span
-                      className="pc-stat-value">Gaming</span>
+                    <div className="pc-stat"><span className="pc-stat-label">Type</span><span
+                      className="pc-stat-value">Live</span>
                     </div>
                   </div>
                   <span className="pc-link" style={{ display: 'inline-block', padding: '10px 0' }}>

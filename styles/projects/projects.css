@@ -426,7 +426,7 @@ body::after {
 .mobile-menu-link:hover { transform: translateY(-3px) scale(1.04); }
 
 .mobile-menu-title {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Burgundia', cursive;
   font-size: clamp(38px, 10vw, 68px);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
@@ -529,15 +529,15 @@ body:has(.cs-wrap) { overflow-x: hidden; }
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: rgba(140, 210, 255, 0.75);
-  margin-bottom: 14px;
+  margin-bottom: 24px;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s forwards;
 }
 
 .page-title {
-  font-family: 'Great Vibes', cursive !important;
-  font-size: clamp(62px, 9vw, 102px);
+  font-family: 'Burgundia', cursive !important;
+  font-size: clamp(62px, 9vw, 86px);
   font-weight: 700;
   color: var(--white);
   line-height: 1.1;
@@ -641,14 +641,26 @@ body:has(.cs-wrap) { overflow-x: hidden; }
 }
 
 .panel-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(26px, 3vw, 42px);
-  font-weight: 800;
-  line-height: 1.1;
-  color: #fff;
+  font-family: 'Epic Pro', 'Montserrat', sans-serif;
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 400;
+  line-height: 1.0;
   text-transform: uppercase;
   margin-bottom: 24px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.005em;
+  /* Cosmic gradient text + soft glow to match the page's glowing hero aesthetic */
+  background: linear-gradient(180deg, #ffffff 0%, #dbe9ff 50%, #9cc7ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 22px rgba(120, 175, 255, 0.4));
+  transition: font-size 0.45s cubic-bezier(0.25, 1, 0.33, 1);
+}
+
+/* When one panel is focused the other shrinks — scale its title down so it never
+   overflows to a third line in the narrower space. */
+.hub-divide-container:hover .divide-panel:not(:hover) .panel-title {
+  font-size: clamp(24px, 2.6vw, 34px);
 }
 
 .panel-line {
@@ -815,7 +827,7 @@ body:has(.cs-wrap) { overflow-x: hidden; }
 }
 
 .project-title {
-  font-family: 'Squada One', sans-serif;
+  font-family: 'Epic Pro', sans-serif;
   font-size: 1.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: #fff;
 }
 
@@ -951,7 +963,7 @@ footer {
   right: 16px;
   z-index: 3;
   max-width: calc(100% - 32px);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
