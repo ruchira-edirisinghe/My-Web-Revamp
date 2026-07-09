@@ -50,18 +50,9 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
     return () => window.removeEventListener('pageshow', handlePageShow);
   }, []);
 
-  // Skip the full preloader on revisits within the same session
+  // Play the preloader on every load and every in-site navigation (no session skip).
   useLayoutEffect(() => {
-    if (sessionStorage.getItem('site_visited')) {
-      const hide = (id: string) => {
-        const el = document.getElementById(id);
-        if (el) { el.style.cssText = 'display:none!important;opacity:0;'; }
-      };
-      hide('preloader'); hide('split-top'); hide('split-bottom');
-      document.body.classList.add('skip-preloader');
-    } else {
-      sessionStorage.setItem('site_visited', '1');
-    }
+    document.body.classList.remove('skip-preloader');
   }, []);
 
   // Smooth page-enter transition on client-side navigations + close mobile menu

@@ -19,16 +19,8 @@ export default function HomeClient() {
     // wants a data-page, so clear it unconditionally before first paint.
     document.body.removeAttribute('data-page');
 
-    if (sessionStorage.getItem('site_visited')) {
-      const hide = (id: string) => {
-        const el = document.getElementById(id);
-        if (el) { el.style.cssText = 'display:none!important;opacity:0;'; }
-      };
-      hide('preloader'); hide('split-top'); hide('split-bottom');
-      document.body.classList.add('skip-preloader');
-    } else {
-      sessionStorage.setItem('site_visited', '1');
-    }
+    // Play the preloader on every load and every in-site navigation (no session skip).
+    document.body.classList.remove('skip-preloader');
   }, []);
 
   useEffect(() => {
@@ -99,7 +91,7 @@ export default function HomeClient() {
             <h1 className="name">Ruchira Edirisinghe</h1>
           </div>
           <div className="cta-row">
-            <a href="#" className="btn btn-outline" id="btn-explore">Explore</a>
+            <button type="button" className="btn btn-outline" id="btn-explore">Explore</button>
             <Link href="/projects" className="btn btn-solid" id="btn-work">
               See My Work
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -115,7 +107,7 @@ export default function HomeClient() {
 
       {/* Overlay navigation */}
       <div id="menu-overlay">
-        <nav className="menu-nav">
+        <nav className="menu-nav" aria-label="Site menu">
           <Link href="/about" className="menu-item">
             <span className="menu-item-title">About Me</span>
             <span className="menu-item-desc">Who I am &amp; what drives me</span>
@@ -149,7 +141,6 @@ export default function HomeClient() {
         <canvas id="spectrum-canvas" width="26" height="18"></canvas>
       </button>
 
-      <div id="cursor-dot"></div>
       <canvas id="cursor-canvas"></canvas>
 
       <ScrollTop />

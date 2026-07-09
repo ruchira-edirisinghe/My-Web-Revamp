@@ -4,7 +4,11 @@ export type NavKey = 'about' | 'experience' | 'projects' | 'links' | 'contact' |
 
 /** Desktop top navigation (Shell B). `active` highlights the current section. */
 export default function Navbar({ active = null }: { active?: NavKey }) {
-  const cls = (key: NavKey) => 'nav-link' + (active === key ? ' active' : '');
+  // Marks the active item both visually (.active) and for assistive tech (aria-current).
+  const linkProps = (key: NavKey, base = 'nav-link') =>
+    active === key
+      ? { className: `${base} active`, 'aria-current': 'page' as const }
+      : { className: base };
   return (
     <div id="navbar-wrap">
       <Link href="/" aria-label="Home">
@@ -12,13 +16,13 @@ export default function Navbar({ active = null }: { active?: NavKey }) {
       </Link>
       <nav id="navbar">
         <div className="nav-links">
-          <Link href="/about" className={cls('about')}>About Me</Link>
-          <Link href="/experience" className={cls('experience')}>Experience</Link>
-          <Link href="/projects" className={cls('projects')}>Projects</Link>
-          <Link href="/links" className={cls('links')}>Quick Links</Link>
+          <Link href="/about" {...linkProps('about')}>About Me</Link>
+          <Link href="/experience" {...linkProps('experience')}>Experience</Link>
+          <Link href="/projects" {...linkProps('projects')}>Projects</Link>
+          <Link href="/links" {...linkProps('links')}>Quick Links</Link>
         </div>
         <div className="nav-divider"></div>
-        <Link href="/contact" className="nav-cta">Say Hi 👋</Link>
+        <Link href="/contact" {...linkProps('contact', 'nav-cta')}>Say Hi 👋</Link>
       </nav>
     </div>
   );

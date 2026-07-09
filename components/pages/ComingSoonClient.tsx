@@ -13,13 +13,8 @@ import ScrollTop from '@/components/ScrollTop';
  */
 export default function ComingSoonClient() {
   useLayoutEffect(() => {
-    if (sessionStorage.getItem('site_visited')) {
-      const hide = (id: string) => { const el = document.getElementById(id); if (el) el.style.cssText = 'display:none!important;opacity:0;'; };
-      hide('preloader'); hide('split-top'); hide('split-bottom');
-      document.body.classList.add('skip-preloader');
-    } else {
-      sessionStorage.setItem('site_visited', '1');
-    }
+    // Play the preloader on every load and every in-site navigation (no session skip).
+    document.body.classList.remove('skip-preloader');
   }, []);
 
   useEffect(() => initComingSoon(), []);

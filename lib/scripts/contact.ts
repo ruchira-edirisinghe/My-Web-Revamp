@@ -582,33 +582,65 @@ export function initContact(): () => void {
     const modalIconWrap = document.getElementById('modal-icon-wrap');
     const modalAction = document.getElementById('modal-action-text');
     let pendingUrl = '';
+    let modalOpener: any = null;
 
     if (!overlay || !cancelBtn || !confirmBtn) return;
 
+    // Dialog semantics for assistive tech
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    if (modalAction) overlay.setAttribute('aria-labelledby', 'modal-action-text');
+    else overlay.setAttribute('aria-label', 'Confirm navigation');
+
     const timeouts: any[] = [];
-    const closeModal = () => { overlay.classList.remove('active'); const id = setTimeout(() => { pendingUrl = ''; }, 300); timeouts.push(id); };
+    const closeModal = () => {
+      overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (modalOpener && typeof modalOpener.focus === 'function') modalOpener.focus();
+      modalOpener = null;
+      const id = setTimeout(() => { pendingUrl = ''; }, 300);
+      timeouts.push(id);
+    };
+
+    const openModal = (card) => {
+      const url = card.getAttribute('data-url');
+      if (!url) return;
+      modalOpener = card;
+      pendingUrl = url;
+      const iconHtml = card.querySelector('.cc-icon-wrap').innerHTML;
+      const detail = card.getAttribute('data-detail');
+      const action = card.getAttribute('data-action');
+      modalAction.textContent = action;
+      document.getElementById('modal-detail-box').textContent = detail;
+      modalIconWrap.innerHTML = iconHtml;
+
+      const sourceStyles = window.getComputedStyle(card);
+      ['--cc-color', '--cc-icon-border', '--cc-icon-bg', '--cc-glow'].forEach(prop => {
+        modalIconWrap.style.setProperty(prop, sourceStyles.getPropertyValue(prop));
+      });
+      overlay.style.setProperty('--modal-glow', sourceStyles.getPropertyValue('--cc-glow').replace('0.08', '0.4').replace('0.15', '0.4'));
+      modalCard.style.setProperty('--cc-color', sourceStyles.getPropertyValue('--cc-color'));
+      modalCard.style.setProperty('--cc-glow', sourceStyles.getPropertyValue('--cc-glow'));
+      overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      // Focus the safe (cancel) action so Enter doesn't fire the redirect
+      if (cancelBtn && typeof cancelBtn.focus === 'function') cancelBtn.focus();
+    };
 
     cards.forEach(card => {
-      bag.on(card, 'click', () => {
-        const url = card.getAttribute('data-url');
-        if (url) {
-          pendingUrl = url;
-          const iconHtml = card.querySelector('.cc-icon-wrap').innerHTML;
-          const detail = card.getAttribute('data-detail');
-          const action = card.getAttribute('data-action');
-          modalAction.textContent = action;
-          document.getElementById('modal-detail-box').textContent = detail;
-          modalIconWrap.innerHTML = iconHtml;
-
-          const sourceStyles = window.getComputedStyle(card);
-          ['--cc-color', '--cc-icon-border', '--cc-icon-bg', '--cc-glow'].forEach(prop => {
-            modalIconWrap.style.setProperty(prop, sourceStyles.getPropertyValue(prop));
-          });
-          overlay.style.setProperty('--modal-glow', sourceStyles.getPropertyValue('--cc-glow').replace('0.08', '0.4').replace('0.15', '0.4'));
-          modalCard.style.setProperty('--cc-color', sourceStyles.getPropertyValue('--cc-color'));
-          modalCard.style.setProperty('--cc-glow', sourceStyles.getPropertyValue('--cc-glow'));
-          overlay.classList.add('active');
-        }
+      // Keyboard access: expose each contact channel as a button
+      if (!card.hasAttribute('role')) card.setAttribute('role', 'button');
+      if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+      const action = card.getAttribute('data-action');
+      const detail = card.getAttribute('data-detail');
+      if (action && !card.getAttribute('aria-label')) {
+        card.setAttribute('aria-label', detail ? `${action}: ${detail}` : action);
+      }
+      bag.on(card, 'click', () => openModal(card));
+      bag.on(card, 'keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
       });
     });
 
@@ -623,8 +655,10 @@ export function initContact(): () => void {
       closeModal();
     });
     bag.on(overlay, 'click', (e) => { if (e.target === overlay) closeModal(); });
+    // Escape closes the confirm modal
+    bag.on(document, 'keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal(); });
 
-    bag.add(() => { timeouts.forEach(clearTimeout); });
+    bag.add(() => { timeouts.forEach(clearTimeout); document.body.style.overflow = ''; });
   })();
 
   /* ══════════ 7. COLLAB ACCORDION ══════════ */

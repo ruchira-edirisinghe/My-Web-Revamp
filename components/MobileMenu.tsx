@@ -7,7 +7,11 @@ import type { NavKey } from './Navbar';
  * #menu-close-mobile and the .mobile-menu-link items.
  */
 export default function MobileMenu({ active = null }: { active?: NavKey }) {
-  const cls = (key: NavKey) => 'mobile-menu-link' + (active === key ? ' active' : '');
+  // Active item marked for both CSS (.active) and assistive tech (aria-current).
+  const linkProps = (key: NavKey) =>
+    active === key
+      ? { className: 'mobile-menu-link active', 'aria-current': 'page' as const }
+      : { className: 'mobile-menu-link' };
   return (
     <>
       <div id="mobile-topbar">
@@ -23,24 +27,24 @@ export default function MobileMenu({ active = null }: { active?: NavKey }) {
       </div>
 
       <div id="mobile-menu" aria-hidden="true">
-        <nav className="mobile-menu-panel">
-          <Link href="/about" data-page="about" className={cls('about')}>
+        <nav className="mobile-menu-panel" aria-label="Site menu">
+          <Link href="/about" data-page="about" {...linkProps('about')}>
             <span className="mobile-menu-title">About Me</span>
             <span className="mobile-menu-desc">Who I am &amp; what drives me</span>
           </Link>
-          <Link href="/experience" data-page="experience" className={cls('experience')}>
+          <Link href="/experience" data-page="experience" {...linkProps('experience')}>
             <span className="mobile-menu-title">Experience</span>
             <span className="mobile-menu-desc">My journey &amp; career highlights</span>
           </Link>
-          <Link href="/projects" data-page="projects" className={cls('projects')}>
+          <Link href="/projects" data-page="projects" {...linkProps('projects')}>
             <span className="mobile-menu-title">Projects</span>
             <span className="mobile-menu-desc">Work I&apos;ve crafted &amp; shipped</span>
           </Link>
-          <Link href="/links" data-page="links" className={cls('links')}>
+          <Link href="/links" data-page="links" {...linkProps('links')}>
             <span className="mobile-menu-title">Quick Links</span>
             <span className="mobile-menu-desc">Digital Constellation</span>
           </Link>
-          <Link href="/contact" data-page="contact" className={cls('contact')}>
+          <Link href="/contact" data-page="contact" {...linkProps('contact')}>
             <span className="mobile-menu-title">Contact Me</span>
             <span className="mobile-menu-desc">Let&apos;s build something cosmic</span>
           </Link>

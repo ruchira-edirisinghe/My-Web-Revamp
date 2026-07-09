@@ -437,7 +437,7 @@ export default function AboutClient() {
                       </svg>
                       Download CV
                     </a>
-                    <a href="https://drive.google.com/file/d/1VOlUmLOLnbNnXnkU8TE6Y9E5qZbVBvOY/view?usp=sharing/view" onClick={() => setIsCvModalOpen(false)}
+                    <a href="https://drive.google.com/file/d/1VOlUmLOLnbNnXnkU8TE6Y9E5qZbVBvOY/view?usp=sharing" onClick={() => setIsCvModalOpen(false)}
                       target="_blank" rel="noopener noreferrer" className="cv-btn cv-btn-ghost">
                       <svg viewBox="0 0 24 24" fill="none">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" strokeWidth="1.7"

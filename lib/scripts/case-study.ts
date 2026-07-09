@@ -132,9 +132,16 @@ export function initCaseStudy(): () => void {
     const ctaBtns = document.querySelectorAll('.cs-cta-btn');
 
     if (redirectModal && redirectMsg && redirectConfirm && redirectCancel) {
+      // Dialog semantics for assistive tech
+      redirectModal.setAttribute('role', 'dialog');
+      redirectModal.setAttribute('aria-modal', 'true');
+      if (document.getElementById('redirect-title')) redirectModal.setAttribute('aria-labelledby', 'redirect-title');
+      let redirectOpener: any = null;
+
       ctaBtns.forEach(btn => {
         bag.on(btn, 'click', (e) => {
           e.preventDefault();
+          redirectOpener = btn;
           const url = btn.getAttribute('href');
           const t = btn.textContent.toLowerCase();
           const platform = t.includes('figma') ? 'Figma'
@@ -148,6 +155,8 @@ export function initCaseStudy(): () => void {
           redirectModal.classList.add('active');
           redirectModal.setAttribute('aria-hidden', 'false');
           document.body.style.overflow = 'hidden';
+          // Focus the safe (cancel) action so Enter doesn't fire the redirect
+          if (redirectCancel && typeof redirectCancel.focus === 'function') redirectCancel.focus();
         });
       });
 
@@ -155,10 +164,16 @@ export function initCaseStudy(): () => void {
         redirectModal.classList.remove('active');
         redirectModal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
+        if (redirectOpener && typeof redirectOpener.focus === 'function') redirectOpener.focus();
+        redirectOpener = null;
       };
       bag.on(redirectCancel, 'click', closeRedirect);
       bag.on(redirectConfirm, 'click', closeRedirect);
       bag.on(redirectModal, 'click', (e) => { if (e.target === redirectModal) closeRedirect(); });
+      // Escape closes the redirect modal (previously only the lightbox handled Escape)
+      bag.on(document, 'keydown', (e) => {
+        if (e.key === 'Escape' && redirectModal.classList.contains('active')) closeRedirect();
+      });
     }
 
     bag.add(() => { document.body.style.overflow = ''; });
@@ -174,6 +189,12 @@ export function initCaseStudy(): () => void {
     const prevBtn = document.getElementById('cs-modal-prev');
     const nextBtn = document.getElementById('cs-modal-next');
     if (!modal || !modalImg) return;
+
+    // Dialog semantics for assistive tech
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    if (modalTitle) modal.setAttribute('aria-labelledby', 'cs-modal-title');
+    let lastFocused: any = null;
 
     let galleryItems = [];
     const uiCards = document.querySelectorAll('.ui-card, #onboarding-grid .cs-card');
@@ -201,6 +222,7 @@ export function initCaseStudy(): () => void {
       modalImg.style.opacity = '0';
       modalImg.style.transform = 'translateY(0) scale(0.98)';
       modalTitle.textContent = item.title;
+      modalImg.alt = item.title ? `${item.title} — full screenshot` : 'Case study screenshot';
       modalCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
       modalImg.onload = () => { modalImg.style.opacity = '1'; modalImg.style.transform = 'translateY(0) scale(1)'; };
       modalImg.src = item.url;
@@ -252,11 +274,13 @@ export function initCaseStudy(): () => void {
     bag.on(window, 'mouseleave', () => { if (isDragging) { isDragging = false; if (container) container.style.cursor = 'grab'; } });
 
     function openModal(index) {
+      lastFocused = document.activeElement;
       currentIndex = index; resetZoom(); updateModal();
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
       document.body.classList.add('modal-open');
+      if (closeBtn && typeof closeBtn.focus === 'function') closeBtn.focus();
     }
     function closeModal() {
       modal.classList.remove('open');
@@ -264,6 +288,7 @@ export function initCaseStudy(): () => void {
       document.body.style.overflow = '';
       document.body.classList.remove('modal-open');
       resetZoom();
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
       setTimeout(() => { modalImg.removeAttribute('src'); }, 500);
     }
     function showNext() { currentIndex = (currentIndex + 1) % galleryItems.length; resetZoom(); updateModal(); }
@@ -271,13 +296,20 @@ export function initCaseStudy(): () => void {
 
     uiCards.forEach(card => {
       card.style.cursor = 'pointer';
-      bag.on(card, 'click', (e) => {
+      // Keyboard access: expose each screenshot card as a button
+      if (!card.hasAttribute('role')) card.setAttribute('role', 'button');
+      if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+      const label = card.querySelector('.ui-card-label')?.textContent;
+      if (label && !card.getAttribute('aria-label')) card.setAttribute('aria-label', `View ${label.trim()}`);
+      const openFromCard = (e) => {
         e.preventDefault();
         buildGallery(card.closest('.cs-panel, .device-gallery') || document);
         const url = card.getAttribute('data-full');
         const index = galleryItems.findIndex(item => item.url === url);
         if (index !== -1) openModal(index);
-      });
+      };
+      bag.on(card, 'click', openFromCard);
+      bag.on(card, 'keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openFromCard(e); });
     });
 
     if (closeBtn) bag.on(closeBtn, 'click', closeModal);

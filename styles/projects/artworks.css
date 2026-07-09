@@ -97,7 +97,8 @@
   transform: translateY(10px);
 }
 
-.masonry-item:hover .artwork-info {
+.masonry-item:hover .artwork-info,
+.masonry-item:focus-within .artwork-info {
   opacity: 1;
   transform: translateY(0);
 }

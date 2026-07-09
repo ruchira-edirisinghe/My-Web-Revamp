@@ -18,11 +18,21 @@ export function initGalleryModal(): () => void {
 
   if (!modal || !modalImg || !closeBtn) return () => {};
 
+  // Dialog semantics for assistive tech
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  if (modalTitle) modal.setAttribute('aria-labelledby', 'modal-title');
+
   let lastFocused = null;
   const timeouts: any[] = [];
 
   function openModal(src, tag, title, desc) {
+    // Fade the new image in on load to avoid a flash of the previous/blank image
+    modalImg.style.opacity = '0';
+    modalImg.alt = title || tag || 'Full size image';
+    modalImg.onload = () => { modalImg.style.opacity = '1'; };
     modalImg.src = src;
+    if (modalImg.complete) modalImg.style.opacity = '1';
     if (modalTag) modalTag.textContent = tag || '';
     if (modalTitle) modalTitle.textContent = title || '';
     if (modalDesc) modalDesc.textContent = desc || '';
@@ -69,6 +79,20 @@ export function initGalleryModal(): () => void {
         e.preventDefault();
         e.stopPropagation();
         openModal(highResUrl, tag, title, desc);
+      });
+    } else {
+      // Cards without a focusable child (e.g. logo cards) are mouse-only —
+      // expose them as keyboard-operable buttons.
+      if (!item.hasAttribute('role')) item.setAttribute('role', 'button');
+      if (!item.hasAttribute('tabindex')) item.setAttribute('tabindex', '0');
+      if ((title || tag) && !item.getAttribute('aria-label')) {
+        item.setAttribute('aria-label', `View ${title || tag}`);
+      }
+      bag.on(item, 'keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(highResUrl, tag, title, desc);
+        }
       });
     }
   });

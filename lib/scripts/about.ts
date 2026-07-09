@@ -874,7 +874,7 @@ export function initAbout(): () => void {
 
     if (modalCancel) bag.on(modalCancel, 'click', closeModal);
     if (modalConfirm) bag.on(modalConfirm, 'click', function () {
-      if (pendingUrl) window.open(pendingUrl, '_blank');
+      if (pendingUrl) window.open(pendingUrl, '_blank', 'noopener');
       closeModal();
     });
 

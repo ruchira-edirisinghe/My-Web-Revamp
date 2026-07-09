@@ -260,6 +260,8 @@ export function initScatterMenuCursor(): () => void {
   function triggerMenu() {
     overlay.classList.add('visible'); overlay.style.opacity = '1';
     closeBtn.classList.add('visible');
+    // Move keyboard focus into the open menu (a11y: focus follows the visible UI)
+    closeBtn && closeBtn.focus();
     items.forEach((item, i) => {
       item.style.animation = 'none';
       item.style.opacity = '0'; item.style.transform = 'scale(0.2)'; item.style.filter = 'blur(12px)';
@@ -269,6 +271,8 @@ export function initScatterMenuCursor(): () => void {
   }
 
   function closeMenu() {
+    // Return focus to the control that opened the menu (a11y)
+    if (btnEx && typeof btnEx.focus === 'function') btnEx.focus();
     const total = items.length;
     items.forEach((item, i) => {
       item.style.animation = 'none';

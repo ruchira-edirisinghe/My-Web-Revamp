@@ -466,11 +466,13 @@ opacity: 0.7;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(200, 160, 255, 0.9), transparent);
   animation: shootingStar 4s ease-in-out infinite 1.5s;
+  will-change: transform, opacity;
 }
 
+/* GPU-composited sweep — translateX instead of animating `left` (repeats many times per page) */
 @keyframes shootingStar {
   0% {
-    left: -40%;
+    transform: translateX(0);
     opacity: 0;
   }
 
@@ -483,7 +485,7 @@ opacity: 0.7;
   }
 
   100% {
-    left: 140%;
+    transform: translateX(450%);
     opacity: 0;
   }
 }

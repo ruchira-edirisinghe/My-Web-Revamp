@@ -1,0 +1,151 @@
+/* Branded 404 — matches the site's cosmic dark theme using fonts already loaded
+   globally in layout.tsx (Orbitron / Sora / Montserrat). Pure CSS, no engine. */
+
+.nf-page {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  padding: 48px 24px 72px;
+  background:
+    radial-gradient(1200px 620px at 50% -12%, rgba(60, 120, 255, 0.16), transparent 62%),
+    #02030a;
+}
+
+/* Layered starfield — subtle twinkle keeps the empty space alive */
+.nf-stars {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 18% 28%, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(1px 1px at 68% 62%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1.6px 1.6px at 42% 80%, rgba(180, 220, 255, 0.75), transparent),
+    radial-gradient(1px 1px at 85% 24%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 54% 14%, rgba(180, 220, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 9% 68%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1.4px 1.4px at 78% 82%, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1px 1px at 32% 46%, rgba(255, 255, 255, 0.4), transparent);
+  animation: nfTwinkle 6.5s ease-in-out infinite alternate;
+}
+@keyframes nfTwinkle {
+  from { opacity: 0.35; }
+  to   { opacity: 0.8; }
+}
+
+/* Soft nebula glow behind the number for depth */
+.nf-nebula {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: min(680px, 92vw);
+  height: min(680px, 92vw);
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(70, 120, 255, 0.2), rgba(70, 120, 255, 0) 60%);
+  filter: blur(28px);
+}
+
+.nf-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.nf-code {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: clamp(96px, 22vw, 220px);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  background: linear-gradient(180deg, #eaf4ff 0%, #8cc4ff 46%, #3f7bff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 10px 46px rgba(60, 120, 255, 0.4));
+}
+
+.nf-title {
+  margin: 18px 0 0;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: clamp(22px, 4.2vw, 38px);
+  letter-spacing: -0.01em;
+  color: #f2f6ff;
+  text-wrap: balance;
+}
+
+.nf-text {
+  margin: 16px auto 0;
+  max-width: 48ch;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 2.4vw, 16px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  text-wrap: pretty;
+}
+
+.nf-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.nf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 26px;
+  border-radius: 14px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+.nf-btn svg { width: 17px; height: 17px; }
+
+.nf-btn-primary {
+  color: #02030a;
+  background: linear-gradient(180deg, #bfe0ff, #6facff);
+  box-shadow: 0 10px 30px rgba(80, 150, 255, 0.35);
+}
+.nf-btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 16px 42px rgba(80, 150, 255, 0.5);
+}
+.nf-btn-primary:active { transform: translateY(0) scale(0.98); }
+
+.nf-btn-ghost {
+  color: #dce9ff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.nf-btn-ghost:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(140, 200, 255, 0.4);
+}
+.nf-btn-ghost:active { transform: translateY(0) scale(0.98); }
+
+.nf-btn:focus-visible {
+  outline: 2px solid rgba(140, 205, 255, 0.9);
+  outline-offset: 3px;
+}

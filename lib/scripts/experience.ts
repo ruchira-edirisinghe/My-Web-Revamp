@@ -1508,7 +1508,7 @@ export function initExperience(): () => void {
     bag.on(confirmBtn, 'click', (e) => {
       e.stopPropagation();
       if (pendingUrl) {
-        window.open(pendingUrl, '_blank');
+        window.open(pendingUrl, '_blank', 'noopener');
       }
       closeModal();
     });
