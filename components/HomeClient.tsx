@@ -13,7 +13,7 @@ export default function HomeClient() {
     // The home hero layout is guarded by `body:not([data-page]) .page` in
     // styles/home/style.css. Every non-home page sets body[data-page] (via
     // StandardShell → useBodyDataPage) and clears it on unmount, but a stale
-    // value can survive a back-navigation / bfcache restore — which switches
+    // value can survive a back-navigation / bfcache restore - which switches
     // that guard off and lets other pages' `main`/`.page` rules bleed onto the
     // hero (enlarged photo, one-line name, mis-placed elements). Home never
     // wants a data-page, so clear it unconditionally before first paint.

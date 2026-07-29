@@ -39,7 +39,7 @@ export default function CaseStudyLms() {
 
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
-          {/* HERO — Title + Cover Banner */}
+          {/* HERO - Title + Cover Banner */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">ZUSE Corporate<br/>Learning System</h1>
             <p className="cs-hero-subtitle">Modernizing the Corporate Knowledge Ecosystem</p>
@@ -89,10 +89,10 @@ export default function CaseStudyLms() {
           </div>
 
 
-          {/* 01 — THE PROBLEM */}
+          {/* 01 - THE PROBLEM */}
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
@@ -106,7 +106,7 @@ export default function CaseStudyLms() {
             </p>
 
             <div className="cs-highlight">
-              <p>"Employees were spending an average of <em>6–9 minutes</em> just to find basic course information —
+              <p>"Employees were spending an average of <em>6-9 minutes</em> just to find basic course information -
                 leading to high drop-off rates before the learning even began."</p>
             </div>
 
@@ -133,10 +133,10 @@ export default function CaseStudyLms() {
           </section>
 
 
-          {/* 02 — RESEARCH */}
+          {/* 02 - RESEARCH */}
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery & Research</span>
               <div className="cs-section-line"></div>
             </div>
@@ -192,7 +192,7 @@ export default function CaseStudyLms() {
                 <div className="persona-avatar">🏃‍♂️</div>
                 <div>
                   <div className="persona-name">Kusum Perera</div>
-                  <div className="persona-role">Primary — Busy Professional · Age 28</div>
+                  <div className="persona-role">Primary - Busy Professional · Age 28</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Mobile-first</span>
                     <span className="persona-trait">Impatient</span>
@@ -207,7 +207,7 @@ export default function CaseStudyLms() {
                 <div className="persona-avatar">💼</div>
                 <div>
                   <div className="persona-name">Damith Wickramasinghe</div>
-                  <div className="persona-role">Secondary — Division Manager · Age 45</div>
+                  <div className="persona-role">Secondary - Division Manager · Age 45</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Desktop user</span>
                     <span className="persona-trait">Compliance-focused</span>
@@ -222,7 +222,7 @@ export default function CaseStudyLms() {
                 <div className="persona-avatar">🛠️</div>
                 <div>
                   <div className="persona-name">Dilshan Ratnayake</div>
-                  <div className="persona-role">Tertiary — HR System Admin · Age 34</div>
+                  <div className="persona-role">Tertiary - HR System Admin · Age 34</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Quick-access</span>
                     <span className="persona-trait">Batch-editor</span>
@@ -272,10 +272,10 @@ export default function CaseStudyLms() {
           </section>
 
 
-          {/* 03 — IDEATION */}
+          {/* 03 - IDEATION */}
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure & Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -344,10 +344,10 @@ export default function CaseStudyLms() {
           </section>
 
 
-          {/* 04 — SOLUTION / DESIGN */}
+          {/* 04 - SOLUTION / DESIGN */}
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
@@ -552,10 +552,10 @@ export default function CaseStudyLms() {
           </section>
 
 
-          {/* 05 — RESULTS & REFLECTION */}
+          {/* 05 - RESULTS & REFLECTION */}
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">Results & Reflection</span>
               <div className="cs-section-line"></div>
             </div>

@@ -41,11 +41,11 @@ export default function CaseStudyLottogram() {
 
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">Lottogram</h1>
-            <p className="cs-hero-subtitle">A Betting &amp; Lottery Platform — Designed for Both Desktop and Mobile</p>
+            <p className="cs-hero-subtitle">A Betting &amp; Lottery Platform - Designed for Both Desktop and Mobile</p>
           </header>
 
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/lottogram/cover.png" alt="Lottogram — betting &amp; lottery platform cover"
+            <img src="/Images/projects/lottogram/cover.png" alt="Lottogram - betting &amp; lottery platform cover"
               className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
@@ -76,32 +76,32 @@ export default function CaseStudyLottogram() {
 
           <div className="cs-elevator">
             <p>
-              A betting and lottery platform is one of the densest products to design — odds, slips, wallets, live events, loyalty and promotions all fighting for attention. Lottogram tames that complexity into a bold, confident experience that feels <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>consistent and trustworthy across desktop and mobile alike.</em>
+              A betting and lottery platform is one of the densest products to design - odds, slips, wallets, live events, loyalty and promotions all fighting for attention. Lottogram tames that complexity into a bold, confident experience that feels <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>consistent and trustworthy across desktop and mobile alike.</em>
             </p>
           </div>
 
 
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Context &amp; The Problem</h2>
 
             <p className="cs-body">
-              Betting platforms live and die on clarity and trust. Users move fast across games, live events and their wallet — often switching between a desktop session and their phone mid-bet. Most platforms feel cluttered and inconsistent between the two, eroding confidence right where money is on the line.
+              Betting platforms live and die on clarity and trust. Users move fast across games, live events and their wallet - often switching between a desktop session and their phone mid-bet. Most platforms feel cluttered and inconsistent between the two, eroding confidence right where money is on the line.
             </p>
 
             <div className="cs-highlight">
-              <p>"In betting, the interface <em>is</em> the trust — it has to feel as confident on a phone in your hand as on a desktop at home."</p>
+              <p>"In betting, the interface <em>is</em> the trust - it has to feel as confident on a phone in your hand as on a desktop at home."</p>
             </div>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
                 <h4>Problem Statement</h4>
-                <p>A data-dense product — odds, bet history, wallets, live events — was hard to make scannable and trustworthy, and even harder to keep consistent across desktop and mobile.</p>
+                <p>A data-dense product - odds, bet history, wallets, live events - was hard to make scannable and trustworthy, and even harder to keep consistent across desktop and mobile.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
@@ -111,7 +111,7 @@ export default function CaseStudyLottogram() {
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
                 <h4>Target Audience</h4>
-                <p>Casual players chasing promotions and games, and serious bettors who track odds, bet history and their wallet closely — on whichever device they're on.</p>
+                <p>Casual players chasing promotions and games, and serious bettors who track odds, bet history and their wallet closely - on whichever device they're on.</p>
               </div>
             </div>
           </section>
@@ -119,7 +119,7 @@ export default function CaseStudyLottogram() {
 
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery &amp; Research</span>
               <div className="cs-section-line"></div>
             </div>
@@ -161,7 +161,7 @@ export default function CaseStudyLottogram() {
                 <div className="persona-avatar">🎰</div>
                 <div>
                   <div className="persona-name">The Casual Player</div>
-                  <div className="persona-role">Primary — Plays for Fun</div>
+                  <div className="persona-role">Primary - Plays for Fun</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Mobile-first</span>
                     <span className="persona-trait">Promo-driven</span>
@@ -174,26 +174,26 @@ export default function CaseStudyLottogram() {
                 <div className="persona-avatar">📊</div>
                 <div>
                   <div className="persona-name">The Serious Bettor</div>
-                  <div className="persona-role">Secondary — Tracks Everything</div>
+                  <div className="persona-role">Secondary - Tracks Everything</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Data-hungry</span>
                     <span className="persona-trait">Desktop power-user</span>
                     <span className="persona-trait">Methodical</span>
                   </div>
-                  <p className="persona-quote">"I live in my bet history and wallet — I need detail, accuracy and fast switching."</p>
+                  <p className="persona-quote">"I live in my bet history and wallet - I need detail, accuracy and fast switching."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">📡</div>
                 <div>
                   <div className="persona-name">The Live Bettor</div>
-                  <div className="persona-role">Tertiary — In-Play</div>
+                  <div className="persona-role">Tertiary - In-Play</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Real-time</span>
                     <span className="persona-trait">On-the-go</span>
                     <span className="persona-trait">Reactive</span>
                   </div>
-                  <p className="persona-quote">"When an event is live, every second counts — the odds and slip have to keep up."</p>
+                  <p className="persona-quote">"When an event is live, every second counts - the odds and slip have to keep up."</p>
                 </div>
               </div>
             </div>
@@ -231,7 +231,7 @@ export default function CaseStudyLottogram() {
 
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure &amp; Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -253,7 +253,7 @@ export default function CaseStudyLottogram() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The same information architecture was designed <strong style={{ color: '#fff' }}>twice in parallel</strong> — a wide desktop layout (with a foldable sidebar) and a focused mobile layout — sharing one component system so nothing felt out of place between them.</p>
+              <p className="cs-callout-text">The same information architecture was designed <strong style={{ color: '#fff' }}>twice in parallel</strong> - a wide desktop layout (with a foldable sidebar) and a focused mobile layout - sharing one component system so nothing felt out of place between them.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -285,14 +285,14 @@ export default function CaseStudyLottogram() {
 
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Visual Design &amp; Style Guide</h2>
 
             <p className="cs-body">
-              The identity leans into the energy of the lottery — a bold red core lit with gold for wins and value, grounded by deep navy and clean neutrals. Everything sits on a strict, documented system (a Lexend type scale, plus consistent gaps of 4–80 and paddings of 20–80) so the design stays tight and consistent across every screen and both devices.
+              The identity leans into the energy of the lottery - a bold red core lit with gold for wins and value, grounded by deep navy and clean neutrals. Everything sits on a strict, documented system (a Lexend type scale, plus consistent gaps of 4-80 and paddings of 20-80) so the design stays tight and consistent across every screen and both devices.
             </p>
 
             <div className="creative-styleguide">
@@ -300,7 +300,7 @@ export default function CaseStudyLottogram() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Typography</div>
-                  <p className="sg-unit-desc">Lexend — a clean, friendly sans designed for reading proficiency, keeping a data-heavy betting interface legible at every size.</p>
+                  <p className="sg-unit-desc">Lexend - a clean, friendly sans designed for reading proficiency, keeping a data-heavy betting interface legible at every size.</p>
                   <div className="typo-hero">Lexend</div>
                   <div className="typo-scale-row">
                     <span className="typo-scale-item">36pt</span>
@@ -359,69 +359,69 @@ export default function CaseStudyLottogram() {
             <div className="ui-gallery device-gallery is-desktop" data-device="desktop">
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Home - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Home - Unfolded.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Home - Unfolded.png" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Games - Folded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Games - Folded.png" alt="Desktop — Games" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Games - Folded.png" alt="Desktop - Games" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Games</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Live Events - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Live Events - Unfolded.png" alt="Desktop — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Live Events - Unfolded.png" alt="Desktop - Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Live Events</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Promotions - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Promotions - Unfolded.png" alt="Desktop — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Promotions - Unfolded.png" alt="Desktop - Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Promotions</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Home - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Home - Unfolded.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Home - Unfolded.png" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Games - Folded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Games - Folded.png" alt="Desktop — Games" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Games - Folded.png" alt="Desktop - Games" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Games</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Live Events - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Live Events - Unfolded.png" alt="Desktop — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Live Events - Unfolded.png" alt="Desktop - Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Live Events</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Promotions - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Promotions - Unfolded.png" alt="Desktop — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Promotions - Unfolded.png" alt="Desktop - Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Promotions</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Unfolded.png" alt="Desktop — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Unfolded.png" alt="Desktop - My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Wallet</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Bet History - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Bet History - Unfolded.png" alt="Desktop — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Bet History - Unfolded.png" alt="Desktop - Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bet History</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Messages - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Messages - Unfolded.png" alt="Desktop — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Messages - Unfolded.png" alt="Desktop - Messages" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Messages</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Affiliate - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Affiliate - Unfolded.png" alt="Desktop — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Affiliate - Unfolded.png" alt="Desktop - Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Affiliate</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Unfolded.png" alt="Desktop — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Unfolded.png" alt="Desktop - My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Wallet</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Bet History - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Bet History - Unfolded.png" alt="Desktop — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - My Profile - My Wallet - Bet History - Unfolded.png" alt="Desktop - Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bet History</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Messages - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Messages - Unfolded.png" alt="Desktop — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Messages - Unfolded.png" alt="Desktop - Messages" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Messages</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Desktop - Affiliate - Unfolded.png">
-                  <img src="/Images/projects/lottogram/Desktop - Affiliate - Unfolded.png" alt="Desktop — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Desktop - Affiliate - Unfolded.png" alt="Desktop - Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Affiliate</div>
                 </div>
               </div>
@@ -430,69 +430,69 @@ export default function CaseStudyLottogram() {
             <div className="ui-gallery device-gallery is-mobile" data-device="mobile" hidden>
               <div className="ui-marquee-track ui-track-2" id="marquee-3">
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Home.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Home.png" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Games.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Games.png" alt="Mobile — Games" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Games.png" alt="Mobile - Games" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Games</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Live Events.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Live Events.png" alt="Mobile — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Live Events.png" alt="Mobile - Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Live Events</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Promotions.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Promotions.png" alt="Mobile — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Promotions.png" alt="Mobile - Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Promotions</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Home.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Home.png" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Games.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Games.png" alt="Mobile — Games" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Games.png" alt="Mobile - Games" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Games</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Live Events.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Live Events.png" alt="Mobile — Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Live Events.png" alt="Mobile - Live Events" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Live Events</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Promotions.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Promotions.png" alt="Mobile — Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Promotions.png" alt="Mobile - Promotions" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Promotions</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-4">
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet.png" alt="Mobile — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet.png" alt="Mobile - My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Wallet</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet - Bet History.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet - Bet History.png" alt="Mobile — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet - Bet History.png" alt="Mobile - Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bet History</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Message.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Message.png" alt="Mobile — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Message.png" alt="Mobile - Messages" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Messages</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Affiliate.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Affiliate.png" alt="Mobile — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Affiliate.png" alt="Mobile - Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Affiliate</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet.png" alt="Mobile — My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet.png" alt="Mobile - My Wallet" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Wallet</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet - Bet History.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet - Bet History.png" alt="Mobile — Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - My Profile - My Wallet - Bet History.png" alt="Mobile - Bet History" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bet History</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Message.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Message.png" alt="Mobile — Messages" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Message.png" alt="Mobile - Messages" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Messages</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lottogram/Mobile/Mobile - Affiliate.png">
-                  <img src="/Images/projects/lottogram/Mobile/Mobile - Affiliate.png" alt="Mobile — Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lottogram/Mobile/Mobile - Affiliate.png" alt="Mobile - Affiliate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Affiliate</div>
                 </div>
               </div>
@@ -502,14 +502,14 @@ export default function CaseStudyLottogram() {
 
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">Interactions</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Interaction Design &amp; Emotional Intent</h2>
 
             <p className="cs-body">
-              The feeling to evoke is the buzz of the game — energetic and exciting, but never reckless. Bold reds and golds create momentum, while clear structure around money keeps it trustworthy.
+              The feeling to evoke is the buzz of the game - energetic and exciting, but never reckless. Bold reds and golds create momentum, while clear structure around money keeps it trustworthy.
             </p>
 
             <div className="cs-cards-grid">
@@ -521,19 +521,19 @@ export default function CaseStudyLottogram() {
               <div className="cs-card">
                 <div className="cs-card-icon">👛</div>
                 <h4>Wallet &amp; Loyalty</h4>
-                <p>Balance, bonuses, loyalty and bet/betbuilder history are organised into a clear, confidence-building wallet — the same logic on both devices.</p>
+                <p>Balance, bonuses, loyalty and bet/betbuilder history are organised into a clear, confidence-building wallet - the same logic on both devices.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📱</div>
                 <h4>Desktop ↔ Mobile Parity</h4>
-                <p>A shared component system means a user who starts on desktop and finishes on mobile never feels lost — same language, re-tuned for each screen.</p>
+                <p>A shared component system means a user who starts on desktop and finishes on mobile never feels lost - same language, re-tuned for each screen.</p>
               </div>
             </div>
           </section>
 
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results &amp; Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -553,13 +553,13 @@ export default function CaseStudyLottogram() {
             </div>
 
             <div className="cs-highlight" style={{ marginTop: '28px' }}>
-              <p>"A dense betting product made bold, clear and genuinely <em>consistent</em> — from a wide desktop layout right down to a phone in your hand."</p>
+              <p>"A dense betting product made bold, clear and genuinely <em>consistent</em> - from a wide desktop layout right down to a phone in your hand."</p>
             </div>
 
             <div className="reflection-grid">
               <div className="reflection-card">
                 <h4>📈 Outcome</h4>
-                <p>A complete iGaming design system: Home, Games, Live Events, Promotions, Wallet, Bet &amp; BetBuilder history, Loyalty, Messages and Affiliate — designed end-to-end for both desktop and mobile.</p>
+                <p>A complete iGaming design system: Home, Games, Live Events, Promotions, Wallet, Bet &amp; BetBuilder history, Loyalty, Messages and Affiliate - designed end-to-end for both desktop and mobile.</p>
               </div>
               <div className="reflection-card">
                 <h4>🧗 Challenge</h4>
@@ -567,7 +567,7 @@ export default function CaseStudyLottogram() {
               </div>
               <div className="reflection-card">
                 <h4>💡 What I Learned</h4>
-                <p>Designing desktop and mobile in parallel — not one then the other — is what keeps a system honest. A strict spacing and type scale is the glue that holds parity together.</p>
+                <p>Designing desktop and mobile in parallel - not one then the other - is what keeps a system honest. A strict spacing and type scale is the glue that holds parity together.</p>
               </div>
               <div className="reflection-card">
                 <h4>🚀 Next Steps</h4>

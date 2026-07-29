@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   vebuild.ts — VeBuild-only A/B version switcher + panel-aware floating TOC.
+   vebuild.ts - VeBuild-only A/B version switcher + panel-aware floating TOC.
    (faithful port of the page-specific portion of vebuild-case-study.html's inline
    script; the rest of the page is handled by initProjects() + initCaseStudy().)
    ════════════════════════════════════════ */

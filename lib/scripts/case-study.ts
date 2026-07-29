@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   case-study.ts — Shared engine for every /projects/web/<slug> case study.
+   case-study.ts - Shared engine for every /projects/web/<slug> case study.
    Faithful merge of projectui-modal.js + the two inline <script> blocks that
    every case-study page included (marquee pause, section reveal, cover parallax,
    animated counters, device gallery switcher, floating TOC, smooth scroll,
@@ -94,7 +94,7 @@ export function initCaseStudy(): () => void {
     }
 
     // The standard id/href-based TOC. Pages with an A/B `.cs-tabs` switcher (VeBuild)
-    // use a panel-aware data-target TOC instead — handled by initVebuildTabs() — so
+    // use a panel-aware data-target TOC instead - handled by initVebuildTabs() - so
     // skip this block there to avoid two TOC systems fighting.
     if (!document.querySelector('.cs-tabs')) {
       const toc = document.getElementById('cs-toc');
@@ -179,7 +179,7 @@ export function initCaseStudy(): () => void {
     bag.add(() => { document.body.style.overflow = ''; });
   })();
 
-  /* ── UI-gallery lightbox (#cs-modal / .ui-card) — port of projectui-modal.js ── */
+  /* ── UI-gallery lightbox (#cs-modal / .ui-card) - port of projectui-modal.js ── */
   (function () {
     const modal = document.getElementById('cs-modal');
     const modalImg = document.getElementById('cs-modal-img');
@@ -222,7 +222,7 @@ export function initCaseStudy(): () => void {
       modalImg.style.opacity = '0';
       modalImg.style.transform = 'translateY(0) scale(0.98)';
       modalTitle.textContent = item.title;
-      modalImg.alt = item.title ? `${item.title} — full screenshot` : 'Case study screenshot';
+      modalImg.alt = item.title ? `${item.title} - full screenshot` : 'Case study screenshot';
       modalCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
       modalImg.onload = () => { modalImg.style.opacity = '1'; modalImg.style.transform = 'translateY(0) scale(1)'; };
       modalImg.src = item.url;

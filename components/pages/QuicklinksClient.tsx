@@ -25,7 +25,7 @@ export default function QuicklinksClient() {
             <br /><br />
             <div className="para-container">
               <p className="bio-para" style={cssVars({ '--para-delay': '0.1s' })}>
-                A consolidated gateway to my multifaceted online identity, professional presence, and creative outlets — all
+                A consolidated gateway to my multifaceted online identity, professional presence, and creative outlets - all
                 in one celestial orbit.
               </p>
             </div>

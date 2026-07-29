@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   about.ts — About page engine: testimonial carousel, space bg, preloader,
+   about.ts - About page engine: testimonial carousel, space bg, preloader,
    liquid cursor + SFX, ambient audio, mobile menu, logo ticker, bio canvas,
    scroll-reveal + count-ups, gaming reveal, CV modal, redirect-prompt modal.
    (faithful port of styles/about/about.js + about.html inline CV-modal script)
@@ -371,7 +371,7 @@ export function initAbout(): () => void {
     let audioCtx = null;
     function getAC() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); if (audioCtx.state === 'suspended') audioCtx.resume(); return audioCtx; }
 
-    /* Ambient music — one shared <audio> (lib/scripts/ambient-audio.ts) plays
+    /* Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
        continuously across every page and remembers its paused state; this engine
        only mirrors the playing flag into its spectrum visualiser below. */
     let spectrumPlaying = false;

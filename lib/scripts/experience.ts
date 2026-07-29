@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   experience.ts — Experience page engine.
+   experience.ts - Experience page engine.
    Faithful port of styles/experience/experience.js (10 IIFE sections:
    testimonial carousel, space bg, preloader, cursor + SFX/audio, CV-modal,
    logo-ticker, bio reveal + bio canvas, scroll-reveal, stat count-up,
@@ -22,7 +22,7 @@ export function initExperience(): () => void {
   /* ══════════ 1. TESTIMONIAL CAROUSEL ══════════
    The testimonial carousel is handled once, below, by section "B4. TESTIMONIALS
    SLIDER (inline #2)". A second, duplicate carousel used to run here and fought
-   B4 over the same DOM (#testi-* / .testi-slide) — two 7s auto-rotate intervals
+   B4 over the same DOM (#testi-* / .testi-slide) - two 7s auto-rotate intervals
    and doubled prev/next handlers. Removed so only B4 (dynamic slide count +
    .testi-progress-fill.run-anim, matching the markup/CSS) controls it. */
 
@@ -43,7 +43,7 @@ export function initExperience(): () => void {
     }));
     const shooters = [];
     function spawnShooter() {
-      if (shooters.length >= 6) return; // cap — prevents buildup while rAF is paused
+      if (shooters.length >= 6) return; // cap - prevents buildup while rAF is paused
       const a = (Math.random() * 30 + 10) * Math.PI / 180, sp = Math.random() * 5 + 4;
       shooters.push({
         x: Math.random() * W, y: Math.random() * H * 0.4, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
@@ -296,7 +296,7 @@ export function initExperience(): () => void {
     let audioCtx = null;
     function getAC() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); if (audioCtx.state === 'suspended') audioCtx.resume(); return audioCtx; }
 
-    /* Ambient music — one shared <audio> (lib/scripts/ambient-audio.ts) plays
+    /* Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
        continuously across every page and remembers its paused state; this engine
        only mirrors the playing flag into its spectrum visualiser below. */
     let spectrumPlaying = false;
@@ -543,7 +543,7 @@ export function initExperience(): () => void {
     bag.add(() => { bioAlive = false; canvasObs.disconnect(); if (bioRaf) cancelAnimationFrame(bioRaf); });
   })();
 
-  /* ══════════ 8. SCROLL-REVEAL (experience.js #8 — about-page classes, inert here) ══════════ */
+  /* ══════════ 8. SCROLL-REVEAL (experience.js #8 - about-page classes, inert here) ══════════ */
   (function () {
     var showAll = function () {
       document.querySelectorAll('.about-grid, .about-block, .techstack-heading, .stack-panel, .snode')
@@ -668,7 +668,7 @@ export function initExperience(): () => void {
     });
   })();
 
-  /* ══════════ 10. GAMING-REVEAL (experience.js #10 — gaming classes, inert here) ══════════ */
+  /* ══════════ 10. GAMING-REVEAL (experience.js #10 - gaming classes, inert here) ══════════ */
   (function () {
     var ghObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -1491,7 +1491,7 @@ export function initExperience(): () => void {
             modalLogo.src = logoImg.src;
             modalLogo.style.display = 'inline-block';
           } else {
-            // img hidden due to load error — fall back to initials
+            // img hidden due to load error - fall back to initials
             modalLogo.style.display = 'none';
           }
 

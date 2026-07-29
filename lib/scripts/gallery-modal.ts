@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   gallery-modal.ts — Full-screen image viewer for the graphic galleries
+   gallery-modal.ts - Full-screen image viewer for the graphic galleries
    (faithful port of styles/projects/artworks-modal.js)
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
@@ -81,7 +81,7 @@ export function initGalleryModal(): () => void {
         openModal(highResUrl, tag, title, desc);
       });
     } else {
-      // Cards without a focusable child (e.g. logo cards) are mouse-only —
+      // Cards without a focusable child (e.g. logo cards) are mouse-only -
       // expose them as keyboard-operable buttons.
       if (!item.hasAttribute('role')) item.setAttribute('role', 'button');
       if (!item.hasAttribute('tabindex')) item.setAttribute('tabindex', '0');

@@ -40,15 +40,15 @@ export default function CaseStudyKyc() {
 
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
-          {/* HERO — Title + Cover Banner */}
+          {/* HERO - Title + Cover Banner */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">KYC Verification</h1>
-            <p className="cs-hero-subtitle">A Guided Identity-Verification Flow — Designed in Both Light &amp; Dark</p>
+            <p className="cs-hero-subtitle">A Guided Identity-Verification Flow - Designed in Both Light &amp; Dark</p>
           </header>
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/kyc/cover.png" alt="KYC Verification — identity verification flow cover"
+            <img src="/Images/projects/kyc/cover.png" alt="KYC Verification - identity verification flow cover"
               className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
@@ -81,26 +81,26 @@ export default function CaseStudyKyc() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              KYC is where good onboarding goes to die — long forms, blurry document uploads, anxious face scans, and no idea whether anything worked. This project reimagines identity verification as a calm, guided journey that tells you exactly what to do and what's happening at every step, <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>beautifully, in both light and dark.</em>
+              KYC is where good onboarding goes to die - long forms, blurry document uploads, anxious face scans, and no idea whether anything worked. This project reimagines identity verification as a calm, guided journey that tells you exactly what to do and what's happening at every step, <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>beautifully, in both light and dark.</em>
             </p>
           </div>
 
 
-          {/* 01 — THE PROBLEM */}
+          {/* 01 - THE PROBLEM */}
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Context &amp; The Problem</h2>
 
             <p className="cs-body">
-              Know-Your-Customer checks are mandatory for regulated services — but they're also one of the biggest drop-off points in onboarding. Users stall at document capture, panic during the face scan, and abandon when the interface gives no feedback on whether a step passed or failed.
+              Know-Your-Customer checks are mandatory for regulated services - but they're also one of the biggest drop-off points in onboarding. Users stall at document capture, panic during the face scan, and abandon when the interface gives no feedback on whether a step passed or failed.
             </p>
 
             <div className="cs-highlight">
-              <p>"Verification only works when the user trusts it — every step has to say clearly <em>what to do</em>, and honestly <em>whether it worked.</em>"</p>
+              <p>"Verification only works when the user trusts it - every step has to say clearly <em>what to do</em>, and honestly <em>whether it worked.</em>"</p>
             </div>
 
             <div className="cs-cards-grid">
@@ -112,7 +112,7 @@ export default function CaseStudyKyc() {
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
                 <h4>The Goal</h4>
-                <p>Turn KYC into a guided, transparent flow — clear preparation, forgiving capture, explicit in-progress / success / error states, and full light &amp; dark theming.</p>
+                <p>Turn KYC into a guided, transparent flow - clear preparation, forgiving capture, explicit in-progress / success / error states, and full light &amp; dark theming.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
@@ -123,17 +123,17 @@ export default function CaseStudyKyc() {
           </section>
 
 
-          {/* 02 — RESEARCH */}
+          {/* 02 - RESEARCH */}
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery &amp; Research</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Discovery &amp; Research</h2>
 
             <p className="cs-body">
-              KYC sits between two needs that usually pull apart: a person who wants it over with quickly, and a compliance process that demands accuracy. The design had to satisfy both — reducing user anxiety while never compromising capture quality.
+              KYC sits between two needs that usually pull apart: a person who wants it over with quickly, and a compliance process that demands accuracy. The design had to satisfy both - reducing user anxiety while never compromising capture quality.
             </p>
 
             <h3 className="cs-sub-heading">Typical KYC Flows vs. The Opportunity</h3>
@@ -144,7 +144,7 @@ export default function CaseStudyKyc() {
                 <div className="cs-compare-body">
                   <ul className="cs-list">
                     <li><div className="cs-list-bullet"></div>Dumping all requirements at once with no preparation</li>
-                    <li><div className="cs-list-bullet"></div>Silent capture — no in-progress, success or error feedback</li>
+                    <li><div className="cs-list-bullet"></div>Silent capture - no in-progress, success or error feedback</li>
                     <li><div className="cs-list-bullet"></div>One rigid theme that fights the host app's look</li>
                   </ul>
                 </div>
@@ -168,33 +168,33 @@ export default function CaseStudyKyc() {
                 <div className="persona-avatar">🪪</div>
                 <div>
                   <div className="persona-name">The New Applicant</div>
-                  <div className="persona-role">Primary — First-time Verifier</div>
+                  <div className="persona-role">Primary - First-time Verifier</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Impatient</span>
                     <span className="persona-trait">Privacy-aware</span>
                     <span className="persona-trait">Anxious</span>
                   </div>
-                  <p className="persona-quote">"Just tell me what to do at each step — and whether it actually worked."</p>
+                  <p className="persona-quote">"Just tell me what to do at each step - and whether it actually worked."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">📱</div>
                 <div>
                   <div className="persona-name">The Mobile User</div>
-                  <div className="persona-role">Secondary — On-the-go</div>
+                  <div className="persona-role">Secondary - On-the-go</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Mobile-first</span>
                     <span className="persona-trait">Camera-based</span>
                     <span className="persona-trait">Distracted</span>
                   </div>
-                  <p className="persona-quote">"I'm doing this on my phone — the uploads and face scan have to just work."</p>
+                  <p className="persona-quote">"I'm doing this on my phone - the uploads and face scan have to just work."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">🛡️</div>
                 <div>
                   <div className="persona-name">The Compliance Lead</div>
-                  <div className="persona-role">Tertiary — Trust &amp; Risk</div>
+                  <div className="persona-role">Tertiary - Trust &amp; Risk</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Risk-aware</span>
                     <span className="persona-trait">Process-driven</span>
@@ -236,10 +236,10 @@ export default function CaseStudyKyc() {
           </section>
 
 
-          {/* 03 — IDEATION / STRUCTURE */}
+          {/* 03 - IDEATION / STRUCTURE */}
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure &amp; Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -261,7 +261,7 @@ export default function CaseStudyKyc() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">Each stage opens with a <strong style={{ color: '#fff' }}>preparation screen</strong> that sets expectations before any capture, and closes with an explicit result — so users always know <strong style={{ color: '#fff' }}>what's next and whether it worked.</strong></p>
+              <p className="cs-callout-text">Each stage opens with a <strong style={{ color: '#fff' }}>preparation screen</strong> that sets expectations before any capture, and closes with an explicit result - so users always know <strong style={{ color: '#fff' }}>what's next and whether it worked.</strong></p>
             </div>
 
             <h3 className="cs-sub-heading">The Four Steps</h3>
@@ -291,17 +291,17 @@ export default function CaseStudyKyc() {
           </section>
 
 
-          {/* 04 — VISUAL DESIGN */}
+          {/* 04 - VISUAL DESIGN */}
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Visual Design &amp; Style Guide</h2>
 
             <p className="cs-body">
-              A verification flow has to feel secure and calm. The system pairs Inter's clean neutrality with a trust-blue core, backed by a broad, deliberate palette — greens, oranges and reds reserved strictly for success, in-progress and error states so status is never ambiguous, in either theme.
+              A verification flow has to feel secure and calm. The system pairs Inter's clean neutrality with a trust-blue core, backed by a broad, deliberate palette - greens, oranges and reds reserved strictly for success, in-progress and error states so status is never ambiguous, in either theme.
             </p>
 
             <div className="creative-styleguide">
@@ -310,7 +310,7 @@ export default function CaseStudyKyc() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Typography</div>
-                  <p className="sg-unit-desc">Inter — a highly legible, neutral interface typeface built for screens, keeping dense verification steps clear at every size and weight.</p>
+                  <p className="sg-unit-desc">Inter - a highly legible, neutral interface typeface built for screens, keeping dense verification steps clear at every size and weight.</p>
                   <div className="typo-hero">Inter</div>
                   <div className="typo-weights-row">
                     <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
@@ -327,7 +327,7 @@ export default function CaseStudyKyc() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Color</div>
-                  <p className="sg-unit-desc">A broad, system-driven palette — a trust-blue core with neutrals, plus dedicated greens, oranges, reds and purples for status and emphasis across light &amp; dark.</p>
+                  <p className="sg-unit-desc">A broad, system-driven palette - a trust-blue core with neutrals, plus dedicated greens, oranges, reds and purples for status and emphasis across light &amp; dark.</p>
                   <div className="color-strip">
                     <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">FFFFFF</span></div>
                     <div className="color-block" style={{ background: '#000000' }}><span className="color-hex">000000</span></div>
@@ -367,7 +367,7 @@ export default function CaseStudyKyc() {
             </div>
 
             <h3 className="cs-sub-heading">High-Fidelity Screens</h3>
-            <p className="cs-body">The verification journey across both themes — preparation, document upload with live status, face-scan liveness, and the final step. Click any screen to view it in high resolution.</p>
+            <p className="cs-body">The verification journey across both themes - preparation, document upload with live status, face-scan liveness, and the final step. Click any screen to view it in high resolution.</p>
 
             <div className="ui-gallery">
               {/* Row 1: Dark theme */}
@@ -481,24 +481,24 @@ export default function CaseStudyKyc() {
           </section>
 
 
-          {/* 05 — VIBE & INTERACTIONS */}
+          {/* 05 - VIBE & INTERACTIONS */}
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">Interactions</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Interaction Design &amp; Emotional Intent</h2>
 
             <p className="cs-body">
-              The whole emotional goal of a KYC flow is to replace uncertainty with reassurance. Three patterns carry that intent — never leaving the user guessing about what to do, what's happening, or what went wrong.
+              The whole emotional goal of a KYC flow is to replace uncertainty with reassurance. Three patterns carry that intent - never leaving the user guessing about what to do, what's happening, or what went wrong.
             </p>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🚦</div>
                 <h4>Live Status States</h4>
-                <p>Every upload and scan has explicit in-progress, success and error states — colour-coded so users instantly read pass, pending or retry.</p>
+                <p>Every upload and scan has explicit in-progress, success and error states - colour-coded so users instantly read pass, pending or retry.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🧭</div>
@@ -508,14 +508,14 @@ export default function CaseStudyKyc() {
               <div className="cs-card">
                 <div className="cs-card-icon">🌓</div>
                 <h4>Light &amp; Dark Parity</h4>
-                <p>The entire flow is designed twice over — pixel-matched in light and dark — so it feels native inside any host app or preference.</p>
+                <p>The entire flow is designed twice over - pixel-matched in light and dark - so it feels native inside any host app or preference.</p>
               </div>
             </div>
           </section>
 
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results &amp; Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -526,7 +526,7 @@ export default function CaseStudyKyc() {
             <div className="outcome-grid">
               <div className="outcome-card">
                 <div className="outcome-metric" data-count="4" data-suffix="-Step">0</div>
-                <div className="outcome-label">Guided flow — consent → documents → face scan → done</div>
+                <div className="outcome-label">Guided flow - consent → documents → face scan → done</div>
               </div>
               <div className="outcome-card">
                 <div className="outcome-metric" data-count="2" data-suffix=" Themes">0</div>
@@ -535,7 +535,7 @@ export default function CaseStudyKyc() {
             </div>
 
             <div className="cs-highlight" style={{ marginTop: 28 }}>
-              <p>"A high-stakes, high-friction process turned into something that feels <em>guided, honest and even calm</em> — in whichever theme the user prefers."</p>
+              <p>"A high-stakes, high-friction process turned into something that feels <em>guided, honest and even calm</em> - in whichever theme the user prefers."</p>
             </div>
 
             <div className="reflection-grid">
@@ -545,7 +545,7 @@ export default function CaseStudyKyc() {
               </div>
               <div className="reflection-card">
                 <h4>🧗 Challenge</h4>
-                <p>Capturing every state — in-progress, error, retry, success — for documents and face scan, without overwhelming the user on the happy path, and keeping it all consistent across two themes.</p>
+                <p>Capturing every state - in-progress, error, retry, success - for documents and face scan, without overwhelming the user on the happy path, and keeping it all consistent across two themes.</p>
               </div>
               <div className="reflection-card">
                 <h4>💡 What I Learned</h4>

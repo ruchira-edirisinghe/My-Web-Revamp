@@ -37,7 +37,7 @@ main:has(.cs-wrap) {
 }
 
 /* ═══════════════════════════════════
-   HERO — Title + Cover Banner
+   HERO - Title + Cover Banner
    ═══════════════════════════════════ */
 .cs-hero-header {
   margin-bottom: 56px;
@@ -362,7 +362,7 @@ body:has(.cs-wrap) footer {
   margin: 22px 0;
 }
 
-/* ── UI Gallery — Infinite Marquee ── */
+/* ── UI Gallery - Infinite Marquee ── */
 .ui-gallery {
   margin-top: 24px;
   width: 100vw;
@@ -479,7 +479,7 @@ body:has(.cs-wrap) footer {
   position: relative;
   overflow: hidden;
 }
-/* Signature "targeting bracket" corners — reveal on hover */
+/* Signature "targeting bracket" corners - reveal on hover */
 .cs-card::before,
 .cs-card::after {
   content: '';
@@ -1247,7 +1247,7 @@ body:has(.cs-wrap) footer {
 }
 
 /* ═══════════════════════════════════
-   OUTCOME METRICS — Animated Counters
+   OUTCOME METRICS - Animated Counters
    ═══════════════════════════════════ */
 .outcome-grid {
   display: grid;
@@ -1442,7 +1442,7 @@ body:has(.cs-wrap) footer {
 }
 
 /* ═══════════════════════════════════
-   FLOATING TOC — Enhanced
+   FLOATING TOC - Enhanced
    ═══════════════════════════════════ */
 .cs-toc {
   position: fixed;

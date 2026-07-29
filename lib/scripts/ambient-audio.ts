@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   ambient-audio.ts — ONE ambient-music element shared across every page.
+   ambient-audio.ts - ONE ambient-music element shared across every page.
 
    In the static-export SPA a route change swaps React trees but keeps the JS
    module graph alive, so a module-scope <audio> keeps playing seamlessly from
@@ -10,8 +10,8 @@
    stay continuous no matter how many pages the visitor moves through.
 
    sessionStorage still mirrors the state (musicTime / musicMuted) purely as a
-   fallback for HARD reloads / direct deep-links, where the module — and thus
-   the <audio> element — is created fresh.
+   fallback for HARD reloads / direct deep-links, where the module - and thus
+   the <audio> element - is created fresh.
    ════════════════════════════════════════ */
 
 const SRC          = '/audio/ambient.mp3';
@@ -24,7 +24,7 @@ let muted   = false;                        // visitor paused the music
 let fadeRaf = 0;                            // active volume-fade rAF handle
 const listeners = new Set<(playing: boolean) => void>();
 
-/** True while the track is audibly playing — drives the spectrum + button glow. */
+/** True while the track is audibly playing - drives the spectrum + button glow. */
 export function isAmbientPlaying(): boolean {
   return !!audio && !muted && !audio.paused;
 }
@@ -89,7 +89,7 @@ function fadeTo(target: number, durationMs: number, pauseAtEnd = false) {
 }
 
 /**
- * Begin (or resume) playback — call on the first user gesture on any page.
+ * Begin (or resume) playback - call on the first user gesture on any page.
  * If the visitor previously paused, or the track is already playing (they just
  * navigated in), this is a no-op beyond re-broadcasting the current state, so
  * the music never restarts.
@@ -130,7 +130,7 @@ export function subscribeAmbient(cb: (playing: boolean) => void): () => void {
  * #music-btn / #music-btn-desktop, starts the track on the first user gesture,
  * keeps the buttons' `.playing` class in sync, and calls `onChange(playing)`
  * (immediately + on every change) so the caller can drive its spectrum canvas.
- * Returns a teardown that removes the listeners WITHOUT stopping the audio —
+ * Returns a teardown that removes the listeners WITHOUT stopping the audio -
  * the singleton must outlive any single page.
  */
 export function wireAmbientControls(onChange?: (playing: boolean) => void): () => void {

@@ -860,7 +860,7 @@
     }
 
     /* ══════════════════════════════════
-       COMING SOON — OPEN LAYOUT
+       COMING SOON - OPEN LAYOUT
     ══════════════════════════════════ */
     .cs-page {
       flex: 1;
@@ -1160,7 +1160,7 @@
       transform: translateX(-3px);
     }
 
-    /* ── OPEN HERO — no card ── */
+    /* ── OPEN HERO - no card ── */
     .cs-hero {
       position: relative;
       text-align: center;
@@ -1253,7 +1253,7 @@
       animation: fadeUp 0.8s ease 0.9s forwards;
     }
 
-    /* ── COUNTDOWN — floating boxes, no outer card ── */
+    /* ── COUNTDOWN - floating boxes, no outer card ── */
     .cs-countdown {
       display: flex;
       gap: clamp(8px, 2vw, 18px);

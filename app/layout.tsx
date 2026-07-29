@@ -23,7 +23,7 @@ const GOOGLE_FONTS_HREF =
   ].join('&') +
   '&display=swap';
 
-// Deployed origin — set NEXT_PUBLIC_SITE_URL at build time so Open Graph / Twitter
+// Deployed origin - set NEXT_PUBLIC_SITE_URL at build time so Open Graph / Twitter
 // image URLs resolve to absolute links. Update the fallback to your production domain.
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ruchira-edirisinghe.vercel.app';
 
@@ -31,20 +31,20 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: 'Ruchira Edirisinghe',
   description:
-    'Ruchira Edirisinghe — UI/UX Engineer & Consultant. Portfolio of product design, web and mobile UI/UX work.',
+    'Ruchira Edirisinghe - UI/UX Engineer & Consultant. Portfolio of product design, web and mobile UI/UX work.',
   openGraph: {
     type: 'website',
     siteName: 'Ruchira Edirisinghe',
-    title: 'Ruchira Edirisinghe — UI/UX Engineer & Consultant',
+    title: 'Ruchira Edirisinghe - UI/UX Engineer & Consultant',
     description:
-      'Portfolio of Ruchira Edirisinghe — product design and web/mobile UI/UX work, with detailed case studies and graphic design projects.',
+      'Portfolio of Ruchira Edirisinghe - product design and web/mobile UI/UX work, with detailed case studies and graphic design projects.',
     images: [{ url: '/Images/mynew.png', alt: 'Ruchira Edirisinghe' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ruchira Edirisinghe — UI/UX Engineer & Consultant',
+    title: 'Ruchira Edirisinghe - UI/UX Engineer & Consultant',
     description:
-      'Portfolio of Ruchira Edirisinghe — product design and web/mobile UI/UX work, with case studies and graphic design projects.',
+      'Portfolio of Ruchira Edirisinghe - product design and web/mobile UI/UX work, with case studies and graphic design projects.',
     images: ['/Images/mynew.png'],
   },
   icons: {

@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════
-   style.css — Ruchira Edirisinghe Portfolio
+   style.css - Ruchira Edirisinghe Portfolio
    ════════════════════════════════════════ */
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; cursor:none; }
@@ -235,7 +235,7 @@ footer {
 }
 
 /* Extra room only for the titles with descenders/tall glyphs (Experience, Projects)
-   that were overlapping their labels — all other items keep the original spacing. */
+   that were overlapping their labels - all other items keep the original spacing. */
 .menu-item[href^="/experience"] .menu-item-title,
 .menu-item[href^="/projects"] .menu-item-title { line-height:1.28; }
 .menu-item[href^="/experience"] .menu-item-desc,
@@ -566,7 +566,7 @@ body:not([data-page]) .page {
 .subtitle-vibe { display:none; }
 .vibe-inline   { display:inline; }
 
-/* Desktop only — extra breathing room between subtitle and name */
+/* Desktop only - extra breathing room between subtitle and name */
 @media (min-width:601px) {
   .name { margin-top:36px; }
 }
@@ -618,7 +618,7 @@ body:not([data-page]) .page {
 }
 
 /* ════════════════════════════════════════
-   Micro-interaction polish — active/press states
+   Micro-interaction polish - active/press states
    ════════════════════════════════════════ */
 
 /* ── Menu items: active press ── */

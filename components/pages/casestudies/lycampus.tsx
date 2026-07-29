@@ -35,7 +35,7 @@ export default function CaseStudyLycampus() {
 
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
-          {/* HERO — Title + Cover Banner */}
+          {/* HERO - Title + Cover Banner */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">Lyceum Campus<br/>Web Redesign</h1>
             <p className="cs-hero-subtitle">Reimagining a University's Digital Front Door</p>
@@ -43,7 +43,7 @@ export default function CaseStudyLycampus() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/lyceum/cover.png" alt="Lyceum Campus — University Website Web UI Redesign cover"
+            <img src="/Images/projects/lyceum/cover.png" alt="Lyceum Campus - University Website Web UI Redesign cover"
               className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
@@ -77,7 +77,7 @@ export default function CaseStudyLycampus() {
           <div className="cs-elevator">
             <p>
               A university's website is often the first handshake with a prospective student. Lyceum Campus's existing site
-              was fumbling that handshake — burying course information under layers of nested menus, breaking on mobile
+              was fumbling that handshake - burying course information under layers of nested menus, breaking on mobile
               devices, and looking like it hadn't seen a design update in years. This project stripped everything back to
               one question: <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>what does a student
                 actually need to find, and how fast can they find it?</em>
@@ -85,10 +85,10 @@ export default function CaseStudyLycampus() {
           </div>
 
 
-          {/* 01 — THE PROBLEM */}
+          {/* 01 - THE PROBLEM */}
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
@@ -97,12 +97,12 @@ export default function CaseStudyLycampus() {
             <p className="cs-body">
               Three audiences, one website, zero clarity. Prospective students couldn't find course fees. Current
               students couldn't locate exam schedules. Faculty had no streamlined portal. The existing site had grown
-              organically over years — page after page bolted on without a coherent navigation strategy — until the
+              organically over years - page after page bolted on without a coherent navigation strategy - until the
               whole structure became an archaeological dig rather than a digital experience.
             </p>
 
             <div className="cs-highlight">
-              <p>"Students were spending an average of <em>4–7 minutes</em> just to find basic course information —
+              <p>"Students were spending an average of <em>4-7 minutes</em> just to find basic course information -
                 something that should take under 30 seconds."</p>
             </div>
 
@@ -111,29 +111,29 @@ export default function CaseStudyLycampus() {
                 <div className="cs-card-icon">🎯</div>
                 <h4>Problem Statement</h4>
                 <p>Inconsistent navigation, cluttered layouts, and broken information hierarchy left every user
-                  group — students, parents, and faculty — confused and unable to locate critical academic resources.</p>
+                  group - students, parents, and faculty - confused and unable to locate critical academic resources.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
                 <h4>The Goal</h4>
                 <p>Redesign the entire web presence to cut navigation friction, achieve accessibility compliance
-                  across all age groups, and strengthen brand identity — targeting a 60% reduction in time-to-information.
+                  across all age groups, and strengthen brand identity - targeting a 60% reduction in time-to-information.
                 </p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
                 <h4>Target Audience</h4>
-                <p>Current students (18–26), prospective applicants & parents (16–50), and faculty/admin staff —
+                <p>Current students (18-26), prospective applicants & parents (16-50), and faculty/admin staff -
                   each with vastly different digital literacy levels and usage patterns.</p>
               </div>
             </div>
           </section>
 
 
-          {/* 02 — RESEARCH */}
+          {/* 02 - RESEARCH */}
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery & Research</span>
               <div className="cs-section-line"></div>
             </div>
@@ -173,7 +173,7 @@ export default function CaseStudyLycampus() {
                       better
                     </li>
                     <li>
-                      <div className="cs-list-bullet"></div>Progressive disclosure — surface essentials first, reveal details on
+                      <div className="cs-list-bullet"></div>Progressive disclosure - surface essentials first, reveal details on
                       demand
                     </li>
                     <li>
@@ -192,7 +192,7 @@ export default function CaseStudyLycampus() {
                 <div className="persona-avatar">🎓</div>
                 <div>
                   <div className="persona-name">Kavya Perera</div>
-                  <div className="persona-role">Primary — Prospective Student · Age 18</div>
+                  <div className="persona-role">Primary - Prospective Student · Age 18</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Mobile-first</span>
                     <span className="persona-trait">Impatient</span>
@@ -208,7 +208,7 @@ export default function CaseStudyLycampus() {
                 <div className="persona-avatar">💼</div>
                 <div>
                   <div className="persona-name">Mr. Silva</div>
-                  <div className="persona-role">Secondary — Parent / Sponsor · Age 48</div>
+                  <div className="persona-role">Secondary - Parent / Sponsor · Age 48</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Desktop user</span>
                     <span className="persona-trait">Detail-oriented</span>
@@ -224,7 +224,7 @@ export default function CaseStudyLycampus() {
                 <div className="persona-avatar">🏫</div>
                 <div>
                   <div className="persona-name">Dr. Fernando</div>
-                  <div className="persona-role">Tertiary — Faculty / Admin · Age 55</div>
+                  <div className="persona-role">Tertiary - Faculty / Admin · Age 55</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Quick-access</span>
                     <span className="persona-trait">Internal Portals</span>
@@ -283,10 +283,10 @@ export default function CaseStudyLycampus() {
           </section>
 
 
-          {/* 03 — IDEATION */}
+          {/* 03 - IDEATION */}
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure & Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -323,8 +323,8 @@ export default function CaseStudyLycampus() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The old site forced users through 5–7 clicks to reach admissions contact. The
-                redesigned flow cuts that to <strong style={{ color: '#fff' }}>3 clicks</strong> — with persistent "Apply Now"
+              <p className="cs-callout-text">The old site forced users through 5-7 clicks to reach admissions contact. The
+                redesigned flow cuts that to <strong style={{ color: '#fff' }}>3 clicks</strong> - with persistent "Apply Now"
                 CTAs visible at every stage of the journey.</p>
             </div>
 
@@ -355,10 +355,10 @@ export default function CaseStudyLycampus() {
           </section>
 
 
-          {/* 04 — VISUAL DESIGN */}
+          {/* 04 - VISUAL DESIGN */}
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
@@ -585,17 +585,17 @@ export default function CaseStudyLycampus() {
           </section>
 
 
-          {/* 05 — VIBE & INTERACTIONS */}
+          {/* 05 - VIBE & INTERACTIONS */}
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">The Vibe</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Interaction Design & Emotional Intent</h2>
 
             <p className="cs-body">
-              A university website should evoke the feeling of arriving on campus for the first time — a blend of
+              A university website should evoke the feeling of arriving on campus for the first time - a blend of
               excitement,
               quiet confidence, and the sense that this is somewhere worth being. Every hover state, every page transition,
               every colour choice was deliberately tuned to reinforce that emotional resonance.
@@ -611,7 +611,7 @@ export default function CaseStudyLycampus() {
               <div className="cs-card">
                 <div className="cs-card-icon">🌊</div>
                 <h4>Page Transitions</h4>
-                <p>Content enters through staggered fade-up animations, creating a sense of the page breathing to life —
+                <p>Content enters through staggered fade-up animations, creating a sense of the page breathing to life -
                   evoking the experience of walking into a building and having it reveal itself naturally.</p>
               </div>
               <div className="cs-card">
@@ -626,10 +626,10 @@ export default function CaseStudyLycampus() {
           </section>
 
 
-          {/* 06 — RESULTS & REFLECTION */}
+          {/* 06 - RESULTS & REFLECTION */}
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results & Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -649,8 +649,8 @@ export default function CaseStudyLycampus() {
             </div>
 
             <div className="cs-highlight" style={{ marginTop: '28px' }}>
-              <p>"Users described the redesigned experience as '<em>clean</em>,' '<em>professional</em>,' and — most
-                importantly — '<em>easy to use</em>.' Multiple test participants wished their own university's website
+              <p>"Users described the redesigned experience as '<em>clean</em>,' '<em>professional</em>,' and - most
+                importantly - '<em>easy to use</em>.' Multiple test participants wished their own university's website
                 worked
                 this well."</p>
             </div>
@@ -658,7 +658,7 @@ export default function CaseStudyLycampus() {
             <div className="reflection-grid">
               <div className="reflection-card">
                 <h4>🎓 Lessons Learned</h4>
-                <p>Testing with real users — not just design peers — proved essential. Even "obvious" label choices like
+                <p>Testing with real users - not just design peers - proved essential. Even "obvious" label choices like
                   "Programmes" vs "Courses" caused significant confusion. A single wording change measurably improved
                   findability.</p>
               </div>
@@ -670,13 +670,13 @@ export default function CaseStudyLycampus() {
               </div>
               <div className="reflection-card">
                 <h4>🚀 Next Steps</h4>
-                <p>Explore AI-driven personalisation — surfacing relevant programs based on browsing patterns. A dedicated
+                <p>Explore AI-driven personalisation - surfacing relevant programs based on browsing patterns. A dedicated
                   mobile app with offline content support would better serve students accessing study materials on the go.
                 </p>
               </div>
               <div className="reflection-card">
                 <h4>💬 Conclusion</h4>
-                <p>This project proved that thoughtful UX isn't about adding features — it's about removing friction. A
+                <p>This project proved that thoughtful UX isn't about adding features - it's about removing friction. A
                   university's website should be a welcoming guide, not a bureaucratic maze. The data validated the
                   approach.</p>
               </div>

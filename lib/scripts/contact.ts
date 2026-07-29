@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   contact.ts — Contact page engine: preloader, space bg, cursor + SFX,
+   contact.ts - Contact page engine: preloader, space bg, cursor + SFX,
    audio, scroll-reveal, channel-card redirect modal, collab accordion,
    mobile menu, timezone clocks.
    (faithful port of styles/contact/contact.js)
@@ -174,7 +174,7 @@ export function initContact(): () => void {
     }
   })();
 
-  /* ══════════ 2. SPACE BACKGROUND — with Aurora & Shooting Stars ══════════ */
+  /* ══════════ 2. SPACE BACKGROUND - with Aurora & Shooting Stars ══════════ */
   (function () {
     const sc = document.getElementById('space-canvas');
     if (!sc) return;
@@ -208,7 +208,7 @@ export function initContact(): () => void {
     bag.on(document, 'visibilitychange', () => { hidden = document.visibilityState === 'hidden'; });
 
     function spawnShooter() {
-      if (shooters.length >= 6) return; // cap — prevents buildup while drawing is paused
+      if (shooters.length >= 6) return; // cap - prevents buildup while drawing is paused
       const a = (Math.random() * 30 + 10) * Math.PI / 180, sp = Math.random() * 5 + 4;
       shooters.push({
         x: Math.random() * W, y: Math.random() * H * 0.4, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
@@ -455,7 +455,7 @@ export function initContact(): () => void {
       return audioContext;
     }
 
-    /* Ambient music — one shared <audio> (lib/scripts/ambient-audio.ts) plays
+    /* Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
        continuously across every page and remembers its paused state; this engine
        only mirrors the playing flag into its spectrum visualiser below. */
     let spectrumPlaying = false;

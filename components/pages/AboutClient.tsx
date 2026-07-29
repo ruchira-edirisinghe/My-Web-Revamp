@@ -538,7 +538,7 @@ export default function AboutClient() {
                   </div>
                 </div>
                 <div className="block-bottom">
-                  <p className="block-text">End-to-end UI/UX design and engineering — from research and wireframes to
+                  <p className="block-text">End-to-end UI/UX design and engineering - from research and wireframes to
                     pixel-perfect interfaces and interactive prototypes. I consult with startups and businesses to build
                     intuitive, user-centred digital products that perform.</p>
                 </div>
@@ -563,7 +563,7 @@ export default function AboutClient() {
                   </div>
                 </div>
                 <div className="block-bottom">
-                  <p className="block-text">Creative front-end development with a feel for design — HTML, CSS, JavaScript, React
+                  <p className="block-text">Creative front-end development with a feel for design - HTML, CSS, JavaScript, React
                     and beyond. I bring interfaces to life with smooth animations, clean code and an eye for detail that
                     bridges design and engineering.</p>
                 </div>
@@ -590,7 +590,7 @@ export default function AboutClient() {
                 </div>
                 <div className="block-bottom">
                   <p className="block-text">Bold graphic design, brand identities and 3D visual experiences. From logo design and
-                    motion graphics to immersive 3D renders — I craft visuals that tell a story and leave a lasting
+                    motion graphics to immersive 3D renders - I craft visuals that tell a story and leave a lasting
                     impression.</p>
                 </div>
               </div>
@@ -1753,7 +1753,7 @@ export default function AboutClient() {
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Thaanu Perera</span>
-                      <span className="testi-role">Software Engineer — Eyepax</span>
+                      <span className="testi-role">Software Engineer - Eyepax</span>
                     </div>
                     <div className="testi-stars"><svg viewBox="0 0 20 20">
                         <path
@@ -1784,7 +1784,7 @@ export default function AboutClient() {
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Suraji Ekanayake</span>
-                      <span className="testi-role">UI/UX Designer — Freelance</span>
+                      <span className="testi-role">UI/UX Designer - Freelance</span>
                     </div>
                     <div className="testi-stars"><svg viewBox="0 0 20 20">
                         <path
@@ -1816,7 +1816,7 @@ export default function AboutClient() {
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Sandakelum Senevirathna</span>
-                      <span className="testi-role">Tech Lead — ZUSE Technologies</span>
+                      <span className="testi-role">Tech Lead - ZUSE Technologies</span>
                     </div>
                     <div className="testi-stars"><svg viewBox="0 0 20 20">
                         <path
@@ -1848,7 +1848,7 @@ export default function AboutClient() {
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Janith Perera</span>
-                      <span className="testi-role">Software Engineer — Racedata</span>
+                      <span className="testi-role">Software Engineer - Racedata</span>
                     </div>
                     <div className="testi-stars"><svg viewBox="0 0 20 20">
                         <path
@@ -1880,7 +1880,7 @@ export default function AboutClient() {
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Wenupa Mandinu</span>
-                      <span className="testi-role">Cyber Security Engineer — Freelance</span>
+                      <span className="testi-role">Cyber Security Engineer - Freelance</span>
                     </div>
                     <div className="testi-stars"><svg viewBox="0 0 20 20">
                         <path
@@ -1911,7 +1911,7 @@ export default function AboutClient() {
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Avishka Sooriyapperuma</span>
-                      <span className="testi-role">Senior DevOps Engineer — LSEG</span>
+                      <span className="testi-role">Senior DevOps Engineer - LSEG</span>
                     </div>
                     <div className="testi-stars"><svg viewBox="0 0 20 20">
                         <path
@@ -1942,7 +1942,7 @@ export default function AboutClient() {
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Sandev Dulleva</span>
-                      <span className="testi-role">Software Engineer — ZUSE Technologies</span>
+                      <span className="testi-role">Software Engineer - ZUSE Technologies</span>
                     </div>
                     <div className="testi-stars"><svg viewBox="0 0 20 20">
                         <path
@@ -1974,7 +1974,7 @@ export default function AboutClient() {
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Atheeque Hasan</span>
-                      <span className="testi-role">Senior Data Analyst — AiSCOUT</span>
+                      <span className="testi-role">Senior Data Analyst - AiSCOUT</span>
                     </div>
                     <div className="testi-stars"><svg viewBox="0 0 20 20">
                         <path
@@ -2006,7 +2006,7 @@ export default function AboutClient() {
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Ramuthu Senanayake</span>
-                      <span className="testi-role">Associate Project Manager — Sysco LABS Sri Lanka</span>
+                      <span className="testi-role">Associate Project Manager - Sysco LABS Sri Lanka</span>
                     </div>
                     <div className="testi-stars"><svg viewBox="0 0 20 20">
                         <path

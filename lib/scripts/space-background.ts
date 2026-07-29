@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   space-background.ts — Stars, aurora & shooting stars
+   space-background.ts - Stars, aurora & shooting stars
    (faithful port of styles/home/space-background.js)
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
@@ -161,7 +161,7 @@ export function initSpaceBackground(): () => void {
   }
   rafId = requestAnimationFrame(draw);
 
-  // Pause the whole render loop when the tab is hidden — zero CPU in background
+  // Pause the whole render loop when the tab is hidden - zero CPU in background
   bag.on(document, 'visibilitychange', () => {
     if (document.hidden) {
       running = false;

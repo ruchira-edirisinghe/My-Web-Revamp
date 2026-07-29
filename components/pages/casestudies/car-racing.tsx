@@ -43,16 +43,16 @@ export default function CaseStudyCarRacing() {
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
           {/* ═══════════════════════════════
-               HERO — Title + Cover Banner
+               HERO - Title + Cover Banner
           ═══════════════════════════════ */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">Ready To Race<br/>Unlimited</h1>
-            <p className="cs-hero-subtitle">A Browser Multiplayer Car-Racing Arena — Built with Next.js &amp; Vibe Coding</p>
+            <p className="cs-hero-subtitle">A Browser Multiplayer Car-Racing Arena - Built with Next.js &amp; Vibe Coding</p>
           </header>
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/car-game/cover.png" alt="Ready To Race Unlimited — browser car-racing game cover"
+            <img src="/Images/projects/car-game/cover.png" alt="Ready To Race Unlimited - browser car-racing game cover"
               className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
@@ -85,35 +85,35 @@ export default function CaseStudyCarRacing() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              Ready To Race Unlimited is a fully playable, real-time car-racing arena that lives entirely in the browser — odds, betting, a 60fps race simulation and a neon e-sports skin, with no backend at all. It's also an experiment in <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>vibe coding: building a complete game by steering an AI conversationally, prompt by prompt, system by system.</em>
+              Ready To Race Unlimited is a fully playable, real-time car-racing arena that lives entirely in the browser - odds, betting, a 60fps race simulation and a neon e-sports skin, with no backend at all. It's also an experiment in <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>vibe coding: building a complete game by steering an AI conversationally, prompt by prompt, system by system.</em>
             </p>
           </div>
 
 
           {/* ═══════════════════════════════
-               01 — THE CHALLENGE
+               01 - THE CHALLENGE
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Challenge</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">The Build Challenge</h2>
 
             <p className="cs-body">
-              A racing game looks simple until you build one. It needs a race that's <em>exciting but fair</em>, betting math that actually pays out correctly, animation that stays smooth on any machine, a grid full of opponents, sound, and persistence — and here, all of it had to run client-side with zero server. The twist: the whole thing was built through vibe coding, so the real challenge was decomposing a game into prompts an AI could implement cleanly, then reviewing and steering the output.
+              A racing game looks simple until you build one. It needs a race that's <em>exciting but fair</em>, betting math that actually pays out correctly, animation that stays smooth on any machine, a grid full of opponents, sound, and persistence - and here, all of it had to run client-side with zero server. The twist: the whole thing was built through vibe coding, so the real challenge was decomposing a game into prompts an AI could implement cleanly, then reviewing and steering the output.
             </p>
 
             <div className="cs-highlight">
-              <p>"The hard part of a betting race isn't the visuals — it's making outcomes feel <em>random and dramatic, yet provably fair and reproducible.</em>"</p>
+              <p>"The hard part of a betting race isn't the visuals - it's making outcomes feel <em>random and dramatic, yet provably fair and reproducible.</em>"</p>
             </div>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
                 <h4>Technical Problem</h4>
-                <p>Simulate a believable race with live lead-changes, drive an odds-based betting economy, and animate it all at 60fps — entirely in the browser, with no backend to authoritatively run the race.</p>
+                <p>Simulate a believable race with live lead-changes, drive an odds-based betting economy, and animate it all at 60fps - entirely in the browser, with no backend to authoritatively run the race.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
@@ -123,25 +123,25 @@ export default function CaseStudyCarRacing() {
               <div className="cs-card">
                 <div className="cs-card-icon">🤖</div>
                 <h4>The Constraint</h4>
-                <p>Build it by vibe coding — describing each system to an AI and iterating — which demands a clear mental model of the architecture so the generated code stays consistent and debuggable.</p>
+                <p>Build it by vibe coding - describing each system to an AI and iterating - which demands a clear mental model of the architecture so the generated code stays consistent and debuggable.</p>
               </div>
             </div>
           </section>
 
 
           {/* ═══════════════════════════════
-               02 — TECH STACK
+               02 - TECH STACK
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Tech Stack</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Tech Stack &amp; Approach</h2>
 
             <p className="cs-body">
-              The whole game is a single Next.js (App Router) application bundled with Turbopack and deployed to Netlify. There's no database and no game server — every car, bet, race and saved stat lives in React state and the browser's localStorage. State is driven by hooks and reducers (the UI alone runs dozens of <code>useState</code> and <code>useReducer</code> stores), and the race itself is a hand-rolled simulation on <code>requestAnimationFrame</code>.
+              The whole game is a single Next.js (App Router) application bundled with Turbopack and deployed to Netlify. There's no database and no game server - every car, bet, race and saved stat lives in React state and the browser's localStorage. State is driven by hooks and reducers (the UI alone runs dozens of <code>useState</code> and <code>useReducer</code> stores), and the race itself is a hand-rolled simulation on <code>requestAnimationFrame</code>.
             </p>
 
             <h3 className="cs-sub-heading">Naive Build vs. How It's Engineered</h3>
@@ -151,7 +151,7 @@ export default function CaseStudyCarRacing() {
                 <div className="cs-compare-label"><i>✕</i> The Naive Approach</div>
                 <div className="cs-compare-body">
                   <ul className="cs-list">
-                    <li><div className="cs-list-bullet"></div><span>Move cars with <code>Math.random()</code> each frame — janky and unfair</span></li>
+                    <li><div className="cs-list-bullet"></div><span>Move cars with <code>Math.random()</code> each frame - janky and unfair</span></li>
                     <li><div className="cs-list-bullet"></div><span>Tie game speed to frame rate, so fast machines race faster</span></li>
                     <li><div className="cs-list-bullet"></div><span>Hard-code one look and recompute payouts ad-hoc per bet</span></li>
                   </ul>
@@ -162,7 +162,7 @@ export default function CaseStudyCarRacing() {
                 <div className="cs-compare-body">
                   <ul className="cs-list">
                     <li><div className="cs-list-bullet"></div><span>A <strong>seeded PRNG</strong> so a race is deterministic and replayable</span></li>
-                    <li><div className="cs-list-bullet"></div><span>A <strong>fixed-timestep loop</strong> — identical physics at any FPS</span></li>
+                    <li><div className="cs-list-bullet"></div><span>A <strong>fixed-timestep loop</strong> - identical physics at any FPS</span></li>
                     <li><div className="cs-list-bullet"></div><span>Token-driven palettes and a single odds → payout formula</span></li>
                   </ul>
                 </div>
@@ -182,7 +182,7 @@ export default function CaseStudyCarRacing() {
                     <span className="persona-trait">Turbopack</span>
                     <span className="persona-trait">Netlify</span>
                   </div>
-                  <p className="persona-quote">"A single client-side Next app — no server, no database. The browser is the whole game."</p>
+                  <p className="persona-quote">"A single client-side Next app - no server, no database. The browser is the whole game."</p>
                 </div>
               </div>
               <div className="persona-card">
@@ -195,7 +195,7 @@ export default function CaseStudyCarRacing() {
                     <span className="persona-trait">Deterministic</span>
                     <span className="persona-trait">60 FPS</span>
                   </div>
-                  <p className="persona-quote">"A hand-written race loop — velocity from stats, jitter for drama, finish detection per tick."</p>
+                  <p className="persona-quote">"A hand-written race loop - velocity from stats, jitter for drama, finish detection per tick."</p>
                 </div>
               </div>
               <div className="persona-card">
@@ -245,11 +245,11 @@ export default function CaseStudyCarRacing() {
 
 
           {/* ═══════════════════════════════
-               03 — ARCHITECTURE
+               03 - ARCHITECTURE
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Architecture</span>
               <div className="cs-section-line"></div>
             </div>
@@ -258,7 +258,7 @@ export default function CaseStudyCarRacing() {
             <h3 className="cs-sub-heading">The Phase State Machine</h3>
 
             <p className="cs-body">
-              The entire game is driven by one screen-phase state machine. Each phase owns its own UI and logic, and transitions are explicit — which keeps a complex game readable and made it easy to build phase-by-phase while vibe coding.
+              The entire game is driven by one screen-phase state machine. Each phase owns its own UI and logic, and transitions are explicit - which keeps a complex game readable and made it easy to build phase-by-phase while vibe coding.
             </p>
 
             <div className="cs-flow">
@@ -277,7 +277,7 @@ export default function CaseStudyCarRacing() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The race runs on a <strong style={{ color: '#fff' }}>fixed-timestep loop</strong>: a <code>requestAnimationFrame</code> callback accumulates real elapsed time and advances the simulation in fixed <strong style={{ color: '#fff' }}>16ms steps</strong> (capped at four catch-up steps per frame). Physics is therefore identical whether the device runs at 30, 60 or 144Hz — and a pause flag simply re-queues the frame without advancing time.</p>
+              <p className="cs-callout-text">The race runs on a <strong style={{ color: '#fff' }}>fixed-timestep loop</strong>: a <code>requestAnimationFrame</code> callback accumulates real elapsed time and advances the simulation in fixed <strong style={{ color: '#fff' }}>16ms steps</strong> (capped at four catch-up steps per frame). Physics is therefore identical whether the device runs at 30, 60 or 144Hz - and a pause flag simply re-queues the frame without advancing time.</p>
             </div>
 
             <h3 className="cs-sub-heading">Core Modules</h3>
@@ -308,24 +308,24 @@ export default function CaseStudyCarRacing() {
 
 
           {/* ═══════════════════════════════
-               04 — GAME LOGIC
+               04 - GAME LOGIC
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">Game Logic</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Game Systems &amp; Visual Language</h2>
 
             <p className="cs-body">
-              Every car is a small data object — name, driver, colour, odds, recent form and two stats: <strong>speed</strong> and <strong>handling</strong>. The race converts those stats into a base velocity, then adds controlled randomness so no two runs are identical. Because the randomness flows from a single seed, the same seed always produces the same race — the basis of a fair, reproducible result.
+              Every car is a small data object - name, driver, colour, odds, recent form and two stats: <strong>speed</strong> and <strong>handling</strong>. The race converts those stats into a base velocity, then adds controlled randomness so no two runs are identical. Because the randomness flows from a single seed, the same seed always produces the same race - the basis of a fair, reproducible result.
             </p>
 
             <code className="cs-code"><span className="cm">// each car advances per fixed 16ms tick</span>{'\nseed     = roomSeed ?? '}<span className="nm">Math.floor</span>{'(1e4 * '}<span className="nm">Math.random</span>{'()) + 1\nbaseVel  = 0.55 * (0.6*'}<span className="nm">speed</span>{' + 0.4*'}<span className="nm">handling</span>{') / 100 + 0.1 * rng()\nstrideΔ  = (rng() - 0.5) * 0.2   '}<span className="cm">// ± jitter → lead changes</span>{'\nposition += baseVel + strideΔ    '}<span className="cm">// first past the line wins</span>{'\n\npayout   = stake * '}<span className="nm">car.odds</span>{'     '}<span className="cm">// e.g. 50cr on 4.0x → 200cr</span></code>
 
             <p className="cs-body">
-              The six cars are tuned so odds, stats and drama line up: the favourite <strong style={{ color: 'var(--lyc-gold)' }}>Thunder Strike</strong> sits at 2.5× with high speed, while the long shot <strong style={{ color: 'var(--lyc-gold)' }}>Blue Thunder</strong> pays 12× — a bigger gamble with weaker odds. A 60% speed / 40% handling weighting decides the baseline, and the per-tick jitter is what creates the lead-changes that make a race worth watching.
+              The six cars are tuned so odds, stats and drama line up: the favourite <strong style={{ color: 'var(--lyc-gold)' }}>Thunder Strike</strong> sits at 2.5× with high speed, while the long shot <strong style={{ color: 'var(--lyc-gold)' }}>Blue Thunder</strong> pays 12× - a bigger gamble with weaker odds. A 60% speed / 40% handling weighting decides the baseline, and the per-tick jitter is what creates the lead-changes that make a race worth watching.
             </p>
 
             <div className="creative-styleguide">
@@ -334,7 +334,7 @@ export default function CaseStudyCarRacing() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Typography</div>
-                  <p className="sg-unit-desc">A three-font e-sports system: Orbitron for display &amp; numbers, Rajdhani for UI text, and JetBrains Mono for data, timers and stats — all loaded via Google Fonts.</p>
+                  <p className="sg-unit-desc">A three-font e-sports system: Orbitron for display &amp; numbers, Rajdhani for UI text, and JetBrains Mono for data, timers and stats - all loaded via Google Fonts.</p>
                   <div className="typo-hero">Orbitron</div>
                   <div className="typo-weights-row">
                     <span className="typo-weight-item" style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 800 }}>Orbitron · Display</span>
@@ -348,7 +348,7 @@ export default function CaseStudyCarRacing() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Color Tokens</div>
-                  <p className="sg-unit-desc">A deep-violet base (<code>--bg-0</code> → <code>--bg-3</code>) lit by neon accents — orange, cyan and pink over a violet glow — plus a win-green. The whole skin is token-driven, so palettes (Default · Cyber · eSports) swap with one attribute.</p>
+                  <p className="sg-unit-desc">A deep-violet base (<code>--bg-0</code> → <code>--bg-3</code>) lit by neon accents - orange, cyan and pink over a violet glow - plus a win-green. The whole skin is token-driven, so palettes (Default · Cyber · eSports) swap with one attribute.</p>
                   <div className="color-strip">
                     <div className="color-block" style={{ background: '#070012' }}><span className="color-hex">#070012</span></div>
                     <div className="color-block" style={{ background: '#0E001E' }}><span className="color-hex">#0E001E</span></div>
@@ -371,18 +371,18 @@ export default function CaseStudyCarRacing() {
             </div>
 
             <h3 className="cs-sub-heading">In-Game Screens</h3>
-            <p className="cs-body">The arena across its phases — home hub, the matchmaking lobby, grid sync, the betting board and the live race. Click any screen to open it in high resolution.</p>
+            <p className="cs-body">The arena across its phases - home hub, the matchmaking lobby, grid sync, the betting board and the live race. Click any screen to open it in high resolution.</p>
 
             <div className="ui-gallery">
               {/* Row 1 */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/car-game/home.png">
-                  <img src="/Images/projects/car-game/home.png" alt="Home — Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/home.png" alt="Home - Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home · Elite Circuit</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/lobby.png">
-                  <img src="/Images/projects/car-game/lobby.png" alt="Lobby — Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/lobby.png" alt="Lobby - Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Lobby · Player's Arena</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/race.png">
@@ -399,11 +399,11 @@ export default function CaseStudyCarRacing() {
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/car-game/home.png">
-                  <img src="/Images/projects/car-game/home.png" alt="Home — Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/home.png" alt="Home - Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home · Elite Circuit</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/lobby.png">
-                  <img src="/Images/projects/car-game/lobby.png" alt="Lobby — Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/lobby.png" alt="Lobby - Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Lobby · Player's Arena</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/race.png">
@@ -470,18 +470,18 @@ export default function CaseStudyCarRacing() {
 
 
           {/* ═══════════════════════════════
-               05 — THE BUILD (VIBE CODING)
+               05 - THE BUILD (VIBE CODING)
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">The Build</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">The Vibe-Coding Build Process</h2>
 
             <p className="cs-body">
-              Vibe coding only works if you bring the architecture. I drove the build in deliberate passes — scaffolding the app, then growing one system at a time, prompting the AI for each piece, reviewing the output, and refactoring before moving on. Treating the AI like a fast pair-programmer (not a vending machine) is what kept a feature-rich game coherent.
+              Vibe coding only works if you bring the architecture. I drove the build in deliberate passes - scaffolding the app, then growing one system at a time, prompting the AI for each piece, reviewing the output, and refactoring before moving on. Treating the AI like a fast pair-programmer (not a vending machine) is what kept a feature-rich game coherent.
             </p>
 
             <div className="cs-cards-grid">
@@ -493,7 +493,7 @@ export default function CaseStudyCarRacing() {
               <div className="cs-card">
                 <div className="cs-card-icon">⚙️</div>
                 <h4>2 · The Race Engine</h4>
-                <p>Built the heart of the game next — the car data model, seeded PRNG, the velocity formula and the fixed-timestep <code>requestAnimationFrame</code> loop — and tuned it until races felt fair and tense.</p>
+                <p>Built the heart of the game next - the car data model, seeded PRNG, the velocity formula and the fixed-timestep <code>requestAnimationFrame</code> loop - and tuned it until races felt fair and tense.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💰</div>
@@ -503,7 +503,7 @@ export default function CaseStudyCarRacing() {
               <div className="cs-card">
                 <div className="cs-card-icon">✨</div>
                 <h4>4 · Juice</h4>
-                <p>Added the feel — Orbitron/Rajdhani type, the token-driven neon palettes, countdown and ambient audio with volume fades, and Web-Animations transitions between phases.</p>
+                <p>Added the feel - Orbitron/Rajdhani type, the token-driven neon palettes, countdown and ambient audio with volume fades, and Web-Animations transitions between phases.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🚀</div>
@@ -515,7 +515,7 @@ export default function CaseStudyCarRacing() {
 
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results &amp; Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -535,13 +535,13 @@ export default function CaseStudyCarRacing() {
             </div>
 
             <div className="cs-highlight" style={{ marginTop: '28px' }}>
-              <p>"A fully playable betting race — deterministic, 60fps and backend-free — <em>built end-to-end through vibe coding.</em>"</p>
+              <p>"A fully playable betting race - deterministic, 60fps and backend-free - <em>built end-to-end through vibe coding.</em>"</p>
             </div>
 
             <div className="reflection-grid">
               <div className="reflection-card">
                 <h4>📈 Outcome</h4>
-                <p>A shipped, playable web game: six stat-driven cars, odds-based betting and payouts, a seeded fixed-step race engine, bots, rooms, ranks, seasons, audio and a swappable neon e-sports skin — all client-side.</p>
+                <p>A shipped, playable web game: six stat-driven cars, odds-based betting and payouts, a seeded fixed-step race engine, bots, rooms, ranks, seasons, audio and a swappable neon e-sports skin - all client-side.</p>
               </div>
               <div className="reflection-card">
                 <h4>🧗 Challenge</h4>
@@ -549,7 +549,7 @@ export default function CaseStudyCarRacing() {
               </div>
               <div className="reflection-card">
                 <h4>💡 What I Learned</h4>
-                <p>Vibe coding rewards architecture. The clearer my model of the engine, state machine and economy, the cleaner the generated code — the AI accelerates building, but the design decisions stay yours.</p>
+                <p>Vibe coding rewards architecture. The clearer my model of the engine, state machine and economy, the cleaner the generated code - the AI accelerates building, but the design decisions stay yours.</p>
               </div>
               <div className="reflection-card">
                 <h4>🚀 Next Steps</h4>

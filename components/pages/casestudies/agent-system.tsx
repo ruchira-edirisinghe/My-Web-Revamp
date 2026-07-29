@@ -35,15 +35,15 @@ export default function CaseStudyAgentSystem() {
 
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
-          {/* HERO — Title + Cover Banner */}
+          {/* HERO - Title + Cover Banner */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">747 Agent<br/>Back-Office</h1>
-            <p className="cs-hero-subtitle">A Multi-Level Agent &amp; Player Console — Designed in Dark &amp; Light</p>
+            <p className="cs-hero-subtitle">A Multi-Level Agent &amp; Player Console - Designed in Dark &amp; Light</p>
           </header>
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/agent/cover.png" alt="747 Agent — back-office dashboard cover"
+            <img src="/Images/projects/agent/cover.png" alt="747 Agent - back-office dashboard cover"
               className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
@@ -76,22 +76,22 @@ export default function CaseStudyAgentSystem() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              747 Agent is the control room behind a sports-betting, e-sports and online-casino platform — where a multi-tier network of agents manages player accounts, credit lines, transfers and commissions. The challenge was to make a data-dense financial back-office feel <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>calm, scannable and trustworthy — in two complete themes, dark and light.</em>
+              747 Agent is the control room behind a sports-betting, e-sports and online-casino platform - where a multi-tier network of agents manages player accounts, credit lines, transfers and commissions. The challenge was to make a data-dense financial back-office feel <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>calm, scannable and trustworthy - in two complete themes, dark and light.</em>
             </p>
           </div>
 
 
-          {/* 01 — THE PROBLEM */}
+          {/* 01 - THE PROBLEM */}
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Context &amp; The Problem</h2>
 
             <p className="cs-body">
-              iGaming back-offices are notoriously dense — endless tables of money, agents and bets that operators live inside all day. 747 Agent has to expose a whole hierarchy at once: every agent's credit, balance, available and pending commission, their downline of sub-agents, and the players beneath them. The job was to tame that density without dumbing it down — and to do it twice, once for dark and once for light.
+              iGaming back-offices are notoriously dense - endless tables of money, agents and bets that operators live inside all day. 747 Agent has to expose a whole hierarchy at once: every agent's credit, balance, available and pending commission, their downline of sub-agents, and the players beneath them. The job was to tame that density without dumbing it down - and to do it twice, once for dark and once for light.
             </p>
 
             <div className="cs-highlight">
@@ -107,7 +107,7 @@ export default function CaseStudyAgentSystem() {
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
                 <h4>The Goal</h4>
-                <p>A calm, consistent system that makes the agent tree, balances and reports instantly scannable — with a disciplined token set that works flawlessly in both dark and light.</p>
+                <p>A calm, consistent system that makes the agent tree, balances and reports instantly scannable - with a disciplined token set that works flawlessly in both dark and light.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
@@ -118,17 +118,17 @@ export default function CaseStudyAgentSystem() {
           </section>
 
 
-          {/* 02 — RESEARCH */}
+          {/* 02 - RESEARCH */}
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery &amp; Research</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Discovery &amp; Research</h2>
 
             <p className="cs-body">
-              The key realisation: the three people who use this tool sit at different levels of the same tree, and each needs the same data framed differently. A master agent thinks in downline and credit; a sub-agent thinks in their own players; an admin thinks in platform-wide reports. The interface had to serve all three from one consistent grammar of cards, tables and roles — and respect that many operators work long shifts and switch themes for comfort.
+              The key realisation: the three people who use this tool sit at different levels of the same tree, and each needs the same data framed differently. A master agent thinks in downline and credit; a sub-agent thinks in their own players; an admin thinks in platform-wide reports. The interface had to serve all three from one consistent grammar of cards, tables and roles - and respect that many operators work long shifts and switch themes for comfort.
             </p>
 
             <h3 className="cs-sub-heading">Typical Back-Office Pitfalls vs. The Opportunity</h3>
@@ -163,39 +163,39 @@ export default function CaseStudyAgentSystem() {
                 <div className="persona-avatar">👑</div>
                 <div>
                   <div className="persona-name">The Master Agent</div>
-                  <div className="persona-role">Primary — Runs a Downline</div>
+                  <div className="persona-role">Primary - Runs a Downline</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Credit-focused</span>
                     <span className="persona-trait">Power-user</span>
                     <span className="persona-trait">All-day shifts</span>
                   </div>
-                  <p className="persona-quote">"I need to see my whole tree — who owes what, who's earning, and move credit down the line fast."</p>
+                  <p className="persona-quote">"I need to see my whole tree - who owes what, who's earning, and move credit down the line fast."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">🧑‍💼</div>
                 <div>
                   <div className="persona-name">The Sub-Agent</div>
-                  <div className="persona-role">Secondary — Manages Players</div>
+                  <div className="persona-role">Secondary - Manages Players</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Player-first</span>
                     <span className="persona-trait">Commission-driven</span>
                     <span className="persona-trait">Practical</span>
                   </div>
-                  <p className="persona-quote">"Show me my players, my balance and my commission — and let me transfer money without a manual."</p>
+                  <p className="persona-quote">"Show me my players, my balance and my commission - and let me transfer money without a manual."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">🛡️</div>
                 <div>
                   <div className="persona-name">The Operations Admin</div>
-                  <div className="persona-role">Tertiary — Oversight &amp; Reports</div>
+                  <div className="persona-role">Tertiary - Oversight &amp; Reports</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Compliance</span>
                     <span className="persona-trait">Report-heavy</span>
                     <span className="persona-trait">Detail-oriented</span>
                   </div>
-                  <p className="persona-quote">"I live in reports — sport bets, transactions, referrals. I need to filter, export and trust the numbers."</p>
+                  <p className="persona-quote">"I live in reports - sport bets, transactions, referrals. I need to filter, export and trust the numbers."</p>
                 </div>
               </div>
             </div>
@@ -231,10 +231,10 @@ export default function CaseStudyAgentSystem() {
           </section>
 
 
-          {/* 03 — IDEATION / STRUCTURE */}
+          {/* 03 - IDEATION / STRUCTURE */}
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure &amp; Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -256,7 +256,7 @@ export default function CaseStudyAgentSystem() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The <strong style={{ color: '#fff' }}>Agent Tree</strong> is the spine of the product — a hierarchy of roles (Agent Manager &amp; Agent) that expand and collapse, each row carrying main currency, direct players, credit line, total available, balance and both available and pending commission. Every other screen hangs off a node in that tree.</p>
+              <p className="cs-callout-text">The <strong style={{ color: '#fff' }}>Agent Tree</strong> is the spine of the product - a hierarchy of roles (Agent Manager &amp; Agent) that expand and collapse, each row carrying main currency, direct players, credit line, total available, balance and both available and pending commission. Every other screen hangs off a node in that tree.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -286,17 +286,17 @@ export default function CaseStudyAgentSystem() {
           </section>
 
 
-          {/* 04 — VISUAL DESIGN */}
+          {/* 04 - VISUAL DESIGN */}
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Visual Design &amp; Style Guide</h2>
 
             <p className="cs-body">
-              The system is built on a slate-and-blue foundation — deep navy surfaces lifted by a soft accent blue, with a family of role and status colors (indigo, orange, red, pink, green) used as gentle metric chips rather than loud blocks. Every value is defined as a paired token, so the dark theme's #374151 surfaces map cleanly to the light theme's #F2F3F7 — the same console, two moods.
+              The system is built on a slate-and-blue foundation - deep navy surfaces lifted by a soft accent blue, with a family of role and status colors (indigo, orange, red, pink, green) used as gentle metric chips rather than loud blocks. Every value is defined as a paired token, so the dark theme's #374151 surfaces map cleanly to the light theme's #F2F3F7 - the same console, two moods.
             </p>
 
             <div className="creative-styleguide">
@@ -305,7 +305,7 @@ export default function CaseStudyAgentSystem() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Typography</div>
-                  <p className="sg-unit-desc">Inter does all the heavy lifting — a UI-grade sans built for dense tables and small labels, carrying six weights from Regular through Black with perfect legibility at 12–14px.</p>
+                  <p className="sg-unit-desc">Inter does all the heavy lifting - a UI-grade sans built for dense tables and small labels, carrying six weights from Regular through Black with perfect legibility at 12-14px.</p>
                   <div className="typo-hero">Inter</div>
                   <div className="typo-scale-row">
                     <span className="typo-scale-item">48pt</span>
@@ -359,112 +359,112 @@ export default function CaseStudyAgentSystem() {
             {/* ─── DARK / LIGHT GALLERY ─── */}
             <div className="ui-gallery">
 
-              {/* Row 1 — DARK MODE */}
+              {/* Row 1 - DARK MODE */}
               <div className="ui-row-label is-dark"><span className="dot"></span> Dark Mode</div>
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Dashboard - Dark.png">
-                  <img src="/Images/projects/agent/dark/Dashboard - Dark.png" alt="Dashboard — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Dashboard - Dark.png" alt="Dashboard - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Agent Tree - Dark.png">
-                  <img src="/Images/projects/agent/dark/Agent Tree - Dark.png" alt="Agent Tree — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Agent Tree - Dark.png" alt="Agent Tree - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agent Tree</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Players - Dark.png">
-                  <img src="/Images/projects/agent/dark/Players - Dark.png" alt="Players — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Players - Dark.png" alt="Players - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Players</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark.png">
-                  <img src="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark.png" alt="Reports · Sport Bets — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark.png" alt="Reports · Sport Bets - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Reports · Sport Bets</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Transactions - Dark.png">
-                  <img src="/Images/projects/agent/dark/Transactions - Dark.png" alt="Transactions — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Transactions - Dark.png" alt="Transactions - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Transactions</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Agents - Dark.png">
-                  <img src="/Images/projects/agent/dark/Agents - Dark.png" alt="Agents — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Agents - Dark.png" alt="Agents - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agents</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Dashboard - Dark.png">
-                  <img src="/Images/projects/agent/dark/Dashboard - Dark.png" alt="Dashboard — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Dashboard - Dark.png" alt="Dashboard - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Agent Tree - Dark.png">
-                  <img src="/Images/projects/agent/dark/Agent Tree - Dark.png" alt="Agent Tree — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Agent Tree - Dark.png" alt="Agent Tree - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agent Tree</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Players - Dark.png">
-                  <img src="/Images/projects/agent/dark/Players - Dark.png" alt="Players — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Players - Dark.png" alt="Players - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Players</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark.png">
-                  <img src="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark.png" alt="Reports · Sport Bets — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark.png" alt="Reports · Sport Bets - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Reports · Sport Bets</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Transactions - Dark.png">
-                  <img src="/Images/projects/agent/dark/Transactions - Dark.png" alt="Transactions — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Transactions - Dark.png" alt="Transactions - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Transactions</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/dark/Agents - Dark.png">
-                  <img src="/Images/projects/agent/dark/Agents - Dark.png" alt="Agents — Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/dark/Agents - Dark.png" alt="Agents - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agents</div>
                 </div>
               </div>
 
-              {/* Row 2 — LIGHT MODE */}
+              {/* Row 2 - LIGHT MODE */}
               <div className="ui-row-label is-light"><span className="dot"></span> Light Mode</div>
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Dashboard - Light.png">
-                  <img src="/Images/projects/agent/Light/Dashboard - Light.png" alt="Dashboard — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Dashboard - Light.png" alt="Dashboard - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Agent Tree - Light.png">
-                  <img src="/Images/projects/agent/Light/Agent Tree - Light.png" alt="Agent Tree — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Agent Tree - Light.png" alt="Agent Tree - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agent Tree</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Players - Light.png">
-                  <img src="/Images/projects/agent/Light/Players - Light.png" alt="Players — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Players - Light.png" alt="Players - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Players</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Reports --_ Sport Bets - Light.png">
-                  <img src="/Images/projects/agent/Light/Reports --_ Sport Bets - Light.png" alt="Reports · Sport Bets — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Reports --_ Sport Bets - Light.png" alt="Reports · Sport Bets - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Reports · Sport Bets</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Transaction - Lght.png">
-                  <img src="/Images/projects/agent/Light/Transaction - Lght.png" alt="Transactions — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Transaction - Lght.png" alt="Transactions - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Transactions</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Agents - Light.png">
-                  <img src="/Images/projects/agent/Light/Agents - Light.png" alt="Agents — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Agents - Light.png" alt="Agents - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agents</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Dashboard - Light.png">
-                  <img src="/Images/projects/agent/Light/Dashboard - Light.png" alt="Dashboard — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Dashboard - Light.png" alt="Dashboard - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Agent Tree - Light.png">
-                  <img src="/Images/projects/agent/Light/Agent Tree - Light.png" alt="Agent Tree — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Agent Tree - Light.png" alt="Agent Tree - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agent Tree</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Players - Light.png">
-                  <img src="/Images/projects/agent/Light/Players - Light.png" alt="Players — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Players - Light.png" alt="Players - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Players</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Reports --_ Sport Bets - Light.png">
-                  <img src="/Images/projects/agent/Light/Reports --_ Sport Bets - Light.png" alt="Reports · Sport Bets — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Reports --_ Sport Bets - Light.png" alt="Reports · Sport Bets - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Reports · Sport Bets</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Transaction - Lght.png">
-                  <img src="/Images/projects/agent/Light/Transaction - Lght.png" alt="Transactions — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Transaction - Lght.png" alt="Transactions - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Transactions</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/agent/Light/Agents - Light.png">
-                  <img src="/Images/projects/agent/Light/Agents - Light.png" alt="Agents — Light" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/agent/Light/Agents - Light.png" alt="Agents - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agents</div>
                 </div>
               </div>
@@ -473,41 +473,41 @@ export default function CaseStudyAgentSystem() {
           </section>
 
 
-          {/* 05 — VIBE & INTERACTIONS */}
+          {/* 05 - VIBE & INTERACTIONS */}
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">Interactions</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Interaction Design &amp; Emotional Intent</h2>
 
             <p className="cs-body">
-              The feeling to land is quiet competence — a console an operator trusts at 2am. Generous spacing, predictable tables, color used sparingly and with meaning, and two themes that feel genuinely equal rather than one being an afterthought.
+              The feeling to land is quiet competence - a console an operator trusts at 2am. Generous spacing, predictable tables, color used sparingly and with meaning, and two themes that feel genuinely equal rather than one being an afterthought.
             </p>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🌳</div>
                 <h4>The Agent Tree</h4>
-                <p>An expandable hierarchy of roles — Agent Manager and Agent — with indentation, status dots and per-row credit, balance and commission, so the whole downline is readable at a glance.</p>
+                <p>An expandable hierarchy of roles - Agent Manager and Agent - with indentation, status dots and per-row credit, balance and commission, so the whole downline is readable at a glance.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎟️</div>
                 <h4>Metric Chips</h4>
-                <p>Deposits, bets, wins, tax, bonuses and commission are coded as soft color chips — indigo, orange, red, green — so a dense dashboard becomes a quick visual scan instead of a number-hunt.</p>
+                <p>Deposits, bets, wins, tax, bonuses and commission are coded as soft color chips - indigo, orange, red, green - so a dense dashboard becomes a quick visual scan instead of a number-hunt.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌗</div>
                 <h4>Dark &amp; Light Parity</h4>
-                <p>Every surface, text and accent is a paired token. The dark and light themes were designed together, not retrofitted — contrast and color meaning hold identically across both.</p>
+                <p>Every surface, text and accent is a paired token. The dark and light themes were designed together, not retrofitted - contrast and color meaning hold identically across both.</p>
               </div>
             </div>
           </section>
 
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results &amp; Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -527,17 +527,17 @@ export default function CaseStudyAgentSystem() {
             </div>
 
             <div className="cs-highlight" style={{ marginTop: '28px' }}>
-              <p>"A data-dense financial back-office that finally feels <em>calm</em> — built on one token system, in two complete themes."</p>
+              <p>"A data-dense financial back-office that finally feels <em>calm</em> - built on one token system, in two complete themes."</p>
             </div>
 
             <div className="reflection-grid">
               <div className="reflection-card">
                 <h4>📈 Outcome</h4>
-                <p>A complete agent back-office: dashboard with live financial stats, an expandable agent tree, player and account management, wallet and transfers, commission plans, and a full reports suite — all designed for both dark and light.</p>
+                <p>A complete agent back-office: dashboard with live financial stats, an expandable agent tree, player and account management, wallet and transfers, commission plans, and a full reports suite - all designed for both dark and light.</p>
               </div>
               <div className="reflection-card">
                 <h4>🧗 Challenge</h4>
-                <p>Keeping dozens of dense, table-heavy screens scannable and consistent — and maintaining true contrast and color meaning across two complete themes rather than one.</p>
+                <p>Keeping dozens of dense, table-heavy screens scannable and consistent - and maintaining true contrast and color meaning across two complete themes rather than one.</p>
               </div>
               <div className="reflection-card">
                 <h4>💡 What I Learned</h4>

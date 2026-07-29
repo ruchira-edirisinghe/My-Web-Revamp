@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   READY TO RACE UNLIMITED CASE STUDY — Dev build, neon gaming
+   READY TO RACE UNLIMITED CASE STUDY - Dev build, neon gaming
    ══════════════════════════════════════════ */
 
 :root {
@@ -36,7 +36,7 @@ main:has(.cs-wrap) {
 }
 
 /* ═══════════════════════════════════
-   HERO — Title + Cover Banner
+   HERO - Title + Cover Banner
    ═══════════════════════════════════ */
 .cs-hero-header {
   margin-bottom: 36px;
@@ -354,7 +354,7 @@ body:has(.cs-wrap) footer {
   margin: 18px 0;
 }
 
-/* ── UI Gallery — Infinite Marquee ── */
+/* ── UI Gallery - Infinite Marquee ── */
 .ui-gallery {
   margin-top: 64px;
   width: 100vw;
@@ -472,7 +472,7 @@ body:has(.cs-wrap) footer {
   position: relative;
   overflow: hidden;
 }
-/* Signature "targeting bracket" corners — reveal on hover */
+/* Signature "targeting bracket" corners - reveal on hover */
 .cs-card::before,
 .cs-card::after {
   content: '';
@@ -1240,7 +1240,7 @@ body:has(.cs-wrap) footer {
 }
 
 /* ═══════════════════════════════════
-   OUTCOME METRICS — Animated Counters
+   OUTCOME METRICS - Animated Counters
    ═══════════════════════════════════ */
 .outcome-grid {
   display: grid;
@@ -1435,7 +1435,7 @@ body:has(.cs-wrap) footer {
 }
 
 /* ═══════════════════════════════════
-   FLOATING TOC — Enhanced
+   FLOATING TOC - Enhanced
    ═══════════════════════════════════ */
 .cs-toc {
   position: fixed;
@@ -1914,10 +1914,10 @@ body.modal-open #navbar-wrap {
 }
 
 /* ══════════════════════════════════════════
-   747 AGENT — Inter specimen + dark/light landscape gallery
+   747 AGENT - Inter specimen + dark/light landscape gallery
    ══════════════════════════════════════════ */
 
-/* Inter is the product's brand typeface — render the specimen authentically */
+/* Inter is the product's brand typeface - render the specimen authentically */
 .typo-hero,
 .typo-scale-item,
 .typo-weight-item { font-family: 'Inter', sans-serif; }
@@ -1927,7 +1927,7 @@ body.modal-open #navbar-wrap {
 .color-block .color-hex { opacity: 1; transform: none; }
 .color-strip + .color-strip { margin-top: 10px; }
 
-/* ── Dashboard screens are LANDSCAPE — override the portrait card defaults ── */
+/* ── Dashboard screens are LANDSCAPE - override the portrait card defaults ── */
 .ui-card { width: 520px; height: 340px; }
 .ui-thumb { object-position: top center; }
 @media (max-width: 768px) {
@@ -1974,7 +1974,7 @@ body.modal-open #navbar-wrap {
 }
 
 /* ══════════════════════════════════════════
-   READY TO RACE UNLIMITED — display type specimen (Orbitron / Rajdhani)
+   READY TO RACE UNLIMITED - display type specimen (Orbitron / Rajdhani)
    ══════════════════════════════════════════ */
 .typo-hero { font-family: 'Orbitron', sans-serif; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 .typo-scale-item { font-family: 'Rajdhani', sans-serif; }

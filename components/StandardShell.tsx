@@ -60,7 +60,7 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
     const firstMount = isFirstMount.current;
     if (firstMount) isFirstMount.current = false;
 
-    // Always clear stale modal/overlay state — even on first mount, so a previously
+    // Always clear stale modal/overlay state - even on first mount, so a previously
     // active modal from a gallery page can't bleed in with display:none on main.
     document.body.classList.remove('modal-active', 'modal-open');
     document.body.style.overflow = '';

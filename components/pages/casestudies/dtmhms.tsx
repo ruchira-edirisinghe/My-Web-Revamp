@@ -23,7 +23,7 @@ export default function CaseStudyDtmhms() {
 
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
-          {/* HERO — Title + Cover Banner */}
+          {/* HERO - Title + Cover Banner */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">DTM Hall<br/>Management System</h1>
             <p className="cs-hero-subtitle">Turning Paper-Based Venue Booking into a Clean, Digital Experience</p>
@@ -31,7 +31,7 @@ export default function CaseStudyDtmhms() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/dtmhms/COVER.png" alt="DTM Hall Management System — booking platform cover"
+            <img src="/Images/projects/dtmhms/COVER.png" alt="DTM Hall Management System - booking platform cover"
               className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
@@ -64,22 +64,22 @@ export default function CaseStudyDtmhms() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              Booking a school hall shouldn't mean phone calls, paper forms and double-booked dates. The DTM Hall Management System digitises venue booking for Lyceum's premises — replacing a scattered, paper-based process with one unified platform where availability, pricing and layouts are all <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>clear, visual and bookable in a few taps.</em>
+              Booking a school hall shouldn't mean phone calls, paper forms and double-booked dates. The DTM Hall Management System digitises venue booking for Lyceum's premises - replacing a scattered, paper-based process with one unified platform where availability, pricing and layouts are all <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>clear, visual and bookable in a few taps.</em>
             </p>
           </div>
 
 
-          {/* 01 — THE PROBLEM */}
+          {/* 01 - THE PROBLEM */}
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Context &amp; The Problem</h2>
 
             <p className="cs-body">
-              DreamTeam spotted a real gap in Sri Lanka's education sector: institutions were still juggling hall bookings on paper and over the phone. The result was confusion at every step — unclear availability, opaque pricing, and no easy way to compare one venue against another before committing.
+              DreamTeam spotted a real gap in Sri Lanka's education sector: institutions were still juggling hall bookings on paper and over the phone. The result was confusion at every step - unclear availability, opaque pricing, and no easy way to compare one venue against another before committing.
             </p>
 
             <div className="cs-highlight">
@@ -90,7 +90,7 @@ export default function CaseStudyDtmhms() {
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
                 <h4>Problem Statement</h4>
-                <p>A paper-based, fragmented booking process made it hard to see what was available, compare venues, or trust the pricing — slowing institutions down and frustrating one-off bookers alike.</p>
+                <p>A paper-based, fragmented booking process made it hard to see what was available, compare venues, or trust the pricing - slowing institutions down and frustrating one-off bookers alike.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
@@ -106,17 +106,17 @@ export default function CaseStudyDtmhms() {
           </section>
 
 
-          {/* 02 — RESEARCH */}
+          {/* 02 - RESEARCH */}
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery &amp; Research</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Discovery &amp; Research</h2>
 
             <p className="cs-body">
-              Research split cleanly into two audiences — the administrators who run bookings daily, and the people who book a hall once in a while. Listening to both surfaced consistent pain points and a clear set of patterns to design against.
+              Research split cleanly into two audiences - the administrators who run bookings daily, and the people who book a hall once in a while. Listening to both surfaced consistent pain points and a clear set of patterns to design against.
             </p>
 
             <h3 className="cs-sub-heading">What the Research Revealed</h3>
@@ -151,7 +151,7 @@ export default function CaseStudyDtmhms() {
                 <div className="persona-avatar">🗂️</div>
                 <div>
                   <div className="persona-name">The Administrator</div>
-                  <div className="persona-role">Primary — Operations Staff</div>
+                  <div className="persona-role">Primary - Operations Staff</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Power-user</span>
                     <span className="persona-trait">Time-pressured</span>
@@ -164,20 +164,20 @@ export default function CaseStudyDtmhms() {
                 <div className="persona-avatar">🙋</div>
                 <div>
                   <div className="persona-name">The Occasional Booker</div>
-                  <div className="persona-role">Secondary — One-off User</div>
+                  <div className="persona-role">Secondary - One-off User</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Infrequent</span>
                     <span className="persona-trait">Price-sensitive</span>
                     <span className="persona-trait">Wants simplicity</span>
                   </div>
-                  <p className="persona-quote">"I book a hall once in a while — it has to be obvious, with no surprise costs."</p>
+                  <p className="persona-quote">"I book a hall once in a while - it has to be obvious, with no surprise costs."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">📅</div>
                 <div>
                   <div className="persona-name">The Event Coordinator</div>
-                  <div className="persona-role">Tertiary — Recurring Planner</div>
+                  <div className="persona-role">Tertiary - Recurring Planner</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Planner</span>
                     <span className="persona-trait">Visual</span>
@@ -219,10 +219,10 @@ export default function CaseStudyDtmhms() {
           </section>
 
 
-          {/* 03 — IDEATION / STRUCTURE */}
+          {/* 03 - IDEATION / STRUCTURE */}
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure &amp; Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -244,7 +244,7 @@ export default function CaseStudyDtmhms() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The architecture was organised into four clear flows — Discovery, Venue Exploration, Booking Management and Support — using <strong style={{ color: '#fff' }}>progressive disclosure</strong> so complex options only appear when a user actually needs them.</p>
+              <p className="cs-callout-text">The architecture was organised into four clear flows - Discovery, Venue Exploration, Booking Management and Support - using <strong style={{ color: '#fff' }}>progressive disclosure</strong> so complex options only appear when a user actually needs them.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -274,17 +274,17 @@ export default function CaseStudyDtmhms() {
           </section>
 
 
-          {/* 04 — VISUAL DESIGN */}
+          {/* 04 - VISUAL DESIGN */}
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Visual Design &amp; Style Guide</h2>
 
             <p className="cs-body">
-              The interface leans on a clean, mostly-white canvas with a single confident green accent — calm enough to feel trustworthy for an institution, sharp enough to feel modern. Card-based layouts make information easy to scan, and adaptive typography keeps everything readable from a 320px phone to a 1440px+ admin dashboard.
+              The interface leans on a clean, mostly-white canvas with a single confident green accent - calm enough to feel trustworthy for an institution, sharp enough to feel modern. Card-based layouts make information easy to scan, and adaptive typography keeps everything readable from a 320px phone to a 1440px+ admin dashboard.
             </p>
 
             <div className="creative-styleguide">
@@ -293,7 +293,7 @@ export default function CaseStudyDtmhms() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Typography</div>
-                  <p className="sg-unit-desc">Sora was chosen for its crisp, modern character — a type family with subtle cues of early-screen typography, but built for the sharp digital environment of today.</p>
+                  <p className="sg-unit-desc">Sora was chosen for its crisp, modern character - a type family with subtle cues of early-screen typography, but built for the sharp digital environment of today.</p>
                   <div className="typo-hero">Sora</div>
                   <div className="typo-scale-row">
                     <span className="typo-scale-item">58pt</span>
@@ -332,7 +332,7 @@ export default function CaseStudyDtmhms() {
             </div>
 
             <h3 className="cs-sub-heading">High-Fidelity Screens</h3>
-            <p className="cs-body">The core of the experience — from the landing page to the hall layout and the colour-coded booking calendar. Click any screen to view it in high resolution.</p>
+            <p className="cs-body">The core of the experience - from the landing page to the hall layout and the colour-coded booking calendar. Click any screen to view it in high resolution.</p>
 
             <div className="ui-gallery">
               {/* Row 1: Moving Right */}
@@ -446,24 +446,24 @@ export default function CaseStudyDtmhms() {
           </section>
 
 
-          {/* 05 — VIBE & INTERACTIONS */}
+          {/* 05 - VIBE & INTERACTIONS */}
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">Interactions</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Interaction Design &amp; Emotional Intent</h2>
 
             <p className="cs-body">
-              For an institutional tool, the feeling to aim for is quiet confidence — every interaction should reduce doubt, not add to it. Three signature patterns carry that intent across the whole experience.
+              For an institutional tool, the feeling to aim for is quiet confidence - every interaction should reduce doubt, not add to it. Three signature patterns carry that intent across the whole experience.
             </p>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📅</div>
                 <h4>Dynamic Calendar</h4>
-                <p>Colour-coded availability indicators let anyone read what's free or booked at a single glance — turning the calendar into the heart of the product.</p>
+                <p>Colour-coded availability indicators let anyone read what's free or booked at a single glance - turning the calendar into the heart of the product.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚖️</div>
@@ -473,14 +473,14 @@ export default function CaseStudyDtmhms() {
               <div className="cs-card">
                 <div className="cs-card-icon">🪄</div>
                 <h4>Progressive Disclosure</h4>
-                <p>Complex options stay tucked away until they're relevant — keeping the interface calm and clean while still supporting power-user depth.</p>
+                <p>Complex options stay tucked away until they're relevant - keeping the interface calm and clean while still supporting power-user depth.</p>
               </div>
             </div>
           </section>
 
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results &amp; Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -500,13 +500,13 @@ export default function CaseStudyDtmhms() {
             </div>
 
             <div className="cs-highlight" style={{ marginTop: '28px' }}>
-              <p>"Finally feels like we've entered the digital age." — <em>School Administrator</em> &nbsp;·&nbsp; "The calendar view saves me hours each week." — <em>Event Coordinator</em></p>
+              <p>"Finally feels like we've entered the digital age." - <em>School Administrator</em> &nbsp;·&nbsp; "The calendar view saves me hours each week." - <em>Event Coordinator</em></p>
             </div>
 
             <div className="reflection-grid">
               <div className="reflection-card">
                 <h4>📈 Outcome</h4>
-                <p>Booking errors fell 63% and first-time task success hit 88%, with average session duration up to 4.2 minutes — backed by a sub-1.2s booking engine and a 95% Lighthouse accessibility score.</p>
+                <p>Booking errors fell 63% and first-time task success hit 88%, with average session duration up to 4.2 minutes - backed by a sub-1.2s booking engine and a 95% Lighthouse accessibility score.</p>
               </div>
               <div className="reflection-card">
                 <h4>🧗 Challenge</h4>
@@ -518,7 +518,7 @@ export default function CaseStudyDtmhms() {
               </div>
               <div className="reflection-card">
                 <h4>💬 Conclusion</h4>
-                <p>DTM HMS shows how thoughtful UX engineering can transform an institutional process — reducing administrative burden while positioning DreamTeam as an edtech innovator.</p>
+                <p>DTM HMS shows how thoughtful UX engineering can transform an institutional process - reducing administrative burden while positioning DreamTeam as an edtech innovator.</p>
               </div>
             </div>
 

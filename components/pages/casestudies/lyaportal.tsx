@@ -45,7 +45,7 @@ export default function CaseStudyLyaportal() {
           </header>
 
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/lyaportal/cover.png" alt="LYA Exam Portal — online examination portal cover"
+            <img src="/Images/projects/lyaportal/cover.png" alt="LYA Exam Portal - online examination portal cover"
               className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
@@ -76,32 +76,32 @@ export default function CaseStudyLyaportal() {
 
           <div className="cs-elevator">
             <p>
-              Registering and paying for an exam is often the most stressful part of taking one — scattered forms, unclear fees and no shared view for the families and teachers involved. The LYA Exam Portal — Lyceum Academy's online examination platform — turns that chaos into a calm, guided journey across three roles, where every step is <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>clear, trusted and stress-free.</em>
+              Registering and paying for an exam is often the most stressful part of taking one - scattered forms, unclear fees and no shared view for the families and teachers involved. The LYA Exam Portal - Lyceum Academy's online examination platform - turns that chaos into a calm, guided journey across three roles, where every step is <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>clear, trusted and stress-free.</em>
             </p>
           </div>
 
 
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Context &amp; The Problem</h2>
 
             <p className="cs-body">
-              Exam registration touches three very different people — the student sitting the exam, the parent often paying for it, and the teacher who oversees the details. Most portals are built for just one of them, leaving the others to wrestle with confusing forms, opaque payment options and no shared source of truth.
+              Exam registration touches three very different people - the student sitting the exam, the parent often paying for it, and the teacher who oversees the details. Most portals are built for just one of them, leaving the others to wrestle with confusing forms, opaque payment options and no shared source of truth.
             </p>
 
             <div className="cs-highlight">
-              <p>"Registering and paying for an exam should feel as reassuring as the result itself — <em>clear, trusted, and stress-free.</em>"</p>
+              <p>"Registering and paying for an exam should feel as reassuring as the result itself - <em>clear, trusted, and stress-free.</em>"</p>
             </div>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
                 <h4>Problem Statement</h4>
-                <p>A single, generic flow couldn't serve students, parents and teachers at once — and unclear payment options (online vs. bank transfer) made the most critical step the most anxious one.</p>
+                <p>A single, generic flow couldn't serve students, parents and teachers at once - and unclear payment options (online vs. bank transfer) made the most critical step the most anxious one.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
@@ -119,7 +119,7 @@ export default function CaseStudyLyaportal() {
 
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery &amp; Research</span>
               <div className="cs-section-line"></div>
             </div>
@@ -161,33 +161,33 @@ export default function CaseStudyLyaportal() {
                 <div className="persona-avatar">🎓</div>
                 <div>
                   <div className="persona-name">The Student</div>
-                  <div className="persona-role">Primary — Exam Candidate</div>
+                  <div className="persona-role">Primary - Exam Candidate</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Mobile-first</span>
                     <span className="persona-trait">Time-pressured</span>
                     <span className="persona-trait">Wants clarity</span>
                   </div>
-                  <p className="persona-quote">"I just want to find my exam, confirm my details, and pay — without confusion."</p>
+                  <p className="persona-quote">"I just want to find my exam, confirm my details, and pay - without confusion."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">👨‍👩‍👧</div>
                 <div>
                   <div className="persona-name">The Parent</div>
-                  <div className="persona-role">Secondary — Payer / Guardian</div>
+                  <div className="persona-role">Secondary - Payer / Guardian</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Trust-seeking</span>
                     <span className="persona-trait">Record-keeping</span>
                     <span className="persona-trait">Occasional</span>
                   </div>
-                  <p className="persona-quote">"I'm paying for my child's exams — I need to trust the process and keep a clear record."</p>
+                  <p className="persona-quote">"I'm paying for my child's exams - I need to trust the process and keep a clear record."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">🧑‍🏫</div>
                 <div>
                   <div className="persona-name">The Teacher</div>
-                  <div className="persona-role">Tertiary — Oversight</div>
+                  <div className="persona-role">Tertiary - Oversight</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Detail-oriented</span>
                     <span className="persona-trait">Routine</span>
@@ -231,7 +231,7 @@ export default function CaseStudyLyaportal() {
 
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure &amp; Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -253,7 +253,7 @@ export default function CaseStudyLyaportal() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The same core journey was tailored into <strong style={{ color: '#fff' }}>three role-based flows</strong> — student, parent and teacher — sharing one design system so the portal feels consistent no matter who logs in.</p>
+              <p className="cs-callout-text">The same core journey was tailored into <strong style={{ color: '#fff' }}>three role-based flows</strong> - student, parent and teacher - sharing one design system so the portal feels consistent no matter who logs in.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -285,14 +285,14 @@ export default function CaseStudyLyaportal() {
 
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Visual Design &amp; Style Guide</h2>
 
             <p className="cs-body">
-              The interface leans on a blue-and-mainly-white palette to reflect trust and professionalism — calm, welcoming, and easy to focus in, which matters most when money and exams are on the line. A single design system keeps all three role flows visually consistent.
+              The interface leans on a blue-and-mainly-white palette to reflect trust and professionalism - calm, welcoming, and easy to focus in, which matters most when money and exams are on the line. A single design system keeps all three role flows visually consistent.
             </p>
 
             <div className="creative-styleguide">
@@ -300,7 +300,7 @@ export default function CaseStudyLyaportal() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Typography</div>
-                  <p className="sg-unit-desc">Poppins embodies a modernist clarity and versatility — its geometric, monolinear strokes balance neutrality with subtle warmth, suiting a wide range of digital environments.</p>
+                  <p className="sg-unit-desc">Poppins embodies a modernist clarity and versatility - its geometric, monolinear strokes balance neutrality with subtle warmth, suiting a wide range of digital environments.</p>
                   <div className="typo-hero">Poppins</div>
                   <div className="typo-scale-row">
                     <span className="typo-scale-item">58pt</span>
@@ -339,7 +339,7 @@ export default function CaseStudyLyaportal() {
             </div>
 
             <h3 className="cs-sub-heading">High-Fidelity Screens</h3>
-            <p className="cs-body">A cross-section of the portal — from login and dashboards to the exam list, details confirmation, and the full payment journey across roles. Click any screen to view it in high resolution.</p>
+            <p className="cs-body">A cross-section of the portal - from login and dashboards to the exam list, details confirmation, and the full payment journey across roles. Click any screen to view it in high resolution.</p>
 
             <div className="ui-gallery">
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
@@ -449,38 +449,38 @@ export default function CaseStudyLyaportal() {
 
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">Interactions</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Interaction Design &amp; Emotional Intent</h2>
 
             <p className="cs-body">
-              The emotional target was reassurance. Around the highest-stakes moment — payment — the design works hardest to remove doubt, with clear choices, honest status, and a graceful path back when something goes wrong.
+              The emotional target was reassurance. Around the highest-stakes moment - payment - the design works hardest to remove doubt, with clear choices, honest status, and a graceful path back when something goes wrong.
             </p>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🧭</div>
                 <h4>Role-Based Dashboards</h4>
-                <p>Student, parent and teacher each land on a dashboard tuned to their goals — one product, three confident entry points.</p>
+                <p>Student, parent and teacher each land on a dashboard tuned to their goals - one product, three confident entry points.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💳</div>
                 <h4>Flexible Payments</h4>
-                <p>Instant online payment sits beside bank transfer — including an "upload slip later" path — so the portal fits real-world payment habits.</p>
+                <p>Instant online payment sits beside bank transfer - including an "upload slip later" path - so the portal fits real-world payment habits.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">✅</div>
                 <h4>Honest Status States</h4>
-                <p>Every payment ends in a clear success or failure screen with next steps — turning the most anxious step into a reassuring one.</p>
+                <p>Every payment ends in a clear success or failure screen with next steps - turning the most anxious step into a reassuring one.</p>
               </div>
             </div>
           </section>
 
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results &amp; Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -491,7 +491,7 @@ export default function CaseStudyLyaportal() {
             <div className="outcome-grid">
               <div className="outcome-card">
                 <div className="outcome-metric" data-count="3" data-suffix=" Roles">0</div>
-                <div className="outcome-label">Dedicated journeys — Student, Parent &amp; Teacher</div>
+                <div className="outcome-label">Dedicated journeys - Student, Parent &amp; Teacher</div>
               </div>
               <div className="outcome-card">
                 <div className="outcome-metric" data-count="40" data-suffix="+ Screens">0</div>
@@ -500,7 +500,7 @@ export default function CaseStudyLyaportal() {
             </div>
 
             <div className="cs-highlight" style={{ marginTop: '28px' }}>
-              <p>"One portal, three confident journeys — with the payment step finally feeling as <em>trustworthy</em> as it should."</p>
+              <p>"One portal, three confident journeys - with the payment step finally feeling as <em>trustworthy</em> as it should."</p>
             </div>
 
             <div className="reflection-grid">
@@ -510,7 +510,7 @@ export default function CaseStudyLyaportal() {
               </div>
               <div className="reflection-card">
                 <h4>🧗 Challenge</h4>
-                <p>Designing three parallel flows that stay consistent — and covering payment edge cases (failures, "upload slip later") without overwhelming the happy path.</p>
+                <p>Designing three parallel flows that stay consistent - and covering payment edge cases (failures, "upload slip later") without overwhelming the happy path.</p>
               </div>
               <div className="reflection-card">
                 <h4>💡 What I Learned</h4>

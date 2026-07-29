@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   preloader.ts — Water-fill preloader & split-screen reveal
+   preloader.ts - Water-fill preloader & split-screen reveal
    (faithful port of styles/home/preloader.js)
 
    Adapted for React: the original removed the preloader / split panels from the

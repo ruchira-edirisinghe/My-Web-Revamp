@@ -35,7 +35,7 @@ export default function CaseStudyMessagingSystem() {
 
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
-          {/* HERO — Title + Cover Banner */}
+          {/* HERO - Title + Cover Banner */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">Messaging Platform</h1>
             <p className="cs-hero-subtitle">A Multi-Channel Messaging Services Platform for Developers &amp; Teams</p>
@@ -43,7 +43,7 @@ export default function CaseStudyMessagingSystem() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/msg_platform/cover.png" alt="Messaging Platform — multi-channel messaging dashboard cover"
+            <img src="/Images/projects/msg_platform/cover.png" alt="Messaging Platform - multi-channel messaging dashboard cover"
               className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
@@ -76,38 +76,38 @@ export default function CaseStudyMessagingSystem() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              Sending a message is easy; running the system behind it is not — services, channels, message parameters, API keys, logs and billing all have to live in one place. This Messaging Platform turns that sprawling back-end into a single, calm control centre, where developers and teams can <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>configure, send and monitor with confidence.</em>
+              Sending a message is easy; running the system behind it is not - services, channels, message parameters, API keys, logs and billing all have to live in one place. This Messaging Platform turns that sprawling back-end into a single, calm control centre, where developers and teams can <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>configure, send and monitor with confidence.</em>
             </p>
           </div>
 
 
-          {/* 01 — THE PROBLEM */}
+          {/* 01 - THE PROBLEM */}
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Context &amp; The Problem</h2>
 
             <p className="cs-body">
-              Multi-channel messaging platforms are deceptively complex. Behind a single "send" lies a web of services, channels, reusable parameters, API tokens, delivery logs and billing — and most dashboards bolt these together into something only their builders can navigate. Developers lose time; teams lose trust.
+              Multi-channel messaging platforms are deceptively complex. Behind a single "send" lies a web of services, channels, reusable parameters, API tokens, delivery logs and billing - and most dashboards bolt these together into something only their builders can navigate. Developers lose time; teams lose trust.
             </p>
 
             <div className="cs-highlight">
-              <p>"The hardest part of a messaging platform isn't sending the message — it's making the system <em>behind it</em> feel simple."</p>
+              <p>"The hardest part of a messaging platform isn't sending the message - it's making the system <em>behind it</em> feel simple."</p>
             </div>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
                 <h4>Problem Statement</h4>
-                <p>Configuring services, building message parameters, managing API keys and reading logs were scattered and intimidating — turning routine setup into a support burden.</p>
+                <p>Configuring services, building message parameters, managing API keys and reading logs were scattered and intimidating - turning routine setup into a support burden.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
                 <h4>The Goal</h4>
-                <p>Unify the entire workflow into one coherent dashboard — guided service creation, a clear parameter builder, secure token management, and transparent logs and billing.</p>
+                <p>Unify the entire workflow into one coherent dashboard - guided service creation, a clear parameter builder, secure token management, and transparent logs and billing.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
@@ -118,17 +118,17 @@ export default function CaseStudyMessagingSystem() {
           </section>
 
 
-          {/* 02 — RESEARCH */}
+          {/* 02 - RESEARCH */}
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery &amp; Research</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Discovery &amp; Research</h2>
 
             <p className="cs-body">
-              The platform serves distinct mindsets — the developer who lives in tokens and logs, the admin who governs services and access, and the owner who tracks spend. Designing for all three meant separating power from simplicity without splitting the product in two.
+              The platform serves distinct mindsets - the developer who lives in tokens and logs, the admin who governs services and access, and the owner who tracks spend. Designing for all three meant separating power from simplicity without splitting the product in two.
             </p>
 
             <h3 className="cs-sub-heading">Typical Dashboards vs. The Opportunity</h3>
@@ -163,20 +163,20 @@ export default function CaseStudyMessagingSystem() {
                 <div className="persona-avatar">👨‍💻</div>
                 <div>
                   <div className="persona-name">The Developer</div>
-                  <div className="persona-role">Primary — Integrator</div>
+                  <div className="persona-role">Primary - Integrator</div>
                   <div className="persona-traits">
                     <span className="persona-trait">API-driven</span>
                     <span className="persona-trait">Detail-oriented</span>
                     <span className="persona-trait">Efficiency</span>
                   </div>
-                  <p className="persona-quote">"Give me clean tokens, clear docs and readable logs — I'll handle the rest."</p>
+                  <p className="persona-quote">"Give me clean tokens, clear docs and readable logs - I'll handle the rest."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">🛠️</div>
                 <div>
                   <div className="persona-name">The Team Admin</div>
-                  <div className="persona-role">Secondary — Operator</div>
+                  <div className="persona-role">Secondary - Operator</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Governance</span>
                     <span className="persona-trait">Configures</span>
@@ -189,13 +189,13 @@ export default function CaseStudyMessagingSystem() {
                 <div className="persona-avatar">📈</div>
                 <div>
                   <div className="persona-name">The Business Owner</div>
-                  <div className="persona-role">Tertiary — Stakeholder</div>
+                  <div className="persona-role">Tertiary - Stakeholder</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Cost-aware</span>
                     <span className="persona-trait">Big-picture</span>
                     <span className="persona-trait">Occasional</span>
                   </div>
-                  <p className="persona-quote">"I just want to see what we're sending and what it's costing — clearly."</p>
+                  <p className="persona-quote">"I just want to see what we're sending and what it's costing - clearly."</p>
                 </div>
               </div>
             </div>
@@ -231,10 +231,10 @@ export default function CaseStudyMessagingSystem() {
           </section>
 
 
-          {/* 03 — IDEATION / STRUCTURE */}
+          {/* 03 - IDEATION / STRUCTURE */}
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure &amp; Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -256,7 +256,7 @@ export default function CaseStudyMessagingSystem() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">Multi-step tasks — service onboarding and the new-parameter builder — were broken into <strong style={{ color: '#fff' }}>guided wizards with success states</strong>, so even complex configuration feels like a checklist, not a maze.</p>
+              <p className="cs-callout-text">Multi-step tasks - service onboarding and the new-parameter builder - were broken into <strong style={{ color: '#fff' }}>guided wizards with success states</strong>, so even complex configuration feels like a checklist, not a maze.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -286,17 +286,17 @@ export default function CaseStudyMessagingSystem() {
           </section>
 
 
-          {/* 04 — VISUAL DESIGN */}
+          {/* 04 - VISUAL DESIGN */}
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Visual Design &amp; Style Guide</h2>
 
             <p className="cs-body">
-              A SaaS dashboard lives or dies on clarity. The system pairs the clean, modern character of Instrument Sans with a broad, expressive palette — calm neutrals for surfaces and structure, and a vivid spread of accents to tag channels, statuses and states across a dense product.
+              A SaaS dashboard lives or dies on clarity. The system pairs the clean, modern character of Instrument Sans with a broad, expressive palette - calm neutrals for surfaces and structure, and a vivid spread of accents to tag channels, statuses and states across a dense product.
             </p>
 
             <div className="creative-styleguide">
@@ -305,7 +305,7 @@ export default function CaseStudyMessagingSystem() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Typography</div>
-                  <p className="sg-unit-desc">Instrument Sans — a clean, contemporary grotesque whose tight, even rhythm keeps a dense, data-heavy dashboard readable at every size.</p>
+                  <p className="sg-unit-desc">Instrument Sans - a clean, contemporary grotesque whose tight, even rhythm keeps a dense, data-heavy dashboard readable at every size.</p>
                   <div className="typo-hero">Instrument Sans</div>
                   <div className="typo-weights-row">
                     <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
@@ -320,7 +320,7 @@ export default function CaseStudyMessagingSystem() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Color</div>
-                  <p className="sg-unit-desc">A broad, expressive palette — soft neutrals and greens for surfaces, with warm and bold accents for tagging channels, statuses and states.</p>
+                  <p className="sg-unit-desc">A broad, expressive palette - soft neutrals and greens for surfaces, with warm and bold accents for tagging channels, statuses and states.</p>
                   <div className="color-strip">
                     <div className="color-block" style={{ background: '#D6DAC8' }}><span className="color-hex">#D6DAC8</span></div>
                     <div className="color-block" style={{ background: '#9CAFAA' }}><span className="color-hex">#9CAFAA</span></div>
@@ -343,7 +343,7 @@ export default function CaseStudyMessagingSystem() {
             </div>
 
             <h3 className="cs-sub-heading">High-Fidelity Screens</h3>
-            <p className="cs-body">A cross-section of the platform — from secure login and the dashboard to service creation, the parameter builder, tokens, logs and billing. Click any screen to view it in high resolution.</p>
+            <p className="cs-body">A cross-section of the platform - from secure login and the dashboard to service creation, the parameter builder, tokens, logs and billing. Click any screen to view it in high resolution.</p>
 
             <div className="ui-gallery">
               {/* Row 1: Moving Right */}
@@ -457,17 +457,17 @@ export default function CaseStudyMessagingSystem() {
           </section>
 
 
-          {/* 05 — VIBE & INTERACTIONS */}
+          {/* 05 - VIBE & INTERACTIONS */}
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">Interactions</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Interaction Design &amp; Emotional Intent</h2>
 
             <p className="cs-body">
-              The emotional goal was control without fear. Powerful actions — creating services, minting keys, disabling features — are surrounded by guidance, confirmation and clear feedback, so the platform feels capable and safe in equal measure.
+              The emotional goal was control without fear. Powerful actions - creating services, minting keys, disabling features - are surrounded by guidance, confirmation and clear feedback, so the platform feels capable and safe in equal measure.
             </p>
 
             <div className="cs-cards-grid">
@@ -479,7 +479,7 @@ export default function CaseStudyMessagingSystem() {
               <div className="cs-card">
                 <div className="cs-card-icon">🧩</div>
                 <h4>Visual Parameter Builder</h4>
-                <p>Message parameters support text, image and link types — added and previewed visually, turning a fiddly config task into a tangible building experience.</p>
+                <p>Message parameters support text, image and link types - added and previewed visually, turning a fiddly config task into a tangible building experience.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔒</div>
@@ -491,7 +491,7 @@ export default function CaseStudyMessagingSystem() {
 
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results &amp; Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -506,12 +506,12 @@ export default function CaseStudyMessagingSystem() {
               </div>
               <div className="outcome-card">
                 <div className="outcome-metric" data-text="2FA">0</div>
-                <div className="outcome-label">Security-first flows — two-factor auth &amp; scoped tokens</div>
+                <div className="outcome-label">Security-first flows - two-factor auth &amp; scoped tokens</div>
               </div>
             </div>
 
             <div className="cs-highlight" style={{ marginTop: '28px' }}>
-              <p>"A sprawling messaging back-end, distilled into one calm control centre — powerful for developers, <em>approachable</em> for everyone else."</p>
+              <p>"A sprawling messaging back-end, distilled into one calm control centre - powerful for developers, <em>approachable</em> for everyone else."</p>
             </div>
 
             <div className="reflection-grid">
@@ -521,7 +521,7 @@ export default function CaseStudyMessagingSystem() {
               </div>
               <div className="reflection-card">
                 <h4>🧗 Challenge</h4>
-                <p>Serving developers, admins and owners in one product without overwhelming any of them — and keeping dozens of multi-step flows visually consistent.</p>
+                <p>Serving developers, admins and owners in one product without overwhelming any of them - and keeping dozens of multi-step flows visually consistent.</p>
               </div>
               <div className="reflection-card">
                 <h4>💡 What I Learned</h4>

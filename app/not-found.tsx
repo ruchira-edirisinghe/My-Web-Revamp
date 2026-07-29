@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import './not-found.css';
 
 export const metadata: Metadata = {
-  title: 'Page not found — Ruchira Edirisinghe',
+  title: 'Page not found - Ruchira Edirisinghe',
   description: 'This page drifted out of orbit. Head back to the homepage or browse the work.',
 };
 

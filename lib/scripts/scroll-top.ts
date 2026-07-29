@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ══════════════════════════════════════════
-   scroll-top.ts — Floating "Scroll to Top" control
+   scroll-top.ts - Floating "Scroll to Top" control
    Self-contained: injects its own styles + markup.
    (faithful port of styles/scroll-top.js)
    ══════════════════════════════════════════ */

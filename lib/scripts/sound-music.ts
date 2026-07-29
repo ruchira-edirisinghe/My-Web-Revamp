@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   sound-music.ts — Ambient music, spectrum visualiser & interaction sounds
+   sound-music.ts - Ambient music, spectrum visualiser & interaction sounds
    (faithful port of styles/home/sound-music.js)
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
@@ -25,7 +25,7 @@ export function initSoundMusic(): () => void {
 
   /* ── Ambient music ──
      Play/pause, volume fades, and cross-page continuity are owned by the shared
-     singleton (lib/scripts/ambient-audio.ts) — one <audio> element persists for
+     singleton (lib/scripts/ambient-audio.ts) - one <audio> element persists for
      the whole SPA session, so navigating never restarts the track and a pause on
      any page stays paused on every other page. This engine only mirrors the
      playing state into `spectrumPlaying` to animate its visualiser. */

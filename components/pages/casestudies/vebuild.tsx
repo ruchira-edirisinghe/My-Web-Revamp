@@ -44,7 +44,7 @@ export default function CaseStudyVebuild() {
 
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
-          {/* HERO — Title + Cover Banner */}
+          {/* HERO - Title + Cover Banner */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">VEBUILD<br/>Construction Web UI</h1>
             <p className="cs-hero-subtitle">A Clean &amp; Sleek Digital Presence for a Modern Construction Brand</p>
@@ -52,7 +52,7 @@ export default function CaseStudyVebuild() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/vebuild/cover.png" alt="VEBUILD — Construction company website cover" className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/vebuild/cover.png" alt="VEBUILD - Construction company website cover" className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -88,20 +88,20 @@ export default function CaseStudyVebuild() {
             </p>
           </div>
 
-          {/* ═══════════════ PANEL A — CLEAN & SLEEK (current) ═══════════════ */}
+          {/* ═══════════════ PANEL A - CLEAN & SLEEK (current) ═══════════════ */}
           <div className="cs-panel active" id="panel-clean">
 
-          {/* 01 — THE PROBLEM */}
+          {/* 01 - THE PROBLEM */}
           <section className="cs-section" id="sec-problem" data-sec="problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Context &amp; The Problem</h2>
 
             <p className="cs-body">
-              As an established construction company, VEBUILD had the projects and credentials to inspire confidence — but its digital presence didn't reflect that craftsmanship. Prospective clients struggled to explore the portfolio, understand the company's history and values, or find a clear path to get in touch. The brand needed an interface as clean, sleek, and dependable as the work it represents.
+              As an established construction company, VEBUILD had the projects and credentials to inspire confidence - but its digital presence didn't reflect that craftsmanship. Prospective clients struggled to explore the portfolio, understand the company's history and values, or find a clear path to get in touch. The brand needed an interface as clean, sleek, and dependable as the work it represents.
             </p>
 
             <div className="cs-highlight">
@@ -112,7 +112,7 @@ export default function CaseStudyVebuild() {
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
                 <h4>Problem Statement</h4>
-                <p>A digital presence that fell short of the brand — the information was there, but the experience lacked the polish, clarity, and trust signals a modern construction client expects.</p>
+                <p>A digital presence that fell short of the brand - the information was there, but the experience lacked the polish, clarity, and trust signals a modern construction client expects.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
@@ -128,17 +128,17 @@ export default function CaseStudyVebuild() {
           </section>
 
 
-          {/* 02 — RESEARCH */}
+          {/* 02 - RESEARCH */}
           <section className="cs-section" id="sec-research" data-sec="research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery &amp; Research</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Discovery &amp; Research</h2>
 
             <p className="cs-body">
-              Discovery focused on how people actually evaluate a construction firm online — scanning past projects for proof of quality, looking for credibility signals, and wanting a frictionless way to enquire. I reviewed corporate and construction websites to map the patterns that build trust against the ones that quietly erode it.
+              Discovery focused on how people actually evaluate a construction firm online - scanning past projects for proof of quality, looking for credibility signals, and wanting a frictionless way to enquire. I reviewed corporate and construction websites to map the patterns that build trust against the ones that quietly erode it.
             </p>
 
             <h3 className="cs-sub-heading">Competitive Analysis</h3>
@@ -168,7 +168,7 @@ export default function CaseStudyVebuild() {
                       <div className="cs-list-bullet"></div>A visual-first portfolio that lets the work speak for itself
                     </li>
                     <li>
-                      <div className="cs-list-bullet"></div>Clear credibility cues — history, certifications, sustainability
+                      <div className="cs-list-bullet"></div>Clear credibility cues - history, certifications, sustainability
                     </li>
                     <li>
                       <div className="cs-list-bullet"></div>Prominent, low-friction calls-to-action to start a conversation
@@ -186,7 +186,7 @@ export default function CaseStudyVebuild() {
                 <div className="persona-avatar">🏗️</div>
                 <div>
                   <div className="persona-name">Property Developer</div>
-                  <div className="persona-role">Primary — Client / Decision-Maker · Age 35-55</div>
+                  <div className="persona-role">Primary - Client / Decision-Maker · Age 35-55</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Quality-focused</span>
                     <span className="persona-trait">Time-poor</span>
@@ -201,7 +201,7 @@ export default function CaseStudyVebuild() {
                 <div className="persona-avatar">📋</div>
                 <div>
                   <div className="persona-name">Project Stakeholder</div>
-                  <div className="persona-role">Secondary — Partner / Investor · Age 30-50</div>
+                  <div className="persona-role">Secondary - Partner / Investor · Age 30-50</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Detail-oriented</span>
                     <span className="persona-trait">Process-driven</span>
@@ -216,13 +216,13 @@ export default function CaseStudyVebuild() {
                 <div className="persona-avatar">🌐</div>
                 <div>
                   <div className="persona-name">Industry Professional</div>
-                  <div className="persona-role">Tertiary — Peer / Prospective Hire · Age 24-40</div>
+                  <div className="persona-role">Tertiary - Peer / Prospective Hire · Age 24-40</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Curious</span>
                     <span className="persona-trait">Brand-aware</span>
                     <span className="persona-trait">Mobile-first</span>
                   </div>
-                  <p className="persona-quote">"I'm exploring who VEBUILD is and what they stand for — show me the values, not just the buildings."</p>
+                  <p className="persona-quote">"I'm exploring who VEBUILD is and what they stand for - show me the values, not just the buildings."</p>
                 </div>
               </div>
             </div>
@@ -265,10 +265,10 @@ export default function CaseStudyVebuild() {
           </section>
 
 
-          {/* 03 — IDEATION */}
+          {/* 03 - IDEATION */}
           <section className="cs-section" id="sec-ideation" data-sec="ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure &amp; Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -305,7 +305,7 @@ export default function CaseStudyVebuild() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">Low-fidelity wireframes were refined iteratively and validated through user testing with a diverse group — surfacing the need for <strong style={{ color: '#fff' }}>clearer calls-to-action, improved readability, and more intuitive navigation</strong> before moving to the high-fidelity prototype.</p>
+              <p className="cs-callout-text">Low-fidelity wireframes were refined iteratively and validated through user testing with a diverse group - surfacing the need for <strong style={{ color: '#fff' }}>clearer calls-to-action, improved readability, and more intuitive navigation</strong> before moving to the high-fidelity prototype.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -335,17 +335,17 @@ export default function CaseStudyVebuild() {
           </section>
 
 
-          {/* 04 — VISUAL DESIGN */}
+          {/* 04 - VISUAL DESIGN */}
           <section className="cs-section" id="sec-design" data-sec="design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Visual Design &amp; Style Guide</h2>
 
             <p className="cs-body">
-              VEBUILD's interface was guided by three principles — elegance, simplicity, and accessibility — achieved through balanced whitespace, bold typography, and a carefully curated palette. A green-and-bluish scheme drawn straight from the company's logo pairs a deep navy with a vibrant teal, creating a clean, sleek aesthetic that signals reliability and modern craftsmanship.
+              VEBUILD's interface was guided by three principles - elegance, simplicity, and accessibility - achieved through balanced whitespace, bold typography, and a carefully curated palette. A green-and-bluish scheme drawn straight from the company's logo pairs a deep navy with a vibrant teal, creating a clean, sleek aesthetic that signals reliability and modern craftsmanship.
             </p>
 
             <div className="creative-styleguide">
@@ -383,7 +383,7 @@ export default function CaseStudyVebuild() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Color</div>
-                  <p className="sg-unit-desc">A green and bluish-toned palette was used — these are the colours of the company's logo and overall brand theme.</p>
+                  <p className="sg-unit-desc">A green and bluish-toned palette was used - these are the colours of the company's logo and overall brand theme.</p>
                   <div className="color-strip">
                     <div className="color-block" style={{ background: '#1F394F' }}><span className="color-hex">#1F394F</span></div>
                     <div className="color-block" style={{ background: '#01A59E' }}><span className="color-hex">#01A59E</span></div>
@@ -456,7 +456,7 @@ export default function CaseStudyVebuild() {
                   <div className="ui-card-label">Careers</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Careers --_ job.png">
-                  <img src="/Images/projects/vebuild/Careers --_ job.png" alt="Careers — Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Careers --_ job.png" alt="Careers - Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers · Job</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Contact Us.png">
@@ -473,7 +473,7 @@ export default function CaseStudyVebuild() {
                   <div className="ui-card-label">Careers</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Careers --_ job.png">
-                  <img src="/Images/projects/vebuild/Careers --_ job.png" alt="Careers — Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Careers --_ job.png" alt="Careers - Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers · Job</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Contact Us.png">
@@ -485,24 +485,24 @@ export default function CaseStudyVebuild() {
           </section>
 
 
-          {/* 05 — VIBE & INTERACTIONS */}
+          {/* 05 - VIBE & INTERACTIONS */}
           <section className="cs-section" id="sec-vibe" data-sec="vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">The Vibe</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Interaction Design &amp; Emotional Intent</h2>
 
             <p className="cs-body">
-              A construction brand's site should feel grounded, confident, and modern — never flashy for its own sake. Every interaction was tuned to communicate dependability and quality, letting the work take centre stage while gently guiding visitors toward an enquiry.
+              A construction brand's site should feel grounded, confident, and modern - never flashy for its own sake. Every interaction was tuned to communicate dependability and quality, letting the work take centre stage while gently guiding visitors toward an enquiry.
             </p>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">✨</div>
                 <h4>Button Feel</h4>
-                <p>Clear, high-contrast calls-to-action make enquiring effortless. The emotional intent is confidence and momentum — guiding clients smoothly toward starting a conversation.</p>
+                <p>Clear, high-contrast calls-to-action make enquiring effortless. The emotional intent is confidence and momentum - guiding clients smoothly toward starting a conversation.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌊</div>
@@ -519,7 +519,7 @@ export default function CaseStudyVebuild() {
 
           <section className="cs-section" id="sec-results" data-sec="results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results &amp; Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -534,7 +534,7 @@ export default function CaseStudyVebuild() {
               </div>
               <div className="outcome-card">
                 <div className="outcome-metric" data-text="A11Y">0</div>
-                <div className="outcome-label">Accessibility-first interface — keyboard navigation, screen-reader support &amp; high-contrast schemes</div>
+                <div className="outcome-label">Accessibility-first interface - keyboard navigation, screen-reader support &amp; high-contrast schemes</div>
               </div>
             </div>
 
@@ -570,24 +570,24 @@ export default function CaseStudyVebuild() {
           </div>{/* /#panel-clean */}
 
 
-          {/* ═══════════════ PANEL B — BLOCK APPEARANCE (earlier concept) ═══════════════ */}
+          {/* ═══════════════ PANEL B - BLOCK APPEARANCE (earlier concept) ═══════════════ */}
           <div className="cs-panel" id="panel-blocked">
 
-            {/* 01 — THE PROBLEM */}
+            {/* 01 - THE PROBLEM */}
             <section className="cs-section" data-sec="problem">
               <div className="cs-section-divider">
-                <span className="cs-section-num">01 ——</span>
+                <span className="cs-section-num">01 --</span>
                 <span className="cs-section-num">The Problem</span>
                 <div className="cs-section-line"></div>
               </div>
               <h2 className="cs-section-title">Context &amp; The Problem</h2>
 
               <p className="cs-body">
-                VEBUILD INNOVATIONS began as a digital-transformation initiative for a construction firm looking to modernise how it communicates with clients and engages stakeholders. The core challenge: construction firms struggle to present complex, technical information accessibly — and research revealed friction points hurting both the client and recruitment journeys.
+                VEBUILD INNOVATIONS began as a digital-transformation initiative for a construction firm looking to modernise how it communicates with clients and engages stakeholders. The core challenge: construction firms struggle to present complex, technical information accessibly - and research revealed friction points hurting both the client and recruitment journeys.
               </p>
 
               <div className="cs-highlight">
-                <p>"Construction firms struggle to present complex technical information accessibly — friction that affects both winning clients and attracting talent."</p>
+                <p>"Construction firms struggle to present complex technical information accessibly - friction that affects both winning clients and attracting talent."</p>
               </div>
 
               <div className="cs-cards-grid">
@@ -604,23 +604,23 @@ export default function CaseStudyVebuild() {
                 <div className="cs-card">
                   <div className="cs-card-icon">👥</div>
                   <h4>Target Audience</h4>
-                  <p>Commercial clients vetting portfolios, qualifications and compliance — and job candidates exploring careers, culture and how to apply.</p>
+                  <p>Commercial clients vetting portfolios, qualifications and compliance - and job candidates exploring careers, culture and how to apply.</p>
                 </div>
               </div>
             </section>
 
 
-            {/* 02 — RESEARCH */}
+            {/* 02 - RESEARCH */}
             <section className="cs-section" data-sec="research">
               <div className="cs-section-divider">
-                <span className="cs-section-num">02 ——</span>
+                <span className="cs-section-num">02 --</span>
                 <span className="cs-section-num">Discovery &amp; Research</span>
                 <div className="cs-section-line"></div>
               </div>
               <h2 className="cs-section-title">Discovery &amp; Research</h2>
 
               <p className="cs-body">
-                Discovery combined qualitative and behavioural data — 32 interviews with construction professionals and analysis of 150+ user sessions. The numbers exposed exactly where the old experience broke down.
+                Discovery combined qualitative and behavioural data - 32 interviews with construction professionals and analysis of 150+ user sessions. The numbers exposed exactly where the old experience broke down.
               </p>
 
               <h3 className="cs-sub-heading">Pain Points vs. Opportunities</h3>
@@ -655,33 +655,33 @@ export default function CaseStudyVebuild() {
                   <div className="persona-avatar">🏢</div>
                   <div>
                     <div className="persona-name">Commercial Client</div>
-                    <div className="persona-role">Primary — Buyer / Decision-Maker</div>
+                    <div className="persona-role">Primary - Buyer / Decision-Maker</div>
                     <div className="persona-traits">
                       <span className="persona-trait">Portfolio-seeker</span>
                       <span className="persona-trait">Compliance-minded</span>
                       <span className="persona-trait">ROI-driven</span>
                     </div>
-                    <p className="persona-quote">"Show me proof — project portfolios, team qualifications and compliance — without making me dig."</p>
+                    <p className="persona-quote">"Show me proof - project portfolios, team qualifications and compliance - without making me dig."</p>
                   </div>
                 </div>
                 <div className="persona-card">
                   <div className="persona-avatar">💼</div>
                   <div>
                     <div className="persona-name">Job Candidate</div>
-                    <div className="persona-role">Secondary — Applicant</div>
+                    <div className="persona-role">Secondary - Applicant</div>
                     <div className="persona-traits">
                       <span className="persona-trait">Career-focused</span>
                       <span className="persona-trait">Mobile-first</span>
                       <span className="persona-trait">Impatient</span>
                     </div>
-                    <p className="persona-quote">"I want to understand the culture and apply quickly — not abandon a slow careers page."</p>
+                    <p className="persona-quote">"I want to understand the culture and apply quickly - not abandon a slow careers page."</p>
                   </div>
                 </div>
                 <div className="persona-card">
                   <div className="persona-avatar">📐</div>
                   <div>
                     <div className="persona-name">Architect / Specifier</div>
-                    <div className="persona-role">Tertiary — Technical Partner</div>
+                    <div className="persona-role">Tertiary - Technical Partner</div>
                     <div className="persona-traits">
                       <span className="persona-trait">Technical</span>
                       <span className="persona-trait">Detail-driven</span>
@@ -723,10 +723,10 @@ export default function CaseStudyVebuild() {
             </section>
 
 
-            {/* 03 — IDEATION */}
+            {/* 03 - IDEATION */}
             <section className="cs-section" data-sec="ideation">
               <div className="cs-section-divider">
-                <span className="cs-section-num">03 ——</span>
+                <span className="cs-section-num">03 --</span>
                 <span className="cs-section-num">Structure &amp; Flow</span>
                 <div className="cs-section-line"></div>
               </div>
@@ -748,7 +748,7 @@ export default function CaseStudyVebuild() {
 
               <div className="cs-callout">
                 <div className="cs-callout-icon">💡</div>
-                <p className="cs-callout-text">A <strong style={{ color: '#fff' }}>card-based information architecture</strong> with four entry filters — Project Type, Service, Location and Project Size — let users slice a complex portfolio quickly, while interactive tools turned dense data into something explorable.</p>
+                <p className="cs-callout-text">A <strong style={{ color: '#fff' }}>card-based information architecture</strong> with four entry filters - Project Type, Service, Location and Project Size - let users slice a complex portfolio quickly, while interactive tools turned dense data into something explorable.</p>
               </div>
 
               <h3 className="cs-sub-heading">Architecture &amp; Interaction</h3>
@@ -778,17 +778,17 @@ export default function CaseStudyVebuild() {
             </section>
 
 
-            {/* 04 — VISUAL DESIGN */}
+            {/* 04 - VISUAL DESIGN */}
             <section className="cs-section" data-sec="design">
               <div className="cs-section-divider">
-                <span className="cs-section-num">04 ——</span>
+                <span className="cs-section-num">04 --</span>
                 <span className="cs-section-num">The Solution</span>
                 <div className="cs-section-line"></div>
               </div>
               <h2 className="cs-section-title">Visual Design &amp; Style Guide</h2>
 
               <p className="cs-body">
-                The visual system leaned into a deliberate "Block Appearance" — card-based, grid-structured layouts with distinct modular components rather than fluid, minimal surfaces. A construction-themed palette and bold, structured type reinforced a sturdy, industrial feel while holding to WCAG 2.1 AA contrast.
+                The visual system leaned into a deliberate "Block Appearance" - card-based, grid-structured layouts with distinct modular components rather than fluid, minimal surfaces. A construction-themed palette and bold, structured type reinforced a sturdy, industrial feel while holding to WCAG 2.1 AA contrast.
               </p>
 
               <div className="creative-styleguide">
@@ -821,7 +821,7 @@ export default function CaseStudyVebuild() {
                 <div className="sg-unit">
                   <div className="glass-box">
                     <div className="sg-unit-title">Color</div>
-                    <p className="sg-unit-desc">A green and bluish-toned palette was used — these are the colours of the company's logo and overall brand theme.</p>
+                    <p className="sg-unit-desc">A green and bluish-toned palette was used - these are the colours of the company's logo and overall brand theme.</p>
                     <div className="color-strip">
                       <div className="color-block" style={{ background: '#1F394F' }}><span className="color-hex">#1F394F</span></div>
                       <div className="color-block" style={{ background: '#01A59E' }}><span className="color-hex">#01A59E</span></div>
@@ -839,23 +839,23 @@ export default function CaseStudyVebuild() {
                 <div className="ui-marquee-track ui-track-2" id="marquee-3">
                   {/* Set 1 */}
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Home Sceen - Main View.png">
-                    <img src="/Images/projects/vebuild/block/Home Sceen - Main View.png" alt="Home — Main View" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Home Sceen - Main View.png" alt="Home - Main View" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Home · Main View</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Company Description.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Company Description.png" alt="Our Company — Description" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Company Description.png" alt="Our Company - Description" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Description</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Gallery.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Gallery.png" alt="Our Company — Gallery" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Gallery.png" alt="Our Company - Gallery" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Gallery</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Organization Structure.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Organization Structure.png" alt="Our Company — Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Organization Structure.png" alt="Our Company - Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Org Structure</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Certifications.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Certifications.png" alt="Our Company — Certifications" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Certifications.png" alt="Our Company - Certifications" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Certifications</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Projects.png">
@@ -864,23 +864,23 @@ export default function CaseStudyVebuild() {
                   </div>
                   {/* Set 2 (Duplicate for loop) */}
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Home Sceen - Main View.png">
-                    <img src="/Images/projects/vebuild/block/Home Sceen - Main View.png" alt="Home — Main View" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Home Sceen - Main View.png" alt="Home - Main View" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Home · Main View</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Company Description.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Company Description.png" alt="Our Company — Description" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Company Description.png" alt="Our Company - Description" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Description</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Gallery.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Gallery.png" alt="Our Company — Gallery" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Gallery.png" alt="Our Company - Gallery" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Gallery</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Organization Structure.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Organization Structure.png" alt="Our Company — Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Organization Structure.png" alt="Our Company - Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Org Structure</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Certifications.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Certifications.png" alt="Our Company — Certifications" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Certifications.png" alt="Our Company - Certifications" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Certifications</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Projects.png">
@@ -938,24 +938,24 @@ export default function CaseStudyVebuild() {
             </section>
 
 
-            {/* 05 — VIBE & INTERACTIONS */}
+            {/* 05 - VIBE & INTERACTIONS */}
             <section className="cs-section" data-sec="vibe">
               <div className="cs-section-divider">
-                <span className="cs-section-num">05 ——</span>
+                <span className="cs-section-num">05 --</span>
                 <span className="cs-section-num">The Vibe</span>
                 <div className="cs-section-line"></div>
               </div>
               <h2 className="cs-section-title">Interaction Design &amp; Emotional Intent</h2>
 
               <p className="cs-body">
-                Where the later direction went fluid and minimal, this earlier concept embraced structure — modular blocks, defined edges, and an "Expert Mode" toggle that let power users dial up detail. The intent: make industrial complexity feel organised and trustworthy.
+                Where the later direction went fluid and minimal, this earlier concept embraced structure - modular blocks, defined edges, and an "Expert Mode" toggle that let power users dial up detail. The intent: make industrial complexity feel organised and trustworthy.
               </p>
 
               <div className="cs-cards-grid">
                 <div className="cs-card">
                   <div className="cs-card-icon">🧱</div>
                   <h4>Modular Blocks</h4>
-                  <p>Distinct, card-based components give every piece of information a clear container — reducing overwhelm when data gets dense.</p>
+                  <p>Distinct, card-based components give every piece of information a clear container - reducing overwhelm when data gets dense.</p>
                 </div>
                 <div className="cs-card">
                   <div className="cs-card-icon">🎚️</div>
@@ -971,10 +971,10 @@ export default function CaseStudyVebuild() {
             </section>
 
 
-            {/* 06 — RESULTS */}
+            {/* 06 - RESULTS */}
             <section className="cs-section" data-sec="results">
               <div className="cs-section-divider">
-                <span className="cs-section-num">06 ——</span>
+                <span className="cs-section-num">06 --</span>
                 <span className="cs-section-num">Results &amp; Reflection</span>
                 <div className="cs-section-line"></div>
               </div>
@@ -1000,7 +1000,7 @@ export default function CaseStudyVebuild() {
               <div className="reflection-grid">
                 <div className="reflection-card">
                   <h4>📈 Outcome</h4>
-                  <p>Project-page engagement rose 62% and support queries dropped 81%, while application time fell from 7.5 to 3.2 minutes — with the mobile gallery loading in under 1.5s and a 98/100 PageSpeed score.</p>
+                  <p>Project-page engagement rose 62% and support queries dropped 81%, while application time fell from 7.5 to 3.2 minutes - with the mobile gallery loading in under 1.5s and a 98/100 PageSpeed score.</p>
                 </div>
                 <div className="reflection-card">
                   <h4>💡 What Worked</h4>

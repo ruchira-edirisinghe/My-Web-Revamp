@@ -6,7 +6,7 @@ import ScrollTop from '@/components/ScrollTop';
 
 /**
  * Standalone "Coming Soon" page. Unlike the projects-family pages this is NOT
- * wrapped in StandardShell — it ships its own chrome (preloader, space canvas,
+ * wrapped in StandardShell - it ships its own chrome (preloader, space canvas,
  * cursor, nav, music, footer) and the whole body is rendered here. All inline
  * scripts from comingsoon.html run via initComingSoon(); only scroll-top is the
  * shared <ScrollTop/> component.
@@ -57,7 +57,7 @@ export default function ComingSoonClient() {
         </div>
       </div>
 
-      {/* Desktop nav — logo only, no pill */}
+      {/* Desktop nav - logo only, no pill */}
       <div id="navbar-wrap">
         <Link href="/" aria-label="Home"><img className="nav-logo" src="/Images/longlogo.svg" alt="Ruchira Edirisinghe" /></Link>
       </div>
@@ -113,7 +113,7 @@ export default function ComingSoonClient() {
           Back to Homepage
         </Link>
 
-        {/* Open hero — no card box */}
+        {/* Open hero - no card box */}
         <div className="cs-hero">
 
           <div className="cs-eyebrow">
@@ -132,7 +132,7 @@ export default function ComingSoonClient() {
 
         </div>
 
-        {/* Countdown — floating, outside any box */}
+        {/* Countdown - floating, outside any box */}
         <div className="cs-countdown">
           <div className="cs-cd-unit">
             <div className="cs-cd-box"><span className="cs-cd-num" id="cd-d">30</span></div>

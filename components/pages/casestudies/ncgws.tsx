@@ -43,7 +43,7 @@ export default function CaseStudyNcgws() {
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
           {/* ═══════════════════════════════
-               HERO — Title + Cover Banner
+               HERO - Title + Cover Banner
           ═══════════════════════════════ */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">NCG Warehouse</h1>
@@ -52,7 +52,7 @@ export default function CaseStudyNcgws() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/ncgws/cover.png" alt="NCG Warehouse Solutions — corporate website cover"
+            <img src="/Images/projects/ncgws/cover.png" alt="NCG Warehouse Solutions - corporate website cover"
               className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
@@ -85,24 +85,24 @@ export default function CaseStudyNcgws() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              NCG Warehouse Solutions — a Lyceum Global subsidiary running 30,000+ sq ft of storage and an island-wide fleet — had the operations, but not the digital presence to match. This redesign set out to give a complex logistics business a website as organised as its warehouse floor: <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>clear capacity, findable tenders, and trust at first glance.</em>
+              NCG Warehouse Solutions - a Lyceum Global subsidiary running 30,000+ sq ft of storage and an island-wide fleet - had the operations, but not the digital presence to match. This redesign set out to give a complex logistics business a website as organised as its warehouse floor: <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>clear capacity, findable tenders, and trust at first glance.</em>
             </p>
           </div>
 
 
           {/* ═══════════════════════════════
-               01 — THE PROBLEM
+               01 - THE PROBLEM
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Context &amp; The Problem</h2>
 
             <p className="cs-body">
-              For a logistics company, credibility lives in the details — capacity figures, service levels, and live tender timelines. NCG's old site buried all of it. Supply-chain stakeholders couldn't quickly gauge what NCG offered, and the people who mattered most — corporate clients and vendors — were left guessing.
+              For a logistics company, credibility lives in the details - capacity figures, service levels, and live tender timelines. NCG's old site buried all of it. Supply-chain stakeholders couldn't quickly gauge what NCG offered, and the people who mattered most - corporate clients and vendors - were left guessing.
             </p>
 
             <div className="cs-highlight">
@@ -113,7 +113,7 @@ export default function CaseStudyNcgws() {
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
                 <h4>Problem Statement</h4>
-                <p>Key information — capacity, services and tenders — was hidden in PDFs and unclear pages, so the site failed to communicate NCG's real operational strength to its stakeholders.</p>
+                <p>Key information - capacity, services and tenders - was hidden in PDFs and unclear pages, so the site failed to communicate NCG's real operational strength to its stakeholders.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
@@ -123,25 +123,25 @@ export default function CaseStudyNcgws() {
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
                 <h4>Target Audience</h4>
-                <p>Corporate clients needing capacity metrics, SLAs and tender timelines — and job applicants needing clear career paths and a mobile-friendly application process.</p>
+                <p>Corporate clients needing capacity metrics, SLAs and tender timelines - and job applicants needing clear career paths and a mobile-friendly application process.</p>
               </div>
             </div>
           </section>
 
 
           {/* ═══════════════════════════════
-               02 — RESEARCH
+               02 - RESEARCH
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery &amp; Research</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Discovery &amp; Research</h2>
 
             <p className="cs-body">
-              User research with 47 participants — spanning corporate buyers, vendors and applicants — turned vague complaints into a sharp picture of where the old site failed and where the new one could win.
+              User research with 47 participants - spanning corporate buyers, vendors and applicants - turned vague complaints into a sharp picture of where the old site failed and where the new one could win.
             </p>
 
             <h3 className="cs-sub-heading">What the Research Revealed</h3>
@@ -176,20 +176,20 @@ export default function CaseStudyNcgws() {
                 <div className="persona-avatar">🏢</div>
                 <div>
                   <div className="persona-name">The Corporate Client</div>
-                  <div className="persona-role">Primary — Supply-Chain Buyer</div>
+                  <div className="persona-role">Primary - Supply-Chain Buyer</div>
                   <div className="persona-traits">
                     <span className="persona-trait">B2B</span>
                     <span className="persona-trait">Data-driven</span>
                     <span className="persona-trait">Time-pressured</span>
                   </div>
-                  <p className="persona-quote">"I need capacity, service levels and tender deadlines up front — not buried in a PDF."</p>
+                  <p className="persona-quote">"I need capacity, service levels and tender deadlines up front - not buried in a PDF."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">📑</div>
                 <div>
                   <div className="persona-name">The Vendor / Bidder</div>
-                  <div className="persona-role">Secondary — Tender Applicant</div>
+                  <div className="persona-role">Secondary - Tender Applicant</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Deadline-driven</span>
                     <span className="persona-trait">Detail-oriented</span>
@@ -202,13 +202,13 @@ export default function CaseStudyNcgws() {
                 <div className="persona-avatar">🧑‍💼</div>
                 <div>
                   <div className="persona-name">The Job Applicant</div>
-                  <div className="persona-role">Tertiary — Career Seeker</div>
+                  <div className="persona-role">Tertiary - Career Seeker</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Mobile-first</span>
                     <span className="persona-trait">Career-focused</span>
                     <span className="persona-trait">Quick-scan</span>
                   </div>
-                  <p className="persona-quote">"I browse and apply on my phone — it has to be quick and clear."</p>
+                  <p className="persona-quote">"I browse and apply on my phone - it has to be quick and clear."</p>
                 </div>
               </div>
             </div>
@@ -245,11 +245,11 @@ export default function CaseStudyNcgws() {
 
 
           {/* ═══════════════════════════════
-               03 — IDEATION / STRUCTURE
+               03 - IDEATION / STRUCTURE
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure &amp; Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -271,7 +271,7 @@ export default function CaseStudyNcgws() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">A clean <strong style={{ color: '#fff' }}>7-page architecture</strong> — Home, About Us, Our Team, Our Operations, Tenders, Join Us and Contact — used a top-level overview with <strong style={{ color: '#fff' }}>drill-down</strong> into department flows and equipment details only when needed.</p>
+              <p className="cs-callout-text">A clean <strong style={{ color: '#fff' }}>7-page architecture</strong> - Home, About Us, Our Team, Our Operations, Tenders, Join Us and Contact - used a top-level overview with <strong style={{ color: '#fff' }}>drill-down</strong> into department flows and equipment details only when needed.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -302,18 +302,18 @@ export default function CaseStudyNcgws() {
 
 
           {/* ═══════════════════════════════
-               04 — VISUAL DESIGN
+               04 - VISUAL DESIGN
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Visual Design &amp; Style Guide</h2>
 
             <p className="cs-body">
-              The visual language pairs Lyceum Global's corporate blue — for trust — with a warehouse-yellow accent for energy and visibility. Isometric warehouse diagrams, animated process flows and a living style guide keep the whole experience consistent, credible and easy to scan across devices.
+              The visual language pairs Lyceum Global's corporate blue - for trust - with a warehouse-yellow accent for energy and visibility. Isometric warehouse diagrams, animated process flows and a living style guide keep the whole experience consistent, credible and easy to scan across devices.
             </p>
 
             <div className="creative-styleguide">
@@ -367,7 +367,7 @@ export default function CaseStudyNcgws() {
             </div>
 
             <h3 className="cs-sub-heading">High-Fidelity Screens</h3>
-            <p className="cs-body">The core of the experience — from the operations overview to the tender listings and the careers flow. Click any screen to view it in high resolution.</p>
+            <p className="cs-body">The core of the experience - from the operations overview to the tender listings and the careers flow. Click any screen to view it in high resolution.</p>
 
             <div className="ui-gallery">
               {/* Row 1: Moving Right */}
@@ -466,25 +466,25 @@ export default function CaseStudyNcgws() {
 
 
           {/* ═══════════════════════════════
-               05 — VIBE & INTERACTIONS
+               05 - VIBE & INTERACTIONS
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">Interactions</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Interaction Design &amp; Emotional Intent</h2>
 
             <p className="cs-body">
-              Industrial operations are complex — the interactions had to make that complexity feel effortless and trustworthy. Three signature patterns turn dense logistics data into something anyone can read at a glance.
+              Industrial operations are complex - the interactions had to make that complexity feel effortless and trustworthy. Three signature patterns turn dense logistics data into something anyone can read at a glance.
             </p>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📊</div>
                 <h4>Capacity Dashboard</h4>
-                <p>Real-time warehouse occupancy visualisations bring 30,000+ sq ft of storage to life — no PDFs, just a glanceable view of what's available.</p>
+                <p>Real-time warehouse occupancy visualisations bring 30,000+ sq ft of storage to life - no PDFs, just a glanceable view of what's available.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📑</div>
@@ -501,7 +501,7 @@ export default function CaseStudyNcgws() {
 
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results &amp; Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -521,13 +521,13 @@ export default function CaseStudyNcgws() {
             </div>
 
             <div className="cs-highlight" style={{ marginTop: '28px' }}>
-              <p>"The operations page finally makes sense of their complex workflow." — <em>Logistics Manager</em> &nbsp;·&nbsp; "Applying for tenders now takes half the time." — <em>Vendor Representative</em></p>
+              <p>"The operations page finally makes sense of their complex workflow." - <em>Logistics Manager</em> &nbsp;·&nbsp; "Applying for tenders now takes half the time." - <em>Vendor Representative</em></p>
             </div>
 
             <div className="reflection-grid">
               <div className="reflection-card">
                 <h4>📈 Outcome</h4>
-                <p>Tender support queries fell 57% and mobile conversions rose 39%, with average sessions reaching 5.1 minutes on a fast 0.8s-loading site — clarity, efficiency and brand elevation in one.</p>
+                <p>Tender support queries fell 57% and mobile conversions rose 39%, with average sessions reaching 5.1 minutes on a fast 0.8s-loading site - clarity, efficiency and brand elevation in one.</p>
               </div>
               <div className="reflection-card">
                 <h4>🧗 Challenge</h4>
@@ -539,7 +539,7 @@ export default function CaseStudyNcgws() {
               </div>
               <div className="reflection-card">
                 <h4>💬 Conclusion</h4>
-                <p>NCG Warehouse shows how thoughtful UX engineering can bring clarity to complex industrial operations — turning information into intuitive, interactive experiences.</p>
+                <p>NCG Warehouse shows how thoughtful UX engineering can bring clarity to complex industrial operations - turning information into intuitive, interactive experiences.</p>
               </div>
             </div>
 

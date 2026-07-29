@@ -1,5 +1,5 @@
 // @ts-nocheck
-/* Project category filter — faithful port of the inline IIFE in
+/* Project category filter - faithful port of the inline IIFE in
    web-projects.html / graphic-projects.html. */
 import { makeBag } from './_util';
 

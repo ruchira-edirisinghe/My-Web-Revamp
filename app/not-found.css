@@ -1,4 +1,4 @@
-/* Branded 404 — matches the site's cosmic dark theme using fonts already loaded
+/* Branded 404 - matches the site's cosmic dark theme using fonts already loaded
    globally in layout.tsx (Orbitron / Sora / Montserrat). Pure CSS, no engine. */
 
 .nf-page {
@@ -15,7 +15,7 @@
     #02030a;
 }
 
-/* Layered starfield — subtle twinkle keeps the empty space alive */
+/* Layered starfield - subtle twinkle keeps the empty space alive */
 .nf-stars {
   position: absolute;
   inset: 0;

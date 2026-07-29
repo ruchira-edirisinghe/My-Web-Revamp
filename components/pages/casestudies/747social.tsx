@@ -35,15 +35,15 @@ export default function CaseStudy747Social() {
 
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
-          {/* HERO — Title + Cover Banner */}
+          {/* HERO - Title + Cover Banner */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">747 Social Casino</h1>
-            <p className="cs-hero-subtitle">Where Social Networking Meets the Casino — Designed for Desktop &amp; Mobile</p>
+            <p className="cs-hero-subtitle">Where Social Networking Meets the Casino - Designed for Desktop &amp; Mobile</p>
           </header>
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/social-casino/cover.png" alt="747 Social Casino — social casino platform cover"
+            <img src="/Images/projects/social-casino/cover.png" alt="747 Social Casino - social casino platform cover"
               className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
@@ -76,33 +76,33 @@ export default function CaseStudy747Social() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              747 Social Casino is a different kind of casino — one built around people, not just play. It fuses a full social network (profiles, stories, posts and comments) with gaming and prizes, all wrapped in a rich onboarding journey. The challenge was to make something this layered feel <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>effortless, premium and consistent — across desktop and mobile alike.</em>
+              747 Social Casino is a different kind of casino - one built around people, not just play. It fuses a full social network (profiles, stories, posts and comments) with gaming and prizes, all wrapped in a rich onboarding journey. The challenge was to make something this layered feel <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>effortless, premium and consistent - across desktop and mobile alike.</em>
             </p>
           </div>
 
 
-          {/* 01 — THE PROBLEM */}
+          {/* 01 - THE PROBLEM */}
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Context &amp; The Problem</h2>
 
             <p className="cs-body">
-              A social casino has to be two products at once — a vibrant social feed and an exciting game floor — without feeling like either was bolted on. On top of that sits a long onboarding flow (profile, cover, rich "About Me" media, invites) that's prime territory for drop-off, all of which has to feel identical on a wide desktop and a phone.
+              A social casino has to be two products at once - a vibrant social feed and an exciting game floor - without feeling like either was bolted on. On top of that sits a long onboarding flow (profile, cover, rich "About Me" media, invites) that's prime territory for drop-off, all of which has to feel identical on a wide desktop and a phone.
             </p>
 
             <div className="cs-highlight">
-              <p>"The hard part isn't the games or the feed on their own — it's making them feel like <em>one premium product</em>, on every screen."</p>
+              <p>"The hard part isn't the games or the feed on their own - it's making them feel like <em>one premium product</em>, on every screen."</p>
             </div>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
                 <h4>Problem Statement</h4>
-                <p>Blending a social network and a casino into one coherent product — with a deep onboarding flow — risks feeling cluttered, inconsistent, and exhausting before users ever reach the fun.</p>
+                <p>Blending a social network and a casino into one coherent product - with a deep onboarding flow - risks feeling cluttered, inconsistent, and exhausting before users ever reach the fun.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
@@ -118,17 +118,17 @@ export default function CaseStudy747Social() {
           </section>
 
 
-          {/* 02 — RESEARCH */}
+          {/* 02 - RESEARCH */}
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery &amp; Research</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Discovery &amp; Research</h2>
 
             <p className="cs-body">
-              The standout insight was that "social" and "casino" users overlap but want different first moments — one wants to express themselves, the other wants to play. The product had to welcome both, guide them through onboarding, and stay identical across devices.
+              The standout insight was that "social" and "casino" users overlap but want different first moments - one wants to express themselves, the other wants to play. The product had to welcome both, guide them through onboarding, and stay identical across devices.
             </p>
 
             <h3 className="cs-sub-heading">Typical Social/Casino Apps vs. The Opportunity</h3>
@@ -163,39 +163,39 @@ export default function CaseStudy747Social() {
                 <div className="persona-avatar">💬</div>
                 <div>
                   <div className="persona-name">The Social Player</div>
-                  <div className="persona-role">Primary — Community-first</div>
+                  <div className="persona-role">Primary - Community-first</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Expressive</span>
                     <span className="persona-trait">Content-creator</span>
                     <span className="persona-trait">Mobile-first</span>
                   </div>
-                  <p className="persona-quote">"I'm here for the community as much as the games — show me stories, posts and profiles."</p>
+                  <p className="persona-quote">"I'm here for the community as much as the games - show me stories, posts and profiles."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">🎁</div>
                 <div>
                   <div className="persona-name">The Casual Gamer</div>
-                  <div className="persona-role">Secondary — Plays for Rewards</div>
+                  <div className="persona-role">Secondary - Plays for Rewards</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Prize-driven</span>
                     <span className="persona-trait">Casual</span>
                     <span className="persona-trait">Quick sessions</span>
                   </div>
-                  <p className="persona-quote">"I want quick games and a real shot at a prize — make claiming rewards feel great."</p>
+                  <p className="persona-quote">"I want quick games and a real shot at a prize - make claiming rewards feel great."</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">🆕</div>
                 <div>
                   <div className="persona-name">The New User</div>
-                  <div className="persona-role">Tertiary — Onboarding</div>
+                  <div className="persona-role">Tertiary - Onboarding</div>
                   <div className="persona-traits">
                     <span className="persona-trait">First-timer</span>
                     <span className="persona-trait">Cautious</span>
                     <span className="persona-trait">Time-poor</span>
                   </div>
-                  <p className="persona-quote">"Don't make me fill in everything at once — let me complete my profile bit by bit."</p>
+                  <p className="persona-quote">"Don't make me fill in everything at once - let me complete my profile bit by bit."</p>
                 </div>
               </div>
             </div>
@@ -213,7 +213,7 @@ export default function CaseStudy747Social() {
                 <div className="cs-comp-header">💬 Social Player</div>
                 <div className="cs-comp-cell" data-label="Primary Goal">Connect, post and express themselves.</div>
                 <div className="cs-comp-cell" data-label="Core Frustration">Shallow profiles, no real self-expression.</div>
-                <div className="cs-comp-cell highlight" data-label="Design Insight">Rich "About Me" — photo, text, video &amp; voice.</div>
+                <div className="cs-comp-cell highlight" data-label="Design Insight">Rich "About Me" - photo, text, video &amp; voice.</div>
               </div>
               <div className="cs-comp-col">
                 <div className="cs-comp-header">🎁 Casual Gamer</div>
@@ -231,10 +231,10 @@ export default function CaseStudy747Social() {
           </section>
 
 
-          {/* 03 — IDEATION / STRUCTURE */}
+          {/* 03 - IDEATION / STRUCTURE */}
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure &amp; Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -256,7 +256,7 @@ export default function CaseStudy747Social() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">Onboarding was broken into <strong style={{ color: '#fff' }}>staged, skippable steps</strong> — profile, cover, "About Me" media, invites and games — each with explicit complete / incomplete states, so users build their presence at their own pace without ever feeling stuck.</p>
+              <p className="cs-callout-text">Onboarding was broken into <strong style={{ color: '#fff' }}>staged, skippable steps</strong> - profile, cover, "About Me" media, invites and games - each with explicit complete / incomplete states, so users build their presence at their own pace without ever feeling stuck.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -286,17 +286,17 @@ export default function CaseStudy747Social() {
           </section>
 
 
-          {/* 04 — VISUAL DESIGN */}
+          {/* 04 - VISUAL DESIGN */}
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Visual Design &amp; Style Guide</h2>
 
             <p className="cs-body">
-              The identity centres on a confident casino green lifted with gold for value and wins, grounded by deep navy text and clean neutrals. Crucially, it's all defined as a proper token system — primary, surfaces, text, borders and dedicated success / error / warning states — with full light and dark modes, so the product stays consistent across every screen and both devices.
+              The identity centres on a confident casino green lifted with gold for value and wins, grounded by deep navy text and clean neutrals. Crucially, it's all defined as a proper token system - primary, surfaces, text, borders and dedicated success / error / warning states - with full light and dark modes, so the product stays consistent across every screen and both devices.
             </p>
 
             <div className="creative-styleguide">
@@ -305,7 +305,7 @@ export default function CaseStudy747Social() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Typography</div>
-                  <p className="sg-unit-desc">A clean, highly legible sans keeps a content-rich social product readable — clear hierarchy from headings down to metadata across light and dark.</p>
+                  <p className="sg-unit-desc">A clean, highly legible sans keeps a content-rich social product readable - clear hierarchy from headings down to metadata across light and dark.</p>
                   <div className="typo-hero">Poppins</div>
                   <div className="typo-scale-row">
                     <span className="typo-scale-item">48pt</span>
@@ -330,7 +330,7 @@ export default function CaseStudy747Social() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Color Tokens</div>
-                  <p className="sg-unit-desc">A green-and-gold core with navy text and clean neutrals, plus dedicated success, error and warning states — all with full light &amp; dark modes.</p>
+                  <p className="sg-unit-desc">A green-and-gold core with navy text and clean neutrals, plus dedicated success, error and warning states - all with full light &amp; dark modes.</p>
                   <div className="color-strip">
                     <div className="color-block" style={{ background: '#009F68' }}><span className="color-hex">#009F68</span></div>
                     <div className="color-block" style={{ background: '#007A50' }}><span className="color-hex">#007A50</span></div>
@@ -366,72 +366,72 @@ export default function CaseStudy747Social() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Home.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Home.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Home.png" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Login.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Login.png" alt="Desktop — Login" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Login.png" alt="Desktop - Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png" alt="Desktop — Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png" alt="Desktop - Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png" alt="Desktop — Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png" alt="Desktop - Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories &amp; Posts</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Home.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Home.png" alt="Desktop — Home" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Home.png" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Login.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Login.png" alt="Desktop — Login" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Login.png" alt="Desktop - Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png" alt="Desktop — Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png" alt="Desktop - Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png" alt="Desktop — Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png" alt="Desktop - Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories &amp; Posts</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png" alt="Desktop — Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png" alt="Desktop - Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Comments.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Comments.png" alt="Desktop — Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Comments.png" alt="Desktop - Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Notifications.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Notifications.png" alt="Desktop — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Notifications.png" alt="Desktop - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png" alt="Desktop — Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png" alt="Desktop - Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Prize Claim</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png" alt="Desktop — Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png" alt="Desktop - Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Comments.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Comments.png" alt="Desktop — Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Comments.png" alt="Desktop - Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Notifications.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Notifications.png" alt="Desktop — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Notifications.png" alt="Desktop - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png" alt="Desktop — Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png" alt="Desktop - Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Prize Claim</div>
                 </div>
               </div>
@@ -442,72 +442,72 @@ export default function CaseStudy747Social() {
               <div className="ui-marquee-track ui-track-2" id="marquee-3">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Home.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Home.png" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Login.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Login.png" alt="Mobile — Login" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Login.png" alt="Mobile - Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png" alt="Mobile — Stories" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png" alt="Mobile - Stories" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png" alt="Mobile — Post" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png" alt="Mobile - Post" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Post</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Home.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Home.png" alt="Mobile — Home" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Home.png" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Login.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Login.png" alt="Mobile — Login" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Login.png" alt="Mobile - Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png" alt="Mobile — Stories" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png" alt="Mobile - Stories" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png" alt="Mobile — Post" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png" alt="Mobile - Post" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Post</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-4">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png" alt="Mobile — Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png" alt="Mobile - Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Comments.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Comments.png" alt="Mobile — Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Comments.png" alt="Mobile - Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png" alt="Mobile — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png" alt="Mobile - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png" alt="Mobile — Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png" alt="Mobile - Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding · Invite</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png" alt="Mobile — Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png" alt="Mobile - Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Comments.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Comments.png" alt="Mobile — Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Comments.png" alt="Mobile - Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png" alt="Mobile — Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png" alt="Mobile - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png" alt="Mobile — Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png" alt="Mobile - Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding · Invite</div>
                 </div>
               </div>
@@ -515,29 +515,29 @@ export default function CaseStudy747Social() {
           </section>
 
 
-          {/* 05 — VIBE & INTERACTIONS */}
+          {/* 05 - VIBE & INTERACTIONS */}
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">Interactions</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Interaction Design &amp; Emotional Intent</h2>
 
             <p className="cs-body">
-              The feeling to land is a premium, social buzz — celebratory but classy. Green and gold signal value and wins, while social touches and a satisfying prize moment keep people coming back.
+              The feeling to land is a premium, social buzz - celebratory but classy. Green and gold signal value and wins, while social touches and a satisfying prize moment keep people coming back.
             </p>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🧩</div>
                 <h4>Progressive Onboarding</h4>
-                <p>Profile, cover and rich "About Me" media — photo, text, video and voice — are built step by step, each with clear complete and incomplete states.</p>
+                <p>Profile, cover and rich "About Me" media - photo, text, video and voice - are built step by step, each with clear complete and incomplete states.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📰</div>
                 <h4>Stories, Posts &amp; Comments</h4>
-                <p>A full social layer — stories, single and multi-image posts, and comments — gives the casino a genuine community heartbeat.</p>
+                <p>A full social layer - stories, single and multi-image posts, and comments - gives the casino a genuine community heartbeat.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎁</div>
@@ -549,7 +549,7 @@ export default function CaseStudy747Social() {
 
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results &amp; Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -569,13 +569,13 @@ export default function CaseStudy747Social() {
             </div>
 
             <div className="cs-highlight" style={{ marginTop: '28px' }}>
-              <p>"Two products — a social network and a casino — designed as <em>one premium experience</em>, on a real token system, for every screen."</p>
+              <p>"Two products - a social network and a casino - designed as <em>one premium experience</em>, on a real token system, for every screen."</p>
             </div>
 
             <div className="reflection-grid">
               <div className="reflection-card">
                 <h4>📈 Outcome</h4>
-                <p>A complete social-casino design system: a multi-step onboarding, a full social feed (stories, posts, comments), rich profiles, games, prizes and notifications — all designed for both desktop and mobile, in light and dark.</p>
+                <p>A complete social-casino design system: a multi-step onboarding, a full social feed (stories, posts, comments), rich profiles, games, prizes and notifications - all designed for both desktop and mobile, in light and dark.</p>
               </div>
               <div className="reflection-card">
                 <h4>🧗 Challenge</h4>
@@ -583,7 +583,7 @@ export default function CaseStudy747Social() {
               </div>
               <div className="reflection-card">
                 <h4>💡 What I Learned</h4>
-                <p>A documented token system — primary, surfaces, text, borders and status, with light/dark — is what makes a product this large stay coherent. Designing the in-between states is half the work.</p>
+                <p>A documented token system - primary, surfaces, text, borders and status, with light/dark - is what makes a product this large stay coherent. Designing the in-between states is half the work.</p>
               </div>
               <div className="reflection-card">
                 <h4>🚀 Next Steps</h4>

@@ -1,10 +1,10 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   comingsoon.ts — standalone "Coming Soon" page engine.
+   comingsoon.ts - standalone "Coming Soon" page engine.
    Faithful port of the inline <script> blocks in comingsoon.html:
    space background, preloader, cursor + music + SFX + mobile menu,
    countdown, the interactive SVG constellation, and the email-notify
-   validator. Scroll-top is NOT ported here — the page renders the shared
+   validator. Scroll-top is NOT ported here - the page renders the shared
    <ScrollTop/> component instead. Every self-running loop/listener is
    registered for teardown via makeBag() so the page is StrictMode- and
    route-unmount-safe. Asset paths rewritten ./Images → /Images, ./audio → /audio.
@@ -289,7 +289,7 @@ export function initComingSoon(): () => void {
     document.querySelectorAll('a,button,.cs-tag').forEach(el => { bag.on(el, 'mouseenter', () => { tR = RH; }); bag.on(el, 'mouseleave', () => { tR = RN; }); });
 
     let ac = null; function gAC() { if (!ac) ac = new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === 'suspended') ac.resume(); return ac; }
-    // Ambient music — one shared <audio> (lib/scripts/ambient-audio.ts) plays
+    // Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
     // continuously across every page; this engine only reads the playing flag.
     let sp = false;
     bag.add(wireAmbientControls(playing => { sp = playing; }));
@@ -330,7 +330,7 @@ export function initComingSoon(): () => void {
     });
   })();
 
-  /* ══════════ COUNTDOWN — 30 days with flip animation ══════════ */
+  /* ══════════ COUNTDOWN - 30 days with flip animation ══════════ */
   (function () {
     const target = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
     let alive = true, toId = 0;
@@ -351,7 +351,7 @@ export function initComingSoon(): () => void {
     bag.add(() => { alive = false; clearTimeout(toId); });
   })();
 
-  /* ══════════ CONSTELLATION — interactive SVG starfield ══════════ */
+  /* ══════════ CONSTELLATION - interactive SVG starfield ══════════ */
   (function () {
     const svg = document.getElementById('cs-constellation');
     if (!svg) return;
@@ -431,7 +431,7 @@ export function initComingSoon(): () => void {
     bag.add(() => { running = false; cancelAnimationFrame(rafId); lineGroup.remove(); starGroup.remove(); });
   })();
 
-  /* ══════════ NOTIFY (email validator — markup is commented out in source, so this no-ops) ══════════ */
+  /* ══════════ NOTIFY (email validator - markup is commented out in source, so this no-ops) ══════════ */
   (function () {
     const btn = document.getElementById('cs-notify-btn'), inp = document.getElementById('cs-email'), suc = document.getElementById('cs-success');
     if (!btn) return;

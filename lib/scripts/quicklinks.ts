@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   quicklinks.ts — Quick Links page engine: space bg, preloader, cursor + SFX,
+   quicklinks.ts - Quick Links page engine: space bg, preloader, cursor + SFX,
    nexus redirect modal, audio, scroll-reveal, social-card redirect modal,
    mobile menu.
    (faithful port of styles/quicklinks/quicklinks.js)
@@ -29,7 +29,7 @@ export function initQuicklinks(): () => void {
     }));
     const shooters = [];
     function spawnShooter() {
-      if (shooters.length >= 6) return; // cap — prevents buildup while rAF is paused
+      if (shooters.length >= 6) return; // cap - prevents buildup while rAF is paused
       const a = (Math.random() * 30 + 10) * Math.PI / 180, sp = Math.random() * 5 + 4;
       shooters.push({
         x: Math.random() * W, y: Math.random() * H * 0.4, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
@@ -330,7 +330,7 @@ export function initQuicklinks(): () => void {
 
   /* ══════════ 5. AUDIO PERSISTENCE ══════════ */
   (function () {
-    /* Ambient music — one shared <audio> (lib/scripts/ambient-audio.ts) plays
+    /* Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
        continuously across every page and remembers its paused state; this engine
        only mirrors the playing flag into its spectrum visualiser below. */
     let spectrumPlaying = false;

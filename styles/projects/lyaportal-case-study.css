@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   LYA EXAM PORTAL CASE STUDY — Blue + white (trust)
+   LYA EXAM PORTAL CASE STUDY - Blue + white (trust)
    ══════════════════════════════════════════ */
 
 :root {
@@ -36,7 +36,7 @@ main:has(.cs-wrap) {
 }
 
 /* ═══════════════════════════════════
-   HERO — Title + Cover Banner
+   HERO - Title + Cover Banner
    ═══════════════════════════════════ */
 .cs-hero-header {
   margin-bottom: 36px;
@@ -354,7 +354,7 @@ body:has(.cs-wrap) footer {
   margin: 18px 0;
 }
 
-/* ── UI Gallery — Infinite Marquee ── */
+/* ── UI Gallery - Infinite Marquee ── */
 .ui-gallery {
   margin-top: 64px;
   width: 100vw;
@@ -472,7 +472,7 @@ body:has(.cs-wrap) footer {
   position: relative;
   overflow: hidden;
 }
-/* Signature "targeting bracket" corners — reveal on hover */
+/* Signature "targeting bracket" corners - reveal on hover */
 .cs-card::before,
 .cs-card::after {
   content: '';
@@ -1240,7 +1240,7 @@ body:has(.cs-wrap) footer {
 }
 
 /* ═══════════════════════════════════
-   OUTCOME METRICS — Animated Counters
+   OUTCOME METRICS - Animated Counters
    ═══════════════════════════════════ */
 .outcome-grid {
   display: grid;
@@ -1435,7 +1435,7 @@ body:has(.cs-wrap) footer {
 }
 
 /* ═══════════════════════════════════
-   FLOATING TOC — Enhanced
+   FLOATING TOC - Enhanced
    ═══════════════════════════════════ */
 .cs-toc {
   position: fixed;
@@ -1917,7 +1917,7 @@ body.modal-open #navbar-wrap {
 .sg-unit-title { color: var(--lyc-cyan); }
 .color-block .color-hex { opacity: 1; transform: none; }
 
-/* ── Landscape (16:9, 1920×1080) UI screens — override portrait cards ── */
+/* ── Landscape (16:9, 1920×1080) UI screens - override portrait cards ── */
 .ui-card { width: 560px; height: 315px; }
 .ui-thumb { object-position: center; }
 @media (max-width: 768px) {

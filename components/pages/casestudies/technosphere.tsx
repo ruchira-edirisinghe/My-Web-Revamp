@@ -35,7 +35,7 @@ export default function CaseStudyTechnosphere() {
 
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
-          {/* HERO — Title + Cover Banner */}
+          {/* HERO - Title + Cover Banner */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">TECHNOSPHERE<br/>Convention UI</h1>
             <p className="cs-hero-subtitle">Innovative Technological Convention for Technophiles</p>
@@ -43,7 +43,7 @@ export default function CaseStudyTechnosphere() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/technosphere/cover.png" alt="Technosphere — Sustainability Platform cover" className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/technosphere/cover.png" alt="Technosphere - Sustainability Platform cover" className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -80,10 +80,10 @@ export default function CaseStudyTechnosphere() {
           </div>
 
 
-          {/* 01 — THE PROBLEM */}
+          {/* 01 - THE PROBLEM */}
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
@@ -94,7 +94,7 @@ export default function CaseStudyTechnosphere() {
             </p>
 
             <div className="cs-highlight">
-              <p>"The UI design was critical in enhancing the overall experience—captivating visitors from the moment they landed on the homepage."</p>
+              <p>"The UI design was critical in enhancing the overall experience-captivating visitors from the moment they landed on the homepage."</p>
             </div>
 
             <div className="cs-cards-grid">
@@ -117,10 +117,10 @@ export default function CaseStudyTechnosphere() {
           </section>
 
 
-          {/* 02 — RESEARCH */}
+          {/* 02 - RESEARCH */}
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery & Research</span>
               <div className="cs-section-line"></div>
             </div>
@@ -175,7 +175,7 @@ export default function CaseStudyTechnosphere() {
                 <div className="persona-avatar">💻</div>
                 <div>
                   <div className="persona-name">Tech Enthusiast</div>
-                  <div className="persona-role">Primary — CTF Competitor · Age 20-25</div>
+                  <div className="persona-role">Primary - CTF Competitor · Age 20-25</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Competitor</span>
                     <span className="persona-trait">Mobile-user</span>
@@ -190,7 +190,7 @@ export default function CaseStudyTechnosphere() {
                 <div className="persona-avatar">🎤</div>
                 <div>
                   <div className="persona-name">Speaker / Faculty</div>
-                  <div className="persona-role">Secondary — Academic Member · Age 35-50</div>
+                  <div className="persona-role">Secondary - Academic Member · Age 35-50</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Professional</span>
                     <span className="persona-trait">Schedule-focused</span>
@@ -205,7 +205,7 @@ export default function CaseStudyTechnosphere() {
                 <div className="persona-avatar">🚀</div>
                 <div>
                   <div className="persona-name">General Attendee</div>
-                  <div className="persona-role">Tertiary — Student / Newcomer · Age 18-22</div>
+                  <div className="persona-role">Tertiary - Student / Newcomer · Age 18-22</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Explorer</span>
                     <span className="persona-trait">Social</span>
@@ -254,10 +254,10 @@ export default function CaseStudyTechnosphere() {
           </section>
 
 
-          {/* 03 — IDEATION */}
+          {/* 03 - IDEATION */}
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">Structure & Flow</span>
               <div className="cs-section-line"></div>
             </div>
@@ -324,10 +324,10 @@ export default function CaseStudyTechnosphere() {
           </section>
 
 
-          {/* 04 — VISUAL DESIGN */}
+          {/* 04 - VISUAL DESIGN */}
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Solution</span>
               <div className="cs-section-line"></div>
             </div>
@@ -479,10 +479,10 @@ export default function CaseStudyTechnosphere() {
           </section>
 
 
-          {/* 05 — VIBE & INTERACTIONS */}
+          {/* 05 - VIBE & INTERACTIONS */}
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">The Vibe</span>
               <div className="cs-section-line"></div>
             </div>
@@ -513,7 +513,7 @@ export default function CaseStudyTechnosphere() {
 
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results & Reflection</span>
               <div className="cs-section-line"></div>
             </div>

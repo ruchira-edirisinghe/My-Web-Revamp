@@ -43,16 +43,16 @@ export default function CaseStudyPhurl() {
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
 
           {/* ═══════════════════════════════
-               HERO — Title + Cover Banner
+               HERO - Title + Cover Banner
           ═══════════════════════════════ */}
           <header className="cs-hero-header">
             <h1 className="cs-hero-title">Project PhURL</h1>
-            <p className="cs-hero-subtitle">A Web Platform That Detects Phishing URLs with AI — and Teaches You to Spot Them</p>
+            <p className="cs-hero-subtitle">A Web Platform That Detects Phishing URLs with AI - and Teaches You to Spot Them</p>
           </header>
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/Phurl/cover.png" alt="Project PhURL — AI phishing-URL detection platform cover"
+            <img src="/Images/projects/Phurl/cover.png" alt="Project PhURL - AI phishing-URL detection platform cover"
               className="cs-cover-img" id="hero-img" loading="eager" />
             <div className="cs-cover-shine"></div>
           </div>
@@ -85,24 +85,24 @@ export default function CaseStudyPhurl() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              Phishing doesn't break in — it tricks its way in, one convincing link at a time. PhURL is an end-to-end project that pairs a trained machine-learning model with a calm, educational interface, so anyone can paste a link, get an instant verdict, and actually learn why it's risky. The guiding mantra throughout: <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>if it looks phishy, it probably is.</em>
+              Phishing doesn't break in - it tricks its way in, one convincing link at a time. PhURL is an end-to-end project that pairs a trained machine-learning model with a calm, educational interface, so anyone can paste a link, get an instant verdict, and actually learn why it's risky. The guiding mantra throughout: <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>if it looks phishy, it probably is.</em>
             </p>
           </div>
 
 
           {/* ═══════════════════════════════
-               01 — THE PROBLEM
+               01 - THE PROBLEM
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-problem">
             <div className="cs-section-divider">
-              <span className="cs-section-num">01 ——</span>
+              <span className="cs-section-num">01 --</span>
               <span className="cs-section-num">The Problem</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Context &amp; The Problem</h2>
 
             <p className="cs-body">
-              Phishing attacks evolve faster than most people can keep up with — a fresh malicious domain, a lookalike login page, a shortened link in a message. Many existing tools either block silently in the background or flash a cryptic warning, but they rarely help a person understand <em>why</em> a link is dangerous. The result is a population that stays one careless click away from compromise.
+              Phishing attacks evolve faster than most people can keep up with - a fresh malicious domain, a lookalike login page, a shortened link in a message. Many existing tools either block silently in the background or flash a cryptic warning, but they rarely help a person understand <em>why</em> a link is dangerous. The result is a population that stays one careless click away from compromise.
             </p>
 
             <div className="cs-highlight">
@@ -113,7 +113,7 @@ export default function CaseStudyPhurl() {
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
                 <h4>Problem Statement</h4>
-                <p>People need a fast, trustworthy way to check whether a URL is safe — and just as importantly, to learn the cues of a phishing attempt so they can protect themselves next time.</p>
+                <p>People need a fast, trustworthy way to check whether a URL is safe - and just as importantly, to learn the cues of a phishing attempt so they can protect themselves next time.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
@@ -123,25 +123,25 @@ export default function CaseStudyPhurl() {
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
                 <h4>Target Audience</h4>
-                <p>Everyday individuals and organisations who want phishing protection plus genuine cybersecurity awareness — regardless of their technical background.</p>
+                <p>Everyday individuals and organisations who want phishing protection plus genuine cybersecurity awareness - regardless of their technical background.</p>
               </div>
             </div>
           </section>
 
 
           {/* ═══════════════════════════════
-               02 — RESEARCH
+               02 - RESEARCH
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-research">
             <div className="cs-section-divider">
-              <span className="cs-section-num">02 ——</span>
+              <span className="cs-section-num">02 --</span>
               <span className="cs-section-num">Discovery &amp; Research</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Discovery &amp; Research</h2>
 
             <p className="cs-body">
-              Research ran on two tracks at once: understanding what users actually need from a URL checker, and understanding the data and models that could power it. The two informed each other — a model is only useful if people trust and understand its output.
+              Research ran on two tracks at once: understanding what users actually need from a URL checker, and understanding the data and models that could power it. The two informed each other - a model is only useful if people trust and understand its output.
             </p>
 
             <h3 className="cs-sub-heading">Detect-Only Tools vs. PhURL's Opportunity</h3>
@@ -153,7 +153,7 @@ export default function CaseStudyPhurl() {
                   <ul className="cs-list">
                     <li><div className="cs-list-bullet"></div>Block or flag links without explaining the risk</li>
                     <li><div className="cs-list-bullet"></div>Static rule-sets that struggle to adapt to new tactics</li>
-                    <li><div className="cs-list-bullet"></div>No learning layer — users never get more phishing-aware</li>
+                    <li><div className="cs-list-bullet"></div>No learning layer - users never get more phishing-aware</li>
                   </ul>
                 </div>
               </div>
@@ -176,20 +176,20 @@ export default function CaseStudyPhurl() {
                 <div className="persona-avatar">🧑‍💻</div>
                 <div>
                   <div className="persona-name">The Everyday User</div>
-                  <div className="persona-role">Primary — Non-technical · Cautious</div>
+                  <div className="persona-role">Primary - Non-technical · Cautious</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Mobile-first</span>
                     <span className="persona-trait">Wants reassurance</span>
                     <span className="persona-trait">No jargon</span>
                   </div>
-                  <p className="persona-quote">"I got a weird link in a message — can I just paste it somewhere and be told if it's safe?"</p>
+                  <p className="persona-quote">"I got a weird link in a message - can I just paste it somewhere and be told if it's safe?"</p>
                 </div>
               </div>
               <div className="persona-card">
                 <div className="persona-avatar">🛡️</div>
                 <div>
                   <div className="persona-name">The IT / Org Lead</div>
-                  <div className="persona-role">Secondary — Security-conscious</div>
+                  <div className="persona-role">Secondary - Security-conscious</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Risk-aware</span>
                     <span className="persona-trait">Needs reliability</span>
@@ -202,13 +202,13 @@ export default function CaseStudyPhurl() {
                 <div className="persona-avatar">🎓</div>
                 <div>
                   <div className="persona-name">The Learner</div>
-                  <div className="persona-role">Tertiary — Student / Curious</div>
+                  <div className="persona-role">Tertiary - Student / Curious</div>
                   <div className="persona-traits">
                     <span className="persona-trait">Wants to understand</span>
                     <span className="persona-trait">Visual learner</span>
                     <span className="persona-trait">Engaged</span>
                   </div>
-                  <p className="persona-quote">"Don't just tell me it's phishing — show me what made it phishing."</p>
+                  <p className="persona-quote">"Don't just tell me it's phishing - show me what made it phishing."</p>
                 </div>
               </div>
             </div>
@@ -245,11 +245,11 @@ export default function CaseStudyPhurl() {
 
 
           {/* ═══════════════════════════════
-               03 — THE AI / ML MODEL
+               03 - THE AI / ML MODEL
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-ideation">
             <div className="cs-section-divider">
-              <span className="cs-section-num">03 ——</span>
+              <span className="cs-section-num">03 --</span>
               <span className="cs-section-num">The Model</span>
               <div className="cs-section-line"></div>
             </div>
@@ -295,7 +295,7 @@ export default function CaseStudyPhurl() {
               <div className="cs-card">
                 <div className="cs-card-icon">🌲</div>
                 <h4>Random Forest</h4>
-                <p>A strong ensemble baseline — reliable, but edged out on accuracy and speed for this feature set.</p>
+                <p>A strong ensemble baseline - reliable, but edged out on accuracy and speed for this feature set.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚡</div>
@@ -312,18 +312,18 @@ export default function CaseStudyPhurl() {
 
 
           {/* ═══════════════════════════════
-               04 — UI / VISUAL DESIGN
+               04 - UI / VISUAL DESIGN
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-design">
             <div className="cs-section-divider">
-              <span className="cs-section-num">04 ——</span>
+              <span className="cs-section-num">04 --</span>
               <span className="cs-section-num">The Interface</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">UI &amp; Visual Design</h2>
 
             <p className="cs-body">
-              A security tool only works if people aren't scared of it. The interface was designed in Figma around three priorities — <strong style={{ color: '#fff' }}>simplicity</strong> (a clean, minimal layout that never overwhelms), <strong style={{ color: '#fff' }}>accessibility</strong> (clear navigation and readable type for all levels), and <strong style={{ color: '#fff' }}>engagement</strong> (interactive checks and learning content that invite exploration).
+              A security tool only works if people aren't scared of it. The interface was designed in Figma around three priorities - <strong style={{ color: '#fff' }}>simplicity</strong> (a clean, minimal layout that never overwhelms), <strong style={{ color: '#fff' }}>accessibility</strong> (clear navigation and readable type for all levels), and <strong style={{ color: '#fff' }}>engagement</strong> (interactive checks and learning content that invite exploration).
             </p>
 
             <div className="creative-styleguide">
@@ -344,7 +344,7 @@ export default function CaseStudyPhurl() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Color</div>
-                  <p className="sg-unit-desc">PhURL's palette — a vivid purple and electric lime over a deep purple-black, with red reserved for danger and grey for neutral UI.</p>
+                  <p className="sg-unit-desc">PhURL's palette - a vivid purple and electric lime over a deep purple-black, with red reserved for danger and grey for neutral UI.</p>
                   <div className="color-strip">
                     <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF<br/>255, 255, 255</span></div>
                     <div className="color-block" style={{ background: '#8FFF00' }}><span className="color-hex">#8FFF00<br/>143, 255, 0</span></div>
@@ -382,7 +382,7 @@ export default function CaseStudyPhurl() {
             </div>
 
             <h3 className="cs-sub-heading">High-Fidelity Screens</h3>
-            <p className="cs-body">The screens below show the core PhURL experience — from the scan input to the safe/phishing result and the learning content that backs it up. Click any screen to view it in high resolution.</p>
+            <p className="cs-body">The screens below show the core PhURL experience - from the scan input to the safe/phishing result and the learning content that backs it up. Click any screen to view it in high resolution.</p>
 
             <div className="ui-gallery">
               {/* Row 1: Moving Right */}
@@ -497,25 +497,25 @@ export default function CaseStudyPhurl() {
 
 
           {/* ═══════════════════════════════
-               05 — BUILD / ENGINEERING
+               05 - BUILD / ENGINEERING
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-vibe">
             <div className="cs-section-divider">
-              <span className="cs-section-num">05 ——</span>
+              <span className="cs-section-num">05 --</span>
               <span className="cs-section-num">The Build</span>
               <div className="cs-section-line"></div>
             </div>
             <h2 className="cs-section-title">Development &amp; Deployment</h2>
 
             <p className="cs-body">
-              PhURL is a full-stack build: a React front end talking to a Django back end that wraps the trained model behind a clean API. Development followed a hybrid of Agile, Scrum and Waterfall — structured enough to plan the ML work, flexible enough to iterate on the UI from user feedback.
+              PhURL is a full-stack build: a React front end talking to a Django back end that wraps the trained model behind a clean API. Development followed a hybrid of Agile, Scrum and Waterfall - structured enough to plan the ML work, flexible enough to iterate on the UI from user feedback.
             </p>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">⚛️</div>
                 <h4>Frontend</h4>
-                <p>Built in <strong style={{ color: '#fff' }}>React + JavaScript</strong> — an interactive dashboard and a real-time URL verification tool that calls the backend and renders the verdict instantly.</p>
+                <p>Built in <strong style={{ color: '#fff' }}>React + JavaScript</strong> - an interactive dashboard and a real-time URL verification tool that calls the backend and renders the verdict instantly.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🐍</div>
@@ -525,7 +525,7 @@ export default function CaseStudyPhurl() {
               <div className="cs-card">
                 <div className="cs-card-icon">🧠</div>
                 <h4>ML Integration</h4>
-                <p>The trained model is serialised to <code>joblib</code> and called per request — feature-engineering the URL, scaling, then classifying it as safe or malicious.</p>
+                <p>The trained model is serialised to <code>joblib</code> and called per request - feature-engineering the URL, scaling, then classifying it as safe or malicious.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">☁️</div>
@@ -536,7 +536,7 @@ export default function CaseStudyPhurl() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">🧪</div>
-              <p className="cs-callout-text">Quality came from real testing: <strong style={{ color: '#fff' }}>User Acceptance Testing</strong> with university students plus <strong style={{ color: '#fff' }}>cross-browser checks</strong> on Chrome, Brave, Firefox and Opera Mini — each round feeding fixes back into the UI/UX.</p>
+              <p className="cs-callout-text">Quality came from real testing: <strong style={{ color: '#fff' }}>User Acceptance Testing</strong> with university students plus <strong style={{ color: '#fff' }}>cross-browser checks</strong> on Chrome, Brave, Firefox and Opera Mini - each round feeding fixes back into the UI/UX.</p>
             </div>
 
             <p className="cs-body" style={{ marginTop: '24px' }}>
@@ -549,11 +549,11 @@ export default function CaseStudyPhurl() {
 
 
           {/* ═══════════════════════════════
-               06 — RESULTS & REFLECTION
+               06 - RESULTS & REFLECTION
           ═══════════════════════════════ */}
           <section className="cs-section" id="sec-results">
             <div className="cs-section-divider">
-              <span className="cs-section-num">06 ——</span>
+              <span className="cs-section-num">06 --</span>
               <span className="cs-section-num">Results &amp; Reflection</span>
               <div className="cs-section-line"></div>
             </div>
@@ -568,18 +568,18 @@ export default function CaseStudyPhurl() {
               </div>
               <div className="outcome-card">
                 <div className="outcome-metric" data-count="4" data-suffix=" Browsers">0</div>
-                <div className="outcome-label">Cross-browser verified — Chrome, Brave, Firefox, Opera Mini</div>
+                <div className="outcome-label">Cross-browser verified - Chrome, Brave, Firefox, Opera Mini</div>
               </div>
             </div>
 
             <div className="cs-highlight" style={{ marginTop: '28px' }}>
-              <p>"PhURL successfully addresses the growing threat of phishing by combining advanced machine learning with user education — its intuitive design, high accuracy and scalability make it valuable for individuals and organisations alike."</p>
+              <p>"PhURL successfully addresses the growing threat of phishing by combining advanced machine learning with user education - its intuitive design, high accuracy and scalability make it valuable for individuals and organisations alike."</p>
             </div>
 
             <div className="reflection-grid">
               <div className="reflection-card">
                 <h4>📈 Outcome</h4>
-                <p>A reliable detector (96.6% accuracy, low false positives) wrapped in an interface that testers praised for its design and educational resources — and confirmed working across major browsers.</p>
+                <p>A reliable detector (96.6% accuracy, low false positives) wrapped in an interface that testers praised for its design and educational resources - and confirmed working across major browsers.</p>
               </div>
               <div className="reflection-card">
                 <h4>🧗 Challenges</h4>

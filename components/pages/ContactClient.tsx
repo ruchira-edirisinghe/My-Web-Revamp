@@ -36,7 +36,7 @@ export default function ContactClient() {
       <div id="nav-fade-mask"></div>
 
       <main className="page">
-        {/* Hidden per request — the hero section below carries the intro instead.
+        {/* Hidden per request - the hero section below carries the intro instead.
         <span className="section-label">Let's talk</span>
         <h1 className="page-title">Contact Me</h1>
         */}
@@ -53,7 +53,7 @@ export default function ContactClient() {
               <span className="line-glow">Something Iconic?</span>
             </div>
             <p className="contact-intro-para">
-              Whether you have a project in mind, want to collaborate on something exciting, or simply want to say hello —
+              Whether you have a project in mind, want to collaborate on something exciting, or simply want to say hello -
               I'd love to hear from you. I'm passionate about crafting meaningful digital experiences and always open to new
               opportunities.
             </p>

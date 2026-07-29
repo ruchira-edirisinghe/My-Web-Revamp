@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   projects.ts — Shell B engine: space bg, preloader, cursor + SFX, audio,
+   projects.ts - Shell B engine: space bg, preloader, cursor + SFX, audio,
    scroll-reveal, mobile menu, card clickability.
    (faithful port of styles/projects/projects.js)
    ════════════════════════════════════════ */
@@ -279,7 +279,7 @@ export function initProjects(): () => void {
 
   /* ══════════ 4. AUDIO PERSISTENCE ══════════ */
   (function () {
-    /* Ambient music — one shared <audio> (lib/scripts/ambient-audio.ts) plays
+    /* Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
        continuously across every page and remembers its paused state; this engine
        only mirrors the playing flag into its spectrum visualiser below. */
     let spectrumPlaying = false;

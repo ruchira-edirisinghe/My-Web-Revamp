@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   scatter-menu-cursor.ts — Scatter animation, menu open/close & liquid glass cursor
+   scatter-menu-cursor.ts - Scatter animation, menu open/close & liquid glass cursor
    (faithful port of styles/home/scatter-menu-cursor.js)
    ════════════════════════════════════════ */
 import { makeBag } from './_util';

@@ -95,7 +95,7 @@ opacity: 0.7;
 } */
 
 /* ══════════════════════════════════════
-   UFO STATS SECTION — v5
+   UFO STATS SECTION - v5
 ══════════════════════════════════════ */
 .ufo-stats-section {
   width: 95%;
@@ -261,7 +261,7 @@ opacity: 0.7;
   flex-shrink: 0;
 }
 
-/* No background, no border — just the SVG floating on the space bg */
+/* No background, no border - just the SVG floating on the space bg */
 .pillar-pedestal {
   position: relative;
   width: 100%;
@@ -512,7 +512,7 @@ opacity: 0.7;
 
 
 /* ══════════════════════════════════════
-   TESTIMONIALS SECTION — cinematic auto-cycle
+   TESTIMONIALS SECTION - cinematic auto-cycle
 ══════════════════════════════════════ */
 .testimonials-section {
   width: 95%;
@@ -545,7 +545,7 @@ opacity: 0.7;
   text-align: center;
 }
 
-/* Outer card shell — fixed height, never resizes */
+/* Outer card shell - fixed height, never resizes */
 .testi-shell {
   position: relative;
   background: rgba(255, 255, 255, 0.03);
@@ -653,7 +653,7 @@ opacity: 0.7;
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Quote area — fixed min-height so card never jumps */
+/* Quote area - fixed min-height so card never jumps */
 .testi-quote-area {
   flex: 1;
   position: relative;
@@ -1372,7 +1372,7 @@ a:has(.nav-logo) {
   filter: brightness(0) invert(1);
 }
 
-/* ── Mobile menu overlay — Great Vibes style matching index.html ── */
+/* ── Mobile menu overlay - Great Vibes style matching index.html ── */
 #mobile-menu {
   position: fixed;
   inset: 0;
@@ -1403,7 +1403,7 @@ a:has(.nav-logo) {
   padding: 20px 24px 40px;
 }
 
-/* Menu item — Great Vibes style */
+/* Menu item - Great Vibes style */
 .mobile-menu-link {
   display: flex;
   flex-direction: column;
@@ -1654,7 +1654,7 @@ body.menu-open {
   margin: 0 auto;
 }
 
-/* Service card — reference layout: icon top-right, content bottom-left */
+/* Service card - reference layout: icon top-right, content bottom-left */
 .about-block {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -1688,7 +1688,7 @@ body.menu-open {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
 }
 
-/* Icon — top-right, large, no background box */
+/* Icon - top-right, large, no background box */
 .block-icon {
   position: absolute;
   top: 28px;
@@ -1712,7 +1712,7 @@ body.menu-open {
   stroke-linejoin: round;
 }
 
-/* Card header — pushed down so icon area at top feels open */
+/* Card header - pushed down so icon area at top feels open */
 .block-header {
   display: block;
   margin-bottom: 0;
@@ -1734,7 +1734,7 @@ body.menu-open {
   color: rgba(140, 210, 255, 0.7);
 }
 
-/* Title — large, left-aligned */
+/* Title - large, left-aligned */
 .block-title {
   font-family: 'Burgundia', cursive;
   font-size: clamp(32px, 3.2vw, 44px);
@@ -1825,7 +1825,7 @@ footer {
 }
 
 /* ══════════════════════════════════════
-   NAV FADE MASK — content vanishes near nav
+   NAV FADE MASK - content vanishes near nav
 ══════════════════════════════════════ */
 /* Fixed top gradient that sits above page content but below the nav */
 #nav-fade-mask {
@@ -2102,7 +2102,7 @@ footer {
   flex-shrink: 0;
 }
 
-/* Primary — solid white */
+/* Primary - solid white */
 .cv-btn-primary {
   background: #ffffff;
   color: #02030a;
@@ -2116,7 +2116,7 @@ footer {
   box-shadow: 0 6px 28px rgba(255, 255, 255, 0.22);
 }
 
-/* Ghost — outlined */
+/* Ghost - outlined */
 .cv-btn-ghost {
   background: rgba(255, 255, 255, 0.06);
   color: rgba(255, 255, 255, 0.82);
@@ -2274,7 +2274,7 @@ footer {
 }
 
 /* ══════════════════════════════════════
-   HERO INTRO SECTION — reference layout
+   HERO INTRO SECTION - reference layout
 ══════════════════════════════════════ */
 .hero-intro {
   width: 100%;
@@ -2321,7 +2321,7 @@ footer {
   color: #fff;
   opacity: 0;
   white-space: nowrap;
-  /* never wraps — always exactly 2 lines via block spans */
+  /* never wraps - always exactly 2 lines via block spans */
 }
 
 .hero-side-phrase .line1 {
@@ -2441,7 +2441,7 @@ footer {
   padding-bottom: 0;
 }
 
-/* The arch background — sits behind lower portion of the image */
+/* The arch background - sits behind lower portion of the image */
 .hero-intro-arch {
   position: absolute;
   bottom: 0;
@@ -2457,7 +2457,7 @@ footer {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
 }
 
-/* Image itself — transparent PNG floats above arch */
+/* Image itself - transparent PNG floats above arch */
 .hero-intro-photo {
   width: 100%;
   position: relative;
@@ -2473,7 +2473,7 @@ footer {
   filter: brightness(0.95) contrast(1.05);
 }
 
-/* ── CTA pill — centred on screen, floats over arch area ── */
+/* ── CTA pill - centred on screen, floats over arch area ── */
 .hero-intro-ctas {
   display: flex;
   align-items: center;
@@ -2497,7 +2497,7 @@ footer {
   z-index: 5;
 }
 
-/* "Download CV" — styled like an active nav-link */
+/* "Download CV" - styled like an active nav-link */
 .hero-cta-primary {
   display: inline-flex;
   align-items: center;
@@ -2532,7 +2532,7 @@ footer {
   flex-shrink: 0;
 }
 
-/* "View My Work" — styled like the nav-cta ghost */
+/* "View My Work" - styled like the nav-cta ghost */
 .hero-cta-ghost {
   display: inline-flex;
   align-items: center;
@@ -2588,7 +2588,7 @@ footer {
   .hero-intro-photo-wrap {
     order: 1;
     width: min(484px, 84vw);
-    /* ← MOBILE IMAGE SIZE — change this to resize the image */
+    /* ← MOBILE IMAGE SIZE - change this to resize the image */
     margin-bottom: 0;
     align-self: center;
     display: flex;
@@ -2601,7 +2601,7 @@ footer {
     transform: translateX(-50%);
   }
 
-  /* ↓ MOBILE TITLE-TO-IMAGE GAP — change margin-top here to adjust space between "About Me" and the image */
+  /* ↓ MOBILE TITLE-TO-IMAGE GAP - change margin-top here to adjust space between "About Me" and the image */
   .hero-intro {
     margin-top: 0;
   }
@@ -2632,7 +2632,7 @@ footer {
     text-align: right;
   }
 
-  /* Force exactly 2 lines — fixed font size so text never wraps to 3 */
+  /* Force exactly 2 lines - fixed font size so text never wraps to 3 */
   .hero-mobile-col .hero-side-phrase {
     opacity: 1;
     transform: none;
@@ -2678,7 +2678,7 @@ footer {
   overflow: hidden;
   padding: 48px 0 0;
   position: relative;
-  /* CSS mask fades both edges identically — no pseudo-element needed */
+  /* CSS mask fades both edges identically - no pseudo-element needed */
   -webkit-mask-image: linear-gradient(to right,
       transparent 0%,
       black 15%,
@@ -2691,7 +2691,7 @@ footer {
       transparent 100%);
 }
 
-/* Inner: the moving container — JS sets transform each frame */
+/* Inner: the moving container - JS sets transform each frame */
 .logo-ticker-inner {
   display: flex;
   align-items: center;
@@ -2757,7 +2757,7 @@ footer {
 }
 
 /* ══════════════════════════════════════
-   PHOTO HOVER DOODLES — burst from behind
+   PHOTO HOVER DOODLES - burst from behind
 ══════════════════════════════════════ */
 .hero-intro-photo-wrap {
   cursor: pointer;
@@ -2908,7 +2908,7 @@ footer {
   color: rgba(255, 255, 255, 0.92);
   line-height: 1.15;
   white-space: nowrap;
-  /* scroll-reveal — starts hidden */
+  /* scroll-reveal - starts hidden */
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -2983,7 +2983,7 @@ footer {
 }
 
 /* ══════════════════════════════════════
-   SERVICE CARDS — index.html spacing/font
+   SERVICE CARDS - index.html spacing/font
 ══════════════════════════════════════ */
 @media (min-width: 769px) {
   .about-grid {
@@ -3323,7 +3323,7 @@ footer {
 }
 
 /* ══════════════════════════════════════
-   SCROLL REVEAL — fade-up on scroll
+   SCROLL REVEAL - fade-up on scroll
    Elements start hidden, JS adds .sr-vis
 ══════════════════════════════════════ */
 
@@ -3545,7 +3545,7 @@ footer {
   user-select: none;
 }
 
-/* Remove old divider — not used in new layout */
+/* Remove old divider - not used in new layout */
 .stat-divider {
   display: none;
 }
@@ -3624,7 +3624,7 @@ footer {
 
 
 /* ══════════════════════════════════════
-   CV MODAL — inline styles (moved here)
+   CV MODAL - inline styles (moved here)
 ══════════════════════════════════════ */
 #cv-close-btn {
             position: fixed;
@@ -3668,7 +3668,7 @@ footer {
 
 
 /* ════════════════════════════════════════
-   QA polish — keyboard focus & touch cursor (appended)
+   QA polish - keyboard focus & touch cursor (appended)
    ════════════════════════════════════════ */
 
 /* Keyboard focus visibility */
@@ -3684,7 +3684,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 
 /* ════════════════════════════════════════
-   Micro-interaction polish — active/press states & missing hovers
+   Micro-interaction polish - active/press states & missing hovers
    ════════════════════════════════════════ */
 
 /* ── Testimonial dots ── */

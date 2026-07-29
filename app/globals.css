@@ -17,7 +17,19 @@
   font-display: swap;
 }
 
-/* Minimal global baseline — keeps the dark theme background painted before a
+/* Catalogie's brand title face, used only by the type specimen in that case
+   study so the sample renders in the font it names rather than a stand-in.
+   The demo file carries letters only - no digits or punctuation - so keep it
+   to plain words. */
+@font-face {
+  font-family: 'Talina';
+  src: url('/docs/TalinaDEMO-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Minimal global baseline - keeps the dark theme background painted before a
    route's own stylesheet loads (prevents a white flash). Each page's CSS under
    styles/ owns the real styling; this only sets the canvas behind it. */
 html,
@@ -33,7 +45,7 @@ body {
 /* Smooth anchor scrolling */
 html { scroll-behavior: smooth; }
 
-/* Remove the blue iOS/Android tap flash — custom interactions own the feedback */
+/* Remove the blue iOS/Android tap flash - custom interactions own the feedback */
 *, *::before, *::after { -webkit-tap-highlight-color: transparent; }
 
 /* Ensure every button shows a pointer on desktop */
@@ -43,7 +55,7 @@ button { cursor: pointer; }
 button:focus:not(:focus-visible),
 a:focus:not(:focus-visible) { outline: none; }
 
-/* Global keyboard-focus fallback — low-specificity element selectors, so any page's
+/* Global keyboard-focus fallback - low-specificity element selectors, so any page's
    own tuned :focus-visible ring still wins. Guarantees keyboard users get a visible
    indicator on every interactive control, even ones a page stylesheet overlooked. */
 a:focus-visible,
@@ -84,15 +96,15 @@ body.page-transitioning #music-btn-desktop {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   MOBILE NAVIGATION SYSTEM — global base
+   MOBILE NAVIGATION SYSTEM - global base
    Must live here so case study pages and the projects hub have a
    working mobile nav on first visit, before any other page's CSS
    has been accumulated in the session.
-   Individual page CSS files duplicate some of these rules — that
+   Individual page CSS files duplicate some of these rules - that
    is harmless since they set the same values.
 ═══════════════════════════════════════════════════════════════ */
 
-/* Shared glass circular button — used by #menu-btn in MobileMenu */
+/* Shared glass circular button - used by #menu-btn in MobileMenu */
 .glass-round-btn {
   width: 46px;
   height: 46px;
@@ -120,7 +132,7 @@ body.page-transitioning #music-btn-desktop {
   transform: translateY(-1px) scale(1.05);
 }
 
-/* Mobile top bar — fixed strip at top of viewport on mobile */
+/* Mobile top bar - fixed strip at top of viewport on mobile */
 #mobile-topbar {
   position: fixed;
   top: 18px;
@@ -192,7 +204,7 @@ body.page-transitioning #music-btn-desktop {
   transition: opacity 0.4s ease, visibility 0s;
 }
 
-/* Menu items — Great Vibes style */
+/* Menu items - Great Vibes style */
 .mobile-menu-panel {
   display: flex;
   flex-direction: column;
@@ -265,7 +277,7 @@ body.page-transitioning #music-btn-desktop {
 }
 
 /* Extra room only for the titles with descenders/tall glyphs (Experience, Projects)
-   that were overlapping — other items keep their original tighter spacing.
+   that were overlapping - other items keep their original tighter spacing.
    #mobile-menu prefix (specificity 1,1,0) beats the per-page .mobile-menu-* duplicates. */
 #mobile-menu .mobile-menu-link[data-page="experience"] .mobile-menu-title,
 #mobile-menu .mobile-menu-link[data-page="projects"] .mobile-menu-title { line-height: 1.28; }
@@ -331,4 +343,57 @@ body.menu-open { overflow: hidden; }
     opacity: 1;
     flex-shrink: 0;
   }
+}
+
+/* ════════════════════════════════════════
+   MOBILE TOUCH TARGETS & SMALL-SCREEN TYPE
+
+   Loaded from the root layout, so these reach every route. Each selector
+   carries one extra element (footer/body/.projects-grid) so it outranks the
+   per-route stylesheets, which are imported after this file and would
+   otherwise win an equal-specificity tie.
+   ════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  /* The footer's social icons are bare 20px glyphs, leaving a 20x20 touch
+     target. Grow the hit area to 44px without resizing the icon; the gap goes
+     to 0 because the new padding already separates them. */
+  footer .social-links { gap: 0; }
+  footer .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* "View Case Study" was only as tall as its 14px line box. */
+  .projects-grid .project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* The vertical scroll-to-top rail is 23px wide (styles injected by
+     lib/scripts/scroll-top.ts, hence the extra specificity here). */
+  body .scroll-top-btn { min-width: 44px; }
+}
+
+/* Display titles use a clamp floor of 52-62px, which a 320px phone cannot fit
+   for a longer heading such as "Work Experience" - it overflowed by 11px and
+   forced the whole page to scroll sideways. Let the floor scale on small
+   screens; at >=420px the original sizing is untouched. */
+@media (max-width: 420px) {
+  body .page-title { font-size: clamp(34px, 11vw, 52px); }
+}
+
+/* Inline links inside prose cannot be given a 44px box without wrecking the
+   paragraph's line spacing - which is exactly why WCAG 2.5.5 exempts links
+   embedded in a sentence. Vertical padding on an inline box grows the hit
+   area without changing the line box, so the target gets taller and the
+   surrounding text does not move at all. */
+@media (max-width: 900px) {
+  .cs-body a,
+  .bio-para a,
+  .cs-elevator a { padding-block: 7px; }
 }
