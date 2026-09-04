@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -76,7 +77,7 @@ export default function CaseStudyLottogram() {
 
           <div className="cs-elevator">
             <p>
-              A betting and lottery platform is one of the densest products to design - odds, slips, wallets, live events, loyalty and promotions all fighting for attention. Lottogram tames that complexity into a bold, confident experience that feels <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>consistent and trustworthy across desktop and mobile alike.</em>
+              A betting and lottery platform is one of the densest products to design - odds, slips, wallets, live events, loyalty and promotions all fighting for attention. Lottogram tames that complexity into a bold, confident experience that feels <em className="cs-em-gold">consistent and trustworthy across desktop and mobile alike.</em>
             </p>
           </div>
 
@@ -253,7 +254,7 @@ export default function CaseStudyLottogram() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The same information architecture was designed <strong style={{ color: '#fff' }}>twice in parallel</strong> - a wide desktop layout (with a foldable sidebar) and a focused mobile layout - sharing one component system so nothing felt out of place between them.</p>
+              <p className="cs-callout-text">The same information architecture was designed <strong className="cs-w">twice in parallel</strong> - a wide desktop layout (with a foldable sidebar) and a focused mobile layout - sharing one component system so nothing felt out of place between them.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -311,8 +312,8 @@ export default function CaseStudyLottogram() {
                     <span className="typo-scale-item">12pt</span>
                   </div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
+                    <span className="typo-weight-item cs-fw-400">Regular</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
                   </div>
                 </div>
               </div>
@@ -322,26 +323,26 @@ export default function CaseStudyLottogram() {
                   <div className="sg-unit-title">Color</div>
                   <p className="sg-unit-desc">A bold red-and-gold core for energy and value, balanced with deep navies, a fresh green and clean neutrals.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
-                    <div className="color-block" style={{ background: '#000000' }}><span className="color-hex">#000000</span></div>
-                    <div className="color-block" style={{ background: '#A8A8A8' }}><span className="color-hex">#A8A8A8</span></div>
-                    <div className="color-block" style={{ background: '#CE0D05' }}><span className="color-hex">#CE0D05</span></div>
-                    <div className="color-block" style={{ background: '#6D1010' }}><span className="color-hex">#6D1010</span></div>
-                    <div className="color-block" style={{ background: '#380100' }}><span className="color-hex">#380100</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#000000' })}><span className="color-hex">#000000</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#A8A8A8' })}><span className="color-hex">#A8A8A8</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#CE0D05' })}><span className="color-hex">#CE0D05</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#6D1010' })}><span className="color-hex">#6D1010</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#380100' })}><span className="color-hex">#380100</span></div>
                   </div>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#150000' }}><span className="color-hex">#150000</span></div>
-                    <div className="color-block" style={{ background: '#61D28F' }}><span className="color-hex">#61D28F</span></div>
-                    <div className="color-block" style={{ background: '#EFBF04' }}><span className="color-hex">#EFBF04</span></div>
-                    <div className="color-block" style={{ background: '#BE990C' }}><span className="color-hex">#BE990C</span></div>
-                    <div className="color-block" style={{ background: '#0088CC' }}><span className="color-hex">#0088CC</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#150000' })}><span className="color-hex">#150000</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#61D28F' })}><span className="color-hex">#61D28F</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#EFBF04' })}><span className="color-hex">#EFBF04</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#BE990C' })}><span className="color-hex">#BE990C</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#0088CC' })}><span className="color-hex">#0088CC</span></div>
                   </div>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#060B2A' }}><span className="color-hex">#060B2A</span></div>
-                    <div className="color-block" style={{ background: '#00138B' }}><span className="color-hex">#00138B</span></div>
-                    <div className="color-block" style={{ background: '#2E3FA1' }}><span className="color-hex">#2E3FA1</span></div>
-                    <div className="color-block" style={{ background: '#282E51' }}><span className="color-hex">#282E51</span></div>
-                    <div className="color-block" style={{ background: '#000210' }}><span className="color-hex">#000210</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#060B2A' })}><span className="color-hex">#060B2A</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#00138B' })}><span className="color-hex">#00138B</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#2E3FA1' })}><span className="color-hex">#2E3FA1</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#282E51' })}><span className="color-hex">#282E51</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#000210' })}><span className="color-hex">#000210</span></div>
                   </div>
                 </div>
               </div>
@@ -552,7 +553,7 @@ export default function CaseStudyLottogram() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"A dense betting product made bold, clear and genuinely <em>consistent</em> - from a wide desktop layout right down to a phone in your hand."</p>
             </div>
 

@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -64,7 +65,7 @@ export default function CaseStudyFunxt() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              Fun Extreme Technology LLC builds software for gaming platforms worldwide - and needed a corporate home that could prove it. The brief: a website spanning Home, four Solution pillars, Company, Careers and Contact that feels <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>bold enough for gaming, credible enough for enterprise - on desktop and mobile alike.</em>
+              Fun Extreme Technology LLC builds software for gaming platforms worldwide - and needed a corporate home that could prove it. The brief: a website spanning Home, four Solution pillars, Company, Careers and Contact that feels <em className="cs-em-gold">bold enough for gaming, credible enough for enterprise - on desktop and mobile alike.</em>
             </p>
           </div>
 
@@ -244,7 +245,7 @@ export default function CaseStudyFunxt() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The four solution pillars - <strong style={{ color: '#fff' }}>Design &amp; Development, Cloud &amp; Operations, Security &amp; Compliance, and Innovation &amp; Planning</strong> - structure the entire site: the homepage grid, the Solutions overview, and four dedicated deep-dive pages that each unpack a pillar into six concrete services.</p>
+              <p className="cs-callout-text">The four solution pillars - <strong className="cs-w">Design &amp; Development, Cloud &amp; Operations, Security &amp; Compliance, and Innovation &amp; Planning</strong> - structure the entire site: the homepage grid, the Solutions overview, and four dedicated deep-dive pages that each unpack a pillar into six concrete services.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -305,11 +306,11 @@ export default function CaseStudyFunxt() {
                     <span className="typo-scale-item">12pt</span>
                   </div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 800 }}>Heavy</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 900 }}>Black</span>
+                    <span className="typo-weight-item cs-fw-400">Regular</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
+                    <span className="typo-weight-item cs-fw-700">Bold</span>
+                    <span className="typo-weight-item cs-fw-800">Heavy</span>
+                    <span className="typo-weight-item cs-fw-900">Black</span>
                   </div>
                 </div>
               </div>
@@ -320,20 +321,20 @@ export default function CaseStudyFunxt() {
                   <div className="sg-unit-title">Color Tokens</div>
                   <p className="sg-unit-desc">One red gradient over white, black and two blue-ash greys - with documented 8-80% opacity steps that keep the palette consistent in light sections and dark.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#FF5757' }}><span className="color-hex">#FF5757</span></div>
-                    <div className="color-block" style={{ background: '#CD0505' }}><span className="color-hex">#CD0505</span></div>
-                    <div className="color-block" style={{ background: '#7B7B94' }}><span className="color-hex">#7B7B94</span></div>
-                    <div className="color-block" style={{ background: '#A9A9B9' }}><span className="color-hex">#A9A9B9</span></div>
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
-                    <div className="color-block" style={{ background: '#000000' }}><span className="color-hex">#000000</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FF5757' })}><span className="color-hex">#FF5757</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#CD0505' })}><span className="color-hex">#CD0505</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#7B7B94' })}><span className="color-hex">#7B7B94</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#A9A9B9' })}><span className="color-hex">#A9A9B9</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#000000' })}><span className="color-hex">#000000</span></div>
                   </div>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: 'rgba(255,255,255,0.8)' }}><span className="color-hex">FFF · 80%</span></div>
-                    <div className="color-block" style={{ background: 'rgba(255,255,255,0.08)' }}><span className="color-hex">FFF · 8%</span></div>
-                    <div className="color-block" style={{ background: 'rgba(123,123,148,0.4)' }}><span className="color-hex">7B7B94 · 40%</span></div>
-                    <div className="color-block" style={{ background: 'rgba(169,169,185,0.2)' }}><span className="color-hex">A9A9B9 · 20%</span></div>
-                    <div className="color-block" style={{ background: 'rgba(0,0,0,0.12)' }}><span className="color-hex">000 · 12%</span></div>
-                    <div className="color-block" style={{ background: 'rgba(0,0,0,0.4)' }}><span className="color-hex">000 · 40%</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': 'rgba(255,255,255,0.8)' })}><span className="color-hex">FFF · 80%</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': 'rgba(255,255,255,0.08)' })}><span className="color-hex">FFF · 8%</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': 'rgba(123,123,148,0.4)' })}><span className="color-hex">7B7B94 · 40%</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': 'rgba(169,169,185,0.2)' })}><span className="color-hex">A9A9B9 · 20%</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': 'rgba(0,0,0,0.12)' })}><span className="color-hex">000 · 12%</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': 'rgba(0,0,0,0.4)' })}><span className="color-hex">000 · 40%</span></div>
                   </div>
                 </div>
               </div>
@@ -596,7 +597,7 @@ export default function CaseStudyFunxt() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"A gaming-tech company that finally looks the part - <em>bold enough for play, credible enough for enterprise.</em>"</p>
             </div>
 

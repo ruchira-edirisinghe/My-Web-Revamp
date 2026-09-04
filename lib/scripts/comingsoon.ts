@@ -10,6 +10,8 @@
    route-unmount-safe. Asset paths rewritten ./Images → /Images, ./audio → /audio.
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { initPreloaderFx } from './preloader-fx';
+import { initSpaceField3D } from './space-field';
 import { wireAmbientControls } from './ambient-audio';
 
 export function initComingSoon(): () => void {
@@ -17,6 +19,8 @@ export function initComingSoon(): () => void {
 
   /* ══════════ SPACE BACKGROUND ══════════ */
   (function () {
+    // WebGL field first; the 2D starfield below is the no-WebGL fallback.
+    if (initSpaceField3D(bag)) return;
     const c = document.getElementById('space-canvas'), x = c && c.getContext('2d');
     if (!c || !x) return;
     let W, H;
@@ -146,6 +150,7 @@ export function initComingSoon(): () => void {
   (function () {
     const pl = document.getElementById('preloader'), cv = document.getElementById('preloader-canvas'), cx = cv && cv.getContext('2d'), pf = document.getElementById('progress-fill'), st = document.getElementById('split-top'), sb = document.getElementById('split-bottom');
     if (!pl || !cv || !cx || !pf) return;
+    initPreloaderFx(bag);
     if (pl.style.display === 'none') return;
     const CW = 900, CH = 240; cv.width = CW; cv.height = CH;
     const DUR = 2200, HOLD = 300, SPLIT = 900;
@@ -159,16 +164,16 @@ export function initComingSoon(): () => void {
     const starsContainer = document.getElementById('preloader-stars');
     const createdStars: HTMLElement[] = [];
     if (starsContainer) {
-      const starCount = 80;
+      const starCount = 34;
       for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
         star.className = 'preloader-star';
         const x = Math.random() * 100;
         const y = Math.random() * 100;
-        const size = 1 + Math.random() * 2;
-        const delay = Math.random() * 5;
-        const duration = 2 + Math.random() * 3;
-        const opacity = 0.4 + Math.random() * 0.5;
+        const size = 0.8 + Math.pow(Math.random(), 2) * 1.5;
+        const delay = Math.random() * 6;
+        const duration = 3.5 + Math.random() * 4.5;
+        const opacity = 0.18 + Math.random() * 0.3;
 
         star.style.left = `${x}%`;
         star.style.top = `${y}%`;

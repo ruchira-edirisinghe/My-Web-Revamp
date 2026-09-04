@@ -8,9 +8,11 @@
    (visually identical) to avoid React reconciliation errors on unmount.
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { initPreloaderFx } from './preloader-fx';
 
 export function initPreloader(): () => void {
   const bag = makeBag();
+  initPreloaderFx(bag);
   const preloader    = document.getElementById('preloader');
   const canvas       = document.getElementById('preloader-canvas');
   const progressFill = document.getElementById('progress-fill');
@@ -43,16 +45,16 @@ export function initPreloader(): () => void {
   const starsContainer = document.getElementById('preloader-stars');
   const createdStars: HTMLElement[] = [];
   if (starsContainer) {
-    const starCount = 80;
+    const starCount = 34;
     for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
         star.className = 'preloader-star';
         const x = Math.random() * 100;
         const y = Math.random() * 100;
-        const size = 1 + Math.random() * 2;
-        const delay = Math.random() * 5;
-        const duration = 2 + Math.random() * 3;
-        const opacity = 0.4 + Math.random() * 0.5;
+        const size = 0.8 + Math.pow(Math.random(), 2) * 1.5;
+        const delay = Math.random() * 6;
+        const duration = 3.5 + Math.random() * 4.5;
+        const opacity = 0.18 + Math.random() * 0.3;
 
         star.style.left = `${x}%`;
         star.style.top = `${y}%`;

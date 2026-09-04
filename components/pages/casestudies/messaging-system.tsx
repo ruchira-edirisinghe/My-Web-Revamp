@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -76,7 +77,7 @@ export default function CaseStudyMessagingSystem() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              Sending a message is easy; running the system behind it is not - services, channels, message parameters, API keys, logs and billing all have to live in one place. This Messaging Platform turns that sprawling back-end into a single, calm control centre, where developers and teams can <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>configure, send and monitor with confidence.</em>
+              Sending a message is easy; running the system behind it is not - services, channels, message parameters, API keys, logs and billing all have to live in one place. This Messaging Platform turns that sprawling back-end into a single, calm control centre, where developers and teams can <em className="cs-em-gold">configure, send and monitor with confidence.</em>
             </p>
           </div>
 
@@ -256,7 +257,7 @@ export default function CaseStudyMessagingSystem() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">Multi-step tasks - service onboarding and the new-parameter builder - were broken into <strong style={{ color: '#fff' }}>guided wizards with success states</strong>, so even complex configuration feels like a checklist, not a maze.</p>
+              <p className="cs-callout-text">Multi-step tasks - service onboarding and the new-parameter builder - were broken into <strong className="cs-w">guided wizards with success states</strong>, so even complex configuration feels like a checklist, not a maze.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -308,10 +309,10 @@ export default function CaseStudyMessagingSystem() {
                   <p className="sg-unit-desc">Instrument Sans - a clean, contemporary grotesque whose tight, even rhythm keeps a dense, data-heavy dashboard readable at every size.</p>
                   <div className="typo-hero">Instrument Sans</div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 600 }}>Semi Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
+                    <span className="typo-weight-item cs-fw-700">Bold</span>
+                    <span className="typo-weight-item cs-fw-600">Semi Bold</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
+                    <span className="typo-weight-item cs-fw-400">Regular</span>
                   </div>
                 </div>
               </div>
@@ -322,20 +323,20 @@ export default function CaseStudyMessagingSystem() {
                   <div className="sg-unit-title">Color</div>
                   <p className="sg-unit-desc">A broad, expressive palette - soft neutrals and greens for surfaces, with warm and bold accents for tagging channels, statuses and states.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#D6DAC8' }}><span className="color-hex">#D6DAC8</span></div>
-                    <div className="color-block" style={{ background: '#9CAFAA' }}><span className="color-hex">#9CAFAA</span></div>
-                    <div className="color-block" style={{ background: '#FBF3D5' }}><span className="color-hex">#FBF3D5</span></div>
-                    <div className="color-block" style={{ background: '#22604F' }}><span className="color-hex">#22604F</span></div>
-                    <div className="color-block" style={{ background: '#9CAFAA' }}><span className="color-hex">#9CAFAA</span></div>
-                    <div className="color-block" style={{ background: '#11B157' }}><span className="color-hex">#11B157</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#D6DAC8' })}><span className="color-hex">#D6DAC8</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#9CAFAA' })}><span className="color-hex">#9CAFAA</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FBF3D5' })}><span className="color-hex">#FBF3D5</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#22604F' })}><span className="color-hex">#22604F</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#9CAFAA' })}><span className="color-hex">#9CAFAA</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#11B157' })}><span className="color-hex">#11B157</span></div>
                   </div>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#C45A3D' }}><span className="color-hex">#C45A3D</span></div>
-                    <div className="color-block" style={{ background: '#DDA82A' }}><span className="color-hex">#DDA82A</span></div>
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
-                    <div className="color-block" style={{ background: '#D02F44' }}><span className="color-hex">#D02F44</span></div>
-                    <div className="color-block" style={{ background: '#58000C' }}><span className="color-hex">#58000C</span></div>
-                    <div className="color-block" style={{ background: '#920066' }}><span className="color-hex">#920066</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#C45A3D' })}><span className="color-hex">#C45A3D</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#DDA82A' })}><span className="color-hex">#DDA82A</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#D02F44' })}><span className="color-hex">#D02F44</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#58000C' })}><span className="color-hex">#58000C</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#920066' })}><span className="color-hex">#920066</span></div>
                   </div>
                 </div>
               </div>
@@ -510,7 +511,7 @@ export default function CaseStudyMessagingSystem() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"A sprawling messaging back-end, distilled into one calm control centre - powerful for developers, <em>approachable</em> for everyone else."</p>
             </div>
 

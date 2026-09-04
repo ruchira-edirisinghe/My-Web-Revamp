@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -81,7 +82,7 @@ export default function CaseStudyKyc() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              KYC is where good onboarding goes to die - long forms, blurry document uploads, anxious face scans, and no idea whether anything worked. This project reimagines identity verification as a calm, guided journey that tells you exactly what to do and what's happening at every step, <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>beautifully, in both light and dark.</em>
+              KYC is where good onboarding goes to die - long forms, blurry document uploads, anxious face scans, and no idea whether anything worked. This project reimagines identity verification as a calm, guided journey that tells you exactly what to do and what's happening at every step, <em className="cs-em-gold">beautifully, in both light and dark.</em>
             </p>
           </div>
 
@@ -261,7 +262,7 @@ export default function CaseStudyKyc() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">Each stage opens with a <strong style={{ color: '#fff' }}>preparation screen</strong> that sets expectations before any capture, and closes with an explicit result - so users always know <strong style={{ color: '#fff' }}>what's next and whether it worked.</strong></p>
+              <p className="cs-callout-text">Each stage opens with a <strong className="cs-w">preparation screen</strong> that sets expectations before any capture, and closes with an explicit result - so users always know <strong className="cs-w">what's next and whether it worked.</strong></p>
             </div>
 
             <h3 className="cs-sub-heading">The Four Steps</h3>
@@ -313,12 +314,12 @@ export default function CaseStudyKyc() {
                   <p className="sg-unit-desc">Inter - a highly legible, neutral interface typeface built for screens, keeping dense verification steps clear at every size and weight.</p>
                   <div className="typo-hero">Inter</div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 600 }}>Semibold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 800 }}>Extrabold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 900 }}>Black</span>
+                    <span className="typo-weight-item cs-fw-400">Regular</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
+                    <span className="typo-weight-item cs-fw-600">Semibold</span>
+                    <span className="typo-weight-item cs-fw-700">Bold</span>
+                    <span className="typo-weight-item cs-fw-800">Extrabold</span>
+                    <span className="typo-weight-item cs-fw-900">Black</span>
                   </div>
                 </div>
               </div>
@@ -329,37 +330,37 @@ export default function CaseStudyKyc() {
                   <div className="sg-unit-title">Color</div>
                   <p className="sg-unit-desc">A broad, system-driven palette - a trust-blue core with neutrals, plus dedicated greens, oranges, reds and purples for status and emphasis across light &amp; dark.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">FFFFFF</span></div>
-                    <div className="color-block" style={{ background: '#000000' }}><span className="color-hex">000000</span></div>
-                    <div className="color-block" style={{ background: '#666666' }}><span className="color-hex">666666</span></div>
-                    <div className="color-block" style={{ background: '#233876' }}><span className="color-hex">233876</span></div>
-                    <div className="color-block" style={{ background: '#E4EFFF' }}><span className="color-hex">E4EFFF</span></div>
-                    <div className="color-block" style={{ background: '#8BB7FF' }}><span className="color-hex">8BB7FF</span></div>
-                    <div className="color-block" style={{ background: '#1E429F' }}><span className="color-hex">1E429F</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#000000' })}><span className="color-hex">000000</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#666666' })}><span className="color-hex">666666</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#233876' })}><span className="color-hex">233876</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#E4EFFF' })}><span className="color-hex">E4EFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#8BB7FF' })}><span className="color-hex">8BB7FF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#1E429F' })}><span className="color-hex">1E429F</span></div>
                   </div>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#12224D' }}><span className="color-hex">12224D</span></div>
-                    <div className="color-block" style={{ background: '#020C23' }}><span className="color-hex">020C23</span></div>
-                    <div className="color-block" style={{ background: '#ACBEDB' }}><span className="color-hex">ACBEDB</span></div>
-                    <div className="color-block" style={{ background: '#05505C' }}><span className="color-hex">05505C</span></div>
-                    <div className="color-block" style={{ background: '#7EDCE2' }}><span className="color-hex">7EDCE2</span></div>
-                    <div className="color-block" style={{ background: '#BFEEF1' }}><span className="color-hex">BFEEF1</span></div>
-                    <div className="color-block" style={{ background: '#01283A' }}><span className="color-hex">01283A</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#12224D' })}><span className="color-hex">12224D</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#020C23' })}><span className="color-hex">020C23</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#ACBEDB' })}><span className="color-hex">ACBEDB</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#05505C' })}><span className="color-hex">05505C</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#7EDCE2' })}><span className="color-hex">7EDCE2</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#BFEEF1' })}><span className="color-hex">BFEEF1</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#01283A' })}><span className="color-hex">01283A</span></div>
                   </div>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#008F0A' }}><span className="color-hex">008F0A</span></div>
-                    <div className="color-block" style={{ background: '#F9C890' }}><span className="color-hex">F9C890</span></div>
-                    <div className="color-block" style={{ background: '#FFEAD2' }}><span className="color-hex">FFEAD2</span></div>
-                    <div className="color-block" style={{ background: '#FF8800' }}><span className="color-hex">FF8800</span></div>
-                    <div className="color-block" style={{ background: '#A85A00' }}><span className="color-hex">A85A00</span></div>
-                    <div className="color-block" style={{ background: '#332200' }}><span className="color-hex">332200</span></div>
-                    <div className="color-block" style={{ background: '#D02F44' }}><span className="color-hex">D02F44</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#008F0A' })}><span className="color-hex">008F0A</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#F9C890' })}><span className="color-hex">F9C890</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFEAD2' })}><span className="color-hex">FFEAD2</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FF8800' })}><span className="color-hex">FF8800</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#A85A00' })}><span className="color-hex">A85A00</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#332200' })}><span className="color-hex">332200</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#D02F44' })}><span className="color-hex">D02F44</span></div>
                   </div>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#F9E0FF' }}><span className="color-hex">F9E0FF</span></div>
-                    <div className="color-block" style={{ background: '#F3C3FF' }}><span className="color-hex">F3C3FF</span></div>
-                    <div className="color-block" style={{ background: '#41124D' }}><span className="color-hex">41124D</span></div>
-                    <div className="color-block" style={{ background: '#A85A00' }}><span className="color-hex">A85A00</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#F9E0FF' })}><span className="color-hex">F9E0FF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#F3C3FF' })}><span className="color-hex">F3C3FF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#41124D' })}><span className="color-hex">41124D</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#A85A00' })}><span className="color-hex">A85A00</span></div>
                   </div>
                 </div>
               </div>
@@ -534,7 +535,7 @@ export default function CaseStudyKyc() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: 28 }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"A high-stakes, high-friction process turned into something that feels <em>guided, honest and even calm</em> - in whichever theme the user prefers."</p>
             </div>
 

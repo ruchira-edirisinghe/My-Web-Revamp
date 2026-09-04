@@ -6,6 +6,8 @@
    (faithful port of styles/quicklinks/quicklinks.js)
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { initPreloaderFx } from './preloader-fx';
+import { initSpaceField3D } from './space-field';
 import { wireAmbientControls } from './ambient-audio';
 
 export function initQuicklinks(): () => void {
@@ -14,6 +16,8 @@ export function initQuicklinks(): () => void {
 
   /* ══════════ 1. SPACE BACKGROUND (AURORA VERSION) ══════════ */
   (function () {
+    // WebGL field first; the 2D starfield below is the no-WebGL fallback.
+    if (initSpaceField3D(bag)) return;
     const canvas = document.getElementById('space-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -107,6 +111,7 @@ export function initQuicklinks(): () => void {
   /* ══════════ 2. PRELOADER (High Fidelity) ══════════ */
   (function () {
     const preloader = document.getElementById('preloader');
+    initPreloaderFx(bag);
     const canvas = document.getElementById('preloader-canvas');
     if (!preloader || !canvas || preloader.style.display === 'none') return;
     const ctx = canvas.getContext('2d');
@@ -131,15 +136,15 @@ export function initQuicklinks(): () => void {
     const starsContainer = document.getElementById('preloader-stars');
     const createdStars: HTMLElement[] = [];
     if (starsContainer) {
-      for (let i = 0; i < 80; i++) {
+      for (let i = 0; i < 34; i++) {
         const star = document.createElement('div');
         star.className = 'preloader-star';
         star.style.left = `${Math.random() * 100}%`;
         star.style.top = `${Math.random() * 100}%`;
-        const size = 1 + Math.random() * 2;
+        const size = 0.8 + Math.pow(Math.random(), 2) * 1.5;
         star.style.width = `${size}px`; star.style.height = `${size}px`;
-        star.style.setProperty('--star-opacity', 0.4 + Math.random() * 0.5);
-        star.style.animation = `star-twinkle ${2 + Math.random() * 3}s infinite ${Math.random() * 5}s ease-in-out`;
+        star.style.setProperty('--star-opacity', 0.18 + Math.random() * 0.3);
+        star.style.animation = `star-twinkle ${3.5 + Math.random() * 4.5}s infinite ${Math.random() * 6}s ease-in-out`;
         starsContainer.appendChild(star);
         createdStars.push(star);
       }

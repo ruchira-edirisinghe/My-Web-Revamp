@@ -4,9 +4,12 @@
    (faithful port of styles/home/space-background.js)
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { initSpaceField3D } from './space-field';
 
 export function initSpaceBackground(): () => void {
   const bag = makeBag();
+  // WebGL field first; the 2D starfield below is the no-WebGL fallback.
+  if (initSpaceField3D(bag)) return () => bag.dispose();
   const canvas = document.getElementById('space-canvas');
   if (!canvas) return () => {};
   const ctx = canvas.getContext('2d');

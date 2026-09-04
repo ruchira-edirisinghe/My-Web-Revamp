@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -78,7 +79,7 @@ export default function CaseStudyPropBet() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              PropBet is a fully playable browser crash game - a plane takes off and climbs an ever-steepening multiplier curve that can burst at any instant. Players stake up to two bets per round and race to <em style={{ color: '#43e8ff', fontStyle: 'normal', fontWeight: 500 }}>cash out before it flies away</em>. It ships with 50,000 demo credits, dual bet panels, auto cash-out, and a live crash-history rail - all driven client-side by a seeded round engine, with no backend to arbitrate a single outcome. PropBet is one game inside a shared <em style={{ color: '#43e8ff', fontStyle: 'normal', fontWeight: 500 }}>"Game Engine"</em> platform, and it was built entirely through vibe coding.
+              PropBet is a fully playable browser crash game - a plane takes off and climbs an ever-steepening multiplier curve that can burst at any instant. Players stake up to two bets per round and race to <em className="cs-em-cyan">cash out before it flies away</em>. It ships with 50,000 demo credits, dual bet panels, auto cash-out, and a live crash-history rail - all driven client-side by a seeded round engine, with no backend to arbitrate a single outcome. PropBet is one game inside a shared <em className="cs-em-cyan">"Game Engine"</em> platform, and it was built entirely through vibe coding.
             </p>
           </div>
 
@@ -134,7 +135,7 @@ export default function CaseStudyPropBet() {
             <h2 className="cs-section-title">Tech Stack &amp; Approach</h2>
 
             <p className="cs-body">
-              PropBet is a single Next.js (App Router) application in TypeScript, deployed to Vercel as one game inside a shared <strong>"Game Engine"</strong> platform - each game mounts into a common shell at its own <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>/games/&lt;name&gt;/play</code> route. The key architectural decision is its <strong>canvas-and-refs game loop</strong> - <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>Game.tsx</code> renders the canvas and both bet panels once, then a <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>requestAnimationFrame</code> loop drives the entire simulation from refs, so it animates at 60fps while React state updates only a few times a second - just what the panels need to show. The engine (<code style={{ color: '#43e8ff', fontSize: '0.9em' }}>engine.ts</code>) seals the crash point the instant a round begins; the loop simply flies the plane toward a number it already knows.
+              PropBet is a single Next.js (App Router) application in TypeScript, deployed to Vercel as one game inside a shared <strong>"Game Engine"</strong> platform - each game mounts into a common shell at its own <code className="cs-code-cyan">/games/&lt;name&gt;/play</code> route. The key architectural decision is its <strong>canvas-and-refs game loop</strong> - <code className="cs-code-cyan">Game.tsx</code> renders the canvas and both bet panels once, then a <code className="cs-code-cyan">requestAnimationFrame</code> loop drives the entire simulation from refs, so it animates at 60fps while React state updates only a few times a second - just what the panels need to show. The engine (<code className="cs-code-cyan">engine.ts</code>) seals the crash point the instant a round begins; the loop simply flies the plane toward a number it already knows.
             </p>
 
             <h3 className="cs-sub-heading">A Naive Crash Clone vs. How PropBet Is Engineered</h3>
@@ -144,7 +145,7 @@ export default function CaseStudyPropBet() {
                 <div className="cs-compare-label"><i>✕</i> The Naive Clone</div>
                 <div className="cs-compare-body">
                   <ul className="cs-list">
-                    <li><div className="cs-list-bullet"></div><span><code style={{ fontSize: '0.85em' }}>setInterval</code> ticks the multiplier → jittery curve, timer drift, dropped frames</span></li>
+                    <li><div className="cs-list-bullet"></div><span><code className="cs-sm">setInterval</code> ticks the multiplier → jittery curve, timer drift, dropped frames</span></li>
                     <li><div className="cs-list-bullet"></div><span>Crash checked live against React state → stale-closure cash-out bugs</span></li>
                     <li><div className="cs-list-bullet"></div><span>One bet, no auto cash-out, no history - nothing to hedge with</span></li>
                   </ul>
@@ -154,7 +155,7 @@ export default function CaseStudyPropBet() {
                 <div className="cs-compare-label"><i>✓</i> The PropBet Approach</div>
                 <div className="cs-compare-body">
                   <ul className="cs-list">
-                    <li><div className="cs-list-bullet"></div><span><code style={{ fontSize: '0.85em' }}>requestAnimationFrame</code> loop with a fixed-timestep accumulator → smooth 60fps climb</span></li>
+                    <li><div className="cs-list-bullet"></div><span><code className="cs-sm">requestAnimationFrame</code> loop with a fixed-timestep accumulator → smooth 60fps climb</span></li>
                     <li><div className="cs-list-bullet"></div><span>Crash point sealed at take-off; cash-outs resolved against the exact frame multiplier</span></li>
                     <li><div className="cs-list-bullet"></div><span>Dual bet panels + per-panel auto cash-out + a live crash-history rail</span></li>
                   </ul>
@@ -219,19 +220,19 @@ export default function CaseStudyPropBet() {
                 <div className="cs-comp-header">✈️ engine.ts</div>
                 <div className="cs-comp-cell" data-label="Responsibility">Pure crash math - crash distribution, multiplier growth, phase timings.</div>
                 <div className="cs-comp-cell" data-label="Key Challenge">House-edge-correct odds along an exponential curve.</div>
-                <div className="cs-comp-cell highlight" data-label="How It's Solved"><code style={{ fontSize: '0.85em' }}>P(crash ≥ x) = (1−edge)/x</code> at a 3% edge; <code style={{ fontSize: '0.85em' }}>m(t) = e^(0.1·t)</code>.</div>
+                <div className="cs-comp-cell highlight" data-label="How It's Solved"><code className="cs-sm">P(crash ≥ x) = (1−edge)/x</code> at a 3% edge; <code className="cs-sm">m(t) = e^(0.1·t)</code>.</div>
               </div>
               <div className="cs-comp-col">
                 <div className="cs-comp-header">🕹️ Game.tsx</div>
                 <div className="cs-comp-cell" data-label="Responsibility">Run the 60fps loop and paint the canvas HUD.</div>
                 <div className="cs-comp-cell" data-label="Key Challenge">Keep the plane and multiplier smooth at any refresh rate - without re-rendering React every frame.</div>
-                <div className="cs-comp-cell highlight" data-label="How It's Solved"><code style={{ fontSize: '0.85em' }}>requestAnimationFrame</code> drives the whole simulation from refs; React state syncs a few times a second.</div>
+                <div className="cs-comp-cell highlight" data-label="How It's Solved"><code className="cs-sm">requestAnimationFrame</code> drives the whole simulation from refs; React state syncs a few times a second.</div>
               </div>
               <div className="cs-comp-col">
                 <div className="cs-comp-header">🎲 blockchainRng.ts · /api/crash-seed</div>
                 <div className="cs-comp-cell" data-label="Responsibility">Provably-fair seed for each round's crash point.</div>
                 <div className="cs-comp-cell" data-label="Key Challenge">Verifiable randomness, fetched without a browser-console error on upstream failure.</div>
-                <div className="cs-comp-cell highlight" data-label="How It's Solved">A real blockchain block → <code style={{ fontSize: '0.85em' }}>mulberry32</code> PRNG → crash point; a server route proxies the chain and falls back to <code style={{ fontSize: '0.85em' }}>Math.random()</code>.</div>
+                <div className="cs-comp-cell highlight" data-label="How It's Solved">A real blockchain block → <code className="cs-sm">mulberry32</code> PRNG → crash point; a server route proxies the chain and falls back to <code className="cs-sm">Math.random()</code>.</div>
               </div>
             </div>
           </section>
@@ -268,30 +269,30 @@ export default function CaseStudyPropBet() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">A round's crash point has <strong style={{ color: '#fff' }}>no fixed length</strong> - most rounds burst low (1.0x-2x), while a rare few rocket past 40x, exactly like the history rail (<strong style={{ color: '#fff' }}>1.24x · 2.00x · 5.71x · 18.4x · 42.0x</strong>). The engine seals that number at take-off from a seeded draw, so the outcome is fixed before the plane leaves the ground - the loop only <strong style={{ color: '#fff' }}>reveals</strong> it.</p>
+              <p className="cs-callout-text">A round's crash point has <strong className="cs-w">no fixed length</strong> - most rounds burst low (1.0x-2x), while a rare few rocket past 40x, exactly like the history rail (<strong className="cs-w">1.24x · 2.00x · 5.71x · 18.4x · 42.0x</strong>). The engine seals that number at take-off from a seeded draw, so the outcome is fixed before the plane leaves the ground - the loop only <strong className="cs-w">reveals</strong> it.</p>
             </div>
 
             <h3 className="cs-sub-heading">The Canvas-and-Refs Game Loop</h3>
 
             <p className="cs-body">
-              <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>Game.tsx</code> renders the canvas and both bet panels once, then a <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>useEffect</code> starts the <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>requestAnimationFrame</code> loop. The entire simulation - plane, multiplier, parallax clouds, exhaust particles and the other-player bots - lives in refs, and React state is synced only a few times a second to mirror what the panels show: phase, the throttled multiplier, balance and history. So the canvas animates at 60fps without React re-rendering every frame - which also sidesteps the stale-closure bug that would mis-price a cash-out if the player tapped the button at 8.4x while React held a frame-old multiplier in state.
+              <code className="cs-code-cyan">Game.tsx</code> renders the canvas and both bet panels once, then a <code className="cs-code-cyan">useEffect</code> starts the <code className="cs-code-cyan">requestAnimationFrame</code> loop. The entire simulation - plane, multiplier, parallax clouds, exhaust particles and the other-player bots - lives in refs, and React state is synced only a few times a second to mirror what the panels show: phase, the throttled multiplier, balance and history. So the canvas animates at 60fps without React re-rendering every frame - which also sidesteps the stale-closure bug that would mis-price a cash-out if the player tapped the button at 8.4x while React held a frame-old multiplier in state.
             </p>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📁</div>
                 <h4>engine.ts</h4>
-                <p>Pure crash math. <code style={{ fontSize: '0.85em' }}>sampleCrashPoint</code> draws the bust multiplier from <code style={{ fontSize: '0.85em' }}>P(crash ≥ x) = (1−edge)/x</code> at a 3% house edge; <code style={{ fontSize: '0.85em' }}>multiplierAt</code> maps flight time to the live multiplier via <code style={{ fontSize: '0.85em' }}>m(t) = e^(0.1·t)</code>. Owns phase timings, bet limits and the 5,000x cap.</p>
+                <p>Pure crash math. <code className="cs-sm">sampleCrashPoint</code> draws the bust multiplier from <code className="cs-sm">P(crash ≥ x) = (1−edge)/x</code> at a 3% house edge; <code className="cs-sm">multiplierAt</code> maps flight time to the live multiplier via <code className="cs-sm">m(t) = e^(0.1·t)</code>. Owns phase timings, bet limits and the 5,000x cap.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎮</div>
                 <h4>Game.tsx</h4>
-                <p>The component and the loop in one. Renders the canvas + panels once, boots the <code style={{ fontSize: '0.85em' }}>requestAnimationFrame</code> loop, runs the whole simulation from refs, and syncs throttled state - phase, multiplier, balance, history - to the panels.</p>
+                <p>The component and the loop in one. Renders the canvas + panels once, boots the <code className="cs-sm">requestAnimationFrame</code> loop, runs the whole simulation from refs, and syncs throttled state - phase, multiplier, balance, history - to the panels.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔗</div>
                 <h4>blockchainRng.ts</h4>
-                <p>Provably-fair seed. Fetches a real block-derived number from <code style={{ fontSize: '0.85em' }}>/api/crash-seed</code>, derives a per-round seed, and feeds a <code style={{ fontSize: '0.85em' }}>mulberry32</code> PRNG whose first output is the uniform the crash formula consumes - with a quiet <code style={{ fontSize: '0.85em' }}>Math.random()</code> fallback.</p>
+                <p>Provably-fair seed. Fetches a real block-derived number from <code className="cs-sm">/api/crash-seed</code>, derives a per-round seed, and feeds a <code className="cs-sm">mulberry32</code> PRNG whose first output is the uniform the crash formula consumes - with a quiet <code className="cs-sm">Math.random()</code> fallback.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔊</div>
@@ -314,7 +315,7 @@ export default function CaseStudyPropBet() {
             <h2 className="cs-section-title">Game Systems &amp; Visual Identity</h2>
 
             <p className="cs-body">
-              The multiplier climbs an exponential curve - <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>m(t) = e^(0.1·t)</code>, so 2x lands around 6.9s and 10x around 23s. A round's crash point is drawn once at take-off from the industry-standard distribution <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>P(crash ≥ x) = (1−edge)/x</code> at a <strong>3% house edge</strong> - a 97% long-run RTP, with about 3% of rounds busting instantly at 1.00x and a rare few flying past 40x toward the 5,000x cap. Two independent bet panels let a player hedge: cash one out early at 2x for safety and let the second ride. The whole cycle - bet, climb, cash out or crash, payout - resolves in the browser with a 50,000-credit demo balance and no real money.
+              The multiplier climbs an exponential curve - <code className="cs-code-cyan">m(t) = e^(0.1·t)</code>, so 2x lands around 6.9s and 10x around 23s. A round's crash point is drawn once at take-off from the industry-standard distribution <code className="cs-code-cyan">P(crash ≥ x) = (1−edge)/x</code> at a <strong>3% house edge</strong> - a 97% long-run RTP, with about 3% of rounds busting instantly at 1.00x and a rare few flying past 40x toward the 5,000x cap. Two independent bet panels let a player hedge: cash one out early at 2x for safety and let the second ride. The whole cycle - bet, climb, cash out or crash, payout - resolves in the browser with a 50,000-credit demo balance and no real money.
             </p>
 
             <code className="cs-code">
@@ -388,9 +389,9 @@ export default function CaseStudyPropBet() {
                 <div className="cs-compare-label"><i>🎲</i> Provably-Fair Engine</div>
                 <div className="cs-compare-body">
                   <ul className="cs-list">
-                    <li><div className="cs-list-bullet"></div><span>Each round's seed is a real, public <strong>blockchain block</strong> fetched via <code style={{ fontSize: '0.85em' }}>/api/crash-seed</code> - not <code style={{ fontSize: '0.85em' }}>Math.random()</code></span></li>
-                    <li><div className="cs-list-bullet"></div><span>That block seeds a <code style={{ fontSize: '0.85em' }}>mulberry32</code> PRNG whose first draw sets the crash point, so every round is a reproducible function of a verifiable number</span></li>
-                    <li><div className="cs-list-bullet"></div><span>A 3% house edge is baked into the distribution (97% RTP), with a quiet <code style={{ fontSize: '0.85em' }}>Math.random()</code> fallback if the chain is down</span></li>
+                    <li><div className="cs-list-bullet"></div><span>Each round's seed is a real, public <strong>blockchain block</strong> fetched via <code className="cs-sm">/api/crash-seed</code> - not <code className="cs-sm">Math.random()</code></span></li>
+                    <li><div className="cs-list-bullet"></div><span>That block seeds a <code className="cs-sm">mulberry32</code> PRNG whose first draw sets the crash point, so every round is a reproducible function of a verifiable number</span></li>
+                    <li><div className="cs-list-bullet"></div><span>A 3% house edge is baked into the distribution (97% RTP), with a quiet <code className="cs-sm">Math.random()</code> fallback if the chain is down</span></li>
                   </ul>
                 </div>
               </div>
@@ -413,10 +414,10 @@ export default function CaseStudyPropBet() {
                 <div className="glass-box">
                   <div className="typo-hero">Orbitron</div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 800 }}>Extra Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 900 }}>Black</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
+                    <span className="typo-weight-item cs-fw-700">Bold</span>
+                    <span className="typo-weight-item cs-fw-800">Extra Bold</span>
+                    <span className="typo-weight-item cs-fw-900">Black</span>
                   </div>
                 </div>
               </div>
@@ -427,12 +428,12 @@ export default function CaseStudyPropBet() {
                   <div className="sg-unit-title">Color</div>
                   <p className="sg-unit-desc">PropBet's cockpit-HUD palette - deep midnight-blue instrument panels, electric sky-blue for the live curve and multiplier, altitude amber for the climb, a crash crimson for the moment the plane flies away, and cash-out green for a win.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#43E8FF' }}><span className="color-hex">#43E8FF<br/>67, 232, 255</span></div>
-                    <div className="color-block" style={{ background: '#9AF6FF' }}><span className="color-hex">#9AF6FF<br/>154, 246, 255</span></div>
-                    <div className="color-block" style={{ background: '#F4C64A' }}><span className="color-hex">#F4C64A<br/>244, 198, 74</span></div>
-                    <div className="color-block" style={{ background: '#FF2E63' }}><span className="color-hex">#FF2E63<br/>255, 46, 99</span></div>
-                    <div className="color-block" style={{ background: '#2EE6A6' }}><span className="color-hex">#2EE6A6<br/>46, 230, 166</span></div>
-                    <div className="color-block" style={{ background: '#0B1220' }}><span className="color-hex">#0B1220<br/>11, 18, 32</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#43E8FF' })}><span className="color-hex">#43E8FF<br/>67, 232, 255</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#9AF6FF' })}><span className="color-hex">#9AF6FF<br/>154, 246, 255</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#F4C64A' })}><span className="color-hex">#F4C64A<br/>244, 198, 74</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FF2E63' })}><span className="color-hex">#FF2E63<br/>255, 46, 99</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#2EE6A6' })}><span className="color-hex">#2EE6A6<br/>46, 230, 166</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#0B1220' })}><span className="color-hex">#0B1220<br/>11, 18, 32</span></div>
                   </div>
                 </div>
               </div>
@@ -514,12 +515,12 @@ export default function CaseStudyPropBet() {
               <div className="cs-card">
                 <div className="cs-card-icon">✈️</div>
                 <h4>2 · Build the Engine</h4>
-                <p>Implemented <code style={{ fontSize: '0.85em' }}>engine.ts</code> first - the pure crash math: the <code style={{ fontSize: '0.85em' }}>(1−edge)/x</code> distribution, the <code style={{ fontSize: '0.85em' }}>e^(0.1·t)</code> growth curve, phase timings and bet limits. Validated the RTP and payouts by hand before touching the UI.</p>
+                <p>Implemented <code className="cs-sm">engine.ts</code> first - the pure crash math: the <code className="cs-sm">(1−edge)/x</code> distribution, the <code className="cs-sm">e^(0.1·t)</code> growth curve, phase timings and bet limits. Validated the RTP and payouts by hand before touching the UI.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎮</div>
                 <h4>3 · The Canvas Loop</h4>
-                <p>Built the <code style={{ fontSize: '0.85em' }}>requestAnimationFrame</code> loop inside <code style={{ fontSize: '0.85em' }}>Game.tsx</code>, driving the whole simulation from refs so the canvas runs at 60fps while React state syncs only a few times a second - no per-frame re-renders, no stale cash-outs.</p>
+                <p>Built the <code className="cs-sm">requestAnimationFrame</code> loop inside <code className="cs-sm">Game.tsx</code>, driving the whole simulation from refs so the canvas runs at 60fps while React state syncs only a few times a second - no per-frame re-renders, no stale cash-outs.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🛩️</div>
@@ -559,7 +560,7 @@ export default function CaseStudyPropBet() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"From 1.00x to the moment it flies away - a seeded crash engine, dual bets, auto cash-out and a live history rail - <em>built end-to-end through vibe coding.</em>"</p>
             </div>
 

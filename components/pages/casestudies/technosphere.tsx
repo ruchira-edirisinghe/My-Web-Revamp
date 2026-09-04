@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -75,7 +76,7 @@ export default function CaseStudyTechnosphere() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              TECHNOSPHERE, a pioneering technical convention organized by the FOSS Community of NSBM Green University, emerged as a transformative platform for technophiles in 2022. This project reimagined the event's digital presence to answer one critical question: <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>How can we create a seamless, engaging experience that reflects the innovative spirit of a tech convention?</em>
+              TECHNOSPHERE, a pioneering technical convention organized by the FOSS Community of NSBM Green University, emerged as a transformative platform for technophiles in 2022. This project reimagined the event's digital presence to answer one critical question: <em className="cs-em-gold">How can we create a seamless, engaging experience that reflects the innovative spirit of a tech convention?</em>
             </p>
           </div>
 
@@ -294,7 +295,7 @@ export default function CaseStudyTechnosphere() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">Low-fidelity wireframes were iteratively refined based on feedback, leading to a high-fidelity prototype that mapped out the layout to ensure users could find information <strong style={{ color: '#fff' }}>quickly and intuitively</strong> during the event.</p>
+              <p className="cs-callout-text">Low-fidelity wireframes were iteratively refined based on feedback, leading to a high-fidelity prototype that mapped out the layout to ensure users could find information <strong className="cs-w">quickly and intuitively</strong> during the event.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -370,10 +371,10 @@ export default function CaseStudyTechnosphere() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#000000' }}><span className="color-hex">#000000</span></div>
-                    <div className="color-block" style={{ background: '#7b6fff' }}><span className="color-hex">#7B6FFF</span></div>
-                    <div className="color-block" style={{ background: '#38d9f5' }}><span className="color-hex">#38D9F5</span></div>
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#000000' })}><span className="color-hex">#000000</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#7b6fff' })}><span className="color-hex">#7B6FFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#38d9f5' })}><span className="color-hex">#38D9F5</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
                   </div>
                 </div>
               </div>
@@ -532,7 +533,7 @@ export default function CaseStudyTechnosphere() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"The TECHNOSPHERE website redesign exemplifies the power of user-centered design in creating digital experiences that are both functional and visually appealing."</p>
             </div>
 

@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -78,7 +79,7 @@ export default function CaseStudyAetherDynasty() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              Aether Dynasty is a fully playable browser slot with a cascading expanding board - seven Greek-mythology symbols, a Golden Frame that transforms into a Wild, board growth from 4,096 to a maximum 46,656 ways, Free Games with a rising multiplier, and a maximum payout of Rs 10,000,000. The whole engine runs client-side with no backend. The aesthetic is <em style={{ color: '#43e8ff', fontStyle: 'normal', fontWeight: 500 }}>"Neon Antiquity"</em> - an ancient torchlit temple carved in stone, electrified by holographic scanlines and a counter-rotating astrolabe rune-ring. Built entirely through vibe coding.
+              Aether Dynasty is a fully playable browser slot with a cascading expanding board - seven Greek-mythology symbols, a Golden Frame that transforms into a Wild, board growth from 4,096 to a maximum 46,656 ways, Free Games with a rising multiplier, and a maximum payout of Rs 10,000,000. The whole engine runs client-side with no backend. The aesthetic is <em className="cs-em-cyan">"Neon Antiquity"</em> - an ancient torchlit temple carved in stone, electrified by holographic scanlines and a counter-rotating astrolabe rune-ring. Built entirely through vibe coding.
             </p>
           </div>
 
@@ -134,7 +135,7 @@ export default function CaseStudyAetherDynasty() {
             <h2 className="cs-section-title">Tech Stack &amp; Approach</h2>
 
             <p className="cs-body">
-              The game is a single Next.js (App Router) application in TypeScript, bundled with Turbopack and deployed to Netlify. The key architectural decision is its <strong>imperative controller pattern</strong> - the React component renders the full game markup once on mount and never re-renders. All subsequent state changes are DOM mutations driven by <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>controller.ts</code>. The game engine (<code style={{ color: '#43e8ff', fontSize: '0.9em' }}>engine.ts</code>) resolves the entire cascade chain synchronously and returns it as a data structure; the controller then replays it visually, step by step.
+              The game is a single Next.js (App Router) application in TypeScript, bundled with Turbopack and deployed to Netlify. The key architectural decision is its <strong>imperative controller pattern</strong> - the React component renders the full game markup once on mount and never re-renders. All subsequent state changes are DOM mutations driven by <code className="cs-code-cyan">controller.ts</code>. The game engine (<code className="cs-code-cyan">engine.ts</code>) resolves the entire cascade chain synchronously and returns it as a data structure; the controller then replays it visually, step by step.
             </p>
 
             <h3 className="cs-sub-heading">Simple Slot vs. How Aether Dynasty Is Engineered</h3>
@@ -219,7 +220,7 @@ export default function CaseStudyAetherDynasty() {
                 <div className="cs-comp-header">⚙️ engine.ts</div>
                 <div className="cs-comp-cell" data-label="Responsibility">Resolve full cascade chain per spin.</div>
                 <div className="cs-comp-cell" data-label="Key Challenge">Correct order: eliminate → transform → decrement → gravity → refill → expand.</div>
-                <div className="cs-comp-cell highlight" data-label="How It's Solved">Single synchronous pass returns array of <code style={{ fontSize: '0.85em' }}>CascadeStep[]</code> for UI replay.</div>
+                <div className="cs-comp-cell highlight" data-label="How It's Solved">Single synchronous pass returns array of <code className="cs-sm">CascadeStep[]</code> for UI replay.</div>
               </div>
               <div className="cs-comp-col">
                 <div className="cs-comp-header">🕹️ controller.ts</div>
@@ -268,25 +269,25 @@ export default function CaseStudyAetherDynasty() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The cascade chain has <strong style={{ color: '#fff' }}>no fixed length</strong> - it continues until no new winning combinations form. In the best case, the board expands every cascade and reaches 46,656 ways, triggering Free Games. The engine handles all of this in a <strong style={{ color: '#fff' }}>single synchronous call</strong> before the first animation frame begins.</p>
+              <p className="cs-callout-text">The cascade chain has <strong className="cs-w">no fixed length</strong> - it continues until no new winning combinations form. In the best case, the board expands every cascade and reaches 46,656 ways, triggering Free Games. The engine handles all of this in a <strong className="cs-w">single synchronous call</strong> before the first animation frame begins.</p>
             </div>
 
             <h3 className="cs-sub-heading">The Imperative Controller Pattern</h3>
 
             <p className="cs-body">
-              <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>Game.tsx</code> renders the complete game markup once - the board cells, HUD, modals, reels. It never re-renders. On mount, <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>useEffect</code> calls <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>boot()</code> from the controller, which attaches all event listeners and begins the game loop. After that, every visual update is a direct DOM mutation by element ID. This makes it behave more like a game engine than a typical React app - and avoids the stale closure and reconciliation overhead that would come from tracking a cascading board in React state.
+              <code className="cs-code-cyan">Game.tsx</code> renders the complete game markup once - the board cells, HUD, modals, reels. It never re-renders. On mount, <code className="cs-code-cyan">useEffect</code> calls <code className="cs-code-cyan">boot()</code> from the controller, which attaches all event listeners and begins the game loop. After that, every visual update is a direct DOM mutation by element ID. This makes it behave more like a game engine than a typical React app - and avoids the stale closure and reconciliation overhead that would come from tracking a cascading board in React state.
             </p>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📁</div>
                 <h4>engine.ts</h4>
-                <p>Pure logic. Takes the current board + heights + bet, resolves the full cascade chain, returns <code style={{ fontSize: '0.85em' }}>SpinResult</code> with cascades, totalWin, finalHeights, and a Free Game trigger flag.</p>
+                <p>Pure logic. Takes the current board + heights + bet, resolves the full cascade chain, returns <code className="cs-sm">SpinResult</code> with cascades, totalWin, finalHeights, and a Free Game trigger flag.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎮</div>
                 <h4>controller.ts</h4>
-                <p>Boots from <code style={{ fontSize: '0.85em' }}>useEffect</code> via <code style={{ fontSize: '0.85em' }}>boot()</code>. Calls the engine on each spin, then replays the cascade steps frame-by-frame through DOM mutations. Owns turbo, auto-spin, and sound.</p>
+                <p>Boots from <code className="cs-sm">useEffect</code> via <code className="cs-sm">boot()</code>. Calls the engine on each spin, then replays the cascade steps frame-by-frame through DOM mutations. Owns turbo, auto-spin, and sound.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🪙</div>
@@ -314,7 +315,7 @@ export default function CaseStudyAetherDynasty() {
             <h2 className="cs-section-title">Game Systems &amp; Visual Identity</h2>
 
             <p className="cs-body">
-              The board starts at <strong>4 rows × 6 reels = 4,096 ways</strong>. Each cascade that produces a win expands one participating reel by one row (randomly selected from touched columns), slowly growing the board toward <strong>46,656 ways (6⁶)</strong>. Ways are always the product of active row heights across all six reels - <code style={{ color: '#43e8ff', fontSize: '0.9em' }}>waysOf(heights)</code> multiplies them together. Reaching the maximum triggers Free Games.
+              The board starts at <strong>4 rows × 6 reels = 4,096 ways</strong>. Each cascade that produces a win expands one participating reel by one row (randomly selected from touched columns), slowly growing the board toward <strong>46,656 ways (6⁶)</strong>. Ways are always the product of active row heights across all six reels - <code className="cs-code-cyan">waysOf(heights)</code> multiplies them together. Reaching the maximum triggers Free Games.
             </p>
 
             <code className="cs-code">
@@ -415,12 +416,12 @@ export default function CaseStudyAetherDynasty() {
                 <div className="glass-box">
                   <div className="typo-hero">Spectral</div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 300 }}>Light</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 400, fontStyle: 'italic' }}>Italic</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 600 }}>Semi Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
+                    <span className="typo-weight-item cs-fw-300">Light</span>
+                    <span className="typo-weight-item cs-fw-400">Regular</span>
+                    <span className="typo-weight-item cs-fw-400 cs-italic">Italic</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
+                    <span className="typo-weight-item cs-fw-600">Semi Bold</span>
+                    <span className="typo-weight-item cs-fw-700">Bold</span>
                   </div>
                 </div>
               </div>
@@ -430,21 +431,21 @@ export default function CaseStudyAetherDynasty() {
                 <div className="glass-box">
                   <div className="sg-unit-title">Colour - Neon Antiquity Palette</div>
                   <p className="sg-unit-desc">Deep warm blacks from ancient stone, ink-parchment for text, neon cyan for the holographic layer, gold for divine symbols, and plasma purple for the mystical atmosphere. The tension between stone warmth and neon cold defines the aesthetic.</p>
-                  <div className="color-strip" style={{ marginTop: '20px' }}>
-                    <div className="color-block" style={{ background: '#0c0608' }}><span className="color-hex">bg-0</span></div>
-                    <div className="color-block" style={{ background: '#1b0f16' }}><span className="color-hex">bg-1</span></div>
-                    <div className="color-block" style={{ background: '#241b12' }}><span className="color-hex">stone-d</span></div>
-                    <div className="color-block" style={{ background: '#3a2f22' }}><span className="color-hex">stone-2</span></div>
-                    <div className="color-block" style={{ background: '#5a4a36' }}><span className="color-hex">stone-1</span></div>
-                    <div className="color-block" style={{ background: '#f3e7cf' }}><span className="color-hex">ink</span></div>
+                  <div className="color-strip cs-mt-20">
+                    <div className="color-block" style={cssVars({ '--sw': '#0c0608' })}><span className="color-hex">bg-0</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#1b0f16' })}><span className="color-hex">bg-1</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#241b12' })}><span className="color-hex">stone-d</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#3a2f22' })}><span className="color-hex">stone-2</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#5a4a36' })}><span className="color-hex">stone-1</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#f3e7cf' })}><span className="color-hex">ink</span></div>
                   </div>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#43e8ff' }}><span className="color-hex">neon</span></div>
-                    <div className="color-block" style={{ background: '#9af6ff' }}><span className="color-hex">neon-2</span></div>
-                    <div className="color-block" style={{ background: '#f4c64a' }}><span className="color-hex">gold-2</span></div>
-                    <div className="color-block" style={{ background: '#b9821f' }}><span className="color-hex">gold-3</span></div>
-                    <div className="color-block" style={{ background: '#a64bff' }}><span className="color-hex">plasma</span></div>
-                    <div className="color-block" style={{ background: '#ff8a1e' }}><span className="color-hex">orange</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#43e8ff' })}><span className="color-hex">neon</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#9af6ff' })}><span className="color-hex">neon-2</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#f4c64a' })}><span className="color-hex">gold-2</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#b9821f' })}><span className="color-hex">gold-3</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#a64bff' })}><span className="color-hex">plasma</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#ff8a1e' })}><span className="color-hex">orange</span></div>
                   </div>
                 </div>
               </div>
@@ -526,12 +527,12 @@ export default function CaseStudyAetherDynasty() {
               <div className="cs-card">
                 <div className="cs-card-icon">⚙️</div>
                 <h4>2 · Build the Engine</h4>
-                <p>Implemented <code style={{ fontSize: '0.85em' }}>engine.ts</code> first - the pure cascade resolver that takes a board state and returns the complete chain as <code style={{ fontSize: '0.85em' }}>CascadeStep[]</code>. Validated payouts manually against known board states before moving on.</p>
+                <p>Implemented <code className="cs-sm">engine.ts</code> first - the pure cascade resolver that takes a board state and returns the complete chain as <code className="cs-sm">CascadeStep[]</code>. Validated payouts manually against known board states before moving on.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎮</div>
                 <h4>3 · Imperative Controller</h4>
-                <p>Built <code style={{ fontSize: '0.85em' }}>controller.ts</code> as the only piece that touches the DOM. The <code style={{ fontSize: '0.85em' }}>boot()</code> pattern keeps React out of the game loop entirely - no state, no re-renders, no stale closures mid-cascade.</p>
+                <p>Built <code className="cs-sm">controller.ts</code> as the only piece that touches the DOM. The <code className="cs-sm">boot()</code> pattern keeps React out of the game loop entirely - no state, no re-renders, no stale closures mid-cascade.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏛️</div>
@@ -571,7 +572,7 @@ export default function CaseStudyAetherDynasty() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"From 4,096 to 46,656 ways through cascades - seven symbols, a Golden Chalice Wild, Free Games, Golden Treasure, and a Rs 10M payout ceiling - <em>built end-to-end through vibe coding.</em>"</p>
             </div>
 

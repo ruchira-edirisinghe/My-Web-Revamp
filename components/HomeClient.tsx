@@ -66,6 +66,9 @@ export default function HomeClient() {
           <div className="aurora-blob blob-2"></div>
           <div className="aurora-blob blob-3"></div>
           <div id="preloader-stars"></div>
+          {/* Depth starfield + completion flash; stays empty without WebGL,
+              and the CSS stars above still carry the look on their own. */}
+          <canvas id="preloader-fx"></canvas>
         </div>
         <div className="preloader-content">
           <canvas id="preloader-canvas"></canvas>

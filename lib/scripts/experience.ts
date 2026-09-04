@@ -13,6 +13,8 @@
    disconnected; Web Audio closed; appended nodes removed on dispose.
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { initPreloaderFx } from './preloader-fx';
+import { initSpaceField3D } from './space-field';
 import { wireAmbientControls } from './ambient-audio';
 
 export function initExperience(): () => void {
@@ -28,6 +30,8 @@ export function initExperience(): () => void {
 
   /* ══════════ 2. SPACE BACKGROUND (experience.js #2) ══════════ */
   (function () {
+    // WebGL field first; the 2D starfield below is the no-WebGL fallback.
+    if (initSpaceField3D(bag)) return;
     const canvas = document.getElementById('space-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -122,6 +126,7 @@ export function initExperience(): () => void {
   /* ══════════ 3. PRELOADER (experience.js #3) ══════════ */
   (function () {
     const preloader = document.getElementById('preloader');
+    initPreloaderFx(bag);
     const canvas = document.getElementById('preloader-canvas');
     if (!preloader || !canvas || preloader.style.display === 'none') return;
     const ctx = canvas.getContext('2d');
@@ -148,16 +153,16 @@ export function initExperience(): () => void {
     const starsContainer = document.getElementById('preloader-stars');
     const createdStars = [];
     if (starsContainer) {
-      const starCount = 80;
+      const starCount = 34;
       for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
         star.className = 'preloader-star';
         const x = Math.random() * 100;
         const y = Math.random() * 100;
-        const size = 1 + Math.random() * 2;
-        const delay = Math.random() * 5;
-        const duration = 2 + Math.random() * 3;
-        const opacity = 0.4 + Math.random() * 0.5;
+        const size = 0.8 + Math.pow(Math.random(), 2) * 1.5;
+        const delay = Math.random() * 6;
+        const duration = 3.5 + Math.random() * 4.5;
+        const opacity = 0.18 + Math.random() * 0.3;
 
         star.style.left = `${x}%`;
         star.style.top = `${y}%`;

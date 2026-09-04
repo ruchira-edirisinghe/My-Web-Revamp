@@ -201,7 +201,7 @@
       position: absolute;
       width: 2px;
       height: 2px;
-      background: #fff;
+      background: #e6ecff;
       border-radius: 50%;
       opacity: 0;
     }
@@ -230,8 +230,8 @@
     }
 
     @keyframes star-twinkle {
-      0%, 100% { opacity: 0; }
-      50% { opacity: var(--star-opacity, 0.8); }
+      0%, 100% { opacity: calc(var(--star-opacity, 0.3) * 0.62); }
+      50% { opacity: var(--star-opacity, 0.3); }
     }
 
     #preloader-canvas {

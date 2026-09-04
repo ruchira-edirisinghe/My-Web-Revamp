@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -76,7 +77,7 @@ export default function CaseStudyLyaportal() {
 
           <div className="cs-elevator">
             <p>
-              Registering and paying for an exam is often the most stressful part of taking one - scattered forms, unclear fees and no shared view for the families and teachers involved. The LYA Exam Portal - Lyceum Academy's online examination platform - turns that chaos into a calm, guided journey across three roles, where every step is <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>clear, trusted and stress-free.</em>
+              Registering and paying for an exam is often the most stressful part of taking one - scattered forms, unclear fees and no shared view for the families and teachers involved. The LYA Exam Portal - Lyceum Academy's online examination platform - turns that chaos into a calm, guided journey across three roles, where every step is <em className="cs-em-gold">clear, trusted and stress-free.</em>
             </p>
           </div>
 
@@ -253,7 +254,7 @@ export default function CaseStudyLyaportal() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The same core journey was tailored into <strong style={{ color: '#fff' }}>three role-based flows</strong> - student, parent and teacher - sharing one design system so the portal feels consistent no matter who logs in.</p>
+              <p className="cs-callout-text">The same core journey was tailored into <strong className="cs-w">three role-based flows</strong> - student, parent and teacher - sharing one design system so the portal feels consistent no matter who logs in.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -314,11 +315,11 @@ export default function CaseStudyLyaportal() {
                     <span className="typo-scale-item">11pt</span>
                   </div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 300 }}>Light</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 600 }}>Semi Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
+                    <span className="typo-weight-item cs-fw-300">Light</span>
+                    <span className="typo-weight-item cs-fw-400">Regular</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
+                    <span className="typo-weight-item cs-fw-600">Semi Bold</span>
+                    <span className="typo-weight-item cs-fw-700">Bold</span>
                   </div>
                 </div>
               </div>
@@ -328,10 +329,10 @@ export default function CaseStudyLyaportal() {
                   <div className="sg-unit-title">Color</div>
                   <p className="sg-unit-desc">A blue and mainly-white palette was used to reflect trust and professionalism, for a calm and welcoming interface.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#000000' }}><span className="color-hex">#000000</span></div>
-                    <div className="color-block" style={{ background: '#285BA2' }}><span className="color-hex">#285BA2</span></div>
-                    <div className="color-block" style={{ background: '#E5EBF3' }}><span className="color-hex">#E5EBF3</span></div>
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#000000' })}><span className="color-hex">#000000</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#285BA2' })}><span className="color-hex">#285BA2</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#E5EBF3' })}><span className="color-hex">#E5EBF3</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
                   </div>
                 </div>
               </div>
@@ -499,7 +500,7 @@ export default function CaseStudyLyaportal() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"One portal, three confident journeys - with the payment step finally feeling as <em>trustworthy</em> as it should."</p>
             </div>
 

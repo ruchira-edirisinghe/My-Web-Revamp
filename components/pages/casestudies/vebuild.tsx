@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 import { initVebuildTabs } from '@/lib/scripts/vebuild';
@@ -84,7 +85,7 @@ export default function CaseStudyVebuild() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              VEBUILD, a construction company, set out to build a digital presence as solid and refined as the structures it delivers. This project reimagined the company's website around one guiding belief: <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>The modern user expects more than just information; they seek an experience that is both visually appealing and easy to navigate.</em>
+              VEBUILD, a construction company, set out to build a digital presence as solid and refined as the structures it delivers. This project reimagined the company's website around one guiding belief: <em className="cs-em-gold">The modern user expects more than just information; they seek an experience that is both visually appealing and easy to navigate.</em>
             </p>
           </div>
 
@@ -305,7 +306,7 @@ export default function CaseStudyVebuild() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">Low-fidelity wireframes were refined iteratively and validated through user testing with a diverse group - surfacing the need for <strong style={{ color: '#fff' }}>clearer calls-to-action, improved readability, and more intuitive navigation</strong> before moving to the high-fidelity prototype.</p>
+              <p className="cs-callout-text">Low-fidelity wireframes were refined iteratively and validated through user testing with a diverse group - surfacing the need for <strong className="cs-w">clearer calls-to-action, improved readability, and more intuitive navigation</strong> before moving to the high-fidelity prototype.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -385,9 +386,9 @@ export default function CaseStudyVebuild() {
                   <div className="sg-unit-title">Color</div>
                   <p className="sg-unit-desc">A green and bluish-toned palette was used - these are the colours of the company's logo and overall brand theme.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#1F394F' }}><span className="color-hex">#1F394F</span></div>
-                    <div className="color-block" style={{ background: '#01A59E' }}><span className="color-hex">#01A59E</span></div>
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#1F394F' })}><span className="color-hex">#1F394F</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#01A59E' })}><span className="color-hex">#01A59E</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
                   </div>
                 </div>
               </div>
@@ -538,7 +539,7 @@ export default function CaseStudyVebuild() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"The VEBUILD website redesign exemplifies the power of user-centered design in creating digital experiences that are both functional and visually appealing."</p>
             </div>
 
@@ -748,7 +749,7 @@ export default function CaseStudyVebuild() {
 
               <div className="cs-callout">
                 <div className="cs-callout-icon">💡</div>
-                <p className="cs-callout-text">A <strong style={{ color: '#fff' }}>card-based information architecture</strong> with four entry filters - Project Type, Service, Location and Project Size - let users slice a complex portfolio quickly, while interactive tools turned dense data into something explorable.</p>
+                <p className="cs-callout-text">A <strong className="cs-w">card-based information architecture</strong> with four entry filters - Project Type, Service, Location and Project Size - let users slice a complex portfolio quickly, while interactive tools turned dense data into something explorable.</p>
               </div>
 
               <h3 className="cs-sub-heading">Architecture &amp; Interaction</h3>
@@ -823,9 +824,9 @@ export default function CaseStudyVebuild() {
                     <div className="sg-unit-title">Color</div>
                     <p className="sg-unit-desc">A green and bluish-toned palette was used - these are the colours of the company's logo and overall brand theme.</p>
                     <div className="color-strip">
-                      <div className="color-block" style={{ background: '#1F394F' }}><span className="color-hex">#1F394F</span></div>
-                      <div className="color-block" style={{ background: '#01A59E' }}><span className="color-hex">#01A59E</span></div>
-                      <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
+                      <div className="color-block" style={cssVars({ '--sw': '#1F394F' })}><span className="color-hex">#1F394F</span></div>
+                      <div className="color-block" style={cssVars({ '--sw': '#01A59E' })}><span className="color-hex">#01A59E</span></div>
+                      <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
                     </div>
                   </div>
                 </div>
@@ -993,7 +994,7 @@ export default function CaseStudyVebuild() {
                 </div>
               </div>
 
-              <div className="cs-highlight" style={{ marginTop: '28px' }}>
+              <div className="cs-highlight cs-mt-28">
                 <p>"The blueprint tool shows our construction approach instantly… it doesn't make me feel technologically challenged."</p>
               </div>
 

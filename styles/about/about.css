@@ -1069,7 +1069,7 @@ body::after {
 
 .preloader-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 32px; }
 
-.preloader-star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; opacity: 0; }
+.preloader-star { position: absolute; width: 2px; height: 2px; background: #e6ecff; border-radius: 50%; opacity: 0; }
 
 @keyframes aurora-pulse {
   0%, 100% { opacity: 0.5; transform: scale(1); }
@@ -1095,8 +1095,8 @@ body::after {
 }
 
 @keyframes star-twinkle {
-  0%, 100% { opacity: 0; }
-  50% { opacity: var(--star-opacity, 0.8); }
+  0%, 100% { opacity: calc(var(--star-opacity, 0.3) * 0.62); }
+  50% { opacity: var(--star-opacity, 0.3); }
 }
 
 #preloader-canvas {

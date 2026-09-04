@@ -1,0 +1,39 @@
+
+> ruchira-portfolio@1.0.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use by process 7080, using available port 3002 instead.
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3002
+   - Network:      http://192.168.1.5:3002
+
+ ✓ Starting...
+ ✓ Ready in 2.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 5.1s (676 modules)
+ GET / 200 in 5675ms
+ ○ Compiling /about ...
+ ✓ Compiled /about in 2.4s (675 modules)
+ GET /about/ 200 in 2870ms
+ ✓ Compiled /projects/web in 447ms (690 modules)
+ GET /projects/web/ 200 in 788ms
+ ○ Compiling /projects ...
+ ✓ Compiled /projects in 991ms (658 modules)
+ GET /projects/ 200 in 1224ms
+ ○ Compiling /experience ...
+ ✓ Compiled /experience in 1437ms (701 modules)
+ GET /experience/ 200 in 1676ms
+ ✓ Compiled in 1174ms (674 modules)
+ ✓ Compiled in 246ms (674 modules)
+ ✓ Compiled in 230ms (674 modules)
+ ✓ Compiled in 252ms (674 modules)
+ ✓ Compiled /about in 235ms (392 modules)
+ GET /about/ 200 in 674ms
+ ✓ Compiled in 210ms (665 modules)
+ ✓ Compiled /projects/web in 196ms (401 modules)
+ GET /projects/web/ 200 in 702ms
+ GET /about/ 200 in 328ms
+ ✓ Compiled in 249ms (674 modules)
+ ○ Compiling /projects ...
+ ✓ Compiled /projects in 681ms (399 modules)
+ GET /projects/ 200 in 957ms

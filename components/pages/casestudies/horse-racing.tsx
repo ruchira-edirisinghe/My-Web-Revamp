@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -85,7 +86,7 @@ export default function CaseStudyHorseRacing() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              Horse Racing Elite is a fully playable, real-time racing arena that lives entirely in the browser - odds, betting, a 60fps race simulation and a neon e-sports skin, with no backend at all. It's also an experiment in <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>vibe coding: building a complete game by steering an AI conversationally, prompt by prompt, system by system.</em>
+              Horse Racing Elite is a fully playable, real-time racing arena that lives entirely in the browser - odds, betting, a 60fps race simulation and a neon e-sports skin, with no backend at all. It's also an experiment in <em className="cs-em-gold">vibe coding: building a complete game by steering an AI conversationally, prompt by prompt, system by system.</em>
             </p>
           </div>
 
@@ -277,7 +278,7 @@ export default function CaseStudyHorseRacing() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The race runs on a <strong style={{ color: '#fff' }}>fixed-timestep loop</strong>: a <code>requestAnimationFrame</code> callback accumulates real elapsed time and advances the simulation in fixed <strong style={{ color: '#fff' }}>16ms steps</strong> (capped at four catch-up steps per frame). Physics is therefore identical whether the device runs at 30, 60 or 144Hz - and a pause flag simply re-queues the frame without advancing time.</p>
+              <p className="cs-callout-text">The race runs on a <strong className="cs-w">fixed-timestep loop</strong>: a <code>requestAnimationFrame</code> callback accumulates real elapsed time and advances the simulation in fixed <strong className="cs-w">16ms steps</strong> (capped at four catch-up steps per frame). Physics is therefore identical whether the device runs at 30, 60 or 144Hz - and a pause flag simply re-queues the frame without advancing time.</p>
             </div>
 
             <h3 className="cs-sub-heading">Core Modules</h3>
@@ -325,7 +326,7 @@ export default function CaseStudyHorseRacing() {
             <code className="cs-code"><span className="cm">// each horse advances per fixed 16ms tick</span>{'\nseed     = roomSeed ?? '}<span className="nm">Math.floor</span>{'(1e4 * '}<span className="nm">Math.random</span>{'()) + 1\nbaseVel  = 0.55 * (0.6*'}<span className="nm">speed</span>{' + 0.4*'}<span className="nm">stamina</span>{') / 100 + 0.1 * rng()\nstrideΔ  = (rng() - 0.5) * 0.2   '}<span className="cm">// ± jitter → lead changes</span>{'\nposition += baseVel + strideΔ    '}<span className="cm">// first past the line wins</span>{'\n\npayout   = stake * '}<span className="nm">horse.odds</span>{'   '}<span className="cm">// e.g. 50cr on 4.0x → 200cr</span></code>
 
             <p className="cs-body">
-              The six horses are tuned so odds, stats and drama line up: the favourite <strong style={{ color: 'var(--lyc-gold)' }}>Thunder Bolt</strong> sits at 2.5× with high speed, while the long shot <strong style={{ color: 'var(--lyc-gold)' }}>Blue Storm</strong> pays 12× - a bigger gamble with weaker odds. A 60% speed / 40% stamina weighting decides the baseline, and the per-tick jitter is what creates the lead-changes that make a race worth watching.
+              The six horses are tuned so odds, stats and drama line up: the favourite <strong className="cs-gold">Thunder Bolt</strong> sits at 2.5× with high speed, while the long shot <strong className="cs-gold">Blue Storm</strong> pays 12× - a bigger gamble with weaker odds. A 60% speed / 40% stamina weighting decides the baseline, and the per-tick jitter is what creates the lead-changes that make a race worth watching.
             </p>
 
             <div className="creative-styleguide">
@@ -337,9 +338,9 @@ export default function CaseStudyHorseRacing() {
                   <p className="sg-unit-desc">A three-font e-sports system: Orbitron for display &amp; numbers, Rajdhani for UI text, and JetBrains Mono for data, timers and stats - all loaded via Google Fonts.</p>
                   <div className="typo-hero">Orbitron</div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 800 }}>Orbitron · Display</span>
-                    <span className="typo-weight-item" style={{ fontFamily: "'Rajdhani',sans-serif", fontWeight: 600 }}>Rajdhani · Interface</span>
-                    <span className="typo-weight-item" style={{ fontFamily: "'JetBrains Mono',monospace" }}>JetBrains Mono · Data</span>
+                    <span className="typo-weight-item cs-ff-orbitron cs-fw-800">Orbitron · Display</span>
+                    <span className="typo-weight-item cs-ff-rajdhani cs-fw-600">Rajdhani · Interface</span>
+                    <span className="typo-weight-item cs-ff-mono">JetBrains Mono · Data</span>
                   </div>
                 </div>
               </div>
@@ -350,20 +351,20 @@ export default function CaseStudyHorseRacing() {
                   <div className="sg-unit-title">Color Tokens</div>
                   <p className="sg-unit-desc">A near-black navy base (<code>--bg-0</code> → <code>--bg-3</code>) lit by three neon accents - gold, cyan and red - plus a win-green. The whole skin is token-driven, so palettes (Default · Cyber · eSports) swap with one attribute.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#05080F' }}><span className="color-hex">#05080F</span></div>
-                    <div className="color-block" style={{ background: '#0A0E1A' }}><span className="color-hex">#0A0E1A</span></div>
-                    <div className="color-block" style={{ background: '#121828' }}><span className="color-hex">#121828</span></div>
-                    <div className="color-block" style={{ background: '#1A2238' }}><span className="color-hex">#1A2238</span></div>
-                    <div className="color-block" style={{ background: '#E8EDFF' }}><span className="color-hex">#E8EDFF</span></div>
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#05080F' })}><span className="color-hex">#05080F</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#0A0E1A' })}><span className="color-hex">#0A0E1A</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#121828' })}><span className="color-hex">#121828</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#1A2238' })}><span className="color-hex">#1A2238</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#E8EDFF' })}><span className="color-hex">#E8EDFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
                   </div>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#FFB800' }}><span className="color-hex">#FFB800</span></div>
-                    <div className="color-block" style={{ background: '#00E5FF' }}><span className="color-hex">#00E5FF</span></div>
-                    <div className="color-block" style={{ background: '#FF2E63' }}><span className="color-hex">#FF2E63</span></div>
-                    <div className="color-block" style={{ background: '#00FF88' }}><span className="color-hex">#00FF88</span></div>
-                    <div className="color-block" style={{ background: '#B388FF' }}><span className="color-hex">#B388FF</span></div>
-                    <div className="color-block" style={{ background: '#FF00E5' }}><span className="color-hex">#FF00E5</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFB800' })}><span className="color-hex">#FFB800</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#00E5FF' })}><span className="color-hex">#00E5FF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FF2E63' })}><span className="color-hex">#FF2E63</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#00FF88' })}><span className="color-hex">#00FF88</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#B388FF' })}><span className="color-hex">#B388FF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FF00E5' })}><span className="color-hex">#FF00E5</span></div>
                   </div>
                 </div>
               </div>
@@ -534,7 +535,7 @@ export default function CaseStudyHorseRacing() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"A fully playable betting race - deterministic, 60fps and backend-free - <em>built end-to-end through vibe coding.</em>"</p>
             </div>
 

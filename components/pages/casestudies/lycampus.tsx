@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -79,7 +80,7 @@ export default function CaseStudyLycampus() {
               A university's website is often the first handshake with a prospective student. Lyceum Campus's existing site
               was fumbling that handshake - burying course information under layers of nested menus, breaking on mobile
               devices, and looking like it hadn't seen a design update in years. This project stripped everything back to
-              one question: <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>what does a student
+              one question: <em className="cs-em-gold">what does a student
                 actually need to find, and how fast can they find it?</em>
             </p>
           </div>
@@ -324,7 +325,7 @@ export default function CaseStudyLycampus() {
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
               <p className="cs-callout-text">The old site forced users through 5-7 clicks to reach admissions contact. The
-                redesigned flow cuts that to <strong style={{ color: '#fff' }}>3 clicks</strong> - with persistent "Apply Now"
+                redesigned flow cuts that to <strong className="cs-w">3 clicks</strong> - with persistent "Apply Now"
                 CTAs visible at every stage of the journey.</p>
             </div>
 
@@ -403,10 +404,10 @@ export default function CaseStudyLycampus() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#000000' }}><span className="color-hex">#000000</span></div>
-                    <div className="color-block" style={{ background: '#285BA2' }}><span className="color-hex">#285BA2</span></div>
-                    <div className="color-block" style={{ background: '#E5EBF3' }}><span className="color-hex">#E5EBF3</span></div>
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#000000' })}><span className="color-hex">#000000</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#285BA2' })}><span className="color-hex">#285BA2</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#E5EBF3' })}><span className="color-hex">#E5EBF3</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
                   </div>
                 </div>
               </div>
@@ -648,7 +649,7 @@ export default function CaseStudyLycampus() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"Users described the redesigned experience as '<em>clean</em>,' '<em>professional</em>,' and - most
                 importantly - '<em>easy to use</em>.' Multiple test participants wished their own university's website
                 worked

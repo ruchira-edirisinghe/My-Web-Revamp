@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -64,7 +65,7 @@ export default function CaseStudyDtmhms() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              Booking a school hall shouldn't mean phone calls, paper forms and double-booked dates. The DTM Hall Management System digitises venue booking for Lyceum's premises - replacing a scattered, paper-based process with one unified platform where availability, pricing and layouts are all <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>clear, visual and bookable in a few taps.</em>
+              Booking a school hall shouldn't mean phone calls, paper forms and double-booked dates. The DTM Hall Management System digitises venue booking for Lyceum's premises - replacing a scattered, paper-based process with one unified platform where availability, pricing and layouts are all <em className="cs-em-gold">clear, visual and bookable in a few taps.</em>
             </p>
           </div>
 
@@ -244,7 +245,7 @@ export default function CaseStudyDtmhms() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The architecture was organised into four clear flows - Discovery, Venue Exploration, Booking Management and Support - using <strong style={{ color: '#fff' }}>progressive disclosure</strong> so complex options only appear when a user actually needs them.</p>
+              <p className="cs-callout-text">The architecture was organised into four clear flows - Discovery, Venue Exploration, Booking Management and Support - using <strong className="cs-w">progressive disclosure</strong> so complex options only appear when a user actually needs them.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -307,11 +308,11 @@ export default function CaseStudyDtmhms() {
                     <span className="typo-scale-item">11pt</span>
                   </div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 300 }}>Light</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 600 }}>Semi Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
+                    <span className="typo-weight-item cs-fw-300">Light</span>
+                    <span className="typo-weight-item cs-fw-400">Regular</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
+                    <span className="typo-weight-item cs-fw-600">Semi Bold</span>
+                    <span className="typo-weight-item cs-fw-700">Bold</span>
                   </div>
                 </div>
               </div>
@@ -322,9 +323,9 @@ export default function CaseStudyDtmhms() {
                   <div className="sg-unit-title">Color</div>
                   <p className="sg-unit-desc">A green and mainly-white themed palette was used to portray a clean and sleek user interface.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#000000' }}><span className="color-hex">#000000</span></div>
-                    <div className="color-block" style={{ background: '#00B6AA' }}><span className="color-hex">#00B6AA</span></div>
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#000000' })}><span className="color-hex">#000000</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#00B6AA' })}><span className="color-hex">#00B6AA</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
                   </div>
                 </div>
               </div>
@@ -499,7 +500,7 @@ export default function CaseStudyDtmhms() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"Finally feels like we've entered the digital age." - <em>School Administrator</em> &nbsp;·&nbsp; "The calendar view saves me hours each week." - <em>Event Coordinator</em></p>
             </div>
 

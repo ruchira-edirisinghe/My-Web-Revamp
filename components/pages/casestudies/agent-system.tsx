@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -76,7 +77,7 @@ export default function CaseStudyAgentSystem() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              747 Agent is the control room behind a sports-betting, e-sports and online-casino platform - where a multi-tier network of agents manages player accounts, credit lines, transfers and commissions. The challenge was to make a data-dense financial back-office feel <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>calm, scannable and trustworthy - in two complete themes, dark and light.</em>
+              747 Agent is the control room behind a sports-betting, e-sports and online-casino platform - where a multi-tier network of agents manages player accounts, credit lines, transfers and commissions. The challenge was to make a data-dense financial back-office feel <em className="cs-em-gold">calm, scannable and trustworthy - in two complete themes, dark and light.</em>
             </p>
           </div>
 
@@ -256,7 +257,7 @@ export default function CaseStudyAgentSystem() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">The <strong style={{ color: '#fff' }}>Agent Tree</strong> is the spine of the product - a hierarchy of roles (Agent Manager &amp; Agent) that expand and collapse, each row carrying main currency, direct players, credit line, total available, balance and both available and pending commission. Every other screen hangs off a node in that tree.</p>
+              <p className="cs-callout-text">The <strong className="cs-w">Agent Tree</strong> is the spine of the product - a hierarchy of roles (Agent Manager &amp; Agent) that expand and collapse, each row carrying main currency, direct players, credit line, total available, balance and both available and pending commission. Every other screen hangs off a node in that tree.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -317,12 +318,12 @@ export default function CaseStudyAgentSystem() {
                     <span className="typo-scale-item">12pt</span>
                   </div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 600 }}>Semibold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 800 }}>Extrabold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 900 }}>Black</span>
+                    <span className="typo-weight-item cs-fw-400">Regular</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
+                    <span className="typo-weight-item cs-fw-600">Semibold</span>
+                    <span className="typo-weight-item cs-fw-700">Bold</span>
+                    <span className="typo-weight-item cs-fw-800">Extrabold</span>
+                    <span className="typo-weight-item cs-fw-900">Black</span>
                   </div>
                 </div>
               </div>
@@ -333,20 +334,20 @@ export default function CaseStudyAgentSystem() {
                   <div className="sg-unit-title">Color Tokens</div>
                   <p className="sg-unit-desc">Slate surfaces and an accent blue anchor the UI; a set of soft semantic accents code the metric chips. Each token is paired for dark &amp; light, so contrast and meaning hold across both themes.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#374151' }}><span className="color-hex">#374151</span></div>
-                    <div className="color-block" style={{ background: '#1F2A37' }}><span className="color-hex">#1F2A37</span></div>
-                    <div className="color-block" style={{ background: '#44576F' }}><span className="color-hex">#44576F</span></div>
-                    <div className="color-block" style={{ background: '#233876' }}><span className="color-hex">#233876</span></div>
-                    <div className="color-block" style={{ background: '#A4CAFE' }}><span className="color-hex">#A4CAFE</span></div>
-                    <div className="color-block" style={{ background: '#F2F3F7' }}><span className="color-hex">#F2F3F7</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#374151' })}><span className="color-hex">#374151</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#1F2A37' })}><span className="color-hex">#1F2A37</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#44576F' })}><span className="color-hex">#44576F</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#233876' })}><span className="color-hex">#233876</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#A4CAFE' })}><span className="color-hex">#A4CAFE</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#F2F3F7' })}><span className="color-hex">#F2F3F7</span></div>
                   </div>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#B51C85' }}><span className="color-hex">#B51C85</span></div>
-                    <div className="color-block" style={{ background: '#F08A43' }}><span className="color-hex">#F08A43</span></div>
-                    <div className="color-block" style={{ background: '#CE3131' }}><span className="color-hex">#CE3131</span></div>
-                    <div className="color-block" style={{ background: '#FAB3E4' }}><span className="color-hex">#FAB3E4</span></div>
-                    <div className="color-block" style={{ background: '#F0D4C1' }}><span className="color-hex">#F0D4C1</span></div>
-                    <div className="color-block" style={{ background: '#D2E5FF' }}><span className="color-hex">#D2E5FF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#B51C85' })}><span className="color-hex">#B51C85</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#F08A43' })}><span className="color-hex">#F08A43</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#CE3131' })}><span className="color-hex">#CE3131</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FAB3E4' })}><span className="color-hex">#FAB3E4</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#F0D4C1' })}><span className="color-hex">#F0D4C1</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#D2E5FF' })}><span className="color-hex">#D2E5FF</span></div>
                   </div>
                 </div>
               </div>
@@ -354,7 +355,7 @@ export default function CaseStudyAgentSystem() {
             </div>
 
             <h3 className="cs-sub-heading">High-Fidelity Screens</h3>
-            <p className="cs-body">The same console, designed end-to-end in two complete themes. The top row shows the <strong style={{ color: '#fff' }}>dark theme</strong>; the bottom row, the <strong style={{ color: '#fff' }}>light theme</strong>. Click any screen to open it in high resolution.</p>
+            <p className="cs-body">The same console, designed end-to-end in two complete themes. The top row shows the <strong className="cs-w">dark theme</strong>; the bottom row, the <strong className="cs-w">light theme</strong>. Click any screen to open it in high resolution.</p>
 
             {/* ─── DARK / LIGHT GALLERY ─── */}
             <div className="ui-gallery">
@@ -526,7 +527,7 @@ export default function CaseStudyAgentSystem() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"A data-dense financial back-office that finally feels <em>calm</em> - built on one token system, in two complete themes."</p>
             </div>
 

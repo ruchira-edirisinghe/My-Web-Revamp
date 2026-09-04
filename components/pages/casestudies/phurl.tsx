@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -85,7 +86,7 @@ export default function CaseStudyPhurl() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              Phishing doesn't break in - it tricks its way in, one convincing link at a time. PhURL is an end-to-end project that pairs a trained machine-learning model with a calm, educational interface, so anyone can paste a link, get an instant verdict, and actually learn why it's risky. The guiding mantra throughout: <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>if it looks phishy, it probably is.</em>
+              Phishing doesn't break in - it tricks its way in, one convincing link at a time. PhURL is an end-to-end project that pairs a trained machine-learning model with a calm, educational interface, so anyone can paste a link, get an instant verdict, and actually learn why it's risky. The guiding mantra throughout: <em className="cs-em-gold">if it looks phishy, it probably is.</em>
             </p>
           </div>
 
@@ -289,8 +290,8 @@ export default function CaseStudyPhurl() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🥇</div>
-                <h4>Light GBM <span style={{ color: 'var(--lyc-gold)' }}>· Chosen</span></h4>
-                <p>The best performer at <strong style={{ color: '#fff' }}>96.6% accuracy</strong> with low false positives and negatives. Serialised to a <code>.joblib</code> file and loaded by the backend at inference time.</p>
+                <h4>Light GBM <span className="cs-gold">· Chosen</span></h4>
+                <p>The best performer at <strong className="cs-w">96.6% accuracy</strong> with low false positives and negatives. Serialised to a <code>.joblib</code> file and loaded by the backend at inference time.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌲</div>
@@ -306,7 +307,7 @@ export default function CaseStudyPhurl() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">📊</div>
-              <p className="cs-callout-text">The model was trained on a public <strong style={{ color: '#fff' }}>Kaggle dataset</strong> (by Manu Siddhartha) spanning <strong style={{ color: '#fff' }}>phishing, malware, defacement and safe URLs</strong>. Heavy preprocessing, feature engineering and data scaling were needed to squeeze reliable signal out of messy, real-world links.</p>
+              <p className="cs-callout-text">The model was trained on a public <strong className="cs-w">Kaggle dataset</strong> (by Manu Siddhartha) spanning <strong className="cs-w">phishing, malware, defacement and safe URLs</strong>. Heavy preprocessing, feature engineering and data scaling were needed to squeeze reliable signal out of messy, real-world links.</p>
             </div>
           </section>
 
@@ -323,7 +324,7 @@ export default function CaseStudyPhurl() {
             <h2 className="cs-section-title">UI &amp; Visual Design</h2>
 
             <p className="cs-body">
-              A security tool only works if people aren't scared of it. The interface was designed in Figma around three priorities - <strong style={{ color: '#fff' }}>simplicity</strong> (a clean, minimal layout that never overwhelms), <strong style={{ color: '#fff' }}>accessibility</strong> (clear navigation and readable type for all levels), and <strong style={{ color: '#fff' }}>engagement</strong> (interactive checks and learning content that invite exploration).
+              A security tool only works if people aren't scared of it. The interface was designed in Figma around three priorities - <strong className="cs-w">simplicity</strong> (a clean, minimal layout that never overwhelms), <strong className="cs-w">accessibility</strong> (clear navigation and readable type for all levels), and <strong className="cs-w">engagement</strong> (interactive checks and learning content that invite exploration).
             </p>
 
             <div className="creative-styleguide">
@@ -331,12 +332,12 @@ export default function CaseStudyPhurl() {
                 <div className="glass-box">
                   <div className="typo-hero">Montserrat</div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 400, fontStyle: 'italic' }}>Italic</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 600 }}>Semi Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 800 }}>Extra Bold</span>
+                    <span className="typo-weight-item cs-fw-400">Regular</span>
+                    <span className="typo-weight-item cs-fw-400 cs-italic">Italic</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
+                    <span className="typo-weight-item cs-fw-600">Semi Bold</span>
+                    <span className="typo-weight-item cs-fw-700">Bold</span>
+                    <span className="typo-weight-item cs-fw-800">Extra Bold</span>
                   </div>
                 </div>
               </div>
@@ -346,12 +347,12 @@ export default function CaseStudyPhurl() {
                   <div className="sg-unit-title">Color</div>
                   <p className="sg-unit-desc">PhURL's palette - a vivid purple and electric lime over a deep purple-black, with red reserved for danger and grey for neutral UI.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF<br/>255, 255, 255</span></div>
-                    <div className="color-block" style={{ background: '#8FFF00' }}><span className="color-hex">#8FFF00<br/>143, 255, 0</span></div>
-                    <div className="color-block" style={{ background: '#704BFF' }}><span className="color-hex">#704BFF<br/>112, 75, 255</span></div>
-                    <div className="color-block" style={{ background: '#11072D' }}><span className="color-hex">#11072D<br/>17, 7, 45</span></div>
-                    <div className="color-block" style={{ background: '#AFAFAF' }}><span className="color-hex">#AFAFAF<br/>175, 175, 175</span></div>
-                    <div className="color-block" style={{ background: '#FF0000' }}><span className="color-hex">#FF0000<br/>255, 0, 0</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF<br/>255, 255, 255</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#8FFF00' })}><span className="color-hex">#8FFF00<br/>143, 255, 0</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#704BFF' })}><span className="color-hex">#704BFF<br/>112, 75, 255</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#11072D' })}><span className="color-hex">#11072D<br/>17, 7, 45</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#AFAFAF' })}><span className="color-hex">#AFAFAF<br/>175, 175, 175</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FF0000' })}><span className="color-hex">#FF0000<br/>255, 0, 0</span></div>
                   </div>
                 </div>
               </div>
@@ -515,12 +516,12 @@ export default function CaseStudyPhurl() {
               <div className="cs-card">
                 <div className="cs-card-icon">⚛️</div>
                 <h4>Frontend</h4>
-                <p>Built in <strong style={{ color: '#fff' }}>React + JavaScript</strong> - an interactive dashboard and a real-time URL verification tool that calls the backend and renders the verdict instantly.</p>
+                <p>Built in <strong className="cs-w">React + JavaScript</strong> - an interactive dashboard and a real-time URL verification tool that calls the backend and renders the verdict instantly.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🐍</div>
                 <h4>Backend</h4>
-                <p>A <strong style={{ color: '#fff' }}>Django</strong> service in an MVC structure exposing API endpoints for URL verification, with the Light GBM classifier loaded for inference.</p>
+                <p>A <strong className="cs-w">Django</strong> service in an MVC structure exposing API endpoints for URL verification, with the Light GBM classifier loaded for inference.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🧠</div>
@@ -530,20 +531,20 @@ export default function CaseStudyPhurl() {
               <div className="cs-card">
                 <div className="cs-card-icon">☁️</div>
                 <h4>Deployment</h4>
-                <p>Packaged for <strong style={{ color: '#fff' }}>Heroku</strong> (Procfile, runtime &amp; requirements) for easy, scalable hosting of the Django app and model together.</p>
+                <p>Packaged for <strong className="cs-w">Heroku</strong> (Procfile, runtime &amp; requirements) for easy, scalable hosting of the Django app and model together.</p>
               </div>
             </div>
 
             <div className="cs-callout">
               <div className="cs-callout-icon">🧪</div>
-              <p className="cs-callout-text">Quality came from real testing: <strong style={{ color: '#fff' }}>User Acceptance Testing</strong> with university students plus <strong style={{ color: '#fff' }}>cross-browser checks</strong> on Chrome, Brave, Firefox and Opera Mini - each round feeding fixes back into the UI/UX.</p>
+              <p className="cs-callout-text">Quality came from real testing: <strong className="cs-w">User Acceptance Testing</strong> with university students plus <strong className="cs-w">cross-browser checks</strong> on Chrome, Brave, Firefox and Opera Mini - each round feeding fixes back into the UI/UX.</p>
             </div>
 
-            <p className="cs-body" style={{ marginTop: '24px' }}>
+            <p className="cs-body cs-mt-24">
               Explore the engineering behind it:
-              <a href="https://github.com/ruchira-edirisinghe/Project-PhURL-Backend" target="_blank" rel="noopener" style={{ color: 'var(--lyc-cyan)', fontWeight: 600 }}>Backend &amp; API repo ↗</a>
+              <a className="cs-link-cyan" href="https://github.com/ruchira-edirisinghe/Project-PhURL-Backend" target="_blank" rel="noopener">Backend &amp; API repo ↗</a>
               &nbsp;·&nbsp;
-              <a href="https://github.com/ruchira-edirisinghe/Project-PhURL-Heroku" target="_blank" rel="noopener" style={{ color: 'var(--lyc-cyan)', fontWeight: 600 }}>Heroku deployment repo ↗</a>
+              <a className="cs-link-cyan" href="https://github.com/ruchira-edirisinghe/Project-PhURL-Heroku" target="_blank" rel="noopener">Heroku deployment repo ↗</a>
             </p>
           </section>
 
@@ -572,7 +573,7 @@ export default function CaseStudyPhurl() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"PhURL successfully addresses the growing threat of phishing by combining advanced machine learning with user education - its intuitive design, high accuracy and scalability make it valuable for individuals and organisations alike."</p>
             </div>
 

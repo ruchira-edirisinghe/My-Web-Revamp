@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -85,7 +86,7 @@ export default function CaseStudyNcgws() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              NCG Warehouse Solutions - a Lyceum Global subsidiary running 30,000+ sq ft of storage and an island-wide fleet - had the operations, but not the digital presence to match. This redesign set out to give a complex logistics business a website as organised as its warehouse floor: <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>clear capacity, findable tenders, and trust at first glance.</em>
+              NCG Warehouse Solutions - a Lyceum Global subsidiary running 30,000+ sq ft of storage and an island-wide fleet - had the operations, but not the digital presence to match. This redesign set out to give a complex logistics business a website as organised as its warehouse floor: <em className="cs-em-gold">clear capacity, findable tenders, and trust at first glance.</em>
             </p>
           </div>
 
@@ -271,7 +272,7 @@ export default function CaseStudyNcgws() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">A clean <strong style={{ color: '#fff' }}>7-page architecture</strong> - Home, About Us, Our Team, Our Operations, Tenders, Join Us and Contact - used a top-level overview with <strong style={{ color: '#fff' }}>drill-down</strong> into department flows and equipment details only when needed.</p>
+              <p className="cs-callout-text">A clean <strong className="cs-w">7-page architecture</strong> - Home, About Us, Our Team, Our Operations, Tenders, Join Us and Contact - used a top-level overview with <strong className="cs-w">drill-down</strong> into department flows and equipment details only when needed.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -337,12 +338,12 @@ export default function CaseStudyNcgws() {
                     <span className="typo-scale-item">12pt</span>
                   </div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 300 }}>Light</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 600 }}>Semi Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Heavy</span>
+                    <span className="typo-weight-item cs-fw-300">Light</span>
+                    <span className="typo-weight-item cs-fw-400">Regular</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
+                    <span className="typo-weight-item cs-fw-600">Semi Bold</span>
+                    <span className="typo-weight-item cs-fw-700">Bold</span>
+                    <span className="typo-weight-item cs-fw-700">Heavy</span>
                   </div>
                 </div>
               </div>
@@ -353,13 +354,13 @@ export default function CaseStudyNcgws() {
                   <div className="sg-unit-title">Color</div>
                   <p className="sg-unit-desc">A basic colour palette offering a broad range of options for design and artistic purposes is used.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#000000' }}><span className="color-hex">#000000</span></div>
-                    <div className="color-block" style={{ background: '#8B181F' }}><span className="color-hex">#8B181F</span></div>
-                    <div className="color-block" style={{ background: '#B2B2B2' }}><span className="color-hex">#B2B2B2</span></div>
-                    <div className="color-block" style={{ background: '#0654A1' }}><span className="color-hex">#0654A1</span></div>
-                    <div className="color-block" style={{ background: '#FED217' }}><span className="color-hex">#FED217</span></div>
-                    <div className="color-block" style={{ background: '#198754' }}><span className="color-hex">#198754</span></div>
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#000000' })}><span className="color-hex">#000000</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#8B181F' })}><span className="color-hex">#8B181F</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#B2B2B2' })}><span className="color-hex">#B2B2B2</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#0654A1' })}><span className="color-hex">#0654A1</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FED217' })}><span className="color-hex">#FED217</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#198754' })}><span className="color-hex">#198754</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
                   </div>
                 </div>
               </div>
@@ -520,7 +521,7 @@ export default function CaseStudyNcgws() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"The operations page finally makes sense of their complex workflow." - <em>Logistics Manager</em> &nbsp;·&nbsp; "Applying for tenders now takes half the time." - <em>Vendor Representative</em></p>
             </div>
 

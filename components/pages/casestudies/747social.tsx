@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -76,7 +77,7 @@ export default function CaseStudy747Social() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              747 Social Casino is a different kind of casino - one built around people, not just play. It fuses a full social network (profiles, stories, posts and comments) with gaming and prizes, all wrapped in a rich onboarding journey. The challenge was to make something this layered feel <em style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>effortless, premium and consistent - across desktop and mobile alike.</em>
+              747 Social Casino is a different kind of casino - one built around people, not just play. It fuses a full social network (profiles, stories, posts and comments) with gaming and prizes, all wrapped in a rich onboarding journey. The challenge was to make something this layered feel <em className="cs-em-gold">effortless, premium and consistent - across desktop and mobile alike.</em>
             </p>
           </div>
 
@@ -256,7 +257,7 @@ export default function CaseStudy747Social() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">Onboarding was broken into <strong style={{ color: '#fff' }}>staged, skippable steps</strong> - profile, cover, "About Me" media, invites and games - each with explicit complete / incomplete states, so users build their presence at their own pace without ever feeling stuck.</p>
+              <p className="cs-callout-text">Onboarding was broken into <strong className="cs-w">staged, skippable steps</strong> - profile, cover, "About Me" media, invites and games - each with explicit complete / incomplete states, so users build their presence at their own pace without ever feeling stuck.</p>
             </div>
 
             <h3 className="cs-sub-heading">Information Architecture</h3>
@@ -317,11 +318,11 @@ export default function CaseStudy747Social() {
                     <span className="typo-scale-item">12pt</span>
                   </div>
                   <div className="typo-weights-row">
-                    <span className="typo-weight-item" style={{ fontWeight: 300 }}>Light</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 400 }}>Regular</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 500 }}>Medium</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 600 }}>Semi Bold</span>
-                    <span className="typo-weight-item" style={{ fontWeight: 700 }}>Bold</span>
+                    <span className="typo-weight-item cs-fw-300">Light</span>
+                    <span className="typo-weight-item cs-fw-400">Regular</span>
+                    <span className="typo-weight-item cs-fw-500">Medium</span>
+                    <span className="typo-weight-item cs-fw-600">Semi Bold</span>
+                    <span className="typo-weight-item cs-fw-700">Bold</span>
                   </div>
                 </div>
               </div>
@@ -332,20 +333,20 @@ export default function CaseStudy747Social() {
                   <div className="sg-unit-title">Color Tokens</div>
                   <p className="sg-unit-desc">A green-and-gold core with navy text and clean neutrals, plus dedicated success, error and warning states - all with full light &amp; dark modes.</p>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#009F68' }}><span className="color-hex">#009F68</span></div>
-                    <div className="color-block" style={{ background: '#007A50' }}><span className="color-hex">#007A50</span></div>
-                    <div className="color-block" style={{ background: '#D4AF37' }}><span className="color-hex">#D4AF37</span></div>
-                    <div className="color-block" style={{ background: '#FF3939' }}><span className="color-hex">#FF3939</span></div>
-                    <div className="color-block" style={{ background: '#192B4A' }}><span className="color-hex">#192B4A</span></div>
-                    <div className="color-block" style={{ background: '#9BAEC9' }}><span className="color-hex">#9BAEC9</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#009F68' })}><span className="color-hex">#009F68</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#007A50' })}><span className="color-hex">#007A50</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#D4AF37' })}><span className="color-hex">#D4AF37</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FF3939' })}><span className="color-hex">#FF3939</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#192B4A' })}><span className="color-hex">#192B4A</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#9BAEC9' })}><span className="color-hex">#9BAEC9</span></div>
                   </div>
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#F8FAFC' }}><span className="color-hex">#F8FAFC</span></div>
-                    <div className="color-block" style={{ background: '#151515' }}><span className="color-hex">#151515</span></div>
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
-                    <div className="color-block" style={{ background: '#E2E8F0' }}><span className="color-hex">#E2E8F0</span></div>
-                    <div className="color-block" style={{ background: '#CBD5E1' }}><span className="color-hex">#CBD5E1</span></div>
-                    <div className="color-block" style={{ background: '#EEF2FF' }}><span className="color-hex">#EEF2FF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#F8FAFC' })}><span className="color-hex">#F8FAFC</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#151515' })}><span className="color-hex">#151515</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#E2E8F0' })}><span className="color-hex">#E2E8F0</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#CBD5E1' })}><span className="color-hex">#CBD5E1</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#EEF2FF' })}><span className="color-hex">#EEF2FF</span></div>
                   </div>
                 </div>
               </div>
@@ -568,7 +569,7 @@ export default function CaseStudy747Social() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: '28px' }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"Two products - a social network and a casino - designed as <em>one premium experience</em>, on a real token system, for every screen."</p>
             </div>
 

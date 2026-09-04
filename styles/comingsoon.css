@@ -192,7 +192,7 @@
       position: absolute;
       width: 2px;
       height: 2px;
-      background: #fff;
+      background: #e6ecff;
       border-radius: 50%;
       opacity: 0;
     }
@@ -257,11 +257,11 @@
 
       0%,
       100% {
-        opacity: 0;
+        opacity: calc(var(--star-opacity, 0.3) * 0.62);
       }
 
       50% {
-        opacity: var(--star-opacity, 0.8);
+        opacity: var(--star-opacity, 0.3);
       }
     }
 

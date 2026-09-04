@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
 
@@ -82,8 +83,7 @@ export default function CaseStudyLms() {
             <p>
               Legacy LMS platforms are often where professional growth goes to die. Cluttered dashboards, confusing
               navigation, and "one-size-fits-all" learning paths create friction for the very people they are meant to
-              empower. ZUSE LMS strips away this bureaucracy, replacing it with a <em
-                style={{ color: 'var(--lyc-gold)', fontStyle: 'normal', fontWeight: 500 }}>fluid, card-based interface</em> that
+              empower. ZUSE LMS strips away this bureaucracy, replacing it with a <em className="cs-em-gold">fluid, card-based interface</em> that
               treats corporate training as a premium digital experience.
             </p>
           </div>
@@ -312,7 +312,7 @@ export default function CaseStudyLms() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">💡</div>
-              <p className="cs-callout-text">We reduced the navigation burden by <strong style={{ color: '#fff' }}>40%</strong> by
+              <p className="cs-callout-text">We reduced the navigation burden by <strong className="cs-w">40%</strong> by
                 condensing 12 legacy menu items into 5 intelligent dashboard categories. The persistence of learner context
                 across sessions became the primary design pillar.</p>
             </div>
@@ -392,15 +392,15 @@ export default function CaseStudyLms() {
 
                 <div className="glass-box">
                   <div className="color-strip">
-                    <div className="color-block" style={{ background: '#1C64F2' }}><span className="color-hex">#1C64F2</span></div>
-                    <div className="color-block" style={{ background: '#FFF8F1' }}><span className="color-hex">#FFF8F1</span></div>
-                    <div className="color-block" style={{ background: '#D03801' }}><span className="color-hex">#D03801</span></div>
-                    <div className="color-block" style={{ background: '#EDFAFA' }}><span className="color-hex">#EDFAFA</span></div>
-                    <div className="color-block" style={{ background: '#EBF5FF' }}><span className="color-hex">#EBF5FF</span></div>
-                    <div className="color-block" style={{ background: '#047481' }}><span className="color-hex">#047481</span></div>
-                    <div className="color-block" style={{ background: '#8458CC' }}><span className="color-hex">#8458CC</span></div>
-                    <div className="color-block" style={{ background: '#07B4BA' }}><span className="color-hex">#07B4BA</span></div>
-                    <div className="color-block" style={{ background: '#FFFFFF' }}><span className="color-hex">#FFFFFF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#1C64F2' })}><span className="color-hex">#1C64F2</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFF8F1' })}><span className="color-hex">#FFF8F1</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#D03801' })}><span className="color-hex">#D03801</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#EDFAFA' })}><span className="color-hex">#EDFAFA</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#EBF5FF' })}><span className="color-hex">#EBF5FF</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#047481' })}><span className="color-hex">#047481</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#8458CC' })}><span className="color-hex">#8458CC</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#07B4BA' })}><span className="color-hex">#07B4BA</span></div>
+                    <div className="color-block" style={cssVars({ '--sw': '#FFFFFF' })}><span className="color-hex">#FFFFFF</span></div>
                   </div>
                 </div>
               </div>
@@ -412,31 +412,23 @@ export default function CaseStudyLms() {
               from the first login.</p>
 
             <div className="ia-grid" id="onboarding-grid">
-              <div className="cs-card" style={{ height: 'auto' }}
-                data-full="/Images/projects/LMS/User Onboarding - Account Info.png">
-                <img src="/Images/projects/LMS/User Onboarding - Account Info.png" alt="Onboarding 1"
-                  style={{ width: '100%', borderRadius: 8, marginBottom: 12 }} loading="lazy" decoding="async"/>
+              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - Account Info.png">
+                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - Account Info.png" alt="Onboarding 1" loading="lazy" decoding="async" />
                 <span className="cs-meta-label">Step 1</span>
                 <h4 className="ui-card-label">Account Discovery</h4>
               </div>
-              <div className="cs-card" style={{ height: 'auto' }}
-                data-full="/Images/projects/LMS/User Onboarding - Personal Info.png">
-                <img src="/Images/projects/LMS/User Onboarding - Personal Info.png" alt="Onboarding 2"
-                  style={{ width: '100%', borderRadius: 8, marginBottom: 12 }} loading="lazy" decoding="async"/>
+              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - Personal Info.png">
+                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - Personal Info.png" alt="Onboarding 2" loading="lazy" decoding="async" />
                 <span className="cs-meta-label">Step 2</span>
                 <h4 className="ui-card-label">Personalization</h4>
               </div>
-              <div className="cs-card" style={{ height: 'auto' }}
-                data-full="/Images/projects/LMS/User Onboarding - verify Confirmation.png">
-                <img src="/Images/projects/LMS/User Onboarding - verify Confirmation.png" alt="Onboarding 3"
-                  style={{ width: '100%', borderRadius: 8, marginBottom: 12 }} loading="lazy" decoding="async"/>
+              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - verify Confirmation.png">
+                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - verify Confirmation.png" alt="Onboarding 3" loading="lazy" decoding="async" />
                 <span className="cs-meta-label">Step 3</span>
                 <h4 className="ui-card-label">Verification</h4>
               </div>
-              <div className="cs-card" style={{ height: 'auto' }}
-                data-full="/Images/projects/LMS/User Onboarding - Confirmation.png">
-                <img src="/Images/projects/LMS/User Onboarding - Confirmation.png" alt="Onboarding 4"
-                  style={{ width: '100%', borderRadius: 8, marginBottom: 12 }} loading="lazy" decoding="async"/>
+              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - Confirmation.png">
+                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - Confirmation.png" alt="Onboarding 4" loading="lazy" decoding="async" />
                 <span className="cs-meta-label">Step 4</span>
                 <h4 className="ui-card-label">Success</h4>
               </div>
@@ -572,7 +564,7 @@ export default function CaseStudyLms() {
               </div>
             </div>
 
-            <div className="cs-highlight" style={{ marginTop: 28 }}>
+            <div className="cs-highlight cs-mt-28">
               <p>"The redesigned interface proved that <em>professional</em> doesn't have to mean <em>boring</em>. By
                 treating learners like premium customers, we saw interactivity spikes across all age groups."</p>
             </div>
