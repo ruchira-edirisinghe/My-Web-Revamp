@@ -559,10 +559,8 @@ export default function CaseStudyCarRacing() {
             </div>
 
             <div className="cs-cta-row">
-              <a href="https://testing-car-game.netlify.app" target="_blank"
+              <a href="https://game-engine-snowy.vercel.app/games/car-racing" target="_blank"
                 rel="noopener" className="cs-cta-btn primary">Play the Game →</a>
-              <a href="https://github.com/ruchira-edirisinghe/testing-car-game" target="_blank"
-                rel="noopener" className="cs-cta-btn ghost">View Source ↗</a>
             </div>
           </section>
 

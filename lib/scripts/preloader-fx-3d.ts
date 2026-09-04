@@ -2,28 +2,38 @@
    preloader-fx-3d.ts — the preloader's night sky
 
    The preloader is unchanged from its original design: aurora blobs,
-   the water-fill wordmark, the progress bar. This adds one thing to it
-   — the stars, in 3D — and a small flash when the load completes.
+   the water-fill wordmark, the progress bar. This adds one thing to it:
+   the stars, in 3D. It fades up as the preloader opens and fades back
+   down as the bar completes — no flash, nothing that punches.
 
    WHY 3D AT ALL, FOR SOMETHING THIS QUIET
    ---------------------------------------
-   The preloader already had stars: a few dozen absolutely-positioned divs
-   with a CSS twinkle keyframe. Those are still there and still doing
-   their job. What they cannot do is sit at different distances. These
+   The preloader already had stars: a few dozen absolutely-positioned
+   divs with a CSS twinkle keyframe. Those are still there and still
+   doing their job - they are also the whole show on a machine without
+   WebGL. What they cannot do is sit at different distances. These
    are spread through depth and drift very slowly toward the viewer, so
    near stars slide against far ones and the black behind the wordmark
    gains a floor. That is the whole ambition — no object, no subject,
    nothing to look at directly.
 
-   SPARKLE, NOT PULSE
-   ------------------
-   A sine wave on brightness gives every star a slow breathing glow,
-   which reads as a screensaver. Real sparkle is brief, sharp and small:
-   a star is steady almost all of the time and lifts only slightly when
-   it does move. So the twinkle is a sine raised to a very high power —
-   near zero for nearly its whole cycle, spiking briefly — scaled down
-   to a fraction of the star's brightness, and each star gets its own
-   rate and phase so nothing pulses in sync.
+   SPARKLE, IN TWO PARTS
+   ---------------------
+   A single sine on brightness makes every star breathe at once, which
+   reads as a screensaver. A single sharp flare on its own leaves the
+   sky dead between flares. So there are two waves per star, on the same
+   per-star rate and phase so nothing anywhere pulses in unison:
+
+     • a gentle sine that never falls below 0.74 — the same quiet shimmer
+       the page background uses, keeping the whole field alive; and
+     • a sine raised to the 16th, near zero for most of its cycle and
+       spiking briefly. That is the sparkle proper, and only a handful of
+       stars are inside one at any moment.
+
+   The flare does more than brighten. It is passed to the fragment shader,
+   where it opens up the diffraction cross the sprite carries in a second
+   channel, so a sparkling star grows spikes rather than just glowing
+   harder — which is what a real point of light does through an aperture.
 
    All motion happens in the vertex shader from a time uniform, so the
    CPU never touches a position: one draw call, no per-frame work.
@@ -44,15 +54,18 @@
 import * as THREE from 'three';
 import type { Bag } from './_util';
 
-/** Stars, spread across three depths. Kept sparse: a real sky is mostly dark. */
-const STAR_COUNT = 380;
+/** Stars, spread through depth. Fewer than the page background's 1380 - this
+  * sky is on screen for two seconds behind a wordmark, and past this point the
+  * extra points stop reading as stars and start reading as noise. */
+const STAR_COUNT = 850;
 
 /** How far back the field extends. Depth is the only reason this is 3D. */
 const NEAR_Z = -6;
 const FAR_Z = -70;
 
-/** Peak alpha. This sits behind a wordmark and must never compete with it. */
-const MAX_ALPHA = 0.44;
+/** Peak alpha. The wordmark draws over the top of this, so the field can sit
+  * up near full strength without competing with anything. */
+const MAX_ALPHA = 0.92;
 
 export function mountPreloaderFx(bag: Bag, canvas: HTMLCanvasElement): void {
   const preloader = document.getElementById('preloader');
@@ -94,19 +107,22 @@ export function mountPreloaderFx(bag: Bag, canvas: HTMLCanvasElement): void {
     position[i * 3 + 2] = z;
 
     // Magnitude, not uniform size: a real sky is mostly faint pinpricks with a
-    // handful of bright ones, so the distribution is skewed hard toward small.
-    const mag = Math.pow(Math.random(), 2.6);
-    size[i] = 0.65 + mag * 1.9;
+    // handful of bright ones, so the distribution is skewed toward small - but
+    // the floor stays high enough that every star still reads on screen.
+    const mag = Math.pow(Math.random(), 1.9);
+    size[i] = 1.15 + mag * 2.5;
     phase[i] = Math.random() * Math.PI * 2;
     // Each star flares at its own rate; a shared rate reads as a strobe.
-    rate[i] = 0.22 + Math.random() * 0.95;
+    rate[i] = 0.35 + Math.random() * 1.45;
 
     // A real sky is not white. Mostly cool, a few warm, none saturated.
     const warm = Math.random() > 0.84;
-    tmp.setHSL(warm ? 0.08 : 0.57, warm ? 0.30 : 0.24, 0.62 + Math.random() * 0.24);
+    tmp.setHSL(warm ? 0.08 : 0.57, warm ? 0.30 : 0.22, 0.78 + Math.random() * 0.22);
     // Faint stars are faint, not merely small: brightness tracks magnitude so
-    // the field has depth instead of reading as an even scatter of dots.
-    const lum = 0.34 + mag * 0.66;
+    // the field has depth instead of reading as an even scatter of dots. The
+    // floor is 0.62 rather than near-zero - below that they vanish against
+    // the preloader's black and the sky reads as empty.
+    const lum = 0.62 + mag * 0.38;
     color[i * 3] = tmp.r * lum;
     color[i * 3 + 1] = tmp.g * lum;
     color[i * 3 + 2] = tmp.b * lum;
@@ -151,6 +167,7 @@ export function mountPreloaderFx(bag: Bag, canvas: HTMLCanvasElement): void {
 
       varying vec3  vColor;
       varying float vAlpha;
+      varying float vFlare;
 
       void main() {
         // Drift toward the viewer and wrap back to the far plane, so the field
@@ -161,14 +178,19 @@ export function mountPreloaderFx(bag: Bag, canvas: HTMLCanvasElement): void {
         vec3 p = vec3(position.xy, z);
         vec4 mv = modelViewMatrix * vec4(p, 1.0);
 
-        // SPARKLE: a high power on the sine keeps each star steady most of the
-        // time and flares it briefly, which is what a twinkle actually looks
-        // like. A plain sine would make the whole sky breathe together.
-        float s = 0.5 + 0.5 * sin(uTime * aRate + aPhase);
-        // A higher power narrows each flare, so fewer stars are mid-sparkle at
-        // any moment; the smaller multiplier keeps the peaks from shouting.
-        float flare = pow(s, 26.0);
-        float bright = mix(1.0, 0.88 + 0.24 * flare, uSparkle);
+        // SPARKLE, in two parts.
+        //
+        // The slow half is the shimmer the page background already uses: a
+        // plain sine that never drops far, so the whole field is quietly
+        // alive rather than static.
+        float tw = 0.74 + 0.26 * sin(uTime * aRate * 0.5 + aPhase);
+        // The fast half is the sparkle proper - a sine raised high enough
+        // that it sits near zero for most of its cycle and spikes briefly.
+        // Only a handful of stars are mid-flare at any moment, which is what
+        // makes it read as sparkle rather than as a sky pulsing in unison.
+        float s = 0.5 + 0.5 * sin(uTime * aRate + aPhase * 1.7);
+        float flare = pow(s, 16.0);
+        float bright = mix(1.0, tw + flare * 0.85, uSparkle);
 
         // Fade in at the far plane and out at the near one so wrapping is
         // never visible as a pop.
@@ -177,8 +199,9 @@ export function mountPreloaderFx(bag: Bag, canvas: HTMLCanvasElement): void {
 
         vColor = aColor;
         vAlpha = bright * edge;
+        vFlare = flare * uSparkle;
 
-        gl_PointSize = aSize * (1.0 + flare * 0.12 * uSparkle) * (170.0 / -mv.z);
+        gl_PointSize = aSize * (1.0 + flare * 0.55 * uSparkle) * (170.0 / -mv.z);
         gl_Position = projectionMatrix * mv;
       }
     `,
@@ -187,11 +210,18 @@ export function mountPreloaderFx(bag: Bag, canvas: HTMLCanvasElement): void {
       uniform float uAlpha;
       varying vec3  vColor;
       varying float vAlpha;
+      varying float vFlare;
       void main() {
+        // The sprite carries two shapes in two channels: the round core in
+        // red, the diffraction cross in green. Weighting them separately is
+        // the effect - a flaring star grows visible spikes instead of merely
+        // turning brighter, which is how a real point of light behaves
+        // through an aperture.
         vec4 tex = texture2D(uMap, gl_PointCoord);
-        float a = tex.a * vAlpha * uAlpha;
+        float shape = tex.r + tex.g * (0.16 + vFlare * 1.7);
+        float a = clamp(shape * vAlpha * uAlpha, 0.0, 1.0);
         if (a < 0.004) discard;
-        gl_FragColor = vec4(vColor * tex.rgb, a);
+        gl_FragColor = vec4(vColor, a);
       }
     `,
   });
@@ -200,24 +230,6 @@ export function mountPreloaderFx(bag: Bag, canvas: HTMLCanvasElement): void {
   const stars = new THREE.Points(geom, mat);
   stars.frustumCulled = false;
   scene.add(stars);
-
-  /* ── The flash ────────────────────────────────────────────────────
-     A brief lift across the frame as the bar completes, landing on the
-     split-screen reveal the preloader already does. Deliberately small:
-     it punctuates the transition rather than being one. */
-  const flashScene = new THREE.Scene();
-  const flashCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-  const flashGeom = new THREE.PlaneGeometry(2, 2);
-  disposables.push(flashGeom);
-  const flashMat = new THREE.MeshBasicMaterial({
-    color: 0xdce9ff,
-    transparent: true,
-    opacity: 0,
-    depthWrite: false,
-    blending: THREE.AdditiveBlending,
-  });
-  disposables.push(flashMat);
-  flashScene.add(new THREE.Mesh(flashGeom, flashMat));
 
   function resize() {
     const w = window.innerWidth;
@@ -235,8 +247,7 @@ export function mountPreloaderFx(bag: Bag, canvas: HTMLCanvasElement): void {
   let intro = 0;
   let elapsed = 0;
   let drift = 0;
-  let flash = 0;
-  let flashFired = false;
+  let doneFired = false;
   let doneAt = 0;
 
   function readProgress(): number {
@@ -260,33 +271,33 @@ export function mountPreloaderFx(bag: Bag, canvas: HTMLCanvasElement): void {
     last = now;
 
     const p = readProgress();
-    intro = Math.min(1, intro + dt * 1.5);
+    // The preloader is only on screen for ~2.6s; a slow fade-in spends too
+    // much of that with the sky still arriving.
+    intro = Math.min(1, intro + dt * 2.6);
     elapsed += dt;
     // Barely moving. The drift is for parallax, not for travel.
     drift += dt * (reduceMotion ? 0.15 : 0.9 + p * 1.4);
 
-    const bloom = flashFired ? Math.min(1, (now - doneAt) / 420) : 0;
+    // FADE OUT. Once the bar completes the sky dims away over the same
+    // ~560ms the CSS spends fading #preloader itself, so the two leave
+    // together rather than one of them snapping off under the other.
+    const fadeOut = doneFired ? Math.min(1, (now - doneAt) / 560) : 0;
 
     mat.uniforms.uTime.value = elapsed;
     mat.uniforms.uDrift.value = drift;
-    // The sky lifts a little as the load completes, then clears for the reveal.
-    mat.uniforms.uAlpha.value = intro * MAX_ALPHA * (0.62 + p * 0.38) * (1 - bloom);
+    // FADE IN is `intro`, ramping from zero on the first frame; the small
+    // lift on `p` is the sky brightening as the bar fills.
+    mat.uniforms.uAlpha.value = intro * MAX_ALPHA * (0.78 + p * 0.22) * (1 - fadeOut);
 
-    if (p >= 0.999 && !flashFired) {
-      flashFired = true;
-      flash = 1;
+    if (p >= 0.999 && !doneFired) {
+      doneFired = true;
       doneAt = now;
-    }
-    if (flash > 0) {
-      flash = Math.max(0, flash - dt * (reduceMotion ? 4.0 : 2.6));
-      flashMat.opacity = (reduceMotion ? 0.1 : 0.3) * Math.pow(flash, 2.4);
     }
 
     renderer.clear();
     renderer.render(scene, camera);
-    if (flashMat.opacity > 0.001) renderer.render(flashScene, flashCam);
 
-    if (flashFired && now - doneAt > 1400) stop();
+    if (doneFired && now - doneAt > 1400) stop();
   }
 
   function stop() {
@@ -302,7 +313,6 @@ export function mountPreloaderFx(bag: Bag, canvas: HTMLCanvasElement): void {
       }
     }
     scene.clear();
-    flashScene.clear();
     renderer.dispose();
     renderer.forceContextLoss?.();
   }
@@ -311,7 +321,16 @@ export function mountPreloaderFx(bag: Bag, canvas: HTMLCanvasElement): void {
   bag.add(stop);
 }
 
-/** A soft star with a faint cross flare, drawn once and shared by every point. */
+/**
+ * One sprite, two shapes, drawn once and shared by every point.
+ *
+ * The channels are used as data rather than as colour: RED holds the round
+ * core, GREEN holds the four-point diffraction cross. The fragment shader
+ * mixes them per star per frame, so the spikes can bloom on a flare while
+ * the core stays put. Alpha is unused - it is computed in the shader - so
+ * the canvas is filled opaque black and everything is drawn additively on
+ * top, which leaves each channel holding exactly the coverage written into it.
+ */
 function makeStarSprite(): THREE.CanvasTexture {
   const size = 64;
   const c = document.createElement('canvas');
@@ -319,30 +338,34 @@ function makeStarSprite(): THREE.CanvasTexture {
   const ctx = c.getContext('2d')!;
   const m = size / 2;
 
-  // The round core.
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, size, size);
+  ctx.globalCompositeOperation = 'lighter';
+
+  // RED - the round core. Roughly the falloff the page background uses, so
+  // the two skies look like the same sky.
   const g = ctx.createRadialGradient(m, m, 0, m, m, m);
-  g.addColorStop(0.0, 'rgba(255,255,255,1)');
-  g.addColorStop(0.16, 'rgba(255,255,255,0.42)');
-  g.addColorStop(0.42, 'rgba(255,255,255,0.07)');
-  g.addColorStop(1.0, 'rgba(255,255,255,0)');
+  g.addColorStop(0.0, 'rgba(255,0,0,1)');
+  g.addColorStop(0.22, 'rgba(255,0,0,0.72)');
+  g.addColorStop(0.5, 'rgba(255,0,0,0.16)');
+  g.addColorStop(1.0, 'rgba(255,0,0,0)');
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, size, size);
 
-  // A very faint four-point flare. It is what separates a star from a dot —
-  // subtle enough that you read it rather than notice it.
-  ctx.globalCompositeOperation = 'lighter';
+  // GREEN - the cross. Written near full strength and scaled down in the
+  // shader, so there is headroom for a flare to open it up.
   const streak = ctx.createLinearGradient(0, m, size, m);
-  streak.addColorStop(0.0, 'rgba(255,255,255,0)');
-  streak.addColorStop(0.5, 'rgba(255,255,255,0.12)');
-  streak.addColorStop(1.0, 'rgba(255,255,255,0)');
+  streak.addColorStop(0.0, 'rgba(0,255,0,0)');
+  streak.addColorStop(0.5, 'rgba(0,255,0,0.9)');
+  streak.addColorStop(1.0, 'rgba(0,255,0,0)');
   ctx.fillStyle = streak;
-  ctx.fillRect(0, m - 0.5, size, 1.0);
+  ctx.fillRect(0, m - 0.9, size, 1.8);
   const streakV = ctx.createLinearGradient(m, 0, m, size);
-  streakV.addColorStop(0.0, 'rgba(255,255,255,0)');
-  streakV.addColorStop(0.5, 'rgba(255,255,255,0.12)');
-  streakV.addColorStop(1.0, 'rgba(255,255,255,0)');
+  streakV.addColorStop(0.0, 'rgba(0,255,0,0)');
+  streakV.addColorStop(0.5, 'rgba(0,255,0,0.9)');
+  streakV.addColorStop(1.0, 'rgba(0,255,0,0)');
   ctx.fillStyle = streakV;
-  ctx.fillRect(m - 0.5, 0, 1.0, size);
+  ctx.fillRect(m - 0.9, 0, 1.8, size);
 
   return new THREE.CanvasTexture(c);
 }

@@ -414,46 +414,46 @@ export default function CaseStudyKanaMutti() {
               {/* Row 1 */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/home.png">
-                  <img src="/Images/projects/kana-mutti/home.png" alt="Kana Mutti title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/title-screen.png">
+                  <img src="/Images/projects/kana-mutti/title-screen.png" alt="Kana Mutti title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Screen</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/pots.png">
-                  <img src="/Images/projects/kana-mutti/pots.png" alt="Four clay pots on the rope" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-selection.png">
+                  <img src="/Images/projects/kana-mutti/pot-selection.png" alt="Four clay pots on the rope" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Four Pots</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/smash.png">
-                  <img src="/Images/projects/kana-mutti/smash.png" alt="The blindfolded striker swinging" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">The Swing</div>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-smashed.png">
+                  <img src="/Images/projects/kana-mutti/pot-smashed.png" alt="A pot smashed - coins and shards in the air" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Pot Smashed</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/cashout.png">
-                  <img src="/Images/projects/kana-mutti/cashout.png" alt="The multiplier ladder and cash out" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">Cash Out</div>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/place-bet.png">
+                  <img src="/Images/projects/kana-mutti/place-bet.png" alt="Place your bet - stake and risk level" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Place Your Bet</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/result.png">
-                  <img src="/Images/projects/kana-mutti/result.png" alt="The fairness popup, unsealed" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">Unsealed</div>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/round-win.png">
+                  <img src="/Images/projects/kana-mutti/round-win.png" alt="Cleared them all - the payout card" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Cleared Them All</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/home.png">
-                  <img src="/Images/projects/kana-mutti/home.png" alt="Kana Mutti title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/title-screen.png">
+                  <img src="/Images/projects/kana-mutti/title-screen.png" alt="Kana Mutti title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Screen</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/pots.png">
-                  <img src="/Images/projects/kana-mutti/pots.png" alt="Four clay pots on the rope" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-selection.png">
+                  <img src="/Images/projects/kana-mutti/pot-selection.png" alt="Four clay pots on the rope" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Four Pots</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/smash.png">
-                  <img src="/Images/projects/kana-mutti/smash.png" alt="The blindfolded striker swinging" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">The Swing</div>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-smashed.png">
+                  <img src="/Images/projects/kana-mutti/pot-smashed.png" alt="A pot smashed - coins and shards in the air" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Pot Smashed</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/cashout.png">
-                  <img src="/Images/projects/kana-mutti/cashout.png" alt="The multiplier ladder and cash out" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">Cash Out</div>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/place-bet.png">
+                  <img src="/Images/projects/kana-mutti/place-bet.png" alt="Place your bet - stake and risk level" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Place Your Bet</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/result.png">
-                  <img src="/Images/projects/kana-mutti/result.png" alt="The fairness popup, unsealed" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">Unsealed</div>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/round-win.png">
+                  <img src="/Images/projects/kana-mutti/round-win.png" alt="Cleared them all - the payout card" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Cleared Them All</div>
                 </div>
               </div>
 
@@ -468,16 +468,16 @@ export default function CaseStudyKanaMutti() {
                   <img src="/Images/projects/kana-mutti/cover.png" alt="Kana Mutti cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/cashout.png">
-                  <img src="/Images/projects/kana-mutti/cashout.png" alt="The three risk levels" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/place-bet.png">
+                  <img src="/Images/projects/kana-mutti/place-bet.png" alt="The three risk levels" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Risk Levels</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/pots.png">
-                  <img src="/Images/projects/kana-mutti/pots.png" alt="The sealed trust chip" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-selection.png">
+                  <img src="/Images/projects/kana-mutti/pot-selection.png" alt="The sealed trust chip" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">SEALED Chip</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/smash.png">
-                  <img src="/Images/projects/kana-mutti/smash.png" alt="A pot shattering into coins" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-smashed.png">
+                  <img src="/Images/projects/kana-mutti/pot-smashed.png" alt="A pot shattering into coins" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Coins!</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
@@ -489,16 +489,16 @@ export default function CaseStudyKanaMutti() {
                   <img src="/Images/projects/kana-mutti/cover.png" alt="Kana Mutti cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/cashout.png">
-                  <img src="/Images/projects/kana-mutti/cashout.png" alt="The three risk levels" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/place-bet.png">
+                  <img src="/Images/projects/kana-mutti/place-bet.png" alt="The three risk levels" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Risk Levels</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/pots.png">
-                  <img src="/Images/projects/kana-mutti/pots.png" alt="The sealed trust chip" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-selection.png">
+                  <img src="/Images/projects/kana-mutti/pot-selection.png" alt="The sealed trust chip" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">SEALED Chip</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kana-mutti/smash.png">
-                  <img src="/Images/projects/kana-mutti/smash.png" alt="A pot shattering into coins" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-smashed.png">
+                  <img src="/Images/projects/kana-mutti/pot-smashed.png" alt="A pot shattering into coins" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Coins!</div>
                 </div>
               </div>
@@ -608,8 +608,8 @@ export default function CaseStudyKanaMutti() {
             </div>
 
             <div className="cs-cta-row">
-              <a href="https://github.com/ruchira-edirisinghe/Game-Engine" target="_blank"
-                rel="noopener" className="cs-cta-btn ghost">View Source ↗</a>
+              <a href="https://game-engine-snowy.vercel.app/games/kana-mutti" target="_blank"
+                rel="noopener" className="cs-cta-btn primary">Play the Game →</a>
             </div>
           </section>
 

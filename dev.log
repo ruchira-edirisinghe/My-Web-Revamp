@@ -1,39 +1,232 @@
-
-> ruchira-portfolio@1.0.0 dev
-> next dev
-
- ⚠ Port 3000 is in use by process 7080, using available port 3002 instead.
    ▲ Next.js 15.5.19
-   - Local:        http://localhost:3002
-   - Network:      http://192.168.1.5:3002
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.9:3000
 
  ✓ Starting...
- ✓ Ready in 2.1s
+ ✓ Ready in 1922ms
  ○ Compiling / ...
- ✓ Compiled / in 5.1s (676 modules)
- GET / 200 in 5675ms
- ○ Compiling /about ...
- ✓ Compiled /about in 2.4s (675 modules)
- GET /about/ 200 in 2870ms
- ✓ Compiled /projects/web in 447ms (690 modules)
- GET /projects/web/ 200 in 788ms
- ○ Compiling /projects ...
- ✓ Compiled /projects in 991ms (658 modules)
- GET /projects/ 200 in 1224ms
- ○ Compiling /experience ...
- ✓ Compiled /experience in 1437ms (701 modules)
- GET /experience/ 200 in 1676ms
- ✓ Compiled in 1174ms (674 modules)
- ✓ Compiled in 246ms (674 modules)
- ✓ Compiled in 230ms (674 modules)
- ✓ Compiled in 252ms (674 modules)
- ✓ Compiled /about in 235ms (392 modules)
- GET /about/ 200 in 674ms
- ✓ Compiled in 210ms (665 modules)
- ✓ Compiled /projects/web in 196ms (401 modules)
- GET /projects/web/ 200 in 702ms
- GET /about/ 200 in 328ms
- ✓ Compiled in 249ms (674 modules)
- ○ Compiling /projects ...
- ✓ Compiled /projects in 681ms (399 modules)
- GET /projects/ 200 in 957ms
+ ✓ Compiled / in 1951ms (650 modules)
+ GET / 200 in 2274ms
+ GET / 200 in 48ms
+ ✓ Compiled /projects in 465ms (675 modules)
+ GET /projects/ 200 in 671ms
+ ✓ Compiled /projects/web in 205ms (671 modules)
+ GET /projects/web/ 200 in 369ms
+ ✓ Compiled /projects/web/collapse-factor in 376ms (698 modules)
+ GET /projects/web/collapse-factor/ 200 in 566ms
+ ✓ Compiled /projects/web/aether-dynasty in 300ms (709 modules)
+ GET /projects/web/aether-dynasty/ 200 in 494ms
+ ✓ Compiled /about in 328ms (722 modules)
+ GET /about/ 200 in 676ms
+ ✓ Compiled /experience in 310ms (738 modules)
+ GET /experience/ 200 in 637ms
+ ✓ Compiled /contact in 337ms (751 modules)
+ GET /contact/ 200 in 542ms
+ ✓ Compiled /links in 345ms (764 modules)
+ GET /links/ 200 in 600ms
+ ✓ Compiled /projects/graphic in 306ms (758 modules)
+ GET /projects/graphic/ 200 in 492ms
+ GET /projects/web/ 200 in 105ms
+ ○ Compiling /projects/web/horse-racing ...
+ ✓ Compiled /projects/web/horse-racing in 628ms (783 modules)
+ GET /projects/web/horse-racing/ 200 in 864ms
+ ✓ Compiled /projects/web/car-racing in 453ms (794 modules)
+ GET /projects/web/car-racing/ 200 in 695ms
+ GET /projects/web/aether-dynasty/ 200 in 128ms
+ ✓ Compiled /projects/web/propbet in 435ms (805 modules)
+ GET /projects/web/propbet/ 200 in 694ms
+ GET /projects/web/collapse-factor/ 200 in 132ms
+ ✓ Compiled /projects/web/coin-duel in 463ms (816 modules)
+ GET /projects/web/coin-duel/ 200 in 725ms
+ ✓ Compiled /projects/web/kamba-adeema in 501ms (827 modules)
+ GET /projects/web/kamba-adeema/ 200 in 759ms
+ ✓ Compiled /projects/web/kana-mutti in 468ms (838 modules)
+ GET /projects/web/kana-mutti/ 200 in 727ms
+ ✓ Compiled /projects/web/pixel-poker in 485ms (849 modules)
+ GET /projects/web/pixel-poker/ 200 in 733ms
+ GET / 200 in 62ms
+ GET / 200 in 44ms
+ GET / 200 in 66ms
+ GET /experience/ 200 in 65ms
+ ⨯ ./lib/scripts/preloader.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ruchi_54me8uw\Documents\GitHub\My-Web-Revamp\lib\scripts\preloader.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/scripts/preloader.ts
+./components/HomeClient.tsx
+ ⨯ ./lib/scripts/about.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ruchi_54me8uw\Documents\GitHub\My-Web-Revamp\lib\scripts\about.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/scripts/about.ts
+./components/pages/AboutClient.tsx
+ ✓ Compiled in 179ms (322 modules)
+ ⨯ ./lib/scripts/contact.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ruchi_54me8uw\Documents\GitHub\My-Web-Revamp\lib\scripts\contact.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/scripts/contact.ts
+./components/pages/ContactClient.tsx
+ ⨯ ./lib/scripts/experience.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ruchi_54me8uw\Documents\GitHub\My-Web-Revamp\lib\scripts\experience.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/scripts/experience.ts
+./components/pages/ExperienceClient.tsx
+ ⨯ ./lib/scripts/projects.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ruchi_54me8uw\Documents\GitHub\My-Web-Revamp\lib\scripts\projects.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/scripts/projects.ts
+./components/pages/casestudies/collapse-factor.tsx
+ ⨯ ./lib/scripts/quicklinks.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ruchi_54me8uw\Documents\GitHub\My-Web-Revamp\lib\scripts\quicklinks.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/scripts/quicklinks.ts
+./components/pages/QuicklinksClient.tsx
+ ✓ Compiled in 156ms (322 modules)
+ GET / 200 in 251ms
+ GET / 200 in 91ms
+ ✓ Compiled /projects/web in 447ms (413 modules)
+ GET /projects/web/ 200 in 749ms
+ ✓ Compiled /projects in 151ms (419 modules)
+ GET /projects/ 200 in 244ms
+ GET /projects/web/ 200 in 43ms
+ ✓ Compiled /projects/web/horse-racing in 384ms (427 modules)
+ GET /projects/web/horse-racing/ 200 in 680ms
+ GET /projects/web/horse-racing/ 200 in 130ms
+ ⨯ ./lib/scripts/preloader-fx-3d.ts
+Error:   [31mx[0m Expression expected
+     ,-[[36;1;4mC:\Users\ruchi_54me8uw\Documents\GitHub\My-Web-Revamp\lib\scripts\preloader-fx-3d.ts[0m:234:1]
+ [2m231[0m |   stars.frustumCulled = false;
+ [2m232[0m |   scene.add(stars);
+ [2m233[0m | 
+ [2m234[0m | @@END
+     : [35;1m^[0m
+ [2m235[0m | @@OLD
+ [2m236[0m |   let drift = 0;
+ [2m237[0m |   let flash = 0;
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./lib/scripts/preloader-fx-3d.ts
+./lib/scripts/preloader-fx.ts
+./lib/scripts/preloader.ts
+./components/HomeClient.tsx
+ ⨯ ./lib/scripts/preloader-fx-3d.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ruchi_54me8uw\Documents\GitHub\My-Web-Revamp\lib\scripts\preloader-fx-3d.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/scripts/preloader-fx-3d.ts
+./lib/scripts/preloader-fx.ts
+./lib/scripts/preloader.ts
+./components/HomeClient.tsx
+ ⨯ ./lib/scripts/preloader-fx-3d.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ruchi_54me8uw\Documents\GitHub\My-Web-Revamp\lib\scripts\preloader-fx-3d.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/scripts/preloader-fx-3d.ts
+./lib/scripts/preloader-fx.ts
+./lib/scripts/preloader.ts
+./components/HomeClient.tsx
+ ✓ Compiled in 377ms (749 modules)
+ ✓ Compiled in 562ms (763 modules)
+ GET /projects/web/horse-racing/ 200 in 129ms
+ ✓ Compiled in 676ms (749 modules)
+ ✓ Compiled in 97ms (322 modules)
+ ✓ Compiled in 109ms (322 modules)
+ ✓ Compiled in 107ms (322 modules)
+ ✓ Compiled in 107ms (322 modules)
+ ✓ Compiled in 99ms (322 modules)
+ ✓ Compiled in 104ms (322 modules)
+ GET / 200 in 218ms
+ GET /projects/web/ 200 in 118ms
+ ✓ Compiled /projects/web/pixel-poker in 342ms (434 modules)
+ GET /projects/web/pixel-poker/ 200 in 634ms
+ GET /projects/web/horse-racing/ 200 in 307ms
+ GET /projects/web/horse-racing/ 200 in 120ms
+ GET / 200 in 66ms
+ GET /projects/web/pixel-poker/ 200 in 112ms
+ GET /projects/web/ 200 in 52ms
+ GET /projects/ 200 in 39ms
+ ○ Compiling /links ...
+ ✓ Compiled /links in 509ms (435 modules)
+ GET /links/ 200 in 657ms
+ GET /links/ 200 in 30ms
+ GET /projects/ 200 in 41ms
+ GET /projects/web/ 200 in 35ms
+ ✓ Compiled /projects/web/pixel-poker in 230ms (431 modules)
+ GET /projects/web/pixel-poker/ 200 in 604ms
+ ✓ Compiled /_not-found in 323ms (748 modules)
+ GET /Images/projects/pixel-poker/showdown.png 404 in 692ms
+ GET /Images/projects/pixel-poker/table.png 404 in 686ms
+ GET /Images/projects/pixel-poker/home.png 404 in 689ms
+ GET /Images/projects/pixel-poker/lobby.png 404 in 693ms
+ GET /Images/projects/pixel-poker/allin.png 404 in 688ms
+ GET /Images/projects/pixel-poker/allin.png 404 in 56ms
+ ✓ Compiled in 547ms (748 modules)
+ GET /projects/web/pixel-poker/ 200 in 875ms
+ GET /projects/web/ 200 in 67ms
+ ✓ Compiled in 1731ms (745 modules)
+ ✓ Compiled in 156ms (323 modules)
+ ✓ Compiled in 138ms (323 modules)
+ ✓ Compiled in 130ms (323 modules)
+ ✓ Compiled in 169ms (323 modules)
+ GET /projects/web/pixel-poker/ 200 in 509ms
+ GET /projects/web/pixel-poker/ 200 in 167ms
+ ○ Compiling /projects/web/coin-duel ...
+ ✓ Compiled /projects/web/coin-duel in 721ms (429 modules)
+ GET /projects/web/coin-duel/ 200 in 1261ms
+ GET /projects/web/ 200 in 542ms
+ GET /projects/web/coin-duel/ 200 in 172ms
+ ✓ Compiled /projects/web/collapse-factor in 317ms (436 modules)
+ GET /projects/web/collapse-factor/ 200 in 714ms
+ GET /projects/web/ 200 in 400ms
+ GET /projects/web/collapse-factor/ 200 in 189ms
+ ○ Compiling /projects/web/kamba-adeema ...
+ ✓ Compiled /projects/web/kamba-adeema in 524ms (443 modules)
+ GET /projects/web/kamba-adeema/ 200 in 925ms
+ GET /projects/web/ 200 in 404ms
+ GET /projects/web/kamba-adeema/ 200 in 249ms
+ ✓ Compiled /projects/web/kana-mutti in 374ms (450 modules)
+ GET /projects/web/kana-mutti/ 200 in 859ms
+ GET /projects/web/ 200 in 490ms
+ GET /projects/web/kana-mutti/ 200 in 342ms
+ GET /projects/web/coin-duel/ 200 in 695ms
+ GET /projects/web/ 200 in 101ms

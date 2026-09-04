@@ -491,7 +491,7 @@ body:not([data-page]) .page {
 
 .preloader-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 32px; }
 
-.preloader-star { position: absolute; width: 2px; height: 2px; background: #e6ecff; border-radius: 50%; opacity: 0; }
+.preloader-star { position: absolute; width: 2px; height: 2px; background: #eff4ff; border-radius: 50%; box-shadow: 0 0 4px rgba(200,222,255,0.5); opacity: 0; }
 
 @keyframes aurora-pulse {
   0%, 100% { opacity: 0.5; transform: scale(1); }
@@ -517,8 +517,8 @@ body:not([data-page]) .page {
 }
 
 @keyframes star-twinkle {
-  0%, 100% { opacity: calc(var(--star-opacity, 0.3) * 0.62); }
-  50% { opacity: var(--star-opacity, 0.3); }
+  0%, 100% { opacity: calc(var(--star-opacity, 0.6) * 0.42); }
+  50% { opacity: var(--star-opacity, 0.6); }
 }
 
 #preloader-canvas {
@@ -569,6 +569,25 @@ body:not([data-page]) .page {
 /* Desktop only - extra breathing room between subtitle and name */
 @media (min-width:601px) {
   .name { margin-top:36px; }
+}
+
+/* ── Desktop only: keep the hero inside one screen ─────────────────────
+   The hero is the entire page - there is nothing below the fold to scroll
+   to - but the photo was a fixed 490px and the name capped at 96px, which
+   together needed roughly 860px of viewport height. Anything shorter got a
+   scrollbar that led nowhere.
+
+   Both now answer to viewport height as well as width. Everything else in
+   the column is fixed at about 258px (100 page padding + 72 footer + the
+   subtitle, name and CTA gaps), so at 46vh of photo and 10vh of name the
+   hero fits from ~600px of viewport height upward, and still reaches its
+   original 490px / 96px on a tall display.
+
+   Sizing below 601px is deliberately untouched: mobile keeps its 85vw photo
+   and clamp(56px,8vw,96px) name exactly as they were. */
+@media (min-width:601px) {
+  .photo-wrapper { width:min(490px, 46vh); }
+  .name { font-size:clamp(44px, min(8vw, 10vh), 96px); }
 }
 
 @media (max-width:600px) {

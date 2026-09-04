@@ -434,45 +434,45 @@ export default function CaseStudyCollapseFactor() {
               {/* Row 1 */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/home.png">
-                  <img src="/Images/projects/collapse-factor/home.png" alt="Collapse Factor title plate" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/title-screen.png">
+                  <img src="/Images/projects/collapse-factor/title-screen.png" alt="Collapse Factor title plate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Plate</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/tower.png">
-                  <img src="/Images/projects/collapse-factor/tower.png" alt="The tower on its graduated test plate" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">Tower &amp; Test Plate</div>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/claw-pull.png">
+                  <img src="/Images/projects/collapse-factor/claw-pull.png" alt="The claw pulling a block out of the tower" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">The Claw Pulls</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/gauge.png">
-                  <img src="/Images/projects/collapse-factor/gauge.png" alt="The collapse factor gauge" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/betting-board.png">
+                  <img src="/Images/projects/collapse-factor/betting-board.png" alt="The collapse-factor gauge above the betting board" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Gauge</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/cashout.png">
-                  <img src="/Images/projects/collapse-factor/cashout.png" alt="The eight-second hold window" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">The Hold Window</div>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/cash-out-decision.png">
+                  <img src="/Images/projects/collapse-factor/cash-out-decision.png" alt="Cash out or ride on, mid-climb" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Cash Out or Ride</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/result.png">
-                  <img src="/Images/projects/collapse-factor/result.png" alt="Run record and fairness panel" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/provably-fair.png">
+                  <img src="/Images/projects/collapse-factor/provably-fair.png" alt="Run record and fairness panel" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Run Record</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/home.png">
-                  <img src="/Images/projects/collapse-factor/home.png" alt="Collapse Factor title plate" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/title-screen.png">
+                  <img src="/Images/projects/collapse-factor/title-screen.png" alt="Collapse Factor title plate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Plate</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/tower.png">
-                  <img src="/Images/projects/collapse-factor/tower.png" alt="The tower on its graduated test plate" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">Tower &amp; Test Plate</div>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/claw-pull.png">
+                  <img src="/Images/projects/collapse-factor/claw-pull.png" alt="The claw pulling a block out of the tower" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">The Claw Pulls</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/gauge.png">
-                  <img src="/Images/projects/collapse-factor/gauge.png" alt="The collapse factor gauge" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/betting-board.png">
+                  <img src="/Images/projects/collapse-factor/betting-board.png" alt="The collapse-factor gauge above the betting board" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Gauge</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/cashout.png">
-                  <img src="/Images/projects/collapse-factor/cashout.png" alt="The eight-second hold window" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">The Hold Window</div>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/cash-out-decision.png">
+                  <img src="/Images/projects/collapse-factor/cash-out-decision.png" alt="Cash out or ride on, mid-climb" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Cash Out or Ride</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/result.png">
-                  <img src="/Images/projects/collapse-factor/result.png" alt="Run record and fairness panel" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/provably-fair.png">
+                  <img src="/Images/projects/collapse-factor/provably-fair.png" alt="Run record and fairness panel" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Run Record</div>
                 </div>
               </div>
@@ -488,16 +488,16 @@ export default function CaseStudyCollapseFactor() {
                   <img src="/Images/projects/collapse-factor/logo.png" alt="Collapse Factor wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Wordmark</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/gauge.png">
-                  <img src="/Images/projects/collapse-factor/gauge.png" alt="Risk ramp at full stress" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/betting-board.png">
+                  <img src="/Images/projects/collapse-factor/betting-board.png" alt="Risk ramp at full stress" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Risk Ramp</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/tower.png">
-                  <img src="/Images/projects/collapse-factor/tower.png" alt="The claw taking a block" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/claw-pull.png">
+                  <img src="/Images/projects/collapse-factor/claw-pull.png" alt="The claw taking a block" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Claw</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/cashout.png">
-                  <img src="/Images/projects/collapse-factor/cashout.png" alt="Climb ladder strip" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/cash-out-decision.png">
+                  <img src="/Images/projects/collapse-factor/cash-out-decision.png" alt="Climb ladder strip" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Climb Ladder</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
@@ -509,16 +509,16 @@ export default function CaseStudyCollapseFactor() {
                   <img src="/Images/projects/collapse-factor/logo.png" alt="Collapse Factor wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Wordmark</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/gauge.png">
-                  <img src="/Images/projects/collapse-factor/gauge.png" alt="Risk ramp at full stress" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/betting-board.png">
+                  <img src="/Images/projects/collapse-factor/betting-board.png" alt="Risk ramp at full stress" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Risk Ramp</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/tower.png">
-                  <img src="/Images/projects/collapse-factor/tower.png" alt="The claw taking a block" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/claw-pull.png">
+                  <img src="/Images/projects/collapse-factor/claw-pull.png" alt="The claw taking a block" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Claw</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/collapse-factor/cashout.png">
-                  <img src="/Images/projects/collapse-factor/cashout.png" alt="Climb ladder strip" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/collapse-factor/cash-out-decision.png">
+                  <img src="/Images/projects/collapse-factor/cash-out-decision.png" alt="Climb ladder strip" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Climb Ladder</div>
                 </div>
               </div>
@@ -628,8 +628,8 @@ export default function CaseStudyCollapseFactor() {
             </div>
 
             <div className="cs-cta-row">
-              <a href="https://github.com/ruchira-edirisinghe/Game-Engine" target="_blank"
-                rel="noopener" className="cs-cta-btn ghost">View Source ↗</a>
+              <a href="https://game-engine-snowy.vercel.app/games/collapse-factor" target="_blank"
+                rel="noopener" className="cs-cta-btn primary">Play the Game →</a>
             </div>
           </section>
 

@@ -417,7 +417,7 @@ export default function CaseStudyPixelPoker() {
                 <div className="glass-box">
                   <div className="sg-unit-title">Typography</div>
                   <p className="sg-unit-desc">A pixel display face for the wordmark, stack sizes and the blind clock; a plain interface face for the reading text and rules chart. Every chip count is monospaced so the numbers do not jitter as they count down between levels.</p>
-                  <div className="typo-hero">8-BIT</div>
+                  <div className="typo-hero">Orbitron</div>
                   <div className="typo-weights-row">
                     <span className="typo-weight-item cs-ff-bungee">Pixel · Wordmark &amp; Stacks</span>
                     <span className="typo-weight-item cs-ff-mont cs-fw-600">Interface · Actions</span>
@@ -453,52 +453,52 @@ export default function CaseStudyPixelPoker() {
             </div>
 
             <h3 className="cs-sub-heading">In-Game Screens</h3>
-            <p className="cs-body">The tournament across its beats - the title screen, the six-max table, an all-in with side pots, a showdown with the winning five lit, and the multiplayer lobby. Click any screen to open it in high resolution.</p>
+            <p className="cs-body">The tournament across its beats - the title screen with its mode select, the six-max table pre-flop, the in-game hand rankings, the practice-table briefing, and the Create Lobby setup. Click any screen to open it in high resolution.</p>
 
             <div className="ui-gallery">
               {/* Row 1 */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/home.png">
-                  <img src="/Images/projects/pixel-poker/home.png" alt="Pixel Perfect Poker title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/title-screen.png">
+                  <img src="/Images/projects/pixel-poker/title-screen.png" alt="Pixel Perfect Poker title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Screen</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/table.png">
-                  <img src="/Images/projects/pixel-poker/table.png" alt="The six-max pixel table" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/table-preflop.png">
+                  <img src="/Images/projects/pixel-poker/table-preflop.png" alt="The six-max pixel table" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">6-Max Table</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/allin.png">
-                  <img src="/Images/projects/pixel-poker/allin.png" alt="An all-in building a side pot" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">All-In · Side Pot</div>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/hand-rankings.png">
+                  <img src="/Images/projects/pixel-poker/hand-rankings.png" alt="The in-game hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Hand Rankings</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/showdown.png">
-                  <img src="/Images/projects/pixel-poker/showdown.png" alt="Showdown with the winning five lit" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">Showdown</div>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/how-to-play.png">
+                  <img src="/Images/projects/pixel-poker/how-to-play.png" alt="The practice-table rules card" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Practice Table</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/lobby.png">
-                  <img src="/Images/projects/pixel-poker/lobby.png" alt="The multiplayer lobby" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">Multiplayer Lobby</div>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/create-lobby.png">
+                  <img src="/Images/projects/pixel-poker/create-lobby.png" alt="The Create Lobby table setup" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Create Lobby</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/home.png">
-                  <img src="/Images/projects/pixel-poker/home.png" alt="Pixel Perfect Poker title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/title-screen.png">
+                  <img src="/Images/projects/pixel-poker/title-screen.png" alt="Pixel Perfect Poker title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Screen</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/table.png">
-                  <img src="/Images/projects/pixel-poker/table.png" alt="The six-max pixel table" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/table-preflop.png">
+                  <img src="/Images/projects/pixel-poker/table-preflop.png" alt="The six-max pixel table" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">6-Max Table</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/allin.png">
-                  <img src="/Images/projects/pixel-poker/allin.png" alt="An all-in building a side pot" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">All-In · Side Pot</div>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/hand-rankings.png">
+                  <img src="/Images/projects/pixel-poker/hand-rankings.png" alt="The in-game hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Hand Rankings</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/showdown.png">
-                  <img src="/Images/projects/pixel-poker/showdown.png" alt="Showdown with the winning five lit" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">Showdown</div>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/how-to-play.png">
+                  <img src="/Images/projects/pixel-poker/how-to-play.png" alt="The practice-table rules card" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Practice Table</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/lobby.png">
-                  <img src="/Images/projects/pixel-poker/lobby.png" alt="The multiplayer lobby" className="ui-thumb" loading="lazy" decoding="async"/>
-                  <div className="ui-card-label">Multiplayer Lobby</div>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/create-lobby.png">
+                  <img src="/Images/projects/pixel-poker/create-lobby.png" alt="The Create Lobby table setup" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <div className="ui-card-label">Create Lobby</div>
                 </div>
               </div>
 
@@ -513,16 +513,16 @@ export default function CaseStudyPixelPoker() {
                   <img src="/Images/projects/pixel-poker/cover.png" alt="Pixel Perfect Poker cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/table.png">
-                  <img src="/Images/projects/pixel-poker/table.png" alt="Pixel bitmap cards and chips" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/table-preflop.png">
+                  <img src="/Images/projects/pixel-poker/table-preflop.png" alt="Pixel bitmap cards and chips" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cards &amp; Chips</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/allin.png">
-                  <img src="/Images/projects/pixel-poker/allin.png" alt="The raise slider" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/hand-rankings.png">
+                  <img src="/Images/projects/pixel-poker/hand-rankings.png" alt="The hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Raise Slider</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/showdown.png">
-                  <img src="/Images/projects/pixel-poker/showdown.png" alt="Five AI rivals with distinct styles" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/how-to-play.png">
+                  <img src="/Images/projects/pixel-poker/how-to-play.png" alt="The practice-table briefing" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Five Rivals</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
@@ -534,16 +534,16 @@ export default function CaseStudyPixelPoker() {
                   <img src="/Images/projects/pixel-poker/cover.png" alt="Pixel Perfect Poker cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/table.png">
-                  <img src="/Images/projects/pixel-poker/table.png" alt="Pixel bitmap cards and chips" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/table-preflop.png">
+                  <img src="/Images/projects/pixel-poker/table-preflop.png" alt="Pixel bitmap cards and chips" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cards &amp; Chips</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/allin.png">
-                  <img src="/Images/projects/pixel-poker/allin.png" alt="The raise slider" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/hand-rankings.png">
+                  <img src="/Images/projects/pixel-poker/hand-rankings.png" alt="The hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Raise Slider</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pixel-poker/showdown.png">
-                  <img src="/Images/projects/pixel-poker/showdown.png" alt="Five AI rivals with distinct styles" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pixel-poker/how-to-play.png">
+                  <img src="/Images/projects/pixel-poker/how-to-play.png" alt="The practice-table briefing" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Five Rivals</div>
                 </div>
               </div>
@@ -657,8 +657,8 @@ export default function CaseStudyPixelPoker() {
             </div>
 
             <div className="cs-cta-row">
-              <a href="https://github.com/ruchira-edirisinghe/Game-Engine" target="_blank"
-                rel="noopener" className="cs-cta-btn ghost">View Source ↗</a>
+              <a href="https://game-engine-snowy.vercel.app/games/pixel-poker" target="_blank"
+                rel="noopener" className="cs-cta-btn primary">Play the Game →</a>
             </div>
           </section>
 

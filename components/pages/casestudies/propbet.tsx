@@ -584,10 +584,8 @@ export default function CaseStudyPropBet() {
             </div>
 
             <div className="cs-cta-row">
-              <a href="https://game-engine-snowy.vercel.app/games/sky-crash/play" target="_blank"
+              <a href="https://game-engine-snowy.vercel.app/games/sky-crash" target="_blank"
                 rel="noopener" className="cs-cta-btn primary">Play the Game →</a>
-              <a href="https://github.com/ruchira-edirisinghe/Game-Engine" target="_blank"
-                rel="noopener" className="cs-cta-btn ghost">View Source ↗</a>
             </div>
           </section>
 

@@ -74,7 +74,8 @@
       position: absolute;
       width: 2px;
       height: 2px;
-      background: #e6ecff;
+      background: #eff4ff;
+      box-shadow: 0 0 4px rgba(200,222,255,0.5);
       border-radius: 50%;
       opacity: 0;
     }
@@ -139,11 +140,11 @@
 
       0%,
       100% {
-        opacity: calc(var(--star-opacity, 0.3) * 0.62);
+        opacity: calc(var(--star-opacity, 0.6) * 0.42);
       }
 
       50% {
-        opacity: var(--star-opacity, 0.3);
+        opacity: var(--star-opacity, 0.6);
       }
     }
     /* --------------------------------------

@@ -414,3 +414,41 @@ body.menu-open { overflow: hidden; }
   pointer-events: none;
   z-index: 2;
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   PRELOADER FADE IN / FADE OUT
+
+   The exit used to be a cut: every page script sets
+   preloader.style.opacity = '0' and, with no transition declared, the
+   whole overlay vanished between two frames while the WebGL layer let
+   off a flash on top of it. Both read as a blink.
+
+   So: a transition on the way out, and a keyframe on the way in. The
+   fade-in is on the CONTENTS rather than on #preloader itself - the
+   overlay's black has to stay opaque from the first painted frame, or
+   the page underneath shows through before the preloader has even
+   started. This way the sky and the wordmark rise out of black instead.
+
+   Both live here rather than in the seven per-page stylesheets for the
+   same reason #preloader-fx does: every page shares this markup.
+   ══════════════════════════════════════════════════════════════════ */
+#preloader {
+  transition: opacity 560ms cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.aurora-container,
+.preloader-content {
+  animation: preloader-fade-in 720ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes preloader-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* A fade is motion too - honour the same preference the starfield does. */
+@media (prefers-reduced-motion: reduce) {
+  #preloader { transition-duration: 200ms; }
+  .aurora-container,
+  .preloader-content { animation-duration: 200ms; }
+}

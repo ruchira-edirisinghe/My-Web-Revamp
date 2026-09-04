@@ -596,10 +596,8 @@ export default function CaseStudyAetherDynasty() {
             </div>
 
             <div className="cs-cta-row">
-              <a href="https://testing-matching-game.netlify.app" target="_blank"
+              <a href="https://game-engine-snowy.vercel.app/games/matching-game" target="_blank"
                 rel="noopener" className="cs-cta-btn primary">Play the Game →</a>
-              <a href="https://github.com/ruchira-edirisinghe/matching-game" target="_blank"
-                rel="noopener" className="cs-cta-btn ghost">View Source ↗</a>
             </div>
           </section>
 

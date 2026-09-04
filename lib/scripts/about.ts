@@ -239,15 +239,15 @@ export function initAbout(): () => void {
     const starsContainer = document.getElementById('preloader-stars');
     const createdStars: HTMLElement[] = [];
     if (starsContainer) {
-      for (let i = 0; i < 34; i++) {
+      for (let i = 0; i < 55; i++) {
         const star = document.createElement('div');
         star.className = 'preloader-star';
         star.style.left = `${Math.random() * 100}%`;
         star.style.top = `${Math.random() * 100}%`;
-        const size = 0.8 + Math.pow(Math.random(), 2) * 1.5;
+        const size = 1 + Math.pow(Math.random(), 1.6) * 2;
         star.style.width = `${size}px`; star.style.height = `${size}px`;
-        star.style.setProperty('--star-opacity', 0.18 + Math.random() * 0.3);
-        star.style.animation = `star-twinkle ${3.5 + Math.random() * 4.5}s infinite ${Math.random() * 6}s ease-in-out`;
+        star.style.setProperty('--star-opacity', 0.35 + Math.random() * 0.45);
+        star.style.animation = `star-twinkle ${3 + Math.random() * 4}s infinite ${Math.random() * 6}s ease-in-out`;
         starsContainer.appendChild(star);
         createdStars.push(star);
       }

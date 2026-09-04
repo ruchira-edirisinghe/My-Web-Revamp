@@ -139,16 +139,16 @@ export function initContact(): () => void {
         // Generate stars for Aurora Background
         const starsContainer = document.getElementById('preloader-stars');
         if (starsContainer) {
-          const starCount = 34;
+          const starCount = 55;
           for (let i = 0; i < starCount; i++) {
             const star = document.createElement('div');
             star.className = 'preloader-star';
             const x = Math.random() * 100;
             const y = Math.random() * 100;
-            const size = 0.8 + Math.pow(Math.random(), 2) * 1.5;
+            const size = 1 + Math.pow(Math.random(), 1.6) * 2;
             const delay = Math.random() * 6;
-            const duration = 3.5 + Math.random() * 4.5;
-            const opacity = 0.18 + Math.random() * 0.3;
+            const duration = 3 + Math.random() * 4;
+            const opacity = 0.35 + Math.random() * 0.45;
 
             star.style.left = `${x}%`;
             star.style.top = `${y}%`;
