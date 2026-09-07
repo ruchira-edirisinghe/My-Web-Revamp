@@ -26,8 +26,48 @@ export function initPreloader(): () => void {
   canvas.width  = CW;
   canvas.height = CH;
 
-  const DURATION = 2600;
-  const HOLD_MS  = 320;
+  /* ────────────────────────────────────────────────────────────────────
+     HOW LONG THE INTRO HOLDS THE PAGE, AND WHY IT IS NOT ONE NUMBER
+
+     The water fill is a FIXED-LENGTH animation, not a real progress bar -
+     nothing is being waited on, the bar is drawn from a timer. So its length is
+     purely a question of how long the visitor should be made to look at it, and
+     the answer is different the first time and the fifth.
+
+     FIRST_MS is the full signature intro and is unchanged. It plays on a cold
+     load, which is the one moment the wordmark filling up is doing a job.
+
+     REPEAT_MS is for every navigation after that. StandardShell replays this on
+     every in-site route change by design, and at the original length that put
+     2.6s of fill + 0.32s hold + 0.9s split - nearly four seconds - between a
+     click and the page behind it, EVERY time. Six clicks around the site was
+     twenty-three seconds of watching the same logo fill. 900ms keeps the same
+     animation and the same reveal and stops it being a toll.
+
+     Reduced motion collapses it to a beat, because a 2.6s decorative animation
+     is exactly what that preference is asking not to see.
+
+     To go back to the old behaviour, set REPEAT_MS = FIRST_MS.
+     ──────────────────────────────────────────────────────────────────── */
+  const FIRST_MS  = 2600;
+  const REPEAT_MS = 900;
+  const REDUCED_MS = 260;
+  /** Marks that the signature intro has already been shown this session. */
+  const SEEN_KEY = 'preloaderShown';
+
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+
+  let seen = false;
+  try {
+    seen = sessionStorage.getItem(SEEN_KEY) === '1';
+    sessionStorage.setItem(SEEN_KEY, '1');
+  } catch {
+    /* Private mode or storage disabled - fall through as a first visit. It only
+       costs a longer intro, never a broken one. */
+  }
+
+  const DURATION = reduceMotion ? REDUCED_MS : seen ? REPEAT_MS : FIRST_MS;
+  const HOLD_MS  = reduceMotion ? 60 : seen ? 140 : 320;
   const SPLIT_MS = 900; // matches CSS transition
 
   let startTime = null;
@@ -45,7 +85,12 @@ export function initPreloader(): () => void {
   const starsContainer = document.getElementById('preloader-stars');
   const createdStars: HTMLElement[] = [];
   if (starsContainer) {
-    const starCount = 55;
+    /* Fewer of them on a phone: they are 1-3px dots on a backdrop that is on
+       screen for well under a second on a repeat visit, and fifty-five absolutely
+       positioned elements each running its own infinite keyframe is work the
+       compositor does not need to be doing while the page behind is still
+       parsing. */
+    const starCount = window.innerWidth < 780 ? 26 : 55;
     for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
         star.className = 'preloader-star';
@@ -61,7 +106,12 @@ export function initPreloader(): () => void {
         star.style.width = `${size}px`;
         star.style.height = `${size}px`;
         star.style.setProperty('--star-opacity', opacity);
-        star.style.animation = `star-twinkle ${duration}s infinite ${delay}s ease-in-out`;
+        // A twinkle is motion. Reduced motion gets the same sky, held still.
+        if (!reduceMotion) {
+          star.style.animation = `star-twinkle ${duration}s infinite ${delay}s ease-in-out`;
+        } else {
+          star.style.opacity = String(opacity);
+        }
         starsContainer.appendChild(star);
         createdStars.push(star);
     }

@@ -415,44 +415,44 @@ export default function CaseStudyKanaMutti() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/title-screen.png">
-                  <img src="/Images/projects/kana-mutti/title-screen.png" alt="Kana Mutti title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/title-screen-card.png" alt="Kana Mutti title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Screen</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-selection.png">
-                  <img src="/Images/projects/kana-mutti/pot-selection.png" alt="Four clay pots on the rope" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/pot-selection-card.png" alt="Four clay pots on the rope" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Four Pots</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-smashed.png">
-                  <img src="/Images/projects/kana-mutti/pot-smashed.png" alt="A pot smashed - coins and shards in the air" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/pot-smashed-card.png" alt="A pot smashed - coins and shards in the air" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Pot Smashed</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/place-bet.png">
-                  <img src="/Images/projects/kana-mutti/place-bet.png" alt="Place your bet - stake and risk level" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/place-bet-card.png" alt="Place your bet - stake and risk level" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Place Your Bet</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/round-win.png">
-                  <img src="/Images/projects/kana-mutti/round-win.png" alt="Cleared them all - the payout card" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/round-win-card.png" alt="Cleared them all - the payout card" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cleared Them All</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/title-screen.png">
-                  <img src="/Images/projects/kana-mutti/title-screen.png" alt="Kana Mutti title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/title-screen-card.png" alt="Kana Mutti title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Screen</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-selection.png">
-                  <img src="/Images/projects/kana-mutti/pot-selection.png" alt="Four clay pots on the rope" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/pot-selection-card.png" alt="Four clay pots on the rope" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Four Pots</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-smashed.png">
-                  <img src="/Images/projects/kana-mutti/pot-smashed.png" alt="A pot smashed - coins and shards in the air" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/pot-smashed-card.png" alt="A pot smashed - coins and shards in the air" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Pot Smashed</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/place-bet.png">
-                  <img src="/Images/projects/kana-mutti/place-bet.png" alt="Place your bet - stake and risk level" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/place-bet-card.png" alt="Place your bet - stake and risk level" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Place Your Bet</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/round-win.png">
-                  <img src="/Images/projects/kana-mutti/round-win.png" alt="Cleared them all - the payout card" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/round-win-card.png" alt="Cleared them all - the payout card" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cleared Them All</div>
                 </div>
               </div>
@@ -461,44 +461,44 @@ export default function CaseStudyKanaMutti() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/logo.png">
-                  <img src="/Images/projects/kana-mutti/logo.png" alt="Kana Mutti wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/logo-card.png" alt="Kana Mutti wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Wordmark</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/cover.png">
-                  <img src="/Images/projects/kana-mutti/cover.png" alt="Kana Mutti cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/cover-card.png" alt="Kana Mutti cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/place-bet.png">
-                  <img src="/Images/projects/kana-mutti/place-bet.png" alt="The three risk levels" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/place-bet-card.png" alt="The three risk levels" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Risk Levels</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-selection.png">
-                  <img src="/Images/projects/kana-mutti/pot-selection.png" alt="The sealed trust chip" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/pot-selection-card.png" alt="The sealed trust chip" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">SEALED Chip</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-smashed.png">
-                  <img src="/Images/projects/kana-mutti/pot-smashed.png" alt="A pot shattering into coins" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/pot-smashed-card.png" alt="A pot shattering into coins" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Coins!</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/logo.png">
-                  <img src="/Images/projects/kana-mutti/logo.png" alt="Kana Mutti wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/logo-card.png" alt="Kana Mutti wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Wordmark</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/cover.png">
-                  <img src="/Images/projects/kana-mutti/cover.png" alt="Kana Mutti cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/cover-card.png" alt="Kana Mutti cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/place-bet.png">
-                  <img src="/Images/projects/kana-mutti/place-bet.png" alt="The three risk levels" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/place-bet-card.png" alt="The three risk levels" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Risk Levels</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-selection.png">
-                  <img src="/Images/projects/kana-mutti/pot-selection.png" alt="The sealed trust chip" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/pot-selection-card.png" alt="The sealed trust chip" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">SEALED Chip</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kana-mutti/pot-smashed.png">
-                  <img src="/Images/projects/kana-mutti/pot-smashed.png" alt="A pot shattering into coins" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kana-mutti/pot-smashed-card.png" alt="A pot shattering into coins" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Coins!</div>
                 </div>
               </div>
@@ -524,27 +524,27 @@ export default function CaseStudyKanaMutti() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🏺</div>
-                <h4>1 · The Scene</h4>
+                <h3>1 · The Scene</h3>
                 <p>Built the 3D festival scene first - four pots on a rope between two trees, a blindfolded striker who marches and swings, coins and shards on a hit - with an accessible DOM mirror underneath from day one.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🪜</div>
-                <h4>2 · The Ladder</h4>
+                <h3>2 · The Ladder</h3>
                 <p>Derived the multiplier from the without-replacement probability rather than inventing a curve, then set three risk levels and resolved the four-pot symmetry problem in favour of the player.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔗</div>
-                <h4>3 · Swap the Entropy</h4>
+                <h3>3 · Swap the Entropy</h3>
                 <p>Replaced the local crypto RNG with a block-derived seed, keeping the shuffle byte-for-byte identical. The shuffle takes its generator as an argument, so the seed source swapped without touching the logic.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🖥️</div>
-                <h4>4 · Server Route</h4>
+                <h3>4 · Server Route</h3>
                 <p>Moved the fetch server-side - private token, lag ladder, 9-second success cache, 5-second negative cache, exponential backoff, and a guaranteed 200 with a fallback flag.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔒</div>
-                <h4>5 · Seal It</h4>
+                <h3>5 · Seal It</h3>
                 <p>Moved the audit trail into a ref, made the rendered state start at null every round, and set it at exactly three places - all of them a round ending. Then built the three-state trust chip around that.</p>
               </div>
             </div>
@@ -590,19 +590,19 @@ export default function CaseStudyKanaMutti() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A shipped 3D betting game on a traditional Avurudu pastime, and the arcade&apos;s reference implementation for sealed-reveal fairness: a server-side seed route, a prime-stride nonce, a statistically sound generator, a three-state trust chip in real HTML, and a full DOM accessibility mirror over the WebGL scene.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Holding two requirements that pull in opposite directions - publicly auditable, and unguessable while it matters - without falling back on a hidden server roll or abandoning verifiability the way a hidden-information card game has to.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>Trust UI is engineering, not decoration. The seal is worth nothing if it is a promise; it is worth something because it is a ref the render path cannot read, set at three enumerable points, with the sealed state <em>shown</em> rather than hidden - a lock icon beats an empty space that looks like a bug.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Roll the sealed-reveal pattern out across the racing games, whose seeds are still readable during the betting window, and move outcome resolution server-side so the seal binds a modified client too.</p>
               </div>
             </div>

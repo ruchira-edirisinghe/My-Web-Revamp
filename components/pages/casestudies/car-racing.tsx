@@ -113,17 +113,17 @@ export default function CaseStudyCarRacing() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Technical Problem</h4>
+                <h3>Technical Problem</h3>
                 <p>Simulate a believable race with live lead-changes, drive an odds-based betting economy, and animate it all at 60fps - entirely in the browser, with no backend to authoritatively run the race.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
-                <h4>The Goal</h4>
+                <h3>The Goal</h3>
                 <p>A self-contained Next.js game: deterministic seeded races, six cars with real stats, working bets and payouts, bot opponents, audio and a polished neon e-sports UI with swappable palettes.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🤖</div>
-                <h4>The Constraint</h4>
+                <h3>The Constraint</h3>
                 <p>Build it by vibe coding - describing each system to an AI and iterating - which demands a clear mental model of the architecture so the generated code stays consistent and debuggable.</p>
               </div>
             </div>
@@ -286,22 +286,22 @@ export default function CaseStudyCarRacing() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">⚙️</div>
-                <h4>Race Engine</h4>
+                <h3>Race Engine</h3>
                 <p>Seeded RNG · Fixed-step loop · Finish detect</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💰</div>
-                <h4>Betting &amp; Odds</h4>
+                <h3>Betting &amp; Odds</h3>
                 <p>Wagers · Payout math · Live wager feed</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🤖</div>
-                <h4>Bots &amp; Rooms</h4>
+                <h3>Bots &amp; Rooms</h3>
                 <p>AI opponents · Public / private rooms</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔊</div>
-                <h4>FX &amp; Persistence</h4>
+                <h3>FX &amp; Persistence</h3>
                 <p>Audio · Palettes · localStorage</p>
               </div>
             </div>
@@ -379,44 +379,44 @@ export default function CaseStudyCarRacing() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/car-game/home.png">
-                  <img src="/Images/projects/car-game/home.png" alt="Home - Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/home-card.png" alt="Home - Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home · Elite Circuit</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/lobby.png">
-                  <img src="/Images/projects/car-game/lobby.png" alt="Lobby - Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/lobby-card.png" alt="Lobby - Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Lobby · Player's Arena</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/race.png">
-                  <img src="/Images/projects/car-game/race.png" alt="Betting board and race" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/race-card.png" alt="Betting board and race" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Betting &amp; Race</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/race-rules.png">
-                  <img src="/Images/projects/car-game/race-rules.png" alt="Create Arena and rules" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/race-rules-card.png" alt="Create Arena and rules" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Create Arena</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/loading.png">
-                  <img src="/Images/projects/car-game/loading.png" alt="Syncing grid loading screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/loading-card.png" alt="Syncing grid loading screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syncing Grid</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/car-game/home.png">
-                  <img src="/Images/projects/car-game/home.png" alt="Home - Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/home-card.png" alt="Home - Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home · Elite Circuit</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/lobby.png">
-                  <img src="/Images/projects/car-game/lobby.png" alt="Lobby - Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/lobby-card.png" alt="Lobby - Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Lobby · Player's Arena</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/race.png">
-                  <img src="/Images/projects/car-game/race.png" alt="Betting board and race" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/race-card.png" alt="Betting board and race" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Betting &amp; Race</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/race-rules.png">
-                  <img src="/Images/projects/car-game/race-rules.png" alt="Create Arena and rules" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/race-rules-card.png" alt="Create Arena and rules" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Create Arena</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/loading.png">
-                  <img src="/Images/projects/car-game/loading.png" alt="Syncing grid loading screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/loading-card.png" alt="Syncing grid loading screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syncing Grid</div>
                 </div>
               </div>
@@ -425,44 +425,44 @@ export default function CaseStudyCarRacing() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/car-game/race.png">
-                  <img src="/Images/projects/car-game/race.png" alt="Live race" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/race-card.png" alt="Live race" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Pick Your Car</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/loading.png">
-                  <img src="/Images/projects/car-game/loading.png" alt="Grid sync" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/loading-card.png" alt="Grid sync" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Grid Sync</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/lobby.png">
-                  <img src="/Images/projects/car-game/lobby.png" alt="Runners live odds" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/lobby-card.png" alt="Runners live odds" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Grid · Live Odds</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/race-rules.png">
-                  <img src="/Images/projects/car-game/race-rules.png" alt="Arena configuration" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/race-rules-card.png" alt="Arena configuration" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Arena Config</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/home.png">
-                  <img src="/Images/projects/car-game/home.png" alt="Leaderboard and daily bounty" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/home-card.png" alt="Leaderboard and daily bounty" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Leaderboard &amp; Bounty</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/car-game/race.png">
-                  <img src="/Images/projects/car-game/race.png" alt="Live race" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/race-card.png" alt="Live race" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Pick Your Car</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/loading.png">
-                  <img src="/Images/projects/car-game/loading.png" alt="Grid sync" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/loading-card.png" alt="Grid sync" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Grid Sync</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/lobby.png">
-                  <img src="/Images/projects/car-game/lobby.png" alt="Runners live odds" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/lobby-card.png" alt="Runners live odds" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Grid · Live Odds</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/race-rules.png">
-                  <img src="/Images/projects/car-game/race-rules.png" alt="Arena configuration" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/race-rules-card.png" alt="Arena configuration" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Arena Config</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/car-game/home.png">
-                  <img src="/Images/projects/car-game/home.png" alt="Leaderboard and daily bounty" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/car-game/home-card.png" alt="Leaderboard and daily bounty" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Leaderboard &amp; Bounty</div>
                 </div>
               </div>
@@ -488,27 +488,27 @@ export default function CaseStudyCarRacing() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🧱</div>
-                <h4>1 · Scaffold</h4>
+                <h3>1 · Scaffold</h3>
                 <p>Spun up a Next.js + TypeScript app on Turbopack, defined the screen-phase state machine, and stubbed each phase as an empty component so the skeleton was navigable first.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚙️</div>
-                <h4>2 · The Race Engine</h4>
+                <h3>2 · The Race Engine</h3>
                 <p>Built the heart of the game next - the car data model, seeded PRNG, the velocity formula and the fixed-timestep <code>requestAnimationFrame</code> loop - and tuned it until races felt fair and tense.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💰</div>
-                <h4>3 · Betting &amp; Bots</h4>
+                <h3>3 · Betting &amp; Bots</h3>
                 <p>Layered the economy on top: odds, the stake × odds payout, credit balances persisted to localStorage, plus bot opponents and a live wager feed to fill the grid.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">✨</div>
-                <h4>4 · Juice</h4>
+                <h3>4 · Juice</h3>
                 <p>Added the feel - Orbitron/Rajdhani type, the token-driven neon palettes, countdown and ambient audio with volume fades, and Web-Animations transitions between phases.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🚀</div>
-                <h4>5 · Ship</h4>
+                <h3>5 · Ship</h3>
                 <p>Wired up rooms, ranks, seasons and the daily bounty, did a polish-and-bugfix pass, and deployed the static build to Netlify as a no-backend, fully client-side game.</p>
               </div>
             </div>
@@ -541,19 +541,19 @@ export default function CaseStudyCarRacing() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A shipped, playable web game: six stat-driven cars, odds-based betting and payouts, a seeded fixed-step race engine, bots, rooms, ranks, seasons, audio and a swappable neon e-sports skin - all client-side.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Making races feel random yet fair and reproducible, keeping the simulation smooth across frame rates, and holding a large codebase coherent while generating most of it through AI prompts.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>Vibe coding rewards architecture. The clearer my model of the engine, state machine and economy, the cleaner the generated code - the AI accelerates building, but the design decisions stay yours.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Add real-time multiplayer over WebSockets, server-authoritative seeds for trust, more tracks and cars, and a proper progression economy beyond local persistence.</p>
               </div>
             </div>

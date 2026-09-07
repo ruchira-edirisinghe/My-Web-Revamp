@@ -113,17 +113,17 @@ export default function CaseStudyCollapseFactor() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📐</div>
-                <h4>Publish the Risk</h4>
+                <h3>Publish the Risk</h3>
                 <p>The collapse factor - the chance <em>this</em> pull brings it down - is drawn on a graduated gauge before the player commits. Hiding it does not make the decision harder, it makes it arbitrary.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Price It Honestly</h4>
+                <h3>Price It Honestly</h3>
                 <p>If the curve is public, the ladder has to be priced <em>from</em> it - otherwise a player can find the rung where the trade is best, and the game becomes a test with a correct answer.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🧱</div>
-                <h4>Fake the Physics</h4>
+                <h3>Fake the Physics</h3>
                 <p>The pull it falls on is drawn from a sealed block value before the claw moves. A solver would be a solver that has to be told what to conclude - so the tower is faked, and the fake is honest.</p>
               </div>
             </div>
@@ -288,22 +288,22 @@ export default function CaseStudyCollapseFactor() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📐</div>
-                <h4>rules.ts</h4>
+                <h3>rules.ts</h3>
                 <p>Hazard curve · Survival table · <code>drawRun</code> · derived ceiling</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💰</div>
-                <h4>market.ts</h4>
+                <h3>market.ts</h3>
                 <p>Climb ladder · Tumble bands · <code>price()</code> · <code>check()</code></p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🦾</div>
-                <h4>engine/</h4>
+                <h3>engine/</h3>
                 <p>Tower · Claw · Camera fit · Dust · Sheet textures</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔗</div>
-                <h4>blockchainRng.ts</h4>
+                <h3>blockchainRng.ts</h3>
                 <p>Server seed route · mulberry32 · commit-reveal</p>
               </div>
             </div>
@@ -435,44 +435,44 @@ export default function CaseStudyCollapseFactor() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/title-screen.png">
-                  <img src="/Images/projects/collapse-factor/title-screen.png" alt="Collapse Factor title plate" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/title-screen-card.png" alt="Collapse Factor title plate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Plate</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/claw-pull.png">
-                  <img src="/Images/projects/collapse-factor/claw-pull.png" alt="The claw pulling a block out of the tower" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/claw-pull-card.png" alt="The claw pulling a block out of the tower" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Claw Pulls</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/betting-board.png">
-                  <img src="/Images/projects/collapse-factor/betting-board.png" alt="The collapse-factor gauge above the betting board" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/betting-board-card.png" alt="The collapse-factor gauge above the betting board" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Gauge</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/cash-out-decision.png">
-                  <img src="/Images/projects/collapse-factor/cash-out-decision.png" alt="Cash out or ride on, mid-climb" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/cash-out-decision-card.png" alt="Cash out or ride on, mid-climb" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cash Out or Ride</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/provably-fair.png">
-                  <img src="/Images/projects/collapse-factor/provably-fair.png" alt="Run record and fairness panel" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/provably-fair-card.png" alt="Run record and fairness panel" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Run Record</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/title-screen.png">
-                  <img src="/Images/projects/collapse-factor/title-screen.png" alt="Collapse Factor title plate" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/title-screen-card.png" alt="Collapse Factor title plate" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Plate</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/claw-pull.png">
-                  <img src="/Images/projects/collapse-factor/claw-pull.png" alt="The claw pulling a block out of the tower" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/claw-pull-card.png" alt="The claw pulling a block out of the tower" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Claw Pulls</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/betting-board.png">
-                  <img src="/Images/projects/collapse-factor/betting-board.png" alt="The collapse-factor gauge above the betting board" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/betting-board-card.png" alt="The collapse-factor gauge above the betting board" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Gauge</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/cash-out-decision.png">
-                  <img src="/Images/projects/collapse-factor/cash-out-decision.png" alt="Cash out or ride on, mid-climb" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/cash-out-decision-card.png" alt="Cash out or ride on, mid-climb" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cash Out or Ride</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/provably-fair.png">
-                  <img src="/Images/projects/collapse-factor/provably-fair.png" alt="Run record and fairness panel" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/provably-fair-card.png" alt="Run record and fairness panel" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Run Record</div>
                 </div>
               </div>
@@ -481,44 +481,44 @@ export default function CaseStudyCollapseFactor() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/cover.png">
-                  <img src="/Images/projects/collapse-factor/cover.png" alt="Collapse Factor cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/cover-card.png" alt="Collapse Factor cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/logo.png">
-                  <img src="/Images/projects/collapse-factor/logo.png" alt="Collapse Factor wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/logo-card.png" alt="Collapse Factor wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Wordmark</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/betting-board.png">
-                  <img src="/Images/projects/collapse-factor/betting-board.png" alt="Risk ramp at full stress" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/betting-board-card.png" alt="Risk ramp at full stress" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Risk Ramp</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/claw-pull.png">
-                  <img src="/Images/projects/collapse-factor/claw-pull.png" alt="The claw taking a block" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/claw-pull-card.png" alt="The claw taking a block" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Claw</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/cash-out-decision.png">
-                  <img src="/Images/projects/collapse-factor/cash-out-decision.png" alt="Climb ladder strip" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/cash-out-decision-card.png" alt="Climb ladder strip" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Climb Ladder</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/cover.png">
-                  <img src="/Images/projects/collapse-factor/cover.png" alt="Collapse Factor cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/cover-card.png" alt="Collapse Factor cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/logo.png">
-                  <img src="/Images/projects/collapse-factor/logo.png" alt="Collapse Factor wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/logo-card.png" alt="Collapse Factor wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Wordmark</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/betting-board.png">
-                  <img src="/Images/projects/collapse-factor/betting-board.png" alt="Risk ramp at full stress" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/betting-board-card.png" alt="Risk ramp at full stress" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Risk Ramp</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/claw-pull.png">
-                  <img src="/Images/projects/collapse-factor/claw-pull.png" alt="The claw taking a block" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/claw-pull-card.png" alt="The claw taking a block" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Claw</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/collapse-factor/cash-out-decision.png">
-                  <img src="/Images/projects/collapse-factor/cash-out-decision.png" alt="Climb ladder strip" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/collapse-factor/cash-out-decision-card.png" alt="Climb ladder strip" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Climb Ladder</div>
                 </div>
               </div>
@@ -544,27 +544,27 @@ export default function CaseStudyCollapseFactor() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📐</div>
-                <h4>1 · The Curve</h4>
+                <h3>1 · The Curve</h3>
                 <p>Wrote <code>rules.ts</code> as pure functions with no renderer near it - hazard ramp, survival table, tumble distribution and a derived ceiling. Tuned the base and step until a run felt like a run.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💰</div>
-                <h4>2 · The Board</h4>
+                <h3>2 · The Board</h3>
                 <p>Priced both markets from that one table, added <code>price()</code> to truncate downward, and wrote <code>check()</code> to re-derive the actual return rather than assert the intended one.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🧱</div>
-                <h4>3 · The Tower</h4>
+                <h3>3 · The Tower</h3>
                 <p>Built the three height-scaled effects and the claw, then solved the camera against the tower&apos;s live height so a growing subject never crops. The block&apos;s 3:1 proportion is written as a product, not typed.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📄</div>
-                <h4>4 · The Sheet</h4>
+                <h3>4 · The Sheet</h3>
                 <p>Ruled the HUD grid to the same module as the floor texture, baked the floor rules into an emissive map so they exist outside the lamp cone, and drove every colour off one risk-ramp function.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔒</div>
-                <h4>5 · The Seal</h4>
+                <h3>5 · The Seal</h3>
                 <p>Added the server-side seed route and the commit-reveal: one block value decides every roll of the run, held back until the tower falls, and the run cannot end without unsealing it.</p>
               </div>
             </div>
@@ -610,19 +610,19 @@ export default function CaseStudyCollapseFactor() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A complete 3D betting game: a 48-block tower, an automated claw, a published risk gauge, a 16-rung cash-out ladder to 484.85×, four tumble bands, a WebAudio room tone that tightens with the risk, and provably-fair towers sealed to a blockchain block for the whole run.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Making a tower read as a tower without a solver, and keeping every visual channel honest to the maths - a picture more nervous than the numbers is a tell, and one that is calmer is a lie.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>Publishing the odds is a design feature, not a giveaway. Once the ladder is priced <em>from</em> the curve, showing the curve removes the guesswork without conceding anything - and it forces the paytable to be true rather than aspirational.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>A full commit-reveal binding - publishing a hash of the seed before the run, not just the seed after it - server-side settlement, and a shared tower where several players ride the same claw.</p>
               </div>
             </div>

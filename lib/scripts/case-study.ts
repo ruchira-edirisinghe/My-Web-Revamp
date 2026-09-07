@@ -6,7 +6,7 @@
    animated counters, device gallery switcher, floating TOC, smooth scroll,
    redirect modal, and the UI-gallery lightbox).
    ════════════════════════════════════════ */
-import { makeBag } from './_util';
+import { makeBag, scrollBehavior } from './_util';
 
 export function initCaseStudy(): () => void {
   const bag = makeBag();
@@ -36,16 +36,119 @@ export function initCaseStudy(): () => void {
     document.querySelectorAll('.cs-section').forEach(el => sectionObs.observe(el));
     bag.add(() => sectionObs.disconnect());
 
-    if (heroImg && heroBanner) {
-      bag.on(window, 'scroll', () => {
-        const rect = heroBanner.getBoundingClientRect();
-        const windowH = window.innerHeight;
-        if (rect.top < windowH && rect.bottom > 0) {
-          const progress = (windowH - rect.top) / (windowH + rect.height);
+    /* ══════════════════════════════════════════════════════════════════
+       ONE SCROLL PASS, COALESCED INTO A FRAME, READING NO LAYOUT.
+
+       There were two independent `scroll` listeners on this page and between
+       them they did the two worst things a scroll handler can do.
+
+       The parallax one called `getBoundingClientRect()` and then WROTE
+       `heroImg.style.transform` - a layout read followed by a style write, on
+       every scroll event, unthrottled. A trackpad fires those faster than the
+       browser paints, so most of that work was for frames that never existed.
+
+       The TOC one was worse: it read `offsetTop` for the hero AND for every
+       `.cs-section` on the page, every event. Each of those reads, coming after
+       the parallax handler had just written a transform, forces the browser to
+       flush layout again - so a single scroll event could trigger eight
+       synchronous layout recalculations of a very tall page. That is the
+       juddery scrolling on the case studies.
+
+       Now: geometry is measured once into `metrics` and re-measured only when
+       something can actually have moved it (resize, or the last image landing
+       and changing the document height). The listener does nothing but ask for a
+       frame, and the frame does all the reading from the cache and all the
+       writing together.
+       ══════════════════════════════════════════════════════════════════ */
+
+    const tocEl = document.getElementById('cs-toc');
+    /* VeBuild uses a panel-aware data-target TOC driven by initVebuildTabs();
+       running this one there would give the page two TOC systems fighting. */
+    const wantToc = !!tocEl && !document.querySelector('.cs-tabs');
+    const tocItems = wantToc ? tocEl.querySelectorAll('.cs-toc-item') : [];
+
+    let metrics = null;
+
+    function measure() {
+      metrics = {
+        winH: window.innerHeight,
+        heroTop: heroBanner ? heroBanner.offsetTop : 0,
+        heroH: heroBanner ? heroBanner.offsetHeight : 600,
+        docH: document.documentElement.scrollHeight,
+        sections: Array.prototype.map.call(sections, (s) => ({ id: s.id, top: s.offsetTop })),
+      };
+    }
+
+    let lastTocId = null;
+    let tocActive = null;
+
+    function paint() {
+      frameQueued = false;
+      if (!metrics) measure();
+      const y = window.scrollY;
+
+      /* Hero parallax. `rect.top` is just `heroTop - y`, so the cached value
+         gives the identical number with no layout read. */
+      if (heroImg && heroBanner) {
+        const top = metrics.heroTop - y;
+        if (top < metrics.winH && top + metrics.heroH > 0) {
+          const progress = (metrics.winH - top) / (metrics.winH + metrics.heroH);
           heroImg.style.transform = `scale(1.04) translateY(${(progress - 0.5) * 20}px)`;
         }
-      }, { passive: true });
+      }
+
+      if (!wantToc) return;
+
+      /* Only touch classList when the answer has actually changed - a
+         `classList.toggle` to the value it already holds still invalidates
+         style for that element. */
+      const wantActive = y > metrics.heroTop + metrics.heroH - 200;
+      if (wantActive !== tocActive) {
+        tocActive = wantActive;
+        tocEl.classList.toggle('active', wantActive);
+      }
+
+      let activeId = '';
+      for (const s of metrics.sections) if (s.top - 300 <= y) activeId = s.id;
+      if (activeId !== lastTocId) {
+        lastTocId = activeId;
+        tocItems.forEach((item) => {
+          item.classList.toggle('active', item.getAttribute('href') === '#' + activeId);
+        });
+      }
     }
+
+    let frameQueued = false;
+    function onScroll() {
+      if (frameQueued) return;
+      frameQueued = true;
+      requestAnimationFrame(paint);
+    }
+
+    function remeasure() {
+      metrics = null;
+      lastTocId = null;
+      tocActive = null;
+      onScroll();
+    }
+
+    bag.on(window, 'scroll', onScroll, { passive: true });
+    bag.on(window, 'resize', remeasure);
+    /* Section offsets shift as lazy images arrive and give their cards height,
+       so the first measurement is not the final one. `load` is the cheap catch;
+       a ResizeObserver on <body> covers the rest without polling. */
+    bag.on(window, 'load', remeasure);
+    if ('ResizeObserver' in window) {
+      let firstObservation = true;
+      const ro = new ResizeObserver(() => {
+        // The observer fires once on registration; that is not a change.
+        if (firstObservation) { firstObservation = false; return; }
+        if (metrics && document.documentElement.scrollHeight !== metrics.docH) remeasure();
+      });
+      ro.observe(document.body);
+      bag.add(() => ro.disconnect());
+    }
+    onScroll();
 
     const counterObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -93,36 +196,16 @@ export function initCaseStudy(): () => void {
       });
     }
 
-    // The standard id/href-based TOC. Pages with an A/B `.cs-tabs` switcher (VeBuild)
-    // use a panel-aware data-target TOC instead - handled by initVebuildTabs() - so
-    // skip this block there to avoid two TOC systems fighting.
-    if (!document.querySelector('.cs-tabs')) {
-      const toc = document.getElementById('cs-toc');
-      const tocItems = toc ? toc.querySelectorAll('.cs-toc-item') : [];
-      function updateToc() {
-        if (!toc) return;
-        const scrollY = window.scrollY;
-        const heroBottom = heroBanner ? heroBanner.offsetTop + heroBanner.offsetHeight : 600;
-        if (scrollY > heroBottom - 200) { toc.classList.add('active'); }
-        else { toc.classList.remove('active'); }
-        let activeId = '';
-        sections.forEach(sec => { if (sec.offsetTop - 300 <= scrollY) activeId = sec.id; });
-        tocItems.forEach(item => {
-          item.classList.toggle('active', item.getAttribute('href') === '#' + activeId);
-        });
-      }
-      bag.on(window, 'scroll', updateToc, { passive: true });
-      updateToc();
-
-      tocItems.forEach(item => {
-        bag.on(item, 'click', (e) => {
-          e.preventDefault();
-          const href = item.getAttribute('href');
-          const target = href && href.length > 1 ? document.querySelector(href) : null;
-          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
+    /* The TOC's highlighting is driven by the coalesced scroll pass above; all
+       that is left here is what happens when one is clicked. */
+    tocItems.forEach(item => {
+      bag.on(item, 'click', (e) => {
+        e.preventDefault();
+        const href = item.getAttribute('href');
+        const target = href && href.length > 1 ? document.querySelector(href) : null;
+        if (target) target.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
       });
-    }
+    });
 
     /* ── Redirection Modal Logic ── */
     const redirectModal = document.getElementById('redirect-modal');
@@ -172,7 +255,30 @@ export function initCaseStudy(): () => void {
       bag.on(redirectModal, 'click', (e) => { if (e.target === redirectModal) closeRedirect(); });
       // Escape closes the redirect modal (previously only the lightbox handled Escape)
       bag.on(document, 'keydown', (e) => {
-        if (e.key === 'Escape' && redirectModal.classList.contains('active')) closeRedirect();
+        if (!redirectModal.classList.contains('active')) return;
+        if (e.key === 'Escape') { closeRedirect(); return; }
+
+        /* Same trap as the lightbox, and it matters more here: the two stops are
+           "Stay Here" and a link that opens a new tab, so focus wandering out of
+           this dialog leaves a visitor tabbing an inert page with a confirmation
+           they cannot answer. */
+        if (e.key === 'Tab') {
+          const stops = [redirectCancel, redirectConfirm].filter(Boolean);
+          if (!stops.length) return;
+          const first = stops[0];
+          const last = stops[stops.length - 1];
+          const active = document.activeElement;
+          if (!redirectModal.contains(active)) {
+            e.preventDefault();
+            first.focus();
+          } else if (e.shiftKey && active === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && active === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       });
     }
 
@@ -296,9 +402,20 @@ export function initCaseStudy(): () => void {
 
     uiCards.forEach(card => {
       card.style.cursor = 'pointer';
-      // Keyboard access: expose each screenshot card as a button
-      if (!card.hasAttribute('role')) card.setAttribute('role', 'button');
-      if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+
+      /* A card the page has marked aria-hidden is the marquee's duplicate copy,
+         there only so the CSS loop has no seam. Giving it role="button" and
+         tabindex="0" would put a focusable control inside an aria-hidden subtree
+         - a control a keyboard user can reach and a screen reader refuses to
+         announce, which is the specific combination that leaves someone tabbing
+         into silence. It still opens on click, because a sighted visitor sees a
+         real card there. */
+      const decorative = card.closest('[aria-hidden="true"]') !== null;
+      if (!decorative) {
+        // Keyboard access: expose each screenshot card as a button
+        if (!card.hasAttribute('role')) card.setAttribute('role', 'button');
+        if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+      }
       const label = card.querySelector('.ui-card-label')?.textContent;
       if (label && !card.getAttribute('aria-label')) card.setAttribute('aria-label', `View ${label.trim()}`);
       const openFromCard = (e) => {
@@ -318,12 +435,56 @@ export function initCaseStudy(): () => void {
     if (nextBtn) bag.on(nextBtn, 'click', (e) => { e.stopPropagation(); showNext(); });
     bag.on(modal, 'click', (e) => { if (e.target === modal) closeModal(); });
     bag.on(modalImg, 'click', (e) => { e.stopPropagation(); if (hasDragged) return; if (window.innerWidth > 900) toggleZoom(); });
+    /* The lightbox's own controls, in DOM order, minus anything CSS has taken
+       out of the layout - the zoom button is hidden below 900px, and a trap that
+       cycled through a display:none button would strand focus on nothing.
+       Queried per keypress rather than cached because that visibility changes
+       with the viewport while the modal is open. */
+    function modalStops() {
+      return [...modal.querySelectorAll('button')].filter(
+        (el) => el.offsetWidth > 0 || el.offsetHeight > 0 || el.getClientRects().length
+      );
+    }
+
     bag.on(document, 'keydown', (e) => {
       if (!modal.classList.contains('open')) return;
-      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Escape') { closeModal(); return; }
+
+      /* TRAP TAB INSIDE THE OVERLAY.
+         The dialog already set aria-modal and moved focus to the close button,
+         but nothing held focus here: one Tab put the caret on the first link of
+         the page BEHIND a full-screen opaque overlay, and from there a keyboard
+         visitor was navigating a document they could not see, with no way back
+         to the close button except Shift+Tab-ing blindly. aria-modal tells a
+         screen reader to ignore the rest of the page; it does not stop the Tab
+         key, which is a separate job and this is it. */
+      if (e.key === 'Tab') {
+        const stops = modalStops();
+        if (!stops.length) return;
+        const first = stops[0];
+        const last = stops[stops.length - 1];
+        const active = document.activeElement;
+        if (!modal.contains(active)) {
+          e.preventDefault();
+          first.focus();
+        } else if (e.shiftKey && active === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && active === last) {
+          e.preventDefault();
+          first.focus();
+        }
+        return;
+      }
+
       if (e.key === 'ArrowRight') showNext();
       if (e.key === 'ArrowLeft') showPrev();
-      if (e.key === ' ' || e.key === 'z') toggleZoom();
+      /* Space is a real activation key on a focused <button>, so swallowing it
+         for zoom would break whichever control the visitor has just tabbed to. */
+      if (e.key === 'z' || (e.key === ' ' && !modal.contains(document.activeElement))) {
+        e.preventDefault();
+        toggleZoom();
+      }
     });
 
     bag.add(() => { document.body.style.overflow = ''; document.body.classList.remove('modal-open'); });

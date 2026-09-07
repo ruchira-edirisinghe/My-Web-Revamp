@@ -4,7 +4,7 @@
    (faithful port of the page-specific portion of vebuild-case-study.html's inline
    script; the rest of the page is handled by initProjects() + initCaseStudy().)
    ════════════════════════════════════════ */
-import { makeBag } from './_util';
+import { makeBag, scrollBehavior } from './_util';
 
 export function initVebuildTabs(): () => void {
   const bag = makeBag();
@@ -45,7 +45,7 @@ export function initVebuildTabs(): () => void {
       if (ap) {
         ap.querySelectorAll('.cs-section').forEach(s => s.classList.add('visible'));
         const y = ap.getBoundingClientRect().top + window.scrollY - 130;
-        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        window.scrollTo({ top: Math.max(0, y), behavior: scrollBehavior() });
       }
       updateToc();
     });
@@ -59,7 +59,7 @@ export function initVebuildTabs(): () => void {
       e.preventDefault();
       const ap = activePanel();
       const target = ap && ap.querySelector('[data-sec="' + item.dataset.target + '"]');
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (target) target.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
     });
   });
 

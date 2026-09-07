@@ -5,6 +5,7 @@ import StandardShell from '@/components/StandardShell';
 import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
+import { cardSrc } from '@/lib/cardSrc';
 
 export default function CaseStudyPropBet() {
   useEffect(() => {
@@ -106,17 +107,17 @@ export default function CaseStudyPropBet() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Design Problem</h4>
+                <h3>Design Problem</h3>
                 <p>Build a tense aviation "cockpit HUD" - a plane climbing a neon curve, a giant live multiplier, a colour-graded crash-history rail and two bet panels - that reads at a glance and stays playable on both desktop and a phone held in one hand.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚙️</div>
-                <h4>Technical Problem</h4>
+                <h3>Technical Problem</h3>
                 <p>Drive a 60fps rising-multiplier curve and plane animation from a deterministic round engine, resolve manual and auto cash-outs against the exact frame multiplier, and keep the crash point sealed until the moment the plane flies away.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🤖</div>
-                <h4>The Constraint</h4>
+                <h3>The Constraint</h3>
                 <p>Describe each sub-system to an AI and iterate - the round state machine, the crash RNG, the cash-out resolver, the curve easing - which demands a precise mental model of the timing race, or the generated code silently mis-pays a round.</p>
               </div>
             </div>
@@ -281,22 +282,22 @@ export default function CaseStudyPropBet() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📁</div>
-                <h4>engine.ts</h4>
+                <h3>engine.ts</h3>
                 <p>Pure crash math. <code className="cs-sm">sampleCrashPoint</code> draws the bust multiplier from <code className="cs-sm">P(crash ≥ x) = (1−edge)/x</code> at a 3% house edge; <code className="cs-sm">multiplierAt</code> maps flight time to the live multiplier via <code className="cs-sm">m(t) = e^(0.1·t)</code>. Owns phase timings, bet limits and the 5,000x cap.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎮</div>
-                <h4>Game.tsx</h4>
+                <h3>Game.tsx</h3>
                 <p>The component and the loop in one. Renders the canvas + panels once, boots the <code className="cs-sm">requestAnimationFrame</code> loop, runs the whole simulation from refs, and syncs throttled state - phase, multiplier, balance, history - to the panels.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔗</div>
-                <h4>blockchainRng.ts</h4>
+                <h3>blockchainRng.ts</h3>
                 <p>Provably-fair seed. Fetches a real block-derived number from <code className="cs-sm">/api/crash-seed</code>, derives a per-round seed, and feeds a <code className="cs-sm">mulberry32</code> PRNG whose first output is the uniform the crash formula consumes - with a quiet <code className="cs-sm">Math.random()</code> fallback.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔊</div>
-                <h4>sounds.ts</h4>
+                <h3>sounds.ts</h3>
                 <p>Audio cues wired to the round phase - take-off, the climbing tone, cash-out and the crash - each mutable from the HUD's sound toggle.</p>
               </div>
             </div>
@@ -460,7 +461,7 @@ export default function CaseStudyPropBet() {
                   { src: '/Images/projects/propbet/how-to-play.png', alt: 'PropBet - how to play guide', label: 'How to Play' },
                 ]).map((item, i) => (
                   <div key={i} className="ui-card" data-full={item.src}>
-                    <img src={item.src} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
+                    <img src={cardSrc(item.src)} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
                     <div className="ui-card-label">{item.label}</div>
                   </div>
                 ))}
@@ -482,7 +483,7 @@ export default function CaseStudyPropBet() {
                   { src: '/Images/projects/propbet/home.png', alt: 'Race the odds', label: 'Race the Odds' },
                 ]).map((item, i) => (
                   <div key={i} className="ui-card" data-full={item.src}>
-                    <img src={item.src} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
+                    <img src={cardSrc(item.src)} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
                     <div className="ui-card-label">{item.label}</div>
                   </div>
                 ))}
@@ -509,27 +510,27 @@ export default function CaseStudyPropBet() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📐</div>
-                <h4>1 · Design the Math</h4>
+                <h3>1 · Design the Math</h3>
                 <p>Specified the round life-cycle (bet → take-off → climb → cash out / crash → payout), the exponential curve, and the seeded crash-point distribution with its house edge - all verified on paper before a single prompt.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">✈️</div>
-                <h4>2 · Build the Engine</h4>
+                <h3>2 · Build the Engine</h3>
                 <p>Implemented <code className="cs-sm">engine.ts</code> first - the pure crash math: the <code className="cs-sm">(1−edge)/x</code> distribution, the <code className="cs-sm">e^(0.1·t)</code> growth curve, phase timings and bet limits. Validated the RTP and payouts by hand before touching the UI.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎮</div>
-                <h4>3 · The Canvas Loop</h4>
+                <h3>3 · The Canvas Loop</h3>
                 <p>Built the <code className="cs-sm">requestAnimationFrame</code> loop inside <code className="cs-sm">Game.tsx</code>, driving the whole simulation from refs so the canvas runs at 60fps while React state syncs only a few times a second - no per-frame re-renders, no stale cash-outs.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🛩️</div>
-                <h4>4 · Cockpit HUD Skin</h4>
+                <h3>4 · Cockpit HUD Skin</h3>
                 <p>Translated the type system, the sky-blue-to-crash-crimson palette, the climbing plane path across the parallax skies, and the neon curve into CSS and the canvas render layer.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🚀</div>
-                <h4>5 · Polish &amp; Ship</h4>
+                <h3>5 · Polish &amp; Ship</h3>
                 <p>Added the second bet panel, per-panel auto cash-out, the colour-graded crash-history rail, sound, a how-to-play panel and 50,000 demo credits - then mounted it into the shared Game Engine shell on Vercel.</p>
               </div>
             </div>
@@ -566,19 +567,19 @@ export default function CaseStudyPropBet() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A shipped, playable browser crash game: a 60fps canvas render loop, a blockchain-seeded provably-fair crash engine, dual bet panels, per-panel auto cash-out, a colour-graded crash-history rail, simulated participants, sound and 50,000 demo credits - all client-side, mounted in a shared Game Engine platform.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>The cash-out race is unforgiving - resolve it against a frame-old multiplier and every payout is wrong. Getting it right through vibe coding meant sealing the crash point at take-off and driving the loop with rAF instead of React state, all specced before a single prompt.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>The imperative game-loop pattern is the right architecture for a real-time game on React - no state, no reconciliation overhead. The AI produced it correctly only after I specified the pattern explicitly. Design-first vibe coding is the only vibe coding that survives a timing-critical loop.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Surface the block hash behind each round as an in-game "verify" link, persist balance and history across sessions, replace the simulated participant bots with a real multiplayer socket so bets are shared between players, and grow the shared Game Engine shell with more titles beside PropBet.</p>
               </div>
             </div>

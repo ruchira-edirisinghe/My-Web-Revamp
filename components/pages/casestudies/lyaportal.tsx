@@ -101,17 +101,17 @@ export default function CaseStudyLyaportal() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Problem Statement</h4>
+                <h3>Problem Statement</h3>
                 <p>A single, generic flow couldn't serve students, parents and teachers at once - and unclear payment options (online vs. bank transfer) made the most critical step the most anxious one.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
-                <h4>The Goal</h4>
+                <h3>The Goal</h3>
                 <p>Design one cohesive portal with tailored journeys per role, a guided registration-to-payment flow, and flexible, trustworthy payment options that work for local realities.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
-                <h4>Target Audience</h4>
+                <h3>Target Audience</h3>
                 <p>Students registering and sitting exams, parents paying and tracking on their behalf, and teachers confirming and overseeing exam details.</p>
               </div>
             </div>
@@ -262,22 +262,22 @@ export default function CaseStudyLyaportal() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📊</div>
-                <h4>Dashboard</h4>
+                <h3>Dashboard</h3>
                 <p>Overview · Notifications · Quick Actions</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📝</div>
-                <h4>Exams</h4>
+                <h3>Exams</h3>
                 <p>All Exams · My Exams · Details</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💳</div>
-                <h4>Payments</h4>
+                <h3>Payments</h3>
                 <p>Online · Bank Transfer · My Payments</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👤</div>
-                <h4>Account</h4>
+                <h3>Account</h3>
                 <p>Login · Roles · Profile</p>
               </div>
             </div>
@@ -345,102 +345,102 @@ export default function CaseStudyLyaportal() {
             <div className="ui-gallery">
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Login.png">
-                  <img src="/Images/projects/lyaportal/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard 1.png">
-                  <img src="/Images/projects/lyaportal/Dashboard 1.png" alt="Student Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Dashboard 1-card.png" alt="Student Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Student Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/All Exams.png">
-                  <img src="/Images/projects/lyaportal/All Exams.png" alt="All Exams" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/All Exams-card.png" alt="All Exams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">All Exams</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/My Exams.png">
-                  <img src="/Images/projects/lyaportal/My Exams.png" alt="My Exams" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/My Exams-card.png" alt="My Exams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Exams</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Details Confirmation.png">
-                  <img src="/Images/projects/lyaportal/Details Confirmation.png" alt="Details Confirmation" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Details Confirmation-card.png" alt="Details Confirmation" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Details Confirmation</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/My Payments.png">
-                  <img src="/Images/projects/lyaportal/My Payments.png" alt="My Payments" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/My Payments-card.png" alt="My Payments" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Payments</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Login.png">
-                  <img src="/Images/projects/lyaportal/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard 1.png">
-                  <img src="/Images/projects/lyaportal/Dashboard 1.png" alt="Student Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Dashboard 1-card.png" alt="Student Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Student Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/All Exams.png">
-                  <img src="/Images/projects/lyaportal/All Exams.png" alt="All Exams" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/All Exams-card.png" alt="All Exams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">All Exams</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/My Exams.png">
-                  <img src="/Images/projects/lyaportal/My Exams.png" alt="My Exams" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/My Exams-card.png" alt="My Exams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Exams</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Details Confirmation.png">
-                  <img src="/Images/projects/lyaportal/Details Confirmation.png" alt="Details Confirmation" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Details Confirmation-card.png" alt="Details Confirmation" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Details Confirmation</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/My Payments.png">
-                  <img src="/Images/projects/lyaportal/My Payments.png" alt="My Payments" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/My Payments-card.png" alt="My Payments" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">My Payments</div>
                 </div>
               </div>
 
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Select Payment Method.png">
-                  <img src="/Images/projects/lyaportal/Select Payment Method.png" alt="Select Payment Method" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Select Payment Method-card.png" alt="Select Payment Method" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Select Payment</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Bank Transfer Payment.png">
-                  <img src="/Images/projects/lyaportal/Bank Transfer Payment.png" alt="Bank Transfer Payment" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Bank Transfer Payment-card.png" alt="Bank Transfer Payment" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bank Transfer</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Online Payment Successful.png">
-                  <img src="/Images/projects/lyaportal/Online Payment Successful.png" alt="Payment Successful" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Online Payment Successful-card.png" alt="Payment Successful" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Payment Success</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard --_ Notifications.png">
-                  <img src="/Images/projects/lyaportal/Dashboard --_ Notifications.png" alt="Notifications" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Dashboard --_ Notifications-card.png" alt="Notifications" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Notifications</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/teacher-flow/Dashboard 2.png">
-                  <img src="/Images/projects/lyaportal/teacher-flow/Dashboard 2.png" alt="Teacher Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/teacher-flow/Dashboard 2-card.png" alt="Teacher Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Teacher Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/parent-flow/Dashboard 3.png">
-                  <img src="/Images/projects/lyaportal/parent-flow/Dashboard 3.png" alt="Parent Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/parent-flow/Dashboard 3-card.png" alt="Parent Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Parent Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Select Payment Method.png">
-                  <img src="/Images/projects/lyaportal/Select Payment Method.png" alt="Select Payment Method" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Select Payment Method-card.png" alt="Select Payment Method" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Select Payment</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Bank Transfer Payment.png">
-                  <img src="/Images/projects/lyaportal/Bank Transfer Payment.png" alt="Bank Transfer Payment" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Bank Transfer Payment-card.png" alt="Bank Transfer Payment" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Bank Transfer</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Online Payment Successful.png">
-                  <img src="/Images/projects/lyaportal/Online Payment Successful.png" alt="Payment Successful" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Online Payment Successful-card.png" alt="Payment Successful" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Payment Success</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/Dashboard --_ Notifications.png">
-                  <img src="/Images/projects/lyaportal/Dashboard --_ Notifications.png" alt="Notifications" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/Dashboard --_ Notifications-card.png" alt="Notifications" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Notifications</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/teacher-flow/Dashboard 2.png">
-                  <img src="/Images/projects/lyaportal/teacher-flow/Dashboard 2.png" alt="Teacher Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/teacher-flow/Dashboard 2-card.png" alt="Teacher Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Teacher Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyaportal/parent-flow/Dashboard 3.png">
-                  <img src="/Images/projects/lyaportal/parent-flow/Dashboard 3.png" alt="Parent Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/lyaportal/parent-flow/Dashboard 3-card.png" alt="Parent Dashboard" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Parent Dashboard</div>
                 </div>
               </div>
@@ -463,17 +463,17 @@ export default function CaseStudyLyaportal() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🧭</div>
-                <h4>Role-Based Dashboards</h4>
+                <h3>Role-Based Dashboards</h3>
                 <p>Student, parent and teacher each land on a dashboard tuned to their goals - one product, three confident entry points.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💳</div>
-                <h4>Flexible Payments</h4>
+                <h3>Flexible Payments</h3>
                 <p>Instant online payment sits beside bank transfer - including an "upload slip later" path - so the portal fits real-world payment habits.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">✅</div>
-                <h4>Honest Status States</h4>
+                <h3>Honest Status States</h3>
                 <p>Every payment ends in a clear success or failure screen with next steps - turning the most anxious step into a reassuring one.</p>
               </div>
             </div>
@@ -506,19 +506,19 @@ export default function CaseStudyLyaportal() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A complete, consistent multi-role portal: three tailored flows and 40+ high-fidelity screens covering registration, role-based dashboards, and every online and bank-transfer payment state.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Designing three parallel flows that stay consistent - and covering payment edge cases (failures, "upload slip later") without overwhelming the happy path.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>A shared design system is what makes multi-role products feel like one product. Designing the unhappy states (failed / pending payments) is as important as the success ones.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Hand off to development, add automated reminders for pending bank transfers, and extend the system to results publishing and admin reporting.</p>
               </div>
             </div>

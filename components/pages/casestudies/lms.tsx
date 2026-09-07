@@ -113,19 +113,19 @@ export default function CaseStudyLms() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🧠</div>
-                <h4>Problem Statement</h4>
+                <h3>Problem Statement</h3>
                 <p>Dated UI hierarchies and cluttered dashboards were causing senior executives and busy professionals to
                   abandon their mandatory training modules.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Strategic Goal</h4>
+                <h3>Strategic Goal</h3>
                 <p>Redesign the hub to achieve a 50% increase in course engagement through progressive disclosure and an
                   intuitive card-based dashboard layout.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
-                <h4>Target Audience</h4>
+                <h3>Target Audience</h3>
                 <p>Busy corporate professionals (25-55), company administrators, and HR managers seeking simplified
                   compliance tracking and personal growth.</p>
               </div>
@@ -322,22 +322,22 @@ export default function CaseStudyLms() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🏠</div>
-                <h4>Dashboard</h4>
+                <h3>Dashboard</h3>
                 <p>Overview · Progress · Recent · Achievements</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📚</div>
-                <h4>Library</h4>
+                <h3>Library</h3>
                 <p>Courses · Catalog · Categories · Recommendations</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📊</div>
-                <h4>Analytics</h4>
+                <h3>Analytics</h3>
                 <p>Reports · Stats · Benchmarks · Team tracking</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🛡️</div>
-                <h4>Account</h4>
+                <h3>Account</h3>
                 <p>Profile · Settings · Notifications · Help</p>
               </div>
             </div>
@@ -439,103 +439,103 @@ export default function CaseStudyLms() {
             <div className="ui-gallery">
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 <div className="ui-card" data-full="/Images/projects/LMS/Login.png"><img
-                    src="/Images/projects/LMS/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Gateway</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home.png"
+                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home-card.png"
                     alt="Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Courses.png"><img
-                    src="/Images/projects/LMS/Courses.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Courses-card.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Curriculum</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.png"><img
-                    src="/Images/projects/LMS/Course Overview.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Course Overview-card.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syllabus</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Course View.png"><img
-                    src="/Images/projects/LMS/Course View.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Course View-card.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Active Learning</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/My Profile.png"><img
-                    src="/Images/projects/LMS/My Profile.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/My Profile-card.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Identity</div>
                 </div>
                 {/* Duplicates */}
                 <div className="ui-card" data-full="/Images/projects/LMS/Login.png"><img
-                    src="/Images/projects/LMS/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Gateway</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home.png"
+                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home-card.png"
                     alt="Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Courses.png"><img
-                    src="/Images/projects/LMS/Courses.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Courses-card.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Curriculum</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.png"><img
-                    src="/Images/projects/LMS/Course Overview.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Course Overview-card.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syllabus</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Course View.png"><img
-                    src="/Images/projects/LMS/Course View.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Course View-card.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Active Learning</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/My Profile.png"><img
-                    src="/Images/projects/LMS/My Profile.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/My Profile-card.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Identity</div>
                 </div>
               </div>
 
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 <div className="ui-card" data-full="/Images/projects/LMS/Courses.png"><img
-                    src="/Images/projects/LMS/Courses.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Courses-card.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Curriculum</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.png"><img
-                    src="/Images/projects/LMS/Course Overview.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Course Overview-card.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syllabus</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Course View.png"><img
-                    src="/Images/projects/LMS/Course View.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Course View-card.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Active Learning</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/My Profile.png"><img
-                    src="/Images/projects/LMS/My Profile.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/My Profile-card.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Identity</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Login.png"><img
-                    src="/Images/projects/LMS/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Gateway</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home.png"
+                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home-card.png"
                     alt="Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Dashboard</div>
                 </div>
                 {/* Duplicates */}
                 <div className="ui-card" data-full="/Images/projects/LMS/Courses.png"><img
-                    src="/Images/projects/LMS/Courses.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Courses-card.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Curriculum</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.png"><img
-                    src="/Images/projects/LMS/Course Overview.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Course Overview-card.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syllabus</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Course View.png"><img
-                    src="/Images/projects/LMS/Course View.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Course View-card.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Active Learning</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/My Profile.png"><img
-                    src="/Images/projects/LMS/My Profile.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/My Profile-card.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Identity</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/LMS/Login.png"><img
-                    src="/Images/projects/LMS/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
+                    src="/Images/projects/LMS/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Gateway</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home.png"
+                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home-card.png"
                     alt="Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Dashboard</div>
                 </div>
@@ -571,12 +571,12 @@ export default function CaseStudyLms() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>🧠 Lessons Learned</h4>
+                <h3>🧠 Lessons Learned</h3>
                 <p>Onboarding is the most critical junction. By simplifying the entry point into 4 digestible steps, we
                   eliminated the anxiety associated with legacy corporate system complexity.</p>
               </div>
               <div className="reflection-card">
-                <h4>⏮️ Reflection</h4>
+                <h3>⏮️ Reflection</h3>
                 <p>Designing for a SaaS environment requires a robust design-system approach from Day 1. The card-based
                   components made scaling the courses library significantly more systematic.</p>
               </div>

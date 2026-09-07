@@ -101,17 +101,17 @@ export default function CaseStudyTechnosphere() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Problem Statement</h4>
+                <h3>Problem Statement</h3>
                 <p>The need for a visually engaging and user-friendly interface that reflected the event's essence while ensuring seamless navigation and interaction for participants.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
-                <h4>The Goal</h4>
+                <h3>The Goal</h3>
                 <p>Enhance user engagement, facilitate seamless navigation, ensure accessibility/responsiveness, and foster event participation across all devices.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
-                <h4>Target Audience</h4>
+                <h3>Target Audience</h3>
                 <p>Technophiles, university students, faculty members, and tech enthusiasts participating in sessions and competitive CTF events.</p>
               </div>
             </div>
@@ -303,22 +303,22 @@ export default function CaseStudyTechnosphere() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🕒</div>
-                <h4>Event Schedule</h4>
+                <h3>Event Schedule</h3>
                 <p>Session Timings · Tracks · Breakout Rooms</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
-                <h4>Speakers</h4>
+                <h3>Speakers</h3>
                 <p>Profiles · Topics · Q&A Links</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
-                <h4>CTF Competition</h4>
+                <h3>CTF Competition</h3>
                 <p>Rules · Challenges · Leaderboard</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏢</div>
-                <h4>Venue Info</h4>
+                <h3>Venue Info</h3>
                 <p>Maps · Directions · Support</p>
               </div>
             </div>
@@ -389,44 +389,44 @@ export default function CaseStudyTechnosphere() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/technosphere/Landing.png">
-                  <img src="/Images/projects/technosphere/Landing.png" alt="Landing Page" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Landing-card.png" alt="Landing Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Landing Page</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/CTF Landing.png">
-                  <img src="/Images/projects/technosphere/CTF Landing.png" alt="CTF Competition Landing" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/CTF Landing-card.png" alt="CTF Competition Landing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">CTF Competition</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Register - Physical Attendee.png">
-                  <img src="/Images/projects/technosphere/Register - Physical Attendee.png" alt="Register as Physical Attendee" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Register - Physical Attendee-card.png" alt="Register as Physical Attendee" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Register · Physical</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Register - Webinar Attendee.png">
-                  <img src="/Images/projects/technosphere/Register - Webinar Attendee.png" alt="Register as Webinar Attendee" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Register - Webinar Attendee-card.png" alt="Register as Webinar Attendee" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Register · Webinar</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Register - Success Popup.png">
-                  <img src="/Images/projects/technosphere/Register - Success Popup.png" alt="Registration Success Popup" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Register - Success Popup-card.png" alt="Registration Success Popup" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Registration Success</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/technosphere/Landing.png">
-                  <img src="/Images/projects/technosphere/Landing.png" alt="Landing Page" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Landing-card.png" alt="Landing Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Landing Page</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/CTF Landing.png">
-                  <img src="/Images/projects/technosphere/CTF Landing.png" alt="CTF Competition Landing" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/CTF Landing-card.png" alt="CTF Competition Landing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">CTF Competition</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Register - Physical Attendee.png">
-                  <img src="/Images/projects/technosphere/Register - Physical Attendee.png" alt="Register as Physical Attendee" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Register - Physical Attendee-card.png" alt="Register as Physical Attendee" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Register · Physical</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Register - Webinar Attendee.png">
-                  <img src="/Images/projects/technosphere/Register - Webinar Attendee.png" alt="Register as Webinar Attendee" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Register - Webinar Attendee-card.png" alt="Register as Webinar Attendee" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Register · Webinar</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Register - Success Popup.png">
-                  <img src="/Images/projects/technosphere/Register - Success Popup.png" alt="Registration Success Popup" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Register - Success Popup-card.png" alt="Registration Success Popup" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Registration Success</div>
                 </div>
               </div>
@@ -435,44 +435,44 @@ export default function CaseStudyTechnosphere() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Physical Attendee.png">
-                  <img src="/Images/projects/technosphere/Profile - Physical Attendee.png" alt="Physical Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Profile - Physical Attendee-card.png" alt="Physical Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile · Physical</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Webinar Attendee.png">
-                  <img src="/Images/projects/technosphere/Profile - Webinar Attendee.png" alt="Webinar Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Profile - Webinar Attendee-card.png" alt="Webinar Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile · Webinar</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Video-Player.png">
-                  <img src="/Images/projects/technosphere/Video-Player.png" alt="Session Video Player" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Video-Player-card.png" alt="Session Video Player" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Video Player</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-home.png">
-                  <img src="/Images/projects/technosphere/Ask-Questions-home.png" alt="Ask Questions Feed" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Ask-Questions-home-card.png" alt="Ask Questions Feed" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Ask Questions</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-addcomment.png">
-                  <img src="/Images/projects/technosphere/Ask-Questions-addcomment.png" alt="Ask Questions Add Comment" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Ask-Questions-addcomment-card.png" alt="Ask Questions Add Comment" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Q&amp;A · Add Comment</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Physical Attendee.png">
-                  <img src="/Images/projects/technosphere/Profile - Physical Attendee.png" alt="Physical Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Profile - Physical Attendee-card.png" alt="Physical Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile · Physical</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Webinar Attendee.png">
-                  <img src="/Images/projects/technosphere/Profile - Webinar Attendee.png" alt="Webinar Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Profile - Webinar Attendee-card.png" alt="Webinar Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile · Webinar</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Video-Player.png">
-                  <img src="/Images/projects/technosphere/Video-Player.png" alt="Session Video Player" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Video-Player-card.png" alt="Session Video Player" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Video Player</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-home.png">
-                  <img src="/Images/projects/technosphere/Ask-Questions-home.png" alt="Ask Questions Feed" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Ask-Questions-home-card.png" alt="Ask Questions Feed" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Ask Questions</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-addcomment.png">
-                  <img src="/Images/projects/technosphere/Ask-Questions-addcomment.png" alt="Ask Questions Add Comment" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/technosphere/Ask-Questions-addcomment-card.png" alt="Ask Questions Add Comment" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Q&amp;A · Add Comment</div>
                 </div>
               </div>
@@ -496,17 +496,17 @@ export default function CaseStudyTechnosphere() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">✨</div>
-                <h4>Button Feel</h4>
+                <h3>Button Feel</h3>
                 <p>Strategically placed call-to-action buttons use high-contrast hover effects, ensuring that attendees can easily access information about sessions and competitions. The emotional intent: action and clarity.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌊</div>
-                <h4>Responsive Flow</h4>
+                <h3>Responsive Flow</h3>
                 <p>The layout adapts flawlessly across devices, providing optimal usability whether accessed on a desktop, tablet, or smartphone. This creates a sense of "tech everywhere" reliability.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎨</div>
-                <h4>Visual Hierarchy</h4>
+                <h3>Visual Hierarchy</h3>
                 <p>Purple and Teal gradients communicate innovation and the FOSS spirit. Bold typography and contrasting colors guide users' attention to key information and event highlights.</p>
               </div>
             </div>
@@ -539,19 +539,19 @@ export default function CaseStudyTechnosphere() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>Increased Engagement: Users reported spending more time exploring event details and participating in sessions and competitions. Improved Accessibility made it easier for users of all technical proficiencies to navigate.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 Brand Impact</h4>
+                <h3>💡 Brand Impact</h3>
                 <p>The modern, cohesive design strengthened TECHNOSPHERE’s brand identity and online presence, reinforcing the event's perception as a pioneering technical platform.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Continuously monitor user feedback, explore AI-driven personalization, and regularly update the style guide to reflect evolving design trends and user expectations.</p>
               </div>
               <div className="reflection-card">
-                <h4>💬 Conclusion</h4>
+                <h3>💬 Conclusion</h3>
                 <p>This case study underscores the importance of thorough research, iterative design, and a commitment to inclusivity in UX engineering and product design for large-scale technical events.</p>
               </div>
             </div>

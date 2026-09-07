@@ -1231,7 +1231,13 @@ export default function ExperienceClient() {
           <section className="exp-section edu-section" aria-label="Education">
             <div className="exp-section-heading" id="edu-heading">
               <span className="exp-section-label">Education Background</span>
-              <h1 className="page-title">Academic History</h1>
+              {/* h2, not h1: this is one of five peer sections on the page
+                  ("Licenses & Certifications", "Specialized Skills", "Volunteer
+                  Experience" are all h2 already) and the page's own h1 is "Work
+                  Experience" at the top. Two h1s left the document with two
+                  competing titles and no way to tell which one the page is about.
+                  `.page-title` is a class, so the look is unchanged. */}
+              <h2 className="page-title">Academic History</h2>
             </div>
             <div className="para-container">
               <p className="bio-para" style={{ '--para-delay': '0.1s' }}>

@@ -113,17 +113,17 @@ export default function CaseStudyKambaAdeema() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🪢</div>
-                <h4>One Honest Question</h4>
+                <h3>One Honest Question</h3>
                 <p>Who takes this heave. It resolves in about four seconds, it is what anyone watching a rope is already asking, and it is the only bet on the board.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚖️</div>
-                <h4>Keep the Contest Separable</h4>
+                <h3>Keep the Contest Separable</h3>
                 <p>Stamina, collapse and the lime lines are what make a run of heaves a contest rather than a row of coin flips - and not one of them is allowed to touch the price.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎪</div>
-                <h4>Put the Village In</h4>
+                <h3>Put the Village In</h3>
                 <p>An empty pitch is a physics demo. Two hundred spectators, their arms, flags and parasols had to be there - and had to cost a handful of draw calls, not a frame budget.</p>
               </div>
             </div>
@@ -288,22 +288,22 @@ export default function CaseStudyKambaAdeema() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🪙</div>
-                <h4>rules.ts</h4>
+                <h3>rules.ts</h3>
                 <p>Coins · Swing · Stamina · Collapse · Marks</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💰</div>
-                <h4>market.ts</h4>
+                <h3>market.ts</h3>
                 <p>The one price · Stake ladder · <code>check()</code></p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎪</div>
-                <h4>engine/</h4>
+                <h3>engine/</h3>
                 <p>Rope · Pullers · Instanced crowd · Camera · 3D HUD</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔗</div>
-                <h4>blockchainRng.ts</h4>
+                <h3>blockchainRng.ts</h3>
                 <p>Server seed route · mulberry32 · match-wide seal</p>
               </div>
             </div>
@@ -441,44 +441,44 @@ export default function CaseStudyKambaAdeema() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/title-screen.png">
-                  <img src="/Images/projects/kamba-adeema/title-screen.png" alt="Kamba Adeema title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/title-screen-card.png" alt="Kamba Adeema title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title · The Medallion</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.png">
-                  <img src="/Images/projects/kamba-adeema/team-lineup.png" alt="Taking the rope - the two village teams" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/team-lineup-card.png" alt="Taking the rope - the two village teams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Team Lineup</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.png">
-                  <img src="/Images/projects/kamba-adeema/heave-result.png" alt="The heave settled - Uda take it by two marks" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/heave-result-card.png" alt="The heave settled - Uda take it by two marks" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Heave</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.png">
-                  <img src="/Images/projects/kamba-adeema/betting-board.png" alt="Two buttons and the stake plank" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/betting-board-card.png" alt="Two buttons and the stake plank" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Yati / Uda</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/draw-refund.png">
-                  <img src="/Images/projects/kamba-adeema/draw-refund.png" alt="Four all - a draw refunds the stake" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/draw-refund-card.png" alt="Four all - a draw refunds the stake" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Four All · Refund</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/title-screen.png">
-                  <img src="/Images/projects/kamba-adeema/title-screen.png" alt="Kamba Adeema title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/title-screen-card.png" alt="Kamba Adeema title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title · The Medallion</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.png">
-                  <img src="/Images/projects/kamba-adeema/team-lineup.png" alt="Taking the rope - the two village teams" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/team-lineup-card.png" alt="Taking the rope - the two village teams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Team Lineup</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.png">
-                  <img src="/Images/projects/kamba-adeema/heave-result.png" alt="The heave settled - Uda take it by two marks" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/heave-result-card.png" alt="The heave settled - Uda take it by two marks" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Heave</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.png">
-                  <img src="/Images/projects/kamba-adeema/betting-board.png" alt="Two buttons and the stake plank" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/betting-board-card.png" alt="Two buttons and the stake plank" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Yati / Uda</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/draw-refund.png">
-                  <img src="/Images/projects/kamba-adeema/draw-refund.png" alt="Four all - a draw refunds the stake" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/draw-refund-card.png" alt="Four all - a draw refunds the stake" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Four All · Refund</div>
                 </div>
               </div>
@@ -487,44 +487,44 @@ export default function CaseStudyKambaAdeema() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/logo.png">
-                  <img src="/Images/projects/kamba-adeema/logo.png" alt="The carved Kamba Adeema medallion" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/logo-card.png" alt="The carved Kamba Adeema medallion" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Carved Medallion</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/cover.png">
-                  <img src="/Images/projects/kamba-adeema/cover.png" alt="Kamba Adeema cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/cover-card.png" alt="Kamba Adeema cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.png">
-                  <img src="/Images/projects/kamba-adeema/heave-result.png" alt="Stamina meters on the rope board" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/heave-result-card.png" alt="Stamina meters on the rope board" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Stamina Meters</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.png">
-                  <img src="/Images/projects/kamba-adeema/team-lineup.png" alt="The instanced crowd on the bank" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/team-lineup-card.png" alt="The instanced crowd on the bank" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Crowd</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.png">
-                  <img src="/Images/projects/kamba-adeema/betting-board.png" alt="The odds card" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/betting-board-card.png" alt="The odds card" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Odds Card</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/logo.png">
-                  <img src="/Images/projects/kamba-adeema/logo.png" alt="The carved Kamba Adeema medallion" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/logo-card.png" alt="The carved Kamba Adeema medallion" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Carved Medallion</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/cover.png">
-                  <img src="/Images/projects/kamba-adeema/cover.png" alt="Kamba Adeema cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/cover-card.png" alt="Kamba Adeema cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.png">
-                  <img src="/Images/projects/kamba-adeema/heave-result.png" alt="Stamina meters on the rope board" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/heave-result-card.png" alt="Stamina meters on the rope board" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Stamina Meters</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.png">
-                  <img src="/Images/projects/kamba-adeema/team-lineup.png" alt="The instanced crowd on the bank" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/team-lineup-card.png" alt="The instanced crowd on the bank" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Crowd</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.png">
-                  <img src="/Images/projects/kamba-adeema/betting-board.png" alt="The odds card" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kamba-adeema/betting-board-card.png" alt="The odds card" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Odds Card</div>
                 </div>
               </div>
@@ -550,27 +550,27 @@ export default function CaseStudyKambaAdeema() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🧮</div>
-                <h4>1 · The Distribution</h4>
+                <h3>1 · The Distribution</h3>
                 <p>Wrote the coins, the swing and the closed-form price first, with <code>check()</code> asserting the partition and the symmetry - so the property the design rests on could not silently break later.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📐</div>
-                <h4>2 · Generate the Pitch</h4>
+                <h3>2 · Generate the Pitch</h3>
                 <p>The eight stations, the rope&apos;s length, the mark size and the lime lines all come off the same few constants, so the pitch, the rules and the figures cannot drift apart.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🪢</div>
-                <h4>3 · Rope-First Animation</h4>
+                <h3>3 · Rope-First Animation</h3>
                 <p>Made the rope the single owner of position, solved the eight figures&apos; hands onto its live curve, and made the haul phase wait on the rope rather than on a stopwatch.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">✂️</div>
-                <h4>4 · Cut the Board</h4>
+                <h3>4 · Cut the Board</h3>
                 <p>Fifteen squares → seven cells → three cells → two buttons, and a whole second market removed. Every cut was priced correctly first, which is what made it a design call rather than a shortcut.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">♿</div>
-                <h4>5 · Mirror &amp; Seal</h4>
+                <h3>5 · Mirror &amp; Seal</h3>
                 <p>Built the hidden DOM mirror so a canvas interface is still keyboard- and screen-reader-navigable, then added the match-wide commit-reveal and the trust chip.</p>
               </div>
             </div>
@@ -620,19 +620,19 @@ export default function CaseStudyKambaAdeema() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A shipped 3D betting game built on a traditional Sri Lankan sport: eight solved figures on one rope, a two-hundred-strong instanced crowd, a canvas HUD with a full DOM accessibility mirror, WebAudio, and matches sealed to a blockchain block from the first heave to the line.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Keeping the contest interesting - stamina, collapse, a comeback - while structurally guaranteeing that none of it reaches the coin, and resisting the pull to add a second market that was measurably correct and made the game worse.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>The best pricing work here was deletion. Fifteen correctly-priced squares are worse than one, and a bet that resolves every four seconds does not want a slow market on top of it. Legibility is a maths property too.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>A commit-reveal that binds the operator in advance rather than only proving the seed after the fact, server-side settlement, and real village-vs-village multiplayer on one shared sealed match.</p>
               </div>
             </div>

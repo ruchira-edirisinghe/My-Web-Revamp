@@ -5,6 +5,7 @@ import StandardShell from '@/components/StandardShell';
 import { cssVars } from '@/lib/css';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
+import { cardSrc } from '@/lib/cardSrc';
 
 export default function CaseStudyAetherDynasty() {
   useEffect(() => {
@@ -106,17 +107,17 @@ export default function CaseStudyAetherDynasty() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🏛️</div>
-                <h4>Design Problem</h4>
+                <h3>Design Problem</h3>
                 <p>Build a "Neon Antiquity" slot - a credible blend of an ancient Greek stone temple (Orbitron displays, Marcellus SC inscriptions, torchlit stone) with holographic neon grids and a rotating astrolabe rune-ring - that feels cohesive, not kitsch.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚙️</div>
-                <h4>Technical Problem</h4>
+                <h3>Technical Problem</h3>
                 <p>Implement a cascading board that expands reel-by-reel through consecutive wins, from 4,096 starting ways up to 46,656 maximum - resolving the full cascade chain in one engine pass, then replaying it step-by-step in the UI.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🤖</div>
-                <h4>The Constraint</h4>
+                <h3>The Constraint</h3>
                 <p>Describe each sub-system to an AI and iterate - which demands a precise mental model of cascade order, Wild counter logic, board height tracking, and Free Game trigger conditions, or the generated code silently breaks.</p>
               </div>
             </div>
@@ -281,22 +282,22 @@ export default function CaseStudyAetherDynasty() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📁</div>
-                <h4>engine.ts</h4>
+                <h3>engine.ts</h3>
                 <p>Pure logic. Takes the current board + heights + bet, resolves the full cascade chain, returns <code className="cs-sm">SpinResult</code> with cascades, totalWin, finalHeights, and a Free Game trigger flag.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎮</div>
-                <h4>controller.ts</h4>
+                <h3>controller.ts</h3>
                 <p>Boots from <code className="cs-sm">useEffect</code> via <code className="cs-sm">boot()</code>. Calls the engine on each spin, then replays the cascade steps frame-by-frame through DOM mutations. Owns turbo, auto-spin, and sound.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🪙</div>
-                <h4>symbols.ts</h4>
+                <h3>symbols.ts</h3>
                 <p>Registers 7 symbols + Wild. Each symbol has a weight (frequency on reels) and a per-way multiplier table for 3/4/5/6 matches. PNG asset paths are listed here.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📋</div>
-                <h4>rules.ts</h4>
+                <h3>rules.ts</h3>
                 <p>Defines paytable values, Wild counter logic, Golden Frame columns (reels 2-5), free-game multiplier progression, Golden Treasure trigger conditions, and the Rs 10M payout cap.</p>
               </div>
             </div>
@@ -472,7 +473,7 @@ export default function CaseStudyAetherDynasty() {
                   { src: '/Images/projects/aether-dynasty/transaction-history.png', alt: 'Aether Dynasty - transaction history', label: 'Transaction History' },
                 ]).map((item, i) => (
                   <div key={i} className="ui-card" data-full={item.src}>
-                    <img src={item.src} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
+                    <img src={cardSrc(item.src)} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
                     <div className="ui-card-label">{item.label}</div>
                   </div>
                 ))}
@@ -494,7 +495,7 @@ export default function CaseStudyAetherDynasty() {
                   { src: '/Images/projects/aether-dynasty/main-game-board.png', alt: 'Sound and settings panel', label: 'Sound Controls' },
                 ]).map((item, i) => (
                   <div key={i} className="ui-card" data-full={item.src}>
-                    <img src={item.src} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
+                    <img src={cardSrc(item.src)} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
                     <div className="ui-card-label">{item.label}</div>
                   </div>
                 ))}
@@ -521,27 +522,27 @@ export default function CaseStudyAetherDynasty() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📐</div>
-                <h4>1 · Design the Math</h4>
+                <h3>1 · Design the Math</h3>
                 <p>Specified the cascade sequence (eliminate → transform → decrement → gravity → refill → expand), symbol weights and per-way multipliers, board height rules, and Free Game trigger condition - all verified on paper before a single prompt.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚙️</div>
-                <h4>2 · Build the Engine</h4>
+                <h3>2 · Build the Engine</h3>
                 <p>Implemented <code className="cs-sm">engine.ts</code> first - the pure cascade resolver that takes a board state and returns the complete chain as <code className="cs-sm">CascadeStep[]</code>. Validated payouts manually against known board states before moving on.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎮</div>
-                <h4>3 · Imperative Controller</h4>
+                <h3>3 · Imperative Controller</h3>
                 <p>Built <code className="cs-sm">controller.ts</code> as the only piece that touches the DOM. The <code className="cs-sm">boot()</code> pattern keeps React out of the game loop entirely - no state, no re-renders, no stale closures mid-cascade.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏛️</div>
-                <h4>4 · Neon Antiquity Skin</h4>
+                <h3>4 · Neon Antiquity Skin</h3>
                 <p>Translated the three-font system (Orbitron / Marcellus SC / Spectral), the stone-and-neon colour palette, the astrolabe rune-ring SVG, and the torch/pillar decorative layer into the CSS and runtime SVG generation layer.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🚀</div>
-                <h4>5 · Polish &amp; Ship</h4>
+                <h3>5 · Polish &amp; Ship</h3>
                 <p>Added turbo spin (skips animation, shows result instantly), configurable auto-spin, two-channel audio (Music / Effects with individual sliders), transaction history modal, and deployed the static export to Netlify.</p>
               </div>
             </div>
@@ -578,19 +579,19 @@ export default function CaseStudyAetherDynasty() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A shipped, playable browser slot: cascading board expansion (4,096 → 46,656 ways), 7 weighted symbols, Golden Frame → Wild transformation, survival-counter Wilds, Free Games with rising multiplier, Golden Treasure feature, configurable auto-spin, and two-channel audio - all client-side.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Cascade logic has a strict ordering constraint - get eliminate/transform/decrement/gravity/refill/expand wrong and wins are miscounted or Wilds vanish too early. Getting this right through vibe coding required writing the spec before writing a single prompt.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>The imperative controller pattern is the right architecture for a complex game on React - no state, no reconciliation overhead. The AI generated it correctly only after I specified the pattern explicitly. Design-first vibe coding is the only vibe coding that works at this complexity level.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Add a provably-fair seed system so players can verify spin outcomes, implement a progressive jackpot tier above the Golden Treasure feature, and build a leaderboard backed by a lightweight serverless function.</p>
               </div>
             </div>

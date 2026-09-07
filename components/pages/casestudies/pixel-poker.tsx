@@ -134,17 +134,17 @@ export default function CaseStudyPixelPoker() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🔐</div>
-                <h4>Secrecy Over Audit</h4>
+                <h3>Secrecy Over Audit</h3>
                 <p>The deal uses the browser&apos;s cryptographically secure RNG instead of the shared blockchain seed. Unpredictable <em>and</em> unreadable - the right trade where secrecy matters more than public audit.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💰</div>
-                <h4>Side Pots, Correctly</h4>
+                <h3>Side Pots, Correctly</h3>
                 <p>The most commonly botched part of a poker engine. Layered pots from each player&apos;s total commitment, uncalled chips handled explicitly, ties split with the odd chip to the earliest seat.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🤖</div>
-                <h4>Bots That Don&apos;t Cheat</h4>
+                <h3>Bots That Don&apos;t Cheat</h3>
                 <p>The first thing a player suspects. The decision function reads only public information, and the equity estimator deals opponents <em>random</em> hands from the unseen stub - it never inspects the actual deck.</p>
               </div>
             </div>
@@ -290,22 +290,22 @@ export default function CaseStudyPixelPoker() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">⚙️</div>
-                <h4>lib/engine.ts</h4>
+                <h3>lib/engine.ts</h3>
                 <p>Phase machine · Betting rules · Side pots · Blind levels</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏅</div>
-                <h4>lib/evaluator.ts</h4>
+                <h3>lib/evaluator.ts</h3>
                 <p>Base-15 hand score · Best 5 of 7 · The wheel</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🤖</div>
-                <h4>lib/ai.ts</h4>
+                <h3>lib/ai.ts</h3>
                 <p>Chen formula · Monte-Carlo equity · Pot odds · Bluffing</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌐</div>
-                <h4>lib/multiplayer.ts</h4>
+                <h3>lib/multiplayer.ts</h3>
                 <p>RTDB rooms · Presence · Host broadcast · Action queue</p>
               </div>
             </div>
@@ -460,44 +460,44 @@ export default function CaseStudyPixelPoker() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/title-screen.png">
-                  <img src="/Images/projects/pixel-poker/title-screen.png" alt="Pixel Perfect Poker title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/title-screen-card.png" alt="Pixel Perfect Poker title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Screen</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/table-preflop.png">
-                  <img src="/Images/projects/pixel-poker/table-preflop.png" alt="The six-max pixel table" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/table-preflop-card.png" alt="The six-max pixel table" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">6-Max Table</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/hand-rankings.png">
-                  <img src="/Images/projects/pixel-poker/hand-rankings.png" alt="The in-game hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/hand-rankings-card.png" alt="The in-game hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Hand Rankings</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/how-to-play.png">
-                  <img src="/Images/projects/pixel-poker/how-to-play.png" alt="The practice-table rules card" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/how-to-play-card.png" alt="The practice-table rules card" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Practice Table</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/create-lobby.png">
-                  <img src="/Images/projects/pixel-poker/create-lobby.png" alt="The Create Lobby table setup" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/create-lobby-card.png" alt="The Create Lobby table setup" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Create Lobby</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/title-screen.png">
-                  <img src="/Images/projects/pixel-poker/title-screen.png" alt="Pixel Perfect Poker title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/title-screen-card.png" alt="Pixel Perfect Poker title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Screen</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/table-preflop.png">
-                  <img src="/Images/projects/pixel-poker/table-preflop.png" alt="The six-max pixel table" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/table-preflop-card.png" alt="The six-max pixel table" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">6-Max Table</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/hand-rankings.png">
-                  <img src="/Images/projects/pixel-poker/hand-rankings.png" alt="The in-game hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/hand-rankings-card.png" alt="The in-game hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Hand Rankings</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/how-to-play.png">
-                  <img src="/Images/projects/pixel-poker/how-to-play.png" alt="The practice-table rules card" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/how-to-play-card.png" alt="The practice-table rules card" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Practice Table</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/create-lobby.png">
-                  <img src="/Images/projects/pixel-poker/create-lobby.png" alt="The Create Lobby table setup" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/create-lobby-card.png" alt="The Create Lobby table setup" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Create Lobby</div>
                 </div>
               </div>
@@ -506,44 +506,44 @@ export default function CaseStudyPixelPoker() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/logo.png">
-                  <img src="/Images/projects/pixel-poker/logo.png" alt="Pixel Perfect Poker wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/logo-card.png" alt="Pixel Perfect Poker wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Wordmark</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/cover.png">
-                  <img src="/Images/projects/pixel-poker/cover.png" alt="Pixel Perfect Poker cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/cover-card.png" alt="Pixel Perfect Poker cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/table-preflop.png">
-                  <img src="/Images/projects/pixel-poker/table-preflop.png" alt="Pixel bitmap cards and chips" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/table-preflop-card.png" alt="Pixel bitmap cards and chips" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cards &amp; Chips</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/hand-rankings.png">
-                  <img src="/Images/projects/pixel-poker/hand-rankings.png" alt="The hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/hand-rankings-card.png" alt="The hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Raise Slider</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/how-to-play.png">
-                  <img src="/Images/projects/pixel-poker/how-to-play.png" alt="The practice-table briefing" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/how-to-play-card.png" alt="The practice-table briefing" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Five Rivals</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/logo.png">
-                  <img src="/Images/projects/pixel-poker/logo.png" alt="Pixel Perfect Poker wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/logo-card.png" alt="Pixel Perfect Poker wordmark" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Wordmark</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/cover.png">
-                  <img src="/Images/projects/pixel-poker/cover.png" alt="Pixel Perfect Poker cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/cover-card.png" alt="Pixel Perfect Poker cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/table-preflop.png">
-                  <img src="/Images/projects/pixel-poker/table-preflop.png" alt="Pixel bitmap cards and chips" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/table-preflop-card.png" alt="Pixel bitmap cards and chips" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cards &amp; Chips</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/hand-rankings.png">
-                  <img src="/Images/projects/pixel-poker/hand-rankings.png" alt="The hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/hand-rankings-card.png" alt="The hand rankings chart" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Raise Slider</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/pixel-poker/how-to-play.png">
-                  <img src="/Images/projects/pixel-poker/how-to-play.png" alt="The practice-table briefing" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/pixel-poker/how-to-play-card.png" alt="The practice-table briefing" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Five Rivals</div>
                 </div>
               </div>
@@ -569,27 +569,27 @@ export default function CaseStudyPixelPoker() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🏅</div>
-                <h4>1 · The Evaluator</h4>
+                <h3>1 · The Evaluator</h3>
                 <p>Built hand scoring first, as one integer: base-15 packing, brute force over all 21 five-card subsets, cached subset indices, and the wheel handled as an explicit special case.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚙️</div>
-                <h4>2 · The Rules Engine</h4>
+                <h3>2 · The Rules Engine</h3>
                 <p>A strict phase machine over one table - min-raise rules, the big-blind option, short all-ins that cannot reopen betting, layered side pots, rising blinds and eliminations - all synchronous and independent of any UI.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🤖</div>
-                <h4>3 · The Opponents</h4>
+                <h3>3 · The Opponents</h3>
                 <p>Chen formula pre-flop, Monte-Carlo equity post-flop, pot-odds calling, and three personality parameters wired into every threshold so five bots play visibly differently.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🕹️</div>
-                <h4>4 · The Arcade Skin</h4>
+                <h3>4 · The Arcade Skin</h3>
                 <p>Pixel-bitmap cards, chips and avatars drawn as SVG rather than sprite sheets, with chiptune WebAudio effects synthesized rather than sampled - so the whole skin ships with no image assets.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌐</div>
-                <h4>5 · Multiplayer</h4>
+                <h3>5 · Multiplayer</h3>
                 <p>Firebase RTDB rooms with invite codes and presence, host-authoritative play, and a client action queue - the same lobby shape as the arcade&apos;s racing games, adapted to six-max poker.</p>
               </div>
             </div>
@@ -639,19 +639,19 @@ export default function CaseStudyPixelPoker() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A complete poker engine in the browser: correct betting rules, layered side pots, split pots, the wheel, heads-up blinds, rising levels and eliminations - plus five Monte-Carlo bots, a full pixel-art skin with no image assets, and Firebase-backed multiplayer rooms.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Side pots and min-raise edge cases are where poker engines quietly go wrong, and none of it shows up until a specific all-in shape occurs. Getting bots to feel human rather than robotic turned out to be a matter of adding the <em>right amount</em> of imprecision.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>Two RNGs is an architecture, not a shortcut - one secure generator for anything that determines cards, an ordinary one for anything cosmetic. And a game with hidden information cannot borrow the fairness model of a game without it, however good that model is.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Move the deal server-side, which is what real stakes or human-versus-human play would require, and add a commit-reveal scheme that commits the deck order before the hand and reveals it after - the industry answer to proving a deal was fair without breaking the game.</p>
               </div>
             </div>

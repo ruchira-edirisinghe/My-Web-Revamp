@@ -12,6 +12,28 @@ export interface Bag {
   dispose: () => void;
 }
 
+/**
+ * Whether this visitor has asked for less motion.
+ *
+ * Read fresh on each call rather than cached at module load: the preference can
+ * be toggled while the tab is open (macOS and Windows both do it live), and a
+ * value captured once would then be wrong for the rest of the session.
+ */
+export const prefersReducedMotion = (): boolean =>
+  typeof window !== 'undefined' &&
+  (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false);
+
+/**
+ * `scrollIntoView` / `scrollTo` behaviour to use for a programmatic jump.
+ *
+ * CSS `scroll-behavior` is already switched to `auto` under reduced motion in
+ * globals.css, but a `behavior: 'smooth'` passed explicitly to a scroll API
+ * OVERRIDES that - so the stylesheet fix alone left every in-page anchor (the
+ * case-study TOC, the scroll-to-top rail, VeBuild's tab jumps) animating anyway.
+ */
+export const scrollBehavior = (): ScrollBehavior =>
+  prefersReducedMotion() ? 'auto' : 'smooth';
+
 export function makeBag(): Bag {
   const fns: Array<() => void> = [];
   return {

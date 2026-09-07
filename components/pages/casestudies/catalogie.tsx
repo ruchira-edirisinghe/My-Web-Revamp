@@ -4,6 +4,7 @@ import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
+import { cardSrc } from '@/lib/cardSrc';
 
 /* Shipped releases, newest first. Catalogie is a live product - when a new
    version goes out, add an entry at the top of this list and the timeline in
@@ -412,22 +413,22 @@ export default function CaseStudyCatalogie() {
             <div className="cs-cards-grid is-2x2">
               <div className="cs-card">
                 <div className="cs-card-icon">🧩</div>
-                <h4>Product Problem</h4>
+                <h3>Product Problem</h3>
                 <p>Track four media whose progress models have nothing in common, in one library, without any of them feeling like an afterthought bolted onto a TV app.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔌</div>
-                <h4>Data Problem</h4>
+                <h3>Data Problem</h3>
                 <p>No single catalog covers all four. TV and film, games, and books each come from different providers with their own auth, quotas and licence terms - and none of their keys may ever reach a browser.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏗️</div>
-                <h4>Platform Problem</h4>
+                <h3>Platform Problem</h3>
                 <p>A tracker only earns trust if the history survives. That meant real accounts, a real database, backups, and infrastructure we own - not a prototype with everything in localStorage.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
-                <h4>Team Problem</h4>
+                <h3>Team Problem</h3>
                 <p>Three people on one codebase, plus a native mobile app being built in a separate repo - so the API had to be a documented contract, not an internal detail of the web client.</p>
               </div>
             </div>
@@ -617,25 +618,25 @@ export default function CaseStudyCatalogie() {
             <div className="cat-media-grid">
               <div className="cat-media tv">
                 <div className="cat-media-icon">📺</div>
-                <h4>TV Series</h4>
+                <h3>TV Series</h3>
                 <div className="cat-media-unit">Unit · Episode</div>
                 <p>An <code className="cat-code-sm">episode_watches</code> row per viewing - append-only, so a rewatch is another row, not an overwrite. Season bulk-marking, per-episode ratings.</p>
               </div>
               <div className="cat-media movies">
                 <div className="cat-media-icon">🎬</div>
-                <h4>Movies</h4>
+                <h3>Movies</h3>
                 <div className="cat-media-unit">Unit · Watch Event</div>
                 <p><code className="cat-code-sm">title_watches</code> records each viewing with its date, so watch count is a <code className="cat-code-sm">COUNT(*)</code> and your history has a timeline.</p>
               </div>
               <div className="cat-media games">
                 <div className="cat-media-icon">🎮</div>
-                <h4>Games</h4>
+                <h3>Games</h3>
                 <div className="cat-media-unit">Unit · Hours Played</div>
                 <p><code className="cat-code-sm">play_sessions</code> logs hours against a date with an optional note. Total playtime is a sum, so a backlog becomes measurable.</p>
               </div>
               <div className="cat-media books">
                 <div className="cat-media-icon">📖</div>
-                <h4>Books</h4>
+                <h3>Books</h3>
                 <div className="cat-media-unit">Unit · Pages</div>
                 <p><code className="cat-code-sm">reading_logs</code> plus a current page on the entry - progress is a percentage of a real page count, not a guess.</p>
               </div>
@@ -689,32 +690,32 @@ export default function CaseStudyCatalogie() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🔐</div>
-                <h4>Auth Built for Two Clients</h4>
+                <h3>Auth Built for Two Clients</h3>
                 <p><strong>better-auth</strong> handles email + password and Google sign-in with DB-backed sessions. The web client uses first-party <code className="cat-code-sm">SameSite=Lax</code> cookies; the native app uses the bearer plugin to get the same session as a token - because a native app has no browser origin and never sees a cookie.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🧪</div>
-                <h4>Tests Ship With the Feature</h4>
+                <h3>Tests Ship With the Feature</h3>
                 <p>Integration-first with Vitest and Supertest against a real Postgres, never mocks of our own SQL. 62 server suites and 20 client suites, plus an <strong>authz matrix</strong> that asserts user A cannot touch user B&apos;s entries, comments or uploads. Both are required CI jobs.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🖼️</div>
-                <h4>Uploads Treated as Hostile</h4>
+                <h3>Uploads Treated as Hostile</h3>
                 <p>Avatars and comment attachments are validated by <strong>magic bytes</strong> rather than MIME or extension, re-encoded through sharp to strip EXIF and any embedded payload, stored under random UUIDs, and served with <code className="cat-code-sm">nosniff</code> from a path that cannot execute anything.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💾</div>
-                <h4>Backups &amp; Restore Drills</h4>
+                <h3>Backups &amp; Restore Drills</h3>
                 <p>Nightly <code className="cat-code-sm">pg_dump</code> shipped off-box to object storage with 30-day retention, uploads rsynced weekly - and a <strong>monthly restore drill</strong>, because a backup nobody has restored is a hypothesis, not a backup.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⏱️</div>
-                <h4>Background Jobs</h4>
+                <h3>Background Jobs</h3>
                 <p>pg-boss runs the cron in Postgres: episode sync at 03:00, release dates at 04:00, ratings refresh at 04:30 within a daily quota budget, weekly upload cleanup, an email outbox drained every two minutes and push delivery every minute.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📊</div>
-                <h4>Measured, Not Guessed</h4>
+                <h3>Measured, Not Guessed</h3>
                 <p>Load testing pinned the API to one core and found the ceiling was <strong>Node CPU, not Postgres</strong>. The fixes followed the measurement - trimming the heaviest field from the library list payload and compressing responses - rather than the reflex of adding a cache layer.</p>
               </div>
             </div>
@@ -808,7 +809,7 @@ export default function CaseStudyCatalogie() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {APP_SHOTS.concat(APP_SHOTS).map((item, i) => (
                   <div key={i} className="ui-card" data-full={item.src}>
-                    <img src={item.src} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
+                    <img src={cardSrc(item.src)} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
                     <div className="ui-card-label">{item.label}</div>
                   </div>
                 ))}
@@ -841,22 +842,22 @@ export default function CaseStudyCatalogie() {
             <div className="cs-cards-grid is-2x2">
               <div className="cs-card">
                 <div className="cs-card-icon">✍️</div>
-                <h4>Copy in One File</h4>
+                <h3>Copy in One File</h3>
                 <p>Every word on the site - headlines, features, FAQ, roadmap, legal, dev diaries - lives in a single typed content module. Rewriting the pitch never means touching a component, which is what makes the messaging fast to iterate.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎨</div>
-                <h4>An Accent Per Medium</h4>
+                <h3>An Accent Per Medium</h3>
                 <p>The brand gold carries the CTAs, and each tracked medium owns a hue - amber for movies, violet for TV, green for games, rose for books. The same four accents run through the app, so the site and the product read as one system.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔢</div>
-                <h4>A Live Founding Counter</h4>
+                <h3>A Live Founding Counter</h3>
                 <p>The Founding Member section is not decorative - it calls the production API for the real remaining count, so the scarcity on the page is the actual number of spots left.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📜</div>
-                <h4>Hidden, Not Deleted</h4>
+                <h3>Hidden, Not Deleted</h3>
                 <p>Catalogie is presented as free forever, but the earlier tiered-pricing copy is commented out in place rather than removed - so if paid plans ever arrive, the plan grid and its FAQ answers come back as they were written.</p>
               </div>
             </div>
@@ -899,7 +900,7 @@ export default function CaseStudyCatalogie() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {SITE_SHOTS.concat(SITE_SHOTS).map((item, i) => (
                   <div key={i} className="ui-card" data-full={item.src}>
-                    <img src={item.src} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
+                    <img src={cardSrc(item.src)} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
                     <div className="ui-card-label">{item.label}</div>
                   </div>
                 ))}
@@ -950,7 +951,7 @@ export default function CaseStudyCatalogie() {
                       <span className="cat-ver-tag">{r.tag}</span>
                       <span className="cat-ver-date">{r.date}</span>
                     </div>
-                    <h4>{r.title}</h4>
+                    <h3>{r.title}</h3>
                     <ul>
                       {r.points.map((p) => <li key={p}>{p}</li>)}
                     </ul>
@@ -964,22 +965,22 @@ export default function CaseStudyCatalogie() {
             <div className="ia-grid">
               <div className="ia-card">
                 <div className="ia-card-icon">📱</div>
-                <h4>Native Apps</h4>
+                <h3>Native Apps</h3>
                 <p>iOS and Android against the same API and account, with offline logging and push reminders. Already the reason the API speaks bearer tokens.</p>
               </div>
               <div className="ia-card">
                 <div className="ia-card-icon">🌍</div>
-                <h4>A Second Region</h4>
+                <h3>A Second Region</h3>
                 <p>A UK VM plus a CDN in front, designed before it is built - the scaling path is documented rather than improvised.</p>
               </div>
               <div className="ia-card">
                 <div className="ia-card-icon">📥</div>
-                <h4>More Importers</h4>
+                <h3>More Importers</h3>
                 <p>Every tracker people are leaving behind is another parser and matcher, so nobody has to retype a decade of history.</p>
               </div>
               <div className="ia-card">
                 <div className="ia-card-icon">🗳️</div>
-                <h4>Requested Features</h4>
+                <h3>Requested Features</h3>
                 <p>A support email goes straight onto the roadmap, and Founding Members get a direct line into what gets built next.</p>
               </div>
             </div>
@@ -1024,19 +1025,19 @@ export default function CaseStudyCatalogie() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A live, self-hosted media tracker with real accounts on it: four media in one library, progress at four different units, ratings on your own scale, a social layer, an analytics dashboard, importers, a release calendar and push notifications - behind a strict-TypeScript API with 36 migrations, an authz test matrix and nightly off-box backups.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Keeping a deployed product working while rebuilding its entire backend underneath it. Every commit had to leave the live site functional, which meant the new API grew module by module beside the old one and only took over at cutover - no big-bang rewrite, no weekend of downtime.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>Shared external quotas are production infrastructure. Burning a catalog API key during testing took a real feature down for real users, and the rule that came out of it - test against internal endpoints, stub the catalog, keep dev keys separate from production - is now written into the project&apos;s working rules.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Ship the native iOS and Android apps against the existing API, widen the importers, add a second region behind a CDN once there are users to justify it, and keep the release cadence - every version with a diary that explains, in plain language, what changed and what we got wrong.</p>
               </div>
             </div>

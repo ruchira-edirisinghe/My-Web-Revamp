@@ -107,17 +107,17 @@ export default function CaseStudyKyc() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Problem Statement</h4>
+                <h3>Problem Statement</h3>
                 <p>Identity verification is high-stakes and high-friction: unclear steps, fragile document/face capture, and missing status feedback cause anxiety and abandonment.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
-                <h4>The Goal</h4>
+                <h3>The Goal</h3>
                 <p>Turn KYC into a guided, transparent flow - clear preparation, forgiving capture, explicit in-progress / success / error states, and full light &amp; dark theming.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
-                <h4>Target Audience</h4>
+                <h3>Target Audience</h3>
                 <p>First-time applicants verifying their identity (often on mobile), and the compliance teams who depend on clean, reliable captures.</p>
               </div>
             </div>
@@ -270,22 +270,22 @@ export default function CaseStudyKyc() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📜</div>
-                <h4>Step 1 · Consent</h4>
+                <h3>Step 1 · Consent</h3>
                 <p>User consent · Preparation · Warnings</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📄</div>
-                <h4>Step 2 · Documents</h4>
+                <h3>Step 2 · Documents</h3>
                 <p>Upload · In-progress · Confirm info</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🤳</div>
-                <h4>Step 3 · Face Scan</h4>
+                <h3>Step 3 · Face Scan</h3>
                 <p>Liveness · Success · Retry on fail</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">✅</div>
-                <h4>Step 4 · Complete</h4>
+                <h3>Step 4 · Complete</h3>
                 <p>Review · Confirmation · Done</p>
               </div>
             </div>
@@ -375,52 +375,52 @@ export default function CaseStudyKyc() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Home --_ User Consent.png">
-                  <img src="/Images/projects/kyc/Dark- Home --_ User Consent.png" alt="Home and Consent (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Home --_ User Consent-card.png" alt="Home and Consent (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Consent · Dark</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 1 - Proceed.png">
-                  <img src="/Images/projects/kyc/Dark- Step 1 - Proceed.png" alt="Step 1 Proceed (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Step 1 - Proceed-card.png" alt="Step 1 Proceed (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 1 · Proceed</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - Default.png">
-                  <img src="/Images/projects/kyc/Dark- Step 2 - Default.png" alt="Step 2 Documents (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Step 2 - Default-card.png" alt="Step 2 Documents (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Documents</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - info confirm.png">
-                  <img src="/Images/projects/kyc/Dark- Step 2 - info confirm.png" alt="Step 2 Confirm Info (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Step 2 - info confirm-card.png" alt="Step 2 Confirm Info (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Confirm</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face.png">
-                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face.png" alt="Step 3 Face Scan (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face-card.png" alt="Step 3 Face Scan (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Face Scan</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step.png">
-                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step.png" alt="Step 3 Success (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step-card.png" alt="Step 3 Success (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Success</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Home --_ User Consent.png">
-                  <img src="/Images/projects/kyc/Dark- Home --_ User Consent.png" alt="Home and Consent (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Home --_ User Consent-card.png" alt="Home and Consent (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Consent · Dark</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 1 - Proceed.png">
-                  <img src="/Images/projects/kyc/Dark- Step 1 - Proceed.png" alt="Step 1 Proceed (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Step 1 - Proceed-card.png" alt="Step 1 Proceed (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 1 · Proceed</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - Default.png">
-                  <img src="/Images/projects/kyc/Dark- Step 2 - Default.png" alt="Step 2 Documents (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Step 2 - Default-card.png" alt="Step 2 Documents (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Documents</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - info confirm.png">
-                  <img src="/Images/projects/kyc/Dark- Step 2 - info confirm.png" alt="Step 2 Confirm Info (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Step 2 - info confirm-card.png" alt="Step 2 Confirm Info (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Confirm</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face.png">
-                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face.png" alt="Step 3 Face Scan (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face-card.png" alt="Step 3 Face Scan (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Face Scan</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step.png">
-                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step.png" alt="Step 3 Success (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step-card.png" alt="Step 3 Success (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Success</div>
                 </div>
               </div>
@@ -429,52 +429,52 @@ export default function CaseStudyKyc() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Home.png">
-                  <img src="/Images/projects/kyc/Light- Home.png" alt="Home (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Home-card.png" alt="Home (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home · Light</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 1 - Preperation.png">
-                  <img src="/Images/projects/kyc/Light- Step 1 - Preperation.png" alt="Step 1 Preparation (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Step 1 - Preperation-card.png" alt="Step 1 Preparation (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 1 · Prepare</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Before Select.png">
-                  <img src="/Images/projects/kyc/Light- Step 2 - Before Select.png" alt="Step 2 Upload (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Step 2 - Before Select-card.png" alt="Step 2 Upload (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Upload</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Complete.png">
-                  <img src="/Images/projects/kyc/Light- Step 2 - Complete.png" alt="Step 2 Complete (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Step 2 - Complete-card.png" alt="Step 2 Complete (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Complete</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 3 - Scan Face.png">
-                  <img src="/Images/projects/kyc/Light- Step 3 - Scan Face.png" alt="Step 3 Face Scan (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Step 3 - Scan Face-card.png" alt="Step 3 Face Scan (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Face Scan</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 4 - Preperation.png">
-                  <img src="/Images/projects/kyc/Light- Step 4 - Preperation.png" alt="Step 4 (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Step 4 - Preperation-card.png" alt="Step 4 (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 4 · Final</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Home.png">
-                  <img src="/Images/projects/kyc/Light- Home.png" alt="Home (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Home-card.png" alt="Home (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home · Light</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 1 - Preperation.png">
-                  <img src="/Images/projects/kyc/Light- Step 1 - Preperation.png" alt="Step 1 Preparation (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Step 1 - Preperation-card.png" alt="Step 1 Preparation (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 1 · Prepare</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Before Select.png">
-                  <img src="/Images/projects/kyc/Light- Step 2 - Before Select.png" alt="Step 2 Upload (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Step 2 - Before Select-card.png" alt="Step 2 Upload (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Upload</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Complete.png">
-                  <img src="/Images/projects/kyc/Light- Step 2 - Complete.png" alt="Step 2 Complete (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Step 2 - Complete-card.png" alt="Step 2 Complete (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Complete</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 3 - Scan Face.png">
-                  <img src="/Images/projects/kyc/Light- Step 3 - Scan Face.png" alt="Step 3 Face Scan (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Step 3 - Scan Face-card.png" alt="Step 3 Face Scan (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Face Scan</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 4 - Preperation.png">
-                  <img src="/Images/projects/kyc/Light- Step 4 - Preperation.png" alt="Step 4 (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/kyc/Light- Step 4 - Preperation-card.png" alt="Step 4 (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 4 · Final</div>
                 </div>
               </div>
@@ -498,17 +498,17 @@ export default function CaseStudyKyc() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🚦</div>
-                <h4>Live Status States</h4>
+                <h3>Live Status States</h3>
                 <p>Every upload and scan has explicit in-progress, success and error states - colour-coded so users instantly read pass, pending or retry.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🧭</div>
-                <h4>Preparation First</h4>
+                <h3>Preparation First</h3>
                 <p>Each step opens with a calm preparation screen and gentle warnings, so people know exactly what they'll need before the camera ever turns on.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌓</div>
-                <h4>Light &amp; Dark Parity</h4>
+                <h3>Light &amp; Dark Parity</h3>
                 <p>The entire flow is designed twice over - pixel-matched in light and dark - so it feels native inside any host app or preference.</p>
               </div>
             </div>
@@ -541,19 +541,19 @@ export default function CaseStudyKyc() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A complete, consistent verification system: a clear 4-step journey with explicit status states, fully designed in both light and dark across every preparation, capture, success and error screen.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Capturing every state - in-progress, error, retry, success - for documents and face scan, without overwhelming the user on the happy path, and keeping it all consistent across two themes.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>In verification, the "unhappy" states are the product. Designing errors and retries with the same care as success is what builds the trust that keeps people from abandoning.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Hand off to engineering, add accessibility passes for camera-based steps, and extend the status system to additional document types and regions.</p>
               </div>
             </div>

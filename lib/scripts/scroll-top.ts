@@ -4,7 +4,7 @@
    Self-contained: injects its own styles + markup.
    (faithful port of styles/scroll-top.js)
    ══════════════════════════════════════════ */
-import { makeBag } from './_util';
+import { makeBag, prefersReducedMotion } from './_util';
 
 export function initScrollTop(): () => void {
   const bag = makeBag();
@@ -66,6 +66,10 @@ export function initScrollTop(): () => void {
     if (start <= 0) return;
 
     stopAnim();
+
+    // A 900ms animated scroll of the whole document is exactly what reduced
+    // motion is asking not to happen. Same destination, no journey.
+    if (prefersReducedMotion()) { window.scrollTo(0, 0); return; }
     const duration = 900;
     let startTime = null;
 

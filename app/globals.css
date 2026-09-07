@@ -42,11 +42,38 @@ body {
 /* ── Universal micro-interaction polish ──
    Applied globally so every page benefits without duplication. */
 
-/* Smooth anchor scrolling */
+/* Smooth anchor scrolling.
+   Turned off under reduced motion: a smooth scroll is a long, unstoppable
+   animated translation of the entire page, which is the single motion most
+   likely to make a motion-sensitive visitor ill. The jump still happens, it
+   just happens instantly. */
 html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 
 /* Remove the blue iOS/Android tap flash - custom interactions own the feedback */
 *, *::before, *::after { -webkit-tap-highlight-color: transparent; }
+
+/* ── Visually hidden, still announced ──
+   For text a screen reader and a search engine need and the design does not
+   show. `display: none` and `visibility: hidden` both remove it from the
+   accessibility tree as well, which is the opposite of the intent; clipping a
+   1px box leaves it in the tree. Not focusable content - this is for static
+   text only, since a focused element clipped to 1px scrolls the page to
+   nowhere. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
 
 /* Ensure every button shows a pointer on desktop */
 button { cursor: pointer; }
@@ -451,4 +478,71 @@ body.menu-open { overflow: hidden; }
   #preloader { transition-duration: 200ms; }
   .aurora-container,
   .preloader-content { animation-duration: 200ms; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   REDUCED MOTION - the entrance choreography
+
+   Loaded from the root layout, so one block reaches all 26 case studies and
+   every gallery. Each selector carries `body` (specificity 1,1 rather than 1,0)
+   so it outranks the per-route stylesheet that declares the animation, which is
+   imported after this file.
+
+   These are not decorative fades that happen to be skippable - they are the
+   rules that hold content at `opacity: 0` until something arrives to reveal it.
+   A visitor who has asked for no motion should get the page, not a page that
+   fades in more politely; and the blur-and-translate on a full case-study
+   section is a 0.9s filter animation over a very tall element, which is the
+   single most expensive transition on the site.
+   ══════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  /* Case-study sections: revealed by IntersectionObserver adding .visible. Show
+     them outright rather than transitioning, and drop the blur entirely. */
+  body .cs-section {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  /* Anything whose entrance is a keyframe with `forwards` ends up stuck at
+     opacity 0 if the animation is merely disabled, so these are landed at their
+     end state instead of cancelled. */
+  body .cs-hero-title,
+  body .cs-hero-subtitle,
+  body .cs-hero-labels,
+  body .cs-cover-banner,
+  body .project-card,
+  body #mobile-topbar {
+    opacity: 1;
+    transform: none;
+    animation-duration: 0.01ms;
+    animation-delay: 0s;
+  }
+
+  /* The gallery marquees translate forever, which is continuous motion nobody
+     asked for and cannot stop. Simply cancelling the animation is worse than
+     leaving it: the track is `width: max-content` inside an `overflow: hidden`
+     gallery, so a stopped track shows the first two cards and hides the other
+     eight with no way to reach them. So the row is handed over to the visitor
+     instead - motion stopped, and the strip made scrollable so they can pan it
+     themselves at whatever pace they like. */
+  body .ui-gallery {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+  }
+  body .ui-marquee-track {
+    animation: none;
+    transform: none;
+  }
+  body .ui-marquee-track .ui-card {
+    scroll-snap-align: center;
+  }
+
+  /* Page-enter and the site's own fadeUp. */
+  body.page-transitioning main.page,
+  body.skip-preloader main.page {
+    animation-duration: 0.01ms;
+  }
 }

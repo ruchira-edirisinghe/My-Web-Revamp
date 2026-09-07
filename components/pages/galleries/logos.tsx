@@ -36,7 +36,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/akila.jpg" data-highres="/Images/artworks/logos/akila.png" alt="Akila Physics" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Identity Design</span>
-                <h3 className="info-title">Akila Physics</h3>
+                <h2 className="info-title">Akila Physics</h2>
                 <p className="info-sub">Designed for a Physics Tuition Teacher for marketing and branding purposes.</p>
               </div>
             </div>
@@ -46,7 +46,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/bumpie.jpg" data-highres="/Images/artworks/logos/bumpie.png" alt="Bumpie" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Software Brand</span>
-                <h3 className="info-title">Bumpie</h3>
+                <h2 className="info-title">Bumpie</h2>
                 <p className="info-sub">Visual identity for a Maternity Status Monetization Software platform.</p>
               </div>
             </div>
@@ -56,7 +56,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/celeritas.jpg" data-highres="/Images/artworks/logos/celeritas.png" alt="Celeritas" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Logistics Branding</span>
-                <h3 className="info-title">Celeritas</h3>
+                <h2 className="info-title">Celeritas</h2>
                 <p className="info-sub">Designed for an international courier service agent management system.</p>
               </div>
             </div>
@@ -66,7 +66,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/dairy.jpg" data-highres="/Images/artworks/logos/dairy.png" alt="Lanka Dairy" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Corporate Identity</span>
-                <h3 className="info-title">Lanka Dairy</h3>
+                <h2 className="info-title">Lanka Dairy</h2>
                 <p className="info-sub">Branding for a dairy milk production and distribution company.</p>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/dns.jpg" data-highres="/Images/artworks/logos/dns.png" alt="D.N.S." className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Community Club</span>
-                <h3 className="info-title">D.N.S.</h3>
+                <h2 className="info-title">D.N.S.</h2>
                 <p className="info-sub">Designed for a campus community club for the Networking Department.</p>
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/electra.jpg" data-highres="/Images/artworks/logos/electra.png" alt="Electra" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Energy Software</span>
-                <h3 className="info-title">Electra</h3>
+                <h2 className="info-title">Electra</h2>
                 <p className="info-sub">Visual identity for a university software project in solar energy.</p>
               </div>
             </div>
@@ -96,7 +96,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/funextreme.jpg" data-highres="/Images/artworks/logos/funextreme.png" alt="FunExtreme" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Recreational</span>
-                <h3 className="info-title">FunExtreme</h3>
+                <h2 className="info-title">FunExtreme</h2>
                 <p className="info-sub">Custom branding for an adventure and recreational-focused platform.</p>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/gaming.jpg" data-highres="/Images/artworks/logos/gaming.png" alt="Gaming Community" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">University Life</span>
-                <h3 className="info-title">Gaming Community</h3>
+                <h2 className="info-title">Gaming Community</h2>
                 <p className="info-sub">Official identity for the Gaming Community of NSBM Green University.</p>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/gears.jpg" data-highres="/Images/artworks/logos/gears.png" alt="Gears & Glam" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Apparel Brand</span>
-                <h3 className="info-title">Gears & Glam</h3>
+                <h2 className="info-title">Gears & Glam</h2>
                 <p className="info-sub">Designed for a clothing brand focused on glamorous, modern products.</p>
               </div>
             </div>
@@ -126,7 +126,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/gevents.jpg" data-highres="/Images/artworks/logos/gevents.png" alt="GEvents" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Event Management</span>
-                <h3 className="info-title">GEvents</h3>
+                <h2 className="info-title">GEvents</h2>
                 <p className="info-sub">Branding solution for a modern event planning and logistics startup.</p>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/grubit.jpg" data-highres="/Images/artworks/logos/grubit.png" alt="Grubit" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Food Tech</span>
-                <h3 className="info-title">Grubit</h3>
+                <h2 className="info-title">Grubit</h2>
                 <p className="info-sub">A playful and modern visual identity for a food delivery service.</p>
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/hassle.jpg" data-highres="/Images/artworks/logos/hassle.png" alt="HassleFree" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Courier Service</span>
-                <h3 className="info-title">HassleFree</h3>
+                <h2 className="info-title">HassleFree</h2>
                 <p className="info-sub">Designed for a courier service prioritizing customer support and speed.</p>
               </div>
             </div>
@@ -156,7 +156,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/heal.jpg" data-highres="/Images/artworks/logos/heal.png" alt="HealHub" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Healthcare IT</span>
-                <h3 className="info-title">HealHub</h3>
+                <h2 className="info-title">HealHub</h2>
                 <p className="info-sub">Identity for a university health management software project.</p>
               </div>
             </div>
@@ -166,7 +166,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/hnc.jpg" data-highres="/Images/artworks/logos/hnc.png" alt="HNC" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Personal Brand</span>
-                <h3 className="info-title">HNC</h3>
+                <h2 className="info-title">HNC</h2>
                 <p className="info-sub">Designed for a gaming streamer for marketing and digital presence.</p>
               </div>
             </div>
@@ -176,7 +176,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/imlan.jpg" data-highres="/Images/artworks/logos/imlan.png" alt="IMLAN" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Education</span>
-                <h3 className="info-title">IMLAN</h3>
+                <h2 className="info-title">IMLAN</h2>
                 <p className="info-sub">Branding for an Immersive Language Learning System (IMLAN) for Pearson.</p>
               </div>
             </div>
@@ -186,7 +186,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/konekza.jpg" data-highres="/Images/artworks/logos/konekza.png" alt="KoneKza" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Tech & Networking</span>
-                <h3 className="info-title">KoneKza</h3>
+                <h2 className="info-title">KoneKza</h2>
                 <p className="info-sub">Sophisticated branding for a networking and connectivity solution provider.</p>
               </div>
             </div>
@@ -196,7 +196,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/ohl.jpg" data-highres="/Images/artworks/logos/ohl.png" alt="OHL" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Logo Redesign</span>
-                <h3 className="info-title">OHL</h3>
+                <h2 className="info-title">OHL</h2>
                 <p className="info-sub">Modern redesign of the OHL brand for future promotional purposes.</p>
               </div>
             </div>
@@ -206,7 +206,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/phurl.jpg" data-highres="/Images/artworks/logos/phurl.png" alt="PhURL" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Cyber Security</span>
-                <h3 className="info-title">PhURL</h3>
+                <h2 className="info-title">PhURL</h2>
                 <p className="info-sub">Designed for a Phishing URL Detection System which aims to protect users.</p>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/sureid.jpg" data-highres="/Images/artworks/logos/sureid.png" alt="SureID" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Verification</span>
-                <h3 className="info-title">SureID</h3>
+                <h2 className="info-title">SureID</h2>
                 <p className="info-sub">A secure and trustworthy identity verification branding project.</p>
               </div>
             </div>
@@ -226,7 +226,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/takg.jpg" data-highres="/Images/artworks/logos/takg.png" alt="TAKG" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Startup Branding</span>
-                <h3 className="info-title">TAKG</h3>
+                <h2 className="info-title">TAKG</h2>
                 <p className="info-sub">Visual identity designed for a tech startup business ecosystem.</p>
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/wish.jpg" data-highres="/Images/artworks/logos/wish.png" alt="WishKids" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Community Service</span>
-                <h3 className="info-title">WishKids</h3>
+                <h2 className="info-title">WishKids</h2>
                 <p className="info-sub">Designed for a project to fulfill water needs for people suffering from drought.</p>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/xuping.jpg" data-highres="/Images/artworks/logos/xuping.png" alt="XUPING" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Global Enterprise</span>
-                <h3 className="info-title">XUPING</h3>
+                <h2 className="info-title">XUPING</h2>
                 <p className="info-sub">Designed for a multinational group of companies across diverse fields.</p>
               </div>
             </div>
@@ -256,7 +256,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/yasupi.jpg" data-highres="/Images/artworks/logos/yasupi.png" alt="Yasupi" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Distribution</span>
-                <h3 className="info-title">Yasupi</h3>
+                <h2 className="info-title">Yasupi</h2>
                 <p className="info-sub">Branding for a local distribution and logistics network platform.</p>
               </div>
             </div>
@@ -266,7 +266,7 @@ export default function GalleryLogos() {
               <img src="/Images/artworks/logos/thumbs/zen.jpg" data-highres="/Images/artworks/logos/zen.png" alt="ZEN" className="artwork-img" loading="lazy" />
               <div className="artwork-info">
                 <span className="info-tag">Artist Branding</span>
-                <h3 className="info-title">ZEN</h3>
+                <h2 className="info-title">ZEN</h2>
                 <p className="info-sub">Personal brand designed to represent myself for freelance creative projects.</p>
               </div>
             </div>
@@ -283,7 +283,7 @@ export default function GalleryLogos() {
           <img id="modal-img" alt="Full size preview" />
           <div id="modal-info">
             <span id="modal-tag"></span>
-            <h3 id="modal-title"></h3>
+            <h2 id="modal-title"></h2>
             <p id="modal-desc"></p>
           </div>
         </div>

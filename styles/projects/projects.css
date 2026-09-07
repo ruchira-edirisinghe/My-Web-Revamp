@@ -779,7 +779,26 @@ body:has(.cs-wrap) { overflow-x: hidden; }
   color: inherit;
   opacity: 0;
   transform: translateY(32px);
-  animation: fadeUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) calc(0.1s * var(--card-index, 0) + 0.7s) forwards;
+  /* The stagger is CAPPED, and the cap is the point of the min().
+     The delay used to be `0.1s * index + 0.7s` with no ceiling. That is a
+     pleasant ripple across six cards and a bug across twenty-six: the last card
+     in the web-projects grid waited 3.2s before it began an 0.8s fade, so a
+     visitor who scrolled straight down - which on a phone, where the grid is one
+     column, is everybody - scrolled into a column of cards that were still at
+     opacity 0 and read as a page that had failed to load.
+     1.6s covers the first nine cards at the original rhythm and lands the rest
+     together, so the ripple survives and the wait does not. */
+  animation: fadeUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1)
+    min(calc(0.1s * var(--card-index, 0) + 0.7s), 1.6s) forwards;
+}
+
+/* Nothing should be held at opacity 0 waiting on a decorative timer when the
+   visitor has asked for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    animation-delay: 0s;
+    animation-duration: 0.01s;
+  }
 }
 
 .project-card::before {
@@ -1207,6 +1226,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .cs-ff-orbitron  { font-family: 'Orbitron', sans-serif; }
 .cs-ff-rubik     { font-family: 'Rubik', 'Montserrat', sans-serif; }
 .cs-ff-fredoka   { font-family: 'Fredoka', 'Montserrat', sans-serif; }
+.cs-ff-baloo     { font-family: 'Baloo 2', 'Comic Sans MS', 'Trebuchet MS', system-ui, sans-serif; }
+.cs-ff-nunito    { font-family: 'Nunito', system-ui, sans-serif; }
+.cs-ff-nunito-sans { font-family: 'Nunito Sans', system-ui, sans-serif; font-variant-numeric: tabular-nums; }
 
 /* Image helpers */
 .cs-h-auto  { height: auto; }

@@ -113,17 +113,17 @@ export default function CaseStudyPhurl() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Problem Statement</h4>
+                <h3>Problem Statement</h3>
                 <p>People need a fast, trustworthy way to check whether a URL is safe - and just as importantly, to learn the cues of a phishing attempt so they can protect themselves next time.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
-                <h4>The Goal</h4>
+                <h3>The Goal</h3>
                 <p>Build an accurate ML model for phishing detection, wrap it in an intuitive interface, teach users about phishing through real resources, and keep the whole system scalable, adaptable and secure.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
-                <h4>Target Audience</h4>
+                <h3>Target Audience</h3>
                 <p>Everyday individuals and organisations who want phishing protection plus genuine cybersecurity awareness - regardless of their technical background.</p>
               </div>
             </div>
@@ -290,17 +290,17 @@ export default function CaseStudyPhurl() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🥇</div>
-                <h4>Light GBM <span className="cs-gold">· Chosen</span></h4>
+                <h3>Light GBM <span className="cs-gold">· Chosen</span></h3>
                 <p>The best performer at <strong className="cs-w">96.6% accuracy</strong> with low false positives and negatives. Serialised to a <code>.joblib</code> file and loaded by the backend at inference time.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌲</div>
-                <h4>Random Forest</h4>
+                <h3>Random Forest</h3>
                 <p>A strong ensemble baseline - reliable, but edged out on accuracy and speed for this feature set.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚡</div>
-                <h4>XGBoost</h4>
+                <h3>XGBoost</h3>
                 <p>Competitive gradient boosting that performed well, but didn't beat Light GBM's balance on this data.</p>
               </div>
             </div>
@@ -362,22 +362,22 @@ export default function CaseStudyPhurl() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🔎</div>
-                <h4>URL Scanner</h4>
+                <h3>URL Scanner</h3>
                 <p>One-field input · Real-time check · Clear verdict</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📚</div>
-                <h4>Learning Hub</h4>
+                <h3>Learning Hub</h3>
                 <p>Articles · Infographics · Videos</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📊</div>
-                <h4>Results Dashboard</h4>
+                <h3>Results Dashboard</h3>
                 <p>Verdict · Confidence · Guidance</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💬</div>
-                <h4>Feedback &amp; Errors</h4>
+                <h3>Feedback &amp; Errors</h3>
                 <p>Friendly states · Recovery guidance</p>
               </div>
             </div>
@@ -390,52 +390,52 @@ export default function CaseStudyPhurl() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/Phurl/Home Screen UI.png">
-                  <img src="/Images/projects/Phurl/Home Screen UI.png" alt="Home Screen" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Home Screen UI-card.png" alt="Home Screen" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Screen</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Classic URL Detection UI.png">
-                  <img src="/Images/projects/Phurl/Classic URL Detection UI.png" alt="Classic URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Classic URL Detection UI-card.png" alt="Classic URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Classic Detection</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Advanced URL Detection UI.png">
-                  <img src="/Images/projects/Phurl/Advanced URL Detection UI.png" alt="Advanced URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Advanced URL Detection UI-card.png" alt="Advanced URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Advanced Detection</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/What is Phishing UI.png">
-                  <img src="/Images/projects/Phurl/What is Phishing UI.png" alt="What is Phishing" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/What is Phishing UI-card.png" alt="What is Phishing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">What is Phishing</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Login UI.png">
-                  <img src="/Images/projects/Phurl/Login UI.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Login UI-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Create Account UI.png">
-                  <img src="/Images/projects/Phurl/Create Account UI.png" alt="Create Account" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Create Account UI-card.png" alt="Create Account" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Create Account</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/Phurl/Home Screen UI.png">
-                  <img src="/Images/projects/Phurl/Home Screen UI.png" alt="Home Screen" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Home Screen UI-card.png" alt="Home Screen" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Screen</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Classic URL Detection UI.png">
-                  <img src="/Images/projects/Phurl/Classic URL Detection UI.png" alt="Classic URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Classic URL Detection UI-card.png" alt="Classic URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Classic Detection</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Advanced URL Detection UI.png">
-                  <img src="/Images/projects/Phurl/Advanced URL Detection UI.png" alt="Advanced URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Advanced URL Detection UI-card.png" alt="Advanced URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Advanced Detection</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/What is Phishing UI.png">
-                  <img src="/Images/projects/Phurl/What is Phishing UI.png" alt="What is Phishing" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/What is Phishing UI-card.png" alt="What is Phishing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">What is Phishing</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Login UI.png">
-                  <img src="/Images/projects/Phurl/Login UI.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Login UI-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Create Account UI.png">
-                  <img src="/Images/projects/Phurl/Create Account UI.png" alt="Create Account" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Create Account UI-card.png" alt="Create Account" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Create Account</div>
                 </div>
               </div>
@@ -444,52 +444,52 @@ export default function CaseStudyPhurl() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/Phurl/Account Successful UI.png">
-                  <img src="/Images/projects/Phurl/Account Successful UI.png" alt="Account Created" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Account Successful UI-card.png" alt="Account Created" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Account Created</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/View Profile UI.png">
-                  <img src="/Images/projects/Phurl/View Profile UI.png" alt="View Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/View Profile UI-card.png" alt="View Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">View Profile</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Update Profile Success UI.png">
-                  <img src="/Images/projects/Phurl/Update Profile Success UI.png" alt="Profile Updated" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Update Profile Success UI-card.png" alt="Profile Updated" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile Updated</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Comtinue History Delete UI.png">
-                  <img src="/Images/projects/Phurl/Comtinue History Delete UI.png" alt="Delete History" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Comtinue History Delete UI-card.png" alt="Delete History" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Delete History</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/History Delete Success UI.png">
-                  <img src="/Images/projects/Phurl/History Delete Success UI.png" alt="History Deleted" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/History Delete Success UI-card.png" alt="History Deleted" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">History Deleted</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/T&C UI.png">
-                  <img src="/Images/projects/Phurl/T&C UI.png" alt="Terms and Conditions" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/T&C UI-card.png" alt="Terms and Conditions" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Terms &amp; Conditions</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/Phurl/Account Successful UI.png">
-                  <img src="/Images/projects/Phurl/Account Successful UI.png" alt="Account Created" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Account Successful UI-card.png" alt="Account Created" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Account Created</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/View Profile UI.png">
-                  <img src="/Images/projects/Phurl/View Profile UI.png" alt="View Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/View Profile UI-card.png" alt="View Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">View Profile</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Update Profile Success UI.png">
-                  <img src="/Images/projects/Phurl/Update Profile Success UI.png" alt="Profile Updated" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Update Profile Success UI-card.png" alt="Profile Updated" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile Updated</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/Comtinue History Delete UI.png">
-                  <img src="/Images/projects/Phurl/Comtinue History Delete UI.png" alt="Delete History" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/Comtinue History Delete UI-card.png" alt="Delete History" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Delete History</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/History Delete Success UI.png">
-                  <img src="/Images/projects/Phurl/History Delete Success UI.png" alt="History Deleted" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/History Delete Success UI-card.png" alt="History Deleted" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">History Deleted</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/Phurl/T&C UI.png">
-                  <img src="/Images/projects/Phurl/T&C UI.png" alt="Terms and Conditions" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/Phurl/T&C UI-card.png" alt="Terms and Conditions" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Terms &amp; Conditions</div>
                 </div>
               </div>
@@ -515,22 +515,22 @@ export default function CaseStudyPhurl() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">⚛️</div>
-                <h4>Frontend</h4>
+                <h3>Frontend</h3>
                 <p>Built in <strong className="cs-w">React + JavaScript</strong> - an interactive dashboard and a real-time URL verification tool that calls the backend and renders the verdict instantly.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🐍</div>
-                <h4>Backend</h4>
+                <h3>Backend</h3>
                 <p>A <strong className="cs-w">Django</strong> service in an MVC structure exposing API endpoints for URL verification, with the Light GBM classifier loaded for inference.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🧠</div>
-                <h4>ML Integration</h4>
+                <h3>ML Integration</h3>
                 <p>The trained model is serialised to <code>joblib</code> and called per request - feature-engineering the URL, scaling, then classifying it as safe or malicious.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">☁️</div>
-                <h4>Deployment</h4>
+                <h3>Deployment</h3>
                 <p>Packaged for <strong className="cs-w">Heroku</strong> (Procfile, runtime &amp; requirements) for easy, scalable hosting of the Django app and model together.</p>
               </div>
             </div>
@@ -579,19 +579,19 @@ export default function CaseStudyPhurl() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A reliable detector (96.6% accuracy, low false positives) wrapped in an interface that testers praised for its design and educational resources - and confirmed working across major browsers.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenges</h4>
+                <h3>🧗 Challenges</h3>
                 <p>Dataset limitations meant extensive preprocessing; tuning the model was a constant balance between accuracy and minimising false positives/negatives; and interface warnings had to be reworked from user feedback.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>A hybrid methodology balanced flexibility with structure, and continuous user feedback was crucial to refining usability. Above all: adaptability is essential against evolving phishing tactics.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>On-screen warnings as users browse, deeper detection capabilities, and a mobile app to put PhURL's protection in more hands.</p>
               </div>
             </div>

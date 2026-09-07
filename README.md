@@ -73,3 +73,45 @@ Copyright (c) 2026 Ruchira Edirisinghe. All rights reserved.
 This website and its source code are the exclusive property of the author. No part of this code
 may be copied, modified, distributed, used, or reproduced in any form without explicit written
 permission from the author.
+
+## Image pipeline
+
+Case-study captures are stored at up to **1920px** (the lightbox draws them at
+viewport width) and every one also gets a **`<name>-card.png` at 1100px** for the
+gallery marquee, whose cards are 540px on desktop and 300px on a phone.
+
+```bash
+npm run images:check   # report what would change, touch nothing
+npm run images         # resize / repack in place, write missing -card variants
+```
+
+The script is idempotent and only rewrites files git already has a copy of, so a
+screenshot dropped in and not yet committed is reported and left alone (resizing
+in place is irreversible for a file with no other copy). Pass
+`--include-untracked` to override that deliberately.
+
+After adding new captures to a case study: commit them, run `npm run images`, and
+point the gallery `<img src>` at the `-card` sibling while the card's `data-full`
+keeps the full-size path. `lib/cardSrc.ts` does that mapping for the galleries
+built from an array.
+
+Raw, uncropped source captures live in `assets-src/` — kept in the repo, outside
+`public/`, so they are never deployed:
+
+- `assets-src/banners/` — the ten generated 16:9 game key-art banners
+- `assets-src/whack-a-mole/` — the raw browser screenshots, before the chrome crop
+
+### Game covers are 16:9
+
+All ten games ship `cover.png` at **1600×900**, `cover-thumb.png` at **700×394**
+and `cover-card.png` at **1100×619**. That matches `.project-image-wrap`, which is
+`aspect-ratio: 16/9` with `object-fit: cover` — a square cover there loses the top
+and bottom 44% of the artwork, which for a lockup is the wordmark. To reinstall
+from the sources in `assets-src/banners/`:
+
+```bash
+node scripts/install-game-banners.mjs
+```
+
+`scripts/install-wam-captures.mjs` does the same job for Whack-A-Mole's raw
+captures, cropping 143px of browser chrome off the top of each.

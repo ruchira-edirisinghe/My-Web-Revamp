@@ -102,17 +102,17 @@ export default function CaseStudyMessagingSystem() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Problem Statement</h4>
+                <h3>Problem Statement</h3>
                 <p>Configuring services, building message parameters, managing API keys and reading logs were scattered and intimidating - turning routine setup into a support burden.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
-                <h4>The Goal</h4>
+                <h3>The Goal</h3>
                 <p>Unify the entire workflow into one coherent dashboard - guided service creation, a clear parameter builder, secure token management, and transparent logs and billing.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
-                <h4>Target Audience</h4>
+                <h3>Target Audience</h3>
                 <p>Developers integrating messaging via API, team admins managing services and access, and business owners watching usage and billing.</p>
               </div>
             </div>
@@ -265,22 +265,22 @@ export default function CaseStudyMessagingSystem() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">⚙️</div>
-                <h4>Services</h4>
+                <h3>Services</h3>
                 <p>All · New · Channels · OTP</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🧩</div>
-                <h4>Parameters</h4>
+                <h3>Parameters</h3>
                 <p>Text · Image · Link</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔑</div>
-                <h4>Tokens &amp; Logs</h4>
+                <h3>Tokens &amp; Logs</h3>
                 <p>API Keys · Delivery Logs</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💳</div>
-                <h4>Billing &amp; Docs</h4>
+                <h3>Billing &amp; Docs</h3>
                 <p>Pricing · Billing · Documentation</p>
               </div>
             </div>
@@ -351,52 +351,52 @@ export default function CaseStudyMessagingSystem() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Login.png">
-                  <img src="/Images/projects/msg_platform/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/2fa Select.png">
-                  <img src="/Images/projects/msg_platform/2fa Select.png" alt="2FA Verification" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/2fa Select-card.png" alt="2FA Verification" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">2FA Verification</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Dashboard.png">
-                  <img src="/Images/projects/msg_platform/Dashboard.png" alt="Dashboard" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Dashboard-card.png" alt="Dashboard" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ All.png">
-                  <img src="/Images/projects/msg_platform/Services --_ All.png" alt="Services" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Services --_ All-card.png" alt="Services" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Services</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ New Service --_ Select Service.png">
-                  <img src="/Images/projects/msg_platform/Services --_ New Service --_ Select Service.png" alt="New Service" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Services --_ New Service --_ Select Service-card.png" alt="New Service" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">New Service</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome.png">
-                  <img src="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome.png" alt="Service Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome-card.png" alt="Service Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Login.png">
-                  <img src="/Images/projects/msg_platform/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/2fa Select.png">
-                  <img src="/Images/projects/msg_platform/2fa Select.png" alt="2FA Verification" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/2fa Select-card.png" alt="2FA Verification" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">2FA Verification</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Dashboard.png">
-                  <img src="/Images/projects/msg_platform/Dashboard.png" alt="Dashboard" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Dashboard-card.png" alt="Dashboard" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ All.png">
-                  <img src="/Images/projects/msg_platform/Services --_ All.png" alt="Services" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Services --_ All-card.png" alt="Services" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Services</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ New Service --_ Select Service.png">
-                  <img src="/Images/projects/msg_platform/Services --_ New Service --_ Select Service.png" alt="New Service" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Services --_ New Service --_ Select Service-card.png" alt="New Service" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">New Service</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome.png">
-                  <img src="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome.png" alt="Service Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome-card.png" alt="Service Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding</div>
                 </div>
               </div>
@@ -405,52 +405,52 @@ export default function CaseStudyMessagingSystem() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Parameters.png">
-                  <img src="/Images/projects/msg_platform/Parameters.png" alt="Parameters" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Parameters-card.png" alt="Parameters" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Parameters</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add.png">
-                  <img src="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add.png" alt="Parameter Builder" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add-card.png" alt="Parameter Builder" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Parameter Builder</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Tokens.png">
-                  <img src="/Images/projects/msg_platform/Tokens.png" alt="API Tokens" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Tokens-card.png" alt="API Tokens" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">API Tokens</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Logs.png">
-                  <img src="/Images/projects/msg_platform/Logs.png" alt="Logs" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Logs-card.png" alt="Logs" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Logs</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Documentation.png">
-                  <img src="/Images/projects/msg_platform/Documentation.png" alt="Documentation" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Documentation-card.png" alt="Documentation" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Documentation</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Billing and Pricing --_ Billing details.png">
-                  <img src="/Images/projects/msg_platform/Billing and Pricing --_ Billing details.png" alt="Billing" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Billing and Pricing --_ Billing details-card.png" alt="Billing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Billing</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Parameters.png">
-                  <img src="/Images/projects/msg_platform/Parameters.png" alt="Parameters" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Parameters-card.png" alt="Parameters" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Parameters</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add.png">
-                  <img src="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add.png" alt="Parameter Builder" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add-card.png" alt="Parameter Builder" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Parameter Builder</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Tokens.png">
-                  <img src="/Images/projects/msg_platform/Tokens.png" alt="API Tokens" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Tokens-card.png" alt="API Tokens" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">API Tokens</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Logs.png">
-                  <img src="/Images/projects/msg_platform/Logs.png" alt="Logs" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Logs-card.png" alt="Logs" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Logs</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Documentation.png">
-                  <img src="/Images/projects/msg_platform/Documentation.png" alt="Documentation" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Documentation-card.png" alt="Documentation" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Documentation</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/msg_platform/Billing and Pricing --_ Billing details.png">
-                  <img src="/Images/projects/msg_platform/Billing and Pricing --_ Billing details.png" alt="Billing" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/msg_platform/Billing and Pricing --_ Billing details-card.png" alt="Billing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Billing</div>
                 </div>
               </div>
@@ -474,17 +474,17 @@ export default function CaseStudyMessagingSystem() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🧭</div>
-                <h4>Guided Wizards</h4>
+                <h3>Guided Wizards</h3>
                 <p>Service onboarding and parameter creation are staged step-by-step, each ending in an explicit success state so users always know where they stand.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🧩</div>
-                <h4>Visual Parameter Builder</h4>
+                <h3>Visual Parameter Builder</h3>
                 <p>Message parameters support text, image and link types - added and previewed visually, turning a fiddly config task into a tangible building experience.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔒</div>
-                <h4>Security by Default</h4>
+                <h3>Security by Default</h3>
                 <p>Two-factor authentication, scoped API tokens and clear "disable" confirmations make the platform's most sensitive actions feel deliberate and safe.</p>
               </div>
             </div>
@@ -517,19 +517,19 @@ export default function CaseStudyMessagingSystem() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A complete, consistent SaaS design system: 40+ high-fidelity screens covering authentication, services, parameters, tokens, logs, documentation, billing and settings.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Serving developers, admins and owners in one product without overwhelming any of them - and keeping dozens of multi-step flows visually consistent.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>For complex tools, the wins are in the wizards and the empty/success/error states. A broad palette only works when it's governed by a strict, documented system.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Hand off to engineering, expand analytics on the dashboard, and add team-level roles &amp; permissions on top of the existing 2FA foundation.</p>
               </div>
             </div>

@@ -37,7 +37,7 @@ export default function GalleryArtworks() {
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Illustration</span>
-                <h3 className="info-title">Temporal Bonds</h3>
+                <h2 className="info-title">Temporal Bonds</h2>
                 <p className="info-sub">Exploring the duality and cosmic connection between Loki and his variant, Sylvie.</p>
                 <a href="/Images/artworks/Loki-sylvie.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
@@ -49,7 +49,7 @@ export default function GalleryArtworks() {
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Character Study</span>
-                <h3 className="info-title">The Thunder Kitsune</h3>
+                <h2 className="info-title">The Thunder Kitsune</h2>
                 <p className="info-sub">A character study of Kira Yukimura, the thunder kitsune from Teen Wolf.</p>
                 <a href="/Images/artworks/kira1.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
@@ -61,7 +61,7 @@ export default function GalleryArtworks() {
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Digital Portrait</span>
-                <h3 className="info-title">Edgerunners</h3>
+                <h2 className="info-title">Edgerunners</h2>
                 <p className="info-sub">A neon-soaked tribute to the tragic connection in Night City.</p>
                 <a href="/Images/artworks/lucy-david.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
@@ -73,7 +73,7 @@ export default function GalleryArtworks() {
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Illustration</span>
-                <h3 className="info-title">Friendly Neighborhood</h3>
+                <h2 className="info-title">Friendly Neighborhood</h2>
                 <p className="info-sub">A dynamic composition capturing the iconic energy of the web-slinger.</p>
                 <a href="/Images/artworks/spidey.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
@@ -85,7 +85,7 @@ export default function GalleryArtworks() {
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Portrait</span>
-                <h3 className="info-title">God of Mischief</h3>
+                <h2 className="info-title">God of Mischief</h2>
                 <p className="info-sub">A character study of Loki Laufeyson wielding the Tesseract, from Marvel&apos;s Avengers films.</p>
                 <a href="/Images/artworks/loki.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
@@ -97,7 +97,7 @@ export default function GalleryArtworks() {
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Portrait</span>
-                <h3 className="info-title">The Amazing One</h3>
+                <h2 className="info-title">The Amazing One</h2>
                 <p className="info-sub">A cinematic character study of the Peter Parker variant across the multiverse.</p>
                 <a href="/Images/artworks/andrew.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
@@ -109,7 +109,7 @@ export default function GalleryArtworks() {
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Fan Art</span>
-                <h3 className="info-title">Water Breathing</h3>
+                <h2 className="info-title">Water Breathing</h2>
                 <p className="info-sub">A stylistic tribute to the breathing techniques of the Demon Slayer Corps.</p>
                 <a href="/Images/artworks/demonslayer.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
@@ -121,7 +121,7 @@ export default function GalleryArtworks() {
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Character Study</span>
-                <h3 className="info-title">Unlikely Connection</h3>
+                <h2 className="info-title">Unlikely Connection</h2>
                 <p className="info-sub">Exploring the emotional depth of a bond found in the most unexpected places.</p>
                 <a href="/Images/artworks/otisruby.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
@@ -133,7 +133,7 @@ export default function GalleryArtworks() {
                 decoding="async" width="800" height="835" />
               <div className="artwork-info">
                 <span className="info-tag">Character Study</span>
-                <h3 className="info-title">The Copy Ninja</h3>
+                <h2 className="info-title">The Copy Ninja</h2>
                 <p className="info-sub">A hyper-detailed portrait of Kakashi Hatake exploring depth and textural realism.</p>
                 <a href="/Images/artworks/Kakashi.jpg" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
@@ -145,7 +145,7 @@ export default function GalleryArtworks() {
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Conceptual Art</span>
-                <h3 className="info-title">Winged Freedom</h3>
+                <h2 className="info-title">Winged Freedom</h2>
                 <p className="info-sub">An allegorical piece exploring the weight of choice and the flight of the soul.</p>
                 <a href="/Images/artworks/freedom.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
@@ -157,7 +157,7 @@ export default function GalleryArtworks() {
                 decoding="async" width="800" height="500" />
               <div className="artwork-info">
                 <span className="info-tag">Mood Piece</span>
-                <h3 className="info-title">The Quiet Grave</h3>
+                <h2 className="info-title">The Quiet Grave</h2>
                 <p className="info-sub">Fan art inspired by Studio Ghibli&apos;s Grave of the Fireflies.</p>
                 <a href="/Images/artworks/grave.png" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
@@ -174,7 +174,7 @@ export default function GalleryArtworks() {
           <img id="modal-img" alt="Full size preview" />
           <div id="modal-info">
             <span id="modal-tag"></span>
-            <h3 id="modal-title"></h3>
+            <h2 id="modal-title"></h2>
             <p id="modal-desc"></p>
           </div>
         </div>

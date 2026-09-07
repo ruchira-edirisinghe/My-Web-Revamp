@@ -113,17 +113,17 @@ export default function CaseStudyNcgws() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Problem Statement</h4>
+                <h3>Problem Statement</h3>
                 <p>Key information - capacity, services and tenders - was hidden in PDFs and unclear pages, so the site failed to communicate NCG's real operational strength to its stakeholders.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
-                <h4>The Goal</h4>
+                <h3>The Goal</h3>
                 <p>Clearly communicate warehouse capabilities, streamline tender discovery and submission, reflect Lyceum Global's corporate identity, and serve users of every technical literacy.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
-                <h4>Target Audience</h4>
+                <h3>Target Audience</h3>
                 <p>Corporate clients needing capacity metrics, SLAs and tender timelines - and job applicants needing clear career paths and a mobile-friendly application process.</p>
               </div>
             </div>
@@ -280,22 +280,22 @@ export default function CaseStudyNcgws() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🏢</div>
-                <h4>Company</h4>
+                <h3>Company</h3>
                 <p>Home · About Us · Our Team</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📦</div>
-                <h4>Operations</h4>
+                <h3>Operations</h3>
                 <p>Capacity · Fleet · Workflow</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📑</div>
-                <h4>Tenders</h4>
+                <h3>Tenders</h3>
                 <p>Listings · Filters · Submission</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🤝</div>
-                <h4>Engage</h4>
+                <h3>Engage</h3>
                 <p>Join Us · Careers · Contact</p>
               </div>
             </div>
@@ -375,44 +375,44 @@ export default function CaseStudyNcgws() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/ncgws/HOME Screen.png">
-                  <img src="/Images/projects/ncgws/HOME Screen.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/HOME Screen-card.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/About -_ About Us.png">
-                  <img src="/Images/projects/ncgws/About -_ About Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/About -_ About Us-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/About -_ Our Team.png">
-                  <img src="/Images/projects/ncgws/About -_ Our Team.png" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/About -_ Our Team-card.png" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Team</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Our Operations.png">
-                  <img src="/Images/projects/ncgws/Our Operations.png" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Our Operations-card.png" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Operations</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Tenders.png">
-                  <img src="/Images/projects/ncgws/Tenders.png" alt="Tenders" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Tenders-card.png" alt="Tenders" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Tenders</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/ncgws/HOME Screen.png">
-                  <img src="/Images/projects/ncgws/HOME Screen.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/HOME Screen-card.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/About -_ About Us.png">
-                  <img src="/Images/projects/ncgws/About -_ About Us.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/About -_ About Us-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/About -_ Our Team.png">
-                  <img src="/Images/projects/ncgws/About -_ Our Team.png" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/About -_ Our Team-card.png" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Team</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Our Operations.png">
-                  <img src="/Images/projects/ncgws/Our Operations.png" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Our Operations-card.png" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Operations</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Tenders.png">
-                  <img src="/Images/projects/ncgws/Tenders.png" alt="Tenders" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Tenders-card.png" alt="Tenders" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Tenders</div>
                 </div>
               </div>
@@ -421,44 +421,44 @@ export default function CaseStudyNcgws() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/ncgws/Join Us.png">
-                  <img src="/Images/projects/ncgws/Join Us.png" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Join Us-card.png" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Join Us</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Join Us - Job Description.png">
-                  <img src="/Images/projects/ncgws/Join Us - Job Description.png" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Join Us - Job Description-card.png" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Job Description</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Login.png">
-                  <img src="/Images/projects/ncgws/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Sign in.png">
-                  <img src="/Images/projects/ncgws/Sign in.png" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Sign in-card.png" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Sign In</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Contact Us.png">
-                  <img src="/Images/projects/ncgws/Contact Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Contact Us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/ncgws/Join Us.png">
-                  <img src="/Images/projects/ncgws/Join Us.png" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Join Us-card.png" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Join Us</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Join Us - Job Description.png">
-                  <img src="/Images/projects/ncgws/Join Us - Job Description.png" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Join Us - Job Description-card.png" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Job Description</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Login.png">
-                  <img src="/Images/projects/ncgws/Login.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Sign in.png">
-                  <img src="/Images/projects/ncgws/Sign in.png" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Sign in-card.png" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Sign In</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/ncgws/Contact Us.png">
-                  <img src="/Images/projects/ncgws/Contact Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/ncgws/Contact Us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
               </div>
@@ -484,17 +484,17 @@ export default function CaseStudyNcgws() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📊</div>
-                <h4>Capacity Dashboard</h4>
+                <h3>Capacity Dashboard</h3>
                 <p>Real-time warehouse occupancy visualisations bring 30,000+ sq ft of storage to life - no PDFs, just a glanceable view of what's available.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📑</div>
-                <h4>Tender Timeline</h4>
+                <h3>Tender Timeline</h3>
                 <p>Smart filters by date, type and value, plus alert subscriptions and a timeline generator, so vendors never miss a relevant tender again.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🚚</div>
-                <h4>Fleet Tracking Preview</h4>
+                <h3>Fleet Tracking Preview</h3>
                 <p>An embedded mapping preview hints at the island-wide fleet, reinforcing NCG's operational reach right on the page.</p>
               </div>
             </div>
@@ -527,19 +527,19 @@ export default function CaseStudyNcgws() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>Tender support queries fell 57% and mobile conversions rose 39%, with average sessions reaching 5.1 minutes on a fast 0.8s-loading site - clarity, efficiency and brand elevation in one.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Communicating multi-layered warehouse operations without overwhelming users. The fix: a top-level overview with drill-down into department flows and equipment details on demand.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>ERP system integration, augmented-reality warehouse tours, and multilingual support (Sinhala / Tamil) to reach every stakeholder.</p>
               </div>
               <div className="reflection-card">
-                <h4>💬 Conclusion</h4>
+                <h3>💬 Conclusion</h3>
                 <p>NCG Warehouse shows how thoughtful UX engineering can bring clarity to complex industrial operations - turning information into intuitive, interactive experiences.</p>
               </div>
             </div>

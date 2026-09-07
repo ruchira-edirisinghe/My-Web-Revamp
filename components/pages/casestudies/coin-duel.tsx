@@ -113,17 +113,17 @@ export default function CaseStudyCoinDuel() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>One Question</h4>
+                <h3>One Question</h3>
                 <p>Two buttons and nothing else. Every extra square - a margin bet, a lottery ticket on the 5-0 - was priced correctly and thrown out for being illegible next to the real bet.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚔️</div>
-                <h4>Something To Watch</h4>
+                <h3>Something To Watch</h3>
                 <p>Five coins, when three would settle it. The other four decide how hard the hit lands - so the same toss is both a bet that resolves in four seconds and a fight with a scoreline.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📈</div>
-                <h4>A Price That Moves</h4>
+                <h3>A Price That Moves</h3>
                 <p>A fixed price on a symmetric bet is a board nobody reads twice. Re-drawing it every round gives the player something to spot - which only works if the ladder cannot ever go positive.</p>
               </div>
             </div>
@@ -288,22 +288,22 @@ export default function CaseStudyCoinDuel() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">⚔️</div>
-                <h4>rules.ts</h4>
+                <h3>rules.ts</h3>
                 <p>Coins · Score · Damage · Shields · Shield break</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💰</div>
-                <h4>market.ts</h4>
+                <h3>market.ts</h3>
                 <p>Two buttons · Price ladder · <code>check()</code></p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🪙</div>
-                <h4>engine/</h4>
+                <h3>engine/</h3>
                 <p>Mint · Coin flight · Shields · Holo crowd · Camera</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔗</div>
-                <h4>blockchainRng.ts</h4>
+                <h3>blockchainRng.ts</h3>
                 <p>Server seed route · mulberry32 · duel-wide seal</p>
               </div>
             </div>
@@ -431,44 +431,44 @@ export default function CaseStudyCoinDuel() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/coin-duel/title-screen.png">
-                  <img src="/Images/projects/coin-duel/title-screen.png" alt="Coin Duel title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/title-screen-card.png" alt="Coin Duel title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title · The Badge</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.png">
-                  <img src="/Images/projects/coin-duel/betting-board.png" alt="The neon pit and two plinths" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/betting-board-card.png" alt="The neon pit and two plinths" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Pit</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.png">
-                  <img src="/Images/projects/coin-duel/coin-toss.png" alt="Five coins in the light column" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/coin-toss-card.png" alt="Five coins in the light column" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Toss</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.png">
-                  <img src="/Images/projects/coin-duel/round-result.png" alt="Reading the five faces" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/round-result-card.png" alt="Reading the five faces" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Settle · The Score</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/duel-summary.png">
-                  <img src="/Images/projects/coin-duel/duel-summary.png" alt="Duel over, with the session summary" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/duel-summary-card.png" alt="Duel over, with the session summary" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Duel Summary</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/coin-duel/title-screen.png">
-                  <img src="/Images/projects/coin-duel/title-screen.png" alt="Coin Duel title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/title-screen-card.png" alt="Coin Duel title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title · The Badge</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.png">
-                  <img src="/Images/projects/coin-duel/betting-board.png" alt="The neon pit and two plinths" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/betting-board-card.png" alt="The neon pit and two plinths" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Pit</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.png">
-                  <img src="/Images/projects/coin-duel/coin-toss.png" alt="Five coins in the light column" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/coin-toss-card.png" alt="Five coins in the light column" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Toss</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.png">
-                  <img src="/Images/projects/coin-duel/round-result.png" alt="Reading the five faces" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/round-result-card.png" alt="Reading the five faces" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Settle · The Score</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/duel-summary.png">
-                  <img src="/Images/projects/coin-duel/duel-summary.png" alt="Duel over, with the session summary" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/duel-summary-card.png" alt="Duel over, with the session summary" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Duel Summary</div>
                 </div>
               </div>
@@ -481,19 +481,19 @@ export default function CaseStudyCoinDuel() {
                   <div className="ui-card-label">The Struck Badge</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/cover.png">
-                  <img src="/Images/projects/coin-duel/cover.png" alt="Coin Duel cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/cover-card.png" alt="Coin Duel cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.png">
-                  <img src="/Images/projects/coin-duel/round-result.png" alt="The two priced buttons" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/round-result-card.png" alt="The two priced buttons" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Two Buttons</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.png">
-                  <img src="/Images/projects/coin-duel/betting-board.png" alt="Hex shields and holographic crowd" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/betting-board-card.png" alt="Hex shields and holographic crowd" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Shields &amp; Crowd</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.png">
-                  <img src="/Images/projects/coin-duel/coin-toss.png" alt="The mint firing" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/coin-toss-card.png" alt="The mint firing" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Mint</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
@@ -502,19 +502,19 @@ export default function CaseStudyCoinDuel() {
                   <div className="ui-card-label">The Struck Badge</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/cover.png">
-                  <img src="/Images/projects/coin-duel/cover.png" alt="Coin Duel cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/cover-card.png" alt="Coin Duel cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.png">
-                  <img src="/Images/projects/coin-duel/round-result.png" alt="The two priced buttons" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/round-result-card.png" alt="The two priced buttons" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Two Buttons</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.png">
-                  <img src="/Images/projects/coin-duel/betting-board.png" alt="Hex shields and holographic crowd" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/betting-board-card.png" alt="Hex shields and holographic crowd" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Shields &amp; Crowd</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.png">
-                  <img src="/Images/projects/coin-duel/coin-toss.png" alt="The mint firing" className="ui-thumb" loading="lazy" decoding="async"/>
+                  <img src="/Images/projects/coin-duel/coin-toss-card.png" alt="The mint firing" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Mint</div>
                 </div>
               </div>
@@ -540,27 +540,27 @@ export default function CaseStudyCoinDuel() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📄</div>
-                <h4>1 · Spec First</h4>
+                <h3>1 · Spec First</h3>
                 <p>Wrote the whole game down before building it: the rules as typed signatures, the exact distribution, the price ladder and the two properties that make it fair, plus a list of rejected bets and why.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">♻️</div>
-                <h4>2 · Port the Frame</h4>
+                <h3>2 · Port the Frame</h3>
                 <p>The world class, the 3D HUD, the camera rig, the seed route and the whole DOM-mirror accessibility layer came across from a sibling game with edits measured in lines. Only the arena was new work.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🪙</div>
-                <h4>3 · Coins &amp; Arena</h4>
+                <h3>3 · Coins &amp; Arena</h3>
                 <p>Built the mint, the coin flight, the hex shields and the instanced holographic crowd - all procedural, and all driven off the same five booleans the market settles against.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🗣️</div>
-                <h4>4 · Playtest the Words</h4>
+                <h3>4 · Playtest the Words</h3>
                 <p>The bet was the simplest in the arcade and its vocabulary the hardest part of it. Rewrote every player-facing term around what is visible on the coin, and split the rules screen into <em>the bet</em> and <em>the fight</em>.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎖️</div>
-                <h4>5 · The Badge</h4>
+                <h3>5 · The Badge</h3>
                 <p>A logo arrived after the game was built and disagreed with all of it. Moved the face geometry into one shared source so the SVG buttons and the 512px canvas coin texture cannot drift apart.</p>
               </div>
             </div>
@@ -606,19 +606,19 @@ export default function CaseStudyCoinDuel() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A shipped 3D betting game: a procedural neon pit, five minted coins per round, hex shields that break, an instanced holographic crowd, synthesized WebAudio effects, a full DOM accessibility mirror, and duels sealed to a blockchain block from the first toss to the knockdown.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Keeping the fight interesting without letting it touch the coin, and finding a vocabulary for a bet that is really just <em>heads or tails, best of five</em> - which turned out to be harder than any of the maths.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>Subtraction is the hard part. Every square cut from the board - the margin bets, the parity squares, the 15× lottery ticket - was correctly priced and made the game worse. And a fixed review timer is the one duration that cannot be right, so the review beat has none.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>A commit-reveal that binds the operator in advance rather than only proving the seed afterwards, server-side settlement, and head-to-head duels between two real players on the same sealed coins.</p>
               </div>
             </div>

@@ -6,6 +6,15 @@ import './globals.css';
 // Union of every Google-Fonts family used across the original site, loaded once
 // site-wide. Faithful to the originals (which loaded subsets per page) while
 // keeping head management in one place.
+// The four faces at the end (Bungee, Fredoka, JetBrains Mono, Rubik) are the
+// ones the .cs-ff-* type-specimen utilities in projects.css name. They were
+// never in this list, so eight case studies rendered a specimen labelled
+// "JetBrains Mono" or "Bungee" in the fallback face instead - the one place on
+// the site where showing the wrong font is a factual error rather than a
+// nitpick. Baloo 2 / Nunito / Nunito Sans are Whack-A-Mole's own three faces,
+// for the same reason. Marcellus SC came out: it is discussed in prose on the
+// Aether Dynasty page but never applied to an element, so it was a family
+// requested on every route and rendered on none.
 const GOOGLE_FONTS_HREF =
   'https://fonts.googleapis.com/css2?' +
   [
@@ -13,13 +22,19 @@ const GOOGLE_FONTS_HREF =
     'family=Inter:wght@400;500;600;700;800;900',
     'family=Instrument+Sans:wght@400;500;600;700',
     'family=Lexend:wght@300;400;500;600;700',
-    'family=Marcellus+SC',
     'family=Montserrat:wght@300;400;500;600;700;800',
     'family=Orbitron:wght@500;700;800;900',
     'family=Poppins:wght@300;400;500;600;700',
     'family=Rajdhani:wght@400;500;600;700',
     'family=Sora:wght@300;400;500;600;700',
     'family=Spectral:wght@300;400;500;600;700',
+    'family=Baloo+2:wght@600;700;800',
+    'family=Nunito:wght@400;600;700',
+    'family=Nunito+Sans:wght@600;700;800',
+    'family=Bungee',
+    'family=Fredoka:wght@400;600',
+    'family=JetBrains+Mono:wght@400;500;700',
+    'family=Rubik:wght@400;500;700',
   ].join('&') +
   '&display=swap';
 

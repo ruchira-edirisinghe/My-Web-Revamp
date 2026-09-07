@@ -138,7 +138,7 @@ export default function GalleryOtherStuff() {
           <img id="modal-img" alt="Full size preview" />
           <div id="modal-info">
             <span id="modal-tag"></span>
-            <h3 id="modal-title"></h3>
+            <h2 id="modal-title"></h2>
             <p id="modal-desc"></p>
           </div>
         </div>

@@ -112,17 +112,17 @@ export default function CaseStudyVebuild() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Problem Statement</h4>
+                <h3>Problem Statement</h3>
                 <p>A digital presence that fell short of the brand - the information was there, but the experience lacked the polish, clarity, and trust signals a modern construction client expects.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
-                <h4>The Goal</h4>
+                <h3>The Goal</h3>
                 <p>Enhance engagement with an immersive interface, simplify access to the portfolio, certifications and sustainability, build trust through history and values, and stay accessible and responsive on every device.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
-                <h4>Target Audience</h4>
+                <h3>Target Audience</h3>
                 <p>Prospective clients, project stakeholders, and industry professionals evaluating VEBUILD's capability, credibility, and values.</p>
               </div>
             </div>
@@ -314,22 +314,22 @@ export default function CaseStudyVebuild() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🏢</div>
-                <h4>About Company</h4>
+                <h3>About Company</h3>
                 <p>History · Values · Certifications</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏗️</div>
-                <h4>Projects</h4>
+                <h3>Projects</h3>
                 <p>Portfolio · Filters · Case Detail</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌿</div>
-                <h4>Sustainability</h4>
+                <h3>Sustainability</h3>
                 <p>Initiatives · Impact · Goals</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">✉️</div>
-                <h4>Contact</h4>
+                <h3>Contact</h3>
                 <p>Enquiry · Locations · Details</p>
               </div>
             </div>
@@ -403,44 +403,44 @@ export default function CaseStudyVebuild() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/vebuild/Home.png">
-                  <img src="/Images/projects/vebuild/Home.png" alt="VEBUILD Homepage" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Home-card.png" alt="VEBUILD Homepage" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Homepage</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Projects.png">
-                  <img src="/Images/projects/vebuild/Projects.png" alt="Projects Portfolio" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Projects-card.png" alt="Projects Portfolio" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Projects</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Our Company.png">
-                  <img src="/Images/projects/vebuild/Our Company.png" alt="Our Company" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Our Company-card.png" alt="Our Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Company</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Group of Companies.png">
-                  <img src="/Images/projects/vebuild/Group of Companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Group of Companies-card.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Group of Companies</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Certifications.png">
-                  <img src="/Images/projects/vebuild/Certifications.png" alt="Certifications" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Certifications-card.png" alt="Certifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Certifications</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/vebuild/Home.png">
-                  <img src="/Images/projects/vebuild/Home.png" alt="VEBUILD Homepage" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Home-card.png" alt="VEBUILD Homepage" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Homepage</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Projects.png">
-                  <img src="/Images/projects/vebuild/Projects.png" alt="Projects Portfolio" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Projects-card.png" alt="Projects Portfolio" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Projects</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Our Company.png">
-                  <img src="/Images/projects/vebuild/Our Company.png" alt="Our Company" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Our Company-card.png" alt="Our Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Company</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Group of Companies.png">
-                  <img src="/Images/projects/vebuild/Group of Companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Group of Companies-card.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Group of Companies</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Certifications.png">
-                  <img src="/Images/projects/vebuild/Certifications.png" alt="Certifications" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Certifications-card.png" alt="Certifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Certifications</div>
                 </div>
               </div>
@@ -449,36 +449,36 @@ export default function CaseStudyVebuild() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/vebuild/CSR.png">
-                  <img src="/Images/projects/vebuild/CSR.png" alt="Corporate Social Responsibility" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/CSR-card.png" alt="Corporate Social Responsibility" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">CSR</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Careers.png">
-                  <img src="/Images/projects/vebuild/Careers.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Careers-card.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Careers --_ job.png">
-                  <img src="/Images/projects/vebuild/Careers --_ job.png" alt="Careers - Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Careers --_ job-card.png" alt="Careers - Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers · Job</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Contact Us.png">
-                  <img src="/Images/projects/vebuild/Contact Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Contact Us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/vebuild/CSR.png">
-                  <img src="/Images/projects/vebuild/CSR.png" alt="Corporate Social Responsibility" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/CSR-card.png" alt="Corporate Social Responsibility" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">CSR</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Careers.png">
-                  <img src="/Images/projects/vebuild/Careers.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Careers-card.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Careers --_ job.png">
-                  <img src="/Images/projects/vebuild/Careers --_ job.png" alt="Careers - Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Careers --_ job-card.png" alt="Careers - Job Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers · Job</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/vebuild/Contact Us.png">
-                  <img src="/Images/projects/vebuild/Contact Us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/vebuild/Contact Us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
               </div>
@@ -502,17 +502,17 @@ export default function CaseStudyVebuild() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">✨</div>
-                <h4>Button Feel</h4>
+                <h3>Button Feel</h3>
                 <p>Clear, high-contrast calls-to-action make enquiring effortless. The emotional intent is confidence and momentum - guiding clients smoothly toward starting a conversation.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌊</div>
-                <h4>Responsive Flow</h4>
+                <h3>Responsive Flow</h3>
                 <p>The layout adapts seamlessly across desktop, tablet, and mobile, so the brand feels just as polished on a site visit as it does in the boardroom.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎨</div>
-                <h4>Visual Hierarchy</h4>
+                <h3>Visual Hierarchy</h3>
                 <p>Vibrant teal accents against deep navy tones direct attention to projects and CTAs, while generous whitespace keeps the experience calm, premium, and easy to scan.</p>
               </div>
             </div>
@@ -545,19 +545,19 @@ export default function CaseStudyVebuild() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>Increased Engagement: users reported spending more time exploring VEBUILD's portfolio, while inclusive design made the site easier to navigate for people of all technical proficiencies.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 Brand Impact</h4>
+                <h3>💡 Brand Impact</h3>
                 <p>The modern, cohesive design strengthened VEBUILD's brand identity and online presence, reinforcing its reputation as a dependable, forward-thinking construction company.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Continuously monitor user feedback, integrate emerging technologies such as AI-driven personalization, and regularly update the style guide as the brand evolves.</p>
               </div>
               <div className="reflection-card">
-                <h4>💬 Conclusion</h4>
+                <h3>💬 Conclusion</h3>
                 <p>VEBUILD reaffirms that thorough research, iterative design, and a commitment to accessibility can turn a simple corporate site into a genuine trust-building experience.</p>
               </div>
             </div>
@@ -594,17 +594,17 @@ export default function CaseStudyVebuild() {
               <div className="cs-cards-grid">
                 <div className="cs-card">
                   <div className="cs-card-icon">🎯</div>
-                  <h4>Problem Statement</h4>
+                  <h3>Problem Statement</h3>
                   <p>Dense technical content and slow, heavy galleries made it hard for clients to evaluate the firm and for candidates to apply.</p>
                 </div>
                 <div className="cs-card">
                   <div className="cs-card-icon">🏁</div>
-                  <h4>The Goal</h4>
+                  <h3>The Goal</h3>
                   <p>Modernise client communication and stakeholder engagement with a structured, modular interface that makes complex information scannable and trustworthy.</p>
                 </div>
                 <div className="cs-card">
                   <div className="cs-card-icon">👥</div>
-                  <h4>Target Audience</h4>
+                  <h3>Target Audience</h3>
                   <p>Commercial clients vetting portfolios, qualifications and compliance - and job candidates exploring careers, culture and how to apply.</p>
                 </div>
               </div>
@@ -757,22 +757,22 @@ export default function CaseStudyVebuild() {
               <div className="ia-grid">
                 <div className="cs-card">
                   <div className="cs-card-icon">🗂️</div>
-                  <h4>Card Filters</h4>
+                  <h3>Card Filters</h3>
                   <p>Type · Service · Location · Size</p>
                 </div>
                 <div className="cs-card">
                   <div className="cs-card-icon">📐</div>
-                  <h4>Blueprint Explorer</h4>
+                  <h3>Blueprint Explorer</h3>
                   <p>Interactive floorplan tool</p>
                 </div>
                 <div className="cs-card">
                   <div className="cs-card-icon">🧱</div>
-                  <h4>Material Selector</h4>
+                  <h3>Material Selector</h3>
                   <p>Visual materials browser</p>
                 </div>
                 <div className="cs-card">
                   <div className="cs-card-icon">✅</div>
-                  <h4>Credentials Portal</h4>
+                  <h3>Credentials Portal</h3>
                   <p>Quick team verification</p>
                 </div>
               </div>
@@ -840,52 +840,52 @@ export default function CaseStudyVebuild() {
                 <div className="ui-marquee-track ui-track-2" id="marquee-3">
                   {/* Set 1 */}
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Home Sceen - Main View.png">
-                    <img src="/Images/projects/vebuild/block/Home Sceen - Main View.png" alt="Home - Main View" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Home Sceen - Main View-card.png" alt="Home - Main View" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Home · Main View</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Company Description.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Company Description.png" alt="Our Company - Description" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Company Description-card.png" alt="Our Company - Description" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Description</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Gallery.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Gallery.png" alt="Our Company - Gallery" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Gallery-card.png" alt="Our Company - Gallery" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Gallery</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Organization Structure.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Organization Structure.png" alt="Our Company - Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Organization Structure-card.png" alt="Our Company - Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Org Structure</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Certifications.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Certifications.png" alt="Our Company - Certifications" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Certifications-card.png" alt="Our Company - Certifications" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Certifications</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Projects.png">
-                    <img src="/Images/projects/vebuild/block/Projects.png" alt="Projects" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Projects-card.png" alt="Projects" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Projects</div>
                   </div>
                   {/* Set 2 (Duplicate for loop) */}
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Home Sceen - Main View.png">
-                    <img src="/Images/projects/vebuild/block/Home Sceen - Main View.png" alt="Home - Main View" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Home Sceen - Main View-card.png" alt="Home - Main View" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Home · Main View</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Company Description.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Company Description.png" alt="Our Company - Description" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Company Description-card.png" alt="Our Company - Description" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Description</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Gallery.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Gallery.png" alt="Our Company - Gallery" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Gallery-card.png" alt="Our Company - Gallery" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Gallery</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Organization Structure.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Organization Structure.png" alt="Our Company - Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Organization Structure-card.png" alt="Our Company - Organization Structure" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Org Structure</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Company - Certifications.png">
-                    <img src="/Images/projects/vebuild/block/Our Company - Certifications.png" alt="Our Company - Certifications" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Company - Certifications-card.png" alt="Our Company - Certifications" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Company · Certifications</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Projects.png">
-                    <img src="/Images/projects/vebuild/block/Projects.png" alt="Projects" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Projects-card.png" alt="Projects" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Projects</div>
                   </div>
                 </div>
@@ -894,44 +894,44 @@ export default function CaseStudyVebuild() {
                 <div className="ui-marquee-track ui-track-1" id="marquee-4">
                   {/* Set 1 */}
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Products.png">
-                    <img src="/Images/projects/vebuild/block/Our Products.png" alt="Our Products" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Products-card.png" alt="Our Products" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Products</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/group of companies.png">
-                    <img src="/Images/projects/vebuild/block/group of companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/group of companies-card.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Group of Companies</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/CSR.png">
-                    <img src="/Images/projects/vebuild/block/CSR.png" alt="Corporate Social Responsibility" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/CSR-card.png" alt="Corporate Social Responsibility" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">CSR</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/careers.png">
-                    <img src="/Images/projects/vebuild/block/careers.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/careers-card.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Careers</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/contact us.png">
-                    <img src="/Images/projects/vebuild/block/contact us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/contact us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Contact Us</div>
                   </div>
                   {/* Set 2 (Duplicate for loop) */}
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/Our Products.png">
-                    <img src="/Images/projects/vebuild/block/Our Products.png" alt="Our Products" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/Our Products-card.png" alt="Our Products" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Our Products</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/group of companies.png">
-                    <img src="/Images/projects/vebuild/block/group of companies.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/group of companies-card.png" alt="Group of Companies" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Group of Companies</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/CSR.png">
-                    <img src="/Images/projects/vebuild/block/CSR.png" alt="Corporate Social Responsibility" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/CSR-card.png" alt="Corporate Social Responsibility" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">CSR</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/careers.png">
-                    <img src="/Images/projects/vebuild/block/careers.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/careers-card.png" alt="Careers" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Careers</div>
                   </div>
                   <div className="ui-card" data-full="/Images/projects/vebuild/block/contact us.png">
-                    <img src="/Images/projects/vebuild/block/contact us.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                    <img src="/Images/projects/vebuild/block/contact us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                     <div className="ui-card-label">Contact Us</div>
                   </div>
                 </div>
@@ -955,17 +955,17 @@ export default function CaseStudyVebuild() {
               <div className="cs-cards-grid">
                 <div className="cs-card">
                   <div className="cs-card-icon">🧱</div>
-                  <h4>Modular Blocks</h4>
+                  <h3>Modular Blocks</h3>
                   <p>Distinct, card-based components give every piece of information a clear container - reducing overwhelm when data gets dense.</p>
                 </div>
                 <div className="cs-card">
                   <div className="cs-card-icon">🎚️</div>
-                  <h4>Progressive Disclosure</h4>
+                  <h3>Progressive Disclosure</h3>
                   <p>Simplified project cards with expandable specifications and an "Expert Mode" toggle reveal depth only when the user wants it.</p>
                 </div>
                 <div className="cs-card">
                   <div className="cs-card-icon">🛠️</div>
-                  <h4>Interactive Tools</h4>
+                  <h3>Interactive Tools</h3>
                   <p>A Blueprint Explorer and Material Selector turn static specs into something clients can explore and understand instantly.</p>
                 </div>
               </div>
@@ -1000,19 +1000,19 @@ export default function CaseStudyVebuild() {
 
               <div className="reflection-grid">
                 <div className="reflection-card">
-                  <h4>📈 Outcome</h4>
+                  <h3>📈 Outcome</h3>
                   <p>Project-page engagement rose 62% and support queries dropped 81%, while application time fell from 7.5 to 3.2 minutes - with the mobile gallery loading in under 1.5s and a 98/100 PageSpeed score.</p>
                 </div>
                 <div className="reflection-card">
-                  <h4>💡 What Worked</h4>
+                  <h3>💡 What Worked</h3>
                   <p>The block, card-based system made dense construction data scannable, and interactive tools like the Blueprint Explorer turned complexity into engagement.</p>
                 </div>
                 <div className="reflection-card">
-                  <h4>🚀 Next Steps</h4>
+                  <h3>🚀 Next Steps</h3>
                   <p>Planned evolution included AR project visualisation, BIM model integration, and multilingual support.</p>
                 </div>
                 <div className="reflection-card">
-                  <h4>💬 Conclusion</h4>
+                  <h3>💬 Conclusion</h3>
                   <p>This concept showed how UX engineering can transform industrial complexity into intuitive digital experiences that educate clients, empower partners, and engage talent.</p>
                 </div>
               </div>

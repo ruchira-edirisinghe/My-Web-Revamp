@@ -152,7 +152,7 @@ main:has(.cs-wrap) {
 /* ── Meta row ── */
 .cs-meta-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
   gap: 14px;
   margin-bottom: 60px;
 }
@@ -444,7 +444,7 @@ body:has(.cs-wrap) footer {
 /* ── INTERACTION DEMO ── */
 .cs-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
   gap: 20px;
   margin-top: 28px;
 }
@@ -517,7 +517,7 @@ body:has(.cs-wrap) footer {
   font-size: 19px;
   margin-bottom: 20px;
 }
-.cs-card h4 {
+.cs-card :is(h3, h4) {
   font-family: 'Epic Pro', system-ui;
   font-size: 18px;
   font-weight: 400;
@@ -682,7 +682,7 @@ body:has(.cs-wrap) footer {
 
 .cs-personas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 24px;
   margin: 28px 0 60px;
 }
@@ -1036,7 +1036,7 @@ body:has(.cs-wrap) footer {
 /* ── IA cards ── */
 .ia-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
   gap: 16px;
   margin-top: 24px;
 }
@@ -1049,7 +1049,7 @@ body:has(.cs-wrap) footer {
 }
 .ia-card:hover { border-color: rgba(61,220,120,0.2); transform: translateY(-3px); }
 .ia-card-icon { font-size: 16px; margin-bottom: 10px; }
-.ia-card h4 {
+.ia-card :is(h3, h4) {
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 700;
@@ -1330,7 +1330,7 @@ body:has(.cs-wrap) footer {
   transition: all 0.4s ease;
 }
 .reflection-card:hover { border-color: rgba(61,220,120,0.2); transform: translateY(-3px); }
-.reflection-card h4 {
+.reflection-card :is(h3, h4) {
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 700;

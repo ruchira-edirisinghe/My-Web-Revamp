@@ -36,10 +36,17 @@ export default function ContactClient() {
       <div id="nav-fade-mask"></div>
 
       <main className="page">
-        {/* Hidden per request - the hero section below carries the intro instead.
-        <span className="section-label">Let's talk</span>
-        <h1 className="page-title">Contact Me</h1>
-        */}
+        {/* The visible page title is hidden per request - the hero section below
+            carries the intro instead. The heading itself has to stay, though:
+            with it commented out this was the only route on the site with NO h1,
+            so a screen-reader user landing here got a page with no top-level
+            heading to orient by and the document outline started at an h2 whose
+            text is split across decorative spans. Kept in the accessibility tree
+            and out of the picture.
+            The old markup, for reference:
+            <span className="section-label">Let's talk</span>
+            <h1 className="page-title">Contact Me</h1> */}
+        <h1 className="sr-only">Contact Ruchira Edirisinghe</h1>
 
         {/* ── Hero: big text + constellation ── */}
         <section className="contact-hero">

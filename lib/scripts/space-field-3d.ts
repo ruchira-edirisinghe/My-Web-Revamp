@@ -295,6 +295,9 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
+    // Under reduced motion there is no loop to pick the new size up on the next
+    // frame, so the one static frame has to be redrawn here.
+    if (reduceMotion) renderer.render(scene, camera);
   }
   resize();
   bag.on(window, 'resize', resize);
@@ -385,7 +388,29 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
 
     renderer.render(scene, camera);
   }
-  raf = requestAnimationFrame(frame);
+
+  /* ══════════════════════════════════════════════════════════════════
+     REDUCED MOTION DRAWS ONE FRAME AND STOPS THE LOOP.
+
+     The individual effects were already switched off for it - the twinkle
+     uniform, the pointer parallax, the shooting stars, the nebula drift - but
+     the render loop itself kept running at 60fps, and the two things it still
+     advanced were the slow star rotation and the nebulae's `uTime`. So the
+     result was a scene that still moved, just less, and a GPU that was doing
+     full-frame work forever: the nebula fragment shader runs three octaves of
+     value noise across a large additive plane, which is the most expensive
+     thing on the page whether or not anything visible has changed.
+
+     Rendering exactly once gives the same still night sky the reduced-motion
+     path was already aiming at, and then gets out of the way entirely. `resize`
+     re-renders that single frame when the viewport changes.
+     ══════════════════════════════════════════════════════════════════ */
+  if (reduceMotion) {
+    for (const layer of starMeshes) layer.mat.uniforms.uTime.value = 0;
+    renderer.render(scene, camera);
+  } else {
+    raf = requestAnimationFrame(frame);
+  }
 
   // Stop burning GPU on a tab nobody is looking at.
   function onVisibility() {

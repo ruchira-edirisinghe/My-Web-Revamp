@@ -53,11 +53,20 @@ export default function GraphicProjectsClient() {
           {GALLERIES.map((c) => (
             <div key={c.title} className={`project-card ${c.type}`} style={cssVars({ '--card-index': c.idx })}>
               <div className="project-image-wrap">
-                <img src={c.img} alt={c.alt} className="project-card-img" />
+                {/* The two lead cards span the grid and sit above the fold; the
+                    rest are below it on every viewport this layout supports. */}
+                <img
+                  src={c.img}
+                  alt={c.alt}
+                  className="project-card-img"
+                  loading={c.idx < 2 ? 'eager' : 'lazy'}
+                  fetchPriority={c.idx < 2 ? 'high' : 'auto'}
+                  decoding="async"
+                />
               </div>
               <div className="project-content">
                 <span className="project-label">{c.label}</span>
-                <h3 className="project-title">{c.title}</h3>
+                <h2 className="project-title">{c.title}</h2>
                 <p className="project-desc">{c.desc}</p>
                 <div className="project-tags">
                   {c.tags.map((t) => <span key={t} className="tech-tag">{t}</span>)}

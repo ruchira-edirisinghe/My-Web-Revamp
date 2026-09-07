@@ -110,20 +110,20 @@ export default function CaseStudyLycampus() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Problem Statement</h4>
+                <h3>Problem Statement</h3>
                 <p>Inconsistent navigation, cluttered layouts, and broken information hierarchy left every user
                   group - students, parents, and faculty - confused and unable to locate critical academic resources.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏁</div>
-                <h4>The Goal</h4>
+                <h3>The Goal</h3>
                 <p>Redesign the entire web presence to cut navigation friction, achieve accessibility compliance
                   across all age groups, and strengthen brand identity - targeting a 60% reduction in time-to-information.
                 </p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">👥</div>
-                <h4>Target Audience</h4>
+                <h3>Target Audience</h3>
                 <p>Current students (18-26), prospective applicants & parents (16-50), and faculty/admin staff -
                   each with vastly different digital literacy levels and usage patterns.</p>
               </div>
@@ -334,22 +334,22 @@ export default function CaseStudyLycampus() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🏛️</div>
-                <h4>About</h4>
+                <h3>About</h3>
                 <p>History · Mission · Leadership · Campus Life</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📚</div>
-                <h4>Academics</h4>
+                <h3>Academics</h3>
                 <p>Programs · Courses · Faculties · Calendar</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">📝</div>
-                <h4>Admissions</h4>
+                <h3>Admissions</h3>
                 <p>Apply · Fees · Requirements · Deadlines</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌐</div>
-                <h4>Campus Life</h4>
+                <h3>Campus Life</h3>
                 <p>Events · Clubs · Facilities · Gallery</p>
               </div>
             </div>
@@ -423,79 +423,79 @@ export default function CaseStudyLycampus() {
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.png">
-                  <img src="/Images/projects/lyceum/Home 1.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Home 1-card.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Page</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.png">
-                  <img src="/Images/projects/lyceum/Events 1.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Events 1-card.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Events & News</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.png">
-                  <img src="/Images/projects/lyceum/Inside Event 1.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Inside Event 1-card.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Event Detail</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.png">
-                  <img src="/Images/projects/lyceum/Inside a Programme 1.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Programmes</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.png">
-                  <img src="/Images/projects/lyceum/Student Life 1.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Student Life 1-card.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Campus Life</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Story</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png" alt="Governance"
+                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.png" alt="Governance"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Leadership</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Global Partners</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png">
-                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png" alt="Faculty"
+                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.png" alt="Faculty"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Faculty View</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.png">
-                  <img src="/Images/projects/lyceum/Home 1.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Home 1-card.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Page</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.png">
-                  <img src="/Images/projects/lyceum/Events 1.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Events 1-card.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Events & News</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.png">
-                  <img src="/Images/projects/lyceum/Inside Event 1.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Inside Event 1-card.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Event Detail</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.png">
-                  <img src="/Images/projects/lyceum/Inside a Programme 1.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Programmes</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.png">
-                  <img src="/Images/projects/lyceum/Student Life 1.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Student Life 1-card.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Campus Life</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Story</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png" alt="Governance"
+                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.png" alt="Governance"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Leadership</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Global Partners</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png">
-                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png" alt="Faculty"
+                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.png" alt="Faculty"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Faculty View</div>
                 </div>
@@ -505,79 +505,79 @@ export default function CaseStudyLycampus() {
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
                 <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.png">
-                  <img src="/Images/projects/lyceum/Home 1.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Home 1-card.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Page</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.png">
-                  <img src="/Images/projects/lyceum/Events 1.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Events 1-card.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Events & News</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.png">
-                  <img src="/Images/projects/lyceum/Inside Event 1.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Inside Event 1-card.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Event Detail</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.png">
-                  <img src="/Images/projects/lyceum/Inside a Programme 1.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Programmes</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.png">
-                  <img src="/Images/projects/lyceum/Student Life 1.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Student Life 1-card.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Campus Life</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Story</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png" alt="Governance"
+                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.png" alt="Governance"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Leadership</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Global Partners</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png">
-                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png" alt="Faculty"
+                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.png" alt="Faculty"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Faculty View</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
                 <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.png">
-                  <img src="/Images/projects/lyceum/Home 1.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Home 1-card.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Page</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.png">
-                  <img src="/Images/projects/lyceum/Events 1.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Events 1-card.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Events & News</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.png">
-                  <img src="/Images/projects/lyceum/Inside Event 1.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Inside Event 1-card.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Event Detail</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.png">
-                  <img src="/Images/projects/lyceum/Inside a Programme 1.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Programmes</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.png">
-                  <img src="/Images/projects/lyceum/Student Life 1.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Student Life 1-card.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Campus Life</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Story</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png" alt="Governance"
+                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.png" alt="Governance"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Leadership</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
+                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Global Partners</div>
                 </div>
                 <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png">
-                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png" alt="Faculty"
+                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.png" alt="Faculty"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Faculty View</div>
                 </div>
@@ -605,19 +605,19 @@ export default function CaseStudyLycampus() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">✨</div>
-                <h4>Button Feel</h4>
+                <h3>Button Feel</h3>
                 <p>Primary CTAs use a spring-bounce scale on hover, creating a subtle "press" sensation that signals
                   interactivity without distraction. The emotional intent: confidence and responsiveness.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🌊</div>
-                <h4>Page Transitions</h4>
+                <h3>Page Transitions</h3>
                 <p>Content enters through staggered fade-up animations, creating a sense of the page breathing to life -
                   evoking the experience of walking into a building and having it reveal itself naturally.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎨</div>
-                <h4>Colour Psychology</h4>
+                <h3>Colour Psychology</h3>
                 <p>Navy + Blue communicates trust and authority. Cyan accents inject energy and modernity. Together, they
                   avoid the sterile white-and-grey trap of most institutional sites.</p>
               </div>
@@ -658,25 +658,25 @@ export default function CaseStudyLycampus() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>🎓 Lessons Learned</h4>
+                <h3>🎓 Lessons Learned</h3>
                 <p>Testing with real users - not just design peers - proved essential. Even "obvious" label choices like
                   "Programmes" vs "Courses" caused significant confusion. A single wording change measurably improved
                   findability.</p>
               </div>
               <div className="reflection-card">
-                <h4>⏭️ What Could Be Different</h4>
+                <h3>⏭️ What Could Be Different</h3>
                 <p>With more time, quantitative A/B testing between card-grid and list formats for the courses page would
                   strengthen the data. A proper design-token system from the start would make responsive breakpoints more
                   systematic.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Explore AI-driven personalisation - surfacing relevant programs based on browsing patterns. A dedicated
                   mobile app with offline content support would better serve students accessing study materials on the go.
                 </p>
               </div>
               <div className="reflection-card">
-                <h4>💬 Conclusion</h4>
+                <h3>💬 Conclusion</h3>
                 <p>This project proved that thoughtful UX isn't about adding features - it's about removing friction. A
                   university's website should be a welcoming guide, not a bureaucratic maze. The data validated the
                   approach.</p>

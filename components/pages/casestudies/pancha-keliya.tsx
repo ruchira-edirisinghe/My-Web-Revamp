@@ -113,17 +113,17 @@ export default function CaseStudyPanchaKeliya() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📜</div>
-                <h4>Get the Rules Right</h4>
+                <h3>Get the Rules Right</h3>
                 <p>The board and the throw values are documented, not invented - Parker&apos;s <em>Ancient Ceylon</em> (1909) and Murray&apos;s <em>History of Board-Games</em> (1951), by way of the Ludii ludeme formalisation.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎲</div>
-                <h4>Two Markets, One Number</h4>
+                <h3>Two Markets, One Number</h3>
                 <p>A thirteen-square cloth settled in seconds off a Binomial(6, ½) shell distribution, and a race bet on who gets three pieces home first - both decided by the same throw.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚡</div>
-                <h4>Price a Race Live</h4>
+                <h3>Price a Race Live</h3>
                 <p>Race odds priced by playing the rest of the game out hundreds of times with the same rules the live table uses - fast enough to run between throws, never on a render frame.</p>
               </div>
             </div>
@@ -259,12 +259,12 @@ export default function CaseStudyPanchaKeliya() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">🫂</div>
-                <h4>Crowding</h4>
+                <h3>Crowding</h3>
                 <p>Pieces share squares constantly, and on a marked X square four can pile up. They are grouped by <em>board square</em> (not track position, because the two sides number the bottom row from opposite ends) and eased onto slots - two abreast, three or more on a small ring. Without it a stack z-fights into a single smear and the board lies about how many pieces are on it.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
-                <h4>Where the Ring Goes</h4>
+                <h3>Where the Ring Goes</h3>
                 <p>The highlight ring follows the piece actually in play - the move effect names the seat <em>and</em> the piece - and falls back to the thrower&apos;s leading piece between moves. The seated figures&apos; eyelines come from the same lookup, so four people are looking at the thing that is happening.</p>
               </div>
             </div>
@@ -274,22 +274,22 @@ export default function CaseStudyPanchaKeliya() {
             <div className="ia-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📜</div>
-                <h4>rules.ts</h4>
+                <h3>rules.ts</h3>
                 <p>Shell roll · Piece policy · Opening probabilities · Playouts</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">💰</div>
-                <h4>market.ts</h4>
+                <h3>market.ts</h3>
                 <p>13-square paytable · Race odds · Cash-out · <code>check()</code></p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏠</div>
-                <h4>engine/layout.ts</h4>
+                <h3>engine/layout.ts</h3>
                 <p>The chart walked from five legs · Yards · Home shelves</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🔗</div>
-                <h4>blockchainRng.ts</h4>
+                <h3>blockchainRng.ts</h3>
                 <p>Server seed route · mulberry32 · race-wide seal</p>
               </div>
             </div>
@@ -532,27 +532,27 @@ export default function CaseStudyPanchaKeliya() {
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📜</div>
-                <h4>1 · Read the Sources</h4>
+                <h3>1 · Read the Sources</h3>
                 <p>Walked the five legs out of the Parker/Murray description into a generated chart, then made the printed texture, the movement rules and the twelve pieces all read the same walk.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🧿</div>
-                <h4>2 · Price the Cloth</h4>
+                <h3>2 · Price the Cloth</h3>
                 <p>Thirteen squares priced straight off Binomial(6, ½) at a 97% target, with the actual return re-derived rather than typed - so the paytable prints measurement, not intention.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏇</div>
-                <h4>3 · Price the Race</h4>
+                <h3>3 · Price the Race</h3>
                 <p>Built a playout sampler that uses the live rules verbatim. Found and fixed the sampled-opening-price defect, replacing it with a measured constant from 700,000 races.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚡</div>
-                <h4>4 · Make It Fast</h4>
+                <h3>4 · Make It Fast</h3>
                 <p>Flattened the race state to a twelve-element array, made the piece-choice function write into one reused object, used typed arrays for lookups, and drew throws from a cumulative table - one random per throw instead of six.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⏳</div>
-                <h4>5 · Cut the Beats</h4>
+                <h3>5 · Cut the Beats</h3>
                 <p>Shells 2.48s → 1.80s, the number held 1.20s → 0.70s, and the move stopped being a duration at all - a floor, then wait for the piece to arrive. Turbo went ×2 → ×3.</p>
               </div>
             </div>
@@ -602,19 +602,19 @@ export default function CaseStudyPanchaKeliya() {
 
             <div className="reflection-grid">
               <div className="reflection-card">
-                <h4>📈 Outcome</h4>
+                <h3>📈 Outcome</h3>
                 <p>A shipped 3D board-and-betting game faithful to a documented 1909 ruleset: a generated chart, twelve pieces walking in real time, a thirteen-square cloth, live race odds with cash-out, and races sealed to a blockchain block from the first throw to the last piece home.</p>
               </div>
               <div className="reflection-card">
-                <h4>🧗 Challenge</h4>
+                <h3>🧗 Challenge</h3>
                 <p>Three pieces per player make a long game - 193 throws, about ten minutes, three and a half in turbo - and every beat had to be cut as far as it goes while a throw still reads. That is the honest cost of the traditional rules, not a regression.</p>
               </div>
               <div className="reflection-card">
-                <h4>💡 What I Learned</h4>
+                <h3>💡 What I Learned</h3>
                 <p>Simulation-derived prices need to know when <em>not</em> to simulate. Sampling a quantity that is a constant does not make it more accurate - it hands the player a menu whose longest price is always the one you got most wrong.</p>
               </div>
               <div className="reflection-card">
-                <h4>🚀 Next Steps</h4>
+                <h3>🚀 Next Steps</h3>
                 <p>Let the player choose which of their three pieces takes a throw (keeping the house policy for rivals and for the pricing simulation), a binding commit-reveal, and four real players round one sealed mat.</p>
               </div>
             </div>
