@@ -53,8 +53,8 @@ export default function CaseStudyKambaAdeema() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/kamba-adeema/cover.png" alt="Kamba Adeema - browser tug-of-war betting game cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/kamba-adeema/cover.webp" alt="Kamba Adeema - browser tug-of-war betting game cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -440,45 +440,45 @@ export default function CaseStudyKambaAdeema() {
               {/* Row 1 */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/title-screen.png">
-                  <img src="/Images/projects/kamba-adeema/title-screen-card.png" alt="Kamba Adeema title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/title-screen.webp">
+                  <img src="/Images/projects/kamba-adeema/title-screen-card.webp" alt="Kamba Adeema title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title · The Medallion</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.png">
-                  <img src="/Images/projects/kamba-adeema/team-lineup-card.png" alt="Taking the rope - the two village teams" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.webp">
+                  <img src="/Images/projects/kamba-adeema/team-lineup-card.webp" alt="Taking the rope - the two village teams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Team Lineup</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.png">
-                  <img src="/Images/projects/kamba-adeema/heave-result-card.png" alt="The heave settled - Uda take it by two marks" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.webp">
+                  <img src="/Images/projects/kamba-adeema/heave-result-card.webp" alt="The heave settled - Uda take it by two marks" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Heave</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.png">
-                  <img src="/Images/projects/kamba-adeema/betting-board-card.png" alt="Two buttons and the stake plank" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.webp">
+                  <img src="/Images/projects/kamba-adeema/betting-board-card.webp" alt="Two buttons and the stake plank" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Yati / Uda</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/draw-refund.png">
-                  <img src="/Images/projects/kamba-adeema/draw-refund-card.png" alt="Four all - a draw refunds the stake" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/draw-refund.webp">
+                  <img src="/Images/projects/kamba-adeema/draw-refund-card.webp" alt="Four all - a draw refunds the stake" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Four All · Refund</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/title-screen.png">
-                  <img src="/Images/projects/kamba-adeema/title-screen-card.png" alt="Kamba Adeema title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/title-screen.webp">
+                  <img src="/Images/projects/kamba-adeema/title-screen-card.webp" alt="Kamba Adeema title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title · The Medallion</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.png">
-                  <img src="/Images/projects/kamba-adeema/team-lineup-card.png" alt="Taking the rope - the two village teams" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.webp">
+                  <img src="/Images/projects/kamba-adeema/team-lineup-card.webp" alt="Taking the rope - the two village teams" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Team Lineup</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.png">
-                  <img src="/Images/projects/kamba-adeema/heave-result-card.png" alt="The heave settled - Uda take it by two marks" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.webp">
+                  <img src="/Images/projects/kamba-adeema/heave-result-card.webp" alt="The heave settled - Uda take it by two marks" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Heave</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.png">
-                  <img src="/Images/projects/kamba-adeema/betting-board-card.png" alt="Two buttons and the stake plank" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.webp">
+                  <img src="/Images/projects/kamba-adeema/betting-board-card.webp" alt="Two buttons and the stake plank" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Yati / Uda</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/draw-refund.png">
-                  <img src="/Images/projects/kamba-adeema/draw-refund-card.png" alt="Four all - a draw refunds the stake" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/draw-refund.webp">
+                  <img src="/Images/projects/kamba-adeema/draw-refund-card.webp" alt="Four all - a draw refunds the stake" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Four All · Refund</div>
                 </div>
               </div>
@@ -486,45 +486,45 @@ export default function CaseStudyKambaAdeema() {
               {/* Row 2 */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/logo.png">
-                  <img src="/Images/projects/kamba-adeema/logo-card.png" alt="The carved Kamba Adeema medallion" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/logo.webp">
+                  <img src="/Images/projects/kamba-adeema/logo-card.webp" alt="The carved Kamba Adeema medallion" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Carved Medallion</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/cover.png">
-                  <img src="/Images/projects/kamba-adeema/cover-card.png" alt="Kamba Adeema cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/cover.webp">
+                  <img src="/Images/projects/kamba-adeema/cover-card.webp" alt="Kamba Adeema cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.png">
-                  <img src="/Images/projects/kamba-adeema/heave-result-card.png" alt="Stamina meters on the rope board" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.webp">
+                  <img src="/Images/projects/kamba-adeema/heave-result-card.webp" alt="Stamina meters on the rope board" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Stamina Meters</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.png">
-                  <img src="/Images/projects/kamba-adeema/team-lineup-card.png" alt="The instanced crowd on the bank" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.webp">
+                  <img src="/Images/projects/kamba-adeema/team-lineup-card.webp" alt="The instanced crowd on the bank" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Crowd</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.png">
-                  <img src="/Images/projects/kamba-adeema/betting-board-card.png" alt="The odds card" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.webp">
+                  <img src="/Images/projects/kamba-adeema/betting-board-card.webp" alt="The odds card" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Odds Card</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/logo.png">
-                  <img src="/Images/projects/kamba-adeema/logo-card.png" alt="The carved Kamba Adeema medallion" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/logo.webp">
+                  <img src="/Images/projects/kamba-adeema/logo-card.webp" alt="The carved Kamba Adeema medallion" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Carved Medallion</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/cover.png">
-                  <img src="/Images/projects/kamba-adeema/cover-card.png" alt="Kamba Adeema cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/cover.webp">
+                  <img src="/Images/projects/kamba-adeema/cover-card.webp" alt="Kamba Adeema cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.png">
-                  <img src="/Images/projects/kamba-adeema/heave-result-card.png" alt="Stamina meters on the rope board" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/heave-result.webp">
+                  <img src="/Images/projects/kamba-adeema/heave-result-card.webp" alt="Stamina meters on the rope board" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Stamina Meters</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.png">
-                  <img src="/Images/projects/kamba-adeema/team-lineup-card.png" alt="The instanced crowd on the bank" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/team-lineup.webp">
+                  <img src="/Images/projects/kamba-adeema/team-lineup-card.webp" alt="The instanced crowd on the bank" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Crowd</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.png">
-                  <img src="/Images/projects/kamba-adeema/betting-board-card.png" alt="The odds card" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kamba-adeema/betting-board.webp">
+                  <img src="/Images/projects/kamba-adeema/betting-board-card.webp" alt="The odds card" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Odds Card</div>
                 </div>
               </div>

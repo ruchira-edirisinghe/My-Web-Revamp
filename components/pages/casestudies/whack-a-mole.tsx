@@ -29,24 +29,24 @@ const SQUARE = { w: 1254, h: 1254 };
  */
 const GALLERY_ROWS: Shot[][] = [
   [
-    { file: 'title-screen.png', label: 'Title Screen', alt: 'Whack-A-Mole title screen with the lockup and the four headline chips', ...SCREEN },
-    { file: 'betting-board.png', label: 'Speed & Chip', alt: 'Stake for the next frenzy - the three speeds and the chip row', ...SCREEN },
-    { file: 'frenzy.png', label: 'The Frenzy', alt: 'Mid-frenzy - a golden mole up, the mallet and its aim ring on a hole', ...SCREEN },
-    { file: 'round-result.png', label: 'Result Card', alt: 'The result card - stake times multiplier equals what came back', ...SCREEN },
-    { file: 'provably-fair.png', label: 'Sealed Board', alt: 'The fairness panel - block, seed, reward draw and every creature published', ...SCREEN },
+    { file: 'title-screen.webp', label: 'Title Screen', alt: 'Whack-A-Mole title screen with the lockup and the four headline chips', ...SCREEN },
+    { file: 'betting-board.webp', label: 'Speed & Chip', alt: 'Stake for the next frenzy - the three speeds and the chip row', ...SCREEN },
+    { file: 'frenzy.webp', label: 'The Frenzy', alt: 'Mid-frenzy - a golden mole up, the mallet and its aim ring on a hole', ...SCREEN },
+    { file: 'round-result.webp', label: 'Result Card', alt: 'The result card - stake times multiplier equals what came back', ...SCREEN },
+    { file: 'provably-fair.webp', label: 'Sealed Board', alt: 'The fairness panel - block, seed, reward draw and every creature published', ...SCREEN },
   ],
   [
-    { file: 'logo.png', label: 'The Lockup', alt: 'The Whack-A-Mole wordmark, gavel and golden mole lockup', ...SQUARE },
-    { file: 'mole-up.png', label: 'A Standard Mole', alt: 'A standard brown mole up in a back-row hole, eleven seconds left', ...SCREEN },
-    { file: 'game-hub.png', label: 'Info Screen', alt: "The arcade's info screen for Whack-A-Mole", ...SCREEN },
-    { file: 'how-to-play.png', label: 'How It Works', alt: 'The how-it-works card with the three-speed paytable', ...SCREEN },
+    { file: 'logo.webp', label: 'The Lockup', alt: 'The Whack-A-Mole wordmark, gavel and golden mole lockup', ...SQUARE },
+    { file: 'mole-up.webp', label: 'A Standard Mole', alt: 'A standard brown mole up in a back-row hole, eleven seconds left', ...SCREEN },
+    { file: 'game-hub.webp', label: 'Info Screen', alt: "The arcade's info screen for Whack-A-Mole", ...SCREEN },
+    { file: 'how-to-play.webp', label: 'How It Works', alt: 'The how-it-works card with the three-speed paytable', ...SCREEN },
     /* The last one is a repeat from row 1, and deliberately carries the SAME
        label. The lightbox de-duplicates its list on `data-full` and keeps the
        first label it saw, so a repeat filed under a new name would open showing
        the other one's caption.
-       `cover.png` is not among them on purpose: it is now the 16:9 key-art
+       `cover.webp` is not among them on purpose: it is now the 16:9 key-art
        banner, and it is already on the page as the hero. */
-    { file: 'provably-fair.png', label: 'Sealed Board', alt: '', ...SCREEN },
+    { file: 'provably-fair.webp', label: 'Sealed Board', alt: '', ...SCREEN },
   ],
 ];
 
@@ -97,8 +97,8 @@ export default function CaseStudyWhackAMole() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src={`${IMG}/cover.png`} alt="Whack-A-Mole - browser fairground whacking betting game key art"
-              className="cs-cover-img" id="hero-img" width="1600" height="900" loading="eager" fetchPriority="high" />
+            <img src={`${IMG}/cover.webp`} alt="Whack-A-Mole - browser fairground whacking betting game key art"
+              className="cs-cover-img" id="hero-img" width="1600" height="900" loading="eager" fetchPriority="high" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -585,7 +585,7 @@ export default function CaseStudyWhackAMole() {
                            not just its image. It exists to make a CSS loop seamless,
                            so a screen reader announcing a second "View Title Screen"
                            button is reporting an implementation detail. Hiding the
-                           card rather than the <img> also keeps it out of the tab
+                           card rather than the <img decoding="async"> also keeps it out of the tab
                            order - see the aria-hidden guard in case-study.ts, which
                            is what stops a hidden card being given tabindex="0". */
                         aria-hidden={copy === 1 || undefined}

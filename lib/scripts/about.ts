@@ -5,7 +5,7 @@
    scroll-reveal + count-ups, gaming reveal, CV modal, redirect-prompt modal.
    (faithful port of styles/about/about.js + about.html inline CV-modal script)
    ════════════════════════════════════════ */
-import { makeBag } from './_util';
+import { makeBag, makeDirtyClear } from './_util';
 import { initPreloaderFx } from './preloader-fx';
 import { initSpaceField3D } from './space-field';
 import { wireAmbientControls } from './ambient-audio';
@@ -320,22 +320,36 @@ export function initAbout(): () => void {
     const cursorCanvas = document.getElementById('cursor-canvas');
     if (cursorCanvas) {
       const cCtx = cursorCanvas.getContext('2d');
+      const dirty = makeDirtyClear(cCtx);
       let W, H;
-      function resize() { W = cursorCanvas.width = window.innerWidth; H = cursorCanvas.height = window.innerHeight; }
+      function resize() { W = cursorCanvas.width = window.innerWidth; H = cursorCanvas.height = window.innerHeight; dirty.reset(); }
       resize(); bag.on(window, 'resize', resize);
 
       let mX = -300, mY = -300, rX = -300, rY = -300, currentR = 26, targetR = 26;
       const R_NORMAL = 26, R_HOVER = 36;
       let cursorRunning = true;
       let cursorRaf = 0;
+      // Below 900px there is no custom cursor, but the loop stays scheduled so
+      // it picks straight back up on a resize. Wipe the canvas once on the way
+      // in rather than re-clearing it sixty times a second on the device least
+      // able to afford it.
+      let clearedForNarrow = false;
 
       function drawCursor() {
         if (!cursorRunning) return;
-        cCtx.clearRect(0, 0, W, H);
-        if (W <= 900) { cursorRaf = requestAnimationFrame(drawCursor); return; }
+        if (W <= 900) {
+          if (!clearedForNarrow) { clearedForNarrow = true; dirty.reset(); cCtx.clearRect(0, 0, W, H); }
+          cursorRaf = requestAnimationFrame(drawCursor);
+          return;
+        }
+        clearedForNarrow = false;
 
         rX += (mX - rX) * 0.1; rY += (mY - rY) * 0.1; currentR += (targetR - currentR) * 0.08;
         const R = currentR, cx = rX, cy = rY;
+        // The ring trails the pointer, and the dot sits ON it, so the box has to
+        // span both - it widens with speed and collapses back the moment the
+        // ring catches up. Still a fraction of the full-canvas clear this was.
+        dirty.clear(cx, cy, R * 1.6 + Math.hypot(mX - cx, mY - cy));
         if (mX < -200) { cursorRaf = requestAnimationFrame(drawCursor); return; }
         const halo = cCtx.createRadialGradient(cx, cy, R * 0.85, cx, cy, R * 1.5);
         halo.addColorStop(0, 'rgba(180,220,255,0.07)'); halo.addColorStop(1, 'rgba(80,140,255,0)');

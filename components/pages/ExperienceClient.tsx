@@ -4,7 +4,7 @@ import type { SyntheticEvent } from 'react';
 import StandardShell from '@/components/StandardShell';
 import { initExperience } from '@/lib/scripts/experience';
 
-/** Image error fallback: hide the broken <img> and reveal its initials sibling. */
+/** Image error fallback: hide the broken <img decoding="async"> and reveal its initials sibling. */
 function imgFallback(e: SyntheticEvent<HTMLImageElement>) {
   const t = e.currentTarget;
   t.style.display = 'none';
@@ -48,7 +48,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/trexlabs.png" alt="TREX Labs" />
+                        <img src="/Images/experience/trexlabs.webp" alt="TREX Labs" decoding="async" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2025 DEC - PRESENT</span>
@@ -89,7 +89,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/funextreme.png" alt="FunExtreme Technology" />
+                        <img src="/Images/experience/funextreme.webp" alt="FunExtreme Technology" decoding="async" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2025 AUG - Present</span>
@@ -123,7 +123,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/ruach.png" alt="Ruach Holdings" />
+                        <img src="/Images/experience/ruach.webp" alt="Ruach Holdings" decoding="async" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2024 Sept - 2024 Nov</span>
@@ -165,7 +165,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/zuse.png" alt="ZUSE Technologies" />
+                        <img src="/Images/experience/zuse.webp" alt="ZUSE Technologies" decoding="async" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2023 Nov - 2024 Aug</span>
@@ -199,7 +199,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/TP.png" alt="TransPerfect" />
+                        <img src="/Images/experience/TP.webp" alt="TransPerfect" decoding="async" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2023 Aug - 2024 Nov</span>
@@ -240,7 +240,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/design.png" alt="Freelance" />
+                        <img src="/Images/experience/design.webp" alt="Freelance" decoding="async" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2022 Aug - Present</span>
@@ -273,7 +273,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/pearson.png" alt="Pearson" />
+                        <img src="/Images/experience/pearson.webp" alt="Pearson" decoding="async" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2022 Jul - 2023 Jun</span>
@@ -316,7 +316,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/takg.png" alt="TAKG Solutions" />
+                        <img src="/Images/experience/takg.webp" alt="TAKG Solutions" decoding="async" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2021 Oct - Present</span>
@@ -349,7 +349,7 @@ export default function ExperienceClient() {
                   <div className="tl-card">
                     <div className="tl-company-row">
                       <div className="tl-logo-wrap">
-                        <img src="/Images/experience/zencreatives.png" alt="ZEN CREATIVES" />
+                        <img src="/Images/experience/zencreatives.webp" alt="ZEN CREATIVES" decoding="async" />
                       </div>
                       <div className="tl-company-meta">
                         <span className="tl-date">2021 Jan - Present</span>
@@ -430,8 +430,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,180,255,0.1)', '--badge-border': 'rgba(80,180,255,0.25)' }}>
-                    <img src="/Images/experience/google.jpg" alt="Google" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/google.webp" alt="Google" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,180,255,0.9)' }}>G</span>
                   </div>
                   <div className="cert-info">
@@ -451,8 +451,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(140,80,255,0.1)', '--badge-border': 'rgba(140,80,255,0.25)' }}>
-                    <img src="/Images/experience/cisco.png" alt="Cisco" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/cisco.webp" alt="Cisco" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(140,80,255,0.9)' }}>M</span>
                   </div>
                   <div className="cert-info">
@@ -472,8 +472,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,140,40,0.1)', '--badge-border': 'rgba(255,140,40,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="linkedin" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="linkedin" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,140,40,0.9)' }}>LI</span>
                   </div>
                   <div className="cert-info">
@@ -494,8 +494,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(100,220,160,0.1)', '--badge-border': 'rgba(100,220,160,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="linkedin" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="linkedin" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(100,220,160,0.9)' }}>C</span>
                   </div>
                   <div className="cert-info">
@@ -515,8 +515,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,60,120,0.1)', '--badge-border': 'rgba(255,60,120,0.25)' }}>
-                    <img src="/Images/experience/Pearsonlogo.jpg" alt="pearson" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/Pearsonlogo.webp" alt="pearson" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,60,120,0.9)' }}>U</span>
                   </div>
                   <div className="cert-info">
@@ -536,8 +536,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,180,255,0.1)', '--badge-border': 'rgba(80,180,255,0.25)' }}>
-                    <img src="/Images/experience/google.jpg" alt="Google" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/google.webp" alt="Google" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,180,255,0.9)' }}>G</span>
                   </div>
                   <div className="cert-info">
@@ -558,8 +558,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(200,160,255,0.1)', '--badge-border': 'rgba(200,160,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(200,160,255,0.9)' }}>F</span>
                   </div>
                   <div className="cert-info">
@@ -579,8 +579,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,200,60,0.1)', '--badge-border': 'rgba(255,200,60,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,200,60,0.9)' }}>U</span>
                   </div>
                   <div className="cert-info">
@@ -600,8 +600,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,220,180,0.1)', '--badge-border': 'rgba(80,220,180,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,220,180,0.9)' }}>C</span>
                   </div>
                   <div className="cert-info">
@@ -621,8 +621,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,80,80,0.1)', '--badge-border': 'rgba(255,80,80,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,80,80,0.9)' }}>Ps</span>
                   </div>
                   <div className="cert-info">
@@ -643,8 +643,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,180,255,0.1)', '--badge-border': 'rgba(80,180,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,180,255,0.9)' }}>Li</span>
                   </div>
                   <div className="cert-info">
@@ -665,8 +665,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(140,80,255,0.1)', '--badge-border': 'rgba(140,80,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(140,80,255,0.9)' }}>C</span>
                   </div>
                   <div className="cert-info">
@@ -687,8 +687,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,140,40,0.1)', '--badge-border': 'rgba(255,140,40,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,140,40,0.9)' }}>UE</span>
                   </div>
                   <div className="cert-info">
@@ -709,8 +709,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(100,220,160,0.1)', '--badge-border': 'rgba(100,220,160,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(100,220,160,0.9)' }}>HS</span>
                   </div>
                   <div className="cert-info">
@@ -731,8 +731,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,60,120,0.1)', '--badge-border': 'rgba(255,60,120,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,60,120,0.9)' }}>G</span>
                   </div>
                   <div className="cert-info">
@@ -753,8 +753,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,180,255,0.1)', '--badge-border': 'rgba(80,180,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,180,255,0.9)' }}>IBM</span>
                   </div>
                   <div className="cert-info">
@@ -775,8 +775,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(200,160,255,0.1)', '--badge-border': 'rgba(200,160,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(200,160,255,0.9)' }}>U</span>
                   </div>
                   <div className="cert-info">
@@ -797,8 +797,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,200,60,0.1)', '--badge-border': 'rgba(255,200,60,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,200,60,0.9)' }}>SM</span>
                   </div>
                   <div className="cert-info">
@@ -819,8 +819,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,220,180,0.1)', '--badge-border': 'rgba(80,220,180,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,220,180,0.9)' }}>M</span>
                   </div>
                   <div className="cert-info">
@@ -840,8 +840,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(255,80,80,0.1)', '--badge-border': 'rgba(255,80,80,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,80,80,0.9)' }}>C</span>
                   </div>
                   <div className="cert-info">
@@ -862,8 +862,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(80,180,255,0.1)', '--badge-border': 'rgba(80,180,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(80,180,255,0.9)' }}>GH</span>
                   </div>
                   <div className="cert-info">
@@ -884,8 +884,8 @@ export default function ExperienceClient() {
                     </svg>
                   </div>
                   <div className="cert-badge" style={{ '--badge-bg': 'rgba(140,80,255,0.1)', '--badge-border': 'rgba(140,80,255,0.25)' }}>
-                    <img src="/Images/experience/LinkedIn.png" alt="LinkedIn Learning" className="cert-logo-img"
-                      onError={imgFallback} />
+                    <img src="/Images/experience/LinkedIn.webp" alt="LinkedIn Learning" className="cert-logo-img"
+                      onError={imgFallback} decoding="async" />
                     <span className="cert-initials" style={{ display: 'none', color: 'rgba(140,80,255,0.9)' }}>Li</span>
                   </div>
                   <div className="cert-info">
@@ -1254,7 +1254,7 @@ export default function ExperienceClient() {
               
               <div className="edu-entry" style={{ '--edu-delay': '0.05s' }} id="edu-entry-0">
                 <div className="edu-logo edu-logo-wide">
-                  <img src="/Images/experience/ply.png" alt="University of Plymouth logo" />
+                  <img src="/Images/experience/ply.webp" alt="University of Plymouth logo" decoding="async" />
                 </div>
                 <span className="edu-year">2020 - 2023</span>
                 <h3 className="edu-degree">BSc. (Honors) <br />Computer Security</h3>
@@ -1278,7 +1278,7 @@ export default function ExperienceClient() {
               
               <div className="edu-entry" style={{ '--edu-delay': '0.15s' }} id="edu-entry-1">
                 <div className="edu-logo">
-                  <img src="/Images/experience/WRC.png" alt="Wayamba Royal College logo" />
+                  <img src="/Images/experience/WRC.webp" alt="Wayamba Royal College logo" decoding="async" />
                 </div>
                 <span className="edu-year">2012 - 2020</span>
                 <h3 className="edu-degree">Secondary Education <br /> O/L &amp; A/L</h3>
@@ -1300,7 +1300,7 @@ export default function ExperienceClient() {
               
               <div className="edu-entry" style={{ '--edu-delay': '0.25s' }} id="edu-entry-2">
                 <div className="edu-logo">
-                  <img src="/Images/experience/wickra.png" alt="Wickramashila National School logo" />
+                  <img src="/Images/experience/wickra.webp" alt="Wickramashila National School logo" decoding="async" />
                 </div>
                 <span className="edu-year">2006 - 2011</span>
                 <h3 className="edu-degree">Primary Education <br />FOUNDATION STUDIES</h3>
@@ -1361,8 +1361,8 @@ export default function ExperienceClient() {
               
               <div className="vol-card" style={{ '--vol-color': 'rgba(255,78,80,0.8)', '--vol-glow': 'rgba(255,78,80,0.2)', '--vol-delay': '0.05s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/isaca.png" alt="ISACA" className="vol-logo"
-                    onError={imgFallback} />
+                  <img src="/Images/experience/isaca.webp" alt="ISACA" className="vol-logo"
+                    onError={imgFallback} decoding="async" />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,78,80,1)' }}>MF</span>
                 </div>
                 <div className="vol-info">
@@ -1376,8 +1376,8 @@ export default function ExperienceClient() {
               <div className="vol-card"
                 style={{ '--vol-color': 'rgba(180,100,255,0.8)', '--vol-glow': 'rgba(180,100,255,0.2)', '--vol-delay': '0.1s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/dns.png" alt="DNS NSBM" className="vol-logo"
-                    onError={imgFallback} />
+                  <img src="/Images/experience/dns.webp" alt="DNS NSBM" className="vol-logo"
+                    onError={imgFallback} decoding="async" />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(180,100,255,1)' }}>DB</span>
                 </div>
                 <div className="vol-info">
@@ -1390,8 +1390,8 @@ export default function ExperienceClient() {
               
               <div className="vol-card" style={{ '--vol-color': 'rgba(255,50,50,0.8)', '--vol-glow': 'rgba(255,50,50,0.2)', '--vol-delay': '0.15s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/foss.png" alt="foss" className="vol-logo"
-                    onError={imgFallback} />
+                  <img src="/Images/experience/foss.webp" alt="foss" className="vol-logo"
+                    onError={imgFallback} decoding="async" />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,50,50,1)' }}>RC</span>
                 </div>
                 <div className="vol-info">
@@ -1405,8 +1405,8 @@ export default function ExperienceClient() {
               <div className="vol-card"
                 style={{ '--vol-color': 'rgba(100,220,160,0.8)', '--vol-glow': 'rgba(100,220,160,0.2)', '--vol-delay': '0.2s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/foss.png" alt="foss" className="vol-logo"
-                    onError={imgFallback} />
+                  <img src="/Images/experience/foss.webp" alt="foss" className="vol-logo"
+                    onError={imgFallback} decoding="async" />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(100,220,160,1)' }}>CG</span>
                 </div>
                 <div className="vol-info">
@@ -1420,8 +1420,8 @@ export default function ExperienceClient() {
               <div className="vol-card"
                 style={{ '--vol-color': 'rgba(255,255,0,0.8)', '--vol-glow': 'rgba(255,255,0,0.15)', '--vol-delay': '0.25s' }}>
                 <div className="vol-badge" style={{ borderStyle: 'solid' }}>
-                  <img src="/Images/experience/foss.png" alt="foss" className="vol-logo"
-                    onError={imgFallback} />
+                  <img src="/Images/experience/foss.webp" alt="foss" className="vol-logo"
+                    onError={imgFallback} decoding="async" />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,255,0,1)' }}>AI</span>
                 </div>
                 <div className="vol-info">
@@ -1435,8 +1435,8 @@ export default function ExperienceClient() {
               <div className="vol-card"
                 style={{ '--vol-color': 'rgba(140,210,255,0.8)', '--vol-glow': 'rgba(140,210,255,0.2)', '--vol-delay': '0.05s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/wrc-round.png" alt="Wayamba Royal College" className="vol-logo"
-                    onError={imgFallback} />
+                  <img src="/Images/experience/wrc-round.webp" alt="Wayamba Royal College" className="vol-logo"
+                    onError={imgFallback} decoding="async" />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(140,210,255,1)' }}>AS</span>
                 </div>
                 <div className="vol-info">
@@ -1449,8 +1449,8 @@ export default function ExperienceClient() {
               
               <div className="vol-card" style={{ '--vol-color': 'rgba(0,255,127,0.8)', '--vol-glow': 'rgba(0,255,127,0.2)', '--vol-delay': '0.1s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/int-blue.png" alt="Interact Club" className="vol-logo"
-                    onError={imgFallback} />
+                  <img src="/Images/experience/int-blue.webp" alt="Interact Club" className="vol-logo"
+                    onError={imgFallback} decoding="async" />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(0,255,127,1)' }}>GT</span>
                 </div>
                 <div className="vol-info">
@@ -1464,8 +1464,8 @@ export default function ExperienceClient() {
               <div className="vol-card"
                 style={{ '--vol-color': 'rgba(30,144,255,0.8)', '--vol-glow': 'rgba(30,144,255,0.2)', '--vol-delay': '0.15s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/int-blue.png" alt="Interact Club" className="vol-logo"
-                    onError={imgFallback} />
+                  <img src="/Images/experience/int-blue.webp" alt="Interact Club" className="vol-logo"
+                    onError={imgFallback} decoding="async" />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(30,144,255,1)' }}>U</span>
                 </div>
                 <div className="vol-info">
@@ -1478,8 +1478,8 @@ export default function ExperienceClient() {
               
               <div className="vol-card" style={{ '--vol-color': 'rgba(255,165,0,0.8)', '--vol-glow': 'rgba(255,165,0,0.2)', '--vol-delay': '0.2s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/int.png" alt="Interact Club" className="vol-logo"
-                    onError={imgFallback} />
+                  <img src="/Images/experience/int.webp" alt="Interact Club" className="vol-logo"
+                    onError={imgFallback} decoding="async" />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,165,0,1)' }}>RI</span>
                 </div>
                 <div className="vol-info">
@@ -1493,8 +1493,8 @@ export default function ExperienceClient() {
               <div className="vol-card"
                 style={{ '--vol-color': 'rgba(255,105,180,0.8)', '--vol-glow': 'rgba(255,105,180,0.2)', '--vol-delay': '0.25s' }}>
                 <div className="vol-badge">
-                  <img src="/Images/experience/rps.png" alt="Royalists Photographic Society" className="vol-logo"
-                    onError={imgFallback} />
+                  <img src="/Images/experience/rps.webp" alt="Royalists Photographic Society" className="vol-logo"
+                    onError={imgFallback} decoding="async" />
                   <span className="cert-initials" style={{ display: 'none', color: 'rgba(255,105,180,1)' }}>GE</span>
                 </div>
                 <div className="vol-info">
@@ -1528,18 +1528,18 @@ export default function ExperienceClient() {
               
               <div className="testi-meta-row">
                 <div className="testi-avatars-stack" id="testi-av-stack">
-                  <img src="/Images/testimonials/thaanu.jpg" alt="Thaanu Perera" className="testi-avatar-thumb current-av"
-                    data-av="0" />
-                  <img src="/Images/testimonials/suraji.png" alt="Suraji Ekanayake" className="testi-avatar-thumb" data-av="1" />
-                  <img src="/Images/testimonials/sandakelum.jpg" alt="Sandakelum" className="testi-avatar-thumb" data-av="2" />
-                  <img src="/Images/testimonials/janith.jpg" alt="Janith" className="testi-avatar-thumb" data-av="3" />
-                  <img src="/Images/testimonials/wenupa.png" alt="Wenupa Mandinu" className="testi-avatar-thumb" data-av="4" />
-                  <img src="/Images/testimonials/avishka.jpg" alt="Avishka" className="testi-avatar-thumb" data-av="5" />
-                  <img src="/Images/testimonials/sandev-dullewa.png" alt="Sandev Dulleva" className="testi-avatar-thumb"
-                    data-av="6" />
-                  <img src="/Images/testimonials/atheeque.png" alt="Atheeque Hasan" className="testi-avatar-thumb" data-av="7" />
-                  <img src="/Images/testimonials/ramuthu.jpg" alt="Ramuthu Senanayake" className="testi-avatar-thumb"
-                    data-av="8" />
+                  <img src="/Images/testimonials/thaanu.webp" alt="Thaanu Perera" className="testi-avatar-thumb current-av"
+                    data-av="0" decoding="async" />
+                  <img src="/Images/testimonials/suraji.webp" alt="Suraji Ekanayake" className="testi-avatar-thumb" data-av="1" decoding="async" />
+                  <img src="/Images/testimonials/sandakelum.webp" alt="Sandakelum" className="testi-avatar-thumb" data-av="2" decoding="async" />
+                  <img src="/Images/testimonials/janith.webp" alt="Janith" className="testi-avatar-thumb" data-av="3" decoding="async" />
+                  <img src="/Images/testimonials/wenupa.webp" alt="Wenupa Mandinu" className="testi-avatar-thumb" data-av="4" decoding="async" />
+                  <img src="/Images/testimonials/avishka.webp" alt="Avishka" className="testi-avatar-thumb" data-av="5" decoding="async" />
+                  <img src="/Images/testimonials/sandev-dullewa.webp" alt="Sandev Dulleva" className="testi-avatar-thumb"
+                    data-av="6" decoding="async" />
+                  <img src="/Images/testimonials/atheeque.webp" alt="Atheeque Hasan" className="testi-avatar-thumb" data-av="7" decoding="async" />
+                  <img src="/Images/testimonials/ramuthu.webp" alt="Ramuthu Senanayake" className="testi-avatar-thumb"
+                    data-av="8" decoding="async" />
                 </div>
                 <div className="testi-counter">
                   <span className="testi-counter-cur" id="testi-cur">01</span>
@@ -1560,7 +1560,7 @@ export default function ExperienceClient() {
                     user-friendly but also highly functional.
                   </p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/thaanu.jpg" alt="Thaanu Perera" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/thaanu.webp" alt="Thaanu Perera" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Thaanu Perera</span>
@@ -1602,7 +1602,7 @@ export default function ExperienceClient() {
                     recommend Ruchira for any UI/UX work.
                   </p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/suraji.png" alt="Suraji Ekanayake" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/suraji.webp" alt="Suraji Ekanayake" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Suraji Ekanayake</span>
@@ -1642,7 +1642,7 @@ export default function ExperienceClient() {
                     in ways that felt fresh, polished, and genuinely purposeful.
                   </p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/sandakelum.jpg" alt="Sandakelum" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/sandakelum.webp" alt="Sandakelum" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Sandakelum Senevirathne</span>
@@ -1682,7 +1682,7 @@ export default function ExperienceClient() {
                     more engaging for our users.
                   </p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/janith.jpg" alt="Janith" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/janith.webp" alt="Janith" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Janith Perera</span>
@@ -1723,7 +1723,7 @@ export default function ExperienceClient() {
                     experiences that resonate with audiences on a profound level.
                   </p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/wenupa.png" alt="Wenupa Mandinu" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/wenupa.webp" alt="Wenupa Mandinu" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Wenupa Mandinu</span>
@@ -1763,7 +1763,7 @@ export default function ExperienceClient() {
                     elevates the entire product.
                   </p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/avishka.jpg" alt="Avishka" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/avishka.webp" alt="Avishka" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Avishka Dilshan</span>
@@ -1805,7 +1805,7 @@ export default function ExperienceClient() {
                     intuitive designs.
                   </p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/sandev-dullewa.png" alt="Sandev Dulleva" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/sandev-dullewa.webp" alt="Sandev Dulleva" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Sandev Dulleva</span>
@@ -1847,7 +1847,7 @@ export default function ExperienceClient() {
                     solutions was truly impressive.
                   </p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/atheeque.png" alt="Atheeque Hasan" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/atheeque.webp" alt="Atheeque Hasan" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Atheeque Hasan</span>
@@ -1890,7 +1890,7 @@ export default function ExperienceClient() {
                     the user experience is carefully considered.
                   </p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/ramuthu.jpg" alt="Ramuthu Senanayake" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/ramuthu.webp" alt="Ramuthu Senanayake" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Ramuthu Senanayake</span>
@@ -1948,7 +1948,7 @@ export default function ExperienceClient() {
 
         <div id="cert-prompt-overlay" className="modal-overlay">
           <div className="modal-card">
-            <img id="modal-logo" className="modal-header-logo" alt="Issuer logo" />
+            <img id="modal-logo" className="modal-header-logo" alt="Issuer logo" decoding="async" />
             <h3 id="modal-title">Certificate Name</h3>
             <span id="modal-issuer" className="modal-issuer-sub">Company Name</span>
             <p>You are going to be redirected to<br />the credentials of this certification.<br />Do you wish to continue?

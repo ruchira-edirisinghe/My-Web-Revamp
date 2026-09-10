@@ -44,7 +44,7 @@ export default function CaseStudyTechnosphere() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/technosphere/cover.png" alt="Technosphere - Sustainability Platform cover" className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/technosphere/cover.webp" alt="Technosphere - Sustainability Platform cover" className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -388,45 +388,45 @@ export default function CaseStudyTechnosphere() {
               {/* Row 1: Moving Right */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/technosphere/Landing.png">
-                  <img src="/Images/projects/technosphere/Landing-card.png" alt="Landing Page" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Landing.webp">
+                  <img src="/Images/projects/technosphere/Landing-card.webp" alt="Landing Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Landing Page</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/CTF Landing.png">
-                  <img src="/Images/projects/technosphere/CTF Landing-card.png" alt="CTF Competition Landing" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/CTF Landing.webp">
+                  <img src="/Images/projects/technosphere/CTF Landing-card.webp" alt="CTF Competition Landing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">CTF Competition</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Physical Attendee.png">
-                  <img src="/Images/projects/technosphere/Register - Physical Attendee-card.png" alt="Register as Physical Attendee" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Physical Attendee.webp">
+                  <img src="/Images/projects/technosphere/Register - Physical Attendee-card.webp" alt="Register as Physical Attendee" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Register · Physical</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Webinar Attendee.png">
-                  <img src="/Images/projects/technosphere/Register - Webinar Attendee-card.png" alt="Register as Webinar Attendee" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Webinar Attendee.webp">
+                  <img src="/Images/projects/technosphere/Register - Webinar Attendee-card.webp" alt="Register as Webinar Attendee" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Register · Webinar</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Success Popup.png">
-                  <img src="/Images/projects/technosphere/Register - Success Popup-card.png" alt="Registration Success Popup" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Success Popup.webp">
+                  <img src="/Images/projects/technosphere/Register - Success Popup-card.webp" alt="Registration Success Popup" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Registration Success</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/technosphere/Landing.png">
-                  <img src="/Images/projects/technosphere/Landing-card.png" alt="Landing Page" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Landing.webp">
+                  <img src="/Images/projects/technosphere/Landing-card.webp" alt="Landing Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Landing Page</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/CTF Landing.png">
-                  <img src="/Images/projects/technosphere/CTF Landing-card.png" alt="CTF Competition Landing" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/CTF Landing.webp">
+                  <img src="/Images/projects/technosphere/CTF Landing-card.webp" alt="CTF Competition Landing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">CTF Competition</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Physical Attendee.png">
-                  <img src="/Images/projects/technosphere/Register - Physical Attendee-card.png" alt="Register as Physical Attendee" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Physical Attendee.webp">
+                  <img src="/Images/projects/technosphere/Register - Physical Attendee-card.webp" alt="Register as Physical Attendee" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Register · Physical</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Webinar Attendee.png">
-                  <img src="/Images/projects/technosphere/Register - Webinar Attendee-card.png" alt="Register as Webinar Attendee" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Webinar Attendee.webp">
+                  <img src="/Images/projects/technosphere/Register - Webinar Attendee-card.webp" alt="Register as Webinar Attendee" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Register · Webinar</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Success Popup.png">
-                  <img src="/Images/projects/technosphere/Register - Success Popup-card.png" alt="Registration Success Popup" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Register - Success Popup.webp">
+                  <img src="/Images/projects/technosphere/Register - Success Popup-card.webp" alt="Registration Success Popup" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Registration Success</div>
                 </div>
               </div>
@@ -434,45 +434,45 @@ export default function CaseStudyTechnosphere() {
               {/* Row 2: Moving Left */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Physical Attendee.png">
-                  <img src="/Images/projects/technosphere/Profile - Physical Attendee-card.png" alt="Physical Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Physical Attendee.webp">
+                  <img src="/Images/projects/technosphere/Profile - Physical Attendee-card.webp" alt="Physical Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile · Physical</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Webinar Attendee.png">
-                  <img src="/Images/projects/technosphere/Profile - Webinar Attendee-card.png" alt="Webinar Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Webinar Attendee.webp">
+                  <img src="/Images/projects/technosphere/Profile - Webinar Attendee-card.webp" alt="Webinar Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile · Webinar</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Video-Player.png">
-                  <img src="/Images/projects/technosphere/Video-Player-card.png" alt="Session Video Player" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Video-Player.webp">
+                  <img src="/Images/projects/technosphere/Video-Player-card.webp" alt="Session Video Player" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Video Player</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-home.png">
-                  <img src="/Images/projects/technosphere/Ask-Questions-home-card.png" alt="Ask Questions Feed" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-home.webp">
+                  <img src="/Images/projects/technosphere/Ask-Questions-home-card.webp" alt="Ask Questions Feed" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Ask Questions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-addcomment.png">
-                  <img src="/Images/projects/technosphere/Ask-Questions-addcomment-card.png" alt="Ask Questions Add Comment" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-addcomment.webp">
+                  <img src="/Images/projects/technosphere/Ask-Questions-addcomment-card.webp" alt="Ask Questions Add Comment" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Q&amp;A · Add Comment</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Physical Attendee.png">
-                  <img src="/Images/projects/technosphere/Profile - Physical Attendee-card.png" alt="Physical Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Physical Attendee.webp">
+                  <img src="/Images/projects/technosphere/Profile - Physical Attendee-card.webp" alt="Physical Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile · Physical</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Webinar Attendee.png">
-                  <img src="/Images/projects/technosphere/Profile - Webinar Attendee-card.png" alt="Webinar Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Profile - Webinar Attendee.webp">
+                  <img src="/Images/projects/technosphere/Profile - Webinar Attendee-card.webp" alt="Webinar Attendee Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile · Webinar</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Video-Player.png">
-                  <img src="/Images/projects/technosphere/Video-Player-card.png" alt="Session Video Player" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Video-Player.webp">
+                  <img src="/Images/projects/technosphere/Video-Player-card.webp" alt="Session Video Player" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Video Player</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-home.png">
-                  <img src="/Images/projects/technosphere/Ask-Questions-home-card.png" alt="Ask Questions Feed" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-home.webp">
+                  <img src="/Images/projects/technosphere/Ask-Questions-home-card.webp" alt="Ask Questions Feed" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Ask Questions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-addcomment.png">
-                  <img src="/Images/projects/technosphere/Ask-Questions-addcomment-card.png" alt="Ask Questions Add Comment" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/technosphere/Ask-Questions-addcomment.webp">
+                  <img src="/Images/projects/technosphere/Ask-Questions-addcomment-card.webp" alt="Ask Questions Add Comment" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Q&amp;A · Add Comment</div>
                 </div>
               </div>

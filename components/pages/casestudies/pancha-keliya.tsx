@@ -53,8 +53,8 @@ export default function CaseStudyPanchaKeliya() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/pancha-keliya/cover.png" alt="Pancha Keliya - browser cowrie-shell board game cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/pancha-keliya/cover.webp" alt="Pancha Keliya - browser cowrie-shell board game cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -422,45 +422,45 @@ export default function CaseStudyPanchaKeliya() {
               {/* Row 1 */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/home.png">
-                  <img src="/Images/projects/pancha-keliya/home.png" alt="Pancha Keliya title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/home.webp">
+                  <img src="/Images/projects/pancha-keliya/home.webp" alt="Pancha Keliya title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Mat</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/board.png">
-                  <img src="/Images/projects/pancha-keliya/board.png" alt="The generated chart and four seats" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/board.webp">
+                  <img src="/Images/projects/pancha-keliya/board.webp" alt="The generated chart and four seats" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Chart</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cloth.png">
-                  <img src="/Images/projects/pancha-keliya/cloth.png" alt="The thirteen-square betting cloth" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cloth.webp">
+                  <img src="/Images/projects/pancha-keliya/cloth.webp" alt="The thirteen-square betting cloth" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Betting Cloth</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/throw.png">
-                  <img src="/Images/projects/pancha-keliya/throw.png" alt="Six cowries tipped from a half coconut" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/throw.webp">
+                  <img src="/Images/projects/pancha-keliya/throw.webp" alt="Six cowries tipped from a half coconut" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Throw</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/result.png">
-                  <img src="/Images/projects/pancha-keliya/result.png" alt="A piece reaching its home shelf" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/result.webp">
+                  <img src="/Images/projects/pancha-keliya/result.webp" alt="A piece reaching its home shelf" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home Shelf</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/home.png">
-                  <img src="/Images/projects/pancha-keliya/home.png" alt="Pancha Keliya title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/home.webp">
+                  <img src="/Images/projects/pancha-keliya/home.webp" alt="Pancha Keliya title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title Mat</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/board.png">
-                  <img src="/Images/projects/pancha-keliya/board.png" alt="The generated chart and four seats" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/board.webp">
+                  <img src="/Images/projects/pancha-keliya/board.webp" alt="The generated chart and four seats" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Chart</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cloth.png">
-                  <img src="/Images/projects/pancha-keliya/cloth.png" alt="The thirteen-square betting cloth" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cloth.webp">
+                  <img src="/Images/projects/pancha-keliya/cloth.webp" alt="The thirteen-square betting cloth" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Betting Cloth</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/throw.png">
-                  <img src="/Images/projects/pancha-keliya/throw.png" alt="Six cowries tipped from a half coconut" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/throw.webp">
+                  <img src="/Images/projects/pancha-keliya/throw.webp" alt="Six cowries tipped from a half coconut" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Throw</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/result.png">
-                  <img src="/Images/projects/pancha-keliya/result.png" alt="A piece reaching its home shelf" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/result.webp">
+                  <img src="/Images/projects/pancha-keliya/result.webp" alt="A piece reaching its home shelf" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home Shelf</div>
                 </div>
               </div>
@@ -468,45 +468,45 @@ export default function CaseStudyPanchaKeliya() {
               {/* Row 2 */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cover.png">
-                  <img src="/Images/projects/pancha-keliya/cover.png" alt="Pancha Keliya cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cover.webp">
+                  <img src="/Images/projects/pancha-keliya/cover.webp" alt="Pancha Keliya cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/board.png">
-                  <img src="/Images/projects/pancha-keliya/board.png" alt="The X-marked safe squares" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/board.webp">
+                  <img src="/Images/projects/pancha-keliya/board.webp" alt="The X-marked safe squares" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Marked Squares</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cloth.png">
-                  <img src="/Images/projects/pancha-keliya/cloth.png" alt="Live race odds and cash-out" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cloth.webp">
+                  <img src="/Images/projects/pancha-keliya/cloth.webp" alt="Live race odds and cash-out" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Race Odds</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/throw.png">
-                  <img src="/Images/projects/pancha-keliya/throw.png" alt="Shells landing mouth-up" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/throw.webp">
+                  <img src="/Images/projects/pancha-keliya/throw.webp" alt="Shells landing mouth-up" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Mouth-Up Count</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/home.png">
-                  <img src="/Images/projects/pancha-keliya/home.png" alt="Paytable with measured returns" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/home.webp">
+                  <img src="/Images/projects/pancha-keliya/home.webp" alt="Paytable with measured returns" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Measured Paytable</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cover.png">
-                  <img src="/Images/projects/pancha-keliya/cover.png" alt="Pancha Keliya cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cover.webp">
+                  <img src="/Images/projects/pancha-keliya/cover.webp" alt="Pancha Keliya cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/board.png">
-                  <img src="/Images/projects/pancha-keliya/board.png" alt="The X-marked safe squares" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/board.webp">
+                  <img src="/Images/projects/pancha-keliya/board.webp" alt="The X-marked safe squares" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Marked Squares</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cloth.png">
-                  <img src="/Images/projects/pancha-keliya/cloth.png" alt="Live race odds and cash-out" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/cloth.webp">
+                  <img src="/Images/projects/pancha-keliya/cloth.webp" alt="Live race odds and cash-out" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Race Odds</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/throw.png">
-                  <img src="/Images/projects/pancha-keliya/throw.png" alt="Shells landing mouth-up" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/throw.webp">
+                  <img src="/Images/projects/pancha-keliya/throw.webp" alt="Shells landing mouth-up" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Mouth-Up Count</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/pancha-keliya/home.png">
-                  <img src="/Images/projects/pancha-keliya/home.png" alt="Paytable with measured returns" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/pancha-keliya/home.webp">
+                  <img src="/Images/projects/pancha-keliya/home.webp" alt="Paytable with measured returns" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Measured Paytable</div>
                 </div>
               </div>

@@ -55,3 +55,46 @@ export function makeBag(): Bag {
     },
   };
 }
+
+/**
+ * Clear only what the last frame actually painted.
+ *
+ * The custom cursor draws into a canvas that spans the whole viewport, but it
+ * only ever touches a ~170px box around the pointer. Clearing the full canvas
+ * every frame meant a ~2-megapixel memset plus a full-canvas texture re-upload
+ * to the compositor sixty times a second, on every page, forever - by far the
+ * most expensive thing the cursor did, and all of it wasted on pixels that were
+ * already transparent.
+ *
+ * `makeDirtyClear` hands back a `clear(x, y, r)` that erases the union of the
+ * previous frame's box and this one's, so the trail is still wiped correctly
+ * while the work stays proportional to the cursor rather than the screen.
+ * `reset()` forces the next clear to cover everything - needed on resize (the
+ * backing store is reallocated) and when the loop stops.
+ */
+export function makeDirtyClear(ctx: CanvasRenderingContext2D) {
+  let px = 0, py = 0, pr = 0, full = true;
+  return {
+    clear(x: number, y: number, r: number) {
+      const c = ctx.canvas;
+      if (full) {
+        ctx.clearRect(0, 0, c.width, c.height);
+        full = false;
+      } else {
+        // Union of last frame's box and this one, padded for stroke width and
+        // the shadow blur the cursor glyphs draw with.
+        const pad = 12;
+        const x0 = Math.min(x - r, px - pr) - pad;
+        const y0 = Math.min(y - r, py - pr) - pad;
+        const x1 = Math.max(x + r, px + pr) + pad;
+        const y1 = Math.max(y + r, py + pr) + pad;
+        ctx.clearRect(x0, y0, x1 - x0, y1 - y0);
+      }
+      px = x; py = y; pr = r;
+    },
+    /** Next clear wipes the whole canvas (resize, or loop stop). */
+    reset() {
+      full = true;
+    },
+  };
+}

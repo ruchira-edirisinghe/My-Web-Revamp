@@ -44,8 +44,8 @@ export default function CaseStudy747Social() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/social-casino/cover.png" alt="747 Social Casino - social casino platform cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/social-casino/cover.webp" alt="747 Social Casino - social casino platform cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -366,73 +366,73 @@ export default function CaseStudy747Social() {
             <div className="ui-gallery device-gallery is-desktop" data-device="desktop">
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Home.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Home-card.png" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Home.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Home-card.webp" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Login.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Login-card.png" alt="Desktop - Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Login.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Login-card.webp" alt="Desktop - Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Onboarding 1-card.png" alt="Desktop - Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Onboarding 1-card.webp" alt="Desktop - Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Story And Post 1-card.png" alt="Desktop - Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Story And Post 1-card.webp" alt="Desktop - Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories &amp; Posts</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Home.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Home-card.png" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Home.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Home-card.webp" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Login.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Login-card.png" alt="Desktop - Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Login.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Login-card.webp" alt="Desktop - Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Onboarding 1-card.png" alt="Desktop - Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Onboarding 1.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Onboarding 1-card.webp" alt="Desktop - Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Story And Post 1-card.png" alt="Desktop - Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Story And Post 1.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Story And Post 1-card.webp" alt="Desktop - Stories and Posts" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories &amp; Posts</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo-card.png" alt="Desktop - Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo-card.webp" alt="Desktop - Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Comments.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Comments-card.png" alt="Desktop - Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Comments.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Comments-card.webp" alt="Desktop - Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Notifications.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Notifications-card.png" alt="Desktop - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Notifications.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Notifications-card.webp" alt="Desktop - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim-card.png" alt="Desktop - Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim-card.webp" alt="Desktop - Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Prize Claim</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo-card.png" alt="Desktop - Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Profile - About Me Photo-card.webp" alt="Desktop - Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Comments.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Comments-card.png" alt="Desktop - Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Comments.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Comments-card.webp" alt="Desktop - Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Notifications.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Notifications-card.png" alt="Desktop - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Notifications.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Notifications-card.webp" alt="Desktop - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.png">
-                  <img src="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim-card.png" alt="Desktop - Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim.webp">
+                  <img src="/Images/projects/social-casino/desktop/Desktop - Prize Timer Popup - Ready To Claim-card.webp" alt="Desktop - Prize Claim" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Prize Claim</div>
                 </div>
               </div>
@@ -442,73 +442,73 @@ export default function CaseStudy747Social() {
             <div className="ui-gallery device-gallery is-mobile" data-device="mobile" hidden>
               <div className="ui-marquee-track ui-track-2" id="marquee-3">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Home.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Home-card.png" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Home.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Home-card.webp" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Login.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Login.png" alt="Mobile - Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Login.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Login.webp" alt="Mobile - Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png" alt="Mobile - Stories" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Story.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Story.webp" alt="Mobile - Stories" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png" alt="Mobile - Post" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.webp" alt="Mobile - Post" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Post</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Home.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Home-card.png" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Home.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Home-card.webp" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Login.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Login.png" alt="Mobile - Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Login.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Login.webp" alt="Mobile - Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Story.png" alt="Mobile - Stories" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Story.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Story.webp" alt="Mobile - Stories" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Stories</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.png" alt="Mobile - Post" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 5 - Single Post.webp" alt="Mobile - Post" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Post</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-4">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo-card.png" alt="Mobile - Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo-card.webp" alt="Mobile - Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Comments.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Comments.png" alt="Mobile - Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Comments.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Comments.webp" alt="Mobile - Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png" alt="Mobile - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.webp" alt="Mobile - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite-card.png" alt="Mobile - Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite-card.webp" alt="Mobile - Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding · Invite</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo-card.png" alt="Mobile - Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Profile - About Me Photo-card.webp" alt="Mobile - Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Comments.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Comments.png" alt="Mobile - Comments" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Comments.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Comments.webp" alt="Mobile - Comments" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Comments</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.png" alt="Mobile - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - 1 - Notifications Full.webp" alt="Mobile - Notifications" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Notifications</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.png">
-                  <img src="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite-card.png" alt="Mobile - Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite.webp">
+                  <img src="/Images/projects/social-casino/mobile/Mobile - Onboarding 4 - Invite-card.webp" alt="Mobile - Onboarding Invite" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding · Invite</div>
                 </div>
               </div>

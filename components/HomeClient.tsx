@@ -85,7 +85,18 @@ export default function HomeClient() {
       <main className="page">
         <div className="hero">
           <div className="photo-wrapper" id="photo-wrapper">
-            <img id="hero-img" src="/Images/mynew.png" alt="Ruchira Edirisinghe" />
+            {/* The page's LCP element. It sits behind the preloader, so without
+                an explicit priority the browser discovers it late and ranks it
+                below the font stylesheet and the three.js chunk. */}
+            <img
+              id="hero-img"
+              src="/Images/mynew.webp"
+              alt="Ruchira Edirisinghe"
+              width={980}
+              height={980}
+              fetchPriority="high"
+              decoding="async"
+            />
           </div>
           <div className="hero-text-group">
             <p className="subtitle">

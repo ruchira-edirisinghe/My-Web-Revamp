@@ -32,8 +32,8 @@ export default function CaseStudyDtmhms() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/dtmhms/COVER.png" alt="DTM Hall Management System - booking platform cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/dtmhms/COVER.webp" alt="DTM Hall Management System - booking platform cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -339,53 +339,53 @@ export default function CaseStudyDtmhms() {
               {/* Row 1: Moving Right */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Home.png">
-                  <img src="/Images/projects/dtmhms/Home-card.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Home.webp">
+                  <img src="/Images/projects/dtmhms/Home-card.webp" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall-card.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall-card.webp" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Book Your Hall</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout-card.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout-card.webp" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Hall · Layout View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View-card.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View-card.webp" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Hall · Calendar View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.png">
-                  <img src="/Images/projects/dtmhms/About Us-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.webp">
+                  <img src="/Images/projects/dtmhms/About Us-card.webp" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.png">
-                  <img src="/Images/projects/dtmhms/Contact us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.webp">
+                  <img src="/Images/projects/dtmhms/Contact us-card.webp" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Home.png">
-                  <img src="/Images/projects/dtmhms/Home-card.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Home.webp">
+                  <img src="/Images/projects/dtmhms/Home-card.webp" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall-card.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall-card.webp" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Book Your Hall</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout-card.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout-card.webp" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Hall · Layout View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View-card.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View-card.webp" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Hall · Calendar View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.png">
-                  <img src="/Images/projects/dtmhms/About Us-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.webp">
+                  <img src="/Images/projects/dtmhms/About Us-card.webp" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.png">
-                  <img src="/Images/projects/dtmhms/Contact us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.webp">
+                  <img src="/Images/projects/dtmhms/Contact us-card.webp" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
               </div>
@@ -393,53 +393,53 @@ export default function CaseStudyDtmhms() {
               {/* Row 2: Moving Left */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View-card.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View-card.webp" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Calendar View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout-card.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout-card.webp" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Layout View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Home.png">
-                  <img src="/Images/projects/dtmhms/Home-card.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Home.webp">
+                  <img src="/Images/projects/dtmhms/Home-card.webp" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.png">
-                  <img src="/Images/projects/dtmhms/About Us-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.webp">
+                  <img src="/Images/projects/dtmhms/About Us-card.webp" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.png">
-                  <img src="/Images/projects/dtmhms/Contact us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.webp">
+                  <img src="/Images/projects/dtmhms/Contact us-card.webp" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall-card.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall-card.webp" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Book Your Hall</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View-card.png" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Calendar View.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Calendar View-card.webp" alt="Booking Calendar View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Calendar View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout-card.png" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall --_ Layout.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall --_ Layout-card.webp" alt="Hall Layout View" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Layout View</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Home.png">
-                  <img src="/Images/projects/dtmhms/Home-card.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Home.webp">
+                  <img src="/Images/projects/dtmhms/Home-card.webp" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.png">
-                  <img src="/Images/projects/dtmhms/About Us-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/About Us.webp">
+                  <img src="/Images/projects/dtmhms/About Us-card.webp" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.png">
-                  <img src="/Images/projects/dtmhms/Contact us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Contact us.webp">
+                  <img src="/Images/projects/dtmhms/Contact us-card.webp" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.png">
-                  <img src="/Images/projects/dtmhms/Book Your Hall-card.png" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/dtmhms/Book Your Hall.webp">
+                  <img src="/Images/projects/dtmhms/Book Your Hall-card.webp" alt="Book Your Hall" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Book Your Hall</div>
                 </div>
               </div>

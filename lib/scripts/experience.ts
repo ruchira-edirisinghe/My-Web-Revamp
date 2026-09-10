@@ -12,7 +12,7 @@
    every interval/timeout tracked + cleared; every IntersectionObserver
    disconnected; Web Audio closed; appended nodes removed on dispose.
    ════════════════════════════════════════ */
-import { makeBag } from './_util';
+import { makeBag, makeDirtyClear } from './_util';
 import { initPreloaderFx } from './preloader-fx';
 import { initSpaceField3D } from './space-field';
 import { wireAmbientControls } from './ambient-audio';
@@ -244,8 +244,9 @@ export function initExperience(): () => void {
     const cursorCanvas = document.getElementById('cursor-canvas');
     if (!cursorCanvas) return;
     const cCtx = cursorCanvas.getContext('2d');
+    const dirty = makeDirtyClear(cCtx);
     let W, H;
-    function resize() { W = cursorCanvas.width = window.innerWidth; H = cursorCanvas.height = window.innerHeight; }
+    function resize() { W = cursorCanvas.width = window.innerWidth; H = cursorCanvas.height = window.innerHeight; dirty.reset(); }
     resize(); bag.on(window, 'resize', resize);
 
     let mX = -300, mY = -300, rX = -300, rY = -300, currentR = 26, targetR = 26;
@@ -258,13 +259,16 @@ export function initExperience(): () => void {
       cursorRunning = true;
       cursorRaf = requestAnimationFrame(drawCursor);
     }
-    function stopCursor() { cursorRunning = false; cCtx.clearRect(0, 0, W, H); }
+    function stopCursor() { cursorRunning = false; dirty.reset(); cCtx.clearRect(0, 0, W, H); }
 
     function drawCursor() {
       if (!cursorRunning) return;
-      cCtx.clearRect(0, 0, W, H);
       rX += (mX - rX) * 0.1; rY += (mY - rY) * 0.1; currentR += (targetR - currentR) * 0.08;
       const R = currentR, cx = rX, cy = rY;
+      // The ring trails the pointer, and the dot sits ON it, so the box has to
+      // span both - it widens with speed and collapses back the moment the ring
+      // catches up. Still a fraction of the full-canvas clear this replaced.
+      dirty.clear(cx, cy, R * 1.6 + Math.hypot(mX - cx, mY - cy));
       if (mX < -200) { cursorRaf = requestAnimationFrame(drawCursor); return; }
       const halo = cCtx.createRadialGradient(cx, cy, R * 0.85, cx, cy, R * 1.5);
       halo.addColorStop(0, 'rgba(180,220,255,0.07)'); halo.addColorStop(1, 'rgba(80,140,255,0)');

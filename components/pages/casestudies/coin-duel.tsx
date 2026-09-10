@@ -53,8 +53,8 @@ export default function CaseStudyCoinDuel() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/coin-duel/cover.png" alt="Coin Duel - browser coin-toss duelling game cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/coin-duel/cover.webp" alt="Coin Duel - browser coin-toss duelling game cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -430,45 +430,45 @@ export default function CaseStudyCoinDuel() {
               {/* Row 1 */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/coin-duel/title-screen.png">
-                  <img src="/Images/projects/coin-duel/title-screen-card.png" alt="Coin Duel title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/title-screen.webp">
+                  <img src="/Images/projects/coin-duel/title-screen-card.webp" alt="Coin Duel title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title · The Badge</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.png">
-                  <img src="/Images/projects/coin-duel/betting-board-card.png" alt="The neon pit and two plinths" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.webp">
+                  <img src="/Images/projects/coin-duel/betting-board-card.webp" alt="The neon pit and two plinths" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Pit</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.png">
-                  <img src="/Images/projects/coin-duel/coin-toss-card.png" alt="Five coins in the light column" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.webp">
+                  <img src="/Images/projects/coin-duel/coin-toss-card.webp" alt="Five coins in the light column" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Toss</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.png">
-                  <img src="/Images/projects/coin-duel/round-result-card.png" alt="Reading the five faces" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.webp">
+                  <img src="/Images/projects/coin-duel/round-result-card.webp" alt="Reading the five faces" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Settle · The Score</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/duel-summary.png">
-                  <img src="/Images/projects/coin-duel/duel-summary-card.png" alt="Duel over, with the session summary" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/duel-summary.webp">
+                  <img src="/Images/projects/coin-duel/duel-summary-card.webp" alt="Duel over, with the session summary" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Duel Summary</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/coin-duel/title-screen.png">
-                  <img src="/Images/projects/coin-duel/title-screen-card.png" alt="Coin Duel title screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/title-screen.webp">
+                  <img src="/Images/projects/coin-duel/title-screen-card.webp" alt="Coin Duel title screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Title · The Badge</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.png">
-                  <img src="/Images/projects/coin-duel/betting-board-card.png" alt="The neon pit and two plinths" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.webp">
+                  <img src="/Images/projects/coin-duel/betting-board-card.webp" alt="The neon pit and two plinths" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Pit</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.png">
-                  <img src="/Images/projects/coin-duel/coin-toss-card.png" alt="Five coins in the light column" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.webp">
+                  <img src="/Images/projects/coin-duel/coin-toss-card.webp" alt="Five coins in the light column" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Toss</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.png">
-                  <img src="/Images/projects/coin-duel/round-result-card.png" alt="Reading the five faces" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.webp">
+                  <img src="/Images/projects/coin-duel/round-result-card.webp" alt="Reading the five faces" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Settle · The Score</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/duel-summary.png">
-                  <img src="/Images/projects/coin-duel/duel-summary-card.png" alt="Duel over, with the session summary" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/duel-summary.webp">
+                  <img src="/Images/projects/coin-duel/duel-summary-card.webp" alt="Duel over, with the session summary" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Duel Summary</div>
                 </div>
               </div>
@@ -476,45 +476,45 @@ export default function CaseStudyCoinDuel() {
               {/* Row 2 */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/coin-duel/logo.png">
-                  <img src="/Images/projects/coin-duel/logo.png" alt="The struck Coin Duel badge" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/logo.webp">
+                  <img src="/Images/projects/coin-duel/logo.webp" alt="The struck Coin Duel badge" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Struck Badge</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/cover.png">
-                  <img src="/Images/projects/coin-duel/cover-card.png" alt="Coin Duel cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/cover.webp">
+                  <img src="/Images/projects/coin-duel/cover-card.webp" alt="Coin Duel cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.png">
-                  <img src="/Images/projects/coin-duel/round-result-card.png" alt="The two priced buttons" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.webp">
+                  <img src="/Images/projects/coin-duel/round-result-card.webp" alt="The two priced buttons" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Two Buttons</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.png">
-                  <img src="/Images/projects/coin-duel/betting-board-card.png" alt="Hex shields and holographic crowd" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.webp">
+                  <img src="/Images/projects/coin-duel/betting-board-card.webp" alt="Hex shields and holographic crowd" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Shields &amp; Crowd</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.png">
-                  <img src="/Images/projects/coin-duel/coin-toss-card.png" alt="The mint firing" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.webp">
+                  <img src="/Images/projects/coin-duel/coin-toss-card.webp" alt="The mint firing" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Mint</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/coin-duel/logo.png">
-                  <img src="/Images/projects/coin-duel/logo.png" alt="The struck Coin Duel badge" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/logo.webp">
+                  <img src="/Images/projects/coin-duel/logo.webp" alt="The struck Coin Duel badge" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Struck Badge</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/cover.png">
-                  <img src="/Images/projects/coin-duel/cover-card.png" alt="Coin Duel cover art" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/cover.webp">
+                  <img src="/Images/projects/coin-duel/cover-card.webp" alt="Coin Duel cover art" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Cover Art</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.png">
-                  <img src="/Images/projects/coin-duel/round-result-card.png" alt="The two priced buttons" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/round-result.webp">
+                  <img src="/Images/projects/coin-duel/round-result-card.webp" alt="The two priced buttons" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Two Buttons</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.png">
-                  <img src="/Images/projects/coin-duel/betting-board-card.png" alt="Hex shields and holographic crowd" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/betting-board.webp">
+                  <img src="/Images/projects/coin-duel/betting-board-card.webp" alt="Hex shields and holographic crowd" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Shields &amp; Crowd</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.png">
-                  <img src="/Images/projects/coin-duel/coin-toss-card.png" alt="The mint firing" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/coin-duel/coin-toss.webp">
+                  <img src="/Images/projects/coin-duel/coin-toss-card.webp" alt="The mint firing" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">The Mint</div>
                 </div>
               </div>

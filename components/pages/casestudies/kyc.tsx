@@ -49,8 +49,8 @@ export default function CaseStudyKyc() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/kyc/cover.png" alt="KYC Verification - identity verification flow cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/kyc/cover.webp" alt="KYC Verification - identity verification flow cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -374,53 +374,53 @@ export default function CaseStudyKyc() {
               {/* Row 1: Dark theme */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Home --_ User Consent.png">
-                  <img src="/Images/projects/kyc/Dark- Home --_ User Consent-card.png" alt="Home and Consent (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Home --_ User Consent.webp">
+                  <img src="/Images/projects/kyc/Dark- Home --_ User Consent-card.webp" alt="Home and Consent (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Consent · Dark</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 1 - Proceed.png">
-                  <img src="/Images/projects/kyc/Dark- Step 1 - Proceed-card.png" alt="Step 1 Proceed (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 1 - Proceed.webp">
+                  <img src="/Images/projects/kyc/Dark- Step 1 - Proceed-card.webp" alt="Step 1 Proceed (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 1 · Proceed</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - Default.png">
-                  <img src="/Images/projects/kyc/Dark- Step 2 - Default-card.png" alt="Step 2 Documents (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - Default.webp">
+                  <img src="/Images/projects/kyc/Dark- Step 2 - Default-card.webp" alt="Step 2 Documents (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Documents</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - info confirm.png">
-                  <img src="/Images/projects/kyc/Dark- Step 2 - info confirm-card.png" alt="Step 2 Confirm Info (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - info confirm.webp">
+                  <img src="/Images/projects/kyc/Dark- Step 2 - info confirm-card.webp" alt="Step 2 Confirm Info (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Confirm</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face.png">
-                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face-card.png" alt="Step 3 Face Scan (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face.webp">
+                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face-card.webp" alt="Step 3 Face Scan (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Face Scan</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step.png">
-                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step-card.png" alt="Step 3 Success (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step.webp">
+                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step-card.webp" alt="Step 3 Success (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Success</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Home --_ User Consent.png">
-                  <img src="/Images/projects/kyc/Dark- Home --_ User Consent-card.png" alt="Home and Consent (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Home --_ User Consent.webp">
+                  <img src="/Images/projects/kyc/Dark- Home --_ User Consent-card.webp" alt="Home and Consent (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Consent · Dark</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 1 - Proceed.png">
-                  <img src="/Images/projects/kyc/Dark- Step 1 - Proceed-card.png" alt="Step 1 Proceed (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 1 - Proceed.webp">
+                  <img src="/Images/projects/kyc/Dark- Step 1 - Proceed-card.webp" alt="Step 1 Proceed (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 1 · Proceed</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - Default.png">
-                  <img src="/Images/projects/kyc/Dark- Step 2 - Default-card.png" alt="Step 2 Documents (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - Default.webp">
+                  <img src="/Images/projects/kyc/Dark- Step 2 - Default-card.webp" alt="Step 2 Documents (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Documents</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - info confirm.png">
-                  <img src="/Images/projects/kyc/Dark- Step 2 - info confirm-card.png" alt="Step 2 Confirm Info (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 2 - info confirm.webp">
+                  <img src="/Images/projects/kyc/Dark- Step 2 - info confirm-card.webp" alt="Step 2 Confirm Info (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Confirm</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face.png">
-                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face-card.png" alt="Step 3 Face Scan (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face.webp">
+                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face-card.webp" alt="Step 3 Face Scan (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Face Scan</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step.png">
-                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step-card.png" alt="Step 3 Success (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step.webp">
+                  <img src="/Images/projects/kyc/Dark- Step 3 - Scan Face Success Step-card.webp" alt="Step 3 Success (Dark)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Success</div>
                 </div>
               </div>
@@ -428,53 +428,53 @@ export default function CaseStudyKyc() {
               {/* Row 2: Light theme */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Home.png">
-                  <img src="/Images/projects/kyc/Light- Home-card.png" alt="Home (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Home.webp">
+                  <img src="/Images/projects/kyc/Light- Home-card.webp" alt="Home (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home · Light</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 1 - Preperation.png">
-                  <img src="/Images/projects/kyc/Light- Step 1 - Preperation-card.png" alt="Step 1 Preparation (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 1 - Preperation.webp">
+                  <img src="/Images/projects/kyc/Light- Step 1 - Preperation-card.webp" alt="Step 1 Preparation (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 1 · Prepare</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Before Select.png">
-                  <img src="/Images/projects/kyc/Light- Step 2 - Before Select-card.png" alt="Step 2 Upload (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Before Select.webp">
+                  <img src="/Images/projects/kyc/Light- Step 2 - Before Select-card.webp" alt="Step 2 Upload (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Upload</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Complete.png">
-                  <img src="/Images/projects/kyc/Light- Step 2 - Complete-card.png" alt="Step 2 Complete (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Complete.webp">
+                  <img src="/Images/projects/kyc/Light- Step 2 - Complete-card.webp" alt="Step 2 Complete (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Complete</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 3 - Scan Face.png">
-                  <img src="/Images/projects/kyc/Light- Step 3 - Scan Face-card.png" alt="Step 3 Face Scan (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 3 - Scan Face.webp">
+                  <img src="/Images/projects/kyc/Light- Step 3 - Scan Face-card.webp" alt="Step 3 Face Scan (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Face Scan</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 4 - Preperation.png">
-                  <img src="/Images/projects/kyc/Light- Step 4 - Preperation-card.png" alt="Step 4 (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 4 - Preperation.webp">
+                  <img src="/Images/projects/kyc/Light- Step 4 - Preperation-card.webp" alt="Step 4 (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 4 · Final</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Home.png">
-                  <img src="/Images/projects/kyc/Light- Home-card.png" alt="Home (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Home.webp">
+                  <img src="/Images/projects/kyc/Light- Home-card.webp" alt="Home (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home · Light</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 1 - Preperation.png">
-                  <img src="/Images/projects/kyc/Light- Step 1 - Preperation-card.png" alt="Step 1 Preparation (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 1 - Preperation.webp">
+                  <img src="/Images/projects/kyc/Light- Step 1 - Preperation-card.webp" alt="Step 1 Preparation (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 1 · Prepare</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Before Select.png">
-                  <img src="/Images/projects/kyc/Light- Step 2 - Before Select-card.png" alt="Step 2 Upload (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Before Select.webp">
+                  <img src="/Images/projects/kyc/Light- Step 2 - Before Select-card.webp" alt="Step 2 Upload (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Upload</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Complete.png">
-                  <img src="/Images/projects/kyc/Light- Step 2 - Complete-card.png" alt="Step 2 Complete (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 2 - Complete.webp">
+                  <img src="/Images/projects/kyc/Light- Step 2 - Complete-card.webp" alt="Step 2 Complete (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 2 · Complete</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 3 - Scan Face.png">
-                  <img src="/Images/projects/kyc/Light- Step 3 - Scan Face-card.png" alt="Step 3 Face Scan (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 3 - Scan Face.webp">
+                  <img src="/Images/projects/kyc/Light- Step 3 - Scan Face-card.webp" alt="Step 3 Face Scan (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 3 · Face Scan</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 4 - Preperation.png">
-                  <img src="/Images/projects/kyc/Light- Step 4 - Preperation-card.png" alt="Step 4 (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/kyc/Light- Step 4 - Preperation.webp">
+                  <img src="/Images/projects/kyc/Light- Step 4 - Preperation-card.webp" alt="Step 4 (Light)" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Step 4 · Final</div>
                 </div>
               </div>

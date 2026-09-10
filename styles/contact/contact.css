@@ -1086,8 +1086,6 @@
       border-radius: 28px;
       padding: 36px 30px 32px;
       overflow: hidden;
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
       text-decoration: none;
       color: inherit;
       display: flex;
@@ -1327,8 +1325,6 @@
       position: fixed;
       inset: 0;
       background: radial-gradient(circle at center, var(--modal-glow, rgba(0, 0, 0, 0.4)) 0%, rgba(2, 3, 10, 0.85) 100%);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
       z-index: 10000;
       display: flex;
       align-items: center;
@@ -1669,8 +1665,6 @@
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 20px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       cursor: pointer;
       opacity: 0;
       transform: translateX(20px);

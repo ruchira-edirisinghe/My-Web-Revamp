@@ -32,8 +32,8 @@ export default function CaseStudyFunxt() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/funxt/cover.png" alt="Fun Extreme Technology - corporate website cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/funxt/cover.webp" alt="Fun Extreme Technology - corporate website cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -354,81 +354,81 @@ export default function CaseStudyFunxt() {
             <div className="ui-gallery device-gallery is-desktop" data-device="desktop">
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Home.png">
-                  <img src="/Images/projects/funxt/desktop/Home-card.png" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Home.webp">
+                  <img src="/Images/projects/funxt/desktop/Home-card.webp" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions.png">
-                  <img src="/Images/projects/funxt/desktop/Solutions-card.png" alt="Desktop - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions.webp">
+                  <img src="/Images/projects/funxt/desktop/Solutions-card.webp" alt="Desktop - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Solutions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ DESIGN AND DEVELOPMENT.png">
-                  <img src="/Images/projects/funxt/desktop/Solutions _ DESIGN AND DEVELOPMENT-card.png" alt="Desktop - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ DESIGN AND DEVELOPMENT.webp">
+                  <img src="/Images/projects/funxt/desktop/Solutions _ DESIGN AND DEVELOPMENT-card.webp" alt="Desktop - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Design &amp; Development</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ CLOUD AND OPERATIONS.png">
-                  <img src="/Images/projects/funxt/desktop/Solutions _ CLOUD AND OPERATIONS-card.png" alt="Desktop - Cloud and Operations" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ CLOUD AND OPERATIONS.webp">
+                  <img src="/Images/projects/funxt/desktop/Solutions _ CLOUD AND OPERATIONS-card.webp" alt="Desktop - Cloud and Operations" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Cloud &amp; Operations</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Company.png">
-                  <img src="/Images/projects/funxt/desktop/Company-card.png" alt="Desktop - Company" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Company.webp">
+                  <img src="/Images/projects/funxt/desktop/Company-card.webp" alt="Desktop - Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Company</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Home.png">
-                  <img src="/Images/projects/funxt/desktop/Home-card.png" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Home.webp">
+                  <img src="/Images/projects/funxt/desktop/Home-card.webp" alt="Desktop - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions.png">
-                  <img src="/Images/projects/funxt/desktop/Solutions-card.png" alt="Desktop - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions.webp">
+                  <img src="/Images/projects/funxt/desktop/Solutions-card.webp" alt="Desktop - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Solutions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ DESIGN AND DEVELOPMENT.png">
-                  <img src="/Images/projects/funxt/desktop/Solutions _ DESIGN AND DEVELOPMENT-card.png" alt="Desktop - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ DESIGN AND DEVELOPMENT.webp">
+                  <img src="/Images/projects/funxt/desktop/Solutions _ DESIGN AND DEVELOPMENT-card.webp" alt="Desktop - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Design &amp; Development</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ CLOUD AND OPERATIONS.png">
-                  <img src="/Images/projects/funxt/desktop/Solutions _ CLOUD AND OPERATIONS-card.png" alt="Desktop - Cloud and Operations" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ CLOUD AND OPERATIONS.webp">
+                  <img src="/Images/projects/funxt/desktop/Solutions _ CLOUD AND OPERATIONS-card.webp" alt="Desktop - Cloud and Operations" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Cloud &amp; Operations</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Company.png">
-                  <img src="/Images/projects/funxt/desktop/Company-card.png" alt="Desktop - Company" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Company.webp">
+                  <img src="/Images/projects/funxt/desktop/Company-card.webp" alt="Desktop - Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Company</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ SECURITY AND COMPLIANCE.png">
-                  <img src="/Images/projects/funxt/desktop/Solutions _ SECURITY AND COMPLIANCE-card.png" alt="Desktop - Security and Compliance" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ SECURITY AND COMPLIANCE.webp">
+                  <img src="/Images/projects/funxt/desktop/Solutions _ SECURITY AND COMPLIANCE-card.webp" alt="Desktop - Security and Compliance" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Security &amp; Compliance</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ INNOVATION AND PLANNING.png">
-                  <img src="/Images/projects/funxt/desktop/Solutions _ INNOVATION AND PLANNING-card.png" alt="Desktop - Innovation and Planning" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ INNOVATION AND PLANNING.webp">
+                  <img src="/Images/projects/funxt/desktop/Solutions _ INNOVATION AND PLANNING-card.webp" alt="Desktop - Innovation and Planning" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Innovation &amp; Planning</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Careers.png">
-                  <img src="/Images/projects/funxt/desktop/Careers-card.png" alt="Desktop - Careers" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Careers.webp">
+                  <img src="/Images/projects/funxt/desktop/Careers-card.webp" alt="Desktop - Careers" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Contact Us.png">
-                  <img src="/Images/projects/funxt/desktop/Contact Us-card.png" alt="Desktop - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Contact Us.webp">
+                  <img src="/Images/projects/funxt/desktop/Contact Us-card.webp" alt="Desktop - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ SECURITY AND COMPLIANCE.png">
-                  <img src="/Images/projects/funxt/desktop/Solutions _ SECURITY AND COMPLIANCE-card.png" alt="Desktop - Security and Compliance" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ SECURITY AND COMPLIANCE.webp">
+                  <img src="/Images/projects/funxt/desktop/Solutions _ SECURITY AND COMPLIANCE-card.webp" alt="Desktop - Security and Compliance" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Security &amp; Compliance</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ INNOVATION AND PLANNING.png">
-                  <img src="/Images/projects/funxt/desktop/Solutions _ INNOVATION AND PLANNING-card.png" alt="Desktop - Innovation and Planning" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Solutions _ INNOVATION AND PLANNING.webp">
+                  <img src="/Images/projects/funxt/desktop/Solutions _ INNOVATION AND PLANNING-card.webp" alt="Desktop - Innovation and Planning" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Innovation &amp; Planning</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Careers.png">
-                  <img src="/Images/projects/funxt/desktop/Careers-card.png" alt="Desktop - Careers" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Careers.webp">
+                  <img src="/Images/projects/funxt/desktop/Careers-card.webp" alt="Desktop - Careers" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Careers</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Contact Us.png">
-                  <img src="/Images/projects/funxt/desktop/Contact Us-card.png" alt="Desktop - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/desktop/Contact Us.webp">
+                  <img src="/Images/projects/funxt/desktop/Contact Us-card.webp" alt="Desktop - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
               </div>
@@ -438,105 +438,105 @@ export default function CaseStudyFunxt() {
             <div className="ui-gallery device-gallery is-mobile" data-device="mobile" hidden>
               <div className="ui-marquee-track ui-track-2" id="marquee-3">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Home.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Home-card.png" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Home.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Home-card.webp" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-card.png" alt="Mobile - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-card.webp" alt="Mobile - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Solutions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions-1.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-1-card.png" alt="Mobile - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions-1.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-1-card.webp" alt="Mobile - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Design &amp; Development</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Home.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Home-card.png" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Home.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Home-card.webp" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-card.png" alt="Mobile - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-card.webp" alt="Mobile - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Solutions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions-1.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-1-card.png" alt="Mobile - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions-1.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-1-card.webp" alt="Mobile - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Design &amp; Development</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Home.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Home-card.png" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Home.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Home-card.webp" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-card.png" alt="Mobile - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-card.webp" alt="Mobile - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Solutions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions-1.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-1-card.png" alt="Mobile - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions-1.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-1-card.webp" alt="Mobile - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Design &amp; Development</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Home.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Home-card.png" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Home.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Home-card.webp" alt="Mobile - Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-card.png" alt="Mobile - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-card.webp" alt="Mobile - Solutions Overview" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Solutions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions-1.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-1-card.png" alt="Mobile - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Solutions-1.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Solutions-1-card.webp" alt="Mobile - Design and Development" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Design &amp; Development</div>
                 </div>
               </div>
               <div className="ui-marquee-track ui-track-1" id="marquee-4">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.png" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.webp" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Company</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.png" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.webp" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.png" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.webp" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Company</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.png" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.webp" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.png" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.webp" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Company</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.png" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.webp" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.png" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.webp" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Company</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.png" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.webp" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.png" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.webp" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Company</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.png" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.webp" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.png" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Company.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Company-card.webp" alt="Mobile - Company" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Company</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.png">
-                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.png" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/funxt/mobile/Mobile - Contact us.webp">
+                  <img src="/Images/projects/funxt/mobile/Mobile - Contact us-card.webp" alt="Mobile - Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
               </div>

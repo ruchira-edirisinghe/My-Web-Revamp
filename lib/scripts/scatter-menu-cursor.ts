@@ -3,7 +3,7 @@
    scatter-menu-cursor.ts - Scatter animation, menu open/close & liquid glass cursor
    (faithful port of styles/home/scatter-menu-cursor.js)
    ════════════════════════════════════════ */
-import { makeBag } from './_util';
+import { makeBag, makeDirtyClear } from './_util';
 
 export function initScatterMenuCursor(): () => void {
   const bag = makeBag();
@@ -19,10 +19,12 @@ export function initScatterMenuCursor(): () => void {
   const btnEx      = document.getElementById('btn-explore');
   const cCtx       = cursorCanvas.getContext('2d');
 
+  const dirty = makeDirtyClear(cCtx);
   let W, H;
   function resize() {
     W = sc.width = cursorCanvas.width  = window.innerWidth;
     H = sc.height = cursorCanvas.height = window.innerHeight;
+    dirty.reset();
     if (W <= 900) stopCursor(); else startCursor();
   }
 
@@ -41,17 +43,21 @@ export function initScatterMenuCursor(): () => void {
   }
   function stopCursor() {
     cursorRunning = false;
+    dirty.reset();
     cCtx.clearRect(0, 0, W, H);
   }
 
   function drawCursor() {
     if (!cursorRunning) return;
-    cCtx.clearRect(0, 0, W, H);
 
     rX += (mX - rX) * 0.1;
     rY += (mY - rY) * 0.1;
     currentR += (targetR - currentR) * 0.08;
     const R = currentR, cx = rX, cy = rY;
+    // The ring trails the pointer, and the dot sits ON it, so the box has to
+    // span both - it widens with speed and collapses back the moment the ring
+    // catches up. Still a fraction of the full-canvas clear this replaced.
+    dirty.clear(cx, cy, R * 1.6 + Math.hypot(mX - cx, mY - cy));
     if (mX < -200) { cursorRaf = requestAnimationFrame(drawCursor); return; }
 
     const halo = cCtx.createRadialGradient(cx, cy, R * 0.85, cx, cy, R * 1.5);

@@ -551,8 +551,6 @@ opacity: 0.7;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 20px;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
   overflow: hidden;
   padding: 44px 52px 36px;
   min-height: 360px;
@@ -1658,8 +1656,6 @@ body.menu-open {
 .about-block {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border-radius: 20px;
   padding: 32px 32px 60px;
   position: relative;
@@ -1945,8 +1941,6 @@ footer {
   inset: 0;
   z-index: 9990;
   background: rgba(2, 3, 10, 0.72);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2482,8 +2476,6 @@ footer {
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 60px;
   padding: 12px 14px;
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
     inset 0 -1px 0 rgba(255, 255, 255, 0.04);
@@ -3090,8 +3082,6 @@ footer {
 .stack-panel {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
   border-radius: 28px;
   padding: 30px 28px 36px;
   position: relative;
@@ -3422,8 +3412,6 @@ footer {
   border: 1px solid var(--glass-border);
   border-radius: 20px;
   overflow: hidden;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) var(--sr-delay, 0s),

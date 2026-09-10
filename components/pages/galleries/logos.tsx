@@ -33,7 +33,7 @@ export default function GalleryLogos() {
           <div className="masonry-grid">
             {/* Item 1: Akila Physics */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 1 })}>
-              <img src="/Images/artworks/logos/thumbs/akila.jpg" data-highres="/Images/artworks/logos/akila.png" alt="Akila Physics" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/akila.webp" data-highres="/Images/artworks/logos/akila.webp" alt="Akila Physics" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Identity Design</span>
                 <h2 className="info-title">Akila Physics</h2>
@@ -43,7 +43,7 @@ export default function GalleryLogos() {
 
             {/* Item 2: Bumpie */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 2 })}>
-              <img src="/Images/artworks/logos/thumbs/bumpie.jpg" data-highres="/Images/artworks/logos/bumpie.png" alt="Bumpie" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/bumpie.webp" data-highres="/Images/artworks/logos/bumpie.webp" alt="Bumpie" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Software Brand</span>
                 <h2 className="info-title">Bumpie</h2>
@@ -53,7 +53,7 @@ export default function GalleryLogos() {
 
             {/* Item 3: Celeritas */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 3 })}>
-              <img src="/Images/artworks/logos/thumbs/celeritas.jpg" data-highres="/Images/artworks/logos/celeritas.png" alt="Celeritas" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/celeritas.webp" data-highres="/Images/artworks/logos/celeritas.webp" alt="Celeritas" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Logistics Branding</span>
                 <h2 className="info-title">Celeritas</h2>
@@ -63,7 +63,7 @@ export default function GalleryLogos() {
 
             {/* Item 4: Lanka Dairy Engineers */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 4 })}>
-              <img src="/Images/artworks/logos/thumbs/dairy.jpg" data-highres="/Images/artworks/logos/dairy.png" alt="Lanka Dairy" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/dairy.webp" data-highres="/Images/artworks/logos/dairy.webp" alt="Lanka Dairy" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Corporate Identity</span>
                 <h2 className="info-title">Lanka Dairy</h2>
@@ -73,7 +73,7 @@ export default function GalleryLogos() {
 
             {/* Item 5: D.N.S. */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 5 })}>
-              <img src="/Images/artworks/logos/thumbs/dns.jpg" data-highres="/Images/artworks/logos/dns.png" alt="D.N.S." className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/dns.webp" data-highres="/Images/artworks/logos/dns.webp" alt="D.N.S." className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Community Club</span>
                 <h2 className="info-title">D.N.S.</h2>
@@ -83,7 +83,7 @@ export default function GalleryLogos() {
 
             {/* Item 6: Electra */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 6 })}>
-              <img src="/Images/artworks/logos/thumbs/electra.jpg" data-highres="/Images/artworks/logos/electra.png" alt="Electra" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/electra.webp" data-highres="/Images/artworks/logos/electra.webp" alt="Electra" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Energy Software</span>
                 <h2 className="info-title">Electra</h2>
@@ -93,7 +93,7 @@ export default function GalleryLogos() {
 
             {/* Item 7: FunExtreme */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 7 })}>
-              <img src="/Images/artworks/logos/thumbs/funextreme.jpg" data-highres="/Images/artworks/logos/funextreme.png" alt="FunExtreme" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/funextreme.webp" data-highres="/Images/artworks/logos/funextreme.webp" alt="FunExtreme" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Recreational</span>
                 <h2 className="info-title">FunExtreme</h2>
@@ -103,7 +103,7 @@ export default function GalleryLogos() {
 
             {/* Item 8: Gaming Community */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 8 })}>
-              <img src="/Images/artworks/logos/thumbs/gaming.jpg" data-highres="/Images/artworks/logos/gaming.png" alt="Gaming Community" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/gaming.webp" data-highres="/Images/artworks/logos/gaming.webp" alt="Gaming Community" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">University Life</span>
                 <h2 className="info-title">Gaming Community</h2>
@@ -113,7 +113,7 @@ export default function GalleryLogos() {
 
             {/* Item 9: Gears & Glam */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 9 })}>
-              <img src="/Images/artworks/logos/thumbs/gears.jpg" data-highres="/Images/artworks/logos/gears.png" alt="Gears & Glam" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/gears.webp" data-highres="/Images/artworks/logos/gears.webp" alt="Gears & Glam" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Apparel Brand</span>
                 <h2 className="info-title">Gears & Glam</h2>
@@ -123,7 +123,7 @@ export default function GalleryLogos() {
 
             {/* Item 10: GEvents */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 10 })}>
-              <img src="/Images/artworks/logos/thumbs/gevents.jpg" data-highres="/Images/artworks/logos/gevents.png" alt="GEvents" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/gevents.webp" data-highres="/Images/artworks/logos/gevents.webp" alt="GEvents" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Event Management</span>
                 <h2 className="info-title">GEvents</h2>
@@ -133,7 +133,7 @@ export default function GalleryLogos() {
 
             {/* Item 11: Grubit */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 11 })}>
-              <img src="/Images/artworks/logos/thumbs/grubit.jpg" data-highres="/Images/artworks/logos/grubit.png" alt="Grubit" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/grubit.webp" data-highres="/Images/artworks/logos/grubit.webp" alt="Grubit" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Food Tech</span>
                 <h2 className="info-title">Grubit</h2>
@@ -143,7 +143,7 @@ export default function GalleryLogos() {
 
             {/* Item 12: HassleFree */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 12 })}>
-              <img src="/Images/artworks/logos/thumbs/hassle.jpg" data-highres="/Images/artworks/logos/hassle.png" alt="HassleFree" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/hassle.webp" data-highres="/Images/artworks/logos/hassle.webp" alt="HassleFree" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Courier Service</span>
                 <h2 className="info-title">HassleFree</h2>
@@ -153,7 +153,7 @@ export default function GalleryLogos() {
 
             {/* Item 13: HealHub */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 13 })}>
-              <img src="/Images/artworks/logos/thumbs/heal.jpg" data-highres="/Images/artworks/logos/heal.png" alt="HealHub" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/heal.webp" data-highres="/Images/artworks/logos/heal.webp" alt="HealHub" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Healthcare IT</span>
                 <h2 className="info-title">HealHub</h2>
@@ -163,7 +163,7 @@ export default function GalleryLogos() {
 
             {/* Item 14: HNC */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 14 })}>
-              <img src="/Images/artworks/logos/thumbs/hnc.jpg" data-highres="/Images/artworks/logos/hnc.png" alt="HNC" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/hnc.webp" data-highres="/Images/artworks/logos/hnc.webp" alt="HNC" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Personal Brand</span>
                 <h2 className="info-title">HNC</h2>
@@ -173,7 +173,7 @@ export default function GalleryLogos() {
 
             {/* Item 15: IMLAN */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 15 })}>
-              <img src="/Images/artworks/logos/thumbs/imlan.jpg" data-highres="/Images/artworks/logos/imlan.png" alt="IMLAN" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/imlan.webp" data-highres="/Images/artworks/logos/imlan.webp" alt="IMLAN" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Education</span>
                 <h2 className="info-title">IMLAN</h2>
@@ -183,7 +183,7 @@ export default function GalleryLogos() {
 
             {/* Item 16: KoneKza */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 16 })}>
-              <img src="/Images/artworks/logos/thumbs/konekza.jpg" data-highres="/Images/artworks/logos/konekza.png" alt="KoneKza" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/konekza.webp" data-highres="/Images/artworks/logos/konekza.webp" alt="KoneKza" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Tech & Networking</span>
                 <h2 className="info-title">KoneKza</h2>
@@ -193,7 +193,7 @@ export default function GalleryLogos() {
 
             {/* Item 17: OHL */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 17 })}>
-              <img src="/Images/artworks/logos/thumbs/ohl.jpg" data-highres="/Images/artworks/logos/ohl.png" alt="OHL" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/ohl.webp" data-highres="/Images/artworks/logos/ohl.webp" alt="OHL" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Logo Redesign</span>
                 <h2 className="info-title">OHL</h2>
@@ -203,7 +203,7 @@ export default function GalleryLogos() {
 
             {/* Item 18: PhURL */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 18 })}>
-              <img src="/Images/artworks/logos/thumbs/phurl.jpg" data-highres="/Images/artworks/logos/phurl.png" alt="PhURL" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/phurl.webp" data-highres="/Images/artworks/logos/phurl.webp" alt="PhURL" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Cyber Security</span>
                 <h2 className="info-title">PhURL</h2>
@@ -213,7 +213,7 @@ export default function GalleryLogos() {
 
             {/* Item 19: SureID */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 19 })}>
-              <img src="/Images/artworks/logos/thumbs/sureid.jpg" data-highres="/Images/artworks/logos/sureid.png" alt="SureID" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/sureid.webp" data-highres="/Images/artworks/logos/sureid.webp" alt="SureID" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Verification</span>
                 <h2 className="info-title">SureID</h2>
@@ -223,7 +223,7 @@ export default function GalleryLogos() {
 
             {/* Item 20: TAKG */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 20 })}>
-              <img src="/Images/artworks/logos/thumbs/takg.jpg" data-highres="/Images/artworks/logos/takg.png" alt="TAKG" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/takg.webp" data-highres="/Images/artworks/logos/takg.webp" alt="TAKG" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Startup Branding</span>
                 <h2 className="info-title">TAKG</h2>
@@ -233,7 +233,7 @@ export default function GalleryLogos() {
 
             {/* Item 21: WishKids */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 21 })}>
-              <img src="/Images/artworks/logos/thumbs/wish.jpg" data-highres="/Images/artworks/logos/wish.png" alt="WishKids" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/wish.webp" data-highres="/Images/artworks/logos/wish.webp" alt="WishKids" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Community Service</span>
                 <h2 className="info-title">WishKids</h2>
@@ -243,7 +243,7 @@ export default function GalleryLogos() {
 
             {/* Item 22: XUPING */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 22 })}>
-              <img src="/Images/artworks/logos/thumbs/xuping.jpg" data-highres="/Images/artworks/logos/xuping.png" alt="XUPING" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/xuping.webp" data-highres="/Images/artworks/logos/xuping.webp" alt="XUPING" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Global Enterprise</span>
                 <h2 className="info-title">XUPING</h2>
@@ -253,7 +253,7 @@ export default function GalleryLogos() {
 
             {/* Item 23: Yasupi */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 23 })}>
-              <img src="/Images/artworks/logos/thumbs/yasupi.jpg" data-highres="/Images/artworks/logos/yasupi.png" alt="Yasupi" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/yasupi.webp" data-highres="/Images/artworks/logos/yasupi.webp" alt="Yasupi" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Distribution</span>
                 <h2 className="info-title">Yasupi</h2>
@@ -263,7 +263,7 @@ export default function GalleryLogos() {
 
             {/* Item 24: ZEN */}
             <div className="masonry-item logo-card" style={cssVars({ '--item-index': 24 })}>
-              <img src="/Images/artworks/logos/thumbs/zen.jpg" data-highres="/Images/artworks/logos/zen.png" alt="ZEN" className="artwork-img" loading="lazy" />
+              <img src="/Images/artworks/logos/thumbs/zen.webp" data-highres="/Images/artworks/logos/zen.webp" alt="ZEN" className="artwork-img" loading="lazy" decoding="async" />
               <div className="artwork-info">
                 <span className="info-tag">Artist Branding</span>
                 <h2 className="info-title">ZEN</h2>
@@ -280,7 +280,7 @@ export default function GalleryLogos() {
       <div id="artwork-modal" className="modal-overlay" aria-hidden="true">
         <button id="modal-close" aria-label="Close modal">×</button>
         <div className="modal-content">
-          <img id="modal-img" alt="Full size preview" />
+          <img id="modal-img" alt="Full size preview" decoding="async" />
           <div id="modal-info">
             <span id="modal-tag"></span>
             <h2 id="modal-title"></h2>

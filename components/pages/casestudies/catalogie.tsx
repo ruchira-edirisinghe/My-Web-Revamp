@@ -83,24 +83,24 @@ const RELEASES = [
 ];
 
 const APP_SHOTS = [
-  { src: '/Images/projects/catalogie/app-dashboard.png', alt: 'Catalogie - profile and analytics dashboard', label: 'Dashboard & Profile' },
-  { src: '/Images/projects/catalogie/app-discover.png', alt: 'Catalogie - Discover, searching across every medium', label: 'Discover' },
-  { src: '/Images/projects/catalogie/app-movies.png', alt: 'Catalogie - movie watchlist and watched grid', label: 'Movie Watchlist' },
-  { src: '/Images/projects/catalogie/app-games.png', alt: 'Catalogie - games playlist with hours played', label: 'Games Playlist' },
-  { src: '/Images/projects/catalogie/app-books.png', alt: 'Catalogie - reading list with page progress', label: 'Reading List' },
-  { src: '/Images/projects/catalogie/app-login.png', alt: 'Catalogie - sign in and create account', label: 'Sign In' },
+  { src: '/Images/projects/catalogie/app-dashboard.webp', alt: 'Catalogie - profile and analytics dashboard', label: 'Dashboard & Profile' },
+  { src: '/Images/projects/catalogie/app-discover.webp', alt: 'Catalogie - Discover, searching across every medium', label: 'Discover' },
+  { src: '/Images/projects/catalogie/app-movies.webp', alt: 'Catalogie - movie watchlist and watched grid', label: 'Movie Watchlist' },
+  { src: '/Images/projects/catalogie/app-games.webp', alt: 'Catalogie - games playlist with hours played', label: 'Games Playlist' },
+  { src: '/Images/projects/catalogie/app-books.webp', alt: 'Catalogie - reading list with page progress', label: 'Reading List' },
+  { src: '/Images/projects/catalogie/app-login.webp', alt: 'Catalogie - sign in and create account', label: 'Sign In' },
 ];
 
 const SITE_SHOTS = [
-  { src: '/Images/projects/catalogie/home-hero.png', alt: 'catalogie.com - hero', label: 'Marketing Hero' },
-  { src: '/Images/projects/catalogie/home-founding.png', alt: 'catalogie.com - Founding Members', label: 'Founding Members' },
-  { src: '/Images/projects/catalogie/home-features.png', alt: 'catalogie.com - feature bento grid', label: 'Feature Grid' },
-  { src: '/Images/projects/catalogie/home-dashboard.png', alt: 'catalogie.com - dashboard showcase', label: 'Dashboard Story' },
-  { src: '/Images/projects/catalogie/home-pricing.png', alt: 'catalogie.com - free forever', label: 'Free Forever' },
-  { src: '/Images/projects/catalogie/home-roadmap.png', alt: 'catalogie.com - roadmap', label: 'Roadmap' },
-  { src: '/Images/projects/catalogie/home-faq.png', alt: 'catalogie.com - FAQ accordion', label: 'FAQ' },
-  { src: '/Images/projects/catalogie/home-diaries.png', alt: 'catalogie.com - dev diaries', label: 'Dev Diaries' },
-  { src: '/Images/projects/catalogie/homepage.png', alt: 'catalogie.com - the full homepage', label: 'Homepage' },
+  { src: '/Images/projects/catalogie/home-hero.webp', alt: 'catalogie.com - hero', label: 'Marketing Hero' },
+  { src: '/Images/projects/catalogie/home-founding.webp', alt: 'catalogie.com - Founding Members', label: 'Founding Members' },
+  { src: '/Images/projects/catalogie/home-features.webp', alt: 'catalogie.com - feature bento grid', label: 'Feature Grid' },
+  { src: '/Images/projects/catalogie/home-dashboard.webp', alt: 'catalogie.com - dashboard showcase', label: 'Dashboard Story' },
+  { src: '/Images/projects/catalogie/home-pricing.webp', alt: 'catalogie.com - free forever', label: 'Free Forever' },
+  { src: '/Images/projects/catalogie/home-roadmap.webp', alt: 'catalogie.com - roadmap', label: 'Roadmap' },
+  { src: '/Images/projects/catalogie/home-faq.webp', alt: 'catalogie.com - FAQ accordion', label: 'FAQ' },
+  { src: '/Images/projects/catalogie/home-diaries.webp', alt: 'catalogie.com - dev diaries', label: 'Dev Diaries' },
+  { src: '/Images/projects/catalogie/homepage.webp', alt: 'catalogie.com - the full homepage', label: 'Homepage' },
 ];
 
 
@@ -343,8 +343,8 @@ export default function CaseStudyCatalogie() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/catalogie/cover.png" alt="Catalogie - one catalog for movies, TV, games and books"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/catalogie/cover.webp" alt="Catalogie - one catalog for movies, TV, games and books"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -458,7 +458,7 @@ export default function CaseStudyCatalogie() {
             <div className="cat-team-grid">
               {/* Not a link - you are already on my site. */}
               <div className="cat-member is-me is-static">
-                <img className="cat-avatar" src="/Images/projects/catalogie/team-ruchira.png" alt="" width="76" height="76" loading="lazy" />
+                <img className="cat-avatar" src="/Images/projects/catalogie/team-ruchira.webp" alt="" width="76" height="76" loading="lazy" decoding="async" />
                 <div className="cat-member-name">Ruchira Edirisinghe</div>
                 <div className="cat-member-role">Concept · Design · Engineering</div>
                 <p className="cat-member-note">That&apos;s me - Catalogie started as my idea. Product and UI design, the React client, the backend API and deployment.</p>
@@ -466,7 +466,7 @@ export default function CaseStudyCatalogie() {
               </div>
               <a className="cat-member" href="https://nimna-niwarthana.com" target="_blank" rel="noopener"
                 onClick={(e) => confirmLeave(e, "Nimna Niwarthana's portfolio")}>
-                <img className="cat-avatar" src="/Images/projects/catalogie/team-nimna.png" alt="" width="76" height="76" loading="lazy" />
+                <img className="cat-avatar" src="/Images/projects/catalogie/team-nimna.webp" alt="" width="76" height="76" loading="lazy" decoding="async" />
                 <div className="cat-member-name">Nimna Niwarthana</div>
                 <div className="cat-member-role">Design &amp; Engineering</div>
                 <p className="cat-member-note">Client, API and infrastructure, plus the admin panel.</p>
@@ -474,7 +474,7 @@ export default function CaseStudyCatalogie() {
               </a>
               <a className="cat-member" href="https://www.linkedin.com/in/thaanu-perera-0a84b9194/" target="_blank" rel="noopener"
                 onClick={(e) => confirmLeave(e, "Thaanu Perera's LinkedIn")}>
-                <img className="cat-avatar" src="/Images/projects/catalogie/team-thaanu.png" alt="" width="76" height="76" loading="lazy" />
+                <img className="cat-avatar" src="/Images/projects/catalogie/team-thaanu.webp" alt="" width="76" height="76" loading="lazy" decoding="async" />
                 <div className="cat-member-name">Thaanu Perera</div>
                 <div className="cat-member-role">Mobile Development</div>
                 <p className="cat-member-note">The native iOS and Android apps, on the same API.</p>

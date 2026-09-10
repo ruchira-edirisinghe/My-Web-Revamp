@@ -70,7 +70,7 @@ export default function AboutClient() {
               <div className="hero-intro-photo-wrap">
                 <div className="hero-intro-arch"></div>
                 <div className="hero-intro-photo">
-                  <img src="/Images/mefront.png" alt="Ruchira Edirisinghe" />
+                  <img src="/Images/mefront.webp" alt="Ruchira Edirisinghe" decoding="async" />
                 </div>
       
                 
@@ -459,23 +459,23 @@ export default function AboutClient() {
             <div className="logo-ticker-inner" id="logo-ticker-inner">
               
               <div className="ticker-set" id="ticker-set-a">
-                <img className="ticker-logo" src="/Images/logobar/zen-creatives.png" alt="Zen Creatives" />
-                <img className="ticker-logo" src="/Images/logobar/eleetra.png" alt="Eleetra" />
-                <img className="ticker-logo" src="/Images/logobar/livecode.png" alt="LiveCode" />
-                <img className="ticker-logo" src="/Images/logobar/runtime-terror.png" alt="Runtime Terror" />
-                <img className="ticker-logo" src="/Images/logobar/sl-cyber-designs.png" alt="SL Cyber Designs" />
-                <img className="ticker-logo" src="/Images/logobar/takg-solutions.png" alt="TAKG Solutions" />
-                <img className="ticker-logo" src="/Images/logobar/wrc.png" alt="WRC" />
+                <img className="ticker-logo" src="/Images/logobar/zen-creatives.webp" alt="Zen Creatives" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/eleetra.webp" alt="Eleetra" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/livecode.webp" alt="LiveCode" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/runtime-terror.webp" alt="Runtime Terror" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/sl-cyber-designs.webp" alt="SL Cyber Designs" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/takg-solutions.webp" alt="TAKG Solutions" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/wrc.webp" alt="WRC" decoding="async" />
               </div>
 
               <div className="ticker-set" aria-hidden="true">
-                <img className="ticker-logo" src="/Images/logobar/zen-creatives.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/eleetra.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/livecode.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/runtime-terror.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/sl-cyber-designs.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/takg-solutions.png" alt="" />
-                <img className="ticker-logo" src="/Images/logobar/wrc.png" alt="" />
+                <img className="ticker-logo" src="/Images/logobar/zen-creatives.webp" alt="" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/eleetra.webp" alt="" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/livecode.webp" alt="" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/runtime-terror.webp" alt="" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/sl-cyber-designs.webp" alt="" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/takg-solutions.webp" alt="" decoding="async" />
+                <img className="ticker-logo" src="/Images/logobar/wrc.webp" alt="" decoding="async" />
               </div>
             </div>
           </div>
@@ -661,7 +661,7 @@ export default function AboutClient() {
       
               
               <div className="ufo-beam-area">
-                <img src="/Images/graphic assets/ufoo.png" className="ufo-png" alt="UFO Stats Interface" />
+                <img src="/Images/graphic assets/ufoo.webp" className="ufo-png" alt="UFO Stats Interface" decoding="async" />
               </div>
       
               
@@ -1556,7 +1556,7 @@ export default function AboutClient() {
       
             <div className="gaming-heading" id="gaming-heading">
               <span className="gaming-label">Content Creator &amp; Gamer</span>
-              <img className="gaming-title-img" src="/Images/zenitrongaming.png" alt="Zenitron Gaming" />
+              <img className="gaming-title-img" src="/Images/zenitrongaming.webp" alt="Zenitron Gaming" decoding="async" />
             </div>
       
             <div className="para-container">
@@ -1720,17 +1720,17 @@ export default function AboutClient() {
               
               <div className="testi-meta-row">
                 <div className="testi-avatars-stack" id="testi-av-stack">
-                  <img src="/Images/testimonials/thaanu.jpg" alt="Thaanu Perera" className="testi-avatar-thumb current-av"
-                    data-av="0" />
-                  <img src="/Images/testimonials/suraji.png" alt="Suraji Ekanayake" className="testi-avatar-thumb" data-av="1" />
-                  <img src="/Images/testimonials/sandakelum.jpg" alt="Sandakelum" className="testi-avatar-thumb" data-av="2" />
-                  <img src="/Images/testimonials/janith.jpg" alt="Janith" className="testi-avatar-thumb" data-av="3" />
-                  <img src="/Images/testimonials/wenupa.png" alt="Wenupa" className="testi-avatar-thumb" data-av="4" />
-                  <img src="/Images/testimonials/avishka.jpg" alt="Avishka" className="testi-avatar-thumb" data-av="5" />
-                  <img src="/Images/testimonials/sandev-dullewa.png" alt="Sandev Dulleva" className="testi-avatar-thumb"
-                    data-av="6" />
-                  <img src="/Images/testimonials/atheeque.png" alt="Atheeque" className="testi-avatar-thumb" data-av="7" />
-                  <img src="/Images/testimonials/ramuthu.jpg" alt="Ramuthu Senanayake" className="testi-avatar-thumb" data-av="8" />
+                  <img src="/Images/testimonials/thaanu.webp" alt="Thaanu Perera" className="testi-avatar-thumb current-av"
+                    data-av="0" decoding="async" />
+                  <img src="/Images/testimonials/suraji.webp" alt="Suraji Ekanayake" className="testi-avatar-thumb" data-av="1" decoding="async" />
+                  <img src="/Images/testimonials/sandakelum.webp" alt="Sandakelum" className="testi-avatar-thumb" data-av="2" decoding="async" />
+                  <img src="/Images/testimonials/janith.webp" alt="Janith" className="testi-avatar-thumb" data-av="3" decoding="async" />
+                  <img src="/Images/testimonials/wenupa.webp" alt="Wenupa" className="testi-avatar-thumb" data-av="4" decoding="async" />
+                  <img src="/Images/testimonials/avishka.webp" alt="Avishka" className="testi-avatar-thumb" data-av="5" decoding="async" />
+                  <img src="/Images/testimonials/sandev-dullewa.webp" alt="Sandev Dulleva" className="testi-avatar-thumb"
+                    data-av="6" decoding="async" />
+                  <img src="/Images/testimonials/atheeque.webp" alt="Atheeque" className="testi-avatar-thumb" data-av="7" decoding="async" />
+                  <img src="/Images/testimonials/ramuthu.webp" alt="Ramuthu Senanayake" className="testi-avatar-thumb" data-av="8" decoding="async" />
       
                 </div>
                 <div className="testi-counter">
@@ -1749,7 +1749,7 @@ export default function AboutClient() {
                     UI/UX design and engineering is truly remarkable, allowing him to craft visually compelling interfaces
                     that are not only user-friendly but also highly functional.</p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/thaanu.jpg" alt="Thaanu Perera" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/thaanu.webp" alt="Thaanu Perera" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Thaanu Perera</span>
@@ -1780,7 +1780,7 @@ export default function AboutClient() {
                     skills results in experiences that truly connect with users. I highly recommend Ruchira for any UI/UX work
                     and his dedication and passion make him a fantastic addition to any team.</p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/suraji.png" alt="Suraji Ekanayake" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/suraji.webp" alt="Suraji Ekanayake" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Suraji Ekanayake</span>
@@ -1812,7 +1812,7 @@ export default function AboutClient() {
                     by the client. This has made him the most vital figure in the design team by balancing creativity with
                     technical competence coupled with his understanding of user’s behavior.</p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/sandakelum.jpg" alt="Sandakelum" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/sandakelum.webp" alt="Sandakelum" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Sandakelum Senevirathna</span>
@@ -1844,7 +1844,7 @@ export default function AboutClient() {
                     attention to detail. On top of that, he’s incredibly easy to collaborate with, making the whole
                     development process smooth and efficient.</p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/janith.jpg" alt="Janith" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/janith.webp" alt="Janith" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Janith Perera</span>
@@ -1876,7 +1876,7 @@ export default function AboutClient() {
                     innovative vision with my UI designing talents, crafting experiences that resonate with audiences on a
                     profound level.</p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/wenupa.png" alt="Wenupa" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/wenupa.webp" alt="Wenupa" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Wenupa Mandinu</span>
@@ -1907,7 +1907,7 @@ export default function AboutClient() {
                     deep understanding of user behavior and meticulous attention to detail make him a rare talent in UI/UX
                     engineering and an invaluable asset to any team.</p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/avishka.jpg" alt="Avishka Sooriyapperuma" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/avishka.webp" alt="Avishka Sooriyapperuma" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Avishka Sooriyapperuma</span>
@@ -1938,7 +1938,7 @@ export default function AboutClient() {
                     behavior, and a knack for turning complex concepts into intuitive designs. Ruchira's collaborative nature
                     and dedication to delivering top-notch designs make him an invaluable asset to any team.</p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/sandev-dullewa.png" alt="Sandev Dulleva" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/sandev-dullewa.webp" alt="Sandev Dulleva" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Sandev Dulleva</span>
@@ -1970,7 +1970,7 @@ export default function AboutClient() {
                     played a pivotal role in UI/UX Development, where their contributions were instrumental in achieving our
                     goals.</p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/atheeque.png" alt="Atheeque Hasan" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/atheeque.webp" alt="Atheeque Hasan" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Atheeque Hasan</span>
@@ -2002,7 +2002,7 @@ export default function AboutClient() {
                     meticulous attention to detail ensures that every aspect of the user experience is carefully considered.
                   </p>
                   <div className="testi-author-row">
-                    <img src="/Images/testimonials/ramuthu.jpg" alt="Ramuthu Senanayake" className="testi-author-avatar" />
+                    <img src="/Images/testimonials/ramuthu.webp" alt="Ramuthu Senanayake" className="testi-author-avatar" decoding="async" />
                     <div className="testi-author-sep"></div>
                     <div className="testi-author-info">
                       <span className="testi-name">Ramuthu Senanayake</span>

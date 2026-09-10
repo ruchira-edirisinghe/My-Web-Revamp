@@ -53,8 +53,8 @@ export default function CaseStudyNcgws() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/ncgws/cover.png" alt="NCG Warehouse Solutions - corporate website cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/ncgws/cover.webp" alt="NCG Warehouse Solutions - corporate website cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -374,45 +374,45 @@ export default function CaseStudyNcgws() {
               {/* Row 1: Moving Right */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/ncgws/HOME Screen.png">
-                  <img src="/Images/projects/ncgws/HOME Screen-card.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/HOME Screen.webp">
+                  <img src="/Images/projects/ncgws/HOME Screen-card.webp" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ About Us.png">
-                  <img src="/Images/projects/ncgws/About -_ About Us-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ About Us.webp">
+                  <img src="/Images/projects/ncgws/About -_ About Us-card.webp" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ Our Team.png">
-                  <img src="/Images/projects/ncgws/About -_ Our Team-card.png" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ Our Team.webp">
+                  <img src="/Images/projects/ncgws/About -_ Our Team-card.webp" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Team</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Our Operations.png">
-                  <img src="/Images/projects/ncgws/Our Operations-card.png" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Our Operations.webp">
+                  <img src="/Images/projects/ncgws/Our Operations-card.webp" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Operations</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Tenders.png">
-                  <img src="/Images/projects/ncgws/Tenders-card.png" alt="Tenders" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Tenders.webp">
+                  <img src="/Images/projects/ncgws/Tenders-card.webp" alt="Tenders" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Tenders</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/ncgws/HOME Screen.png">
-                  <img src="/Images/projects/ncgws/HOME Screen-card.png" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/HOME Screen.webp">
+                  <img src="/Images/projects/ncgws/HOME Screen-card.webp" alt="Home" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ About Us.png">
-                  <img src="/Images/projects/ncgws/About -_ About Us-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ About Us.webp">
+                  <img src="/Images/projects/ncgws/About -_ About Us-card.webp" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">About Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ Our Team.png">
-                  <img src="/Images/projects/ncgws/About -_ Our Team-card.png" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/About -_ Our Team.webp">
+                  <img src="/Images/projects/ncgws/About -_ Our Team-card.webp" alt="Our Team" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Team</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Our Operations.png">
-                  <img src="/Images/projects/ncgws/Our Operations-card.png" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Our Operations.webp">
+                  <img src="/Images/projects/ncgws/Our Operations-card.webp" alt="Our Operations" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Operations</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Tenders.png">
-                  <img src="/Images/projects/ncgws/Tenders-card.png" alt="Tenders" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Tenders.webp">
+                  <img src="/Images/projects/ncgws/Tenders-card.webp" alt="Tenders" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Tenders</div>
                 </div>
               </div>
@@ -420,45 +420,45 @@ export default function CaseStudyNcgws() {
               {/* Row 2: Moving Left */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us.png">
-                  <img src="/Images/projects/ncgws/Join Us-card.png" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us.webp">
+                  <img src="/Images/projects/ncgws/Join Us-card.webp" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Join Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us - Job Description.png">
-                  <img src="/Images/projects/ncgws/Join Us - Job Description-card.png" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us - Job Description.webp">
+                  <img src="/Images/projects/ncgws/Join Us - Job Description-card.webp" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Job Description</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Login.png">
-                  <img src="/Images/projects/ncgws/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Login.webp">
+                  <img src="/Images/projects/ncgws/Login-card.webp" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Sign in.png">
-                  <img src="/Images/projects/ncgws/Sign in-card.png" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Sign in.webp">
+                  <img src="/Images/projects/ncgws/Sign in-card.webp" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Sign In</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Contact Us.png">
-                  <img src="/Images/projects/ncgws/Contact Us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Contact Us.webp">
+                  <img src="/Images/projects/ncgws/Contact Us-card.webp" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us.png">
-                  <img src="/Images/projects/ncgws/Join Us-card.png" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us.webp">
+                  <img src="/Images/projects/ncgws/Join Us-card.webp" alt="Join Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Join Us</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us - Job Description.png">
-                  <img src="/Images/projects/ncgws/Join Us - Job Description-card.png" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Join Us - Job Description.webp">
+                  <img src="/Images/projects/ncgws/Join Us - Job Description-card.webp" alt="Job Description" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Job Description</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Login.png">
-                  <img src="/Images/projects/ncgws/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Login.webp">
+                  <img src="/Images/projects/ncgws/Login-card.webp" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Sign in.png">
-                  <img src="/Images/projects/ncgws/Sign in-card.png" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Sign in.webp">
+                  <img src="/Images/projects/ncgws/Sign in-card.webp" alt="Sign In" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Sign In</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/ncgws/Contact Us.png">
-                  <img src="/Images/projects/ncgws/Contact Us-card.png" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/ncgws/Contact Us.webp">
+                  <img src="/Images/projects/ncgws/Contact Us-card.webp" alt="Contact Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Contact Us</div>
                 </div>
               </div>

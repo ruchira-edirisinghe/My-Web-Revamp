@@ -175,8 +175,6 @@ main:has(.cs-wrap) {
   border: 1px solid rgba(160,80,255,0.1);
   border-radius: 14px;
   padding: 24px 22px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease, border-color 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -466,8 +464,6 @@ body:has(.cs-wrap) footer {
   border: 1px solid var(--card-border);
   border-radius: 14px;
   padding: 28px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: transform 0.45s cubic-bezier(0.22,1,0.36,1), border-color 0.45s ease, box-shadow 0.45s ease;
   position: relative;
   overflow: hidden;
@@ -568,8 +564,6 @@ body:has(.cs-wrap) footer {
   overflow: hidden;
   background: rgba(14, 0, 30, 0.55);
   border: 1px solid rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease, border-color 0.4s ease;
   position: relative;
 }
@@ -696,8 +690,6 @@ body:has(.cs-wrap) footer {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: transform 0.4s ease, border-color 0.4s ease;
 }
 .persona-card:hover {
@@ -745,7 +737,6 @@ body:has(.cs-wrap) footer {
     border: 1px solid rgba(160,80,255,0.1);
     border-radius: 20px;
     padding: 24px;
-    backdrop-filter: blur(12px);
   }
   .cs-comp-col.labels { display: none; }
 }
@@ -787,7 +778,6 @@ body:has(.cs-wrap) footer {
   line-height: 1.6;
   min-height: 100px;
   transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
 }
 
 @media (max-width: 900px) {
@@ -1569,8 +1559,6 @@ body.modal-open #navbar-wrap {
   width: 100vw;
   height: 100vh;
   background: rgba(4, 5, 12, 0.96);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -1786,8 +1774,6 @@ body.modal-open #navbar-wrap {
   inset: 0;
   z-index: 20002;
   background: rgba(4, 5, 12, 0.7);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1951,8 +1937,6 @@ body.modal-open #navbar-wrap {
   text-transform: uppercase;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 .ui-row-label .dot {
   width: 9px;

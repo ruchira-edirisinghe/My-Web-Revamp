@@ -53,8 +53,8 @@ export default function CaseStudyPhurl() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/Phurl/cover.png" alt="Project PhURL - AI phishing-URL detection platform cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/Phurl/cover.webp" alt="Project PhURL - AI phishing-URL detection platform cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -389,53 +389,53 @@ export default function CaseStudyPhurl() {
               {/* Row 1: Moving Right */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/Phurl/Home Screen UI.png">
-                  <img src="/Images/projects/Phurl/Home Screen UI-card.png" alt="Home Screen" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Home Screen UI.webp">
+                  <img src="/Images/projects/Phurl/Home Screen UI-card.webp" alt="Home Screen" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Screen</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Classic URL Detection UI.png">
-                  <img src="/Images/projects/Phurl/Classic URL Detection UI-card.png" alt="Classic URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Classic URL Detection UI.webp">
+                  <img src="/Images/projects/Phurl/Classic URL Detection UI-card.webp" alt="Classic URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Classic Detection</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Advanced URL Detection UI.png">
-                  <img src="/Images/projects/Phurl/Advanced URL Detection UI-card.png" alt="Advanced URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Advanced URL Detection UI.webp">
+                  <img src="/Images/projects/Phurl/Advanced URL Detection UI-card.webp" alt="Advanced URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Advanced Detection</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/What is Phishing UI.png">
-                  <img src="/Images/projects/Phurl/What is Phishing UI-card.png" alt="What is Phishing" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/What is Phishing UI.webp">
+                  <img src="/Images/projects/Phurl/What is Phishing UI-card.webp" alt="What is Phishing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">What is Phishing</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Login UI.png">
-                  <img src="/Images/projects/Phurl/Login UI-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Login UI.webp">
+                  <img src="/Images/projects/Phurl/Login UI-card.webp" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Create Account UI.png">
-                  <img src="/Images/projects/Phurl/Create Account UI-card.png" alt="Create Account" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Create Account UI.webp">
+                  <img src="/Images/projects/Phurl/Create Account UI-card.webp" alt="Create Account" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Create Account</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/Phurl/Home Screen UI.png">
-                  <img src="/Images/projects/Phurl/Home Screen UI-card.png" alt="Home Screen" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Home Screen UI.webp">
+                  <img src="/Images/projects/Phurl/Home Screen UI-card.webp" alt="Home Screen" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Screen</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Classic URL Detection UI.png">
-                  <img src="/Images/projects/Phurl/Classic URL Detection UI-card.png" alt="Classic URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Classic URL Detection UI.webp">
+                  <img src="/Images/projects/Phurl/Classic URL Detection UI-card.webp" alt="Classic URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Classic Detection</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Advanced URL Detection UI.png">
-                  <img src="/Images/projects/Phurl/Advanced URL Detection UI-card.png" alt="Advanced URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Advanced URL Detection UI.webp">
+                  <img src="/Images/projects/Phurl/Advanced URL Detection UI-card.webp" alt="Advanced URL Detection" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Advanced Detection</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/What is Phishing UI.png">
-                  <img src="/Images/projects/Phurl/What is Phishing UI-card.png" alt="What is Phishing" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/What is Phishing UI.webp">
+                  <img src="/Images/projects/Phurl/What is Phishing UI-card.webp" alt="What is Phishing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">What is Phishing</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Login UI.png">
-                  <img src="/Images/projects/Phurl/Login UI-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Login UI.webp">
+                  <img src="/Images/projects/Phurl/Login UI-card.webp" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Create Account UI.png">
-                  <img src="/Images/projects/Phurl/Create Account UI-card.png" alt="Create Account" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Create Account UI.webp">
+                  <img src="/Images/projects/Phurl/Create Account UI-card.webp" alt="Create Account" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Create Account</div>
                 </div>
               </div>
@@ -443,53 +443,53 @@ export default function CaseStudyPhurl() {
               {/* Row 2: Moving Left */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/Phurl/Account Successful UI.png">
-                  <img src="/Images/projects/Phurl/Account Successful UI-card.png" alt="Account Created" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Account Successful UI.webp">
+                  <img src="/Images/projects/Phurl/Account Successful UI-card.webp" alt="Account Created" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Account Created</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/View Profile UI.png">
-                  <img src="/Images/projects/Phurl/View Profile UI-card.png" alt="View Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/View Profile UI.webp">
+                  <img src="/Images/projects/Phurl/View Profile UI-card.webp" alt="View Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">View Profile</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Update Profile Success UI.png">
-                  <img src="/Images/projects/Phurl/Update Profile Success UI-card.png" alt="Profile Updated" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Update Profile Success UI.webp">
+                  <img src="/Images/projects/Phurl/Update Profile Success UI-card.webp" alt="Profile Updated" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile Updated</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Comtinue History Delete UI.png">
-                  <img src="/Images/projects/Phurl/Comtinue History Delete UI-card.png" alt="Delete History" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Comtinue History Delete UI.webp">
+                  <img src="/Images/projects/Phurl/Comtinue History Delete UI-card.webp" alt="Delete History" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Delete History</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/History Delete Success UI.png">
-                  <img src="/Images/projects/Phurl/History Delete Success UI-card.png" alt="History Deleted" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/History Delete Success UI.webp">
+                  <img src="/Images/projects/Phurl/History Delete Success UI-card.webp" alt="History Deleted" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">History Deleted</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/T&C UI.png">
-                  <img src="/Images/projects/Phurl/T&C UI-card.png" alt="Terms and Conditions" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/T&C UI.webp">
+                  <img src="/Images/projects/Phurl/T&C UI-card.webp" alt="Terms and Conditions" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Terms &amp; Conditions</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/Phurl/Account Successful UI.png">
-                  <img src="/Images/projects/Phurl/Account Successful UI-card.png" alt="Account Created" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Account Successful UI.webp">
+                  <img src="/Images/projects/Phurl/Account Successful UI-card.webp" alt="Account Created" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Account Created</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/View Profile UI.png">
-                  <img src="/Images/projects/Phurl/View Profile UI-card.png" alt="View Profile" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/View Profile UI.webp">
+                  <img src="/Images/projects/Phurl/View Profile UI-card.webp" alt="View Profile" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">View Profile</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Update Profile Success UI.png">
-                  <img src="/Images/projects/Phurl/Update Profile Success UI-card.png" alt="Profile Updated" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Update Profile Success UI.webp">
+                  <img src="/Images/projects/Phurl/Update Profile Success UI-card.webp" alt="Profile Updated" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Profile Updated</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/Comtinue History Delete UI.png">
-                  <img src="/Images/projects/Phurl/Comtinue History Delete UI-card.png" alt="Delete History" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/Comtinue History Delete UI.webp">
+                  <img src="/Images/projects/Phurl/Comtinue History Delete UI-card.webp" alt="Delete History" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Delete History</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/History Delete Success UI.png">
-                  <img src="/Images/projects/Phurl/History Delete Success UI-card.png" alt="History Deleted" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/History Delete Success UI.webp">
+                  <img src="/Images/projects/Phurl/History Delete Success UI-card.webp" alt="History Deleted" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">History Deleted</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/Phurl/T&C UI.png">
-                  <img src="/Images/projects/Phurl/T&C UI-card.png" alt="Terms and Conditions" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/Phurl/T&C UI.webp">
+                  <img src="/Images/projects/Phurl/T&C UI-card.webp" alt="Terms and Conditions" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Terms &amp; Conditions</div>
                 </div>
               </div>

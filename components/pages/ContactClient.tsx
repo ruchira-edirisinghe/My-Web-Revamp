@@ -263,29 +263,29 @@ export default function ContactClient() {
                 style={cssVars({ top: '85%', left: '60%', width: '3px', height: '3px', '--star-dur': '4s', '--star-delay': '2.5s', '--star-op': '0.7' })}></div>
 
               {/* PNG Clouds (Denser multi-layer atmosphere) */}
-              <img src="/Images/graphic assets/cloud1.png" className="space-cloud-png"
-                style={cssVars({ top: '-12%', left: '-5%', '--cloud-dur': '14s', '--cloud-op': '0.2' })} alt="" />
-              <img src="/Images/graphic assets/cloud2.png" className="space-cloud-png"
-                style={cssVars({ top: '5%', right: '-10%', '--cloud-dur': '16s', '--cloud-op': '0.15' })} alt="" />
-              <img src="/Images/graphic assets/cloud1.png" className="space-cloud-png"
-                style={cssVars({ top: '25%', left: '-15%', width: '280px', '--cloud-dur': '22s', '--cloud-op': '0.12', filter: 'blur(15px)' })} alt="" />
-              <img src="/Images/graphic assets/cloud2.png" className="space-cloud-png"
-                style={cssVars({ top: '45%', right: '-20%', width: '320px', '--cloud-dur': '18s', '--cloud-op': '0.1', filter: 'blur(12px)' })} alt="" />
-              <img src="/Images/graphic assets/cloud1.png" className="space-cloud-png"
+              <img src="/Images/graphic assets/cloud1.webp" className="space-cloud-png"
+                style={cssVars({ top: '-12%', left: '-5%', '--cloud-dur': '14s', '--cloud-op': '0.2' })} alt="" decoding="async" />
+              <img src="/Images/graphic assets/cloud2.webp" className="space-cloud-png"
+                style={cssVars({ top: '5%', right: '-10%', '--cloud-dur': '16s', '--cloud-op': '0.15' })} alt="" decoding="async" />
+              <img src="/Images/graphic assets/cloud1.webp" className="space-cloud-png"
+                style={cssVars({ top: '25%', left: '-15%', width: '280px', '--cloud-dur': '22s', '--cloud-op': '0.12', filter: 'blur(15px)' })} alt="" decoding="async" />
+              <img src="/Images/graphic assets/cloud2.webp" className="space-cloud-png"
+                style={cssVars({ top: '45%', right: '-20%', width: '320px', '--cloud-dur': '18s', '--cloud-op': '0.1', filter: 'blur(12px)' })} alt="" decoding="async" />
+              <img src="/Images/graphic assets/cloud1.webp" className="space-cloud-png"
                 style={cssVars({ top: '55%', left: '10%', width: '200px', '--cloud-dur': '14s', '--cloud-op': '0.08', filter: 'blur(20px)', zIndex: 3 })}
-                alt="" />
-              <img src="/Images/graphic assets/cloud1.png" className="space-cloud-png"
-                style={cssVars({ bottom: '8%', left: '-10%', '--cloud-dur': '19s', '--cloud-op': '0.22' })} alt="" />
-              <img src="/Images/graphic assets/cloud2.png" className="space-cloud-png"
-                style={cssVars({ bottom: '15%', right: '-5%', '--cloud-dur': '17s', '--cloud-op': '0.18' })} alt="" />
-              <img src="/Images/graphic assets/cloud1.png" className="space-cloud-png"
-                style={cssVars({ bottom: '-8%', left: '15%', width: '350px', '--cloud-dur': '24s', '--cloud-op': '0.15', filter: 'blur(18px)' })} alt="" />
-              <img src="/Images/graphic assets/cloud2.png" className="space-cloud-png"
-                style={cssVars({ bottom: '35%', left: '-25%', width: '300px', '--cloud-dur': '13s', '--cloud-op': '0.09', filter: 'blur(25px)' })} alt="" />
+                alt="" decoding="async" />
+              <img src="/Images/graphic assets/cloud1.webp" className="space-cloud-png"
+                style={cssVars({ bottom: '8%', left: '-10%', '--cloud-dur': '19s', '--cloud-op': '0.22' })} alt="" decoding="async" />
+              <img src="/Images/graphic assets/cloud2.webp" className="space-cloud-png"
+                style={cssVars({ bottom: '15%', right: '-5%', '--cloud-dur': '17s', '--cloud-op': '0.18' })} alt="" decoding="async" />
+              <img src="/Images/graphic assets/cloud1.webp" className="space-cloud-png"
+                style={cssVars({ bottom: '-8%', left: '15%', width: '350px', '--cloud-dur': '24s', '--cloud-op': '0.15', filter: 'blur(18px)' })} alt="" decoding="async" />
+              <img src="/Images/graphic assets/cloud2.webp" className="space-cloud-png"
+                style={cssVars({ bottom: '35%', left: '-25%', width: '300px', '--cloud-dur': '13s', '--cloud-op': '0.09', filter: 'blur(25px)' })} alt="" decoding="async" />
             </div>
 
             {/* Flying Astronaut Image */}
-            <img src="/Images/graphic assets/space.png" alt="Astronaut" className="astronaut-visual" />
+            <img src="/Images/graphic assets/space.webp" alt="Astronaut" className="astronaut-visual" decoding="async" />
           </div>
 
           <div className="orbit-text">

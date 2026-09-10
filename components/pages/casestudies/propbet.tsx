@@ -48,8 +48,8 @@ export default function CaseStudyPropBet() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/propbet/cover.png" alt="PropBet - real-time crash betting game cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/propbet/cover.webp" alt="PropBet - real-time crash betting game cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -448,17 +448,17 @@ export default function CaseStudyPropBet() {
               {/* Row 1 */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {[
-                  { src: '/Images/projects/propbet/home.png', alt: 'PropBet - home screen', label: 'Home Screen' },
-                  { src: '/Images/projects/propbet/board.png', alt: 'PropBet - betting board on the airfield', label: 'Betting Board' },
-                  { src: '/Images/projects/propbet/crashed.png', alt: 'PropBet - round crashed mid-air', label: 'Crashed!' },
-                  { src: '/Images/projects/propbet/result.png', alt: 'PropBet - round result and settlement', label: 'Round Result' },
-                  { src: '/Images/projects/propbet/how-to-play.png', alt: 'PropBet - how to play guide', label: 'How to Play' },
+                  { src: '/Images/projects/propbet/home.webp', alt: 'PropBet - home screen', label: 'Home Screen' },
+                  { src: '/Images/projects/propbet/board.webp', alt: 'PropBet - betting board on the airfield', label: 'Betting Board' },
+                  { src: '/Images/projects/propbet/crashed.webp', alt: 'PropBet - round crashed mid-air', label: 'Crashed!' },
+                  { src: '/Images/projects/propbet/result.webp', alt: 'PropBet - round result and settlement', label: 'Round Result' },
+                  { src: '/Images/projects/propbet/how-to-play.webp', alt: 'PropBet - how to play guide', label: 'How to Play' },
                 ].concat([
-                  { src: '/Images/projects/propbet/home.png', alt: 'PropBet - home screen', label: 'Home Screen' },
-                  { src: '/Images/projects/propbet/board.png', alt: 'PropBet - betting board on the airfield', label: 'Betting Board' },
-                  { src: '/Images/projects/propbet/crashed.png', alt: 'PropBet - round crashed mid-air', label: 'Crashed!' },
-                  { src: '/Images/projects/propbet/result.png', alt: 'PropBet - round result and settlement', label: 'Round Result' },
-                  { src: '/Images/projects/propbet/how-to-play.png', alt: 'PropBet - how to play guide', label: 'How to Play' },
+                  { src: '/Images/projects/propbet/home.webp', alt: 'PropBet - home screen', label: 'Home Screen' },
+                  { src: '/Images/projects/propbet/board.webp', alt: 'PropBet - betting board on the airfield', label: 'Betting Board' },
+                  { src: '/Images/projects/propbet/crashed.webp', alt: 'PropBet - round crashed mid-air', label: 'Crashed!' },
+                  { src: '/Images/projects/propbet/result.webp', alt: 'PropBet - round result and settlement', label: 'Round Result' },
+                  { src: '/Images/projects/propbet/how-to-play.webp', alt: 'PropBet - how to play guide', label: 'How to Play' },
                 ]).map((item, i) => (
                   <div key={i} className="ui-card" data-full={item.src}>
                     <img src={cardSrc(item.src)} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>
@@ -470,17 +470,17 @@ export default function CaseStudyPropBet() {
               {/* Row 2 */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {[
-                  { src: '/Images/projects/propbet/board.png', alt: 'Airfield and dual bet panels', label: 'Airfield & Bets' },
-                  { src: '/Images/projects/propbet/crashed.png', alt: 'Plane flew away', label: 'Plane Flew Away' },
-                  { src: '/Images/projects/propbet/result.png', alt: 'Cash-out settlement', label: 'Cash-Out Settlement' },
-                  { src: '/Images/projects/propbet/how-to-play.png', alt: 'The rules', label: 'The Rules' },
-                  { src: '/Images/projects/propbet/home.png', alt: 'Race the odds', label: 'Race the Odds' },
+                  { src: '/Images/projects/propbet/board.webp', alt: 'Airfield and dual bet panels', label: 'Airfield & Bets' },
+                  { src: '/Images/projects/propbet/crashed.webp', alt: 'Plane flew away', label: 'Plane Flew Away' },
+                  { src: '/Images/projects/propbet/result.webp', alt: 'Cash-out settlement', label: 'Cash-Out Settlement' },
+                  { src: '/Images/projects/propbet/how-to-play.webp', alt: 'The rules', label: 'The Rules' },
+                  { src: '/Images/projects/propbet/home.webp', alt: 'Race the odds', label: 'Race the Odds' },
                 ].concat([
-                  { src: '/Images/projects/propbet/board.png', alt: 'Airfield and dual bet panels', label: 'Airfield & Bets' },
-                  { src: '/Images/projects/propbet/crashed.png', alt: 'Plane flew away', label: 'Plane Flew Away' },
-                  { src: '/Images/projects/propbet/result.png', alt: 'Cash-out settlement', label: 'Cash-Out Settlement' },
-                  { src: '/Images/projects/propbet/how-to-play.png', alt: 'The rules', label: 'The Rules' },
-                  { src: '/Images/projects/propbet/home.png', alt: 'Race the odds', label: 'Race the Odds' },
+                  { src: '/Images/projects/propbet/board.webp', alt: 'Airfield and dual bet panels', label: 'Airfield & Bets' },
+                  { src: '/Images/projects/propbet/crashed.webp', alt: 'Plane flew away', label: 'Plane Flew Away' },
+                  { src: '/Images/projects/propbet/result.webp', alt: 'Cash-out settlement', label: 'Cash-Out Settlement' },
+                  { src: '/Images/projects/propbet/how-to-play.webp', alt: 'The rules', label: 'The Rules' },
+                  { src: '/Images/projects/propbet/home.webp', alt: 'Race the odds', label: 'Race the Odds' },
                 ]).map((item, i) => (
                   <div key={i} className="ui-card" data-full={item.src}>
                     <img src={cardSrc(item.src)} alt={item.alt} className="ui-thumb" loading="lazy" decoding="async"/>

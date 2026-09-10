@@ -44,8 +44,8 @@ export default function CaseStudyMessagingSystem() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/msg_platform/cover.png" alt="Messaging Platform - multi-channel messaging dashboard cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/msg_platform/cover.webp" alt="Messaging Platform - multi-channel messaging dashboard cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -350,53 +350,53 @@ export default function CaseStudyMessagingSystem() {
               {/* Row 1: Moving Right */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Login.png">
-                  <img src="/Images/projects/msg_platform/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Login.webp">
+                  <img src="/Images/projects/msg_platform/Login-card.webp" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/2fa Select.png">
-                  <img src="/Images/projects/msg_platform/2fa Select-card.png" alt="2FA Verification" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/2fa Select.webp">
+                  <img src="/Images/projects/msg_platform/2fa Select-card.webp" alt="2FA Verification" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">2FA Verification</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Dashboard.png">
-                  <img src="/Images/projects/msg_platform/Dashboard-card.png" alt="Dashboard" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Dashboard.webp">
+                  <img src="/Images/projects/msg_platform/Dashboard-card.webp" alt="Dashboard" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ All.png">
-                  <img src="/Images/projects/msg_platform/Services --_ All-card.png" alt="Services" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ All.webp">
+                  <img src="/Images/projects/msg_platform/Services --_ All-card.webp" alt="Services" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Services</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ New Service --_ Select Service.png">
-                  <img src="/Images/projects/msg_platform/Services --_ New Service --_ Select Service-card.png" alt="New Service" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ New Service --_ Select Service.webp">
+                  <img src="/Images/projects/msg_platform/Services --_ New Service --_ Select Service-card.webp" alt="New Service" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">New Service</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome.png">
-                  <img src="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome-card.png" alt="Service Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome.webp">
+                  <img src="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome-card.webp" alt="Service Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Login.png">
-                  <img src="/Images/projects/msg_platform/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Login.webp">
+                  <img src="/Images/projects/msg_platform/Login-card.webp" alt="Login" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Login</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/2fa Select.png">
-                  <img src="/Images/projects/msg_platform/2fa Select-card.png" alt="2FA Verification" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/2fa Select.webp">
+                  <img src="/Images/projects/msg_platform/2fa Select-card.webp" alt="2FA Verification" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">2FA Verification</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Dashboard.png">
-                  <img src="/Images/projects/msg_platform/Dashboard-card.png" alt="Dashboard" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Dashboard.webp">
+                  <img src="/Images/projects/msg_platform/Dashboard-card.webp" alt="Dashboard" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ All.png">
-                  <img src="/Images/projects/msg_platform/Services --_ All-card.png" alt="Services" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ All.webp">
+                  <img src="/Images/projects/msg_platform/Services --_ All-card.webp" alt="Services" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Services</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ New Service --_ Select Service.png">
-                  <img src="/Images/projects/msg_platform/Services --_ New Service --_ Select Service-card.png" alt="New Service" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ New Service --_ Select Service.webp">
+                  <img src="/Images/projects/msg_platform/Services --_ New Service --_ Select Service-card.webp" alt="New Service" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">New Service</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome.png">
-                  <img src="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome-card.png" alt="Service Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome.webp">
+                  <img src="/Images/projects/msg_platform/Services --_ Onboarding --_ Welcome-card.webp" alt="Service Onboarding" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Onboarding</div>
                 </div>
               </div>
@@ -404,53 +404,53 @@ export default function CaseStudyMessagingSystem() {
               {/* Row 2: Moving Left */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Parameters.png">
-                  <img src="/Images/projects/msg_platform/Parameters-card.png" alt="Parameters" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Parameters.webp">
+                  <img src="/Images/projects/msg_platform/Parameters-card.webp" alt="Parameters" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Parameters</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add.png">
-                  <img src="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add-card.png" alt="Parameter Builder" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add.webp">
+                  <img src="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add-card.webp" alt="Parameter Builder" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Parameter Builder</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Tokens.png">
-                  <img src="/Images/projects/msg_platform/Tokens-card.png" alt="API Tokens" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Tokens.webp">
+                  <img src="/Images/projects/msg_platform/Tokens-card.webp" alt="API Tokens" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">API Tokens</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Logs.png">
-                  <img src="/Images/projects/msg_platform/Logs-card.png" alt="Logs" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Logs.webp">
+                  <img src="/Images/projects/msg_platform/Logs-card.webp" alt="Logs" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Logs</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Documentation.png">
-                  <img src="/Images/projects/msg_platform/Documentation-card.png" alt="Documentation" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Documentation.webp">
+                  <img src="/Images/projects/msg_platform/Documentation-card.webp" alt="Documentation" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Documentation</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Billing and Pricing --_ Billing details.png">
-                  <img src="/Images/projects/msg_platform/Billing and Pricing --_ Billing details-card.png" alt="Billing" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Billing and Pricing --_ Billing details.webp">
+                  <img src="/Images/projects/msg_platform/Billing and Pricing --_ Billing details-card.webp" alt="Billing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Billing</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Parameters.png">
-                  <img src="/Images/projects/msg_platform/Parameters-card.png" alt="Parameters" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Parameters.webp">
+                  <img src="/Images/projects/msg_platform/Parameters-card.webp" alt="Parameters" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Parameters</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add.png">
-                  <img src="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add-card.png" alt="Parameter Builder" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add.webp">
+                  <img src="/Images/projects/msg_platform/Prameters--_ New Parameter--_ Parameter Info add-card.webp" alt="Parameter Builder" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Parameter Builder</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Tokens.png">
-                  <img src="/Images/projects/msg_platform/Tokens-card.png" alt="API Tokens" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Tokens.webp">
+                  <img src="/Images/projects/msg_platform/Tokens-card.webp" alt="API Tokens" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">API Tokens</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Logs.png">
-                  <img src="/Images/projects/msg_platform/Logs-card.png" alt="Logs" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Logs.webp">
+                  <img src="/Images/projects/msg_platform/Logs-card.webp" alt="Logs" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Logs</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Documentation.png">
-                  <img src="/Images/projects/msg_platform/Documentation-card.png" alt="Documentation" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Documentation.webp">
+                  <img src="/Images/projects/msg_platform/Documentation-card.webp" alt="Documentation" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Documentation</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/msg_platform/Billing and Pricing --_ Billing details.png">
-                  <img src="/Images/projects/msg_platform/Billing and Pricing --_ Billing details-card.png" alt="Billing" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/msg_platform/Billing and Pricing --_ Billing details.webp">
+                  <img src="/Images/projects/msg_platform/Billing and Pricing --_ Billing details-card.webp" alt="Billing" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Billing</div>
                 </div>
               </div>

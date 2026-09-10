@@ -59,7 +59,7 @@ export default function ComingSoonClient() {
 
       {/* Desktop nav - logo only, no pill */}
       <div id="navbar-wrap">
-        <Link href="/" aria-label="Home"><img className="nav-logo" src="/Images/longlogo.svg" alt="Ruchira Edirisinghe" /></Link>
+        <Link href="/" aria-label="Home"><img className="nav-logo" src="/Images/longlogo.svg" alt="Ruchira Edirisinghe" decoding="async" /></Link>
       </div>
 
       <button id="music-btn-desktop" aria-label="Toggle music">
@@ -72,7 +72,7 @@ export default function ComingSoonClient() {
           <canvas id="spectrum-canvas" width="26" height="18"></canvas>
         </button>
         <Link href="/" className="mobile-logo-link" aria-label="Home">
-          <img className="mobile-logo" src="/Images/longlogo.svg" alt="Logo" />
+          <img className="mobile-logo" src="/Images/longlogo.svg" alt="Logo" decoding="async" />
         </Link>
         <button id="menu-btn" className="glass-round-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span></span><span></span>

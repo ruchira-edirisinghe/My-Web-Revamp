@@ -210,15 +210,23 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
                      mix(hash(i + vec2(0,1)), hash(i + vec2(1,1)), u.x), u.y);
         }
         void main() {
+          // Radial falloff keeps the billboard from showing its own edges, and
+          // it is the cheapest thing in the shader - so evaluate it FIRST and
+          // bail before the noise. Outside the soft disc the plane contributes
+          // nothing, and that is most of a quad whose corners reach d = 0.707;
+          // running three octaves of noise there was pure waste on the single
+          // most fill-heavy surface the site draws.
+          float d = distance(vUv, vec2(0.5));
+          float fall = smoothstep(0.5, 0.05, d);
+          if (fall < 0.004) discard;
+
           vec2 p = vUv * 3.0 + uSeed;
           float t = uTime * 0.03;
           float n = noise(p + vec2(t, -t)) * 0.55
                   + noise(p * 2.1 - vec2(t * 1.3, t)) * 0.30
                   + noise(p * 4.3 + vec2(t * 0.7, t * 1.1)) * 0.15;
-          // Radial falloff keeps the billboard from showing its own edges.
-          float d = distance(vUv, vec2(0.5));
-          float fall = smoothstep(0.5, 0.05, d);
           float a = n * fall * uIntensity;
+          if (a < 0.004) discard;
           gl_FragColor = vec4(uColor * a, a);
         }
       `,

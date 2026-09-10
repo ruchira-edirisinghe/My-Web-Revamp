@@ -30,7 +30,7 @@ export default function ProjectsHubClient() {
         <div className="hub-divide-container">
           {/* Web Panel */}
           <Link href="/projects/web" className="divide-panel project-card type-web" style={cssVars({ '--panel-index': 0 })}>
-            <div className="panel-bg" style={{ backgroundImage: "url('/Images/projects/web-projects.png')" }}></div>
+            <div className="panel-bg" style={{ backgroundImage: "url('/Images/projects/web-projects.webp')" }}></div>
             <div className="panel-overlay"></div>
             <div className="panel-content">
               <p className="panel-label">Digital Systems</p>
@@ -43,7 +43,7 @@ export default function ProjectsHubClient() {
 
           {/* Graphic Panel */}
           <Link href="/projects/graphic" className="divide-panel project-card type-design" style={cssVars({ '--panel-index': 1 })}>
-            <div className="panel-bg" style={{ backgroundImage: "url('/Images/projects/graphic-projects.png')" }}></div>
+            <div className="panel-bg" style={{ backgroundImage: "url('/Images/projects/graphic-projects.webp')" }}></div>
             <div className="panel-overlay"></div>
             <div className="panel-content">
               <p className="panel-label">Creative Vision</p>

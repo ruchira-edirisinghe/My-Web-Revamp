@@ -53,8 +53,8 @@ export default function CaseStudyCarRacing() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/car-game/cover.png" alt="Ready To Race Unlimited - browser car-racing game cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/car-game/cover.webp" alt="Ready To Race Unlimited - browser car-racing game cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -378,45 +378,45 @@ export default function CaseStudyCarRacing() {
               {/* Row 1 */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/car-game/home.png">
-                  <img src="/Images/projects/car-game/home-card.png" alt="Home - Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/home.webp">
+                  <img src="/Images/projects/car-game/home-card.webp" alt="Home - Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home · Elite Circuit</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/lobby.png">
-                  <img src="/Images/projects/car-game/lobby-card.png" alt="Lobby - Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/lobby.webp">
+                  <img src="/Images/projects/car-game/lobby-card.webp" alt="Lobby - Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Lobby · Player's Arena</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/race.png">
-                  <img src="/Images/projects/car-game/race-card.png" alt="Betting board and race" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/race.webp">
+                  <img src="/Images/projects/car-game/race-card.webp" alt="Betting board and race" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Betting &amp; Race</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/race-rules.png">
-                  <img src="/Images/projects/car-game/race-rules-card.png" alt="Create Arena and rules" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/race-rules.webp">
+                  <img src="/Images/projects/car-game/race-rules-card.webp" alt="Create Arena and rules" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Create Arena</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/loading.png">
-                  <img src="/Images/projects/car-game/loading-card.png" alt="Syncing grid loading screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/loading.webp">
+                  <img src="/Images/projects/car-game/loading-card.webp" alt="Syncing grid loading screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syncing Grid</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/car-game/home.png">
-                  <img src="/Images/projects/car-game/home-card.png" alt="Home - Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/home.webp">
+                  <img src="/Images/projects/car-game/home-card.webp" alt="Home - Elite Circuit hub" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Home · Elite Circuit</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/lobby.png">
-                  <img src="/Images/projects/car-game/lobby-card.png" alt="Lobby - Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/lobby.webp">
+                  <img src="/Images/projects/car-game/lobby-card.webp" alt="Lobby - Player's Arena" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Lobby · Player's Arena</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/race.png">
-                  <img src="/Images/projects/car-game/race-card.png" alt="Betting board and race" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/race.webp">
+                  <img src="/Images/projects/car-game/race-card.webp" alt="Betting board and race" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Betting &amp; Race</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/race-rules.png">
-                  <img src="/Images/projects/car-game/race-rules-card.png" alt="Create Arena and rules" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/race-rules.webp">
+                  <img src="/Images/projects/car-game/race-rules-card.webp" alt="Create Arena and rules" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Create Arena</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/loading.png">
-                  <img src="/Images/projects/car-game/loading-card.png" alt="Syncing grid loading screen" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/loading.webp">
+                  <img src="/Images/projects/car-game/loading-card.webp" alt="Syncing grid loading screen" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syncing Grid</div>
                 </div>
               </div>
@@ -424,45 +424,45 @@ export default function CaseStudyCarRacing() {
               {/* Row 2 */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/car-game/race.png">
-                  <img src="/Images/projects/car-game/race-card.png" alt="Live race" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/race.webp">
+                  <img src="/Images/projects/car-game/race-card.webp" alt="Live race" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Pick Your Car</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/loading.png">
-                  <img src="/Images/projects/car-game/loading-card.png" alt="Grid sync" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/loading.webp">
+                  <img src="/Images/projects/car-game/loading-card.webp" alt="Grid sync" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Grid Sync</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/lobby.png">
-                  <img src="/Images/projects/car-game/lobby-card.png" alt="Runners live odds" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/lobby.webp">
+                  <img src="/Images/projects/car-game/lobby-card.webp" alt="Runners live odds" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Grid · Live Odds</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/race-rules.png">
-                  <img src="/Images/projects/car-game/race-rules-card.png" alt="Arena configuration" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/race-rules.webp">
+                  <img src="/Images/projects/car-game/race-rules-card.webp" alt="Arena configuration" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Arena Config</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/home.png">
-                  <img src="/Images/projects/car-game/home-card.png" alt="Leaderboard and daily bounty" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/home.webp">
+                  <img src="/Images/projects/car-game/home-card.webp" alt="Leaderboard and daily bounty" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Leaderboard &amp; Bounty</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/car-game/race.png">
-                  <img src="/Images/projects/car-game/race-card.png" alt="Live race" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/race.webp">
+                  <img src="/Images/projects/car-game/race-card.webp" alt="Live race" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Pick Your Car</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/loading.png">
-                  <img src="/Images/projects/car-game/loading-card.png" alt="Grid sync" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/loading.webp">
+                  <img src="/Images/projects/car-game/loading-card.webp" alt="Grid sync" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Grid Sync</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/lobby.png">
-                  <img src="/Images/projects/car-game/lobby-card.png" alt="Runners live odds" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/lobby.webp">
+                  <img src="/Images/projects/car-game/lobby-card.webp" alt="Runners live odds" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Grid · Live Odds</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/race-rules.png">
-                  <img src="/Images/projects/car-game/race-rules-card.png" alt="Arena configuration" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/race-rules.webp">
+                  <img src="/Images/projects/car-game/race-rules-card.webp" alt="Arena configuration" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Arena Config</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/car-game/home.png">
-                  <img src="/Images/projects/car-game/home-card.png" alt="Leaderboard and daily bounty" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/car-game/home.webp">
+                  <img src="/Images/projects/car-game/home-card.webp" alt="Leaderboard and daily bounty" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Leaderboard &amp; Bounty</div>
                 </div>
               </div>

@@ -146,7 +146,15 @@ export function wireAmbientControls(onChange?: (playing: boolean) => void): () =
   const GESTURES = ['mousemove', 'mouseenter', 'pointerdown', 'touchstart', 'keydown', 'click'];
   const onFirstGesture = () => {
     GESTURES.forEach(ev => window.removeEventListener(ev, onFirstGesture));
-    startAmbient();
+    // The track is 5.5 MB and the first gesture is usually a mousemove that
+    // lands within a second of navigation - i.e. right in the middle of the
+    // image fetches the visitor can actually see. Autoplay policy only requires
+    // that a gesture HAS happened, not that playback starts in the same tick,
+    // so wait for the page to finish loading before spending bandwidth on
+    // background music. `load` has already fired on a bfcache restore or a
+    // client-side route change, so fall through immediately in that case.
+    if (document.readyState === 'complete') startAmbient();
+    else window.addEventListener('load', () => startAmbient(), { once: true });
   };
   GESTURES.forEach(ev =>
     window.addEventListener(ev, onFirstGesture, { once: true, passive: ev !== 'keydown' }),

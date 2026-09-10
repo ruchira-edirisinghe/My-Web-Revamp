@@ -76,14 +76,23 @@ permission from the author.
 
 ## Image pipeline
 
-Case-study captures are stored at up to **1920px** (the lightbox draws them at
-viewport width) and every one also gets a **`<name>-card.png` at 1100px** for the
-gallery marquee, whose cards are 540px on desktop and 300px on a phone.
+Everything under `public/Images` ships as **WebP** (q85). Case-study captures are
+stored at up to **1920px** (the lightbox draws them at viewport width) and every
+one also gets a **`<name>-card.webp` at 1100px** for the gallery marquee, whose
+cards are 540px on desktop and 300px on a phone.
 
 ```bash
-npm run images:check   # report what would change, touch nothing
+npm run images:check   # report what the resizer would change, touch nothing
 npm run images         # resize / repack in place, write missing -card variants
+npm run images:webp    # re-encode to WebP and repoint every src in the markup
 ```
+
+Run them in that order: the resizer works on PNG/JPG, and the WebP pass converts
+what it leaves behind, deletes the original, and rewrites the `src` / `data-full`
+paths in `app/`, `components/` and `lib/`. Two things stay PNG on purpose —
+`Images/favicon/**` (the manifest declares `image/png`) and `Images/mynew.png`
+(the `og:image`, since some crawlers still will not take WebP; the on-page hero
+uses the `.webp` copy).
 
 The script is idempotent and only rewrites files git already has a copy of, so a
 screenshot dropped in and not yet committed is reported and left alone (resizing
@@ -103,15 +112,17 @@ Raw, uncropped source captures live in `assets-src/` — kept in the repo, outsi
 
 ### Game covers are 16:9
 
-All ten games ship `cover.png` at **1600×900**, `cover-thumb.png` at **700×394**
-and `cover-card.png` at **1100×619**. That matches `.project-image-wrap`, which is
+All ten games ship `cover.webp` at **1600×900**, `cover-thumb.webp` at **700×394**
+and `cover-card.webp` at **1100×619**. That matches `.project-image-wrap`, which is
 `aspect-ratio: 16/9` with `object-fit: cover` — a square cover there loses the top
 and bottom 44% of the artwork, which for a lockup is the wordmark. To reinstall
 from the sources in `assets-src/banners/`:
 
 ```bash
 node scripts/install-game-banners.mjs
+npm run images:webp                    # both installers still write PNG
 ```
 
 `scripts/install-wam-captures.mjs` does the same job for Whack-A-Mole's raw
-captures, cropping 143px of browser chrome off the top of each.
+captures, cropping 143px of browser chrome off the top of each. Both installers
+write PNG, so follow either one with `npm run images:webp`.

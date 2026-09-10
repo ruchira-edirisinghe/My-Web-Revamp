@@ -44,8 +44,8 @@ export default function CaseStudyAgentSystem() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/agent/cover.png" alt="747 Agent - back-office dashboard cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/agent/cover.webp" alt="747 Agent - back-office dashboard cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -364,53 +364,53 @@ export default function CaseStudyAgentSystem() {
               <div className="ui-row-label is-dark"><span className="dot"></span> Dark Mode</div>
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Dashboard - Dark.png">
-                  <img src="/Images/projects/agent/dark/Dashboard - Dark-card.png" alt="Dashboard - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Dashboard - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Dashboard - Dark-card.webp" alt="Dashboard - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Agent Tree - Dark.png">
-                  <img src="/Images/projects/agent/dark/Agent Tree - Dark-card.png" alt="Agent Tree - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Agent Tree - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Agent Tree - Dark-card.webp" alt="Agent Tree - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agent Tree</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Players - Dark.png">
-                  <img src="/Images/projects/agent/dark/Players - Dark-card.png" alt="Players - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Players - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Players - Dark-card.webp" alt="Players - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Players</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark.png">
-                  <img src="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark-card.png" alt="Reports · Sport Bets - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark-card.webp" alt="Reports · Sport Bets - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Reports · Sport Bets</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Transactions - Dark.png">
-                  <img src="/Images/projects/agent/dark/Transactions - Dark-card.png" alt="Transactions - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Transactions - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Transactions - Dark-card.webp" alt="Transactions - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Transactions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Agents - Dark.png">
-                  <img src="/Images/projects/agent/dark/Agents - Dark-card.png" alt="Agents - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Agents - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Agents - Dark-card.webp" alt="Agents - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agents</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Dashboard - Dark.png">
-                  <img src="/Images/projects/agent/dark/Dashboard - Dark-card.png" alt="Dashboard - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Dashboard - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Dashboard - Dark-card.webp" alt="Dashboard - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Agent Tree - Dark.png">
-                  <img src="/Images/projects/agent/dark/Agent Tree - Dark-card.png" alt="Agent Tree - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Agent Tree - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Agent Tree - Dark-card.webp" alt="Agent Tree - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agent Tree</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Players - Dark.png">
-                  <img src="/Images/projects/agent/dark/Players - Dark-card.png" alt="Players - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Players - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Players - Dark-card.webp" alt="Players - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Players</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark.png">
-                  <img src="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark-card.png" alt="Reports · Sport Bets - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Reports --_ Sport Bets - Dark-card.webp" alt="Reports · Sport Bets - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Reports · Sport Bets</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Transactions - Dark.png">
-                  <img src="/Images/projects/agent/dark/Transactions - Dark-card.png" alt="Transactions - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Transactions - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Transactions - Dark-card.webp" alt="Transactions - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Transactions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/dark/Agents - Dark.png">
-                  <img src="/Images/projects/agent/dark/Agents - Dark-card.png" alt="Agents - Dark" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/dark/Agents - Dark.webp">
+                  <img src="/Images/projects/agent/dark/Agents - Dark-card.webp" alt="Agents - Dark" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agents</div>
                 </div>
               </div>
@@ -419,53 +419,53 @@ export default function CaseStudyAgentSystem() {
               <div className="ui-row-label is-light"><span className="dot"></span> Light Mode</div>
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Dashboard - Light.png">
-                  <img src="/Images/projects/agent/Light/Dashboard - Light-card.png" alt="Dashboard - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Dashboard - Light.webp">
+                  <img src="/Images/projects/agent/Light/Dashboard - Light-card.webp" alt="Dashboard - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Agent Tree - Light.png">
-                  <img src="/Images/projects/agent/Light/Agent Tree - Light-card.png" alt="Agent Tree - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Agent Tree - Light.webp">
+                  <img src="/Images/projects/agent/Light/Agent Tree - Light-card.webp" alt="Agent Tree - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agent Tree</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Players - Light.png">
-                  <img src="/Images/projects/agent/Light/Players - Light-card.png" alt="Players - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Players - Light.webp">
+                  <img src="/Images/projects/agent/Light/Players - Light-card.webp" alt="Players - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Players</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Reports --_ Sport Bets - Light.png">
-                  <img src="/Images/projects/agent/Light/Reports --_ Sport Bets - Light-card.png" alt="Reports · Sport Bets - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Reports --_ Sport Bets - Light.webp">
+                  <img src="/Images/projects/agent/Light/Reports --_ Sport Bets - Light-card.webp" alt="Reports · Sport Bets - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Reports · Sport Bets</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Transaction - Lght.png">
-                  <img src="/Images/projects/agent/Light/Transaction - Lght-card.png" alt="Transactions - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Transaction - Lght.webp">
+                  <img src="/Images/projects/agent/Light/Transaction - Lght-card.webp" alt="Transactions - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Transactions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Agents - Light.png">
-                  <img src="/Images/projects/agent/Light/Agents - Light-card.png" alt="Agents - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Agents - Light.webp">
+                  <img src="/Images/projects/agent/Light/Agents - Light-card.webp" alt="Agents - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agents</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Dashboard - Light.png">
-                  <img src="/Images/projects/agent/Light/Dashboard - Light-card.png" alt="Dashboard - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Dashboard - Light.webp">
+                  <img src="/Images/projects/agent/Light/Dashboard - Light-card.webp" alt="Dashboard - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Agent Tree - Light.png">
-                  <img src="/Images/projects/agent/Light/Agent Tree - Light-card.png" alt="Agent Tree - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Agent Tree - Light.webp">
+                  <img src="/Images/projects/agent/Light/Agent Tree - Light-card.webp" alt="Agent Tree - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agent Tree</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Players - Light.png">
-                  <img src="/Images/projects/agent/Light/Players - Light-card.png" alt="Players - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Players - Light.webp">
+                  <img src="/Images/projects/agent/Light/Players - Light-card.webp" alt="Players - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Players</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Reports --_ Sport Bets - Light.png">
-                  <img src="/Images/projects/agent/Light/Reports --_ Sport Bets - Light-card.png" alt="Reports · Sport Bets - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Reports --_ Sport Bets - Light.webp">
+                  <img src="/Images/projects/agent/Light/Reports --_ Sport Bets - Light-card.webp" alt="Reports · Sport Bets - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Reports · Sport Bets</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Transaction - Lght.png">
-                  <img src="/Images/projects/agent/Light/Transaction - Lght-card.png" alt="Transactions - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Transaction - Lght.webp">
+                  <img src="/Images/projects/agent/Light/Transaction - Lght-card.webp" alt="Transactions - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Transactions</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/agent/Light/Agents - Light.png">
-                  <img src="/Images/projects/agent/Light/Agents - Light-card.png" alt="Agents - Light" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/agent/Light/Agents - Light.webp">
+                  <img src="/Images/projects/agent/Light/Agents - Light-card.webp" alt="Agents - Light" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Agents</div>
                 </div>
               </div>

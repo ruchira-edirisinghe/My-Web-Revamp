@@ -44,8 +44,8 @@ export default function CaseStudyLycampus() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/lyceum/cover.png" alt="Lyceum Campus - University Website Web UI Redesign cover"
-              className="cs-cover-img" id="hero-img" loading="eager" />
+            <img src="/Images/projects/lyceum/cover.webp" alt="Lyceum Campus - University Website Web UI Redesign cover"
+              className="cs-cover-img" id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -422,80 +422,80 @@ export default function CaseStudyLycampus() {
               {/* Row 1: Moving Right */}
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.png">
-                  <img src="/Images/projects/lyceum/Home 1-card.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.webp">
+                  <img src="/Images/projects/lyceum/Home 1-card.webp" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Page</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.png">
-                  <img src="/Images/projects/lyceum/Events 1-card.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.webp">
+                  <img src="/Images/projects/lyceum/Events 1-card.webp" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Events & News</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.png">
-                  <img src="/Images/projects/lyceum/Inside Event 1-card.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.webp">
+                  <img src="/Images/projects/lyceum/Inside Event 1-card.webp" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Event Detail</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.png">
-                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.webp">
+                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.webp" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Programmes</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.png">
-                  <img src="/Images/projects/lyceum/Student Life 1-card.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.webp">
+                  <img src="/Images/projects/lyceum/Student Life 1-card.webp" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Campus Life</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.webp" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Story</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.png" alt="Governance"
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.webp" alt="Governance"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Leadership</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.webp" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Global Partners</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png">
-                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.png" alt="Faculty"
+                <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.webp">
+                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.webp" alt="Faculty"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Faculty View</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.png">
-                  <img src="/Images/projects/lyceum/Home 1-card.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.webp">
+                  <img src="/Images/projects/lyceum/Home 1-card.webp" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Page</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.png">
-                  <img src="/Images/projects/lyceum/Events 1-card.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.webp">
+                  <img src="/Images/projects/lyceum/Events 1-card.webp" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Events & News</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.png">
-                  <img src="/Images/projects/lyceum/Inside Event 1-card.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.webp">
+                  <img src="/Images/projects/lyceum/Inside Event 1-card.webp" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Event Detail</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.png">
-                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.webp">
+                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.webp" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Programmes</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.png">
-                  <img src="/Images/projects/lyceum/Student Life 1-card.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.webp">
+                  <img src="/Images/projects/lyceum/Student Life 1-card.webp" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Campus Life</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.webp" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Story</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.png" alt="Governance"
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.webp" alt="Governance"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Leadership</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.webp" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Global Partners</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png">
-                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.png" alt="Faculty"
+                <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.webp">
+                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.webp" alt="Faculty"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Faculty View</div>
                 </div>
@@ -504,80 +504,80 @@ export default function CaseStudyLycampus() {
               {/* Row 2: Moving Left */}
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
                 {/* Set 1 */}
-                <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.png">
-                  <img src="/Images/projects/lyceum/Home 1-card.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.webp">
+                  <img src="/Images/projects/lyceum/Home 1-card.webp" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Page</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.png">
-                  <img src="/Images/projects/lyceum/Events 1-card.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.webp">
+                  <img src="/Images/projects/lyceum/Events 1-card.webp" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Events & News</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.png">
-                  <img src="/Images/projects/lyceum/Inside Event 1-card.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.webp">
+                  <img src="/Images/projects/lyceum/Inside Event 1-card.webp" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Event Detail</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.png">
-                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.webp">
+                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.webp" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Programmes</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.png">
-                  <img src="/Images/projects/lyceum/Student Life 1-card.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.webp">
+                  <img src="/Images/projects/lyceum/Student Life 1-card.webp" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Campus Life</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.webp" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Story</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.png" alt="Governance"
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.webp" alt="Governance"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Leadership</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.webp" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Global Partners</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png">
-                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.png" alt="Faculty"
+                <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.webp">
+                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.webp" alt="Faculty"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Faculty View</div>
                 </div>
                 {/* Set 2 (Duplicate for loop) */}
-                <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.png">
-                  <img src="/Images/projects/lyceum/Home 1-card.png" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Home 1.webp">
+                  <img src="/Images/projects/lyceum/Home 1-card.webp" alt="Home Page" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Home Page</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.png">
-                  <img src="/Images/projects/lyceum/Events 1-card.png" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Events 1.webp">
+                  <img src="/Images/projects/lyceum/Events 1-card.webp" alt="Events" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Events & News</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.png">
-                  <img src="/Images/projects/lyceum/Inside Event 1-card.png" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Inside Event 1.webp">
+                  <img src="/Images/projects/lyceum/Inside Event 1-card.webp" alt="Event Detail" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Event Detail</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.png">
-                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.png" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Inside a Programme 1.webp">
+                  <img src="/Images/projects/lyceum/Inside a Programme 1-card.webp" alt="Programme" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Programmes</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.png">
-                  <img src="/Images/projects/lyceum/Student Life 1-card.png" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Student Life 1.webp">
+                  <img src="/Images/projects/lyceum/Student Life 1-card.webp" alt="Student Life" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Campus Life</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.png" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ About Us 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ About Us 1-card.webp" alt="About Us" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Our Story</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.png" alt="Governance"
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ Leadership & Governance 1-card.webp" alt="Governance"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Leadership</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.png">
-                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.png" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
+                <div className="ui-card" data-full="/Images/projects/lyceum/Our Story --_ Partners 1.webp">
+                  <img src="/Images/projects/lyceum/Our Story --_ Partners 1-card.webp" alt="Partners" className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Global Partners</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.png">
-                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.png" alt="Faculty"
+                <div className="ui-card" data-full="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1.webp">
+                  <img src="/Images/projects/lyceum/Man Faculty Page_ Faculty Of Education 1-card.webp" alt="Faculty"
                     className="ui-thumb" loading="lazy" decoding="async" />
                   <div className="ui-card-label">Faculty View</div>
                 </div>

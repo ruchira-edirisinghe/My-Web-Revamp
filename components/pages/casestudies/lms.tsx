@@ -48,8 +48,8 @@ export default function CaseStudyLms() {
 
           {/* Cover image banner */}
           <div className="cs-cover-banner" id="hero-banner">
-            <img src="/Images/projects/LMS/cover.png" alt="ZUSE Corporate LMS Case Study Cover" className="cs-cover-img"
-              id="hero-img" loading="eager" />
+            <img src="/Images/projects/LMS/cover.webp" alt="ZUSE Corporate LMS Case Study Cover" className="cs-cover-img"
+              id="hero-img" loading="eager" decoding="async" />
             <div className="cs-cover-shine"></div>
           </div>
 
@@ -412,23 +412,23 @@ export default function CaseStudyLms() {
               from the first login.</p>
 
             <div className="ia-grid" id="onboarding-grid">
-              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - Account Info.png">
-                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - Account Info.png" alt="Onboarding 1" loading="lazy" decoding="async" />
+              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - Account Info.webp">
+                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - Account Info.webp" alt="Onboarding 1" loading="lazy" decoding="async" />
                 <span className="cs-meta-label">Step 1</span>
                 <h4 className="ui-card-label">Account Discovery</h4>
               </div>
-              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - Personal Info.png">
-                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - Personal Info.png" alt="Onboarding 2" loading="lazy" decoding="async" />
+              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - Personal Info.webp">
+                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - Personal Info.webp" alt="Onboarding 2" loading="lazy" decoding="async" />
                 <span className="cs-meta-label">Step 2</span>
                 <h4 className="ui-card-label">Personalization</h4>
               </div>
-              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - verify Confirmation.png">
-                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - verify Confirmation.png" alt="Onboarding 3" loading="lazy" decoding="async" />
+              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - verify Confirmation.webp">
+                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - verify Confirmation.webp" alt="Onboarding 3" loading="lazy" decoding="async" />
                 <span className="cs-meta-label">Step 3</span>
                 <h4 className="ui-card-label">Verification</h4>
               </div>
-              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - Confirmation.png">
-                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - Confirmation.png" alt="Onboarding 4" loading="lazy" decoding="async" />
+              <div className="cs-card cs-h-auto" data-full="/Images/projects/LMS/User Onboarding - Confirmation.webp">
+                <img className="cs-img-full" src="/Images/projects/LMS/User Onboarding - Confirmation.webp" alt="Onboarding 4" loading="lazy" decoding="async" />
                 <span className="cs-meta-label">Step 4</span>
                 <h4 className="ui-card-label">Success</h4>
               </div>
@@ -438,104 +438,104 @@ export default function CaseStudyLms() {
 
             <div className="ui-gallery">
               <div className="ui-marquee-track ui-track-2" id="marquee-1">
-                <div className="ui-card" data-full="/Images/projects/LMS/Login.png"><img
-                    src="/Images/projects/LMS/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Login.webp"><img
+                    src="/Images/projects/LMS/Login-card.webp" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Gateway</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home-card.png"
+                <div className="ui-card" data-full="/Images/projects/LMS/Home.webp"><img src="/Images/projects/LMS/Home-card.webp"
                     alt="Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Courses.png"><img
-                    src="/Images/projects/LMS/Courses-card.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Courses.webp"><img
+                    src="/Images/projects/LMS/Courses-card.webp" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Curriculum</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.png"><img
-                    src="/Images/projects/LMS/Course Overview-card.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.webp"><img
+                    src="/Images/projects/LMS/Course Overview-card.webp" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syllabus</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Course View.png"><img
-                    src="/Images/projects/LMS/Course View-card.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Course View.webp"><img
+                    src="/Images/projects/LMS/Course View-card.webp" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Active Learning</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/My Profile.png"><img
-                    src="/Images/projects/LMS/My Profile-card.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/My Profile.webp"><img
+                    src="/Images/projects/LMS/My Profile-card.webp" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Identity</div>
                 </div>
                 {/* Duplicates */}
-                <div className="ui-card" data-full="/Images/projects/LMS/Login.png"><img
-                    src="/Images/projects/LMS/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Login.webp"><img
+                    src="/Images/projects/LMS/Login-card.webp" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Gateway</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home-card.png"
+                <div className="ui-card" data-full="/Images/projects/LMS/Home.webp"><img src="/Images/projects/LMS/Home-card.webp"
                     alt="Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Dashboard</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Courses.png"><img
-                    src="/Images/projects/LMS/Courses-card.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Courses.webp"><img
+                    src="/Images/projects/LMS/Courses-card.webp" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Curriculum</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.png"><img
-                    src="/Images/projects/LMS/Course Overview-card.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.webp"><img
+                    src="/Images/projects/LMS/Course Overview-card.webp" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syllabus</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Course View.png"><img
-                    src="/Images/projects/LMS/Course View-card.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Course View.webp"><img
+                    src="/Images/projects/LMS/Course View-card.webp" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Active Learning</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/My Profile.png"><img
-                    src="/Images/projects/LMS/My Profile-card.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/My Profile.webp"><img
+                    src="/Images/projects/LMS/My Profile-card.webp" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Identity</div>
                 </div>
               </div>
 
               <div className="ui-marquee-track ui-track-1" id="marquee-2">
-                <div className="ui-card" data-full="/Images/projects/LMS/Courses.png"><img
-                    src="/Images/projects/LMS/Courses-card.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Courses.webp"><img
+                    src="/Images/projects/LMS/Courses-card.webp" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Curriculum</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.png"><img
-                    src="/Images/projects/LMS/Course Overview-card.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.webp"><img
+                    src="/Images/projects/LMS/Course Overview-card.webp" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syllabus</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Course View.png"><img
-                    src="/Images/projects/LMS/Course View-card.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Course View.webp"><img
+                    src="/Images/projects/LMS/Course View-card.webp" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Active Learning</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/My Profile.png"><img
-                    src="/Images/projects/LMS/My Profile-card.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/My Profile.webp"><img
+                    src="/Images/projects/LMS/My Profile-card.webp" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Identity</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Login.png"><img
-                    src="/Images/projects/LMS/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Login.webp"><img
+                    src="/Images/projects/LMS/Login-card.webp" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Gateway</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home-card.png"
+                <div className="ui-card" data-full="/Images/projects/LMS/Home.webp"><img src="/Images/projects/LMS/Home-card.webp"
                     alt="Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Dashboard</div>
                 </div>
                 {/* Duplicates */}
-                <div className="ui-card" data-full="/Images/projects/LMS/Courses.png"><img
-                    src="/Images/projects/LMS/Courses-card.png" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Courses.webp"><img
+                    src="/Images/projects/LMS/Courses-card.webp" alt="Courses" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Curriculum</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.png"><img
-                    src="/Images/projects/LMS/Course Overview-card.png" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Course Overview.webp"><img
+                    src="/Images/projects/LMS/Course Overview-card.webp" alt="Syllabus" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Syllabus</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Course View.png"><img
-                    src="/Images/projects/LMS/Course View-card.png" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Course View.webp"><img
+                    src="/Images/projects/LMS/Course View-card.webp" alt="Learning" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Active Learning</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/My Profile.png"><img
-                    src="/Images/projects/LMS/My Profile-card.png" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/My Profile.webp"><img
+                    src="/Images/projects/LMS/My Profile-card.webp" alt="Profile" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Identity</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Login.png"><img
-                    src="/Images/projects/LMS/Login-card.png" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
+                <div className="ui-card" data-full="/Images/projects/LMS/Login.webp"><img
+                    src="/Images/projects/LMS/Login-card.webp" alt="Login" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Gateway</div>
                 </div>
-                <div className="ui-card" data-full="/Images/projects/LMS/Home.png"><img src="/Images/projects/LMS/Home-card.png"
+                <div className="ui-card" data-full="/Images/projects/LMS/Home.webp"><img src="/Images/projects/LMS/Home-card.webp"
                     alt="Home" className="ui-thumb" loading="lazy" decoding="async"/>
                   <div className="ui-card-label">Dashboard</div>
                 </div>
