@@ -3,13 +3,13 @@
    scatter-menu-cursor.ts - Scatter animation, menu open/close & liquid glass cursor
    (faithful port of styles/home/scatter-menu-cursor.js)
    ════════════════════════════════════════ */
-import { makeBag, makeDirtyClear } from './_util';
+import { makeBag } from './_util';
+import { initCursor } from './cursor';
 
 export function initScatterMenuCursor(): () => void {
   const bag = makeBag();
   const sc         = document.getElementById('scatter-canvas');
-  const cursorCanvas = document.getElementById('cursor-canvas');
-  if (!sc || !cursorCanvas) return () => {};
+  if (!sc) return () => {};
   const sCtx       = sc.getContext('2d');
   const overlay    = document.getElementById('menu-overlay');
   const closeBtn   = document.getElementById('menu-close');
@@ -17,142 +17,21 @@ export function initScatterMenuCursor(): () => void {
   const heroImg    = document.getElementById('hero-img');
   const wrapper    = document.getElementById('photo-wrapper');
   const btnEx      = document.getElementById('btn-explore');
-  const cCtx       = cursorCanvas.getContext('2d');
 
-  const dirty = makeDirtyClear(cCtx);
   let W, H;
   function resize() {
-    W = sc.width = cursorCanvas.width  = window.innerWidth;
-    H = sc.height = cursorCanvas.height = window.innerHeight;
-    dirty.reset();
-    if (W <= 900) stopCursor(); else startCursor();
-  }
-
-  /* ── LIQUID GLASS CURSOR ── */
-  let mX = -300, mY = -300, rX = -300, rY = -300;
-  let isOnImage = false, isOnMenuItem = false;
-  const R_NORMAL = 26, R_HOVER = 36, R_IMAGE = 56, R_MENU = 56;
-  let currentR = R_NORMAL, targetR = R_NORMAL;
-
-  let cursorRunning = false;
-  let cursorRaf = 0;
-  function startCursor() {
-    if (cursorRunning || W <= 900 || document.hidden) return;
-    cursorRunning = true;
-    cursorRaf = requestAnimationFrame(drawCursor);
-  }
-  function stopCursor() {
-    cursorRunning = false;
-    dirty.reset();
-    cCtx.clearRect(0, 0, W, H);
-  }
-
-  function drawCursor() {
-    if (!cursorRunning) return;
-
-    rX += (mX - rX) * 0.1;
-    rY += (mY - rY) * 0.1;
-    currentR += (targetR - currentR) * 0.08;
-    const R = currentR, cx = rX, cy = rY;
-    // The ring trails the pointer, and the dot sits ON it, so the box has to
-    // span both - it widens with speed and collapses back the moment the ring
-    // catches up. Still a fraction of the full-canvas clear this replaced.
-    dirty.clear(cx, cy, R * 1.6 + Math.hypot(mX - cx, mY - cy));
-    if (mX < -200) { cursorRaf = requestAnimationFrame(drawCursor); return; }
-
-    const halo = cCtx.createRadialGradient(cx, cy, R * 0.85, cx, cy, R * 1.5);
-    halo.addColorStop(0, 'rgba(180,220,255,0.07)');
-    halo.addColorStop(1, 'rgba(80,140,255,0)');
-    cCtx.beginPath(); cCtx.arc(cx, cy, R * 1.5, 0, Math.PI * 2);
-    cCtx.fillStyle = halo; cCtx.fill();
-
-    cCtx.beginPath();
-    cCtx.arc(cx, cy, R, 0, Math.PI * 2);
-    cCtx.arc(cx, cy, R - 5, 0, Math.PI * 2, true);
-    const rim = cCtx.createRadialGradient(cx, cy, R - 5, cx, cy, R);
-    rim.addColorStop(0,   'rgba(255,255,255,0.04)');
-    rim.addColorStop(0.5, 'rgba(200,230,255,0.08)');
-    rim.addColorStop(1,   'rgba(255,255,255,0.03)');
-    cCtx.fillStyle = rim; cCtx.fill('evenodd');
-
-    cCtx.beginPath(); cCtx.arc(cx, cy, R, 0, Math.PI * 2);
-    const stroke = cCtx.createLinearGradient(cx - R, cy - R, cx + R, cy + R);
-    stroke.addColorStop(0,    'rgba(255,255,255,0.88)');
-    stroke.addColorStop(0.3,  'rgba(210,235,255,0.52)');
-    stroke.addColorStop(0.65, 'rgba(255,255,255,0.13)');
-    stroke.addColorStop(1,    'rgba(190,220,255,0.7)');
-    cCtx.strokeStyle = stroke; cCtx.lineWidth = 1.5; cCtx.stroke();
-
-    cCtx.beginPath();
-    cCtx.arc(cx, cy, R - 1.5, -Math.PI * 0.80, -Math.PI * 0.06);
-    cCtx.strokeStyle = 'rgba(255,255,255,0.68)';
-    cCtx.lineWidth = 2.2; cCtx.lineCap = 'round'; cCtx.stroke();
-
-    cCtx.beginPath();
-    cCtx.arc(cx, cy, R - 2.5, Math.PI * 0.2, Math.PI * 0.7);
-    cCtx.strokeStyle = 'rgba(130,190,255,0.22)';
-    cCtx.lineWidth = 1.2; cCtx.lineCap = 'round'; cCtx.stroke();
-
-    if (!isOnImage && !isOnMenuItem) {
-      cCtx.save();
-      cCtx.beginPath(); cCtx.arc(mX, mY, 2.5, 0, Math.PI * 2);
-      cCtx.fillStyle = 'rgba(255,255,255,0.9)';
-      cCtx.shadowColor = 'rgba(200,230,255,0.7)'; cCtx.shadowBlur = 5;
-      cCtx.fill(); cCtx.restore();
-    }
-
-    if (isOnImage) {
-      cCtx.save();
-      cCtx.font = 'bold 11px Montserrat, sans-serif';
-      cCtx.textAlign = 'center'; cCtx.textBaseline = 'middle';
-      cCtx.shadowColor = 'rgba(0,0,0,1)'; cCtx.shadowBlur = 8; cCtx.shadowOffsetY = 1;
-      cCtx.fillStyle = '#ffffff';
-      cCtx.fillText('EXPLORE', cx, cy);
-      cCtx.shadowBlur = 3; cCtx.fillText('EXPLORE', cx, cy);
-      cCtx.restore();
-    }
-
-    if (isOnMenuItem) {
-      cCtx.save();
-      const aw = R * 0.42, ah = R * 0.28;
-      const ax = cx - aw * 0.1, ay = cy;
-      cCtx.shadowColor = 'rgba(0,0,0,0.8)'; cCtx.shadowBlur = 6;
-      cCtx.shadowOffsetX = 1; cCtx.shadowOffsetY = 1;
-      cCtx.strokeStyle = '#ffffff'; cCtx.lineWidth = 2.8;
-      cCtx.lineCap = 'round'; cCtx.lineJoin = 'round';
-      cCtx.beginPath(); cCtx.moveTo(ax - aw * 0.5, ay); cCtx.lineTo(ax + aw * 0.5, ay); cCtx.stroke();
-      cCtx.beginPath();
-      cCtx.moveTo(ax + aw * 0.5 - ah * 0.8, ay - ah * 0.55);
-      cCtx.lineTo(ax + aw * 0.5, ay);
-      cCtx.lineTo(ax + aw * 0.5 - ah * 0.8, ay + ah * 0.55);
-      cCtx.stroke();
-      cCtx.restore();
-    }
-
-    cursorRaf = requestAnimationFrame(drawCursor);
+    W = sc.width  = window.innerWidth;
+    H = sc.height = window.innerHeight;
   }
   resize();
   bag.on(window, 'resize', resize);
-  startCursor();
 
-  bag.on(document, 'visibilitychange', () => {
-    if (document.hidden) stopCursor(); else startCursor();
-  });
-
-  bag.on(document, 'mousemove', e => { mX = e.clientX; mY = e.clientY; });
-  bag.on(document, 'mouseleave', () => { mX = -300; mY = -300; });
-  document.querySelectorAll('a:not(.menu-item),button,.btn').forEach(el => {
-    bag.on(el, 'mouseenter', () => { if (!isOnImage && !isOnMenuItem) targetR = R_HOVER; });
-    bag.on(el, 'mouseleave', () => { if (!isOnImage && !isOnMenuItem) targetR = R_NORMAL; });
-  });
-  if (wrapper) {
-    bag.on(wrapper, 'mouseenter', () => { isOnImage = true;  targetR = R_IMAGE; });
-    bag.on(wrapper, 'mouseleave', () => { isOnImage = false; targetR = R_NORMAL; });
-  }
-  items.forEach(el => {
-    bag.on(el, 'mouseenter', () => { isOnMenuItem = true;  targetR = R_MENU; });
-    bag.on(el, 'mouseleave', () => { isOnMenuItem = false; targetR = R_NORMAL; });
-  });
+  /* ── LIQUID GLASS CURSOR ── (shared DOM cursor; the ring grows into an
+     "EXPLORE" lens over the photo and an arrow over the menu items) */
+  initCursor(bag, 'a:not(.menu-item), button, .btn', [
+    { sel: '#photo-wrapper', scale: 56 / 26, html: 'EXPLORE' },
+    { sel: '.menu-item', scale: 56 / 26, html: '<svg width="11" height="8" viewBox="0 0 11 8" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 2px rgba(0,0,0,.8))"><path d="M1 4h9M7 1l3 3-3 3"/></svg>' },
+  ]);
 
   /* ── SCATTER ANIMATION ── */
   const COLS = 7, ROWS = 7;

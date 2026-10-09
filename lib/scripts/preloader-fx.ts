@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════════
-   preloader-fx.ts — entry gate for the preloader's warp-and-flash layer
+   preloader-fx.ts - entry gate for the preloader's warp-and-flash layer
 
    Same split as space-field.ts, and for a sharper reason: the preloader
    is the first thing painted, so it must never wait on a 340 kB
@@ -28,7 +28,7 @@ export function initPreloaderFx(bag: Bag): void {
   const canvas = document.getElementById('preloader-fx') as HTMLCanvasElement | null;
   if (!canvas) return;
 
-  // Skip entirely when the preloader is already done — on an in-site
+  // Skip entirely when the preloader is already done - on an in-site
   // navigation the markup exists but may be hidden.
   const preloader = document.getElementById('preloader');
   if (!preloader || preloader.style.display === 'none') return;
@@ -45,6 +45,6 @@ export function initPreloaderFx(bag: Bag): void {
       if (!cancelled) m.mountPreloaderFx(bag, canvas);
     })
     .catch(() => {
-      // Decoration only — the water-fill preloader is unaffected.
+      // Decoration only - the water-fill preloader is unaffected.
     });
 }

@@ -29,7 +29,8 @@ export function initSoundMusic(): () => void {
      the whole SPA session, so navigating never restarts the track and a pause on
      any page stays paused on every other page. This engine only mirrors the
      playing state into `spectrumPlaying` to animate its visualiser. */
-  bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; }));
+  let wakeSpectrum = () => {};
+  bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; wakeSpectrum(); }));
 
   /* ════════════════════════════════════════
      SPECTRUM ANIMATION
@@ -84,9 +85,12 @@ export function initSoundMusic(): () => void {
       spCtx.fill();
     });
 
+    // Paused and flat: nothing changes until the music starts again.
+    if (!spectrumPlaying && bars.every(b => Math.abs(b.currentH - 1) < 0.02)) { specRaf = 0; return; }
     specRaf = requestAnimationFrame(drawSpectrum);
   }
   specRaf = requestAnimationFrame(drawSpectrum);
+  wakeSpectrum = () => { if (specRunning && !specRaf) { lastSpec = performance.now(); specRaf = requestAnimationFrame(drawSpectrum); } };
 
   bag.on(document, 'visibilitychange', () => {
     if (document.hidden) {

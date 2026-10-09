@@ -1,13 +1,13 @@
 /* ══════════════════════════════════════════════════════════════════
-   space-field.ts — the WebGL background's entry gate
+   space-field.ts - the WebGL background's entry gate
 
    This module is deliberately tiny and imports nothing heavy. three.js
    is ~340 kB, and the thing it draws here is a decorative backdrop, so
    it has no business sitting in the critical path ahead of the page's
    own text. The split is:
 
-     space-field.ts     (this file)  — sync: can we do WebGL at all?
-     space-field-3d.ts               — the scene; loaded on demand
+     space-field.ts     (this file)  - sync: can we do WebGL at all?
+     space-field-3d.ts               - the scene; loaded on demand
 
    `initSpaceField3D` answers synchronously because its callers need an
    immediate yes/no to decide whether to run their 2D fallback:
@@ -16,7 +16,7 @@
        ...existing 2D starfield...
 
    A canvas can only ever hand out one kind of context, so the decision
-   cannot be deferred — if we let the 2D field start first, the WebGL
+   cannot be deferred - if we let the 2D field start first, the WebGL
    context would be refused when it finally arrived. So we settle it up
    front on capability alone, claim the canvas, and stream the scene in
    behind first paint.
@@ -60,7 +60,7 @@ export function initSpaceField3D(bag: Bag): boolean {
     })
     .catch(() => {
       // Chunk failed to load. We already claimed the canvas, so there is no
-      // going back to the 2D field — but the page sits on a dark background
+      // going back to the 2D field - but the page sits on a dark background
       // anyway, so the result is a plain night sky rather than a broken one.
     });
 

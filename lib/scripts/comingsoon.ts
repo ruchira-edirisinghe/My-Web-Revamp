@@ -10,6 +10,7 @@
    route-unmount-safe. Asset paths rewritten ./Images → /Images, ./audio → /audio.
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { initCursor } from './cursor';
 import { initPreloaderFx } from './preloader-fx';
 import { initSpaceField3D } from './space-field';
 import { wireAmbientControls } from './ambient-audio';
@@ -275,36 +276,21 @@ export function initComingSoon(): () => void {
 
   /* ══════════ CURSOR + MUSIC + SOUNDS + MOBILE MENU ══════════ */
   (function () {
-    const cc = document.getElementById('cursor-canvas'), cx = cc && cc.getContext('2d');
-    if (!cc || !cx) return;
-    let W, H;
-    function resize() { W = cc.width = window.innerWidth; H = cc.height = window.innerHeight; }
-    resize();
-    bag.on(window, 'resize', resize);
-    let mX = -300, mY = -300, rX = -300, rY = -300, cR = 26, tR = 26; const RN = 26, RH = 36;
-    let dcRunning = true, dcRaf = 0;
-    function dc() {
-      if (!dcRunning) return;
-      cx.clearRect(0, 0, W, H); rX += (mX - rX) * 0.1; rY += (mY - rY) * 0.1; cR += (tR - cR) * 0.08; const R = cR, px = rX, py = rY; if (mX < -200) { dcRaf = requestAnimationFrame(dc); return; } const h = cx.createRadialGradient(px, py, R * 0.85, px, py, R * 1.5); h.addColorStop(0, 'rgba(180,220,255,0.07)'); h.addColorStop(1, 'rgba(80,140,255,0)'); cx.beginPath(); cx.arc(px, py, R * 1.5, 0, Math.PI * 2); cx.fillStyle = h; cx.fill(); cx.beginPath(); cx.arc(px, py, R, 0, Math.PI * 2); cx.arc(px, py, R - 5, 0, Math.PI * 2, true); const rm = cx.createRadialGradient(px, py, R - 5, px, py, R); rm.addColorStop(0, 'rgba(255,255,255,0.04)'); rm.addColorStop(0.5, 'rgba(200,230,255,0.08)'); rm.addColorStop(1, 'rgba(255,255,255,0.03)'); cx.fillStyle = rm; cx.fill('evenodd'); cx.beginPath(); cx.arc(px, py, R, 0, Math.PI * 2); const stg = cx.createLinearGradient(px - R, py - R, px + R, py + R); stg.addColorStop(0, 'rgba(255,255,255,0.88)'); stg.addColorStop(0.3, 'rgba(210,235,255,0.52)'); stg.addColorStop(0.65, 'rgba(255,255,255,0.13)'); stg.addColorStop(1, 'rgba(190,220,255,0.7)'); cx.strokeStyle = stg; cx.lineWidth = 1.5; cx.stroke(); cx.beginPath(); cx.arc(px, py, R - 1.5, -Math.PI * 0.8, -Math.PI * 0.06); cx.strokeStyle = 'rgba(255,255,255,0.68)'; cx.lineWidth = 2.2; cx.lineCap = 'round'; cx.stroke(); cx.beginPath(); cx.arc(px, py, R - 2.5, Math.PI * 0.2, Math.PI * 0.7); cx.strokeStyle = 'rgba(130,190,255,0.22)'; cx.lineWidth = 1.2; cx.lineCap = 'round'; cx.stroke(); cx.beginPath(); cx.arc(mX, mY, 2.5, 0, Math.PI * 2); cx.fillStyle = 'rgba(255,255,255,0.9)'; cx.shadowColor = 'rgba(200,230,255,0.7)'; cx.shadowBlur = 5; cx.fill(); cx.shadowBlur = 0; dcRaf = requestAnimationFrame(dc);
-    }
-    dcRaf = requestAnimationFrame(dc);
-    bag.add(() => { dcRunning = false; cancelAnimationFrame(dcRaf); });
-    bag.on(document, 'mousemove', e => { mX = e.clientX; mY = e.clientY; });
-    bag.on(document, 'mouseleave', () => { mX = -300; mY = -300; });
-    document.querySelectorAll('a,button,.cs-tag').forEach(el => { bag.on(el, 'mouseenter', () => { tR = RH; }); bag.on(el, 'mouseleave', () => { tR = RN; }); });
+    initCursor(bag, 'a, button, [role="button"], .cs-tag');
 
     let ac = null; function gAC() { if (!ac) ac = new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === 'suspended') ac.resume(); return ac; }
     // Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
     // continuously across every page; this engine only reads the playing flag.
     let sp = false;
-    bag.add(wireAmbientControls(playing => { sp = playing; }));
+    let wakeDs = () => {};
+    bag.add(wireAmbientControls(playing => { sp = playing; wakeDs(); }));
 
     const sC = document.getElementById('spectrum-canvas-desktop'), sCm = document.getElementById('spectrum-canvas');
     const sX = sC ? sC.getContext('2d') : null, sXm = sCm ? sCm.getContext('2d') : null;
     const SW = 26, SH = 18, BC = 7, BW = 2, BG = 2, TW = BC * BW + (BC - 1) * BG, LO = (SW - TW) / 2;
     const bars = Array.from({ length: BC }, (_, i) => ({ phase: i * (Math.PI * 2 / BC) + Math.random() * 0.5, speed: 2.8 + Math.random() * 2.2, cH: 1, tH: 1 }));
     function db(ctx) { if (!ctx) return; ctx.clearRect(0, 0, SW, SH); bars.forEach((b, i) => { const x = LO + i * (BW + BG), h = Math.max(1, b.cH), y = (SH - h) / 2; const g = ctx.createLinearGradient(x, y, x, y + h); g.addColorStop(0, 'rgba(255,255,255,0.95)'); g.addColorStop(0.5, 'rgba(200,225,255,0.75)'); g.addColorStop(1, 'rgba(150,190,255,0.45)'); ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(x, y, BW, h, 1); ctx.fill(); }); }
-    let ls = 0, dsRunning = true, dsRaf = 0; function ds(ts) { if (!dsRunning) return; const dt = Math.min((ts - ls) / 1000, 0.05); ls = ts; bars.forEach(b => { if (sp) { b.phase += b.speed * dt; b.tH = 2 + ((Math.sin(b.phase) * 0.5 + 0.5)) * (SH - 3); } else b.tH = 1; b.cH += (b.tH - b.cH) * 0.18; }); db(sX); db(sXm); dsRaf = requestAnimationFrame(ds); } dsRaf = requestAnimationFrame(ds);
+    let ls = 0, dsRunning = true, dsRaf = 0; function ds(ts) { if (!dsRunning) return; const dt = Math.min((ts - ls) / 1000, 0.05); ls = ts; bars.forEach(b => { if (sp) { b.phase += b.speed * dt; b.tH = 2 + ((Math.sin(b.phase) * 0.5 + 0.5)) * (SH - 3); } else b.tH = 1; b.cH += (b.tH - b.cH) * 0.18; }); db(sX); db(sXm); if (!sp && bars.every(b => Math.abs(b.cH - 1) < 0.02)) { dsRaf = 0; return; } dsRaf = requestAnimationFrame(ds); } dsRaf = requestAnimationFrame(ds); wakeDs = () => { if (dsRunning && !dsRaf) { ls = performance.now(); dsRaf = requestAnimationFrame(ds); } };
     bag.add(() => { dsRunning = false; cancelAnimationFrame(dsRaf); });
 
     function pC() { try { const a = gAC(), o = a.createOscillator(), g = a.createGain(), f = a.createBiquadFilter(); o.type = 'sine'; o.frequency.setValueAtTime(660, a.currentTime); o.frequency.exponentialRampToValueAtTime(440, a.currentTime + 0.12); f.type = 'lowpass'; f.frequency.value = 3000; g.gain.setValueAtTime(0, a.currentTime); g.gain.linearRampToValueAtTime(0.2, a.currentTime + 0.008); g.gain.exponentialRampToValueAtTime(0.0001, a.currentTime + 0.18); o.connect(f); f.connect(g); g.connect(a.destination); o.start(); o.stop(a.currentTime + 0.3); } catch (e) { } }

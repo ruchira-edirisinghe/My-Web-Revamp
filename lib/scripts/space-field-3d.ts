@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════════
-   space-field-3d.ts — the shared WebGL background
+   space-field-3d.ts - the shared WebGL background
 
    One three.js scene rendered into the #space-canvas that already sits
    behind every page. It replaces the hand-rolled 2D starfield that was
@@ -10,7 +10,7 @@
    -----------------
    Never imported directly by a page. `space-field.ts` decides
    synchronously whether this browser can do WebGL and, if so, streams
-   this module in behind first paint — three.js is ~340 kB and a
+   this module in behind first paint - three.js is ~340 kB and a
    backdrop should not delay the page's own text. Callers are written as
 
        if (initSpaceField3D(bag)) return;
@@ -24,7 +24,7 @@
    Three things, in the palette the 2D version used, so the site's look
    is carried over rather than replaced:
 
-     • Three star layers at different depths. Depth is the whole point —
+     • Three star layers at different depths. Depth is the whole point -
        the near layer parallaxes against the far one as the camera moves,
        which is the thing a 2D starfield cannot fake.
      • Nebula billboards drifting on an additive blend, tinted with the
@@ -59,6 +59,9 @@ const STAR_LAYERS = [
 
 const SHOOTER_POOL = 6;
 
+/** Backdrop render interval - see the throttle in `frame`. */
+const FRAME_MS = 1000 / 30;
+
 /**
  * Build the field into a canvas that `space-field.ts` has already claimed.
  * WebGL support was checked there, so this only has to handle the renderer
@@ -85,7 +88,7 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
 
   // The drawing buffer is by far the largest allocation here: at DPR 2 on a
   // 1440x900 window it is 2880x1800, and this is an out-of-focus backdrop of
-  // soft points — nothing in it resolves detail a second sample would show.
+  // soft points - nothing in it resolves detail a second sample would show.
   // Capping at 1.5 costs nothing visible and drops the buffer by ~44%.
   const isSmall = window.innerWidth < 780;
   const dprCap = isSmall ? 1.25 : 1.5;
@@ -336,10 +339,16 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
 
   function frame(now: number) {
     raf = requestAnimationFrame(frame);
-    // Clamp dt so a backgrounded tab doesn't teleport everything on return.
-    const dt = Math.min((now - last) / 1000, 0.05);
-    last = now;
     if (!running) return;
+    // Throttle to FRAME_MS. Everything here drifts slowly, so 30fps reads the
+    // same as 60 - but rAF fires at the display's refresh (120/144Hz on many
+    // laptops), and every frame this canvas changes, each backdrop-filter glass
+    // panel above it (navbar, buttons, cards) has to re-blur too. That was the
+    // intermittent jank while scrolling. The small slack absorbs rAF jitter.
+    if (now - last < FRAME_MS - 2) return;
+    // Clamp dt so a backgrounded tab doesn't teleport everything on return.
+    const dt = Math.min((now - last) / 1000, 0.1);
+    last = now;
     elapsed += dt;
 
     // Camera eases toward the pointer; the lag is what sells the depth.

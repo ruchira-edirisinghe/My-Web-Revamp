@@ -1,10 +1,10 @@
 /* ══════════════════════════════════════════════════════════════════
-   preloader-fx-3d.ts — the preloader's night sky
+   preloader-fx-3d.ts - the preloader's night sky
 
    The preloader is unchanged from its original design: aurora blobs,
    the water-fill wordmark, the progress bar. This adds one thing to it:
    the stars, in 3D. It fades up as the preloader opens and fades back
-   down as the bar completes — no flash, nothing that punches.
+   down as the bar completes - no flash, nothing that punches.
 
    WHY 3D AT ALL, FOR SOMETHING THIS QUIET
    ---------------------------------------
@@ -14,7 +14,7 @@
    WebGL. What they cannot do is sit at different distances. These
    are spread through depth and drift very slowly toward the viewer, so
    near stars slide against far ones and the black behind the wordmark
-   gains a floor. That is the whole ambition — no object, no subject,
+   gains a floor. That is the whole ambition - no object, no subject,
    nothing to look at directly.
 
    SPARKLE, IN TWO PARTS
@@ -24,7 +24,7 @@
    sky dead between flares. So there are two waves per star, on the same
    per-star rate and phase so nothing anywhere pulses in unison:
 
-     • a gentle sine that never falls below 0.74 — the same quiet shimmer
+     • a gentle sine that never falls below 0.74 - the same quiet shimmer
        the page background uses, keeping the whole field alive; and
      • a sine raised to the 16th, near zero for most of its cycle and
        spiking briefly. That is the sparkle proper, and only a handful of
@@ -33,7 +33,7 @@
    The flare does more than brighten. It is passed to the fragment shader,
    where it opens up the diffraction cross the sprite carries in a second
    channel, so a sparkling star grows spikes rather than just glowing
-   harder — which is what a real point of light does through an aperture.
+   harder - which is what a real point of light does through an aperture.
 
    All motion happens in the vertex shader from a time uniform, so the
    CPU never touches a position: one draw call, no per-frame work.
@@ -42,7 +42,7 @@
    -------------------------
    It reads the width of #progress-fill every frame. There are seven
    separate preloader implementations in this codebase and they do not
-   agree on duration — 2200 ms, 2600 ms and 7000 ms are all in use. The
+   agree on duration - 2200 ms, 2600 ms and 7000 ms are all in use. The
    one thing all seven already do is set that element's width, so
    reading it needs no per-page wiring and cannot drift out of sync with
    the bar the user is watching.
