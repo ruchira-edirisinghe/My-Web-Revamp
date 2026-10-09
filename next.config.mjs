@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Build to plain static HTML/JS in `out/` — deployable to any static host.
+  // Build to plain static HTML/JS in `out/` - deployable to any static host.
   output: 'export',
   // Pin the workspace root to this project (a stray lockfile in the user's home
   // dir otherwise makes Next infer the wrong root).

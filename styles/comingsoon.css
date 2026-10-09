@@ -1598,6 +1598,16 @@
       .cs-bottom {
         max-width: 90vw;
       }
+
+      /* The desktop sizes scale with the viewport and bottomed out at 5-8px
+         on a phone; hold every label at a readable floor. */
+      .cs-home-btn { font-size: 11px; min-height: 40px; }
+      .cs-eyebrow { font-size: 10.5px; letter-spacing: 0.24em; }
+      .cs-body { font-size: 14.5px; line-height: 1.75; color: rgba(255, 255, 255, 0.55); padding: 0 8px; }
+      .cs-cd-lbl { font-size: 9.5px; letter-spacing: 0.14em; }
+      .cs-notify-btn { font-size: 11px; }
+      .cs-progress-text, .cs-tag { font-size: 10.5px; }
+      .cs-success { font-size: 11px; }
     }
 
     /* ── QA polish: focus visibility & touch cursor ── */

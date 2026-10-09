@@ -100,7 +100,7 @@ export default function HomeClient() {
           </div>
           <div className="hero-text-group">
             <p className="subtitle">
-              UI UX Engineer &nbsp;|&nbsp; UI UX Consultant
+              UI UX Engineer &nbsp;|&nbsp; Game Developer
               <span className="vibe-inline"> &nbsp;|&nbsp; Vibe Coding Enthusiast</span>
             </p>
             <p className="subtitle subtitle-vibe">Vibe Coding Enthusiast</p>
@@ -126,23 +126,23 @@ export default function HomeClient() {
         <nav className="menu-nav" aria-label="Site menu">
           <Link href="/about" className="menu-item">
             <span className="menu-item-title">About Me</span>
-            <span className="menu-item-desc">Who I am &amp; what drives me</span>
+            <span className="menu-item-desc">A bit about me and how I work</span>
           </Link>
           <Link href="/experience" className="menu-item">
             <span className="menu-item-title">Experience</span>
-            <span className="menu-item-desc">My journey &amp; career highlights</span>
+            <span className="menu-item-desc">Where I&apos;ve worked and what I did there</span>
           </Link>
           <Link href="/projects" className="menu-item">
             <span className="menu-item-title">Projects</span>
-            <span className="menu-item-desc">Work I&apos;ve crafted &amp; shipped</span>
+            <span className="menu-item-desc">Things I&apos;ve designed and built</span>
           </Link>
           <Link href="/contact" className="menu-item">
             <span className="menu-item-title">Contact Me</span>
-            <span className="menu-item-desc">Let&apos;s build something together</span>
+            <span className="menu-item-desc">Got a project in mind? Say hello</span>
           </Link>
           <Link href="/links" className="menu-item">
             <span className="menu-item-title">Quick Links</span>
-            <span className="menu-item-desc">More places to find me</span>
+            <span className="menu-item-desc">All my links and channels in one place</span>
           </Link>
         </nav>
       </div>

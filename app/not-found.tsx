@@ -4,7 +4,7 @@ import './not-found.css';
 
 export const metadata: Metadata = {
   title: 'Page not found - Ruchira Edirisinghe',
-  description: 'This page drifted out of orbit. Head back to the homepage or browse the work.',
+  description: 'This page could not be found. Head back to the homepage or have a look through the projects instead.',
 };
 
 /**

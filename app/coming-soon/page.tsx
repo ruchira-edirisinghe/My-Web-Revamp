@@ -5,7 +5,7 @@ import ComingSoonClient from '@/components/pages/ComingSoonClient';
 export const metadata: Metadata = {
   title: 'Coming Soon - Ruchira Edirisinghe',
   description:
-    'Something new from Ruchira Edirisinghe is on the way. This page is still under construction - check back soon.',
+    'Ruchira Edirisinghe is still working on this page. Please check back again soon to see what is new.',
 };
 
 export default function ComingSoonPage() {

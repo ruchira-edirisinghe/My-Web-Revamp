@@ -127,7 +127,7 @@ export default function ComingSoonClient() {
           <h1 className="cs-headline"><span className="grad">Coming</span> Soon</h1>
           {/* <span class="cs-sub">This page is under construction</span> */}
           <div className="cs-rule"></div>
-          <p className="cs-body">Something Thoughtful Is Taking Shape&#8202;&#8202;Refined Pixel By Pixel, Crafted Line By Line.
+          <p className="cs-body">I&apos;m still working on this page, and I want to get it right before it goes live. Please check back again soon.
           </p>
 
         </div>
@@ -161,7 +161,7 @@ export default function ComingSoonClient() {
             <input type="email" class="cs-notify-input" id="cs-email" placeholder="your@email.com" />
             <button class="cs-notify-btn" id="cs-notify-btn">Notify Me</button>
           </div>
-          <p class="cs-success" id="cs-success">&#10022; &nbsp; You're on the list &mdash; see you soon.</p> */}
+          <p class="cs-success" id="cs-success">&#10022; &nbsp; You're on the list - see you soon.</p> */}
 
           <div className="cs-progress-wrap">
             <div className="cs-progress-label">

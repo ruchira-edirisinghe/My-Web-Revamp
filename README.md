@@ -1,6 +1,6 @@
 # My-Web-Revamp
 
-Personal portfolio of **Ruchira Edirisinghe** — UI/UX Engineer & Consultant.
+Personal portfolio of **Ruchira Edirisinghe** - UI/UX Engineer & Game Developer.
 
 Originally a static HTML/CSS/JS site, now a **Next.js (App Router) + React + TypeScript**
 application that builds to a fully static site. The visual design, CSS, and animations
@@ -10,7 +10,7 @@ physics, image lightboxes) are a faithful port of the original.
 ## Tech stack
 
 - **Next.js 15** (App Router) with **React 19** and **TypeScript**
-- **Static export** (`output: 'export'`) — builds to plain HTML/CSS/JS in `out/`
+- **Static export** (`output: 'export'`) - builds to plain HTML/CSS/JS in `out/`
 - Per-page CSS imported from `styles/`; Google Fonts loaded in the root layout
 
 ## Getting started
@@ -89,7 +89,7 @@ npm run images:webp    # re-encode to WebP and repoint every src in the markup
 
 Run them in that order: the resizer works on PNG/JPG, and the WebP pass converts
 what it leaves behind, deletes the original, and rewrites the `src` / `data-full`
-paths in `app/`, `components/` and `lib/`. Two things stay PNG on purpose —
+paths in `app/`, `components/` and `lib/`. Two things stay PNG on purpose -
 `Images/favicon/**` (the manifest declares `image/png`) and `Images/mynew.png`
 (the `og:image`, since some crawlers still will not take WebP; the on-page hero
 uses the `.webp` copy).
@@ -104,17 +104,17 @@ point the gallery `<img src>` at the `-card` sibling while the card's `data-full
 keeps the full-size path. `lib/cardSrc.ts` does that mapping for the galleries
 built from an array.
 
-Raw, uncropped source captures live in `assets-src/` — kept in the repo, outside
+Raw, uncropped source captures live in `assets-src/` - kept in the repo, outside
 `public/`, so they are never deployed:
 
-- `assets-src/banners/` — the ten generated 16:9 game key-art banners
-- `assets-src/whack-a-mole/` — the raw browser screenshots, before the chrome crop
+- `assets-src/banners/` - the ten generated 16:9 game key-art banners
+- `assets-src/whack-a-mole/` - the raw browser screenshots, before the chrome crop
 
 ### Game covers are 16:9
 
 All ten games ship `cover.webp` at **1600×900**, `cover-thumb.webp` at **700×394**
 and `cover-card.webp` at **1100×619**. That matches `.project-image-wrap`, which is
-`aspect-ratio: 16/9` with `object-fit: cover` — a square cover there loses the top
+`aspect-ratio: 16/9` with `object-fit: cover` - a square cover there loses the top
 and bottom 44% of the artwork, which for a lockup is the wordmark. To reinstall
 from the sources in `assets-src/banners/`:
 
