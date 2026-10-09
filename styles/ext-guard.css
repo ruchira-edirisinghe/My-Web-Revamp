@@ -1,0 +1,105 @@
+/* ══════════════════════════════════════
+   "Leaving the site" dialog (components/ExternalGuard.tsx), on every page.
+   A centred card on desktop, a bottom sheet on phones. --c is the
+   destination's brand colour. Motion is transform/opacity only.
+   ══════════════════════════════════════ */
+.xg {
+  position: fixed; inset: 0; z-index: 99990;
+  display: grid; place-items: center; padding: 20px;
+  background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--c) 14%, rgba(2, 3, 10, 0.7)), rgba(2, 3, 10, 0.86) 70%);
+  animation: xg-fade 0.25s ease both;
+  font-family: 'Montserrat', sans-serif;
+}
+@keyframes xg-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.xg-card {
+  position: relative; width: min(420px, 100%); overflow: hidden;
+  padding: 34px 28px 22px; border-radius: 28px; text-align: center;
+  background:
+    radial-gradient(120% 70% at 50% 0%, color-mix(in srgb, var(--c) 18%, transparent), transparent 60%),
+    linear-gradient(180deg, #10142a, #080a18);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px color-mix(in srgb, var(--c) 12%, transparent) inset;
+  animation: xg-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes xg-pop { from { opacity: 0; transform: translateY(18px) scale(0.94); } to { opacity: 1; transform: none; } }
+/* A thin line of the brand colour across the top edge. */
+.xg-card::before {
+  content: ''; position: absolute; top: 0; left: 18%; right: 18%; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--c), transparent);
+}
+.xg-grab { display: none; }
+
+/* Destination orb: the brand mark inside a slowly turning ring. */
+.xg-orb { position: relative; width: 84px; height: 84px; margin: 0 auto 18px; display: grid; place-items: center; }
+.xg-orb::before {
+  content: ''; position: absolute; inset: 8px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--c) 40%, #1a1f3c), #0b0e20 70%);
+  box-shadow: 0 0 34px color-mix(in srgb, var(--c) 35%, transparent);
+}
+.xg-orb-ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 0 55%, var(--c) 85%, transparent);
+  -webkit-mask: radial-gradient(circle, transparent 60%, #000 61%); mask: radial-gradient(circle, transparent 60%, #000 61%);
+  animation: xg-spin 2.6s linear infinite;
+}
+@keyframes xg-spin { to { transform: rotate(1turn); } }
+.xg-orb-icon { position: relative; width: 32px; height: 32px; fill: none; stroke: var(--c); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.xg-orb-icon.is-brand { fill: var(--c); stroke: none; }
+
+.xg-kicker { margin: 0; font-size: 10px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: var(--c); }
+.xg-title { margin: 10px 0 0; font-size: 20px; font-weight: 700; line-height: 1.35; color: #fff; overflow-wrap: anywhere; }
+.xg-detail { margin: 4px 0 0; font-size: 12.5px; font-weight: 600; color: rgba(255, 255, 255, 0.55); }
+.xg-desc { margin: 12px auto 0; max-width: 320px; font-size: 13px; line-height: 1.7; color: rgba(255, 255, 255, 0.6); }
+.xg-desc strong { color: #fff; font-weight: 700; }
+
+.xg-dest {
+  display: flex; align-items: center; gap: 8px; margin: 18px auto 0; max-width: 100%; width: fit-content;
+  padding: 8px 14px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: 12px; font-weight: 600; color: rgba(255, 255, 255, 0.78);
+}
+.xg-dest span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.xg-dest svg { flex: none; width: 13px; height: 13px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.xg-lock { stroke: #4be38a; }
+.xg-newtab { stroke: rgba(255, 255, 255, 0.45); }
+
+.xg-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
+.xg-card { padding-bottom: 28px; }
+.xg-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 0 18px; border-radius: 16px;
+  font: 700 13.5px/1 'Montserrat', sans-serif; color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.xg-btn:hover { background: rgba(255, 255, 255, 0.09); border-color: rgba(255, 255, 255, 0.28); }
+.xg-btn svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+.xg-btn.is-go {
+  color: #05060f; border-color: transparent;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--c) 80%, #fff), var(--c));
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--c) 35%, transparent);
+}
+.xg-btn.is-go:hover { transform: translateY(-1px); box-shadow: 0 12px 30px color-mix(in srgb, var(--c) 45%, transparent); }
+.xg-btn.is-go:hover svg { transform: translate(2px, -2px); }
+.xg-btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+/* Phones: a bottom sheet within thumb reach. */
+@media (max-width: 600px) {
+  .xg { place-items: end center; padding: 0; }
+  .xg-card {
+    width: 100%; border-radius: 28px 28px 0 0; border-bottom: none;
+    padding: 14px 20px calc(20px + env(safe-area-inset-bottom));
+    animation-name: xg-sheet; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-duration: 0.35s;
+  }
+  @keyframes xg-sheet { from { transform: translateY(100%); } to { transform: none; } }
+  .xg-grab { display: block; width: 40px; height: 4px; margin: 0 auto 18px; border-radius: 4px; background: rgba(255, 255, 255, 0.2); }
+  .xg-orb { width: 72px; height: 72px; }
+  .xg-title { font-size: 18px; }
+  .xg-actions { grid-template-columns: 1fr; }
+  .xg-btn.is-go { order: -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xg, .xg-card, .xg-orb-ring { animation: none !important; }
+}

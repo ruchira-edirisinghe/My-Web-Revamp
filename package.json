@@ -2,7 +2,7 @@
   "name": "ruchira-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Personal portfolio of Ruchira Edirisinghe — Next.js + React + TypeScript",
+  "description": "Personal portfolio of Ruchira Edirisinghe - Next.js + React + TypeScript",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,6 +19,7 @@
     "next": "^15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "simple-icons": "16.32.0",
     "three": "^0.185.1"
   },
   "devDependencies": {

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
+import ExternalGuard from '@/components/ExternalGuard';
 
 // Union of every Google-Fonts family used across the original site, loaded once
 // site-wide. Faithful to the originals (which loaded subsets per page) while
@@ -12,9 +13,8 @@ import './globals.css';
 // "JetBrains Mono" or "Bungee" in the fallback face instead - the one place on
 // the site where showing the wrong font is a factual error rather than a
 // nitpick. Baloo 2 / Nunito / Nunito Sans are Whack-A-Mole's own three faces,
-// for the same reason. Marcellus SC came out: it is discussed in prose on the
-// Aether Dynasty page but never applied to an element, so it was a family
-// requested on every route and rendered on none.
+// for the same reason. Marcellus SC came out: it was never applied to an
+// element, so it was a family requested on every route and rendered on none.
 const GOOGLE_FONTS_HREF =
   'https://fonts.googleapis.com/css2?' +
   [
@@ -46,20 +46,20 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: 'Ruchira Edirisinghe',
   description:
-    'Ruchira Edirisinghe - UI/UX Engineer & Consultant. Portfolio of product design, web and mobile UI/UX work.',
+    'The portfolio of Ruchira Edirisinghe, a UI/UX engineer and game developer. See his product design, web and mobile UI/UX work, development projects and games.',
   openGraph: {
     type: 'website',
     siteName: 'Ruchira Edirisinghe',
-    title: 'Ruchira Edirisinghe - UI/UX Engineer & Consultant',
+    title: 'Ruchira Edirisinghe - UI/UX Engineer & Game Developer',
     description:
-      'Portfolio of Ruchira Edirisinghe - product design and web/mobile UI/UX work, with detailed case studies and graphic design projects.',
+      'The portfolio of Ruchira Edirisinghe, with detailed UI/UX case studies, web and mobile products, games and graphic design projects.',
     images: [{ url: '/Images/mynew.png', alt: 'Ruchira Edirisinghe' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ruchira Edirisinghe - UI/UX Engineer & Consultant',
+    title: 'Ruchira Edirisinghe - UI/UX Engineer & Game Developer',
     description:
-      'Portfolio of Ruchira Edirisinghe - product design and web/mobile UI/UX work, with case studies and graphic design projects.',
+      'The portfolio of Ruchira Edirisinghe, with UI/UX case studies, web and mobile products, games and graphic design projects.',
     images: ['/Images/mynew.png'],
   },
   icons: {
@@ -92,7 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="stylesheet" href={GOOGLE_FONTS_HREF} />
       </head>
-      <body>{children}<Analytics /><SpeedInsights /></body>
+      <body>{children}<ExternalGuard /><Analytics /><SpeedInsights /></body>
     </html>
   );
 }
