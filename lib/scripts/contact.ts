@@ -1,10 +1,11 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
    contact.ts - Contact page engine: preloader, space bg, cursor + SFX,
-   audio, scroll-reveal, channel-card redirect modal, collab accordion,
+   audio, scroll-reveal,
    mobile menu, timezone clocks.
    (faithful port of styles/contact/contact.js)
    ════════════════════════════════════════ */
+import { initCursor } from './cursor';
 import { makeBag } from './_util';
 import { initPreloaderFx } from './preloader-fx';
 import { initSpaceField3D } from './space-field';
@@ -335,112 +336,15 @@ export function initContact(): () => void {
     });
   })();
 
-  /* ══════════ 3. INTERACTIVE CURSOR ══════════ */
-  (function () {
-    const cursorCanvas = document.getElementById('cursor-canvas');
-    if (!cursorCanvas) return;
-    const ctx = cursorCanvas.getContext('2d');
-    const dot = document.getElementById('cursor-dot');
-    let W = window.innerWidth, H = window.innerHeight;
-
-    function resize() {
-      W = cursorCanvas.width = window.innerWidth;
-      H = cursorCanvas.height = window.innerHeight;
-    }
-    bag.on(window, 'resize', resize);
-    resize();
-
-    let mx = -100, my = -100; // mouse position
-    let rx = -100, ry = -100; // ring position (smoothed)
-    let tr = 26, cr = 26; // target radius, current radius
-    const RN = 26, RH = 38; // radius normal, radius hover
-
-    bag.on(document, 'mousemove', e => {
-      mx = e.clientX;
-      my = e.clientY;
-    });
-
-    let running = true;
-    let rafId = 0;
-    function draw() {
-      if (!running) return;
-      ctx.clearRect(0, 0, W, H);
-
-      // Update center dot instantly for responsiveness
-      if (dot) {
-        dot.style.transform = `translate(${mx}px, ${my}px)`;
-      }
-
-      if (mx < 0 || my < 0 || W <= 900) {
-        rafId = requestAnimationFrame(draw);
-        return;
-      }
-
-      // Smooth movement for the ring
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      cr += (tr - cr) * 0.12;
-
-      // 1. Outer Glow (Halo)
-      const halo = ctx.createRadialGradient(rx, ry, cr * 0.8, rx, ry, cr * 2);
-      halo.addColorStop(0, 'rgba(140, 210, 255, 0.12)');
-      halo.addColorStop(1, 'rgba(80, 160, 255, 0)');
-      ctx.beginPath();
-      ctx.arc(rx, ry, cr * 2, 0, Math.PI * 2);
-      ctx.fillStyle = halo;
-      ctx.fill();
-
-      // 2. Liquid Glass Body (Refraction Rim)
-      ctx.beginPath();
-      ctx.arc(rx, ry, cr, 0, Math.PI * 2);
-      ctx.arc(rx, ry, cr - 4, 0, Math.PI * 2, true);
-      const rim = ctx.createRadialGradient(rx, ry, cr - 4, rx, ry, cr);
-      rim.addColorStop(0, 'rgba(255, 255, 255, 0.05)');
-      rim.addColorStop(0.5, 'rgba(200, 230, 255, 0.15)');
-      rim.addColorStop(1, 'rgba(255, 255, 255, 0.05)');
-      ctx.fillStyle = rim;
-      ctx.fill('evenodd');
-
-      // 3. Main Glass Stroke
-      ctx.beginPath();
-      ctx.arc(rx, ry, cr, 0, Math.PI * 2);
-      const stroke = ctx.createLinearGradient(rx - cr, ry - cr, rx + cr, ry + cr);
-      stroke.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
-      stroke.addColorStop(0.3, 'rgba(210, 235, 255, 0.4)');
-      stroke.addColorStop(0.7, 'rgba(255, 255, 255, 0.1)');
-      stroke.addColorStop(1, 'rgba(180, 220, 255, 0.6)');
-      ctx.strokeStyle = stroke;
-      ctx.lineWidth = 1.2;
-      ctx.stroke();
-
-      // 4. Specular Highlights (Sparkle)
-      ctx.beginPath();
-      ctx.arc(rx, ry, cr - 1.5, -Math.PI * 0.8, -Math.PI * 0.1);
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
-      ctx.lineWidth = 2;
-      ctx.lineCap = 'round';
-      ctx.stroke();
-
-      rafId = requestAnimationFrame(draw);
-    }
-    rafId = requestAnimationFrame(draw);
-
-    // Hover effect for all interactive elements
-    const hoverables = 'a, button, .channel-card, .collab-item, .modal-btn, .nav-link, .nav-cta';
-    document.querySelectorAll(hoverables).forEach(el => {
-      bag.on(el, 'mouseenter', () => tr = RH);
-      bag.on(el, 'mouseleave', () => tr = RN);
-    });
-
-    bag.add(() => { running = false; cancelAnimationFrame(rafId); });
-  })();
+  /* ══════════ 3. CURSOR (lib/scripts/cursor.ts) ══════════ */
+  initCursor(bag);
 
   /* ══════════ 4. SCROLL REVEAL ══════════ */
   (function () {
     const obs = new IntersectionObserver((es) => {
       es.forEach(e => { if (e.isIntersecting) e.target.classList.add('sr-vis'); });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.sr-elem, .orbit-visual-wrap, .channel-card, .collab-item, .orbit-text, .tz-heading, .tz-card').forEach(el => obs.observe(el));
+    document.querySelectorAll('.sr-elem, .ct-rv').forEach(el => obs.observe(el));
     bag.add(() => obs.disconnect());
   })();
 
@@ -464,7 +368,8 @@ export function initContact(): () => void {
        continuously across every page and remembers its paused state; this engine
        only mirrors the playing flag into its spectrum visualiser below. */
     let spectrumPlaying = false;
-    bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; }));
+    let wakeSpectrum = () => {};
+    bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; wakeSpectrum(); }));
 
     // Spectrum bars config
     const SW = 26, SH = 18, BAR_COUNT = 7, BAR_W = 2, BAR_GAP = 2;
@@ -513,9 +418,12 @@ export function initContact(): () => void {
       });
       drawBarsOnCtx(spCtx);
       drawBarsOnCtx(spCtxD);
+      // Paused and flat: nothing changes until the music starts again.
+      if (!spectrumPlaying && bars.every(b => Math.abs(b.currentH - 1) < 0.02)) { specRaf = 0; return; }
       specRaf = requestAnimationFrame(drawSpectrum);
     }
     specRaf = requestAnimationFrame(drawSpectrum);
+    wakeSpectrum = () => { if (specRunning && !specRaf) { lastSpec = performance.now(); specRaf = requestAnimationFrame(drawSpectrum); } };
 
     // Click & hover sounds
     function playSfx(type) {
@@ -542,7 +450,7 @@ export function initContact(): () => void {
       } catch (e) {}
     }
 
-    document.querySelectorAll('a, button, .channel-card, .collab-item').forEach(el => {
+    document.querySelectorAll('a, button').forEach(el => {
       bag.on(el, 'mouseenter', () => playSfx('hover'));
       bag.on(el, 'click', () => playSfx('click'));
     });
@@ -574,107 +482,6 @@ export function initContact(): () => void {
       cancelAnimationFrame(specRaf);
       try { if (audioContext) audioContext.close(); } catch {}
       document.querySelectorAll('.click-particle').forEach(p => p.remove());
-    });
-  })();
-
-  /* ══════════ 6. MODAL SYSTEM ══════════ */
-  (function () {
-    const overlay = document.getElementById('cert-prompt-overlay');
-    const modalCard = overlay ? overlay.querySelector('.modal-card') : null;
-    const cancelBtn = document.getElementById('modal-cancel');
-    const confirmBtn = document.getElementById('modal-confirm');
-    const cards = document.querySelectorAll('.channel-card');
-    const modalIconWrap = document.getElementById('modal-icon-wrap');
-    const modalAction = document.getElementById('modal-action-text');
-    let pendingUrl = '';
-    let modalOpener: any = null;
-
-    if (!overlay || !cancelBtn || !confirmBtn) return;
-
-    // Dialog semantics for assistive tech
-    overlay.setAttribute('role', 'dialog');
-    overlay.setAttribute('aria-modal', 'true');
-    if (modalAction) overlay.setAttribute('aria-labelledby', 'modal-action-text');
-    else overlay.setAttribute('aria-label', 'Confirm navigation');
-
-    const timeouts: any[] = [];
-    const closeModal = () => {
-      overlay.classList.remove('active');
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      if (modalOpener && typeof modalOpener.focus === 'function') modalOpener.focus();
-      modalOpener = null;
-      const id = setTimeout(() => { pendingUrl = ''; }, 300);
-      timeouts.push(id);
-    };
-
-    const openModal = (card) => {
-      const url = card.getAttribute('data-url');
-      if (!url) return;
-      modalOpener = card;
-      pendingUrl = url;
-      const iconHtml = card.querySelector('.cc-icon-wrap').innerHTML;
-      const detail = card.getAttribute('data-detail');
-      const action = card.getAttribute('data-action');
-      modalAction.textContent = action;
-      document.getElementById('modal-detail-box').textContent = detail;
-      modalIconWrap.innerHTML = iconHtml;
-
-      const sourceStyles = window.getComputedStyle(card);
-      ['--cc-color', '--cc-icon-border', '--cc-icon-bg', '--cc-glow'].forEach(prop => {
-        modalIconWrap.style.setProperty(prop, sourceStyles.getPropertyValue(prop));
-      });
-      overlay.style.setProperty('--modal-glow', sourceStyles.getPropertyValue('--cc-glow').replace('0.08', '0.4').replace('0.15', '0.4'));
-      modalCard.style.setProperty('--cc-color', sourceStyles.getPropertyValue('--cc-color'));
-      modalCard.style.setProperty('--cc-glow', sourceStyles.getPropertyValue('--cc-glow'));
-      overlay.classList.add('active');
-      overlay.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      // Focus the safe (cancel) action so Enter doesn't fire the redirect
-      if (cancelBtn && typeof cancelBtn.focus === 'function') cancelBtn.focus();
-    };
-
-    cards.forEach(card => {
-      // Keyboard access: expose each contact channel as a button
-      if (!card.hasAttribute('role')) card.setAttribute('role', 'button');
-      if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
-      const action = card.getAttribute('data-action');
-      const detail = card.getAttribute('data-detail');
-      if (action && !card.getAttribute('aria-label')) {
-        card.setAttribute('aria-label', detail ? `${action}: ${detail}` : action);
-      }
-      bag.on(card, 'click', () => openModal(card));
-      bag.on(card, 'keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
-      });
-    });
-
-    bag.on(cancelBtn, 'click', (e) => { e.stopPropagation(); closeModal(); });
-    bag.on(confirmBtn, 'click', (e) => {
-      e.stopPropagation();
-      if (pendingUrl) {
-        // mailto:/tel: must navigate in-place so the OS handler opens (a blank tab otherwise)
-        if (/^(mailto:|tel:)/i.test(pendingUrl)) window.location.href = pendingUrl;
-        else window.open(pendingUrl, '_blank', 'noopener');
-      }
-      closeModal();
-    });
-    bag.on(overlay, 'click', (e) => { if (e.target === overlay) closeModal(); });
-    // Escape closes the confirm modal
-    bag.on(document, 'keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal(); });
-
-    bag.add(() => { timeouts.forEach(clearTimeout); document.body.style.overflow = ''; });
-  })();
-
-  /* ══════════ 7. COLLAB ACCORDION ══════════ */
-  (function () {
-    const items = document.querySelectorAll('.collab-item');
-    items.forEach(item => {
-      bag.on(item, 'click', () => {
-        if (item.classList.contains('active')) return;
-        items.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-      });
     });
   })();
 
