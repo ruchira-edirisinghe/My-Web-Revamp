@@ -1,0 +1,46 @@
+/* The 3D astronaut peeking up from the bottom of the page
+   (components/AstroPeek.tsx). The wrapper runs down behind the footer
+   (--foot is the footer's height, set by the component), so he stands in the
+   gap between the social links and the copyright, cut off at the chest by the
+   bottom of the page. The footer draws over him, so its links stay clickable. */
+.astro-peek {
+  position: relative;
+  width: 100%;
+  margin: 56px 0 calc(var(--foot, 0px) * -1);
+  display: flex; justify-content: center;
+  overflow: hidden;
+}
+
+/* The figure's box: wide enough for the raised glove on one side and the
+   pencil tip on the other, with his helmet in the middle. */
+.astro-peek-3d {
+  position: relative;
+  flex: none;
+  width: min(1054px, 100%);
+  aspect-ratio: 27 / 10;
+  transform: translateY(100%);
+  transition: transform 1.4s cubic-bezier(0.22, 1.15, 0.36, 1);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.astro-peek.is-up .astro-peek-3d.is-ready { transform: translateY(0); }
+.astro-peek-3d.is-failed { display: none; }
+.astro-peek-3d .ct-3d-canvas {
+  position: absolute; inset: 0; display: block; width: 100%; height: 100%;
+  pointer-events: none; opacity: 0; transition: opacity 0.6s ease;
+}
+.astro-peek-3d.is-ready .ct-3d-canvas { opacity: 1; }
+.astro-peek-3d:focus { outline: none; }
+.astro-peek-3d:focus-visible { outline: 2px solid rgba(140, 210, 255, 0.6); outline-offset: -4px; border-radius: 18px; }
+
+/* Phones: the footer's links fill its whole row, so he stands just above it,
+   in a box a little wider than the screen (his glove and the pencil tip still
+   fit inside it). */
+@media (max-width: 640px) {
+  .astro-peek { margin: 32px 0 0; }
+  .astro-peek-3d { width: 108%; aspect-ratio: 27 / 10; translate: -4% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .astro-peek-3d { transform: none; transition: none; }
+}

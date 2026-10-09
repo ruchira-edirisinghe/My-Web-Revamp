@@ -1,0 +1,51 @@
+/* The sign-off at the end of a page (components/SignOff.tsx). */
+.so { width: min(1180px, 92%); margin-inline: auto; text-align: center; }
+.so-kicker {
+  margin: 0 0 16px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase;
+  color: rgba(140, 210, 255, 0.75);
+}
+.so-title {
+  margin: 0;
+  font-family: 'Burgundia', cursive; font-weight: 400; line-height: 1.2;
+  font-size: clamp(36px, 4.4vw, 58px);
+  letter-spacing: normal; text-transform: none;
+  color: rgba(255, 255, 255, 0.92);
+}
+.so-plain { position: relative; z-index: 1; }
+.so-glow {
+  display: inline-block;
+  background: linear-gradient(135deg, #5ce0ff 0%, #bc6fff 50%, #6dff8a 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  /* The gradient only paints inside this box; it reaches past Burgundia's swashes. */
+  padding: 0.2em 0.5em 0.3em; margin: -0.2em -0.5em -0.3em;
+}
+/* Desktop: the page's biggest line, on two lines - "Let's sketch" above, the
+   glowing rest below. */
+@media (min-width: 901px) {
+  .so-title { font-size: clamp(64px, 6.2vw, 92px); line-height: 1.08; }
+  .so-plain { display: block; }
+  .so-plain, .so-glow { white-space: nowrap; }
+}
+
+.so-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 34px; }
+.so-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 26px; border-radius: 999px; text-decoration: none;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.04);
+  transition: transform 0.25s, background 0.25s, border-color 0.25s;
+}
+.so-btn:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.4); }
+.so-btn.is-main { color: #05060f; border-color: transparent; background: linear-gradient(135deg, #5ce0ff, #bc6fff); }
+.so-btn:focus-visible { outline: 2px solid #8cd2ff; outline-offset: 3px; }
+.so-i { width: 16px; height: 16px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* The astronaut runs down to the bottom of the page, so the page's own
+   bottom padding goes. */
+.page:has(> .astro-peek:last-child) { padding-bottom: 0; }
+
+/* About: room above it after the testimonials. */
+.about-signoff { margin-top: 140px; }
+@media (max-width: 900px) { .about-signoff { margin-top: 96px; } }

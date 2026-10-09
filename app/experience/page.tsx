@@ -1,12 +1,15 @@
 import type { Metadata } from 'next';
 import '@/styles/experience/expadditional.css';
 import '@/styles/experience/experience-inline.css';
+import '@/styles/experience/exp-v2.css';
+import '@/styles/signoff.css';
+import '@/styles/astro-peek.css';
 import ExperienceClient from '@/components/pages/ExperienceClient';
 
 export const metadata: Metadata = {
   title: 'Experience - Ruchira Edirisinghe',
   description:
-    "The career journey of Ruchira Edirisinghe - roles, highlights, and certifications across the teams and products I've worked on as a UI/UX engineer.",
+    "Where Ruchira Edirisinghe has worked and what he did there, along with his certifications, skills, education and volunteer work as a UI/UX engineer and game developer.",
 };
 
 export default function ExperiencePage() {

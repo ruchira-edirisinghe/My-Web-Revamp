@@ -2,9 +2,10 @@
 /* ════════════════════════════════════════
    about.ts - About page engine: testimonial carousel, space bg, preloader,
    liquid cursor + SFX, ambient audio, mobile menu, logo ticker, bio canvas,
-   scroll-reveal + count-ups, gaming reveal, CV modal, redirect-prompt modal.
+   scroll-reveal + count-ups, gaming reveal, CV modal.
    (faithful port of styles/about/about.js + about.html inline CV-modal script)
    ════════════════════════════════════════ */
+import { initCursor } from './cursor';
 import { makeBag, makeDirtyClear } from './_util';
 import { initPreloaderFx } from './preloader-fx';
 import { initSpaceField3D } from './space-field';
@@ -40,7 +41,8 @@ export function initAbout(): () => void {
       const tokens = p.innerText.split(/(\s+)/);
       p.innerHTML = tokens.map(function (token) {
         if (/^\s+$/.test(token)) return token;
-        return '<span class="tq-word">' + token + '</span>';
+        // innerText is decoded text; escape it before writing it back as HTML.
+        return '<span class="tq-word">' + token.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
       }).join('');
       p.dataset.wrapped = '1';
     }
@@ -83,12 +85,13 @@ export function initAbout(): () => void {
       avs.forEach((a, i) => a.classList.toggle('current-av', i === current));
       dots.forEach((d, i) => d.classList.toggle('active', i === current));
 
+      // scaleX rather than width: the bar fills on the compositor, no layout.
       prog.style.transition = 'none';
-      prog.style.width = '0%';
+      prog.style.transform = 'scaleX(0)';
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          prog.style.transition = 'width ' + DURATION + 'ms linear';
-          prog.style.width = '100%';
+          prog.style.transition = 'transform ' + DURATION + 'ms linear';
+          prog.style.transform = 'scaleX(1)';
         });
       });
     }
@@ -96,8 +99,8 @@ export function initAbout(): () => void {
     function startAuto() {
       clearInterval(timer);
       timer = setInterval(() => { showSlide(current + 1); }, DURATION);
-      prog.style.transition = 'width ' + DURATION + 'ms linear';
-      prog.style.width = '100%';
+      prog.style.transition = 'transform ' + DURATION + 'ms linear';
+      prog.style.transform = 'scaleX(1)';
     }
 
     const prevBtn = document.getElementById('testi-prev');
@@ -316,75 +319,8 @@ export function initAbout(): () => void {
 
   /* ══════════ 4. LIQUID CURSOR, AMBIENT AUDIO, SFX & MOBILE MENU ══════════ */
   (function () {
-    /* ── Liquid cursor ── */
-    const cursorCanvas = document.getElementById('cursor-canvas');
-    if (cursorCanvas) {
-      const cCtx = cursorCanvas.getContext('2d');
-      const dirty = makeDirtyClear(cCtx);
-      let W, H;
-      function resize() { W = cursorCanvas.width = window.innerWidth; H = cursorCanvas.height = window.innerHeight; dirty.reset(); }
-      resize(); bag.on(window, 'resize', resize);
-
-      let mX = -300, mY = -300, rX = -300, rY = -300, currentR = 26, targetR = 26;
-      const R_NORMAL = 26, R_HOVER = 36;
-      let cursorRunning = true;
-      let cursorRaf = 0;
-      // Below 900px there is no custom cursor, but the loop stays scheduled so
-      // it picks straight back up on a resize. Wipe the canvas once on the way
-      // in rather than re-clearing it sixty times a second on the device least
-      // able to afford it.
-      let clearedForNarrow = false;
-
-      function drawCursor() {
-        if (!cursorRunning) return;
-        if (W <= 900) {
-          if (!clearedForNarrow) { clearedForNarrow = true; dirty.reset(); cCtx.clearRect(0, 0, W, H); }
-          cursorRaf = requestAnimationFrame(drawCursor);
-          return;
-        }
-        clearedForNarrow = false;
-
-        rX += (mX - rX) * 0.1; rY += (mY - rY) * 0.1; currentR += (targetR - currentR) * 0.08;
-        const R = currentR, cx = rX, cy = rY;
-        // The ring trails the pointer, and the dot sits ON it, so the box has to
-        // span both - it widens with speed and collapses back the moment the
-        // ring catches up. Still a fraction of the full-canvas clear this was.
-        dirty.clear(cx, cy, R * 1.6 + Math.hypot(mX - cx, mY - cy));
-        if (mX < -200) { cursorRaf = requestAnimationFrame(drawCursor); return; }
-        const halo = cCtx.createRadialGradient(cx, cy, R * 0.85, cx, cy, R * 1.5);
-        halo.addColorStop(0, 'rgba(180,220,255,0.07)'); halo.addColorStop(1, 'rgba(80,140,255,0)');
-        cCtx.beginPath(); cCtx.arc(cx, cy, R * 1.5, 0, Math.PI * 2); cCtx.fillStyle = halo; cCtx.fill();
-        cCtx.beginPath(); cCtx.arc(cx, cy, R, 0, Math.PI * 2); cCtx.arc(cx, cy, R - 5, 0, Math.PI * 2, true);
-        const rim = cCtx.createRadialGradient(cx, cy, R - 5, cx, cy, R);
-        rim.addColorStop(0, 'rgba(255,255,255,0.04)'); rim.addColorStop(0.5, 'rgba(200,230,255,0.08)'); rim.addColorStop(1, 'rgba(255,255,255,0.03)');
-        cCtx.fillStyle = rim; cCtx.fill('evenodd');
-        cCtx.beginPath(); cCtx.arc(cx, cy, R, 0, Math.PI * 2);
-        const stroke = cCtx.createLinearGradient(cx - R, cy - R, cx + R, cy + R);
-        stroke.addColorStop(0, 'rgba(255,255,255,0.88)'); stroke.addColorStop(0.3, 'rgba(210,235,255,0.52)');
-        stroke.addColorStop(0.65, 'rgba(255,255,255,0.13)'); stroke.addColorStop(1, 'rgba(190,220,255,0.7)');
-        cCtx.strokeStyle = stroke; cCtx.lineWidth = 1.5; cCtx.stroke();
-        cCtx.beginPath(); cCtx.arc(cx, cy, R - 1.5, -Math.PI * 0.8, -Math.PI * 0.06);
-        cCtx.strokeStyle = 'rgba(255,255,255,0.68)'; cCtx.lineWidth = 2.2; cCtx.lineCap = 'round'; cCtx.stroke();
-        cCtx.beginPath(); cCtx.arc(cx, cy, R - 2.5, Math.PI * 0.2, Math.PI * 0.7);
-        cCtx.strokeStyle = 'rgba(130,190,255,0.22)'; cCtx.lineWidth = 1.2; cCtx.lineCap = 'round'; cCtx.stroke();
-        cCtx.beginPath(); cCtx.arc(mX, mY, 2.5, 0, Math.PI * 2);
-        cCtx.fillStyle = 'rgba(255,255,255,0.9)'; cCtx.shadowColor = 'rgba(200,230,255,0.7)'; cCtx.shadowBlur = 5; cCtx.fill();
-        cCtx.shadowBlur = 0;
-        cursorRaf = requestAnimationFrame(drawCursor);
-      }
-      cursorRaf = requestAnimationFrame(drawCursor);
-      bag.on(document, 'mousemove', e => { mX = e.clientX; mY = e.clientY; });
-      bag.on(document, 'mouseleave', () => { mX = -300; mY = -300; });
-      document.querySelectorAll('a,button,.nav-link,.nav-cta,.skill-tag,.stat-pill,.about-block').forEach(el => {
-        bag.on(el, 'mouseenter', () => { targetR = R_HOVER; });
-        bag.on(el, 'mouseleave', () => { targetR = R_NORMAL; });
-      });
-      bag.on(document, 'visibilitychange', () => {
-        if (document.hidden) { cursorRunning = false; }
-        else if (!cursorRunning) { cursorRunning = true; cursorRaf = requestAnimationFrame(drawCursor); }
-      });
-      bag.add(() => { cursorRunning = false; cancelAnimationFrame(cursorRaf); });
-    }
+    /* ── Pointer (dot + glass ring): lib/scripts/cursor.ts ── */
+    initCursor(bag, 'a, button, [role="button"], .nav-link, .nav-cta, .skill-tag, .stat-pill');
 
     /* ── Audio ── */
     let audioCtx = null;
@@ -394,7 +330,8 @@ export function initAbout(): () => void {
        continuously across every page and remembers its paused state; this engine
        only mirrors the playing flag into its spectrum visualiser below. */
     let spectrumPlaying = false;
-    bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; }));
+    let wakeSpectrum = () => {};
+    bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; wakeSpectrum(); }));
 
     const specCanvas = document.getElementById('spectrum-canvas-desktop');
     const specCanvasM = document.getElementById('spectrum-canvas');
@@ -430,9 +367,12 @@ export function initAbout(): () => void {
       });
       drawBarsOnCtx(spCtx);
       drawBarsOnCtx(spCtxM);
+      // Paused and flat: nothing changes until the music starts again.
+      if (!spectrumPlaying && bars.every(b => Math.abs(b.currentH - 1) < 0.02)) { specRaf = 0; return; }
       specRaf = requestAnimationFrame(drawSpectrum);
     }
     specRaf = requestAnimationFrame(drawSpectrum);
+    wakeSpectrum = () => { if (specRunning && !specRaf) { lastSpec = performance.now(); specRaf = requestAnimationFrame(drawSpectrum); } };
     bag.on(document, 'visibilitychange', () => {
       if (document.hidden) { specRunning = false; }
       else if (!specRunning) { specRunning = true; lastSpec = performance.now(); specRaf = requestAnimationFrame(drawSpectrum); }
@@ -458,7 +398,7 @@ export function initAbout(): () => void {
       } catch (e) { }
     }
 
-    document.querySelectorAll('.nav-link,.nav-cta,.about-block,.skill-tag,.stat-pill,footer a').forEach(el => {
+    document.querySelectorAll('.nav-link,.nav-cta,.about-block,.skill-tag,.stat-pill,.so-btn,footer a').forEach(el => {
       bag.on(el, 'mouseenter', playHover);
       bag.on(el, 'click', () => playClick(false));
     });
@@ -579,37 +519,54 @@ export function initAbout(): () => void {
 
     const PX_PER_SEC = 70;
     let setWidth = 0;
-    let offset = 0;
-    let last = null;
-    let rafId = 0;
-    let running = true;
+    // A Web Animation runs on the compositor, so the strip keeps scrolling
+    // without touching the main thread (it used to rewrite a transform from JS
+    // every frame).
+    let anim: Animation | null = null;
 
     function measure() {
-      setWidth = setA.offsetWidth;
-      if (offset === 0) offset = setWidth * 0.5;
+      const w = setA.offsetWidth;
+      if (!w || w === setWidth) return;
+      // Keep the strip where it is when the width changes (resize, font swap).
+      const progress = anim ? ((anim.currentTime as number) || 0) / (setWidth / PX_PER_SEC * 1000) : 0.5;
+      setWidth = w;
+      const duration = setWidth / PX_PER_SEC * 1000;
+      const wasPlaying = anim ? anim.playState === 'running' : true;
+      anim?.cancel();
+      anim = inner.animate(
+        [{ transform: 'translateX(0)' }, { transform: `translateX(-${setWidth}px)` }],
+        { duration, iterations: Infinity },
+      );
+      anim.currentTime = (progress % 1) * duration;
+      if (!wasPlaying) anim.pause();
     }
 
-    function frame(ts) {
-      if (!running) return;
-      if (last === null) last = ts;
-      const dt = (ts - last) / 1000;
-      last = ts;
-      offset += PX_PER_SEC * dt;
-      if (offset >= setWidth) offset -= setWidth;
-      inner.style.transform = `translateX(-${offset}px)`;
-      rafId = requestAnimationFrame(frame);
-    }
-
+    let visible = true, loaded = false;
     function start() {
+      if (!loaded) return; // logo widths aren't known until the images load
       measure();
-      if (!rafId) rafId = requestAnimationFrame(frame);
+      if (anim && visible && !document.hidden) anim.play();
     }
+    function stop() { anim?.pause(); }
 
-    if (document.readyState === 'complete') start();
-    else bag.on(window, 'load', start);
+    const onLoad = () => { loaded = true; start(); };
+    if (document.readyState === 'complete') onLoad();
+    else bag.on(window, 'load', onLoad);
 
-    bag.on(window, 'resize', measure);
-    bag.add(() => { running = false; cancelAnimationFrame(rafId); });
+    // Only scroll the strip while it is on screen - otherwise it rewrote a
+    // transform every frame for the whole visit, long after it scrolled away.
+    if ('IntersectionObserver' in window) {
+      const tickerObs = new IntersectionObserver(entries => {
+        visible = entries[0].isIntersecting;
+        if (visible) start(); else stop();
+      });
+      tickerObs.observe(inner);
+      bag.add(() => tickerObs.disconnect());
+    }
+    bag.on(document, 'visibilitychange', () => { if (document.hidden) stop(); else start(); });
+
+    bag.on(window, 'resize', () => { if (loaded) measure(); });
+    bag.add(() => { anim?.cancel(); anim = null; });
   })();
 
   /* ══════════ 7. BIO REVEAL + BIO CANVAS ══════════ */
@@ -848,59 +805,7 @@ export function initAbout(): () => void {
     bag.add(() => observers.forEach(o => o.disconnect()));
   })();
 
-  /* ══════════ 11. REDIRECT-PROMPT MODAL (gaming platform cards) ══════════ */
-  (function () {
-    const modalOverlay = document.getElementById('cert-prompt-overlay');
-    const modalIconWrap = document.getElementById('modal-icon-wrap');
-    const modalDetailBox = document.getElementById('modal-detail-box');
-    const modalActionText = document.getElementById('modal-action-text');
-    const modalCancel = document.getElementById('modal-cancel');
-    const modalConfirm = document.getElementById('modal-confirm');
-
-    if (!modalOverlay) return;
-
-    let pendingUrl = '';
-
-    document.querySelectorAll('.platform-card').forEach(card => {
-      bag.on(card, 'click', function (e) {
-        if (this.dataset.url) {
-          e.preventDefault();
-          pendingUrl = this.dataset.url;
-
-          const iconSource = this.querySelector('.pc-icon-wrap');
-          if (iconSource && modalIconWrap) modalIconWrap.innerHTML = iconSource.innerHTML;
-
-          if (modalDetailBox) modalDetailBox.textContent = this.dataset.detail || this.dataset.name || 'External Link';
-          if (modalActionText) modalActionText.textContent = this.dataset.action || 'the application';
-
-          const computed = getComputedStyle(this);
-          const color = computed.getPropertyValue('--pc-color').trim() || '#fff';
-          const glow = computed.getPropertyValue('--pc-glow').trim() || 'rgba(255,255,255,0.2)';
-
-          document.documentElement.style.setProperty('--cc-color', color);
-          document.documentElement.style.setProperty('--cc-glow', glow);
-
-          modalOverlay.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        }
-      });
-    });
-
-    function closeModal() {
-      modalOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    if (modalCancel) bag.on(modalCancel, 'click', closeModal);
-    if (modalConfirm) bag.on(modalConfirm, 'click', function () {
-      if (pendingUrl) window.open(pendingUrl, '_blank', 'noopener');
-      closeModal();
-    });
-
-    bag.on(modalOverlay, 'click', e => { if (e.target === modalOverlay) closeModal(); });
-
-    bag.add(() => { document.body.style.overflow = ''; });
-  })();
+  /* (11. The gaming platform cards are outside links: components/ExternalGuard.tsx asks first.) */
 
   return () => bag.dispose();
 }

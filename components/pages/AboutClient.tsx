@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
+import SignOff from '@/components/SignOff';
 import { cssVars } from '@/lib/css';
 import { initAbout } from '@/lib/scripts/about';
 
@@ -494,24 +495,25 @@ export default function AboutClient() {
                 </h2>
       
                 <p className="bio-para" style={cssVars({ '--para-delay': '0.1s' })}>
-                  I Am A UI/UX Engineer With More Than 4 Years Of Experience Dedicated To Bridging The Gap Between Sophisticated
-                  Design And Functional Engineering. With A Strong Foundation In Both User Interface Design And Front-End
-                  Development, I Specialize In Creating Digital Experiences That Are Not Only Visually Compelling But Also
-                  Technically Robust And Easy To Navigate.
+                  I'm a UI/UX engineer and game developer, and I've spent the last four years or so working in the space
+                  where design and code meet. Most of my days are split between designing interfaces, building them on the
+                  front end and making games, so I get to follow an idea all the way from a rough sketch to something people
+                  can actually click, play and enjoy. I care a lot about things looking good, but I care just as much about
+                  them working properly and feeling fun to use.
                 </p>
       
                 <p className="bio-para" style={cssVars({ '--para-delay': '0.22s' })}>
-                  My Approach Centers On Problem-Solving Through Empathy. I Believe That Great Design Starts With
-                  Understanding The User's Needs And Ends With A Seamless, High-Performance Product. By Leveraging My
-                  Technical Expertise In Modern Web Technologies And Hosting Environments, I Ensure That Every Pixel-Perfect
-                  Design Transitions Smoothly Into A Live, Scalable Application.
+                  When I start a project, I try to put myself in the shoes of the people who'll be using it. What are they
+                  trying to get done, and what's getting in their way? Once I understand that, the design decisions tend to
+                  make themselves. Because I also build what I design, I can take a layout from Figma and turn it into a fast,
+                  working site or app, and set up the hosting so it stays that way once it's live.
                 </p>
       
                 <p className="bio-para" style={cssVars({ '--para-delay': '0.34s' })}>
-                  I Am Constantly Exploring The Intersection Of Technology And Human Behavior, Staying Ahead Of Industry
-                  Trends In Hardware, Web Accessibility, And Interactive Design. Whether I'm Collaborating With A
-                  Cross-Functional Team Or Taking A Project From Concept To Deployment, I Prioritize Efficiency, Clean Code,
-                  And User-Centric Results.
+                  I'm always curious about how people use technology, so I keep reading and experimenting with what's new in
+                  game development, accessibility and interactive design. Whether I'm putting together a browser game,
+                  working alongside developers and designers on a team, or taking a project from the first idea through to
+                  launch, I try to keep the code clean, the process efficient and the end result focused on the people using it.
                 </p>
       
               </div>
@@ -538,9 +540,10 @@ export default function AboutClient() {
                   </div>
                 </div>
                 <div className="block-bottom">
-                  <p className="block-text">End-to-end UI/UX design and engineering - from research and wireframes to
-                    pixel-perfect interfaces and interactive prototypes. I consult with startups and businesses to build
-                    intuitive, user-centred digital products that perform.</p>
+                  <p className="block-text">I handle the whole design process, starting with research and wireframes and
+                    working through to polished interfaces and clickable prototypes you can test with real users. I also work
+                    with startups and businesses as a consultant, helping them figure out what their product needs and how to
+                    make it easy and enjoyable to use.</p>
                 </div>
               </div>
       
@@ -563,9 +566,10 @@ export default function AboutClient() {
                   </div>
                 </div>
                 <div className="block-bottom">
-                  <p className="block-text">Creative front-end development with a feel for design - HTML, CSS, JavaScript, React
-                    and beyond. I bring interfaces to life with smooth animations, clean code and an eye for detail that
-                    bridges design and engineering.</p>
+                  <p className="block-text">I build front ends with HTML, CSS, JavaScript and React, and lately a lot of my
+                    work is done through vibe coding, where I plan the architecture and guide AI tools to write the code with
+                    me. Because I come from a design background, I pay close attention to the small things like spacing,
+                    animation and how a page feels when you scroll through it.</p>
                 </div>
               </div>
       
@@ -573,25 +577,26 @@ export default function AboutClient() {
               <div className="about-block">
                 <div className="block-icon">
                   <svg viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                    <path d="M2 17l10 5 10-5" />
-                    <path d="M2 12l10 5 10-5" />
+                    <rect x="2" y="6" width="20" height="12" rx="4" />
+                    <path d="M6 12h4M8 10v4" />
+                    <path d="M15 11h.01M18 13h.01" />
                   </svg>
                 </div>
                 <div className="block-header">
                   <div className="block-header-left">
-                    <p className="block-label">Visual Arts</p>
+                    <p className="block-label">Games &amp; Visual Arts</p>
                     <h2 className="block-title"
                       style={{ fontFamily: "'Squada One', sans-serif", fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0px' }}>
-                      <span style={{ whiteSpace: 'nowrap' }}>GRAPHIC DESIGNING</span><br />
-                      &amp; 3D MODELING
+                      <span style={{ whiteSpace: 'nowrap' }}>GAME DEVELOPMENT</span><br />
+                      &amp; GRAPHIC DESIGNING
                     </h2>
                   </div>
                 </div>
                 <div className="block-bottom">
-                  <p className="block-text">Bold graphic design, brand identities and 3D visual experiences. From logo design and
-                    motion graphics to immersive 3D renders - I craft visuals that tell a story and leave a lasting
-                    impression.</p>
+                  <p className="block-text">I make games, ranging from browser games built with three.js to projects in
+                    Unity, and I usually work on the mechanics, the game feel and the artwork myself. On the graphic design
+                    side, I create logos, brand identities, posters and artwork, and I enjoy giving each piece its own story
+                    and personality.</p>
                 </div>
               </div>
       
@@ -1131,11 +1136,11 @@ export default function AboutClient() {
       
             <div className="para-container">
               <p className="bio-para" style={cssVars({ '--para-delay': '0.1s' })}>
-                My tech stack is a curated ecosystem designed for speed, precision, and aesthetic excellence. Beyond
-                traditional engineering, I am practicing to be a prompt engineer and a vibe coder, focusing my energy on
-                creating seamless frontend interfaces. By combining these advanced AI-driven workflows with established
-                development practices, I ensure that every project is technically robust, scalable, and built for the modern
-                web.
+                These are the tools I reach for most often. I've picked them up over the years because they let me work
+                quickly without cutting corners on quality or looks. Alongside the usual design and development work, I've
+                been getting better at prompt engineering and vibe coding, which I mostly use to build front-end interfaces
+                and games. I still lean on good old development habits like planning the structure first, reviewing every
+                change and testing properly, so the projects hold up well and are easy to grow later on.
               </p>
             </div>
       
@@ -1192,16 +1197,12 @@ export default function AboutClient() {
                   </div>
       
                   <div className="snode"
-                    style={cssVars({ '--nd': '0.66s', '--float-dur': '3.9s', '--float-off': '1.3s', '--nd-bg': 'rgba(234,118,0,0.09)', '--nd-border': 'rgba(234,118,0,0.22)', '--nd-hover-bg': 'rgba(234,118,0,0.16)' })}>
-                    <div className="snode-icon"><svg viewBox="0 0 499.77 405.98" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#fff"
-                          d="M196.49,225.35c1.82-32.49,17.73-61.11,41.73-81.4c23.54-19.92,55.22-32.1,89.78-32.1s66.21,12.18,89.77,32.15c24,20.29,39.89,48.91,41.73,81.37c1.82,33.38-11.6,64.39-35.14,87.37c-24,23.38-58.13,38.06-96.36,38.06s-72.43-14.68-96.41-38.06C208,289.71,194.66,258.7,196.49,225.35z" />
-                        <path fill="#265787"
-                          d="M260.53,228.27c0.93-16.67,9.1-31.36,21.41-41.77a72.65,72.65,0,0,1,92.13,0c12.3,10.41,20.47,25.1,21.41,41.75c0.93,17.13-6,33-18,44.83c-12.31,12-29.83,19.53-49.44,19.53s-37.16-7.53-49.47-19.53C266.45,261.29,259.59,245.38,260.53,228.27z" />
-                        <path fill="#ea7600"
-                          d="M153.08,262c0.11,6.52,2.19,19.2,5.31,29.1a153.58,153.58,0,0,0,33.16,57.42,171.34,171.34,0,0,0,58,41.67,189.71,189.71,0,0,0,152.45-0.31A172.65,172.65,0,0,0,460,348a154.79,154.79,0,0,0,33.15-57.53,145.39,145.39,0,0,0,6.24-32.11,146.87,146.87,0,0,0-1-31.9,148.49,148.49,0,0,0-21.15-57.87,161.49,161.49,0,0,0-38.58-42.53l0,0L282.5,6.2c-0.14-0.11-0.26-0.22-0.41-0.32c-10.24-7.86-27.47-7.83-38.73,0s-12.69,21.14-2.56,29.46l0,0,65.11,53-198.46.21h-0.27C90.74,88.61,75,99.37,71.85,113c-3.21,13.86,7.93,25.36,25,25.42l0,0.06,100.6-0.19L17.9,276l-0.69.51C0.28,289.52-5.2,311.08,5.47,324.73c10.82,13.87,33.84,13.9,51,0.08l98-80.18A152.15,152.15,0,0,0,153.08,262z" />
+                    style={cssVars({ '--nd': '0.66s', '--float-dur': '3.9s', '--float-off': '1.3s', '--nd-bg': 'rgba(153,153,255,0.08)', '--nd-border': 'rgba(153,153,255,0.2)', '--nd-hover-bg': 'rgba(153,153,255,0.15)' })}>
+                    <div className="snode-icon"><svg viewBox="0 0 28 28" fill="none">
+                        <rect x="2" y="2" width="24" height="24" rx="4" fill="#00005B" /><text x="3.5" y="20"
+                          fontFamily="Arial" fontSize="13" fontWeight="800" fill="#9999FF">Ae</text>
                       </svg></div>
-                    <span className="snode-label">Blender</span>
+                    <span className="snode-label">After Effects</span>
                   </div>
       
                   <div className="snode"
@@ -1247,78 +1248,59 @@ export default function AboutClient() {
                 <div className="stack-nodes">
       
                   <div className="snode"
-                    style={cssVars({ '--nd': '0.55s', '--float-dur': '4.2s', '--float-off': '0s', '--nd-bg': 'rgba(227,79,38,0.09)', '--nd-border': 'rgba(227,79,38,0.22)', '--nd-hover-bg': 'rgba(227,79,38,0.18)' })}>
-                    <div className="snode-icon"><svg viewBox="0 0 108.35 122.88" fill="none">
-                        <polygon points="108.35,0 98.48,110.58 54.11,122.88 9.86,110.6 0,0" fill="#E44D26" />
-                        <polygon points="54.17,113.48 90.03,103.54 98.46,9.04 54.17,9.04" fill="#F16529" />
-                        <path
-                          d="M34.99,36.17h19.19V22.61H20.16l0.32,3.64l3.33,37.38h30.35V50.06H36.23L34.99,36.17z M38.04,70.41H24.43l1.9,21.3l27.79,7.71l0.06-0.02V85.29l-0.06,0.02l-15.11-4.08L38.04,70.41z"
-                          fill="#EBEBEB" />
-                        <path
-                          d="M54.13,63.63h16.7l-1.57,17.59L54.13,85.3v14.11l27.81-7.71l0.2-2.29l3.19-35.71l0.33-3.64H54.13V63.63z M54.13,36.14v0.03h32.76l0.27-3.05l0.62-6.88l0.32-3.64H54.13V36.14z"
-                          fill="#fff" />
-                      </svg></div>
-                    <span className="snode-label">HTML</span>
-                  </div>
-      
-                  <div className="snode"
-                    style={cssVars({ '--nd': '0.63s', '--float-dur': '3.7s', '--float-off': '0.5s', '--nd-bg': 'rgba(32,98,175,0.09)', '--nd-border': 'rgba(32,98,175,0.22)', '--nd-hover-bg': 'rgba(32,98,175,0.17)' })}>
-                    <div className="snode-icon"><svg viewBox="30 0 240 333" fill="none">
-                        <path fill="#2062af" d="M0 0l27 300 121 33 121-33 27-300z" transform="scale(1.1)" />
-                        <path fill="#3c9cd7" d="M148 27v283l97-26 22-257z" transform="scale(1.1)" />
-                        <path fill="#fff" d="M148 100l-86 36 3 35 83-36 89-38 4-36z" transform="scale(1.1)" />
-                        <path fill="#d1d3d4" d="M62 135l3 36 83-36V100z" transform="scale(1.1)" />
-                        <path fill="#fff" d="M62 135l3 36 128 1-3 47-42 12-40-10-2-30H67l5 57 76 22 75-22 10-113z"
-                          transform="scale(1.1)" />
-                      </svg></div>
-                    <span className="snode-label">CSS</span>
-                  </div>
-      
-                  <div className="snode"
-                    style={cssVars({ '--nd': '0.71s', '--float-dur': '4.5s', '--float-off': '1.1s', '--nd-bg': 'rgba(247,223,30,0.07)', '--nd-border': 'rgba(247,223,30,0.2)', '--nd-hover-bg': 'rgba(247,223,30,0.13)' })}>
+                    style={cssVars({ '--nd': '0.55s', '--float-dur': '4.2s', '--float-off': '0s', '--nd-bg': 'rgba(49,120,198,0.09)', '--nd-border': 'rgba(49,120,198,0.24)', '--nd-hover-bg': 'rgba(49,120,198,0.18)' })}>
                     <div className="snode-icon"><svg viewBox="0 0 28 28" fill="none">
-                        <rect x="2" y="2" width="24" height="24" rx="3" fill="#F7DF1E" />
-                        <path
-                          d="M17 18.5c.4.7 1 1.2 2 1.2.8 0 1.3-.4 1.3-.95 0-.66-.53-.9-1.42-1.28l-.49-.2C17 16.8 16 16.3 16 14.9c0-1.35 1.03-2.38 2.64-2.38 1.14 0 1.96.4 2.55 1.45l-1.4.9c-.3-.55-.63-.77-1.15-.77-.52 0-.86.33-.86.77 0 .54.34.76 1.24 1.15l.48.21C21 16.7 22 17.18 22 18.6 22 20.18 20.82 21 19.16 21c-1.64 0-2.7-.78-3.21-1.8l1.4-.9-.35.2zm-6.08.2c.27.48.52.88 1.1.88.57 0 .94-.23.94-1.1V12.6h1.78V18.5c0 1.88-1.1 2.73-2.7 2.73-1.45 0-2.29-.75-2.72-1.65l1.6-.9z"
-                          fill="#333" />
+                        <rect x="2" y="2" width="24" height="24" rx="3" fill="#3178C6" /><text x="10" y="22"
+                          fontFamily="Arial" fontSize="11" fontWeight="800" fill="#fff">TS</text>
                       </svg></div>
-                    <span className="snode-label">JavaScript</span>
+                    <span className="snode-label">TypeScript</span>
                   </div>
-      
+
                   <div className="snode"
-                    style={cssVars({ '--nd': '0.79s', '--float-dur': '4s', '--float-off': '1.6s', '--nd-bg': 'rgba(97,218,251,0.07)', '--nd-border': 'rgba(97,218,251,0.2)', '--nd-hover-bg': 'rgba(97,218,251,0.13)' })}>
+                    style={cssVars({ '--nd': '0.63s', '--float-dur': '3.7s', '--float-off': '0.5s', '--nd-bg': 'rgba(255,255,255,0.05)', '--nd-border': 'rgba(255,255,255,0.16)', '--nd-hover-bg': 'rgba(255,255,255,0.1)' })}>
                     <div className="snode-icon"><svg viewBox="0 0 28 28" fill="none">
-                        <circle cx="14" cy="14" r="2.4" fill="#61DAFB" />
-                        <ellipse cx="14" cy="14" rx="12" ry="4.5" stroke="#61DAFB" strokeWidth="1.3" />
-                        <ellipse cx="14" cy="14" rx="12" ry="4.5" stroke="#61DAFB" strokeWidth="1.3"
-                          transform="rotate(60 14 14)" />
-                        <ellipse cx="14" cy="14" rx="12" ry="4.5" stroke="#61DAFB" strokeWidth="1.3"
-                          transform="rotate(120 14 14)" />
+                        <circle cx="14" cy="14" r="12" fill="#000" stroke="rgba(255,255,255,0.55)" strokeWidth="1" />
+                        <path d="M10 19V9l9 11.5" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M18 9v6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" />
                       </svg></div>
-                    <span className="snode-label">React</span>
+                    <span className="snode-label">Next.js</span>
                   </div>
-      
+
                   <div className="snode"
-                    style={cssVars({ '--nd': '0.87s', '--float-dur': '3.8s', '--float-off': '0.3s', '--nd-bg': 'rgba(55,118,171,0.09)', '--nd-border': 'rgba(55,118,171,0.22)', '--nd-hover-bg': 'rgba(55,118,171,0.16)' })}>
-                    <div className="snode-icon"><svg viewBox="0 0 28 28" fill="none">
-                        <path
-                          d="M14 3c-3.9 0-4.5 1.7-4.5 3v2.5H14v1H7.5C5.6 9.5 4 10.8 4 13v3.5c0 2 1.6 3.5 3.5 3.5H9v-3c0-2.2 1.8-4 4-4h3.5c1.6 0 3-1.4 3-3V6c0-2-1.4-3-3.5-3H14zm-1.5 2c.7 0 1.2.5 1.2 1.2S13.2 7.4 12.5 7.4 11.3 6.9 11.3 6.2 11.8 5 12.5 5z"
-                          fill="#3776AB" />
-                        <path
-                          d="M14 25c3.9 0 4.5-1.7 4.5-3v-2.5H14v-1h6.5c1.9 0 3.5-1.3 3.5-3.5V11.5c0-2-1.6-3.5-3.5-3.5H19v3c0 2.2-1.8 4-4 4h-3.5c-1.6 0-3 1.4-3 3V22c0 2 1.4 3 3.5 3H14zm1.5-2c-.7 0-1.2-.5-1.2-1.2s.5-1.2 1.2-1.2 1.2.5 1.2 1.2-.5 1.2-1.2 1.2z"
-                          fill="#FFD43B" />
+                    style={cssVars({ '--nd': '0.71s', '--float-dur': '4.5s', '--float-off': '1.1s', '--nd-bg': 'rgba(255,255,255,0.05)', '--nd-border': 'rgba(255,255,255,0.16)', '--nd-hover-bg': 'rgba(255,255,255,0.1)' })}>
+                    <div className="snode-icon"><svg viewBox="0 0 28 28" fill="none" stroke="#fff" strokeWidth="1.3" strokeLinejoin="round">
+                        <path d="M4 24L9 4l15 15z" />
+                        <path d="M6.5 14L16.5 11.5 14 21.5z" />
+                        <path d="M9 4l7.5 7.5M4 24l2.5-10M24 19l-10 2.5" />
                       </svg></div>
-                    <span className="snode-label">Python</span>
+                    <span className="snode-label">Three.js</span>
                   </div>
-      
+
                   <div className="snode"
-                    style={cssVars({ '--nd': '0.95s', '--float-dur': '4.3s', '--float-off': '1.0s', '--nd-bg': 'rgba(56,189,248,0.07)', '--nd-border': 'rgba(56,189,248,0.2)', '--nd-hover-bg': 'rgba(56,189,248,0.13)' })}>
-                    <div className="snode-icon"><svg viewBox="0 0 28 28" fill="none">
-                        <path
-                          d="M14 7C11.7 7 10.2 8.2 9.5 10.5c1.2-1.6 2.6-2.2 4.2-1.8.9.2 1.6 1 2.3 1.8 1.2 1.3 2.6 2.8 5.5 2.8 2.3 0 3.8-1.2 4.5-3.5-1.2 1.6-2.6 2.2-4.2 1.8-.9-.2-1.6-1-2.3-1.8C18.3 8.5 16.9 7 14 7zm-5.5 6.8c-2.3 0-3.8 1.2-4.5 3.5 1.2-1.6 2.6-2.2 4.2-1.8.9.2 1.6 1 2.3 1.8C11.7 18.6 13.1 20 16 20c2.3 0 3.8-1.2 4.5-3.5-1.2 1.6-2.6 2.2-4.2 1.8-.9-.2-1.6-1-2.3-1.8-1.2-1.3-2.6-2.7-5.5-2.7z"
-                          fill="#38BDF8" />
+                    style={cssVars({ '--nd': '0.79s', '--float-dur': '4s', '--float-off': '1.6s', '--nd-bg': 'rgba(255,255,255,0.05)', '--nd-border': 'rgba(255,255,255,0.16)', '--nd-hover-bg': 'rgba(255,255,255,0.1)' })}>
+                    <div className="snode-icon"><svg viewBox="0 0 28 28" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round">
+                        <path d="M14 3l9.5 5.5v11L14 25l-9.5-5.5v-11z" />
+                        <path d="M14 14l9.5-5.5M14 14v11M14 14L4.5 8.5" />
                       </svg></div>
-                    <span className="snode-label">Tailwind</span>
+                    <span className="snode-label">Unity</span>
+                  </div>
+
+                  <div className="snode"
+                    style={cssVars({ '--nd': '0.87s', '--float-dur': '3.8s', '--float-off': '0.3s', '--nd-bg': 'rgba(155,79,150,0.1)', '--nd-border': 'rgba(155,79,150,0.26)', '--nd-hover-bg': 'rgba(155,79,150,0.18)' })}>
+                    <div className="snode-icon"><svg viewBox="0 0 28 28" fill="none">
+                        <path d="M14 2l10.4 6v12L14 26 3.6 20V8z" fill="#68217A" />
+                        <text x="6.6" y="18.5" fontFamily="Arial" fontSize="10" fontWeight="800" fill="#fff">C#</text>
+                      </svg></div>
+                    <span className="snode-label">C#</span>
+                  </div>
+
+                  <div className="snode"
+                    style={cssVars({ '--nd': '0.95s', '--float-dur': '4.3s', '--float-off': '1.0s', '--nd-bg': 'rgba(51,153,51,0.09)', '--nd-border': 'rgba(51,153,51,0.24)', '--nd-hover-bg': 'rgba(51,153,51,0.17)' })}>
+                    <div className="snode-icon"><svg viewBox="0 0 28 28" fill="none">
+                        <path d="M14 2l10.4 6v12L14 26 3.6 20V8z" fill="#339933" />
+                        <text x="9.6" y="18.5" fontFamily="Arial" fontSize="11" fontWeight="800" fill="#fff">N</text>
+                      </svg></div>
+                    <span className="snode-label">Node.js</span>
                   </div>
       
                 </div>
@@ -1524,11 +1506,11 @@ export default function AboutClient() {
                   
                   <div className="snode"
                     style={cssVars({ '--nd': '1.08s', '--float-dur': '4.2s', '--float-off': '0.8s', '--nd-bg': 'rgba(255,255,255,0.05)', '--nd-border': 'rgba(255,255,255,0.15)', '--nd-hover-bg': 'rgba(255,255,255,0.1)' })}>
-                    <div className="snode-icon"><svg viewBox="0 0 512 415.997" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#fff"
-                          d="M181.33 266.141c0-11.496 9.32-20.817 20.818-20.817 11.498 0 20.819 9.321 20.819 20.817v38.373c0 11.497-9.321 20.818-20.819 20.818-11.497 0-20.818-9.32-20.818-20.818v-38.373zM512 246.391v57.384c-.02 7.411-3.696 14.638-9.67 19.011-70.565 51.655-157.636 93.211-246.33 93.211-98.138 0-196.378-56.542-246.329-93.209-5.975-4.374-9.65-11.6-9.671-19.012v-57.384l15.583-21.085c8.336-11.312 20.757-14.31 33.98-14.31 4.987-56.952 16.793-97.603 45.023-127.353C155.194 5.77 226.56 0 256 0c29.44 0 100.806 5.77 154.555 62.722 28.19 29.75 40.036 70.4 45.025 127.353 13.263 0 25.602 2.936 33.958 14.31l15.583 21.127c4.476 6.077 6.878 13.345 6.878 20.88zm-97.665-26.074c-.677-13.058-11.293-18.19-22.339-21.824-11.64 7.308-25.848 10.183-39.459 10.183-14.454 0-41.432-3.47-63.872-25.869-5.667-5.625-9.527-14.454-12.155-24.247l-.544-.001h-.546c-6.098 0-13.098.349-20.55 1.089-2.628 9.793-6.51 18.622-12.155 24.247-22.4 22.4-49.418 25.87-63.872 25.87-13.612 0-27.86-2.856-39.501-10.184-11.005 3.612-21.558 8.827-22.277 21.824-1.17 24.554-1.272 49.109-1.375 73.644-.04 12.318-.082 24.658-.288 36.975.062 7.166 4.374 13.818 10.882 16.774 52.97 24.124 103.045 36.278 149.136 36.278 46.01 0 96.085-12.154 149.013-36.278 6.508-2.956 10.84-9.608 10.881-16.774.637-36.831.124-73.808-1.642-110.619zm-151.793-75.422c.637 3.51.965 7.35 1.273 11.517 0 2.875 0 5.77-.308 8.952 6.406-.636 11.847-.636 16.959-.636s10.552 0 16.958.636c-.328-3.182-.328-6.077-.328-8.952.328-4.167.656-8.007 1.294-11.517-6.735-.637-12.812-.965-17.924-.965s-11.21.328-17.924.965zm-114.626-19.978c8.643 8.623 24.966 14.392 42.56 14.392 13.448 0 39.03-2.874 60.156-24.329 9.28-8.951 15.05-31.35 14.413-54.078-.657-18.231-5.769-33.28-13.448-39.665-8.315-7.371-27.203-10.574-48.33-8.644-22.399 2.237-41.267 9.587-50.875 19.833-20.797 22.728-16.323 80.316-4.476 92.491zm179.83-54.078c-.637 22.728 5.133 45.128 14.413 54.08 21.105 21.454 46.708 24.328 60.154 24.328 17.596 0 33.918-5.769 42.561-14.392 11.847-12.175 16.322-69.764-4.476-92.491-9.608-10.246-28.476-17.595-50.875-19.833-21.127-1.93-40.015 1.273-48.33 8.644-7.678 6.385-12.79 21.434-13.447 39.665zm21.455 140.371c-11.477 0-20.798 9.321-20.798 20.817v38.373c0 11.497 9.32 20.818 20.798 20.818 11.497 0 20.818-9.32 20.818-20.818v-38.373c0-11.496-9.32-20.817-20.818-20.817z" />
+                    <div className="snode-icon"><svg viewBox="0 0 28 28" fill="none">
+                        <rect x="2" y="2" width="24" height="24" rx="6" fill="#0B0B0B" stroke="rgba(209,254,23,0.55)" strokeWidth="1" />
+                        <path d="M9 8v12M19 8v12M9 14h10" stroke="#D1FE17" strokeWidth="2.4" strokeLinecap="round" />
                       </svg></div>
-                    <span className="snode-label">Copilot</span>
+                    <span className="snode-label">Higgsfield</span>
                   </div>
       
                 </div>
@@ -1561,10 +1543,10 @@ export default function AboutClient() {
       
             <div className="para-container">
               <p className="bio-para" style={cssVars({ '--para-delay': '0.1s' })}>
-                Beyond the lines of code and pixel-perfect layouts lies my ultimate creative escape: the world of gaming and
-                live streaming. As Zenitron Gaming, I channel my passion for interactive storytelling into engaging content
-                across multiple platforms. It’s a dedicated pursuit of fun, community, and digital exploration that keeps my
-                creative gears constantly turning.
+                When I'm not designing or coding, you'll probably find me gaming or live streaming. I run a channel called
+                Zenitron Gaming, where I play, stream and share clips across a few different platforms. It started as a way
+                to unwind, but it's grown into a fun little community, and honestly, spending time inside other people's games
+                gives me a lot of ideas for my own work.
               </p>
             </div>
       
@@ -1963,11 +1945,11 @@ export default function AboutClient() {
                   </div>
                 </div>
                 <div className="testi-slide" data-slide="7">
-                  <p className="testi-quote">I had the pleasure of managing Ruchira directly during their time as a developer at
+                  <p className="testi-quote">I had the pleasure of managing Ruchira directly during his time as a developer at
                     TAKG, and I can confidently say that he is one of the most talented and dedicated professionals I have
                     worked with. Ruchira consistently demonstrated exceptional technical skills, creativity, and a strong work
                     ethic. His ability to tackle complex problems and deliver high-quality solutions was truly impressive. He
-                    played a pivotal role in UI/UX Development, where their contributions were instrumental in achieving our
+                    played a pivotal role in UI/UX Development, where his contributions were instrumental in achieving our
                     goals.</p>
                   <div className="testi-author-row">
                     <img src="/Images/testimonials/atheeque.webp" alt="Atheeque Hasan" className="testi-author-avatar" decoding="async" />
@@ -2053,27 +2035,13 @@ export default function AboutClient() {
       
       
           </section>
-      
-      
-      
-      
+
+          <SignOff className="about-signoff" />
         </main>
 
       {/* Extra top fade chrome specific to the About page (not part of StandardShell) */}
       <div id="nav-fade-mask"></div>
 
-      {/* Redirect-prompt modal (used by the gaming platform cards) */}
-      <div id="cert-prompt-overlay" className="modal-overlay">
-        <div className="modal-card">
-          <div id="modal-icon-wrap" className="modal-icon-wrap"></div>
-          <p id="modal-detail-box"></p>
-          <p className="modal-instruction">You are going to be redirected to <span id="modal-action-text" style={{ color: '#fff', fontWeight: 600 }}>the application</span>.<br />Do you wish to continue?</p>
-          <div className="modal-actions">
-            <button id="modal-cancel" className="modal-btn btn-secondary">Go Back</button>
-            <button id="modal-confirm" className="modal-btn btn-primary">Continue</button>
-          </div>
-        </div>
-      </div>
 
     </StandardShell>
   );
