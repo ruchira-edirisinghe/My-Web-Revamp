@@ -17,6 +17,8 @@ interface StandardShellProps {
   tagline?: ReactNode;
   /** Page <main> content. */
   children: ReactNode;
+  /** Render the shared footer (default true). Quick Links has none. */
+  footer?: boolean;
 }
 
 /**
@@ -26,7 +28,7 @@ interface StandardShellProps {
  * experience.ts) animates and wires these elements; this component only renders
  * the matching markup.
  */
-export default function StandardShell({ active = null, dataPage, tagline, children }: StandardShellProps) {
+export default function StandardShell({ active = null, dataPage, tagline, children, footer = true }: StandardShellProps) {
   useBodyDataPage(dataPage);
   const pathname = usePathname();
   const isFirstMount = useRef(true);
@@ -102,7 +104,7 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
 
       {children}
 
-      <SiteFooter />
+      {footer && <SiteFooter />}
 
       <button id="music-btn-desktop" aria-label="Toggle music">
         <canvas id="spectrum-canvas-desktop" width="26" height="18"></canvas>

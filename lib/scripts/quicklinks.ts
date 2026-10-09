@@ -1,10 +1,10 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
    quicklinks.ts - Quick Links page engine: space bg, preloader, cursor + SFX,
-   nexus redirect modal, audio, scroll-reveal, social-card redirect modal,
-   mobile menu.
+   audio, mobile menu. Links open on the first tap - no confirm modals.
    (faithful port of styles/quicklinks/quicklinks.js)
    ════════════════════════════════════════ */
+import { initCursor } from './cursor';
 import { makeBag, makeDirtyClear } from './_util';
 import { initPreloaderFx } from './preloader-fx';
 import { initSpaceField3D } from './space-field';
@@ -113,7 +113,11 @@ export function initQuicklinks(): () => void {
     const preloader = document.getElementById('preloader');
     initPreloaderFx(bag);
     const canvas = document.getElementById('preloader-canvas');
-    if (!preloader || !canvas || preloader.style.display === 'none') return;
+    // The deck animates in on body.ql-ready, which lands as the preloader
+    // splits open (or straight away when there is no preloader to wait for).
+    const ready = () => document.body.classList.add('ql-ready');
+    bag.add(() => document.body.classList.remove('ql-ready'));
+    if (!preloader || !canvas || preloader.style.display === 'none') { ready(); return; }
     const ctx = canvas.getContext('2d');
     const progressFill = document.getElementById('progress-fill');
     const splitTop = document.getElementById('split-top');
@@ -130,6 +134,7 @@ export function initQuicklinks(): () => void {
     let rafId = 0, alive = true;
     const timeouts: any[] = [];
     const later = (fn, ms) => { const id = setTimeout(fn, ms); timeouts.push(id); return id; };
+    later(ready, DURATION + HOLD_MS + 2500);
     const logoImg = new Image();
 
     // Generate Preloader Stars
@@ -186,7 +191,7 @@ export function initQuicklinks(): () => void {
       else {
         later(() => {
           preloader.style.opacity = '0'; preloader.style.pointerEvents = 'none';
-          requestAnimationFrame(() => { if (splitTop) splitTop.classList.add('open'); if (splitBottom) splitBottom.classList.add('open'); });
+          requestAnimationFrame(() => { if (splitTop) splitTop.classList.add('open'); if (splitBottom) splitBottom.classList.add('open'); ready(); });
           later(() => {
             preloader.style.display = 'none';
             if (splitTop) splitTop.style.display = 'none';
@@ -209,63 +214,19 @@ export function initQuicklinks(): () => void {
   (function () {
     const cursorDot = document.getElementById('cursor-dot');
     const cursorCanvas = document.getElementById('cursor-canvas');
-    if (!cursorCanvas) return;
-    const cCtx = cursorCanvas.getContext('2d');
-    const dirty = makeDirtyClear(cCtx);
-    let W, H;
-    function resize() { W = cursorCanvas.width = window.innerWidth; H = cursorCanvas.height = window.innerHeight; dirty.reset(); }
-    resize(); bag.on(window, 'resize', resize);
-
-    let mX = -300, mY = -300, rX = -300, rY = -300, currentR = 26, targetR = 26;
-    const R_NORMAL = 26, R_HOVER = 36;
-
-    let cursorRunning = false;
-    let rafId = 0;
-    function startCursor() {
-      if (cursorRunning || W <= 900 || document.hidden) return;
-      cursorRunning = true;
-      rafId = requestAnimationFrame(drawCursor);
-    }
-    function stopCursor() { cursorRunning = false; dirty.reset(); cCtx.clearRect(0, 0, W, H); }
-
-    function drawCursor() {
-      if (!cursorRunning) return;
-      if (W <= 900) { stopCursor(); return; }
-      rX += (mX - rX) * 0.1; rY += (mY - rY) * 0.1; currentR += (targetR - currentR) * 0.08;
-      const R = currentR, cx = rX, cy = rY;
-      // The ring trails the pointer, and the dot sits ON it, so the box has to
-      // span both - it widens with speed and collapses back the moment the ring
-      // catches up. Still a fraction of the full-canvas clear this replaced.
-      dirty.clear(cx, cy, R * 1.6 + Math.hypot(mX - cx, mY - cy));
-      if (mX < -200) { rafId = requestAnimationFrame(drawCursor); return; }
-
-      // Halo
-      const halo = cCtx.createRadialGradient(cx, cy, R * 0.85, cx, cy, R * 1.5);
-      halo.addColorStop(0, 'rgba(180,220,255,0.07)'); halo.addColorStop(1, 'rgba(80,140,255,0)');
-      cCtx.beginPath(); cCtx.arc(cx, cy, R * 1.5, 0, Math.PI * 2); cCtx.fillStyle = halo; cCtx.fill();
-
-      // Rim
-      cCtx.beginPath(); cCtx.arc(cx, cy, R, 0, Math.PI * 2); cCtx.arc(cx, cy, R - 5, 0, Math.PI * 2, true);
-      const rim = cCtx.createRadialGradient(cx, cy, R - 5, cx, cy, R);
-      rim.addColorStop(0, 'rgba(255,255,255,0.04)'); rim.addColorStop(0.5, 'rgba(200,230,255,0.08)'); rim.addColorStop(1, 'rgba(255,255,255,0.03)');
-      cCtx.fillStyle = rim; cCtx.fill('evenodd');
-
-      // Stroke
-      cCtx.beginPath(); cCtx.arc(cx, cy, R, 0, Math.PI * 2);
-      const stroke = cCtx.createLinearGradient(cx - R, cy - R, cx + R, cy + R);
-      stroke.addColorStop(0, 'rgba(255,255,255,0.88)'); stroke.addColorStop(0.3, 'rgba(210,235,255,0.52)'); stroke.addColorStop(1, 'rgba(190,220,255,0.7)');
-      cCtx.strokeStyle = stroke; cCtx.lineWidth = 1.5; cCtx.stroke();
-
-      // Center Dot
-      if (cursorDot) { cursorDot.style.left = mX + 'px'; cursorDot.style.top = mY + 'px'; }
-      rafId = requestAnimationFrame(drawCursor);
-    }
-    startCursor();
+    // The pointer itself is lib/scripts/cursor.ts; these stay for the hover
+    // sounds and click particles below, which read the pointer position.
+    initCursor(bag);
+    let W = window.innerWidth, mX = -300, mY = -300, targetR = 26, cursorRunning = false, rafId = 0; const R_NORMAL = 26, R_HOVER = 36;
+    const startCursor = () => {}, stopCursor = () => {};
     bag.on(window, 'resize', () => { if (W <= 900) stopCursor(); else startCursor(); });
     bag.on(document, 'visibilitychange', () => { if (document.hidden) stopCursor(); else startCursor(); });
 
-    bag.on(document, 'mousemove', e => { mX = e.clientX; mY = e.clientY; });
-    document.querySelectorAll('a, button, .social-card, .platform-card, .stream-card').forEach(el => {
+    bag.on(document, 'mousemove', e => { mX = e.clientX; mY = e.clientY; startCursor(); });
+    // Hover changes the ring size, so entering or leaving anything wakes the loop.
+    bag.on(document, 'mouseover', startCursor);
+    bag.on(document, 'mouseout', startCursor);
+    document.querySelectorAll('a, button').forEach(el => {
       bag.on(el, 'mouseenter', () => { targetR = R_HOVER; playHover(); });
       bag.on(el, 'mouseleave', () => { targetR = R_NORMAL; });
       bag.on(el, 'click', () => { spawnParticles(mX, mY); playClick(); });
@@ -293,57 +254,14 @@ export function initQuicklinks(): () => void {
     });
   })();
 
-  /* ══════════ 4. REDIRECTION MODAL LOGIC ══════════ */
-  (function () {
-    const portfolioLink = document.getElementById('portfolio-nexus-link');
-    const modalOverlay = document.getElementById('nexus-redirect-overlay');
-    const modalCancel = document.getElementById('nexus-modal-cancel');
-    const modalConfirm = document.getElementById('nexus-modal-confirm');
-
-    if (!portfolioLink || !modalOverlay) return;
-
-    let redirectTimer = null;
-
-    bag.on(portfolioLink, 'click', (e) => {
-      e.preventDefault();
-      modalOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent scroll
-    });
-
-    const closeModal = () => {
-      modalOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    };
-
-    if (modalCancel) {
-      bag.on(modalCancel, 'click', closeModal);
-    }
-
-    if (modalConfirm) {
-      bag.on(modalConfirm, 'click', () => {
-        const targetUrl = portfolioLink.getAttribute('href');
-        modalOverlay.style.opacity = '0';
-        redirectTimer = setTimeout(() => {
-          window.location.href = targetUrl;
-        }, 300);
-      });
-    }
-
-    // Close on overlay click
-    bag.on(modalOverlay, 'click', (e) => {
-      if (e.target === modalOverlay) closeModal();
-    });
-
-    bag.add(() => { if (redirectTimer) clearTimeout(redirectTimer); document.body.style.overflow = ''; });
-  })();
-
-  /* ══════════ 5. AUDIO PERSISTENCE ══════════ */
+  /* ══════════ 4. AUDIO PERSISTENCE ══════════ */
   (function () {
     /* Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
        continuously across every page and remembers its paused state; this engine
        only mirrors the playing flag into its spectrum visualiser below. */
     let spectrumPlaying = false;
-    bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; }));
+    let wakeSpectrum = () => {};
+    bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; wakeSpectrum(); }));
 
     const specCanvas = document.getElementById('spectrum-canvas-desktop');
     const specCanvasM = document.getElementById('spectrum-canvas');
@@ -370,9 +288,12 @@ export function initQuicklinks(): () => void {
           ctx.fillStyle = grad; ctx.beginPath(); ctx.roundRect(x, y, 2, h, 1); ctx.fill();
         });
       });
+      // Paused and flat: nothing changes until the music starts again.
+      if (!spectrumPlaying && bars.every(b => Math.abs(b.currentH - 1) < 0.02)) { specRaf = 0; return; }
       specRaf = requestAnimationFrame(drawSpectrum);
     }
     specRaf = requestAnimationFrame(drawSpectrum);
+    wakeSpectrum = () => { if (specRunning && !specRaf) { lastSpec = performance.now(); specRaf = requestAnimationFrame(drawSpectrum); } };
 
     bag.on(document, 'visibilitychange', () => {
       if (document.hidden) { specRunning = false; }
@@ -384,74 +305,7 @@ export function initQuicklinks(): () => void {
     });
   })();
 
-  /* ══════════ 6. SCROLL REVEAL ══════════ */
-  (function () {
-    const obs = new IntersectionObserver((es) => {
-      es.forEach(e => { if (e.isIntersecting) e.target.classList.add('sr-vis'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.sr-elem, .social-card, .stream-card').forEach(el => obs.observe(el));
-    bag.add(() => obs.disconnect());
-  })();
-
-  /* ══════════ 7. MODAL SYSTEM ══════════ */
-  (function () {
-    const overlay = document.getElementById('cert-prompt-overlay');
-    const modalCard = overlay?.querySelector('.modal-card');
-    const cancelBtn = document.getElementById('modal-cancel');
-    const confirmBtn = document.getElementById('modal-confirm');
-    const cards = document.querySelectorAll('.social-card, .stream-card');
-    const modalIconWrap = document.getElementById('modal-icon-wrap');
-    const modalAction = document.getElementById('modal-action-text');
-    let pendingUrl = '';
-
-    if (!overlay || !cancelBtn || !confirmBtn) return;
-
-    const modalTimers: any[] = [];
-    const closeModal = () => { overlay.classList.remove('active'); modalTimers.push(setTimeout(() => { pendingUrl = ''; }, 300)); };
-
-    cards.forEach(card => {
-      bag.on(card, 'click', (e) => {
-        if (card.id === 'portfolio-nexus-link') return;
-        // Prevent immediate navigation
-        const url = card.getAttribute('data-url');
-        if (url) {
-          e.preventDefault();
-          pendingUrl = url;
-          const iconHtml = card.querySelector('.sc-icon-wrap, .brand-icon, .pc-icon-wrap').innerHTML;
-          const detail = card.getAttribute('data-detail');
-          const action = card.getAttribute('data-action');
-          modalAction.textContent = action;
-          document.getElementById('modal-detail-box').textContent = detail;
-          modalIconWrap.innerHTML = iconHtml;
-
-          const sourceStyles = window.getComputedStyle(card);
-          ['--cc-color', '--cc-icon-border', '--cc-icon-bg', '--cc-glow'].forEach(prop => {
-            modalIconWrap.style.setProperty(prop, sourceStyles.getPropertyValue(prop));
-          });
-          overlay.style.setProperty('--modal-glow', sourceStyles.getPropertyValue('--cc-glow').replace('0.08', '0.4').replace('0.15', '0.4'));
-          modalCard.style.setProperty('--cc-color', sourceStyles.getPropertyValue('--cc-color'));
-          modalCard.style.setProperty('--cc-glow', sourceStyles.getPropertyValue('--cc-glow'));
-          overlay.classList.add('active');
-        }
-      });
-    });
-
-    bag.on(cancelBtn, 'click', (e) => { e.stopPropagation(); closeModal(); });
-    bag.on(confirmBtn, 'click', (e) => {
-      e.stopPropagation();
-      if (pendingUrl) {
-        // mailto:/tel: must navigate in-place so the OS handler opens (a blank tab otherwise)
-        if (/^(mailto:|tel:)/i.test(pendingUrl)) window.location.href = pendingUrl;
-        else window.open(pendingUrl, '_blank', 'noopener');
-      }
-      closeModal();
-    });
-    bag.on(overlay, 'click', (e) => { if (e.target === overlay) closeModal(); });
-
-    bag.add(() => modalTimers.forEach(clearTimeout));
-  })();
-
-  /* ══════════ 8. MOBILE MENU TOGGLE ══════════ */
+  /* ══════════ 5. MOBILE MENU TOGGLE ══════════ */
   (function () {
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
