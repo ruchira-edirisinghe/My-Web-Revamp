@@ -24,8 +24,8 @@ export default function GalleryArtworks() {
           <p className="section-label">Immersive Gallery</p>
           <h1 className="page-title">Digital Artworks</h1>
           <p className="bio-para" style={{ textAlign: 'left', margin: 0 }}>
-            A high-fidelity collection of digital portraits, cinematic illustrations, and character studies exploring the
-            intersection of pop culture and cosmic aesthetics.
+            These are digital paintings and illustrations I&apos;ve made over the years, mostly portraits and scenes of characters from films, shows and anime
+            that I love. Each one was a chance to try out new lighting, colour and painting techniques.
           </p>
         </header>
 
@@ -38,7 +38,7 @@ export default function GalleryArtworks() {
               <div className="artwork-info">
                 <span className="info-tag">Illustration</span>
                 <h2 className="info-title">Temporal Bonds</h2>
-                <p className="info-sub">Exploring the duality and cosmic connection between Loki and his variant, Sylvie.</p>
+                <p className="info-sub">Loki and his variant Sylvie, painted to show how alike they are and the connection between them.</p>
                 <a href="/Images/artworks/Loki-sylvie.webp" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>
@@ -50,7 +50,7 @@ export default function GalleryArtworks() {
               <div className="artwork-info">
                 <span className="info-tag">Character Study</span>
                 <h2 className="info-title">The Thunder Kitsune</h2>
-                <p className="info-sub">A character study of Kira Yukimura, the thunder kitsune from Teen Wolf.</p>
+                <p className="info-sub">A portrait of Kira Yukimura, the thunder kitsune from Teen Wolf.</p>
                 <a href="/Images/artworks/kira1.webp" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>
@@ -62,7 +62,7 @@ export default function GalleryArtworks() {
               <div className="artwork-info">
                 <span className="info-tag">Digital Portrait</span>
                 <h2 className="info-title">Edgerunners</h2>
-                <p className="info-sub">A neon-soaked tribute to the tragic connection in Night City.</p>
+                <p className="info-sub">A neon-lit tribute to the two characters at the heart of Cyberpunk: Edgerunners and their story in Night City.</p>
                 <a href="/Images/artworks/lucy-david.webp" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function GalleryArtworks() {
               <div className="artwork-info">
                 <span className="info-tag">Illustration</span>
                 <h2 className="info-title">Friendly Neighborhood</h2>
-                <p className="info-sub">A dynamic composition capturing the iconic energy of the web-slinger.</p>
+                <p className="info-sub">Spider-Man mid-swing, painted to capture the energy and movement the character is known for.</p>
                 <a href="/Images/artworks/spidey.webp" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function GalleryArtworks() {
               <div className="artwork-info">
                 <span className="info-tag">Portrait</span>
                 <h2 className="info-title">God of Mischief</h2>
-                <p className="info-sub">A character study of Loki Laufeyson wielding the Tesseract, from Marvel&apos;s Avengers films.</p>
+                <p className="info-sub">Loki Laufeyson holding the Tesseract, as he appears in Marvel&apos;s Avengers films.</p>
                 <a href="/Images/artworks/loki.webp" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>
@@ -98,7 +98,7 @@ export default function GalleryArtworks() {
               <div className="artwork-info">
                 <span className="info-tag">Portrait</span>
                 <h2 className="info-title">The Amazing One</h2>
-                <p className="info-sub">A cinematic character study of the Peter Parker variant across the multiverse.</p>
+                <p className="info-sub">A cinematic portrait of the Peter Parker from The Amazing Spider-Man, one of the variants from across the multiverse.</p>
                 <a href="/Images/artworks/andrew.webp" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function GalleryArtworks() {
               <div className="artwork-info">
                 <span className="info-tag">Fan Art</span>
                 <h2 className="info-title">Water Breathing</h2>
-                <p className="info-sub">A stylistic tribute to the breathing techniques of the Demon Slayer Corps.</p>
+                <p className="info-sub">A tribute to the Water Breathing technique from Demon Slayer, painted in my own style.</p>
                 <a href="/Images/artworks/demonslayer.webp" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function GalleryArtworks() {
               <div className="artwork-info">
                 <span className="info-tag">Character Study</span>
                 <h2 className="info-title">Unlikely Connection</h2>
-                <p className="info-sub">Exploring the emotional depth of a bond found in the most unexpected places.</p>
+                <p className="info-sub">A piece about the kind of close bond that sometimes forms in the most unexpected places.</p>
                 <a href="/Images/artworks/otisruby.webp" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>
@@ -134,7 +134,7 @@ export default function GalleryArtworks() {
               <div className="artwork-info">
                 <span className="info-tag">Character Study</span>
                 <h2 className="info-title">The Copy Ninja</h2>
-                <p className="info-sub">A hyper-detailed portrait of Kakashi Hatake exploring depth and textural realism.</p>
+                <p className="info-sub">A detailed portrait of Kakashi Hatake from Naruto, where I focused on depth and realistic textures.</p>
                 <a href="/Images/artworks/Kakashi.webp" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function GalleryArtworks() {
               <div className="artwork-info">
                 <span className="info-tag">Conceptual Art</span>
                 <h2 className="info-title">Winged Freedom</h2>
-                <p className="info-sub">An allegorical piece exploring the weight of choice and the flight of the soul.</p>
+                <p className="info-sub">A symbolic piece about the weight of making a choice and the feeling of finally being set free.</p>
                 <a href="/Images/artworks/freedom.webp" target="_blank" rel="noopener noreferrer" className="view-btn">Full Image ↗</a>
               </div>
             </div>

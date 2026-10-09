@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
-import '@/styles/projects/lycampus-case-study.css';
-import CaseStudyLycampus from '@/components/pages/casestudies/lycampus';
+import '@/styles/projects/project-showcase.css';
+import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
+import { projectBySlug } from '@/components/pages/showcase/data';
 
-export const metadata: Metadata = { title: 'Lyceum Campus Case Study | Ruchira Edirisinghe' };
+export const metadata: Metadata = {
+  title: 'Lyceum Campus - UI/UX Case Study | Ruchira Edirisinghe',
+  description: projectBySlug('lycampus').tagline,
+};
 
 export default function Page() {
-  return <CaseStudyLycampus />;
+  return <ProjectShowcase slug="lycampus" />;
 }

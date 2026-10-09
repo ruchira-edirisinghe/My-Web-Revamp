@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
+import '@/styles/projects/projects-index.css';
 import WebProjectsClient from '@/components/pages/WebProjectsClient';
 
 export const metadata: Metadata = {
   title: 'Web Projects - Ruchira Edirisinghe',
   description:
-    'Web product case studies by Ruchira Edirisinghe - UI/UX process, design decisions, and outcomes across shipped interfaces.',
+    'UI/UX case studies, full-stack products, and web and Unity games you can play, all designed and built by Ruchira Edirisinghe.',
 };
 
 export default function WebProjectsPage() {

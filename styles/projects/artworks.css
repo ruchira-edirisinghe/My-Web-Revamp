@@ -524,7 +524,14 @@ main:has(.gallery-container) .page-title {
 
 @media (max-width: 768px) {
   .modal-overlay { padding: 20px; }
-  #modal-close { top: 20px; right: 20px; font-size: 40px; }
+  #modal-close {
+    top: 14px; right: 14px; font-size: 34px;
+    /* A real 44px target rather than the glyph's own 23px box. */
+    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; padding: 0;
+    border-radius: 50%; background: rgba(10, 12, 24, 0.6);
+  }
+  .info-tag { font-size: 10px; }
   
   /* Hide page elements when modal is active on mobile.
      Scoped to data-page="projects" so the rule does not bleed to other pages
@@ -636,11 +643,13 @@ main:has(.gallery-container) .page-title {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(200, 160, 255, 0.9), transparent);
   animation: shootingStar 4s ease-in-out infinite 1.5s;
+  will-change: transform, opacity;
 }
 
+/* GPU-composited sweep - translateX instead of animating `left` (repeats many times per page) */
 @keyframes shootingStar {
-  0% { left: -40%; opacity: 0; }
+  0% { transform: translateX(0); opacity: 0; }
   10% { opacity: 1; }
   90% { opacity: 1; }
-  100% { left: 140%; opacity: 0; }
+  100% { transform: translateX(450%); opacity: 0; }
 }

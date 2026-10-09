@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
-import '@/styles/projects/collapse-factor-case-study.css';
-import CaseStudyCollapseFactor from '@/components/pages/casestudies/collapse-factor';
+import '@/styles/projects/project-showcase.css';
+import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
+import { projectBySlug } from '@/components/pages/showcase/data';
 
-export const metadata: Metadata = { title: 'Collapse Factor Case Study | Ruchira Edirisinghe' };
+export const metadata: Metadata = {
+  title: 'Collapse Factor - Web Game | Ruchira Edirisinghe',
+  description: projectBySlug('collapse-factor').tagline,
+};
 
 export default function Page() {
-  return <CaseStudyCollapseFactor />;
+  return <ProjectShowcase slug="collapse-factor" />;
 }

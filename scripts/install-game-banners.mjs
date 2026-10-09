@@ -1,5 +1,8 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   Install the ten generated 16:9 key-art banners as the ten games' covers.
+   Install the nine generated 16:9 key-art banners as the nine web games' covers.
+
+   (Aether Dynasty was the tenth; it is now the Unity rebuild, whose cover is
+   installed by install-unity-games.mjs.)
 
    WHY 16:9 IS THE RIGHT SHAPE HERE
    -------------------------------
@@ -49,7 +52,6 @@ const BANNERS = [
   ['04_31_31', 'horse-game', 'Horse Racing Elite'],
   ['04_31_42', 'pixel-poker', 'Pixel Perfect Poker'],
   ['04_33_58', 'car-game', 'Ready To Race Unlimited'],
-  ['04_41_46', 'aether-dynasty', 'Aether Dynasty'],
 ];
 
 const OUTPUTS = [

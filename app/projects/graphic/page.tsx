@@ -5,7 +5,7 @@ import GraphicProjectsClient from '@/components/pages/GraphicProjectsClient';
 export const metadata: Metadata = {
   title: 'Graphic Projects - Ruchira Edirisinghe',
   description:
-    'Graphic design work by Ruchira Edirisinghe - logos, branding, posters, digital artwork, and mobile wallpapers.',
+    'Graphic design work by Ruchira Edirisinghe, including logos, brand identities, event posters, digital artwork and phone wallpapers.',
 };
 
 export default function GraphicProjectsPage() {

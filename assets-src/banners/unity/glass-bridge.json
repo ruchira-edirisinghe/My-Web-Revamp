@@ -1,0 +1,32 @@
+[
+  {
+    "created_at": "2026-10-08T14:36:01.972373Z",
+    "display_name": "GPT Image 2.5",
+    "id": "6038f1a2-6132-47a0-b7a8-de31832d2c24",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3KH0mq5eTNt3Xw1KrinwFYZTiH0/hf_20261008_143601_6038f1a2-6132-47a0-b7a8-de31832d2c24_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 752,
+      "medias": [
+        {
+          "data": {
+            "id": "0c04c7f2-0437-4a95-8fe1-4734ddba7305",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KH0mq5eTNt3Xw1KrinwFYZTiH0/0c04c7f2-0437-4a95-8fe1-4734ddba7305.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Recompose this square game key art into a wide 16:9 landscape cover banner for a game portfolio. Keep the exact same game logo lettering, spelling, colors and style, the same characters and the same art style, lighting and palette. Extend the scene naturally to the left and right so it fills the wide frame - no letterboxing, no borders, no extra text, no watermark. Place the logo clearly readable and fully inside the frame with comfortable margins, with the hero subject beside it. Scene: Glass Bridge - anime manga style glass bridge between floating islands in the sky; the red and black 'GLASS BRIDGE' logo with Japanese text, runner in red hoodie.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "1k",
+      "width": 1344
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3KH0mq5eTNt3Xw1KrinwFYZTiH0/hf_20261008_143601_6038f1a2-6132-47a0-b7a8-de31832d2c24.png",
+    "status": "completed"
+  }
+]

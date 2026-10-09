@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
-import '@/styles/projects/agent-system-case-study.css';
-import CaseStudyAgentSystem from '@/components/pages/casestudies/agent-system';
+import '@/styles/projects/project-showcase.css';
+import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
+import { projectBySlug } from '@/components/pages/showcase/data';
 
-export const metadata: Metadata = { title: '747 Agent Dashboard Case Study | Ruchira Edirisinghe' };
+export const metadata: Metadata = {
+  title: '747 Agent Dashboard - UI/UX Case Study | Ruchira Edirisinghe',
+  description: projectBySlug('agent-system').tagline,
+};
 
 export default function Page() {
-  return <CaseStudyAgentSystem />;
+  return <ProjectShowcase slug="agent-system" />;
 }

@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
-import '@/styles/projects/whack-a-mole-case-study.css';
-import CaseStudyWhackAMole from '@/components/pages/casestudies/whack-a-mole';
+import '@/styles/projects/project-showcase.css';
+import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
+import { projectBySlug } from '@/components/pages/showcase/data';
 
 export const metadata: Metadata = {
-  title: 'Whack-A-Mole Case Study | Ruchira Edirisinghe',
-  description:
-    'Whack-A-Mole (Speed & Bounty) - the fairground cabinet as a fifteen-second betting round. How a game of skill gets an honest price: three disjoint reward bands, a point value derived from a perfect clear, and a whole board sealed to a blockchain block before the first swing.',
+  title: 'Whack-A-Mole - Web Game | Ruchira Edirisinghe',
+  description: projectBySlug('whack-a-mole').tagline,
 };
 
 export default function Page() {
-  return <CaseStudyWhackAMole />;
+  return <ProjectShowcase slug="whack-a-mole" />;
 }

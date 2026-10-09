@@ -1,12 +1,12 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   optimize-images.mjs — bring public/Images down to a weight a phone can load.
+   optimize-images.mjs - bring public/Images down to a weight a phone can load.
 
    THE PROBLEM THIS SOLVES
    -----------------------
    The game case studies ship their captures at the resolution they were taken
    at: 2943x1613 PNGs, seven to nine megabytes each. A single case-study page
    references ten to twelve of them, so opening one asked the browser for
-   somewhere between sixty and eighty megabytes of PNG — for a gallery whose
+   somewhere between sixty and eighty megabytes of PNG - for a gallery whose
    cards are 540 CSS px wide and a lightbox that never draws past the viewport.
    On a phone on mobile data that is not a slow page, it is a page that does not
    arrive.
@@ -171,7 +171,7 @@ for (const file of files) {
 
     const sizeAfter = (await stat(tmp)).size;
 
-    /* Refuse a swap that would make the file bigger — a small, already-tight
+    /* Refuse a swap that would make the file bigger - a small, already-tight
        source occasionally re-encodes heavier, and shipping that would be a
        regression dressed as an optimisation. */
     if (sizeAfter >= sizeBefore) {
@@ -204,7 +204,7 @@ if (!DRY && touched) {
   console.log(`library now  ${mb(totalBefore - before + after)} MB`);
 }
 /* ═══════════════════════════════════════════════════════════════════════════
-   PASS TWO — card-sized variants for the gallery marquees.
+   PASS TWO - card-sized variants for the gallery marquees.
 
    The case-study galleries draw each capture into a 540x296 card on desktop and
    a 300x164 one on a phone. Handing those a 1920px file is between three and

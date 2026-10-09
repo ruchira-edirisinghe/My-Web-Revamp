@@ -86,7 +86,7 @@ export default function CaseStudyPanchaKeliya() {
           {/* Elevator pitch */}
           <div className="cs-elevator">
             <p>
-              Pancha Keliya is the cowrie-shell board game Sri Lankan families play through Avurudu, rebuilt as a 3D table with two live betting markets. Four players sit round a mat; six cowries are shaken in a half coconut and tipped out, and <em className="cs-em-gold">the number landing mouth-up settles a thirteen-square betting cloth and moves a piece on the chart at the same time.</em> One roll of six shells is simultaneously a dice game and the next move of a board game - which is not a design flourish, it is what the traditional game already is.
+              Pancha Keliya is the cowrie-shell board game that Sri Lankan families play during Avurudu, and I rebuilt it as a 3D table with two live betting markets. Four players sit around a mat, and six cowrie shells are shaken in half a coconut shell and tipped out. <em className="cs-em-gold">The number of shells that land mouth-up settles a thirteen-square betting cloth and moves a piece on the board, both at the same time.</em> So one roll of six shells works as a dice game and as the next move in a board game. That wasn&apos;t something I added for effect. It&apos;s how the traditional game has always worked.
             </p>
           </div>
 
@@ -103,28 +103,28 @@ export default function CaseStudyPanchaKeliya() {
             <h2 className="cs-section-title">The Design Problem</h2>
 
             <p className="cs-body">
-              A board game is a slow thing to bet on. A race takes nearly two hundred throws, and if the only market is <em>who wins</em>, the player has one decision at the start and then nine minutes of watching. The answer was to make the same number do two jobs: settle a fast market immediately, and move the board. That means <strong>the player is never idle</strong> - the next throw is always a bet, including on a rival&apos;s turn - and it means the slow market has to be priced by simulating the actual rules, not by guessing at them.
+              A board game is slow to bet on. A single race takes almost two hundred throws, and if the only bet is <em>who wins</em>, the player makes one decision at the start and then just watches for nine minutes. My answer was to make each throw do two jobs. It settles a quick bet straight away, and it moves the board. That means <strong>the player always has something to do</strong>, because every throw is a chance to bet, even on a rival&apos;s turn. It also meant the slower race bet had to be priced by simulating the real rules, rather than guessing.
             </p>
 
             <div className="cs-highlight">
-              <p>&quot;The board is generated, not drawn. <em>Move a leg of the chart and the ink, the movement rules and the twelve pieces all follow.</em>&quot;</p>
+              <p>&quot;The board is generated in code, not drawn by hand. <em>Change one leg of the chart and the printed ink, the movement rules and all twelve pieces follow along.</em>&quot;</p>
             </div>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📜</div>
                 <h3>Get the Rules Right</h3>
-                <p>The board and the throw values are documented, not invented - Parker&apos;s <em>Ancient Ceylon</em> (1909) and Murray&apos;s <em>History of Board-Games</em> (1951), by way of the Ludii ludeme formalisation.</p>
+                <p>I didn&apos;t make up the board or the throw values. They come from historical sources, Parker&apos;s <em>Ancient Ceylon</em> (1909) and Murray&apos;s <em>History of Board-Games</em> (1951), through the Ludii project&apos;s formal description of the game.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎲</div>
                 <h3>Two Markets, One Number</h3>
-                <p>A thirteen-square cloth settled in seconds off a Binomial(6, ½) shell distribution, and a race bet on who gets three pieces home first - both decided by the same throw.</p>
+                <p>There&apos;s a thirteen-square betting cloth that&apos;s settled in seconds using the odds of six shells (a Binomial(6, ½) distribution), and a race bet on who gets all three pieces home first. The same throw decides both.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚡</div>
                 <h3>Price a Race Live</h3>
-                <p>Race odds priced by playing the rest of the game out hundreds of times with the same rules the live table uses - fast enough to run between throws, never on a render frame.</p>
+                <p>The race odds are worked out by playing the rest of the game hundreds of times in the background, using exactly the same rules as the live table. It&apos;s fast enough to run between throws, and it never slows down the animation.</p>
               </div>
             </div>
           </section>
@@ -142,11 +142,11 @@ export default function CaseStudyPanchaKeliya() {
             <h2 className="cs-section-title">The Rules, and Where They Come From</h2>
 
             <p className="cs-body">
-              The chart is a single track: nine squares along the bottom row, then a track of 25 that turns every five spaces - vertically, then right, then vertically, then diagonally up-left, then diagonally down-left. Walked out from the five legs the sources describe, it comes out as a <strong>house</strong>, and a symmetrical one, which is how you know the reading is right. Six squares carry an <strong>X</strong> - every fifth position - and a piece standing on one cannot be sent back to start.
+              The chart is one long track. It starts with nine squares along the bottom row, then continues for another 25 squares, changing direction every five: up, then right, then up again, then diagonally up and to the left, then diagonally down and to the left. When you walk it out from the five legs described in the sources, it forms the shape of a <strong>house</strong>, and a symmetrical one at that, which is a good sign the reading is correct. Six squares are marked with an <strong>X</strong>, one at every fifth position, and a piece standing on one of them can&apos;t be sent back to the start.
             </p>
 
             <p className="cs-body">
-              The bottom row is the only part of the track that is <em>not</em> shared: the two sides begin at opposite ends and walk inwards to the central space, so one side&apos;s second square is another side&apos;s eighth, while both sides&apos; fifth position is the same centre square. That is why a piece is identified by <code>squareId(side, pos)</code> rather than by position alone - comparing positions would get the shared squares and the split ones both wrong. A piece&apos;s whole journey is 5 + 25 = <strong>30 squares</strong>, and it leaves the board only on an exact throw to 31.
+              The bottom row is the only part of the track that <em>isn&apos;t</em> shared. The two sides start at opposite ends and walk in towards the middle, so one side&apos;s second square is the other side&apos;s eighth, while both sides&apos; fifth position is the same centre square. That&apos;s why each piece is identified with <code>squareId(side, pos)</code> instead of just its position, since comparing positions alone would get both the shared squares and the split ones wrong. A piece&apos;s full journey is 5 + 25 = <strong>30 squares</strong>, and it only leaves the board with an exact throw that takes it to 31.
             </p>
 
             <h3 className="cs-sub-heading">Three Things the Sources Do Not Settle</h3>
@@ -251,7 +251,7 @@ export default function CaseStudyPanchaKeliya() {
 
             <div className="cs-callout">
               <div className="cs-callout-icon">⏱️</div>
-              <p className="cs-callout-text">Nothing on the board runs on a timer. Each of the twelve pieces keeps a floating-point track coordinate that chases the position React hands it at <strong className="cs-w">7.5 squares per second</strong>, hopping once per square and taking the corners of the chart rather than cutting across them - so a 6 visibly takes six times as long as a 1, and it walks over the squares it actually passed. The phase machine holds for a 340 ms floor and then <em>waits on the board</em> rather than guessing a duration, with a backstop so a wedged animation can never freeze the game. The number on the shells, the piece on the board and the line of commentary always describe the same instant.</p>
+              <p className="cs-callout-text">Nothing on the board runs on a fixed timer. Each of the twelve pieces keeps track of its position on the track and moves towards wherever React says it should be at <strong className="cs-w">7.5 squares per second</strong>. It hops once per square and follows the corners of the chart instead of cutting across them, so a throw of 6 visibly takes six times longer than a throw of 1, and the piece walks over the exact squares it passed. The game waits at least 340 ms and then <em>waits for the board to finish</em> rather than guessing how long a move will take, with a safety net so a stuck animation can never freeze the game. The number on the shells, the piece on the board and the commentary always describe the same moment.</p>
             </div>
 
             <h3 className="cs-sub-heading">Two Details the Twelve Pieces Forced</h3>
@@ -260,12 +260,12 @@ export default function CaseStudyPanchaKeliya() {
               <div className="cs-card">
                 <div className="cs-card-icon">🫂</div>
                 <h3>Crowding</h3>
-                <p>Pieces share squares constantly, and on a marked X square four can pile up. They are grouped by <em>board square</em> (not track position, because the two sides number the bottom row from opposite ends) and eased onto slots - two abreast, three or more on a small ring. Without it a stack z-fights into a single smear and the board lies about how many pieces are on it.</p>
+                <p>Pieces share squares all the time, and up to four can pile up on a marked X square. They&apos;re grouped by <em>board square</em> rather than track position (because the two sides number the bottom row from opposite ends) and slide into slots, two side by side, or three or more in a small ring. Without this, a stack of pieces flickers into one blurry shape and the board ends up lying about how many pieces are actually there.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🎯</div>
                 <h3>Where the Ring Goes</h3>
-                <p>The highlight ring follows the piece actually in play - the move effect names the seat <em>and</em> the piece - and falls back to the thrower&apos;s leading piece between moves. The seated figures&apos; eyelines come from the same lookup, so four people are looking at the thing that is happening.</p>
+                <p>The highlight ring follows whichever piece is actually being moved, because the move tells the game both the seat <em>and</em> the piece. Between moves, it goes back to the thrower&apos;s leading piece. The seated characters use the same information to decide where to look, so all four of them are watching whatever is happening.</p>
               </div>
             </div>
 
@@ -310,13 +310,13 @@ export default function CaseStudyPanchaKeliya() {
             <h3 className="cs-sub-heading">One Throw, Two Jobs</h3>
 
             <p className="cs-body">
-              Six fair shells give <strong>Binomial(6, ½)</strong>, so every square&apos;s true chance is a known rational number over 64. That is what makes a thirteen-square cloth pricable without a single simulation - and, because the whole stream is a pure function of the sealed seed, the shells&apos; <em>landing positions</em> are drawn from the same stream as their faces, so a replayed throw reproduces what the player actually saw rather than merely the number they were paid on.
+              Six fair shells follow a <strong>Binomial(6, ½)</strong> distribution, so the real chance of every square is a known fraction out of 64. That&apos;s what makes it possible to price a thirteen-square cloth without running a single simulation. Because everything comes from the sealed seed, the positions where the shells <em>land</em> are drawn from the same random stream as which way up they land. So if you replay a throw, you see exactly what the player saw, not just the number they were paid on.
             </p>
 
             <code className="cs-code"><span className="cm">{'// Six cowries in a half coconut → Binomial(6, ½)'}</span>{'\nfaces  = six draws of rng() < 0.5\ncount  = number of shells landing mouth-up      '}<span className="cm">{'// 0 … 6'}</span>{'\n\nways/64:   1    6    15    '}<span className="nm">20</span>{'    15    6    1\nchance:  1.56  9.38  23.44  '}<span className="nm">31.25</span>{'  23.44  9.38  1.56  %\nnames:   Dhas Ondira   -      -      -   Pancha Sadaya\n\n'}<span className="cm">{'// every square: fair payout × RTP 0.97, then rounded to something readable'}</span>{'\n'}<span className="nm">rtpOf</span>{'(square)  '}<span className="cm">{'// re-derived from the distribution, printed in the paytable'}</span></code>
 
             <p className="cs-body">
-              A throw of <strong>6, 5 or 1</strong> grants an extra throw and is the only throw that can bring a piece onto the board - which is why <em>AGAIN</em> is a square you can bet on. Zero moves nothing and ends the turn. A cap of three consecutive extra throws bounds a lucky streak; without some cap the turn has no bound at all.
+              A throw of <strong>6, 5 or 1</strong> gives you another throw, and it&apos;s the only kind of throw that can bring a new piece onto the board, which is why <em>AGAIN</em> is a square you can bet on. A throw of zero doesn&apos;t move anything and ends your turn. You can get at most three extra throws in a row, which stops a lucky streak from going on forever. Without some kind of limit, a turn could in theory never end.
             </p>
 
             <h3 className="cs-sub-heading">The Betting Cloth</h3>
@@ -355,22 +355,22 @@ export default function CaseStudyPanchaKeliya() {
             </div>
 
             <p className="cs-body">
-              Thirteen squares in all, plus <em>AGAIN</em> (1, 5 or 6 at 4.77×) and <em>ALL</em> (0 or 6 at 31.00×). The house edge is between <strong className="cs-gold">3.00% and 3.20% on every square of the cloth</strong> - there is no trap square, and a player cannot pick a worse bet than any other by more than two tenths of a percentage point. That is the whole point of pricing off one number rather than by feel. The paytable screen prints the <em>measured</em> return in its right-hand column, re-derived from the distribution rather than typed in beside it.
+              There are thirteen squares in total, plus <em>AGAIN</em> (a 1, 5 or 6, paying 4.77×) and <em>ALL</em> (a 0 or 6, paying 31.00×). The house edge is between <strong className="cs-gold">3.00% and 3.20% on every square of the cloth</strong>, so there&apos;s no trap square, and no bet is worse than any other by more than two tenths of a percentage point. That&apos;s exactly why I priced everything from one distribution instead of by feel. The paytable screen shows the <em>measured</em> return in its right-hand column, calculated from the distribution rather than typed in by hand.
             </p>
 
             <h3 className="cs-sub-heading">The Race Market, and a Defect It Found</h3>
 
             <p className="cs-body">
-              One bet per game on who gets all three pieces off first, priced from a <strong>live simulation of the actual rules</strong>: the odds engine plays the rest of the race out hundreds of times using the same piece-choice policy and the same capture logic that decide the live game, so the odds cannot quietly describe a slightly different game from the one on the table. Cash-out is stake × odds × current probability × 0.96 - the 0.96 is a spread, not a second house edge, because the player has already paid the 3% once at placement.
+              You get one bet per game on who will get all three of their pieces off the board first, and it&apos;s priced using a <strong>live simulation of the real rules</strong>. The odds engine plays out the rest of the race hundreds of times using the same rules for choosing pieces and capturing as the live game does, so the odds can never quietly describe a slightly different game from the one on the table. Cashing out pays stake × odds × current probability × 0.96. The 0.96 is a spread, not a second house edge, because the player already paid the 3% once when they placed the bet.
             </p>
 
             <div className="cs-callout">
               <div className="cs-callout-icon">🐛</div>
-              <p className="cs-callout-text">Verification found a real defect and it was fixed rather than documented. Opening prices were originally quoted from a fresh playout run, the same way mid-race prices are - but <strong className="cs-w">every race opens from an identical position</strong>, so there is nothing to sample: the opening prices are a constant. Sampling them anyway put ±0.2 of noise on each of four quotes, and individual runners were being offered at anywhere from <em>90% to 106%</em> return. A player who simply backed the longest price each race was, by construction, choosing whichever runner the simulation had most underestimated. The fix: the opening probabilities became a measured constant from a 700,000-race run, and the pricing function short-circuits to it whenever the race is still at its opening position.</p>
+              <p className="cs-callout-text">Testing turned up a real bug, and I fixed it rather than just writing it down. The opening prices were originally worked out from a fresh simulation, the same way prices partway through the race are. But <strong className="cs-w">every race starts from exactly the same position</strong>, so there&apos;s nothing to simulate, and the opening prices should simply be a constant. Simulating them anyway added about ±0.2 of random noise to each of the four prices, so individual runners were being offered at anywhere from <em>90% to 106%</em> return. A player who always backed the longest price would, by definition, be picking whichever runner the simulation had underestimated the most. To fix it, I measured the opening probabilities once over 700,000 races and stored them as a constant, and the pricing function now uses that constant whenever the race hasn&apos;t started moving yet.</p>
             </div>
 
             <p className="cs-body">
-              Throwing order is a real advantage - seat one gets first crack at the 6/5/1 needed to enter, and every square it occupies is one the others can be sent home from - so it is <em>priced</em>. Measured over 700,000 complete races the spread is 1.7 percentage points from first to last (25.86% down to 24.20%), and the four prices track it at 3.75× to 4.01×, returning 96.93% - 97.08% flat. No seat is a better bet than another.
+              Going first is a real advantage. Seat one gets the first chance at the 6, 5 or 1 needed to bring a piece on, and every square it takes is one the other players can be sent home from. So the order is <em>priced in</em>. Measured over 700,000 complete races, the gap from first to last seat is 1.7 percentage points (25.86% down to 24.20%), and the four prices follow it, from 3.75× to 4.01×, all returning between 96.93% and 97.08%. No seat is a better bet than any other.
             </p>
 
             <div className="creative-styleguide">
@@ -379,7 +379,7 @@ export default function CaseStudyPanchaKeliya() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Typography</div>
-                  <p className="sg-unit-desc">The chart&apos;s printed face is generated as a texture from the same walk that defines the track, so the ink and the rules cannot drift apart. Type on the mat is a warm painted display face; the market and the paytable stay monospaced, because a price is a measurement.</p>
+                  <p className="sg-unit-desc">The printed design on the chart is generated as a texture from the same path that defines the track, so the ink and the rules can never disagree. The lettering on the mat uses a warm, hand-painted display font, while the betting cloth and paytable stay in a monospaced font, because a price is a measurement and should read like one.</p>
                   <div className="typo-hero">Painted Mat</div>
                   <div className="typo-weights-row">
                     <span className="typo-weight-item cs-ff-bungee">Display · The Chart</span>
@@ -393,7 +393,7 @@ export default function CaseStudyPanchaKeliya() {
               <div className="sg-unit">
                 <div className="glass-box">
                   <div className="sg-unit-title">Color Tokens</div>
-                  <p className="sg-unit-desc">Deep mat-teal for the ground, marigold for the printed chart and the money, terracotta for captures and the risk end of every ramp. The name is printed in the open sky under the gable, with the sun and the moon either side of it; the two open quarters of the room hold twelve home shelves, three per seat.</p>
+                  <p className="sg-unit-desc">A deep teal for the mat, marigold for the printed chart and anything to do with money, and terracotta for captures and the risky end of every scale. The game&apos;s name is printed in the open sky under the roof, with the sun and the moon on either side. The two open corners of the room hold twelve home shelves, three for each seat.</p>
                   <div className="color-strip">
                     <div className="color-block" style={cssVars({ '--sw': '#030D0B' })}><span className="color-hex">#030D0B</span></div>
                     <div className="color-block" style={cssVars({ '--sw': '#06150F' })}><span className="color-hex">#06150F</span></div>
@@ -416,7 +416,7 @@ export default function CaseStudyPanchaKeliya() {
             </div>
 
             <h3 className="cs-sub-heading">In-Game Screens</h3>
-            <p className="cs-body">The table across its beats - the title mat, the generated chart, the thirteen-square cloth, the shells being tipped and a piece walking home. Click any screen to open it in high resolution.</p>
+            <p className="cs-body">Here&apos;s the table at each stage of a game: the title mat, the generated chart, the thirteen-square betting cloth, the shells being tipped out and a piece walking home. Click any screen to see it in high resolution.</p>
 
             <div className="ui-gallery">
               {/* Row 1 */}
@@ -526,40 +526,40 @@ export default function CaseStudyPanchaKeliya() {
             <h2 className="cs-section-title">How It Was Built</h2>
 
             <p className="cs-body">
-              The build started in the sources and ended in the profiler. Reading the chart out of a 1909 description and generating it in code came first; pricing the cloth off the binomial came second; and the last stretch was making a 193-throw race pricable <em>between throws</em> rather than on a render frame.
+              The work started with the historical sources and ended in the profiler. First I read the chart out of a description from 1909 and generated it in code. Next I priced the betting cloth using the binomial distribution. The last stretch was making it possible to price a 193-throw race <em>between throws</em>, without slowing down the animation.
             </p>
 
             <div className="cs-cards-grid">
               <div className="cs-card">
                 <div className="cs-card-icon">📜</div>
                 <h3>1 · Read the Sources</h3>
-                <p>Walked the five legs out of the Parker/Murray description into a generated chart, then made the printed texture, the movement rules and the twelve pieces all read the same walk.</p>
+                <p>I traced the five legs of the track from the Parker and Murray descriptions into a generated chart, then made sure the printed texture, the movement rules and all twelve pieces read from that same path.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🧿</div>
                 <h3>2 · Price the Cloth</h3>
-                <p>Thirteen squares priced straight off Binomial(6, ½) at a 97% target, with the actual return re-derived rather than typed - so the paytable prints measurement, not intention.</p>
+                <p>I priced all thirteen squares directly from the Binomial(6, ½) distribution with a 97% target, and the real return is calculated rather than typed in, so the paytable shows a measurement and not just an intention.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">🏇</div>
                 <h3>3 · Price the Race</h3>
-                <p>Built a playout sampler that uses the live rules verbatim. Found and fixed the sampled-opening-price defect, replacing it with a measured constant from 700,000 races.</p>
+                <p>I built a simulator that plays the race out using the live rules exactly as they are. It turned up the problem with the opening prices, which I fixed by replacing them with a constant measured over 700,000 races.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⚡</div>
                 <h3>4 · Make It Fast</h3>
-                <p>Flattened the race state to a twelve-element array, made the piece-choice function write into one reused object, used typed arrays for lookups, and drew throws from a cumulative table - one random per throw instead of six.</p>
+                <p>I stored the race state as a simple twelve-item array, made the function that chooses a piece reuse one object instead of creating new ones, used typed arrays for lookups, and drew throws from a precalculated table, so each throw needs one random number instead of six.</p>
               </div>
               <div className="cs-card">
                 <div className="cs-card-icon">⏳</div>
                 <h3>5 · Cut the Beats</h3>
-                <p>Shells 2.48s → 1.80s, the number held 1.20s → 0.70s, and the move stopped being a duration at all - a floor, then wait for the piece to arrive. Turbo went ×2 → ×3.</p>
+                <p>I tightened the pacing. The shells went from 2.48s to 1.80s, the result is now held on screen for 0.70s instead of 1.20s, and the move no longer has a fixed duration at all. It waits a short minimum, then waits for the piece to arrive. Turbo mode went from ×2 to ×3.</p>
               </div>
             </div>
 
             <div className="cs-callout">
               <div className="cs-callout-icon">🔒</div>
-              <p className="cs-callout-text">The seal covers a <strong className="cs-w">whole race, not a throw</strong>, and the justification is the strongest in the arcade: a race is on average <em>193 throws</em>, every one derived publicly and deterministically from one committed number. Publishing it at the start would not leak the next throw - it would leak every remaining throw of the game, and the cloth is a bet on exactly those numbers. Committed when the race is dealt, revealed the instant a player&apos;s last piece is off, and the race cannot end without unsealing it.</p>
+              <p className="cs-callout-text">The seal covers the <strong className="cs-w">whole race, not just one throw</strong>, and there&apos;s a stronger reason for this here than anywhere else in the arcade. A race is <em>193 throws</em> on average, and every one of them is worked out publicly and predictably from one committed number. Publishing that number at the start wouldn&apos;t just give away the next throw. It would give away every remaining throw in the game, and the betting cloth is a bet on exactly those numbers. So the number is locked in when the race is dealt and revealed the moment a player&apos;s last piece leaves the board, and the race can&apos;t finish without revealing it.</p>
             </div>
           </section>
 
@@ -574,7 +574,7 @@ export default function CaseStudyPanchaKeliya() {
             <h3 className="cs-sub-heading">Verified, Not Asserted</h3>
 
             <p className="cs-body">
-              Measured against a faithful reimplementation of the shipped pipeline over <strong>5,999,940 throws</strong> - every reachable block value × 60 consecutive nonces - plus 700,000 complete races. The shells reproduce Binomial(6, ½) to within <strong>0.042 percentage points</strong>; the cloth measures 96.65% - 97.69% RTP against a 96.8-97.0% design, with the two outliers being the 62× squares whose sampling error at this size is ±0.31 pp per standard deviation; and the race market returns <strong>97.01%</strong> flat across all four runners with no shoppable edge. Zero races failed to finish inside a 6,000-throw cap.
+              I checked everything against a faithful copy of the shipped code, over <strong>5,999,940 throws</strong> (every possible block value with 60 consecutive counters each) plus 700,000 complete races. The shells match Binomial(6, ½) to within <strong>0.042 percentage points</strong>. The betting cloth measured between 96.65% and 97.69% return against a design target of 96.8% to 97.0%, and the two squares outside that range are the 62× ones, which naturally swing by about ±0.31 points at this sample size. The race bet returns <strong>97.01%</strong> evenly across all four runners, with no better option to pick. Every single race finished well within the 6,000-throw limit.
             </p>
 
             <div className="outcome-grid">
@@ -597,25 +597,25 @@ export default function CaseStudyPanchaKeliya() {
             </div>
 
             <div className="cs-highlight cs-mt-28">
-              <p>&quot;One throw settles two markets - <em>and the race odds are priced by simulating the exact rules the table is playing.</em>&quot;</p>
+              <p>&quot;One throw settles two bets, <em>and the race odds come from simulating the exact rules the table is playing by.</em>&quot;</p>
             </div>
 
             <div className="reflection-grid">
               <div className="reflection-card">
                 <h3>📈 Outcome</h3>
-                <p>A shipped 3D board-and-betting game faithful to a documented 1909 ruleset: a generated chart, twelve pieces walking in real time, a thirteen-square cloth, live race odds with cash-out, and races sealed to a blockchain block from the first throw to the last piece home.</p>
+                <p>A finished 3D board and betting game that stays true to a ruleset documented in 1909. It has a generated chart, twelve pieces that walk in real time, a thirteen-square betting cloth, live race odds with cash-out, and races sealed to a blockchain block from the first throw until the last piece gets home.</p>
               </div>
               <div className="reflection-card">
                 <h3>🧗 Challenge</h3>
-                <p>Three pieces per player make a long game - 193 throws, about ten minutes, three and a half in turbo - and every beat had to be cut as far as it goes while a throw still reads. That is the honest cost of the traditional rules, not a regression.</p>
+                <p>With three pieces per player, a game takes a while: around 193 throws and about ten minutes, or three and a half minutes in turbo mode. I trimmed every moment as far as I could while still letting each throw be readable. That length is simply the honest cost of using the traditional rules, not a problem I created.</p>
               </div>
               <div className="reflection-card">
                 <h3>💡 What I Learned</h3>
-                <p>Simulation-derived prices need to know when <em>not</em> to simulate. Sampling a quantity that is a constant does not make it more accurate - it hands the player a menu whose longest price is always the one you got most wrong.</p>
+                <p>If you&apos;re pricing things with simulations, you need to know when <em>not</em> to simulate. Simulating something that&apos;s actually a constant doesn&apos;t make it more accurate. It just gives players a list where the longest price is always the one you got most wrong.</p>
               </div>
               <div className="reflection-card">
                 <h3>🚀 Next Steps</h3>
-                <p>Let the player choose which of their three pieces takes a throw (keeping the house policy for rivals and for the pricing simulation), a binding commit-reveal, and four real players round one sealed mat.</p>
+                <p>Next, I&apos;d like to let players choose which of their three pieces moves on each throw (while keeping the house rules for rivals and for the pricing simulation), add a proper commit-and-reveal step, and let four real players sit around the same sealed mat.</p>
               </div>
             </div>
 
@@ -662,24 +662,6 @@ export default function CaseStudyPanchaKeliya() {
         </div>
       </div>
 
-      {/* ── REDIRECTION MODAL ── */}
-      <div id="redirect-modal" className="redirect-modal-overlay" aria-hidden="true">
-        <div className="redirect-modal-card">
-          <div className="redirect-modal-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-              <polyline points="15 3 21 3 21 9" />
-              <line x1="10" y1="14" x2="21" y2="3" />
-            </svg>
-          </div>
-          <h3 id="redirect-title" className="redirect-title">Exiting Habitat</h3>
-          <p id="redirect-msg" className="redirect-msg">Do you wish to continue to view this project externally?</p>
-          <div className="redirect-cta-row">
-            <button id="redirect-cancel" className="redirect-btn ghost">Stay Here</button>
-            <a id="redirect-confirm" href="#" target="_blank" rel="noopener" className="redirect-btn primary">Continue ↗</a>
-          </div>
-        </div>
-      </div>
     </StandardShell>
   );
 }

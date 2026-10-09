@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
-import '@/styles/projects/kyc-case-study.css';
-import CaseStudyKyc from '@/components/pages/casestudies/kyc';
+import '@/styles/projects/project-showcase.css';
+import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
+import { projectBySlug } from '@/components/pages/showcase/data';
 
-export const metadata: Metadata = { title: 'KYC Verification Case Study | Ruchira Edirisinghe' };
+export const metadata: Metadata = {
+  title: 'KYC Verification - UI/UX Case Study | Ruchira Edirisinghe',
+  description: projectBySlug('kyc').tagline,
+};
 
 export default function Page() {
-  return <CaseStudyKyc />;
+  return <ProjectShowcase slug="kyc" />;
 }

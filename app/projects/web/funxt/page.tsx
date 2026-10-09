@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
-import '@/styles/projects/funxt-case-study.css';
-import CaseStudyFunxt from '@/components/pages/casestudies/funxt';
+import '@/styles/projects/project-showcase.css';
+import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
+import { projectBySlug } from '@/components/pages/showcase/data';
 
-export const metadata: Metadata = { title: 'Fun Extreme Technology Case Study | Ruchira Edirisinghe' };
+export const metadata: Metadata = {
+  title: 'Fun Extreme Technology - UI/UX Case Study | Ruchira Edirisinghe',
+  description: projectBySlug('funxt').tagline,
+};
 
 export default function Page() {
-  return <CaseStudyFunxt />;
+  return <ProjectShowcase slug="funxt" />;
 }

@@ -1,0 +1,32 @@
+[
+  {
+    "created_at": "2026-10-08T14:36:02.281292Z",
+    "display_name": "GPT Image 2.5",
+    "id": "b02c4f96-fffd-40f1-8bc8-21ce5c6ed954",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3KH0mq5eTNt3Xw1KrinwFYZTiH0/hf_20261008_143602_b02c4f96-fffd-40f1-8bc8-21ce5c6ed954_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 752,
+      "medias": [
+        {
+          "data": {
+            "id": "272eb6cb-c119-42ba-affd-e315fc8118c1",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KH0mq5eTNt3Xw1KrinwFYZTiH0/272eb6cb-c119-42ba-affd-e315fc8118c1.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Recompose this square game key art into a wide 16:9 landscape cover banner for a game portfolio. Keep the exact same game logo lettering, spelling, colors and style, the same characters and the same art style, lighting and palette. Extend the scene naturally to the left and right so it fills the wide frame - no letterboxing, no borders, no extra text, no watermark. Place the logo clearly readable and fully inside the frame with comfortable margins, with the hero subject beside it. Scene: Tic Tac Toe Showdown - Wild West desert at sunset, wooden board with plank X and rope O pieces; the wooden sign 'TIC TAC TOE SHOWDOWN' logo with sheriff star.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "1k",
+      "width": 1344
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3KH0mq5eTNt3Xw1KrinwFYZTiH0/hf_20261008_143602_b02c4f96-fffd-40f1-8bc8-21ce5c6ed954.png",
+    "status": "completed"
+  }
+]

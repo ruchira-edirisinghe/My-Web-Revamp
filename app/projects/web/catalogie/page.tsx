@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
-import '@/styles/projects/catalogie-case-study.css';
-import CaseStudyCatalogie from '@/components/pages/casestudies/catalogie';
+import '@/styles/projects/project-showcase.css';
+import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
+import { projectBySlug } from '@/components/pages/showcase/data';
 
-export const metadata: Metadata = { title: 'Catalogie Case Study | Ruchira Edirisinghe' };
+export const metadata: Metadata = {
+  title: 'Catalogie - Full-Stack Project | Ruchira Edirisinghe',
+  description: projectBySlug('catalogie').tagline,
+};
 
 export default function Page() {
-  return <CaseStudyCatalogie />;
+  return <ProjectShowcase slug="catalogie" />;
 }

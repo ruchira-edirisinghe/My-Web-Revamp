@@ -24,7 +24,7 @@ export default function GalleryMobileWallpapers() {
           <p className="section-label">Digital Personalization</p>
           <h1 className="page-title">Mobile Wallpapers</h1>
           <p className="bio-para" style={{ textAlign: 'left', margin: 0 }}>
-            A curated collection of minimalist, high-fidelity wallpapers optimized for modern AMOLED displays.
+            A set of clean, minimal phone wallpapers I&apos;ve made. They&apos;re high resolution and designed to look especially good on AMOLED screens, so feel free to grab one for your own phone.
           </p>
         </header>
 

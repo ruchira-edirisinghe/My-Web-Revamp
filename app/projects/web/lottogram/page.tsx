@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
-import '@/styles/projects/lottogram-case-study.css';
-import CaseStudyLottogram from '@/components/pages/casestudies/lottogram';
+import '@/styles/projects/project-showcase.css';
+import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
+import { projectBySlug } from '@/components/pages/showcase/data';
 
-export const metadata: Metadata = { title: 'Lottogram Case Study | Ruchira Edirisinghe' };
+export const metadata: Metadata = {
+  title: 'Lottogram - UI/UX Case Study | Ruchira Edirisinghe',
+  description: projectBySlug('lottogram').tagline,
+};
 
-export default function LottogramPage() {
-  return <CaseStudyLottogram />;
+export default function Page() {
+  return <ProjectShowcase slug="lottogram" />;
 }

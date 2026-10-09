@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
-import '@/styles/projects/horse-racing-case-study.css';
-import CaseStudyHorseRacing from '@/components/pages/casestudies/horse-racing';
+import '@/styles/projects/project-showcase.css';
+import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
+import { projectBySlug } from '@/components/pages/showcase/data';
 
-export const metadata: Metadata = { title: 'Horse Racing Elite Case Study | Ruchira Edirisinghe' };
+export const metadata: Metadata = {
+  title: 'Horse Racing Elite - Web Game | Ruchira Edirisinghe',
+  description: projectBySlug('horse-racing').tagline,
+};
 
 export default function Page() {
-  return <CaseStudyHorseRacing />;
+  return <ProjectShowcase slug="horse-racing" />;
 }

@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
-import '@/styles/projects/kamba-adeema-case-study.css';
-import CaseStudyKambaAdeema from '@/components/pages/casestudies/kamba-adeema';
+import '@/styles/projects/project-showcase.css';
+import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
+import { projectBySlug } from '@/components/pages/showcase/data';
 
-export const metadata: Metadata = { title: 'Kamba Adeema Case Study | Ruchira Edirisinghe' };
+export const metadata: Metadata = {
+  title: 'Kamba Adeema - Web Game | Ruchira Edirisinghe',
+  description: projectBySlug('kamba-adeema').tagline,
+};
 
 export default function Page() {
-  return <CaseStudyKambaAdeema />;
+  return <ProjectShowcase slug="kamba-adeema" />;
 }

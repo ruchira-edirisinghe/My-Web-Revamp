@@ -24,7 +24,7 @@ export default function GalleryEventPosters() {
           <p className="section-label">High-Impact Visuals</p>
           <h1 className="page-title">Event Posters</h1>
           <p className="bio-para" style={{ textAlign: 'left', margin: 0 }}>
-            A showcase of high-impact visual design for corporate events, hackathons, and creative gatherings.
+            Posters I&apos;ve designed for company events, hackathons and other creative get-togethers. Each one had to catch people&apos;s eye and tell them what the event was about at a glance.
           </p>
         </header>
 

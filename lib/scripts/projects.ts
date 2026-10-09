@@ -4,6 +4,7 @@
    scroll-reveal, mobile menu, card clickability.
    (faithful port of styles/projects/projects.js)
    ════════════════════════════════════════ */
+import { initCursor } from './cursor';
 import { makeBag, makeDirtyClear } from './_util';
 import { initPreloaderFx } from './preloader-fx';
 import { initSpaceField3D } from './space-field';
@@ -207,58 +208,18 @@ export function initProjects(): () => void {
   (function () {
     const cursorDot = document.getElementById('cursor-dot');
     const cursorCanvas = document.getElementById('cursor-canvas');
-    if (!cursorCanvas) return;
-    const cCtx = cursorCanvas.getContext('2d');
-    const dirty = makeDirtyClear(cCtx);
-    let W, H;
-    function resize() { W = cursorCanvas.width = window.innerWidth; H = cursorCanvas.height = window.innerHeight; dirty.reset(); }
-    resize(); bag.on(window, 'resize', resize);
-
-    let mX = -300, mY = -300, rX = -300, rY = -300, currentR = 26, targetR = 26;
-    const R_NORMAL = 26, R_HOVER = 36;
-
-    let cursorRunning = false;
-    let rafId = 0;
-    function startCursor() {
-      if (cursorRunning || W <= 900 || document.hidden) return;
-      cursorRunning = true;
-      rafId = requestAnimationFrame(drawCursor);
-    }
-    function stopCursor() { cursorRunning = false; dirty.reset(); cCtx.clearRect(0, 0, W, H); }
-
-    function drawCursor() {
-      if (!cursorRunning) return;
-      if (W <= 900) { stopCursor(); return; }
-      rX += (mX - rX) * 0.1; rY += (mY - rY) * 0.1; currentR += (targetR - currentR) * 0.08;
-      const R = currentR, cx = rX, cy = rY;
-      // The ring trails the pointer, and the dot sits ON it, so the box has to
-      // span both - it widens with speed and collapses back the moment the ring
-      // catches up. Still a fraction of the full-canvas clear this replaced.
-      dirty.clear(cx, cy, R * 1.6 + Math.hypot(mX - cx, mY - cy));
-      if (mX < -200) { rafId = requestAnimationFrame(drawCursor); return; }
-
-      const halo = cCtx.createRadialGradient(cx, cy, R * 0.85, cx, cy, R * 1.5);
-      halo.addColorStop(0, 'rgba(180,220,255,0.07)'); halo.addColorStop(1, 'rgba(80,140,255,0)');
-      cCtx.beginPath(); cCtx.arc(cx, cy, R * 1.5, 0, Math.PI * 2); cCtx.fillStyle = halo; cCtx.fill();
-
-      cCtx.beginPath(); cCtx.arc(cx, cy, R, 0, Math.PI * 2); cCtx.arc(cx, cy, R - 5, 0, Math.PI * 2, true);
-      const rim = cCtx.createRadialGradient(cx, cy, R - 5, cx, cy, R);
-      rim.addColorStop(0, 'rgba(255,255,255,0.04)'); rim.addColorStop(0.5, 'rgba(200,230,255,0.08)'); rim.addColorStop(1, 'rgba(255,255,255,0.03)');
-      cCtx.fillStyle = rim; cCtx.fill('evenodd');
-
-      cCtx.beginPath(); cCtx.arc(cx, cy, R, 0, Math.PI * 2);
-      const stroke = cCtx.createLinearGradient(cx - R, cy - R, cx + R, cy + R);
-      stroke.addColorStop(0, 'rgba(255,255,255,0.88)'); stroke.addColorStop(0.3, 'rgba(210,235,255,0.52)'); stroke.addColorStop(1, 'rgba(190,220,255,0.7)');
-      cCtx.strokeStyle = stroke; cCtx.lineWidth = 1.5; cCtx.stroke();
-
-      if (cursorDot) { cursorDot.style.left = mX + 'px'; cursorDot.style.top = mY + 'px'; }
-      rafId = requestAnimationFrame(drawCursor);
-    }
-    startCursor();
+    // The pointer itself is lib/scripts/cursor.ts; these stay for the hover
+    // sounds and click particles below, which read the pointer position.
+    initCursor(bag);
+    let W = window.innerWidth, mX = -300, mY = -300, targetR = 26, cursorRunning = false, rafId = 0; const R_NORMAL = 26, R_HOVER = 36;
+    const startCursor = () => {}, stopCursor = () => {};
     bag.on(window, 'resize', () => { if (W <= 900) stopCursor(); else startCursor(); });
     bag.on(document, 'visibilitychange', () => { if (document.hidden) stopCursor(); else startCursor(); });
 
-    bag.on(document, 'mousemove', e => { mX = e.clientX; mY = e.clientY; });
+    bag.on(document, 'mousemove', e => { mX = e.clientX; mY = e.clientY; startCursor(); });
+    // Hover changes the ring size, so entering or leaving anything wakes the loop.
+    bag.on(document, 'mouseover', startCursor);
+    bag.on(document, 'mouseout', startCursor);
     document.querySelectorAll('a, button, .social-card, .platform-card, .stream-card, .project-card').forEach(el => {
       bag.on(el, 'mouseenter', () => { targetR = R_HOVER; playHover(); });
       bag.on(el, 'mouseleave', () => { targetR = R_NORMAL; });
@@ -292,7 +253,8 @@ export function initProjects(): () => void {
        continuously across every page and remembers its paused state; this engine
        only mirrors the playing flag into its spectrum visualiser below. */
     let spectrumPlaying = false;
-    bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; }));
+    let wakeSpectrum = () => {};
+    bag.add(wireAmbientControls(playing => { spectrumPlaying = playing; wakeSpectrum(); }));
 
     const specCanvas = document.getElementById('spectrum-canvas-desktop');
     const specCanvasM = document.getElementById('spectrum-canvas');
@@ -319,9 +281,12 @@ export function initProjects(): () => void {
           ctx.fillStyle = grad; ctx.beginPath(); ctx.roundRect(x, y, 2, h, 1); ctx.fill();
         });
       });
+      // Paused and flat: nothing changes until the music starts again.
+      if (!spectrumPlaying && bars.every(b => Math.abs(b.currentH - 1) < 0.02)) { specRaf = 0; return; }
       specRaf = requestAnimationFrame(drawSpectrum);
     }
     specRaf = requestAnimationFrame(drawSpectrum);
+    wakeSpectrum = () => { if (specRunning && !specRaf) { lastSpec = performance.now(); specRaf = requestAnimationFrame(drawSpectrum); } };
 
     bag.on(document, 'visibilitychange', () => {
       if (document.hidden) { specRunning = false; }
@@ -446,7 +411,8 @@ export function initProjects(): () => void {
         const primaryLink = card.querySelector('.project-link-btn');
         if (e.target.closest('.project-link-btn')) return;
         if (primaryLink && primaryLink.href && primaryLink.href !== '#' && !primaryLink.href.includes('javascript:void')) {
-          window.location.href = primaryLink.href;
+          // A click, so an outside link still gets the leaving-the-site check.
+          primaryLink.click();
         }
       });
     });

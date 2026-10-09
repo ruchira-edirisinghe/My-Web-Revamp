@@ -24,8 +24,8 @@ export default function GalleryLogos() {
           <p className="section-label">Identity & Branding</p>
           <h1 className="page-title">Logo Designs</h1>
           <p className="bio-para" style={{ textAlign: 'left', margin: 0 }}>
-            A specialized collection of visual identities, brand marks, and typography systems crafted for diverse industries,
-            ranging from tech startups and campus clubs to multinational enterprises and personal branding.
+            Over the years I&apos;ve designed logos and brand identities for all sorts of clients, including tech startups,
+            university clubs, large international companies and my own personal brand. Here are some of my favourites.
           </p>
         </header>
 
@@ -37,7 +37,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Identity Design</span>
                 <h2 className="info-title">Akila Physics</h2>
-                <p className="info-sub">Designed for a Physics Tuition Teacher for marketing and branding purposes.</p>
+                <p className="info-sub">A logo for a physics tuition teacher, used for their classes, marketing and branding.</p>
               </div>
             </div>
 
@@ -47,7 +47,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Software Brand</span>
                 <h2 className="info-title">Bumpie</h2>
-                <p className="info-sub">Visual identity for a Maternity Status Monetization Software platform.</p>
+                <p className="info-sub">The visual identity for Bumpie, a software platform for maternity status monetization.</p>
               </div>
             </div>
 
@@ -57,7 +57,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Logistics Branding</span>
                 <h2 className="info-title">Celeritas</h2>
-                <p className="info-sub">Designed for an international courier service agent management system.</p>
+                <p className="info-sub">A logo for an agent management system used by an international courier service.</p>
               </div>
             </div>
 
@@ -67,7 +67,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Corporate Identity</span>
                 <h2 className="info-title">Lanka Dairy</h2>
-                <p className="info-sub">Branding for a dairy milk production and distribution company.</p>
+                <p className="info-sub">Branding for a company that produces and distributes dairy milk.</p>
               </div>
             </div>
 
@@ -77,7 +77,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Community Club</span>
                 <h2 className="info-title">D.N.S.</h2>
-                <p className="info-sub">Designed for a campus community club for the Networking Department.</p>
+                <p className="info-sub">A logo for the Networking Department&apos;s community club at my university.</p>
               </div>
             </div>
 
@@ -87,7 +87,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Energy Software</span>
                 <h2 className="info-title">Electra</h2>
-                <p className="info-sub">Visual identity for a university software project in solar energy.</p>
+                <p className="info-sub">The visual identity for a university software project focused on solar energy.</p>
               </div>
             </div>
 
@@ -97,7 +97,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Recreational</span>
                 <h2 className="info-title">FunExtreme</h2>
-                <p className="info-sub">Custom branding for an adventure and recreational-focused platform.</p>
+                <p className="info-sub">Custom branding for a platform built around adventure and recreational activities.</p>
               </div>
             </div>
 
@@ -107,7 +107,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">University Life</span>
                 <h2 className="info-title">Gaming Community</h2>
-                <p className="info-sub">Official identity for the Gaming Community of NSBM Green University.</p>
+                <p className="info-sub">The official logo for the Gaming Community of NSBM Green University.</p>
               </div>
             </div>
 
@@ -117,7 +117,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Apparel Brand</span>
                 <h2 className="info-title">Gears & Glam</h2>
-                <p className="info-sub">Designed for a clothing brand focused on glamorous, modern products.</p>
+                <p className="info-sub">A logo for a clothing brand that sells glamorous, modern fashion.</p>
               </div>
             </div>
 
@@ -127,7 +127,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Event Management</span>
                 <h2 className="info-title">GEvents</h2>
-                <p className="info-sub">Branding solution for a modern event planning and logistics startup.</p>
+                <p className="info-sub">Branding for a modern startup that handles event planning and logistics.</p>
               </div>
             </div>
 
@@ -137,7 +137,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Food Tech</span>
                 <h2 className="info-title">Grubit</h2>
-                <p className="info-sub">A playful and modern visual identity for a food delivery service.</p>
+                <p className="info-sub">A playful, modern identity for a food delivery service.</p>
               </div>
             </div>
 
@@ -147,7 +147,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Courier Service</span>
                 <h2 className="info-title">HassleFree</h2>
-                <p className="info-sub">Designed for a courier service prioritizing customer support and speed.</p>
+                <p className="info-sub">A logo for a courier service that puts fast delivery and good customer support first.</p>
               </div>
             </div>
 
@@ -157,7 +157,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Healthcare IT</span>
                 <h2 className="info-title">HealHub</h2>
-                <p className="info-sub">Identity for a university health management software project.</p>
+                <p className="info-sub">The identity for a university software project that manages health records.</p>
               </div>
             </div>
 
@@ -167,7 +167,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Personal Brand</span>
                 <h2 className="info-title">HNC</h2>
-                <p className="info-sub">Designed for a gaming streamer for marketing and digital presence.</p>
+                <p className="info-sub">A logo for a gaming streamer, used across their channels and marketing.</p>
               </div>
             </div>
 
@@ -177,7 +177,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Education</span>
                 <h2 className="info-title">IMLAN</h2>
-                <p className="info-sub">Branding for an Immersive Language Learning System (IMLAN) for Pearson.</p>
+                <p className="info-sub">Branding for IMLAN, an immersive language learning system I worked on for Pearson.</p>
               </div>
             </div>
 
@@ -187,7 +187,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Tech & Networking</span>
                 <h2 className="info-title">KoneKza</h2>
-                <p className="info-sub">Sophisticated branding for a networking and connectivity solution provider.</p>
+                <p className="info-sub">Clean, professional branding for a company that provides networking and connectivity solutions.</p>
               </div>
             </div>
 
@@ -197,7 +197,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Logo Redesign</span>
                 <h2 className="info-title">OHL</h2>
-                <p className="info-sub">Modern redesign of the OHL brand for future promotional purposes.</p>
+                <p className="info-sub">A modern redesign of the OHL logo, made for the brand&apos;s future promotions.</p>
               </div>
             </div>
 
@@ -207,7 +207,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Cyber Security</span>
                 <h2 className="info-title">PhURL</h2>
-                <p className="info-sub">Designed for a Phishing URL Detection System which aims to protect users.</p>
+                <p className="info-sub">The logo for PhURL, my phishing URL detection system that helps keep people safe online.</p>
               </div>
             </div>
 
@@ -217,7 +217,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Verification</span>
                 <h2 className="info-title">SureID</h2>
-                <p className="info-sub">A secure and trustworthy identity verification branding project.</p>
+                <p className="info-sub">Branding for an identity verification product, designed to feel secure and trustworthy.</p>
               </div>
             </div>
 
@@ -227,7 +227,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Startup Branding</span>
                 <h2 className="info-title">TAKG</h2>
-                <p className="info-sub">Visual identity designed for a tech startup business ecosystem.</p>
+                <p className="info-sub">The visual identity for TAKG, the tech startup I co-founded.</p>
               </div>
             </div>
 
@@ -237,7 +237,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Community Service</span>
                 <h2 className="info-title">WishKids</h2>
-                <p className="info-sub">Designed for a project to fulfill water needs for people suffering from drought.</p>
+                <p className="info-sub">A logo for a project that brings water to people affected by drought.</p>
               </div>
             </div>
 
@@ -247,7 +247,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Global Enterprise</span>
                 <h2 className="info-title">XUPING</h2>
-                <p className="info-sub">Designed for a multinational group of companies across diverse fields.</p>
+                <p className="info-sub">A logo for a multinational group of companies working across many different industries.</p>
               </div>
             </div>
 
@@ -257,7 +257,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Distribution</span>
                 <h2 className="info-title">Yasupi</h2>
-                <p className="info-sub">Branding for a local distribution and logistics network platform.</p>
+                <p className="info-sub">Branding for a local distribution and logistics network.</p>
               </div>
             </div>
 
@@ -267,7 +267,7 @@ export default function GalleryLogos() {
               <div className="artwork-info">
                 <span className="info-tag">Artist Branding</span>
                 <h2 className="info-title">ZEN</h2>
-                <p className="info-sub">Personal brand designed to represent myself for freelance creative projects.</p>
+                <p className="info-sub">My own personal brand, which I use for my freelance creative work.</p>
               </div>
             </div>
 

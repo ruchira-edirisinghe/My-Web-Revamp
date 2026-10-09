@@ -10,8 +10,8 @@
  * This maps one filename onto the other.
  *
  * Most galleries are written out as literal markup and carry the `-card`
- * filename directly in the `src`. This exists for the three that build their
- * cards from an array (Aether Dynasty, Catalogie, PropBet), where the same
+ * filename directly in the `src`. This exists for the pages that build their
+ * cards from an array (Catalogie, PropBet, the Unity game pages), where the same
  * string has to serve as both the card's `src` and the lightbox's `data-full`
  * and so cannot simply be spelt differently in each place.
  *

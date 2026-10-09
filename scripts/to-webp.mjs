@@ -1,11 +1,11 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   to-webp.mjs — re-encode public/Images as WebP and repoint the markup.
+   to-webp.mjs - re-encode public/Images as WebP and repoint the markup.
 
    THE PROBLEM THIS SOLVES
    -----------------------
    `optimize-images.mjs` capped every capture at 1920px, which fixed the
    absurd case (8 MB screenshots). What it deliberately did NOT do was change
-   format, so the site still shipped 994 PNGs — and PNG is the wrong container
+   format, so the site still shipped 994 PNGs - and PNG is the wrong container
    for a photograph or a screenshot with gradients in it. A case-study page was
    still asking for ~2.6 MB of images, the projects hub for ~3.4 MB, and the
    home page spent 1 MB on a single hero portrait. At q85 WebP the same files
@@ -17,16 +17,16 @@
    1. Converts every raster under public/Images to .webp beside the original.
    2. Deletes the original, so nothing ships twice.
    3. Rewrites every `/Images/....png|jpg` string in app/, components/ and lib/
-      to point at the .webp — src, data-full, and anything else spelt as a
+      to point at the .webp - src, data-full, and anything else spelt as a
       literal path.
 
    WHAT IT LEAVES ALONE
    --------------------
-   • public/Images/favicon/** — the manifest and <link rel=icon> declare
+   • public/Images/favicon/** - the manifest and <link rel=icon> declare
      `type: image/png`, and favicon handling is the one place where an exotic
      format is still a real compatibility risk for zero gain (these files are
      a few kB).
-   • mynew.png — the Open Graph / Twitter card image. Crawlers, not browsers,
+   • mynew.png - the Open Graph / Twitter card image. Crawlers, not browsers,
      fetch it, and several still do not take WebP. The webp copy is generated
      and used by the on-page <img>; the png stays for the meta tags only.
    • SVGs, which are already the right thing.
@@ -45,7 +45,7 @@
    ONLY TOUCHES FILES GIT ALREADY HAS
    ----------------------------------
    Same guard as optimize-images.mjs, and for the same reason: this deletes
-   the original once the .webp is written. For a committed file that is fine —
+   the original once the .webp is written. For a committed file that is fine -
    `git checkout` brings it straight back. For a screenshot dropped in ten
    minutes ago and not yet committed there is no other copy anywhere.
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -64,7 +64,7 @@ const RASTER = /\.(png|jpe?g)$/i;
 const QUALITY = 85;
 const EFFORT = 6;
 
-/** Not touched at all — no .webp is even generated. See the header for why. */
+/** Not touched at all - no .webp is even generated. See the header for why. */
 const SKIP = (p) => p.replace(/\\/g, '/').includes('/Images/favicon/');
 
 /** Converted, but the original stays because something else still reads it. */
@@ -83,7 +83,7 @@ function trackedFiles() {
         .map((p) => path.normalize(p)),
     );
   } catch {
-    return null; // not a git repo — handled by the caller
+    return null; // not a git repo - handled by the caller
   }
 }
 
@@ -156,7 +156,7 @@ async function rewriteReferences() {
   let changedRefs = 0;
 
   for (const file of code) {
-    // app/layout.tsx holds only the icon links and the og:image — every path in
+    // app/layout.tsx holds only the icon links and the og:image - every path in
     // it is one of the two that deliberately stays PNG. Skipping the file whole
     // is simpler to reason about than pattern-matching the paths inside it.
     if (path.normalize(file) === path.normalize('app/layout.tsx')) continue;

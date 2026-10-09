@@ -24,8 +24,8 @@ export default function GalleryOtherStuff() {
           <p className="section-label">Graphic Design & Branding</p>
           <h1 className="page-title">Graphic Assets</h1>
           <p className="bio-para" style={{ textAlign: 'left', margin: 0 }}>
-            A curated collection of event posters, apparel designs, and branding collateral crafted for diverse creative
-            needs.
+            This is where I keep the design work that doesn&apos;t fit neatly into the other collections, like posters,
+            clothing designs and branded materials I&apos;ve made for different people and projects.
           </p>
         </header>
 
