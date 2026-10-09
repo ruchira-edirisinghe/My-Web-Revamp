@@ -1055,6 +1055,15 @@
         text-align: center;
       }
 
+      .tl-date,
+      .tl-location {
+        font-size: 10.5px;
+      }
+
+      .tl-company {
+        font-size: 10px;
+      }
+
       .tl-role {
         text-align: center;
       }
@@ -1608,11 +1617,11 @@
 
     @keyframes testiProgress {
       from {
-        width: 0%;
+        transform: scaleX(0);
       }
 
       to {
-        width: 100%;
+        transform: scaleX(1);
       }
     }
 

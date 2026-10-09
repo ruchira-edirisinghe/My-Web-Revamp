@@ -1,0 +1,444 @@
+/* ══════════════════════════════════════
+   EXPERIENCE - hero, the work timeline with its scroll-drawn spine
+   (lib/scripts/experience.ts), certifications, skills, education,
+   volunteering, testimonials and a closing call to action.
+   Loaded after expadditional.css / experience-inline.css, which keep the
+   page shell: nav, preloader, cursor, background, footer.
+   Motion is transform/opacity only; no backdrop blur.
+   ══════════════════════════════════════ */
+
+main.page.xp {
+  display: block; max-width: none; width: 100%;
+  padding: 150px 0 0; overflow-x: clip;
+}
+.xp-hero, .xp-sec { width: min(1180px, 92%); margin-inline: auto; }
+.xp-sec { padding-top: 130px; scroll-margin-top: 30px; }
+
+.xp-i { width: 16px; height: 16px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── Type ── */
+.xp-kicker {
+  margin: 0 0 16px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase;
+  color: rgba(140, 210, 255, 0.75);
+}
+.xp-big, .xp-title {
+  margin: 0;
+  font-family: 'Burgundia', cursive; font-weight: 400; line-height: 1.2;
+  letter-spacing: normal; text-transform: none;
+  color: rgba(255, 255, 255, 0.92);
+}
+.xp-big { font-size: clamp(48px, 7vw, 96px); }
+.xp-title { font-size: clamp(36px, 4.4vw, 58px); }
+.xp-plain { position: relative; z-index: 1; }
+.xp-glow {
+  display: inline-block;
+  background: linear-gradient(135deg, #5ce0ff 0%, #bc6fff 50%, #6dff8a 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  /* The gradient only paints inside this box; it reaches past Burgundia's swashes. */
+  padding: 0.2em 0.5em 0.3em; margin: -0.2em -0.5em -0.3em;
+}
+.xp-lede, .xp-intro {
+  max-width: 620px; margin: 22px 0 0;
+  font-size: clamp(13px, 1.1vw, 14.5px); line-height: 1.85; color: rgba(255, 255, 255, 0.6);
+}
+.xp-head { margin-bottom: 56px; }
+
+/* ── Scroll reveal ── */
+.xp-rv { opacity: 0; transform: translateY(26px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.xp-rv.is-in { opacity: 1; transform: none; }
+
+/* ══════════ HERO ══════════ */
+.xp-hero { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.xp-hero > * { opacity: 0; animation: xp-up 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards; }
+.xp-hero > :nth-child(1) { animation-delay: 0.45s; }
+.xp-hero > :nth-child(2) { animation-delay: 0.55s; }
+.xp-hero > :nth-child(3) { animation-delay: 0.7s; }
+.xp-hero > :nth-child(4) { animation-delay: 0.82s; }
+.xp-hero > :nth-child(5) { animation-delay: 0.94s; }
+@keyframes xp-up { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+.xp-intro { margin-inline: auto; }
+
+.xp-jumps { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 36px; }
+.xp-jump {
+  padding: 9px 16px; border-radius: 999px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.06em; color: rgba(255, 255, 255, 0.72); text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(255, 255, 255, 0.03);
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+.xp-jump:hover, .xp-jump:focus-visible { color: #fff; border-color: rgba(140, 210, 255, 0.55); background: rgba(140, 210, 255, 0.08); }
+
+/* ══════════ WORK TIMELINE ══════════ */
+.xp-tl { position: relative; list-style: none; margin: 0; padding: 30px 0 40px; }
+
+/* The spine (built by experience.ts) */
+.xp-spine { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
+.xp-spine path { fill: none; stroke-linecap: round; }
+.xp-spine-track { stroke: rgba(255, 255, 255, 0.08); stroke-width: 2; stroke-dasharray: 2 7; }
+.xp-spine-glow { stroke-width: 10; opacity: 0.18; }
+.xp-spine-line { stroke-width: 2.5; }
+.xp-spine-head { fill: #fff; transition: opacity 0.3s; }
+.xp-spine-halo { fill: rgba(160, 215, 255, 0.22); transition: opacity 0.3s; }
+
+.xp-role {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr); align-items: center;
+}
+.xp-role + .xp-role { margin-top: 26px; }
+.xp-role > * { grid-row: 1; }
+.xp-role.is-left .xp-card { grid-column: 1; }
+.xp-role.is-left .xp-when { grid-column: 3; text-align: left; }
+.xp-role.is-right .xp-card { grid-column: 3; }
+.xp-role.is-right .xp-when { grid-column: 1; text-align: right; }
+
+/* Nodes sit a little toward their card, so the spine weaves down the page. */
+.xp-node {
+  grid-column: 2; justify-self: center;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: #05060f; border: 2px solid rgba(255, 255, 255, 0.22);
+  transition: border-color 0.5s, background 0.5s, box-shadow 0.5s, transform 0.5s;
+}
+.xp-role.is-left .xp-node { transform: translateX(-26px); }
+.xp-role.is-right .xp-node { transform: translateX(26px); }
+.xp-role.is-lit .xp-node { border-color: var(--c); background: var(--c); box-shadow: 0 0 0 5px color-mix(in srgb, var(--c) 18%, transparent), 0 0 18px var(--c); }
+
+.xp-when {
+  display: flex; flex-direction: column; gap: 4px; padding: 0 24px;
+  font-size: clamp(18px, 1.8vw, 24px); font-weight: 800; letter-spacing: 0.02em; color: rgba(255, 255, 255, 0.16);
+  transition: color 0.6s;
+}
+.xp-when-to { font-size: 11px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; }
+.xp-role.is-lit .xp-when { color: color-mix(in srgb, var(--c) 70%, #fff); }
+.xp-role.is-lit .xp-when-to { color: rgba(255, 255, 255, 0.45); }
+
+.xp-card {
+  position: relative; overflow: hidden; border-radius: 24px;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015) 55%), #070915;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  opacity: 0.35; transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.4s, box-shadow 0.4s;
+}
+.xp-role.is-lit .xp-card { opacity: 1; transform: none; }
+.xp-card:hover {
+  border-color: color-mix(in srgb, var(--c) 45%, transparent);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45), 0 0 40px color-mix(in srgb, var(--c) 10%, transparent);
+}
+/* The company's mark again, oversized and faint in the corner. */
+.xp-card-mark {
+  position: absolute; right: -36px; bottom: -40px; width: 210px; height: 210px; object-fit: contain;
+  opacity: 0.05; pointer-events: none; transform: rotate(-12deg);
+}
+
+/* Header band, tinted in the company colour. */
+.xp-card-head {
+  position: relative; display: flex; gap: 20px; align-items: center;
+  padding: 24px 26px 22px;
+  background: linear-gradient(120deg, color-mix(in srgb, var(--c) 17%, transparent), transparent 75%);
+  border-bottom: 1px solid color-mix(in srgb, var(--c) 18%, rgba(255, 255, 255, 0.06));
+}
+.xp-card-head::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(180deg, var(--c), transparent);
+}
+.xp-logo-wrap { position: relative; flex: none; display: grid; place-items: center; width: 92px; height: 92px; }
+/* Logos stand on their own, as they always did - no tile behind them. */
+.xp-logo {
+  position: relative; width: 100%; height: 100%; object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.xp-card:hover .xp-logo { transform: scale(1.06); }
+.xp-card-id { min-width: 0; }
+.xp-date {
+  display: inline-block; margin: 0; padding: 4px 10px; border-radius: 999px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--c) 80%, #fff); background: color-mix(in srgb, var(--c) 14%, transparent);
+}
+.xp-role-name { margin: 9px 0 0; font-size: clamp(17px, 1.55vw, 21px); font-weight: 800; line-height: 1.3; color: #fff; }
+.xp-co { margin: 4px 0 0; font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, 0.62); }
+.xp-card > .xp-desc { position: relative; margin: 0; padding: 20px 26px 0; }
+.xp-desc { margin: 16px 0 0; font-size: 13px; line-height: 1.85; color: rgba(255, 255, 255, 0.64); }
+.xp-desc strong, .xp-desc em { color: color-mix(in srgb, var(--c, #8cd2ff) 75%, #fff); font-weight: 700; }
+.xp-card-foot {
+  position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px;
+  margin: 18px 26px 0; padding: 14px 0 20px; border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.xp-place { display: inline-flex; align-items: center; gap: 6px; margin: 0; font-size: 11.5px; color: rgba(255, 255, 255, 0.5); }
+.xp-place .xp-i { width: 13px; height: 13px; color: var(--c, #8cd2ff); }
+.xp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.xp-tag {
+  padding: 4px 10px; border-radius: 999px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.xp-tag.is-now { color: #05060f; background: var(--c); border-color: transparent; }
+
+/* ══════════ CERTIFICATIONS ══════════
+   Four featured badges, then shelves of courses by subject. */
+.xp-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+.xp-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 14px 9px 16px; border-radius: 999px;
+  font: 600 12px/1 'Montserrat', sans-serif; color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+.xp-chip:hover { color: #fff; border-color: color-mix(in srgb, var(--c) 50%, transparent); }
+.xp-chip[aria-pressed='true'] { color: #05060f; background: var(--c); border-color: transparent; }
+
+.xp-legend {
+  list-style: none; margin: 0 0 38px; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 8px 18px;
+}
+.xp-legend li { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: rgba(255, 255, 255, 0.72); }
+.xp-legend-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); }
+.xp-legend-n { font-size: 10.5px; font-weight: 700; color: rgba(255, 255, 255, 0.38); }
+
+.xp-years { display: flex; flex-direction: column; gap: 34px; }
+.xp-year {
+  display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 28px; align-items: start;
+  padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.xp-year-n {
+  position: sticky; top: 110px; margin: 0;
+  display: flex; flex-direction: column; gap: 6px;
+  font-size: clamp(38px, 4vw, 54px); font-weight: 800; line-height: 1; letter-spacing: -0.01em;
+  background: linear-gradient(160deg, #ffffff, #8cd2ff 60%, #bc6fff);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+}
+.xp-year-n span {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.4); color: rgba(255, 255, 255, 0.4);
+}
+
+.xp-tix { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 12px; }
+.xp-tix-card {
+  position: relative; height: 100%;
+  display: grid; grid-template-columns: 78px minmax(0, 1fr); align-items: stretch;
+  border-radius: 18px; text-decoration: none; overflow: hidden;
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.3s, box-shadow 0.3s;
+}
+.xp-tix-card:hover, .xp-tix-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--c) 50%, transparent);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+}
+/* The stub: logo on a wash of the subject colour, torn off along a perforation. */
+.xp-tix-stub {
+  position: relative; display: grid; place-items: center;
+  background: color-mix(in srgb, var(--c) 12%, transparent);
+  border-right: 2px dashed rgba(255, 255, 255, 0.12);
+}
+.xp-tix-stub::before, .xp-tix-stub::after {
+  content: ''; position: absolute; right: -8px; width: 14px; height: 14px; border-radius: 50%;
+  background: #03040c; border: 1px solid rgba(255, 255, 255, 0.09);
+}
+.xp-tix-stub::before { top: -8px; }
+.xp-tix-stub::after { bottom: -8px; }
+.xp-tix-stub img { width: 42px; height: 42px; object-fit: contain; border-radius: 10px; transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.xp-tix-card:hover .xp-tix-stub img { transform: scale(1.1) rotate(-4deg); }
+.xp-tix-body { min-width: 0; display: flex; flex-direction: column; gap: 4px; padding: 14px 34px 14px 16px; }
+.xp-tix-cat { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c); }
+.xp-tix-name { font-size: 13px; font-weight: 700; line-height: 1.35; color: #fff; }
+.xp-tix-by { margin-top: auto; font-size: 11px; color: rgba(255, 255, 255, 0.48); }
+.xp-tix-go { position: absolute; top: 14px; right: 14px; width: 13px; height: 13px; color: rgba(255, 255, 255, 0.3); transition: color 0.25s, transform 0.25s; }
+.xp-tix-card:hover .xp-tix-go { color: var(--c); transform: translate(2px, -2px); }
+
+/* ══════════ SKILLS ══════════
+   A cloud of floating bubbles, sized by level, each ringed by its
+   percentage in its group colour. The chips light one group up. */
+.xp-filters.is-center { justify-content: center; }
+.xp-chip-note { font-size: 9.5px; font-weight: 500; letter-spacing: 0.04em; opacity: 0.6; }
+.xp-chip[aria-pressed='true'] .xp-chip-note { opacity: 0.75; }
+
+.xp-bubbles {
+  --base: clamp(100px, 10.5vw, 150px);
+  position: relative; list-style: none; margin: 6px 0 0; padding: 0;
+  height: clamp(520px, 64vh, 640px);
+  border-radius: 32px; overflow: hidden; touch-action: pan-y;
+  background: radial-gradient(80% 70% at 50% 50%, rgba(140, 120, 255, 0.07), transparent 70%);
+}
+/* Bubbles sit at the stage origin; the script moves them (transform only). */
+.xp-bub {
+  --size: calc(var(--s) * var(--base));
+  position: absolute; left: 0; top: 0; width: var(--size); height: var(--size);
+  will-change: transform;
+}
+/* Until the script has spread them out, keep them hidden. */
+.xp-bubbles:not(.is-live) .xp-bub { visibility: hidden; }
+.xp-bub-in {
+  position: relative; width: 100%; height: 100%; border-radius: 50%;
+  display: grid; place-items: center; padding: 14%; text-align: center;
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.28), transparent 26%),
+    radial-gradient(circle at 70% 82%, color-mix(in srgb, var(--c) 30%, transparent), transparent 55%),
+    radial-gradient(circle, rgba(10, 12, 28, 0.55) 55%, color-mix(in srgb, var(--c) 28%, rgba(10, 12, 28, 0.55)) 100%);
+  border: 1.5px solid color-mix(in srgb, var(--c) 55%, transparent);
+  box-shadow: 0 0 calc(var(--size) * 0.22) color-mix(in srgb, var(--c) 20%, transparent), inset 0 0 calc(var(--size) * 0.12) color-mix(in srgb, var(--c) 25%, transparent);
+  transform: scale(0.4); opacity: 0;
+  transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--i) * 0.04s), opacity 0.5s ease calc(var(--i) * 0.04s), filter 0.4s;
+}
+.xp-bubbles.is-in .xp-bub-in { transform: scale(1); opacity: 1; }
+.xp-bub-name { font-size: clamp(9.5px, calc(var(--size) * 0.1), 14px); font-weight: 700; line-height: 1.25; color: #fff; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6); }
+.xp-bub:hover .xp-bub-in { transform: scale(1.1); transition-delay: 0s; }
+.xp-bubbles .xp-bub.is-dim .xp-bub-in { transform: scale(0.78); opacity: 0.18; filter: grayscale(1); transition-delay: 0s; }
+
+/* ══════════ EDUCATION ══════════
+   Three columns, newest first. Each school's large logo stands with no
+   frame in a soft glow of its colour, its story told in the open beneath. */
+.xp-edu {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3.5vw, 56px);
+}
+.xp-edu-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.xp-edu-item:nth-child(2) { transition-delay: 0.12s; }
+.xp-edu-item:nth-child(3) { transition-delay: 0.24s; }
+.xp-edu-mark { position: relative; display: grid; place-items: center; aspect-ratio: 1; width: clamp(140px, 15vw, 190px); margin-bottom: 22px; }
+.xp-edu-mark::before {
+  content: ''; position: absolute; inset: -8%; border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--c) 30%, transparent), transparent 66%);
+  animation: xp-breathe 6s ease-in-out infinite alternate;
+}
+@keyframes xp-breathe { from { transform: scale(0.9); opacity: 0.7; } to { transform: scale(1.05); opacity: 1; } }
+.xp-edu-mark img {
+  position: relative; width: 78%; height: 78%; object-fit: contain;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.5));
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.xp-edu-item:hover .xp-edu-mark img { transform: scale(1.05) rotate(-2deg); }
+.xp-edu-years {
+  display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 0;
+  font-size: clamp(24px, 2.6vw, 34px); font-weight: 800; letter-spacing: 0.01em;
+  color: color-mix(in srgb, var(--c) 75%, #fff);
+}
+.xp-edu-years span { font-size: 10px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255, 255, 255, 0.45); }
+.xp-edu-title { margin: 12px 0 0; font-size: clamp(17px, 1.6vw, 21px); font-weight: 700; line-height: 1.35; color: #fff; }
+.xp-edu-school { margin: 4px 0 0; font-size: 13.5px; font-weight: 600; color: rgba(255, 255, 255, 0.65); }
+.xp-edu-body .xp-place { margin-top: 8px; justify-content: center; }
+.xp-edu-body .xp-desc { max-width: 360px; margin: 14px auto 0; }
+
+/* ══════════ VOLUNTEERING ══════════
+   Two plain lists (university, school): each row reads role, then
+   organisation, then years, so it scans top to bottom. */
+.xp-vol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); align-items: start; }
+.xp-vol-col:nth-child(2) { transition-delay: 0.12s; }
+.xp-vol-head {
+  display: flex; flex-direction: column; gap: 4px; margin: 0 0 14px; padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Burgundia', cursive; font-weight: 400; font-size: 32px; line-height: 1.2; color: #fff;
+}
+.xp-vol-head span { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(140, 210, 255, 0.7); }
+.xp-vol-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.xp-vol-row {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 14px;
+  padding: 12px 14px 12px 10px; border-radius: 16px;
+  transition: background 0.25s;
+}
+.xp-vol-row:hover { background: color-mix(in srgb, var(--c) 8%, transparent); }
+.xp-vol-logo { width: 44px; height: 44px; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4)); }
+.xp-vol-txt { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.xp-vol-role { font-size: 14px; font-weight: 700; line-height: 1.35; color: #fff; }
+.xp-vol-org { font-size: 12px; color: rgba(255, 255, 255, 0.52); }
+.xp-vol-y {
+  padding: 5px 10px; border-radius: 999px; white-space: nowrap;
+  font-size: 10.5px; font-weight: 700; color: var(--c);
+  background: color-mix(in srgb, var(--c) 10%, transparent);
+}
+
+/* ══════════ TESTIMONIALS ══════════ */
+.xp-words {
+  position: relative; padding: clamp(28px, 4vw, 52px); border-radius: 28px;
+  background: linear-gradient(150deg, rgba(140, 210, 255, 0.08), rgba(188, 111, 255, 0.05) 50%, rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.xp-quote { margin: 0; min-height: 230px; animation: xp-pop 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+.xp-quote-mark { width: 40px; height: 40px; fill: rgba(140, 210, 255, 0.5); stroke: none; }
+.xp-quote blockquote {
+  margin: 16px 0 0; max-width: 860px;
+  font-size: clamp(15px, 1.5vw, 19px); line-height: 1.75; font-weight: 500; color: rgba(255, 255, 255, 0.86);
+}
+.xp-quote figcaption { display: flex; align-items: center; gap: 14px; margin-top: 26px; }
+.xp-quote figcaption img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(140, 210, 255, 0.5); }
+.xp-quote figcaption strong { display: block; font-size: 14px; color: #fff; }
+.xp-quote figcaption span span { display: block; margin-top: 3px; font-size: 11.5px; color: rgba(255, 255, 255, 0.5); }
+
+.xp-words-bar {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 18px;
+  margin-top: 30px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.xp-faces { display: flex; flex-wrap: wrap; gap: 6px; }
+.xp-face {
+  width: 38px; height: 38px; padding: 0; border-radius: 50%; overflow: hidden;
+  border: 2px solid transparent; background: none; opacity: 0.45; filter: grayscale(0.7);
+  transition: opacity 0.25s, border-color 0.25s, filter 0.25s, transform 0.25s;
+}
+.xp-face img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.xp-face:hover { opacity: 0.85; filter: none; }
+.xp-face[aria-selected='true'] { opacity: 1; filter: none; border-color: #8cd2ff; transform: scale(1.08); }
+.xp-words-nav { display: flex; align-items: center; gap: 8px; }
+.xp-count { margin-right: 8px; font-size: 18px; font-weight: 800; color: #fff; }
+.xp-count span { font-size: 12px; color: rgba(255, 255, 255, 0.4); }
+.xp-arrow {
+  width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+  color: #fff; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: background 0.25s, border-color 0.25s;
+}
+.xp-arrow:hover { background: rgba(140, 210, 255, 0.12); border-color: rgba(140, 210, 255, 0.5); }
+
+.xp :focus-visible { outline: 2px solid #8cd2ff; outline-offset: 3px; }
+
+/* ══════════ RESPONSIVE ══════════ */
+@media (max-width: 1080px) {
+  .xp-vol { grid-template-columns: 1fr; }
+  .xp-year { grid-template-columns: 1fr; gap: 16px; }
+  .xp-year-n { position: static; flex-direction: row; align-items: baseline; gap: 14px; }
+}
+@media (min-width: 901px) {
+  .xp-plain, .xp-glow { white-space: nowrap; }
+}
+@media (max-width: 900px) {
+  main.page.xp { padding-top: 120px; }
+  .xp-sec { padding-top: 96px; }
+  .xp-head { margin-bottom: 40px; }
+
+  /* Timeline: one column, nodes down the left edge. */
+  .xp-role { grid-template-columns: 34px minmax(0, 1fr); align-items: start; }
+  .xp-role .xp-when { display: none; }
+  .xp-role.is-left .xp-card, .xp-role.is-right .xp-card { grid-column: 2; }
+  .xp-node { grid-column: 1; justify-self: start; margin-top: 30px; }
+  .xp-role.is-left .xp-node, .xp-role.is-right .xp-node { transform: none; }
+  .xp-card-head { padding: 20px 18px 18px; gap: 16px; }
+  .xp-logo-wrap { width: 72px; height: 72px; }
+  .xp-card > .xp-desc { padding: 18px 18px 0; }
+  .xp-card-foot { margin: 16px 18px 0; padding-bottom: 18px; }
+  .xp-card-mark { width: 160px; height: 160px; }
+
+  .xp-edu { grid-template-columns: 1fr; gap: 0; }
+  .xp-edu-item { padding: 30px 0; }
+  .xp-edu-item + .xp-edu-item { border-top: 1px solid rgba(255, 255, 255, 0.07); }
+  .xp-edu-mark { width: 130px; margin-bottom: 16px; }
+}
+@media (max-width: 640px) {
+  .xp-bubbles { --base: 25vw; height: 640px; border-radius: 24px; }
+  .xp-chip-note { display: none; }
+  .xp-vol-row { grid-template-columns: 38px minmax(0, 1fr); padding: 12px 6px; }
+  .xp-vol-logo { width: 38px; height: 38px; }
+  .xp-vol-y { grid-column: 2; justify-self: start; }
+  .xp-tix { grid-template-columns: 1fr; }
+  .xp-tix-card { grid-template-columns: 66px minmax(0, 1fr); }
+  .xp-tix-stub img { width: 36px; height: 36px; }
+  .xp-logo-wrap { width: 62px; height: 62px; }
+  .xp-card-head { align-items: flex-start; }
+  .xp-quote { min-height: 0; }
+  .xp-words-bar { justify-content: center; }
+  .xp-face { width: 32px; height: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xp-rv, .xp-hero > *, .xp-card, .xp-quote { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+  .xp-edu-mark::before { animation: none !important; }
+  .xp-bub-in { transform: none; opacity: 1; transition: none; }
+}
