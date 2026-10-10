@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import '@/styles/about/about.css';
+import '@/styles/bento-cards.css';
+import '@/styles/about/about-v2.css';
+import '@/styles/voices.css';
 import '@/styles/signoff.css';
 import '@/styles/astro-peek.css';
 import AboutClient from '@/components/pages/AboutClient';

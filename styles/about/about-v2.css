@@ -1,0 +1,1018 @@
+/* ════════════════════════════════════════
+   About page redesign (components/about/*): story, crafts, mission log,
+   tech-stack orbit, Zenitron channels and testimonials, plus touches on the
+   hero and logo ticker. Loaded after about.css. Motion is driven by
+   lib/scripts/about.ts (.ab-rv -> .is-in, word-light, spotlight, count-ups).
+   ════════════════════════════════════════ */
+
+@property --ab-ang { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+
+@keyframes ab-spin { to { transform: rotate(360deg); } }
+@keyframes ab-spin-r { to { transform: rotate(-360deg); } }
+@keyframes ab-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes ab-pulse { 0%, 100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.08); } }
+@keyframes ab-wave { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(16deg); } 20%, 40% { transform: rotate(-10deg); } }
+@keyframes ab-shine { from { background-position: 0% 50%; } to { background-position: 200% 50%; } }
+@keyframes ab-word { from { opacity: 0; transform: translateY(8px); filter: blur(4px); } }
+@keyframes ab-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes ab-ping { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(2.6); opacity: 0; } }
+
+/* ── Shared ── */
+.ab-sec { width: min(1180px, 100%); margin: 180px auto 0; position: relative; }
+.ab-kicker {
+  margin: 0 0 16px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase;
+  color: rgba(140, 210, 255, 0.75);
+}
+.ab-head { text-align: center; max-width: 920px; margin: 0 auto 64px; }
+.ab-title {
+  margin: 0;
+  font-family: 'Burgundia', cursive; font-weight: 400; line-height: 1.12;
+  font-size: clamp(44px, 5.4vw, 76px);
+  color: rgba(255, 255, 255, 0.94);
+}
+.ab-glow {
+  display: inline-block;
+  background: linear-gradient(110deg, #5ce0ff 0%, #bc6fff 35%, #6dff8a 65%, #5ce0ff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  /* The gradient only paints inside this box; it reaches past Burgundia's swashes. */
+  padding: 0.2em 0.45em 0.3em; margin: -0.2em -0.45em -0.3em;
+  animation: ab-shine 9s linear infinite;
+}
+.ab-lede {
+  margin: 28px auto 0; max-width: 860px;
+  font-size: 15.5px; line-height: 1.85; color: rgba(255, 255, 255, 0.58);
+}
+
+/* Reveal */
+/* (It moves with `translate`, so cards keep `transform` for their hover lift.) */
+.ab-rv {
+  --ab-in: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0s), translate 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0s);
+  opacity: 0; translate: 0 36px;
+  transition: var(--ab-in);
+}
+.ab-rv.is-in { opacity: 1; translate: none; }
+
+/* Spotlight cards: a glow follows the pointer, a gradient rim turns on hover. */
+.ab-spot { position: relative; isolation: isolate; }
+.ab-spot::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; z-index: -1; pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--c, #5ce0ff) 16%, transparent), transparent 60%);
+  opacity: 0; transition: opacity 0.4s;
+}
+.ab-spot::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: conic-gradient(from var(--ab-ang), transparent 0 55%, var(--c, #5ce0ff) 75%, #fff 80%, transparent 92%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: 0; transition: opacity 0.4s;
+  animation: ab-rim 4s linear infinite;
+}
+@keyframes ab-rim { to { --ab-ang: 360deg; } }
+.ab-spot:hover::before, .ab-spot:focus-visible::before, .ab-spot.is-on::before { opacity: 1; }
+.ab-spot:hover::after, .ab-spot:focus-visible::after, .ab-spot.is-on::after { opacity: 1; }
+.ab-spot:not(:hover):not(:focus-visible):not(.is-on)::after { animation-play-state: paused; }
+
+/* ── Hero: the photo on a glowing disc, two phrases either side (AboutHero.tsx) ──
+   Each phrase is wired to the disc; the lit one (.is-on) moves round
+   clockwise while the others dim. The buttons sit over the photo's foot. */
+.ab-hero { position: relative; width: 100%; margin: 0 0 16px; }
+.page:has(.ab-hero) > .page-title, .page:has(.ab-hero) > .section-label { position: relative; z-index: 2; }
+@keyframes ab-halo-in { from { opacity: 0; transform: translateX(var(--dx)); filter: blur(6px); } }
+@keyframes ab-halo-pop { from { opacity: 0; transform: scale(0.9); } }
+
+.ab-halo {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, min(460px, 50.6vh)) minmax(0, 1fr);
+  grid-template-areas: 'l pic r' 'ctas ctas ctas'; column-gap: 64px; align-items: center;
+  width: min(1180px, 100%); margin: -34px auto 0;
+}
+
+/* The photo and its disc: a street-art roundel of brushed bands and paint
+   splatter (scripts/render-halo-paint.py), with a soft glow and orbits round
+   it. The disc starts a little below the top of his head, so his hair breaks
+   over its rim. */
+.ab-halo-pic { grid-area: pic; position: relative; aspect-ratio: 1; animation: ab-halo-pop 1s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s both; }
+.ab-halo-pic > img {
+  position: relative; z-index: 2; display: block; width: 100%; height: auto; pointer-events: none;
+  filter: brightness(0.98) contrast(1.05) drop-shadow(0 18px 40px rgba(0, 0, 0, 0.55));
+  -webkit-mask: linear-gradient(180deg, #000 78%, transparent 98%); mask: linear-gradient(180deg, #000 78%, transparent 98%);
+}
+.ab-halo-disc { position: absolute; z-index: 1; left: 11%; top: 17%; width: 78%; aspect-ratio: 1; pointer-events: none; }
+.ab-halo-disc > * { position: absolute; border-radius: 50%; }
+.ab-halo-glow {
+  inset: -18%; filter: blur(50px); opacity: 0.24;
+  background: conic-gradient(from 0deg, #5ce0ff, #bc6fff, #ff6bd5, #6dff8a, #5ce0ff);
+  animation: ab-spin 20s linear infinite;
+}
+.ab-halo-core {
+  inset: 0; overflow: hidden;
+  background: #0c0e26;
+  box-shadow: inset 0 0 50px rgba(8, 9, 26, 0.7), 0 0 60px rgba(120, 100, 255, 0.2);
+  -webkit-mask: linear-gradient(180deg, #000 60%, transparent 92%); mask: linear-gradient(180deg, #000 60%, transparent 92%);
+}
+/* The painting, shaded down so the photo keeps the focus, turning slowly
+   (the fade at the disc's foot stays put). */
+.ab-halo-core::after {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(8, 9, 26, 0.38) 35%, rgba(8, 9, 26, 0.72) 100%),
+    url('/Images/about/halo-paint.webp') center / cover no-repeat;
+  filter: saturate(0.8);
+  animation: ab-spin 90s linear infinite;
+}
+/* A rim of light running round the disc. */
+.ab-halo-core::before {
+  content: ''; position: absolute; z-index: 1; inset: 0; border-radius: 50%; padding: 2px;
+  background: conic-gradient(from var(--ab-ang), #5ce0ff, #bc6fff 25%, transparent 45%, transparent 60%, #ff6bd5 80%, #5ce0ff);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: ab-rim 7s linear infinite;
+}
+/* Two orbits round it, each carrying a little moon. */
+.ab-halo-orbit {
+  inset: -9%; border: 1px dashed rgba(160, 210, 255, 0.3); animation: ab-spin 40s linear infinite;
+  -webkit-mask: linear-gradient(180deg, #000 55%, transparent 85%); mask: linear-gradient(180deg, #000 55%, transparent 85%);
+}
+.ab-halo-orbit.is-2 { inset: -19%; border: 1px solid rgba(160, 210, 255, 0.14); animation: ab-spin-r 64s linear infinite; }
+.ab-halo-orbit b {
+  position: absolute; left: 50%; top: 0; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff, #5ce0ff 55%, #2a6bd6); box-shadow: 0 0 14px 3px rgba(92, 224, 255, 0.7);
+}
+.ab-halo-orbit.is-2 b {
+  top: 50%; left: 0; width: 7px; height: 7px; margin: -3.5px 0 0 -3.5px;
+  background: radial-gradient(circle at 35% 35%, #fff, #bc6fff 60%); box-shadow: 0 0 12px 2px rgba(188, 111, 255, 0.75);
+}
+
+/* The phrases: a number, a small line and a big one, wired to the disc. */
+.ab-halo-side { display: flex; flex-direction: column; gap: 84px; margin: 0; padding: 0 0 60px; list-style: none; }
+.ab-halo-side.is-l { grid-area: l; align-items: flex-end; text-align: right; --dx: -40px; }
+.ab-halo-side.is-r { grid-area: r; align-items: flex-start; text-align: left; --dx: 40px; }
+.ab-halo-side li { white-space: nowrap;
+  --wl: 52px;
+  position: relative; display: flex; flex-direction: column; opacity: 0.4;
+  transition: opacity 0.45s ease;
+  animation: ab-halo-in 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both; animation-delay: calc(0.5s + var(--i) * 0.12s);
+}
+/* The lower phrase on each side stands further out, so the four follow the disc's curve. */
+.ab-halo-side li:nth-child(2) { --wl: 100px; }
+.ab-halo-side.is-l li:nth-child(2) { margin-right: 48px; }
+.ab-halo-side.is-r li:nth-child(2) { margin-left: 48px; }
+.ab-halo-side li.is-on { opacity: 1; }
+.ab-halo-a { font-family: 'Epic Pro', 'Montserrat', sans-serif; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+.ab-halo-b {
+  margin-top: 4px; font-family: 'Burgundia', cursive; font-weight: 400; line-height: 1.05; font-size: clamp(30px, 3.1vw, 46px);
+  background: linear-gradient(110deg, #fff 10%, var(--c) 60%, #fff 110%); background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  transition: filter 0.45s ease;
+}
+.is-l .ab-halo-b { transform-origin: 100% 60%; }
+.is-r .ab-halo-b { transform-origin: 0 60%; }
+/* Lighting up: the small line opens out, the big one springs up out of a
+   blur and a shine runs across it. */
+@keyframes ab-halo-lit {
+  0% { transform: translateY(10px) scale(0.92); opacity: 0.5; filter: blur(5px); }
+  55% { transform: translateY(-3px) scale(1.06); opacity: 1; filter: blur(0) drop-shadow(0 0 22px color-mix(in srgb, var(--c) 70%, transparent)); }
+  100% { transform: none; filter: drop-shadow(0 0 18px color-mix(in srgb, var(--c) 55%, transparent)); }
+}
+@keyframes ab-halo-kick { from { letter-spacing: 0.34em; opacity: 0.3; } }
+.ab-halo-side li.is-on .ab-halo-a { color: #fff; animation: ab-halo-kick 0.55s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.ab-halo-side li.is-on .ab-halo-b {
+  filter: drop-shadow(0 0 18px color-mix(in srgb, var(--c) 55%, transparent));
+  animation: ab-halo-lit 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), ab-shine 2.2s linear infinite;
+}
+/* The wire, from the phrase's inner edge towards the disc, ending in a dot. */
+.ab-halo-wire {
+  position: absolute; top: 50%; width: var(--wl); height: 1px; opacity: 0.35; transition: opacity 0.8s ease;
+}
+.is-l .ab-halo-wire { left: calc(100% + 18px); background: linear-gradient(90deg, transparent, var(--c)); }
+.is-r .ab-halo-wire { right: calc(100% + 18px); background: linear-gradient(270deg, transparent, var(--c)); }
+.ab-halo-wire::after {
+  content: ''; position: absolute; top: -3.5px; width: 8px; height: 8px; border-radius: 50%; background: var(--c);
+  box-shadow: 0 0 12px var(--c);
+}
+.is-l .ab-halo-wire::after { right: -4px; }
+.is-r .ab-halo-wire::after { left: -4px; }
+.ab-halo-side li.is-on .ab-halo-wire { opacity: 1; }
+.ab-halo-side li.is-on .ab-halo-wire::after { animation: ab-pulse 1.4s ease-in-out infinite; }
+
+/* The buttons, over the photo's foot. */
+.ab-halo-ctas {
+  grid-area: ctas; justify-self: center; position: relative; z-index: 3; display: flex; align-items: center; margin-top: -54px;
+  padding: 10px 12px; border-radius: 60px;
+  background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  animation: fadeUp 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) 0.9s both;
+}
+/* A tap on the photo (AboutHero.tsx) leaves him be and wakes the space
+   behind: the glow, core and orbits are animated from the script; here, two
+   rings ripple out and stardust bursts from behind him and drifts away. */
+.ab-halo-pic { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+@keyframes ab-ripple { from { transform: scale(1); opacity: 0.9; } to { transform: scale(1.8); opacity: 0; } }
+@keyframes ab-mote {
+  0% { transform: rotate(var(--a)) translateY(0) scale(0.3); opacity: 0; }
+  12% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateY(calc(var(--r) * -1cqmin)) scale(1); opacity: 0; }
+}
+.ab-halo-tap { inset: 0; pointer-events: none; container-type: size; }
+.ab-halo-ripple {
+  position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(160, 220, 255, 0.85);
+  box-shadow: 0 0 24px rgba(92, 224, 255, 0.6), inset 0 0 24px rgba(188, 111, 255, 0.4);
+  animation: ab-ripple 1s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.ab-halo-ripple.is-2 { border-color: rgba(255, 140, 220, 0.7); box-shadow: 0 0 20px rgba(255, 107, 213, 0.5); animation-delay: 0.16s; animation-duration: 1.2s; }
+.ab-halo-tap b {
+  position: absolute; left: 50%; top: 50%; width: var(--s); height: var(--s); margin: calc(var(--s) / -2);
+  border-radius: 50%; background: var(--k); box-shadow: 0 0 10px 2px var(--k);
+  animation: ab-mote 1.4s cubic-bezier(0.15, 0.7, 0.3, 1) var(--t) both;
+}
+
+/* ── The easter egg popup (EasterEgg.tsx, in components/Sheet.tsx) ──
+   A burst of sparks out from the trophy, a few stars twinkling after, then
+   the video in a wider card. */
+@keyframes egg-spark {
+  0% { transform: rotate(var(--a)) translateY(0) scale(0.2); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateY(calc(var(--r) * -1)) scale(1); opacity: 0; }
+}
+@keyframes egg-twinkle { 0%, 100% { opacity: 0; transform: scale(0.3) rotate(0deg); } 50% { opacity: 1; transform: scale(1) rotate(90deg); } }
+@keyframes egg-trophy { 0% { transform: scale(0.3) rotate(-20deg); } 60% { transform: scale(1.15) rotate(6deg); } 100% { transform: none; } }
+@keyframes egg-shine { from { background-position: 0% 50%; } to { background-position: 200% 50%; } }
+/* Party flakes raining down the whole card, and glints twinkling round it. */
+@keyframes egg-flake {
+  0% { transform: translate(0, -24px) rotate3d(1, 1, 0, 0deg); opacity: 0; }
+  8% { opacity: 1; }
+  50% { transform: translate(var(--sw), calc(50cqh - 12px)) rotate3d(1, 1, 0, calc(var(--sp) / 2)); }
+  85% { opacity: 1; }
+  100% { transform: translate(calc(var(--sw) * -0.5), calc(100cqh + 24px)) rotate3d(1, 1, 0, var(--sp)); opacity: 0; }
+}
+.egg-confetti { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; container-type: size; }
+.egg-confetti i {
+  position: absolute; left: var(--x); top: 0; width: var(--w); height: var(--h); border-radius: var(--br);
+  background: var(--k); box-shadow: 0 0 6px color-mix(in srgb, var(--k) 60%, transparent);
+  animation: egg-flake var(--dur) cubic-bezier(0.3, 0.2, 0.6, 1) calc(0.25s + var(--t)) 3 both;
+}
+.egg-confetti b {
+  position: absolute; left: var(--x); top: var(--y); width: 10px; height: 10px; margin: -5px;
+  background: #fff; box-shadow: 0 0 10px #ffc94d;
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  animation: egg-twinkle 1.6s ease-in-out calc(0.4s + var(--i) * 0.22s) infinite both;
+}
+.egg-unlock { position: relative; z-index: 1; }
+.egg-burst, .egg-twinkles { position: absolute; left: 50%; top: 42px; width: 0; height: 0; pointer-events: none; }
+.egg-burst i {
+  position: absolute; left: calc(var(--s) / -2); top: calc(var(--s) / -2); width: var(--s); height: var(--s);
+  background: var(--k); box-shadow: 0 0 10px var(--k);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  animation: egg-spark 1.1s cubic-bezier(0.15, 0.7, 0.3, 1) calc(0.15s + var(--t)) both;
+}
+.egg-twinkles i {
+  position: absolute; width: 12px; height: 12px; margin: -6px;
+  left: calc(cos(var(--i) * 60deg) * 120px); top: calc(sin(var(--i) * 60deg) * 70px + 30px);
+  background: #fff8d6; box-shadow: 0 0 12px #ffc94d;
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  animation: egg-twinkle 1.8s ease-in-out calc(1s + var(--i) * 0.3s) infinite both;
+}
+.egg-unlock .xg-btn { white-space: nowrap; padding: 0 12px; }
+.egg-orb { animation: egg-trophy 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both; }
+.egg-orb::after {
+  content: ''; position: absolute; inset: -14px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 201, 77, 0.35), transparent 65%);
+  animation: ab-pulse 2.4s ease-in-out infinite;
+}
+.egg-title {
+  background: linear-gradient(100deg, #fff 20%, #ffc94d 45%, #fff 70%) 0 0 / 200% 100%;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: egg-shine 3s linear infinite;
+}
+/* The video: the card widens to fit it. */
+.xg-card:has(.egg-play) { width: min(760px, 100%); }
+/* The close button, locked: the seconds left inside a ring that runs down. */
+.xg-x.egg-x-wait {
+  cursor: not-allowed; border: none; color: #ffc94d;
+  font: 700 14px/1 'Montserrat', sans-serif; font-variant-numeric: tabular-nums;
+  background:
+    radial-gradient(circle, #10142a 62%, transparent 64%),
+    conic-gradient(#ffc94d var(--p), rgba(255, 255, 255, 0.1) 0);
+  transition: none;
+}
+.xg-x.egg-x-wait:hover { transform: none; }
+/* Unlocked: it pops in gold and keeps a soft pulse, so it's easy to find. */
+@keyframes egg-x-in { 0% { transform: scale(0.6); } 60% { transform: scale(1.15); } 100% { transform: none; } }
+@keyframes egg-x-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255, 201, 77, 0.55); } 50% { box-shadow: 0 0 0 7px rgba(255, 201, 77, 0); } }
+.xg-x.egg-x-ready {
+  color: #1a1203; background: #ffc94d; border-color: #ffd977;
+  animation: egg-x-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), egg-x-pulse 1.8s ease-out 0.45s infinite;
+}
+.xg-x.egg-x-ready:hover { color: #1a1203; background: #ffd977; }
+.egg-play .xg-title { margin: 0 44px 16px; }
+.egg-frame { position: relative; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1); }
+.egg-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* The caption under the video: it pops up with a wobble, the big line in a
+   shifting gold, the small one quieter. */
+@keyframes egg-caption-in {
+  0% { opacity: 0; transform: translateY(16px) scale(0.9) rotate(-2deg); }
+  60% { opacity: 1; transform: translateY(-3px) scale(1.03) rotate(1deg); }
+  100% { opacity: 1; transform: none; }
+}
+.egg-caption {
+  display: grid; gap: 6px; margin: 16px 0 0; padding: 14px 18px; border-radius: 16px;
+  background: rgba(255, 201, 77, 0.08); border: 1px dashed rgba(255, 201, 77, 0.4);
+  animation: egg-caption-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.egg-caption-big {
+  font-size: clamp(15px, 2.2vw, 19px); font-weight: 800; line-height: 1.35;
+  background: linear-gradient(100deg, #fff 15%, #ffc94d 45%, #ff6bd5 70%, #fff 95%) 0 0 / 200% 100%;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: egg-shine 3s linear infinite;
+}
+.egg-caption-big span { -webkit-text-fill-color: initial; }
+.egg-caption-small { font-size: 12.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.6); }
+
+/* Desktop and tablet: a solid bar, so the disc's glow behind it doesn't tint the glass. */
+@media (min-width: 641px) {
+  .ab-halo-ctas { background: rgba(24, 27, 48, 0.8); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+}
+
+.hero-cta-primary { background: linear-gradient(135deg, #5ce0ff, #bc6fff); color: #05060f; font-weight: 700; }
+.hero-cta-primary:hover { background: linear-gradient(135deg, #7ae8ff, #cc8cff); box-shadow: 0 6px 24px rgba(140, 150, 255, 0.35); }
+
+.ab-ticker-k { margin: clamp(24px, 4.4vh, 40px) 0 0; text-align: center; }
+.ab-ticker-k + .logo-ticker-wrap { padding-top: clamp(16px, 2.6vh, 28px); }
+.ticker-logo { transition: filter 0.4s, opacity 0.4s, transform 0.4s; }
+.ticker-logo:hover { filter: none !important; opacity: 1 !important; transform: scale(1.06); }
+
+/* ── Story: an ID badge beside the bio in three chapters (AboutStory.tsx) ── */
+@keyframes ab-id-sway { 0%, 100% { rotate: -1.4deg; } 50% { rotate: 1.4deg; } }
+@keyframes ab-id-holo { to { background-position: 200% 0; } }
+.ab-story {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start;
+  margin-top: 160px;
+}
+.ab-story-side { position: sticky; top: 96px; }
+
+/* The badge hangs from a strap and sways a little, pivoting at the clip. */
+.ab-id-hang {
+  --hang: 58px; position: relative; width: min(380px, 100%); margin: 0 auto; padding-top: var(--hang);
+  transform-origin: 50% 0; animation: ab-id-sway 7s ease-in-out infinite;
+}
+.ab-id-strap {
+  position: absolute; z-index: 3; left: 50%; top: -60px; width: 30px; height: calc(var(--hang, 58px) + 62px); translate: -50% 0;
+  background: linear-gradient(90deg, rgba(92, 224, 255, 0.55), rgba(188, 111, 255, 0.55));
+  -webkit-mask: linear-gradient(transparent, #000 45%); mask: linear-gradient(transparent, #000 45%);
+}
+/* The clip: a metal ring where the strap meets the badge. */
+.ab-id-strap i {
+  position: absolute; left: 50%; bottom: -8px; width: 30px; height: 22px; translate: -50% 0; border-radius: 8px 8px 10px 10px;
+  background: linear-gradient(180deg, #e8ecf5, #8b93a8 60%, #c9d0de);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 1px 0 #fff;
+}
+.ab-id-strap i::after { content: ''; position: absolute; left: 50%; top: 6px; width: 12px; height: 8px; translate: -50% 0; border-radius: 4px; background: #2a2f40; }
+
+/* The card: portrait, glass over a faint dot grid, a glow in one corner and
+   a rim of light running round its edge. */
+.ab-id {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 26px 28px 24px; border-radius: 30px;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015) 55%), rgba(10, 12, 28, 0.78);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+.ab-id::before {
+  content: ''; position: absolute; inset: 0; z-index: 2; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: conic-gradient(from var(--ab-ang), rgba(92, 224, 255, 0.9), rgba(188, 111, 255, 0.7) 20%, rgba(255, 255, 255, 0.08) 35%, rgba(255, 255, 255, 0.08) 65%, rgba(109, 255, 138, 0.7) 82%, rgba(92, 224, 255, 0.9));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: ab-rim 9s linear infinite;
+}
+.ab-id-grid {
+  position: absolute; inset: 0; z-index: -1; opacity: 0.5;
+  background: radial-gradient(circle, rgba(160, 200, 255, 0.22) 1px, transparent 1.4px) 0 0 / 22px 22px;
+  -webkit-mask: linear-gradient(180deg, #000, transparent 75%); mask: linear-gradient(180deg, #000, transparent 75%);
+}
+.ab-id-orb {
+  position: absolute; z-index: -1; top: -110px; left: 50%; width: 320px; height: 300px; translate: -50% 0; border-radius: 50%;
+  background: radial-gradient(circle, rgba(188, 111, 255, 0.32), rgba(92, 224, 255, 0.1) 45%, transparent 70%);
+  filter: blur(10px); animation: ab-pulse 6s ease-in-out infinite;
+}
+/* The punched slot the clip goes through. */
+.ab-id-slot {
+  width: 64px; height: 10px; border-radius: 6px; margin-bottom: 22px;
+  background: rgba(0, 0, 0, 0.6); box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+/* A gold chip and a strip of hologram foil. */
+.ab-id-band { display: flex; align-items: center; gap: 12px; width: 100%; margin-bottom: 26px; }
+.ab-id-chip {
+  position: relative; flex: none; width: 42px; height: 32px; border-radius: 7px;
+  background: linear-gradient(135deg, #f6dc8f, #b98a2e 55%, #f1cf73);
+  box-shadow: inset 0 0 0 1px rgba(90, 60, 10, 0.5);
+}
+.ab-id-chip::before, .ab-id-chip::after { content: ''; position: absolute; border: 1px solid rgba(90, 60, 10, 0.55); }
+.ab-id-chip::before { inset: 9px 0; border-width: 1px 0; }
+.ab-id-chip::after { inset: 0 14px; border-width: 0 1px; }
+.ab-id-holo {
+  flex: 1; height: 10px; border-radius: 6px; opacity: 0.75;
+  background: linear-gradient(90deg, #5ce0ff, #bc6fff, #ff6bd5, #ffc94d, #6dff8a, #5ce0ff) 0 0 / 200% 100%;
+  animation: ab-id-holo 6s linear infinite;
+}
+
+.ab-hi {
+  margin: 0;
+  font-family: 'Burgundia', cursive; font-weight: 400; line-height: 1.1;
+  font-size: clamp(38px, 3.4vw, 50px); color: rgba(255, 255, 255, 0.94);
+}
+.ab-wave { display: inline-block; translate: 0 -0.14em; font-size: 0.8em; transform-origin: 70% 80%; animation: ab-wave 2.6s ease-in-out 1s infinite; }
+/* The roles, turning over inside a pill. */
+.ab-roles {
+  display: inline-flex; align-items: center; gap: 10px; margin: 22px 0 0; padding: 9px 18px 9px 16px; border-radius: 40px;
+  font-family: 'Epic Pro', sans-serif; font-size: clamp(12px, 1vw, 14px); letter-spacing: 0.06em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(92, 224, 255, 0.06); border: 1px solid rgba(92, 224, 255, 0.2);
+}
+/* The window shows one role at a time. It reaches past the words on every
+   side and fades out at the top and bottom, so their glow isn't cut off in a
+   box; the roles sit 2em apart so the next one stays out of sight. */
+.ab-roles-win {
+  position: relative; display: inline-block; box-sizing: content-box; height: 2em; padding: 0 40px; margin: -0.35em -40px;
+  overflow: hidden; vertical-align: bottom; text-align: left;
+  -webkit-mask: linear-gradient(transparent, #000 0.45em, #000 calc(100% - 0.45em), transparent);
+  mask: linear-gradient(transparent, #000 0.45em, #000 calc(100% - 0.45em), transparent);
+}
+.ab-roles-reel { display: flex; flex-direction: column; animation: ab-reel 10s cubic-bezier(0.7, 0, 0.3, 1) infinite; }
+.ab-roles-reel span { height: 2em; line-height: 2em; white-space: nowrap; color: #8fe9ff; text-shadow: 0 0 18px rgba(92, 224, 255, 0.45); }
+@keyframes ab-reel {
+  0%, 20% { transform: translateY(0); }
+  25%, 45% { transform: translateY(-2em); }
+  50%, 70% { transform: translateY(-4em); }
+  75%, 95% { transform: translateY(-6em); }
+  100% { transform: translateY(-8em); }
+}
+
+/* The facts: one ID field per row - icon, label, then the value on the right. */
+.ab-facts {
+  list-style: none; display: grid; width: 100%;
+  margin: 26px 0 0; padding: 6px 0 0; border-top: 1px dashed rgba(255, 255, 255, 0.12);
+}
+.ab-fact {
+  display: flex; align-items: center; gap: 12px; padding: 11px 0; text-align: left;
+  font-size: 14.5px; font-weight: 600; line-height: 1.3; color: rgba(255, 255, 255, 0.92);
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.7s ease calc(0.3s + var(--i) * 0.12s), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) calc(0.3s + var(--i) * 0.12s);
+}
+.ab-fact + .ab-fact { border-top: 1px solid rgba(255, 255, 255, 0.06); }
+.is-in .ab-fact { opacity: 1; transform: none; }
+.ab-fact svg {
+  width: 34px; height: 34px; flex: none; padding: 8px; border-radius: 10px;
+  fill: none; stroke: #8fe9ff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+  background: rgba(92, 224, 255, 0.08); box-shadow: inset 0 0 0 1px rgba(92, 224, 255, 0.2);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+}
+.ab-fact:hover svg { transform: translateY(-2px) rotate(-6deg); box-shadow: inset 0 0 0 1px rgba(92, 224, 255, 0.5), 0 0 18px rgba(92, 224, 255, 0.3); }
+.ab-fact > span { display: flex; flex: 1; align-items: baseline; justify-content: space-between; gap: 12px; }
+.ab-fact small { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(140, 210, 255, 0.6); }
+/* A barcode across the foot, for the look. */
+.ab-id-code {
+  width: 100%; height: 30px; margin-top: 16px; opacity: 0.45;
+  background: repeating-linear-gradient(90deg, #fff 0 2px, transparent 2px 4px, #fff 4px 5px, transparent 5px 9px, #fff 9px 12px, transparent 12px 14px, #fff 14px 15px, transparent 15px 19px);
+  -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* The chapters, on a rail: each numbered marker lights in its own colour
+   once its words have come in, and the rail below it fills. */
+.ab-story-text { display: grid; gap: 44px; margin: 0; padding: 20px 0 0; list-style: none; }
+.ab-chap { position: relative; padding-left: 74px; }
+.ab-chap::before {
+  content: ''; position: absolute; left: 21px; top: 50px; bottom: -44px; width: 2px; border-radius: 2px;
+  background: linear-gradient(var(--c), transparent) no-repeat 0 0 / 100% 0%, rgba(255, 255, 255, 0.07);
+  transition: background-size 1.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s;
+}
+.ab-chap:last-child::before { bottom: 0; }
+.ab-chap:has(.ab-words.is-in)::before { background-size: 100% 100%, auto; }
+.ab-chap-mark {
+  position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  font-family: 'Epic Pro', 'Montserrat', sans-serif; font-size: 12px; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.4);
+  background: rgba(10, 12, 28, 0.9); border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: color 0.6s, border-color 0.6s, box-shadow 0.6s;
+}
+.ab-chap:has(.ab-words.is-in) .ab-chap-mark {
+  color: var(--c); border-color: color-mix(in srgb, var(--c) 60%, transparent);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--c) 35%, transparent), inset 0 0 12px color-mix(in srgb, var(--c) 20%, transparent);
+}
+.ab-chap-k {
+  margin: 0 0 12px; padding-top: 13px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: var(--c);
+}
+.ab-words { margin: 0; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.75; font-weight: 500; letter-spacing: -0.005em; }
+.ab-chap:first-child .ab-words { font-size: clamp(19px, 1.6vw, 23px); }
+/* Each paragraph's words fade in one by one when it comes into view (the
+   testimonial quotes do the same); a few key words glow in the chapter's colour. */
+.ab-words span { opacity: 0; color: rgba(255, 255, 255, 0.78); }
+.ab-words span.is-key { filter: drop-shadow(0 0 10px color-mix(in srgb, var(--c) 45%, transparent)); background: linear-gradient(90deg, #fff, var(--c)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.ab-words.is-in span { opacity: 1; animation: ab-word 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both; animation-delay: calc(var(--i) * 0.018s); }
+
+/* ── Crafts ── */
+.ab-craft-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.ab-craft {
+  display: flex; flex-direction: column;
+  padding: 34px 30px 30px; border-radius: 28px; overflow: hidden;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.012) 60%), rgba(10, 12, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  transition: var(--ab-in), transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.4s;
+}
+.ab-craft.is-in:hover { transform: translateY(-8px); border-color: color-mix(in srgb, var(--c) 30%, transparent); }
+.ab-craft-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 34px; }
+.ab-craft-ico { position: relative; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; }
+.ab-craft-ico svg {
+  position: relative; width: 42px; height: 42px; padding: 10px; border-radius: 50%;
+  fill: none; stroke: var(--c); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+  background: color-mix(in srgb, var(--c) 12%, transparent);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--c) 30%, transparent), inset 0 0 0 1px color-mix(in srgb, var(--c) 35%, transparent);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ab-craft:hover .ab-craft-ico svg { transform: scale(1.12) rotate(-6deg); }
+.ab-craft-orbit {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 1px dashed color-mix(in srgb, var(--c) 40%, transparent);
+  animation: ab-spin 14s linear infinite;
+}
+.ab-craft-orbit::after {
+  content: ''; position: absolute; top: -3px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%;
+  background: var(--c); box-shadow: 0 0 10px var(--c);
+}
+.ab-craft-no {
+  font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 54px; line-height: 1;
+  color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.16);
+  transition: -webkit-text-stroke-color 0.4s, transform 0.5s;
+}
+.ab-craft:hover .ab-craft-no { -webkit-text-stroke-color: var(--c); transform: translateY(-4px); }
+.ab-craft-label { margin: 0 0 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--c); opacity: 0.85; }
+.ab-craft-title {
+  margin: 0 0 18px; font-family: 'Epic Pro', sans-serif; font-weight: 400;
+  font-size: clamp(19px, 1.7vw, 24px); line-height: 1.18; text-transform: uppercase; letter-spacing: 0.02em;
+  color: #fff;
+}
+.ab-craft-text { margin: 0 0 26px; font-size: 14px; line-height: 1.8; color: rgba(255, 255, 255, 0.58); flex: 1; }
+.ab-craft-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.ab-craft-tags li {
+  padding: 6px 12px; border-radius: 999px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+.ab-craft:hover .ab-craft-tags li { border-color: color-mix(in srgb, var(--c) 35%, transparent); color: #fff; background: color-mix(in srgb, var(--c) 8%, transparent); }
+
+/* ── The UFO and its tractor beam ── */
+/* The saucer (a three.js figure) flies in from the top right once the scene
+   is well on screen (.ab-ufo.is-in, from lib/scripts/about.ts), its beam
+   flickers on like a lamp and each stat is beamed down in turn, at its --d.
+   While the saucer zaps or spins (data-act, set by the figure) the beam
+   flares or dims. */
+.ab-ufo { --apex: min(84px, 14.5vw); position: relative; }
+.ab-ufo-craft {
+  position: relative; z-index: 2; width: min(500px, 92%); aspect-ratio: 2 / 1.1; margin: -24px auto -7%;
+  opacity: 0;
+}
+.ab-ufo.is-in .ab-ufo-craft { animation: ab-ufo-in 1.5s cubic-bezier(0.2, 0.75, 0.25, 1) both; }
+@keyframes ab-ufo-in {
+  0% { opacity: 0; translate: 32% -44vh; scale: 0.35; rotate: 16deg; }
+  18% { opacity: 1; }
+  100% { opacity: 1; translate: none; scale: 1; rotate: none; }
+}
+.ab-ufo-3d { position: absolute; inset: 0; outline: none; cursor: grab; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
+.ab-ufo-3d:focus-visible { outline: 2px solid #8cd2ff; outline-offset: 4px; border-radius: 28px; }
+/* The canvas overhangs the box, so the saucer can bank and hop without clipping. */
+.ab-ufo-3d canvas { position: absolute; inset: -18% -8%; width: 116%; height: 136%; display: block; pointer-events: none; opacity: 0; transition: opacity 0.6s; }
+.ab-ufo-3d.is-ready canvas { opacity: 1; }
+.ab-ufo-craft::before {
+  content: ''; position: absolute; inset: -20% 4% 0; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(188, 111, 255, 0.22), rgba(92, 224, 255, 0.08) 55%, transparent);
+  animation: ab-pulse 5s ease-in-out infinite;
+}
+@keyframes ab-show { to { opacity: 1; } }
+
+.ab-ufo-field { position: relative; padding-top: 100px; }
+
+/* The beam: light, not a shape. A wide cone and a brighter core, blurred
+   together so the edges are soft; faint rays fanning from the emitter that
+   shimmer; a hot spot at the source; dust drifting up through it. It is
+   brightest at the saucer and falls off toward the ground, and screens over
+   the page like light would. */
+.ab-beam {
+  position: absolute; z-index: 0; top: -110px; bottom: -36px; left: 0; right: 0;
+  pointer-events: none; mix-blend-mode: screen; opacity: 0;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 90px, #000 40%, rgba(0, 0, 0, 0.5) 80%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 90px, #000 40%, rgba(0, 0, 0, 0.5) 80%, transparent);
+  transition: filter 0.35s;
+}
+.ab-ufo.is-in .ab-beam { animation: ab-lamp 0.9s linear 1.55s both, ab-hum 4.2s ease-in-out 2.5s infinite; }
+@keyframes ab-lamp {
+  0% { opacity: 0; } 8% { opacity: 0.7; } 14% { opacity: 0.08; } 22% { opacity: 0.85; } 30% { opacity: 0.3; }
+  42% { opacity: 1; } 50% { opacity: 0.6; } 64%, 100% { opacity: 1; }
+}
+@keyframes ab-hum { 0%, 100% { opacity: 1; } 50% { opacity: 0.86; } }
+.ab-ufo[data-act='zap'] .ab-beam { filter: brightness(1.8); }
+.ab-ufo[data-act='spin'] .ab-beam { filter: brightness(0.35); }
+.ab-beam-soft { position: absolute; inset: 0; filter: blur(13px); }
+.ab-beam-cone, .ab-beam-core, .ab-beam-rays, .ab-beam-dust { position: absolute; inset: 0; }
+.ab-beam-cone {
+  clip-path: polygon(calc(50% - var(--apex)) 0, calc(50% + var(--apex)) 0, 96% 100%, 4% 100%);
+  background: linear-gradient(180deg, rgba(160, 236, 255, 0.75), rgba(92, 210, 255, 0.34) 28%, rgba(120, 160, 255, 0.16) 62%, rgba(188, 111, 255, 0.1));
+}
+.ab-beam-core {
+  clip-path: polygon(calc(50% - var(--apex) * 0.55) 0, calc(50% + var(--apex) * 0.55) 0, 74% 100%, 26% 100%);
+  background: linear-gradient(180deg, rgba(245, 253, 255, 0.85), rgba(180, 240, 255, 0.32) 38%, rgba(140, 210, 255, 0.06) 92%);
+}
+/* Rays: two fans of thin streaks from the emitter, fading in and out of step. */
+.ab-beam-rays {
+  clip-path: polygon(calc(50% - var(--apex)) 0, calc(50% + var(--apex)) 0, 96% 100%, 4% 100%);
+  filter: blur(1.5px);
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent 92%);
+  mask-image: linear-gradient(180deg, #000, transparent 92%);
+}
+.ab-beam-rays::before, .ab-beam-rays::after { content: ''; position: absolute; inset: 0; }
+.ab-beam-rays::before {
+  background: repeating-conic-gradient(from 120deg at 50% -8%, transparent 0deg, rgba(225, 250, 255, 0.2) 0.5deg, transparent 1.4deg, transparent 3.7deg);
+  animation: ab-rays 5s ease-in-out infinite;
+}
+.ab-beam-rays::after {
+  background: repeating-conic-gradient(from 121.6deg at 50% -8%, transparent 0deg, rgba(200, 240, 255, 0.16) 0.7deg, transparent 1.8deg, transparent 5.3deg);
+  animation: ab-rays 5s ease-in-out -2.5s infinite;
+}
+@keyframes ab-rays { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+.ab-beam-hot {
+  position: absolute; left: 50%; top: 16px; width: calc(var(--apex) * 3.6); height: 110px; translate: -50% 0; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.85), rgba(150, 235, 255, 0.45) 45%, transparent);
+  filter: blur(8px);
+}
+/* Dust: each speck is a full-height strip with the speck at its foot, so it
+   rises the whole height, swaying, and twinkles; the cone trims them. */
+.ab-beam-dust { clip-path: polygon(calc(50% - var(--apex)) 0, calc(50% + var(--apex)) 0, 96% 100%, 4% 100%); }
+.ab-beam-dust i { position: absolute; top: 0; bottom: 0; left: var(--x); width: 4px; animation: ab-dust calc(7s + var(--k) * 0.37s) linear infinite; animation-delay: calc(var(--k) * -0.83s); }
+.ab-beam-dust i::before {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 2.5px; height: 2.5px; border-radius: 50%;
+  background: #f2fdff; box-shadow: 0 0 6px 1px rgba(160, 235, 255, 0.8);
+  animation: ab-twinkle 1.6s ease-in-out infinite; animation-delay: calc(var(--k) * -0.29s);
+}
+.ab-beam-dust i:nth-child(3n)::before { width: 1.5px; height: 1.5px; }
+.ab-beam-dust i:nth-child(4n)::before { width: 3.5px; height: 3.5px; filter: blur(1px); }
+@keyframes ab-dust {
+  0% { transform: translate(0, 0); opacity: 0; } 12% { opacity: 1; }
+  50% { transform: translate(var(--dx), -50%); }
+  85% { opacity: 0.7; } 100% { transform: translate(0, -100%); opacity: 0; }
+}
+@keyframes ab-twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+/* Where the light lands. */
+.ab-beam-pool {
+  position: absolute; z-index: 0; left: 50%; bottom: -84px; width: 100%; height: 150px; translate: -50% 0; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(200, 245, 255, 0.3), rgba(92, 224, 255, 0.14) 45%, rgba(188, 111, 255, 0.06) 75%, transparent);
+  mix-blend-mode: screen; opacity: 0; pointer-events: none;
+}
+.ab-ufo.is-in .ab-beam-pool { animation: ab-show 0.5s ease 2.1s both, ab-pool 4.2s ease-in-out 2.6s infinite; }
+@keyframes ab-pool { 0%, 100% { opacity: 1; scale: 1; } 50% { opacity: 0.7; scale: 0.96; } }
+
+/* ── The stats: three things beamed down ── */
+/* Each is a 3D illustration (scripts/render-stat-art.py) with its words set
+   beneath it. At its --d: a shimmer of sparks, then the object drops out of
+   the light, flickering as it resolves, and comes to hover - bobbing over a
+   glow in its colour, with a few twinkles round it. Its number counts up
+   (about.ts) and its words fade in. */
+.ab-pods {
+  position: relative; z-index: 1; list-style: none; margin: 0 auto; padding: 0; max-width: 1080px;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; align-items: start;
+}
+.ab-pod { text-align: center; }
+.ab-pod:nth-child(odd) { margin-top: 56px; } /* in an arc under the saucer */
+.ab-pod-fig { position: relative; display: grid; place-items: center; width: min(230px, 100%); aspect-ratio: 1.2; margin: 0 auto 26px; }
+.ab-pod.is-planet .ab-pod-fig { width: min(290px, 100%); }
+.ab-pod-float {
+  width: 100%; transition: filter 0.35s;
+  animation: ab-pod-bob 6s ease-in-out infinite; animation-delay: calc(var(--i) * -2.1s);
+}
+@keyframes ab-pod-bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-14px) rotate(2deg); } }
+.ab-ufo[data-act='zap'] .ab-pod-float { filter: brightness(1.35); }
+.ab-pod-art {
+  display: block; width: 100%; height: auto;
+  filter: drop-shadow(0 0 24px color-mix(in srgb, var(--c) 40%, transparent)) drop-shadow(0 20px 22px rgba(0, 0, 0, 0.5));
+}
+/* The glow it hovers over, shrinking as it rises. */
+.ab-pod-pad {
+  position: absolute; left: 14%; right: 14%; bottom: -14px; height: 26px; border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--c) 60%, transparent), transparent);
+  filter: blur(4px);
+  animation: ab-pod-pad 6s ease-in-out infinite; animation-delay: calc(var(--i) * -2.1s);
+}
+@keyframes ab-pod-pad { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(0.76); opacity: 0.5; } }
+.ab-pod-twinkle {
+  position: absolute; width: 14px; height: 14px; background: var(--c);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  animation: ab-twk 2.6s ease-in-out infinite; animation-delay: calc(var(--k) * -0.85s - var(--i) * 0.4s);
+}
+.ab-pod-fig > .ab-pod-twinkle:nth-child(4) { left: 4%; top: 10%; }
+.ab-pod-fig > .ab-pod-twinkle:nth-child(5) { right: 2%; top: 34%; width: 10px; height: 10px; background: #fff; }
+.ab-pod-fig > .ab-pod-twinkle:nth-child(6) { left: 14%; bottom: 8%; width: 9px; height: 9px; }
+@keyframes ab-twk { 0%, 100% { opacity: 0; transform: scale(0.3) rotate(0); } 50% { opacity: 1; transform: scale(1) rotate(45deg); } }
+
+.ab-pod-num {
+  margin: 0; display: flex; align-items: baseline; justify-content: center;
+  font-family: 'Epic Pro', sans-serif; font-size: clamp(52px, 5vw, 70px); line-height: 1; color: var(--c);
+  text-shadow: 0 0 30px color-mix(in srgb, var(--c) 60%, transparent);
+}
+/* A touch of hologram fringing on the digits. */
+.ab-pod-num b { font-weight: 400; color: #fff; text-shadow: -1.5px 0 rgba(255, 90, 210, 0.45), 1.5px 0 rgba(92, 224, 255, 0.55), 0 0 26px color-mix(in srgb, var(--c) 65%, transparent); }
+.ab-pod-label { margin: 14px 0 8px; font-family: 'Epic Pro', sans-serif; font-weight: 400; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; }
+.ab-pod-note { margin: 0 auto; max-width: 250px; font-size: 13px; line-height: 1.65; color: rgba(255, 255, 255, 0.55); }
+
+/* Beaming in. */
+.ab-pod-spark {
+  position: absolute; inset: -10% 4%; pointer-events: none; opacity: 0;
+  background:
+    radial-gradient(circle, #fff 0 1px, transparent 1.6px) 0 0 / 16px 20px,
+    radial-gradient(circle, var(--c) 0 1.2px, transparent 1.8px) 8px 10px / 16px 20px;
+  -webkit-mask-image: radial-gradient(closest-side, #000 30%, transparent);
+  mask-image: radial-gradient(closest-side, #000 30%, transparent);
+}
+.ab-ufo.is-in .ab-pod-spark { animation: ab-spark 1.3s ease-out var(--d) both; }
+@keyframes ab-spark {
+  0% { opacity: 0; transform: scaleX(0.2); background-position: 0 -40px, 8px -30px; }
+  30% { opacity: 1; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(1.1); background-position: 0 40px, 8px 50px; }
+}
+.ab-ufo .ab-pod-float { opacity: 0; }
+/* The glow and the twinkles pulse on their own, so they wait out of sight. */
+.ab-ufo .ab-pod-pad, .ab-ufo .ab-pod-twinkle { visibility: hidden; }
+.ab-ufo.is-in .ab-pod-pad { visibility: visible; transition: visibility 0s calc(var(--d) + 0.9s); }
+.ab-ufo.is-in .ab-pod-twinkle { visibility: visible; transition: visibility 0s calc(var(--d) + 1.3s); }
+.ab-ufo.is-in .ab-pod-float {
+  animation: ab-fig-in 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--d) + 0.2s) both, ab-pod-bob 6s ease-in-out infinite;
+  animation-delay: calc(var(--d) + 0.2s), calc(var(--i) * -2.1s);
+}
+@keyframes ab-fig-in {
+  0% { opacity: 0; translate: 0 -150px; scale: 0.5; filter: brightness(3) blur(6px) saturate(0); }
+  16% { opacity: 0.8; } 24% { opacity: 0.25; } 34% { opacity: 1; } 42% { opacity: 0.55; } 50% { opacity: 1; }
+  70% { filter: brightness(1.5) blur(0) saturate(1); }
+  100% { opacity: 1; translate: none; scale: none; filter: brightness(1); }
+}
+.ab-ufo .ab-pod-text > * { opacity: 0; }
+.ab-ufo.is-in .ab-pod-text > * { opacity: 1; animation: ab-word 0.7s ease both; animation-delay: calc(var(--d) + 0.8s + var(--n, 0) * 0.12s); }
+.ab-pod-text > :nth-child(2) { --n: 1; }
+.ab-pod-text > :nth-child(3) { --n: 2; }
+
+/* ── Tech stack: three decks (AboutStack.tsx) ──
+   Every tool in view on a 3 x 2 grid per deck. The tiles pop in when the deck
+   arrives; after that a glow passes from tile to tile (each waits its turn
+   with --j), while a radar sweep turns slowly behind them. */
+@keyframes ab-tool-in { from { opacity: 0; transform: translateY(18px) scale(0.85); } }
+@keyframes ab-tool-ping {
+  0%, 14%, 100% { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 22%, transparent); }
+  6% { box-shadow: inset 0 0 0 1px var(--c), 0 0 26px color-mix(in srgb, var(--c) 55%, transparent); }
+}
+.ab-decks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.ab-deck {
+  position: relative; overflow: hidden; display: flex; flex-direction: column;
+  padding: 26px 24px 24px; border-radius: 30px;
+  background: linear-gradient(170deg, color-mix(in srgb, var(--c) 12%, transparent), rgba(255, 255, 255, 0.012) 50%), rgba(10, 12, 26, 0.62);
+  border: 1px solid color-mix(in srgb, var(--c) 20%, transparent);
+}
+/* The radar: a soft wedge of the deck's colour turning round the middle of the grid. */
+.ab-deck-radar {
+  position: absolute; z-index: -1; left: 50%; top: 62%; width: 160%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; pointer-events: none;
+  background:
+    conic-gradient(from 0deg, transparent 0 78%, color-mix(in srgb, var(--c) 22%, transparent) 96%, color-mix(in srgb, var(--c) 40%, transparent) 100%),
+    repeating-radial-gradient(circle, transparent 0 56px, color-mix(in srgb, var(--c) 9%, transparent) 56px 57px);
+  -webkit-mask: radial-gradient(circle, #000 25%, transparent 62%); mask: radial-gradient(circle, #000 25%, transparent 62%);
+  animation: ab-spin 9s linear infinite;
+}
+
+.ab-deck-head { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+/* The emblem: the deck's number inside two counter-turning rings, each with a moon. */
+.ab-deck-emblem { position: relative; display: grid; place-items: center; flex: none; width: 58px; height: 58px; }
+.ab-deck-emblem > span {
+  font-family: 'Epic Pro', 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 0.06em; color: var(--c);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--c) 60%, transparent);
+}
+.ab-deck-emblem i { position: absolute; inset: 0; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--c) 40%, transparent); animation: ab-spin 6s linear infinite; }
+.ab-deck-emblem i.is-2 { inset: 9px; border-style: dashed; border-color: color-mix(in srgb, var(--c) 30%, transparent); animation: ab-spin-r 9s linear infinite; }
+.ab-deck-emblem b { position: absolute; left: 50%; top: -3px; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); }
+.ab-deck-emblem i.is-2 b { top: auto; bottom: -2.5px; width: 5px; height: 5px; background: #fff; }
+.ab-deck-name { margin: 0; font-family: 'Epic Pro', sans-serif; font-weight: 400; font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; }
+.ab-deck-blurb { margin: 6px 0 0; font-size: 12.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.5); }
+
+.ab-deck-tools { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.ab-tool {
+  position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding: 16px 6px 13px; border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.07);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: border-color 0.3s, background 0.3s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ab-deck.is-in .ab-tool { opacity: 1; animation: ab-tool-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both; animation-delay: calc(var(--d, 0s) + 0.25s + var(--j) * 0.07s); }
+/* A sheen across the tile on hover. */
+.ab-tool::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.16) 50%, transparent 65%);
+  translate: -120% 0; transition: translate 0.7s ease;
+}
+.ab-tool:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--c) 50%, transparent); background: color-mix(in srgb, var(--c) 10%, transparent); }
+.ab-tool:hover::after { translate: 120% 0; }
+.ab-tool-ico {
+  display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px;
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.1), rgba(12, 14, 30, 0.92) 70%);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 22%, transparent);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: ab-tool-ping calc(var(--n) * 0.7s) ease-in-out infinite; animation-delay: calc(1.5s + var(--j) * 0.7s);
+}
+.ab-tool:hover .ab-tool-ico { transform: rotate(-8deg) scale(1.1); }
+.ab-tool-ico svg { width: 26px; height: 26px; }
+.ab-tool-name {
+  max-width: 100%; text-align: center; line-height: 1.25; overflow-wrap: anywhere;
+  font-family: 'Epic Pro', sans-serif; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── Zenitron channels ── */
+.ab-play-logo { position: relative; width: min(520px, 92%); margin: 6px auto 0; }
+.ab-play-logo img { position: relative; display: block; width: 100%; height: auto; animation: ab-bob 6s ease-in-out infinite; }
+.ab-play-halo {
+  position: absolute; left: 18%; top: 50%; width: 46%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 110, 30, 0.35), rgba(255, 60, 0, 0.08) 55%, transparent 70%);
+  filter: blur(8px); animation: ab-pulse 3.2s ease-in-out infinite;
+}
+/* The Quick Links channel cards (styles/bento-cards.css), bigger. Phones keep
+   Quick Links' bento; tablets give YouTube a double-width card; desktops line
+   all five up in one row, each the same tall card (YouTube's pill moves to the
+   corner where the others carry their arrow or Live tag). */
+.ab-bento { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: 980px; margin: 0 auto; }
+.ab-bento .is-wide { grid-column: span 2; }
+.ab-bento a { padding: 22px; gap: 22px; border-radius: 26px; transition: border-color 0.3s ease, transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.4s; }
+.ab-bento .is-wide a { padding: 22px 22px 22px 20px; gap: 18px; }
+.ab-bento .ql-soc-mark { width: 150px; height: 150px; right: -26px; bottom: -36px; }
+.ab-bento .is-wide .ql-soc-mark { right: 140px; bottom: -50px; }
+.ab-bento .ql-soc-ico { width: 54px; height: 54px; border-radius: 18px; }
+.ab-bento .ql-soc-txt b { font-size: 17px; }
+.ab-bento .ql-soc-txt > span:last-child { font-size: 12.5px; }
+@media (min-width: 1000px) {
+  .ab-bento { grid-template-columns: repeat(5, minmax(0, 1fr)); max-width: none; }
+  .ab-bento .is-wide { grid-column: auto; }
+  .ab-bento a, .ab-bento .is-wide a { flex-direction: column; align-items: flex-start; gap: 28px; padding: 22px 20px 24px; }
+  .ab-bento .is-wide .ql-soc-mark { right: -26px; bottom: -36px; }
+  .ab-bento .ql-soc-cta {
+    position: absolute; top: 16px; right: 14px;
+    min-height: 0; padding: 5px 8px 5px 10px; gap: 4px;
+    font-size: 9px; font-weight: 800; letter-spacing: 0.1em;
+  }
+  .ab-bento .ql-soc-cta .ql-i { width: 11px; height: 11px; }
+}
+@media (hover: hover) {
+  .ab-bento a:hover { transform: translateY(-6px); box-shadow: 0 18px 46px -20px color-mix(in srgb, var(--c) 70%, transparent); }
+  .ab-bento a:hover .ql-soc-cta { transform: none; }
+}
+
+/* ── Tablet ── */
+@media (max-width: 1100px) {
+  /* Stack: the decks one under another, each tool grid in one row of six. */
+  .ab-decks { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; gap: 18px; }
+  .ab-deck-tools { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  /* Hero: a smaller photo, the phrases closer in. */
+  .ab-halo { grid-template-columns: minmax(0, 1fr) minmax(0, 380px) minmax(0, 1fr); column-gap: 36px; }
+  .ab-halo-side li { --wl: 26px; }
+  .ab-halo-side li:nth-child(2) { --wl: 54px; }
+  .ab-halo-side.is-l li:nth-child(2) { margin-right: 28px; }
+  .ab-halo-side.is-r li:nth-child(2) { margin-left: 28px; }
+  .ab-halo-a { font-size: 11px; letter-spacing: 0.1em; }
+}
+@media (max-width: 900px) {
+  /* Hero: smaller still, the phrases level. */
+  .ab-halo { grid-template-columns: minmax(0, 1fr) minmax(0, 300px) minmax(0, 1fr); column-gap: 22px; }
+  .ab-halo-side { gap: 56px; }
+  .ab-halo-side li, .ab-halo-side li:nth-child(2) { --wl: 14px; }
+  .ab-halo-side.is-l li:nth-child(2), .ab-halo-side.is-r li:nth-child(2) { margin: 0; }
+  .ab-halo-a { font-size: 10px; letter-spacing: 0.08em; }
+  .ab-halo-b { font-size: 27px; }
+  .ab-sec { margin-top: 120px; }
+  .ab-head { margin-bottom: 44px; }
+  .ab-story { grid-template-columns: 1fr; gap: 28px; margin-top: 110px; }
+  .ab-story-side { position: static; }
+  .ab-story-text { padding-top: 0; gap: 34px; }
+  .ab-craft-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+  .ab-pods { gap: 16px; }
+  .ab-pod:nth-child(odd) { margin-top: 40px; }
+  .ab-pod-num { font-size: 44px; }
+  .ab-pod-label { font-size: 12.5px; }
+  .ab-pod-note { font-size: 12px; }
+}
+
+/* ── Phone ── */
+@media (max-width: 640px) {
+  /* Hero: the photo on top, the four phrases in two columns under it,
+     then the buttons; no wires. */
+  .ab-halo { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: 'pic pic' 'l r' 'ctas ctas'; column-gap: 14px; margin-top: 0; }
+  .ab-halo-pic { width: min(420px, 100%, 42vh); justify-self: center; }
+  @supports (height: 1svh) { .ab-halo-pic { width: min(420px, 100%, 42svh); } }
+  .ab-halo-glow { inset: -8%; }
+  .ab-halo-orbit.is-2 { inset: -13%; }
+  .ab-halo-side { position: relative; z-index: 3; gap: 8px; padding: 0; margin-top: -68px; }
+  .ab-halo-side.is-l, .ab-halo-side.is-r { align-items: center; text-align: center; --dx: 0px; }
+  .ab-halo-side.is-l li:nth-child(2), .ab-halo-side.is-r li:nth-child(2) { margin: 0; }
+  .ab-halo-wire { display: none; }
+  .ab-halo-a { margin-top: 0; font-size: 10.5px; letter-spacing: 0.12em; }
+  .ab-halo-b { font-size: clamp(24px, 6.8vw, 30px); }
+  .ab-halo-ctas { margin-top: 38px; }
+  .ab-halo-ctas .hero-cta-primary, .ab-halo-ctas .hero-cta-ghost { min-height: 44px; }
+  .ab-sec { margin-top: 96px; }
+  .ab-title { font-size: clamp(36px, 10.5vw, 48px); }
+  .ab-lede { font-size: 14.5px; line-height: 1.8; }
+  .ab-hi { font-size: clamp(38px, 11vw, 50px); }
+  .ab-id-hang { --hang: 50px; width: min(340px, 100%); }
+  .ab-id-strap { top: -72px; }
+  .ab-id { padding: 22px 20px 20px; border-radius: 26px; }
+  .ab-story { gap: 60px; }
+  .ab-id-band { margin-bottom: 22px; }
+  .ab-roles { padding: 8px 14px; gap: 8px; font-size: 12px; }
+  .ab-facts { margin-top: 22px; }
+  .ab-fact { gap: 10px; padding: 9px 0; font-size: 13.5px; }
+  .ab-fact small { font-size: 8.5px; letter-spacing: 0.16em; }
+  .ab-fact svg { width: 32px; height: 32px; padding: 7px; }
+  .ab-chap { padding-left: 54px; }
+  .ab-chap::before { left: 17px; top: 42px; }
+  .ab-chap-mark { width: 36px; height: 36px; font-size: 11px; }
+  .ab-chap-k { padding-top: 10px; margin-bottom: 10px; }
+  .ab-words, .ab-chap:first-child .ab-words { font-size: 16.5px; line-height: 1.7; }
+  .ab-craft { padding: 28px 22px 24px; border-radius: 24px; }
+  .ab-craft-top { margin-bottom: 24px; }
+  .ab-craft-no { font-size: 44px; }
+  /* The saucer kept clear of the screen edges. */
+  .ab-ufo-craft { width: 80%; margin: 26px auto -9%; }
+  .ab-ufo-field { padding-top: 64px; }
+  .ab-beam { top: -84px; }
+  /* Each thing beside its words; the right-hand gutter keeps the words clear
+     of the scroll-to-top rail. */
+  .ab-pods { grid-template-columns: 1fr; gap: 26px; max-width: 420px; padding: 0 44px 0 20px; }
+  .ab-pod:nth-child(odd) { margin-top: 0; }
+  .ab-pod { display: grid; grid-template-columns: 104px minmax(0, 1fr); align-items: center; gap: 16px; text-align: left; }
+  .ab-pod-fig, .ab-pod.is-planet .ab-pod-fig { width: 104px; margin: 0; }
+  .ab-pod-num { justify-content: flex-start; }
+  .ab-pod-num { font-size: 40px; }
+  .ab-pod-label { margin: 10px 0 6px; font-size: 13px; }
+  .ab-pod-note { margin: 0; font-size: 12.5px; }
+  .ab-deck { padding: 20px 16px 16px; border-radius: 24px; }
+  .ab-deck-head { gap: 14px; margin-bottom: 18px; }
+  .ab-deck-emblem { width: 50px; height: 50px; }
+  .ab-deck-name { font-size: 16px; }
+  .ab-deck-blurb { font-size: 12px; }
+  .ab-deck-tools { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .ab-tool { padding: 14px 4px 11px; border-radius: 16px; }
+  .ab-tool-ico { width: 44px; height: 44px; border-radius: 13px; }
+  .ab-tool-ico svg { width: 24px; height: 24px; }
+  .ab-tool-name { font-size: 10px; letter-spacing: 0.04em; }
+  .ab-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .ab-bento .is-wide { grid-column: 1 / -1; }
+  .ab-bento a, .ab-bento .is-wide a { padding: 16px; gap: 16px; border-radius: 22px; }
+  .ab-bento .ql-soc-ico { width: 48px; height: 48px; border-radius: 16px; }
+  .ab-bento .ql-soc-txt b { font-size: 15px; }
+  /* The logo bar closer under the hero, with bigger logos. */
+  .ab-ticker-k { margin-top: 26px; }
+  .ab-ticker-k + .logo-ticker-wrap { padding-top: 10px; }
+  .ab-ticker-k + .logo-ticker-wrap .ticker-logo { height: 46px; }
+  .ab-ticker-k + .logo-ticker-wrap .ticker-set { gap: 44px; }
+}
+
+/* Phones: the hero runs to the screen's edges, so the disc's glow and
+   orbits are cut there rather than pushing the page sideways. */
+@media (max-width: 640px) {
+  .ab-hero { width: 100vw; margin-inline: calc(50% - 50vw); padding-inline: calc(50vw - 50%); box-sizing: border-box; overflow-x: clip; }
+}
+
+/* ── Small phones (<=380px) ── */
+@media (max-width: 380px) {
+  /* YouTube's wide card: room for the subscriber count beside the pill. */
+  .ab-bento .is-wide a { gap: 10px; padding-inline: 12px; }
+  .ab-bento .is-wide .ql-soc-ico { width: 44px; height: 44px; border-radius: 14px; }
+  .ab-bento .ql-soc-cta { padding: 0 10px 0 12px; letter-spacing: 0.1em; }
+  .ab-title { font-size: 34px; }
+}
+
+/* ── Reduced motion: everything in place, nothing loops ── */
+@media (prefers-reduced-motion: reduce) {
+  .ab-rv, .ab-fact, .ab-halo-side li { opacity: 1; translate: none; transform: none; transition: none; }
+  .ab-halo-tap, .ab-halo-ripple, .ab-halo-tap b, .egg-burst i, .egg-twinkles i, .egg-confetti b, .xg-x.egg-x-ready, .egg-orb, .egg-orb::after, .egg-title, .egg-caption, .egg-caption-big, .ab-id-hang, .ab-id::before, .ab-id-orb, .ab-id-holo, .ab-glow, .ab-halo-pic, .ab-halo-glow, .ab-halo-core::before, .ab-halo-core::after, .ab-halo-orbit, .ab-halo-side li, .ab-halo-b, .ab-halo-wire::after, .ab-halo-ctas, .ab-wave, .ab-roles-reel, .ab-craft-orbit,
+  .ab-play-logo img, .ab-play-halo, .ab-spot::after, .ab-deck-radar, .ab-deck-emblem i, .ab-tool-ico, .ab-deck.is-in .ab-tool,
+  .ab-tx-quote span, .ab-tx-from, .ab-tx-stars i, .ab-tx-msg, .ab-cn-grid, .ab-cn-tag, .ab-cn-node::before,
+  .ab-words.is-in span { animation: none; }
+  .ab-words span { opacity: 1; }
+  .ab-tool { opacity: 1; }
+  .ab-halo-tap, .egg-burst, .egg-confetti i { display: none; }
+  .ab-cn-ring { display: none; }
+  .ab-cn-link, .ab-cn-node { transition: none; }
+  /* The saucer is simply there, its beam on and the stats held in it. */
+  .ab-ufo .ab-ufo-craft, .ab-ufo.is-in .ab-ufo-craft, .ab-ufo .ab-pod-float, .ab-ufo.is-in .ab-pod-float,
+  .ab-ufo .ab-pod-text > *, .ab-ufo.is-in .ab-pod-text > *,
+  .ab-ufo .ab-beam, .ab-ufo.is-in .ab-beam, .ab-ufo .ab-beam-pool, .ab-ufo.is-in .ab-beam-pool { animation: none; opacity: 1; transition: none; }
+  .ab-beam-rays::before, .ab-beam-rays::after, .ab-ufo-craft::before { animation: none; }
+  .ab-beam-dust, .ab-pod-spark, .ab-pod-twinkle { display: none; }
+  .ab-ufo .ab-pod-pad { visibility: visible; transition: none; }
+}

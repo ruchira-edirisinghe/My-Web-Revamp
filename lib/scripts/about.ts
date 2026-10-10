@@ -1,124 +1,18 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   about.ts - About page engine: testimonial carousel, space bg, preloader,
-   liquid cursor + SFX, ambient audio, mobile menu, logo ticker, bio canvas,
-   scroll-reveal + count-ups, gaming reveal, CV modal.
+   about.ts - About page engine: space bg, preloader, liquid cursor + SFX,
+   ambient audio, mobile menu, logo ticker, and the redesigned sections'
+   motion (reveal, card spotlight, count-ups). The testimonial
+   carousel and the CV modal are React state (components/about, AboutClient).
    (faithful port of styles/about/about.js + about.html inline CV-modal script)
    ════════════════════════════════════════ */
 import { initCursor } from './cursor';
 import { makeBag, makeDirtyClear } from './_util';
-import { initPreloaderFx } from './preloader-fx';
 import { initSpaceField3D } from './space-field';
 import { wireAmbientControls } from './ambient-audio';
 
 export function initAbout(): () => void {
   const bag = makeBag();
-  const basePath = '/'; // assets live at the site root under Next.js public/
-
-  /* ══════════ 1. TESTIMONIAL CAROUSEL (+ word reveal) ══════════ */
-  (function () {
-    const DURATION = 7000;
-    const N = 9;
-    let current = 0;
-    let timer = null;
-    let wordTimers: any[] = [];
-    const timeouts: any[] = [];
-    const later = (fn, ms) => { const id = setTimeout(fn, ms); timeouts.push(id); return id; };
-
-    const slides = document.querySelectorAll('.testi-slide');
-    const dots = document.querySelectorAll('.testi-dot');
-    const avs = document.querySelectorAll('.testi-avatar-thumb');
-    const curEl = document.getElementById('testi-cur');
-    const prog = document.getElementById('testi-prog');
-    const shell = document.getElementById('testi-shell');
-    if (!shell || !slides.length || !curEl || !prog) return;
-
-    function pad(n) { return String(n + 1).padStart(2, '0'); }
-
-    function prepareQuote(slide) {
-      const p = slide.querySelector('.testi-quote');
-      if (!p || p.dataset.wrapped) return;
-      const tokens = p.innerText.split(/(\s+)/);
-      p.innerHTML = tokens.map(function (token) {
-        if (/^\s+$/.test(token)) return token;
-        // innerText is decoded text; escape it before writing it back as HTML.
-        return '<span class="tq-word">' + token.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
-      }).join('');
-      p.dataset.wrapped = '1';
-    }
-
-    function cancelWordTimers() { wordTimers.forEach(t => clearTimeout(t)); wordTimers = []; }
-
-    function resetWords(slide) {
-      slide.querySelectorAll('.tq-word').forEach(w => w.classList.remove('tq-vis'));
-    }
-
-    function animateWords(slide) {
-      cancelWordTimers();
-      const words = slide.querySelectorAll('.tq-word');
-      const stagger = Math.min(30, 2000 / Math.max(words.length, 1));
-      words.forEach((w, i) => {
-        const delay = 120 + i * stagger;
-        w.style.setProperty('--wd', delay + 'ms');
-        wordTimers.push(setTimeout(() => { w.classList.add('tq-vis'); }, delay));
-      });
-    }
-
-    function showSlide(idx) {
-      const prev = current;
-      current = ((idx % N) + N) % N;
-
-      prepareQuote(slides[current]);
-      resetWords(slides[prev]);
-      cancelWordTimers();
-
-      slides[prev].classList.remove('active');
-      slides[prev].classList.add('exit');
-      later(() => { slides[prev].classList.remove('exit'); }, 600);
-
-      slides[current].classList.add('active');
-      animateWords(slides[current]);
-
-      curEl.style.opacity = '0';
-      later(() => { curEl.textContent = pad(current); curEl.style.opacity = '1'; }, 180);
-
-      avs.forEach((a, i) => a.classList.toggle('current-av', i === current));
-      dots.forEach((d, i) => d.classList.toggle('active', i === current));
-
-      // scaleX rather than width: the bar fills on the compositor, no layout.
-      prog.style.transition = 'none';
-      prog.style.transform = 'scaleX(0)';
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          prog.style.transition = 'transform ' + DURATION + 'ms linear';
-          prog.style.transform = 'scaleX(1)';
-        });
-      });
-    }
-
-    function startAuto() {
-      clearInterval(timer);
-      timer = setInterval(() => { showSlide(current + 1); }, DURATION);
-      prog.style.transition = 'transform ' + DURATION + 'ms linear';
-      prog.style.transform = 'scaleX(1)';
-    }
-
-    const prevBtn = document.getElementById('testi-prev');
-    const nextBtn = document.getElementById('testi-next');
-    if (prevBtn) bag.on(prevBtn, 'click', e => { e.stopPropagation(); showSlide(current - 1); startAuto(); });
-    if (nextBtn) bag.on(nextBtn, 'click', e => { e.stopPropagation(); showSlide(current + 1); startAuto(); });
-
-    dots.forEach((dot, i) => bag.on(dot, 'click', () => { showSlide(i); startAuto(); }));
-    avs.forEach((av, i) => bag.on(av, 'click', () => { showSlide(i); startAuto(); }));
-
-    // Boot
-    prepareQuote(slides[0]);
-    slides[0].classList.add('active');
-    animateWords(slides[0]);
-    startAuto();
-
-    bag.add(() => { clearInterval(timer); cancelWordTimers(); timeouts.forEach(clearTimeout); });
-  })();
 
   /* ══════════ 2. SPACE BACKGROUND (AURORA + STARS + SHOOTERS) ══════════ */
   (function () {
@@ -213,109 +107,7 @@ export function initAbout(): () => void {
     bag.add(() => { running = false; cancelAnimationFrame(rafId); clearInterval(shooterInterval); });
   })();
 
-  /* ══════════ 3. PRELOADER (water-fill logo) ══════════ */
-  (function () {
-    const preloader = document.getElementById('preloader');
-    initPreloaderFx(bag);
-    const canvas = document.getElementById('preloader-canvas');
-    if (!preloader || !canvas || preloader.style.display === 'none') return;
-    const ctx = canvas.getContext('2d');
-    const progressFill = document.getElementById('progress-fill');
-    const splitTop = document.getElementById('split-top');
-    const splitBottom = document.getElementById('split-bottom');
-
-    const CW = 900, CH = 240;
-    canvas.width = CW; canvas.height = CH;
-
-    const DURATION = 2200;
-    const HOLD_MS = 300;
-    const SPLIT_MS = 900;
-
-    let startTime = null, lastTs = 0, fillPct = 0, wavePhase = 0;
-    const logoImg = new Image(); let logoReady = false;
-    let rafId = 0, alive = true;
-    const timeouts: any[] = [];
-    const later = (fn, ms) => { const id = setTimeout(fn, ms); timeouts.push(id); return id; };
-
-    function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
-
-    const starsContainer = document.getElementById('preloader-stars');
-    const createdStars: HTMLElement[] = [];
-    if (starsContainer) {
-      for (let i = 0; i < 55; i++) {
-        const star = document.createElement('div');
-        star.className = 'preloader-star';
-        star.style.left = `${Math.random() * 100}%`;
-        star.style.top = `${Math.random() * 100}%`;
-        const size = 1 + Math.pow(Math.random(), 1.6) * 2;
-        star.style.width = `${size}px`; star.style.height = `${size}px`;
-        star.style.setProperty('--star-opacity', 0.35 + Math.random() * 0.45);
-        star.style.animation = `star-twinkle ${3 + Math.random() * 4}s infinite ${Math.random() * 6}s ease-in-out`;
-        starsContainer.appendChild(star);
-        createdStars.push(star);
-      }
-    }
-
-    function drawFrame(ts) {
-      if (!alive) return;
-      if (!startTime) { startTime = ts; lastTs = ts; }
-      const dt = Math.min(ts - lastTs, 50); lastTs = ts;
-      const raw = Math.min((ts - startTime) / DURATION, 1);
-      fillPct = ease(raw);
-      wavePhase += 0.045 * (dt / 16.667);
-
-      progressFill.style.width = (fillPct * 100) + '%';
-      ctx.clearRect(0, 0, CW, CH);
-
-      if (logoReady) { ctx.save(); ctx.globalAlpha = 0.1; ctx.drawImage(logoImg, 0, 0, CW, CH); ctx.restore(); }
-
-      const waterTop = CH * (1 - fillPct);
-      const amp = 5 + (1 - fillPct) * 9;
-      ctx.save(); ctx.beginPath(); ctx.moveTo(0, waterTop);
-      for (let x = 0; x <= CW; x += 3) {
-        const y = waterTop + Math.sin((x / CW) * Math.PI * 5 + wavePhase) * amp + Math.sin((x / CW) * Math.PI * 9 + wavePhase * 1.5) * amp * 0.35;
-        ctx.lineTo(x, y);
-      }
-      ctx.lineTo(CW, CH); ctx.lineTo(0, CH); ctx.closePath(); ctx.clip();
-      if (logoReady) { ctx.globalAlpha = 1; ctx.drawImage(logoImg, 0, 0, CW, CH); ctx.globalCompositeOperation = 'source-atop'; ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, CW, CH); }
-      else { ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.fillRect(0, 0, CW, CH); }
-      ctx.restore();
-
-      ctx.save(); ctx.beginPath(); ctx.moveTo(0, waterTop);
-      for (let x = 0; x <= CW; x += 3) {
-        const y = waterTop + Math.sin((x / CW) * Math.PI * 5 + wavePhase) * amp + Math.sin((x / CW) * Math.PI * 9 + wavePhase * 1.5) * amp * 0.35;
-        ctx.lineTo(x, y);
-      }
-      ctx.strokeStyle = 'rgba(255,255,255,0.5)'; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
-
-      if (raw < 1) { rafId = requestAnimationFrame(drawFrame); }
-      else {
-        ctx.clearRect(0, 0, CW, CH);
-        if (logoReady) { ctx.save(); ctx.drawImage(logoImg, 0, 0, CW, CH); ctx.globalCompositeOperation = 'source-atop'; ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, CW, CH); ctx.restore(); }
-        progressFill.style.width = '100%';
-        later(() => {
-          preloader.style.opacity = '0';
-          preloader.style.pointerEvents = 'none';
-          requestAnimationFrame(() => {
-            if (splitTop) splitTop.classList.add('open');
-            if (splitBottom) splitBottom.classList.add('open');
-          });
-          later(() => {
-            preloader.style.display = 'none';
-            if (splitTop) { splitTop.classList.add('gone'); splitTop.style.display = 'none'; }
-            if (splitBottom) { splitBottom.classList.add('gone'); splitBottom.style.display = 'none'; }
-          }, SPLIT_MS + 100);
-        }, HOLD_MS);
-      }
-    }
-
-    logoImg.onload = () => { logoReady = true; };
-    logoImg.onerror = () => { logoReady = false; };
-    logoImg.src = basePath + 'Images/longlogo.svg';
-    rafId = requestAnimationFrame(drawFrame);
-
-    bag.add(() => { alive = false; cancelAnimationFrame(rafId); timeouts.forEach(clearTimeout); createdStars.forEach(s => s.remove()); });
-  })();
+  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/signature-loader.ts). */
 
   /* ══════════ 4. LIQUID CURSOR, AMBIENT AUDIO, SFX & MOBILE MENU ══════════ */
   (function () {
@@ -398,7 +190,7 @@ export function initAbout(): () => void {
       } catch (e) { }
     }
 
-    document.querySelectorAll('.nav-link,.nav-cta,.about-block,.skill-tag,.stat-pill,.so-btn,footer a').forEach(el => {
+    document.querySelectorAll('.nav-link,.nav-cta,.ab-craft,.ab-cn-node,.ql-bento a,.ab-tx-btn,.so-btn,footer a').forEach(el => {
       bag.on(el, 'mouseenter', playHover);
       bag.on(el, 'click', () => playClick(false));
     });
@@ -569,243 +361,83 @@ export function initAbout(): () => void {
     bag.add(() => { anim?.cancel(); anim = null; });
   })();
 
-  /* ══════════ 7. BIO REVEAL + BIO CANVAS ══════════ */
+  /* ══════════ 7. REVEAL, CARD SPOTLIGHT, COUNT-UPS ══════════ */
   (function () {
-    const bioTargets = document.querySelectorAll('.bio-greeting-line, .bio-para');
-    let revealObs = null;
-    if ('IntersectionObserver' in window) {
-      revealObs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('bio-visible');
-            revealObs.unobserve(entry.target);
-          }
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Reveal: .ab-rv (and each bio paragraph, whose words then fade in) gets
+    // .is-in the first time it's on screen.
+    const rv = document.querySelectorAll('.ab-rv, .ab-words');
+    if (!('IntersectionObserver' in window)) rv.forEach((el) => el.classList.add('is-in'));
+    else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
         });
-      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-      bioTargets.forEach(el => revealObs.observe(el));
-    } else {
-      bioTargets.forEach(el => el.classList.add('bio-visible'));
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      rv.forEach((el) => io.observe(el));
+      bag.add(() => io.disconnect());
     }
 
-    const canvas = document.getElementById('bio-canvas');
-    if (!canvas) { bag.add(() => { if (revealObs) revealObs.disconnect(); }); return; }
-    const ctx = canvas.getContext('2d');
-    let W, H;
-    function resize() {
-      const section = canvas.parentElement;
-      W = canvas.width = section.offsetWidth;
-      H = canvas.height = section.offsetHeight;
-    }
-    resize();
-    bag.on(window, 'resize', resize);
-
-    const ORBS = Array.from({ length: 7 }, () => ({
-      x: Math.random(), y: Math.random(), r: 80 + Math.random() * 140,
-      vx: (Math.random() - 0.5) * 0.00012, vy: (Math.random() - 0.5) * 0.00008,
-      hue: Math.random() < 0.6 ? 200 : 260, alpha: 0.04 + Math.random() * 0.06,
-      phase: Math.random() * Math.PI * 2, phaseSpd: 0.002 + Math.random() * 0.003,
-    }));
-
-    const PARTICLES = Array.from({ length: 40 }, () => ({
-      x: Math.random(), y: Math.random(), r: 0.5 + Math.random() * 1.2,
-      vx: (Math.random() - 0.5) * 0.00008, vy: -0.00004 - Math.random() * 0.00006,
-      alpha: 0.2 + Math.random() * 0.5, phase: Math.random() * Math.PI * 2,
-      phaseSpd: 0.01 + Math.random() * 0.015,
-    }));
-
-    let bioRaf = 0;
-    let alive = true;
-    function drawBio(ts) {
-      if (!alive) return;
-      bioRaf = requestAnimationFrame(drawBio);
-      ctx.clearRect(0, 0, W, H);
-
-      ORBS.forEach(o => {
-        o.x += o.vx; o.y += o.vy;
-        if (o.x < -0.2) o.x = 1.2;
-        if (o.x > 1.2) o.x = -0.2;
-        if (o.y < -0.2) o.y = 1.2;
-        if (o.y > 1.2) o.y = -0.2;
-        o.phase += o.phaseSpd;
-        const pulse = 0.7 + 0.3 * Math.sin(o.phase);
-        const g = ctx.createRadialGradient(o.x * W, o.y * H, 0, o.x * W, o.y * H, o.r * pulse);
-        g.addColorStop(0, `hsla(${o.hue},80%,70%,${o.alpha * pulse})`);
-        g.addColorStop(1, `hsla(${o.hue},80%,60%,0)`);
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.arc(o.x * W, o.y * H, o.r * pulse, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      PARTICLES.forEach(p => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.y < -0.05) { p.y = 1.05; p.x = Math.random(); }
-        if (p.x < 0 || p.x > 1) p.vx *= -1;
-        p.phase += p.phaseSpd;
-        const a = p.alpha * (0.5 + 0.5 * Math.sin(p.phase));
-        ctx.beginPath();
-        ctx.arc(p.x * W, p.y * H, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(140,210,255,${a})`;
-        ctx.fill();
-      });
-
-      const scanY = (ts * 0.00006 % 1) * H;
-      const scanGrad = ctx.createLinearGradient(0, scanY - 60, 0, scanY + 60);
-      scanGrad.addColorStop(0, 'rgba(140,210,255,0)');
-      scanGrad.addColorStop(0.5, 'rgba(140,210,255,0.025)');
-      scanGrad.addColorStop(1, 'rgba(140,210,255,0)');
-      ctx.fillStyle = scanGrad;
-      ctx.fillRect(0, scanY - 60, W, 120);
-    }
-
-    const bioSection = canvas.parentElement;
-    const canvasObs = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        if (!bioRaf) bioRaf = requestAnimationFrame(drawBio);
-      } else {
-        cancelAnimationFrame(bioRaf);
-        bioRaf = 0;
-      }
-    }, { threshold: 0 });
-    canvasObs.observe(bioSection);
-
-    bag.add(() => {
-      alive = false;
-      cancelAnimationFrame(bioRaf);
-      if (revealObs) revealObs.disconnect();
-      canvasObs.disconnect();
+    // The UFO scene (the stats) plays out in sequence, so it waits until a
+    // good part of it is on screen.
+    const SCENE = { threshold: 0.3 };
+    document.querySelectorAll('.ab-ufo').forEach((el) => {
+      if (!('IntersectionObserver' in window)) { el.classList.add('is-in'); return; }
+      const io = new IntersectionObserver(([e]) => {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        el.classList.add('is-in');
+      }, SCENE);
+      io.observe(el);
+      bag.add(() => io.disconnect());
     });
-  })();
 
-  /* ══════════ 8. SCROLL REVEAL + COUNT-UPS ══════════ */
-  (function () {
-    const observers: IntersectionObserver[] = [];
-    const timeouts: any[] = [];
+    // Count-ups: each [data-count] runs from 0 as its capsule is beamed down
+    // (its --d after the scene starts).
+    const timers: any[] = [];
     let alive = true;
-
-    const showAll = function () {
-      document.querySelectorAll('.about-grid, .about-block, .techstack-heading, .stack-panel, .snode')
-        .forEach(el => el.classList.add('sr-vis'));
-    };
-
-    if (!('IntersectionObserver' in window)) { showAll(); return; }
-
-    const opts = { threshold: 0.07, rootMargin: '0px 0px -30px 0px' };
-
-    const gridObs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('sr-vis'); gridObs.unobserve(e.target); } });
-    }, opts);
-    document.querySelectorAll('.about-grid').forEach(el => gridObs.observe(el));
-    observers.push(gridObs);
-
-    const blockObs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('sr-vis'); blockObs.unobserve(e.target); } });
-    }, opts);
-    document.querySelectorAll('.about-block').forEach((el, i) => { el.style.setProperty('--sr-delay', (i * 0.12) + 's'); blockObs.observe(el); });
-    observers.push(blockObs);
-
-    const headObs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('sr-vis'); headObs.unobserve(e.target); } });
-    }, opts);
-    document.querySelectorAll('.techstack-heading').forEach(el => headObs.observe(el));
-    observers.push(headObs);
-
-    const panelObs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('sr-vis'); panelObs.unobserve(e.target); } });
-    }, opts);
-    document.querySelectorAll('.stack-panel').forEach((el, i) => { el.style.setProperty('--sr-delay', (i * 0.1) + 's'); panelObs.observe(el); });
-    observers.push(panelObs);
-
-    const snodeObs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('sr-vis'); snodeObs.unobserve(e.target); } });
-    }, { threshold: 0.05, rootMargin: '0px 0px -10px 0px' });
-    document.querySelectorAll('.snode').forEach((el, i) => { el.style.setProperty('--sr-delay', ((i % 9) * 0.06) + 's'); snodeObs.observe(el); });
-    observers.push(snodeObs);
-
-    const statObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
+    document.querySelectorAll('.ab-pod').forEach((g) => {
+      const b = g.querySelector('[data-count]') as HTMLElement | null;
+      if (!b || still || !('IntersectionObserver' in window)) return;
+      const target = parseInt(b.dataset.count, 10);
+      const scene = g.closest('.ab-ufo');
+      b.textContent = '0';
+      const io = new IntersectionObserver(([e]) => {
         if (!e.isIntersecting) return;
-        const item = e.target;
-        item.classList.add('sr-vis');
-        const numEl = item.querySelector('.stat-number, .ufo-stat-number');
-        if (!numEl) { statObs.unobserve(item); return; }
-        const target = parseInt(numEl.getAttribute('data-target'), 10);
-        const duration = 1400;
-        let start = null;
-        const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-        const delay = parseFloat(item.style.getPropertyValue('--sr-delay') || '0') * 1000;
-        timeouts.push(setTimeout(() => {
+        io.disconnect();
+        const delay = parseFloat(getComputedStyle(g).getPropertyValue('--d')) * 1000 || 0;
+        timers.push(setTimeout(() => {
+          let t0 = 0;
           requestAnimationFrame(function step(ts) {
             if (!alive) return;
-            if (!start) start = ts;
-            const progress = Math.min((ts - start) / duration, 1);
-            numEl.textContent = Math.floor(easeOut(progress) * target);
-            if (progress < 1) requestAnimationFrame(step);
-            else numEl.textContent = target;
+            if (!t0) t0 = ts;
+            const p = Math.min((ts - t0) / 1600, 1);
+            b.textContent = String(Math.round((1 - Math.pow(1 - p, 3)) * target));
+            if (p < 1) requestAnimationFrame(step);
           });
-        }, delay));
-        statObs.unobserve(item);
+        }, delay + 650));
+      }, scene ? SCENE : { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      io.observe(scene || g);
+      bag.add(() => io.disconnect());
+    });
+    bag.add(() => { alive = false; timers.forEach(clearTimeout); });
+
+    // Spotlight: cards follow the pointer with a soft glow (--mx / --my).
+    if (window.matchMedia('(hover: hover)').matches) {
+      document.querySelectorAll('.ab-spot').forEach((el: HTMLElement) => {
+        bag.on(el, 'pointermove', (e: PointerEvent) => {
+          const r = el.getBoundingClientRect();
+          el.style.setProperty('--mx', `${e.clientX - r.left}px`);
+          el.style.setProperty('--my', `${e.clientY - r.top}px`);
+        });
       });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('.stat-item').forEach(el => { el.classList.remove('sr-vis'); statObs.observe(el); });
-    observers.push(statObs);
-
-    const pillarObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const pillar = e.target;
-        pillar.classList.add('pillar-vis');
-        const numEl = pillar.querySelector('.pillar-number');
-        if (!numEl) { pillarObs.unobserve(pillar); return; }
-        const target = parseInt(numEl.getAttribute('data-target'), 10);
-        const duration = 1600;
-        let start = null;
-        const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-        const delay = parseFloat(pillar.style.getPropertyValue('--pillar-delay') || '0') * 1000;
-        timeouts.push(setTimeout(() => {
-          requestAnimationFrame(function step(ts) {
-            if (!alive) return;
-            if (!start) start = ts;
-            const progress = Math.min((ts - start) / duration, 1);
-            numEl.textContent = Math.floor(easeOut(progress) * target);
-            if (progress < 1) requestAnimationFrame(step);
-            else numEl.textContent = target;
-          });
-        }, delay));
-        pillarObs.unobserve(pillar);
-      });
-    }, { threshold: 0.25, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.ufo-pillar').forEach(el => pillarObs.observe(el));
-    observers.push(pillarObs);
-
-    bag.add(() => { alive = false; observers.forEach(o => o.disconnect()); timeouts.forEach(clearTimeout); });
-  })();
-
-  /* ══════════ 10. GAMING REVEAL ══════════ */
-  (function () {
-    const observers: IntersectionObserver[] = [];
-    const ghObs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('gs-vis'); ghObs.unobserve(e.target); } });
-    }, { threshold: 0.1 });
-    const gh = document.getElementById('gaming-heading');
-    if (gh) ghObs.observe(gh);
-    observers.push(ghObs);
-
-    const gcCards = document.querySelectorAll('.platform-card');
-    if ('IntersectionObserver' in window) {
-      const gcObs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('gc-vis'); gcObs.unobserve(e.target); } });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-      gcCards.forEach((c, i) => { c.style.setProperty('--gc-delay', (i * 0.08) + 's'); gcObs.observe(c); });
-      observers.push(gcObs);
-    } else {
-      gcCards.forEach(c => c.classList.add('gc-vis'));
     }
-
-    bag.add(() => observers.forEach(o => o.disconnect()));
   })();
 
-  /* (11. The gaming platform cards are outside links: components/ExternalGuard.tsx asks first.) */
+  /* (The gaming channel cards are outside links: components/ExternalGuard.tsx asks first.) */
 
   return () => bag.dispose();
 }
