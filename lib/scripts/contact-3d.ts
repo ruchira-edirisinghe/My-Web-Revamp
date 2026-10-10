@@ -1,6 +1,8 @@
 // @ts-nocheck
 /* ════════════════════════════════════════
-   contact-3d.ts - the Contact page's two three.js figures.
+   contact-3d.ts - the site's three.js figures: the Contact page's two, the
+   astronaut peeking over the Experience page's footer and the About page's
+   UFO.
    Loaded on demand by components/pages/contact/Figure3D.tsx.
 
    'desk'      - hero: the developer from the site's old Lottie, at the desk
@@ -12,8 +14,10 @@
                  sketching a trail of stardust with his golden pencil.
    'peek'      - the same astronaut, chest up, waving over the footer at the
                  end of the Experience page (components/AstroPeek.tsx).
+   'ufo'       - the flying saucer beaming down the About page's stats
+                 (components/about/AboutStats.tsx), built in Blender.
 
-   Both are single sculpted meshes with no skeleton, so their limbs and heads
+   The people are single sculpted meshes with no skeleton, so their limbs and heads
    are bent in the vertex shader. Visitors can drag to turn either figure and
    tap it to set off one of its actions. Rendering stops while a figure is
    off screen or the tab is hidden; with reduced motion each draws one still
@@ -132,7 +136,7 @@ function actions(list) {
 }
 
 /* ── Stage: renderer, camera, lights, loop and clean-up ── */
-function stage(host, { fov, target, from }) {
+function stage(host, { fov, target, from, hostFrame = false }) {
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'low-power' });
   // Capped, and lowered further by mountFigure if frames start to drop.
   let dpr = min(window.devicePixelRatio || 1, 1.5);
@@ -172,7 +176,12 @@ function stage(host, { fov, target, from }) {
     const canvas = renderer.domElement;
     const w = canvas.clientWidth || host.clientWidth || 1, h = canvas.clientHeight || host.clientHeight || 1;
     renderer.setSize(w, h, false);
-    camera.aspect = w / h;
+    // hostFrame: the figure is framed to the host box, and the bigger canvas
+    // around it just shows more of the same view (room for effects to spill
+    // past the box without the figure moving or shrinking).
+    const fw = hostFrame ? host.clientWidth || w : w, fh = hostFrame ? host.clientHeight || h : h;
+    camera.aspect = fw / fh;
+    if (hostFrame) camera.setViewOffset(fw, fh, canvas.offsetLeft, canvas.offsetTop, w, h);
     const half = min(fov * D, 2 * Math.atan(Math.tan((fov * D) / 2) * camera.aspect)) / 2;
     const dist = radius / Math.sin(half);
     camera.near = max(0.05, dist - radius * 1.5);
@@ -385,9 +394,11 @@ ${BEND_MAIN}
    the pencil and every vertex carries a weight (`_wave`): 1 for the arm and
    glove, easing to 0 across the shoulder, 0 for the pencil and the rest of
    him. The arm turns rigidly about the shoulder by that weight, so nothing
-   stretches. A short gold sleeve fills the gap the glove leaves in the pencil
-   and a cap closes the glove's fist. The model is mirrored, so the waving arm
-   is his right and the pencil stays in his left hand. */
+   stretches. The model's own four-fingered mitts are taken off in that copy
+   and smooth five-fingered gloves (gloves.glb) go on instead, the waving one
+   weighted to turn with the arm. Short gold sleeves fill the gaps the old
+   mitts leave in the pencil. The model is mirrored, so the waving arm is his
+   right and the pencil stays in his left hand. */
 const PEEK_BEND = /* glsl */ `
   attribute float _wave;
   uniform float uWave; uniform float uSwing; uniform float uLift; uniform float uNod; uniform float uTurn;
@@ -402,6 +413,10 @@ const PEEK_BEND = /* glsl */ `
 const PEEK_BEND_MAIN = /* glsl */ `
   vec3 p0 = position;
   float wH = smoothstep(0.22, 0.27, p0.y) * (1.0 - smoothstep(0.08, 0.14, p0.z)) * smoothstep(-0.17, -0.1, p0.x);
+#ifdef PEEK_GLOVE
+  // The gripping glove's fingers reach up into the head's box; keep them on the pencil.
+  wH = 0.0;
+#endif
   mat3 rA = rotAxis(vec3(1.0, 0.0, 0.0), uWave * _wave) * rotAxis(vec3(0.0, 0.0, 1.0), uLift * _wave) * rotAxis(vec3(0.0, 1.0, 0.0), uSwing * _wave);
   mat3 rH = rotAxis(vec3(0.0, 1.0, 0.0), uTurn * wH) * rotAxis(vec3(0.0, 0.0, 1.0), uNod * wH);
   const vec3 shoulder = vec3(0.017, 0.066, -0.221);
@@ -412,9 +427,87 @@ const PEEK_SHOULDER = new THREE.Vector3(0.017, 0.066, -0.221);
 const PEEK_PENCIL_END = new THREE.Vector3(0.198, -0.199, -0.443);
 const PEEK_PENCIL_DIR = new THREE.Vector3(-0.0029, 0.5747, 0.8184).normalize();
 
+// Behind his shoulders, where the tap's burst of icons comes out (model space).
+const PEEK_BACK = new THREE.Vector3(-0.16, 0.14, -0.04);
+
+/* A four-point star, for the sparkle at the pencil's tip. */
+function starTexture() {
+  const c = document.createElement('canvas');
+  c.width = c.height = 128;
+  const g = c.getContext('2d');
+  const r = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  r.addColorStop(0, 'rgba(255,255,255,1)');
+  r.addColorStop(0.25, 'rgba(255,255,255,0.6)');
+  r.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = r;
+  g.beginPath();
+  g.moveTo(64, 0);
+  g.quadraticCurveTo(70, 58, 128, 64);
+  g.quadraticCurveTo(70, 70, 64, 128);
+  g.quadraticCurveTo(58, 70, 0, 64);
+  g.quadraticCurveTo(58, 58, 64, 0);
+  g.fill();
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  return t;
+}
+
+/* The tap's burst: icons for design, graphics, games and code pop out from
+   behind him and fly off across the page, turning and fading as they go.
+   Plain elements over the page (fixed, so they can leave the canvas). */
+const BURST_ICONS = [
+  ['#bc6fff', 'M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l7.586 7.586M11 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'],
+  ['#ff6bd5', 'M12 22a10 10 0 1 1 10-10c0 2.8-2.2 3-3.5 3H16a2 2 0 0 0-1.5 3.3A2.2 2.2 0 0 1 12 22zM7.5 11.5h.01M10.5 7.5h.01M15.5 7.5h.01'],
+  ['#6dff8a', 'M6 11h4M8 9v4M15 12h.01M18 10h.01M17.3 5H6.7a4 4 0 0 0-4 3.6L2 15a3 3 0 0 0 5.2 2L9 15h6l1.8 2a3 3 0 0 0 5.2-2l-.7-6.4A4 4 0 0 0 17.3 5z'],
+  ['#5ce0ff', 'm16 18 6-6-6-6M8 6l-6 6 6 6'],
+  ['#ffc94d', 'M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'],
+  ['#8cd2ff', 'M4 17l6-6-6-6M12 19h8'],
+  ['#c39bff', 'M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7zM3.3 7 12 12l8.7-5M12 22V12'],
+  ['#ff8a8a', 'M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z'],
+];
+const burstV = new THREE.Vector3();
+function burstIcons(st, world) {
+  const r = st.renderer.domElement.getBoundingClientRect();
+  burstV.copy(world).project(st.camera);
+  const x0 = r.left + ((burstV.x + 1) / 2) * r.width, y0 = r.top + ((1 - burstV.y) / 2) * r.height;
+  const n = 14;
+  for (let k = 0; k < n; k++) {
+    const [c, d] = BURST_ICONS[k % BURST_ICONS.length];
+    const el = document.createElement('span');
+    el.setAttribute('aria-hidden', 'true');
+    el.style.cssText = `position:fixed;left:${x0}px;top:${y0}px;z-index:1;width:40px;height:40px;margin:-20px 0 0 -20px;display:grid;place-items:center;border-radius:13px;pointer-events:none;color:${c};background:rgba(12,14,32,.78);border:1px solid ${c}66;box-shadow:0 0 18px ${c}55;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);`;
+    el.innerHTML = `<svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"/></svg>`;
+    // On the body under <main> (z-index 2), so they fly out from behind him.
+    document.body.appendChild(el);
+    // Fanned out upwards and to the sides, each at its own pace.
+    const a = (-180 + (k + Math.random() * 0.8) * (180 / n)) * D;
+    const dist = 160 + Math.random() * 260;
+    const dx = Math.cos(a) * dist, dy = Math.sin(a) * dist - 40;
+    const spin = (Math.random() - 0.5) * 300, s = 0.8 + Math.random() * 0.45;
+    const anim = el.animate([
+      { transform: 'translate(0,0) scale(0.2) rotate(0deg)', opacity: 0 },
+      { transform: `translate(${dx * 0.3}px,${dy * 0.3}px) scale(${s}) rotate(${spin * 0.3}deg)`, opacity: 1, offset: 0.2 },
+      { transform: `translate(${dx * 0.75}px,${dy * 0.75 + 10}px) scale(${s * 0.9}) rotate(${spin * 0.75}deg)`, opacity: 1, offset: 0.6 },
+      { transform: `translate(${dx}px,${dy + 30}px) scale(${s * 0.7}) rotate(${spin}deg)`, opacity: 0 },
+    ], { duration: 1500 + Math.random() * 900, delay: k * 35, easing: 'cubic-bezier(.2,.7,.3,1)', fill: 'both' });
+    anim.onfinish = () => el.remove();
+  }
+}
+
 async function buildPeek(st, base) {
-  const gltf = await new GLTFLoader().loadAsync(base + 'astronaut-wave.glb');
+  const loader = new GLTFLoader();
+  const [gltf, gloves] = await Promise.all([loader.loadAsync(base + 'astronaut-wave.glb'), loader.loadAsync(base + 'gloves.glb')]);
   const model = gltf.scene;
+  // The five-fingered gloves (scripts/build-gloves.py) go on in model space:
+  // the waving one is weighted to turn with the arm, the other stays on the pencil.
+  for (const g of [...gloves.scene.children]) {
+    const w = g.name.includes('Wave') ? 1 : 0;
+    g.traverse((n) => {
+      if (n.isMesh) n.userData.glove = true;
+      if (n.isMesh) n.geometry.setAttribute('_wave', new THREE.Float32BufferAttribute(new Float32Array(n.geometry.attributes.position.count).fill(w), 1));
+    });
+    model.add(g);
+  }
   const u = { uWave: { value: 0 }, uSwing: { value: 0 }, uLift: { value: 0 }, uNod: { value: 0 }, uTurn: { value: 0 } };
   model.traverse((n) => {
     if (!n.isMesh) return;
@@ -422,6 +515,8 @@ async function buildPeek(st, base) {
     const m = n.material;
     m.envMapIntensity = 0.9;
     m.side = THREE.DoubleSide;
+    const glove = !!n.userData.glove;
+    if (glove) m.defines = { ...m.defines, PEEK_GLOVE: '' };
     m.onBeforeCompile = (sh) => {
       Object.assign(sh.uniforms, u);
       sh.vertexShader = sh.vertexShader
@@ -433,7 +528,7 @@ ${PEEK_BEND_MAIN}
   transformed = shoulder + rA * (transformed - shoulder);
   transformed = neck + rH * (transformed - neck);`);
     };
-    m.customProgramCacheKey = () => 'xp-astro-peek';
+    m.customProgramCacheKey = () => (glove ? 'xp-astro-peek-glove' : 'xp-astro-peek');
   });
   // A gold core along the pencil where the glove used to grip it, which shows
   // through the gap the glove leaves behind.
@@ -444,6 +539,10 @@ ${PEEK_BEND_MAIN}
   core.position.copy(PEEK_PENCIL_END).addScaledVector(PEEK_PENCIL_DIR, 0.37);
   core.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), PEEK_PENCIL_DIR);
   model.add(core);
+  // ...and another under the other glove, where the old mitt was taken off.
+  const core2 = core.clone();
+  core2.position.copy(PEEK_PENCIL_END).addScaledVector(PEEK_PENCIL_DIR, 0.67);
+  model.add(core2);
   model.scale.z = -1;
 
   const fig = new THREE.Group();
@@ -456,6 +555,20 @@ ${PEEK_BEND_MAIN}
   const tip = new THREE.Object3D();
   tip.position.set(0.195, 0.44, 0.467);
   model.add(tip);
+  // A little magic at the tip: a pulsing glow, a turning four-point star and
+  // three sparks circling it, all running through the trail's colours.
+  const dotTex = dotTexture();
+  const glowMat = (map, size) => {
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true }));
+    sp.scale.setScalar(size);
+    sp.renderOrder = 3;
+    tip.add(sp);
+    return sp;
+  };
+  const tipGlow = glowMat(dotTex, 0.16);
+  const tipStar = glowMat(starTexture(), 0.2);
+  const tipSparks = [0, 1, 2].map(() => glowMat(dotTex, 0.035));
+  const tipCol = new THREE.Color();
   const dust = stardust(220, dotTexture(), 0.06);
   st.scene.add(dust.points);
   const tipW = new THREE.Vector3(), lastTip = new THREE.Vector3(), vel = new THREE.Vector3();
@@ -507,11 +620,30 @@ ${PEEK_BEND_MAIN}
     }
     lastTip.copy(tipW);
     dust.update(dt);
+
+    const h = (t * 0.35) % TRAIL.length, h0 = Math.floor(h);
+    tipCol.copy(TRAIL[h0]).lerp(TRAIL[(h0 + 1) % TRAIL.length], h - h0);
+    const pulse = 0.5 + 0.5 * sin(t * 3.2);
+    tipGlow.material.color.copy(tipCol);
+    // Kept small, so the star stays inside the canvas when the tip is near its top corner.
+    const grow = Math.min(1.15, boost ** 0.4);
+    tipGlow.scale.setScalar((0.08 + pulse * 0.03) * grow);
+    tipGlow.material.opacity = 0.75 + pulse * 0.25;
+    tipStar.material.color.copy(tipCol).lerp(WHITE, 0.45);
+    tipStar.material.rotation = t * 0.9;
+    tipStar.scale.setScalar((0.085 + (1 - pulse) * 0.04) * grow);
+    tipSparks.forEach((sp, k) => {
+      const a = t * 2.4 + (k * Math.PI * 2) / 3;
+      sp.position.set(Math.cos(a) * 0.04, Math.sin(a * 1.3) * 0.016, Math.sin(a) * 0.04);
+      sp.material.color.copy(TRAIL[(h0 + k + 1) % TRAIL.length]);
+      sp.material.opacity = 0.6 + 0.4 * sin(t * 5 + k * 2);
+    });
   }
 
   function act(t) {
     if (!moves.start(t)) return;
     fig.updateMatrixWorld(true);
+    burstIcons(st, model.localToWorld(PEEK_BACK.clone()));
     tip.getWorldPosition(tipW);
     for (let k = 0; k < 40; k++) {
       vel.set(Math.random() - 0.5, Math.random() * 0.8, Math.random() - 0.5).normalize().multiplyScalar(0.3 * (0.4 + Math.random() * 0.6));
@@ -520,6 +652,132 @@ ${PEEK_BEND_MAIN}
   }
 
   return { frame, act, hit: model, busy: (t) => !!moves.at(t) || t < RAISE };
+}
+
+/* ════════════ The UFO ════════════ */
+
+/* Built in Blender (scripts/build-ufo.py) after the site's old UFO artwork,
+   for the About page's "The story so far" (components/about/AboutStats.tsx).
+   It flies in over the stats and holds its tractor beam on them; the beam and
+   the stats it beams down are the page's own markup. The parts are restyled
+   here by material name: the rim runs through the site's gradient, the
+   lights under the hull chase round, the portholes breathe and the alien in
+   the dome keeps an eye on the visitor. A tap fires the beam again or sends
+   the saucer into a spin; the running one is mirrored on the section as
+   data-act so the page can join in. Model space: +Y up, the alien looks out
+   along +Z. */
+const RIM = ['#5ce0ff', '#bc6fff', '#ff6bd5', '#6dff8a', '#5ce0ff'].map((c) => new THREE.Color(c));
+const CYAN = new THREE.Color('#5ce0ff'), VIOLET = new THREE.Color('#bc6fff'), WHITE = new THREE.Color('#ffffff');
+
+async function buildUfo(st, base) {
+  const gltf = await new GLTFLoader().loadAsync(base + 'ufo.glb');
+  const model = gltf.scene;
+  const lights = [], ports = [];
+  let rim = null, alien = null, emitter = null;
+  const glow = (c) => new THREE.MeshBasicMaterial({ color: c, toneMapped: false });
+  model.traverse((n) => {
+    if (n.name === 'Alien') alien = n;
+    if (!n.isMesh) return;
+    switch (n.material.name) {
+      case 'Hull': n.material = std('#1c2236', { metalness: 0.85, roughness: 0.3, envMapIntensity: 1.3 }); break;
+      case 'HullLower': n.material = std('#121726', { metalness: 0.8, roughness: 0.38, envMapIntensity: 1.1 }); break;
+      case 'Trim': n.material = std('#9aa6c2', { metalness: 1, roughness: 0.22 }); break;
+      case 'Rim': rim = n; n.material = new THREE.MeshBasicMaterial({ vertexColors: true, toneMapped: false }); break;
+      case 'Dome':
+        n.material = new THREE.MeshPhysicalMaterial({
+          color: '#a8dcff', roughness: 0.04, clearcoat: 1, transparent: true, opacity: 0.24, envMapIntensity: 1.6, depthWrite: false,
+        });
+        n.renderOrder = 2;
+        break;
+      case 'Emitter': emitter = n; n.material = glow(CYAN); break;
+      case 'Light': n.material = glow(CYAN); lights.push(n); break;
+      case 'Port': n.material = glow(VIOLET); if (n.name.startsWith('Port')) ports.push(n); break;
+      case 'Alien': n.material = std('#6dff8a', { roughness: 0.45 }); break;
+      case 'AlienEye': n.material = std('#05060a', { roughness: 0.08, metalness: 0.3, envMapIntensity: 1.8 }); break;
+    }
+  });
+  lights.sort((a, b) => a.name.localeCompare(b.name));
+
+  // The rim's colours, by angle round the saucer.
+  const pos = rim.geometry.attributes.position, col = new Float32Array(pos.count * 3), c = new THREE.Color();
+  for (let i = 0; i < pos.count; i++) {
+    const f = ((Math.atan2(pos.getZ(i), pos.getX(i)) / (2 * Math.PI) + 1) % 1) * (RIM.length - 1);
+    const k = Math.floor(f);
+    c.copy(RIM[k]).lerp(RIM[k + 1], f - k).toArray(col, i * 3);
+  }
+  rim.geometry.setAttribute('color', new THREE.BufferAttribute(col, 3));
+
+  const fig = new THREE.Group();   // bobs and banks
+  const turn = new THREE.Group();  // spins
+  turn.add(model);
+  fig.add(turn);
+  st.root.add(fig);
+
+  // A glow under the emitter (the page puts a halo behind the canvas).
+  const dot = dotTexture();
+  const sprite = (color, opacity, s, y, z) => {
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: dot, color, opacity, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false }));
+    sp.scale.setScalar(s);
+    sp.position.set(0, y, z);
+    fig.add(sp);
+    return sp;
+  };
+  const under = sprite('#5ce0ff', 0.85, 1.25, -0.3, 0.1);
+  const lamp = new THREE.PointLight('#5ce0ff', 3, 2.2);
+  lamp.position.set(0, -0.5, 0.2);
+  fig.add(lamp);
+
+  const sec = st.host?.closest('.ab-ufo');
+  let arrived = sec ? -1 : 0;
+  const ARRIVE = 1.5;
+  const moves = actions([{ name: 'zap', dur: 1.5 }, { name: 'spin', dur: 1.7 }]);
+  let spin = 0;
+
+  function frame(t, dt) {
+    if (arrived < 0 && sec.classList.contains('is-in')) arrived = t;
+    // Banking in from the top right, then settling into a hover.
+    const a = arrived < 0 ? 0 : easeIO(min(1, (t - arrived) / ARRIVE));
+    const m = moves.at(t);
+    const zap = m?.name === 'zap' ? bump(m.p) : 0;
+    const whirl = m?.name === 'spin' ? m.p : 0;
+
+    spin += dt * (0.45 + (1 - a) * 2.4);
+    turn.rotation.y = spin + easeIO(whirl) * Math.PI * 4;
+    fig.position.y = sin(t * 1.3) * 0.03 - zap * 0.05 + bump(whirl) * 0.12;
+    fig.rotation.set(
+      sin(t * 0.9) * 0.035 + (1 - a) * 0.22 + sin(whirl * Math.PI * 3) * 0.12 * bump(whirl),
+      0,
+      sin(t * 0.7) * 0.04 + (1 - a) * 0.38 + sin(t * 30) * 0.015 * zap,
+    );
+    rim.rotation.y = t * 0.9; // the gradient runs round the rim
+
+    // The alien faces the visitor whichever way the saucer turns, glancing about.
+    if (alien) alien.rotation.y = -(turn.rotation.y + st.spin.rotation.y) + sin(t * 0.6) * 0.55 + sin(t * 1.7) * 0.12;
+
+    const n = lights.length;
+    lights.forEach((l, i) => {
+      const ph = (((t * 1.4 - i / n) % 1) + 1) % 1;
+      const b = 0.22 + 0.78 * max(0, 1 - ph * 3.2);
+      l.material.color.copy(CYAN).lerp(WHITE, zap * 0.8).multiplyScalar(max(b, zap));
+    });
+    ports.forEach((p, i) => p.material.color.copy(VIOLET).multiplyScalar(0.55 + 0.45 * (0.5 + 0.5 * sin(t * 2.2 + i * 1.3))));
+    const e = 0.8 + 0.2 * sin(t * 3.1) + zap * 0.6;
+    emitter.material.color.copy(CYAN).lerp(WHITE, zap * 0.6).multiplyScalar(min(1.4, e));
+    under.material.opacity = 0.6 + 0.25 * sin(t * 3.1) + zap * 0.4;
+    under.scale.setScalar(1.25 + zap * 0.5);
+    lamp.intensity = 3 + zap * 5;
+
+    // Let the page follow along (the beam flares on a zap, dims in a spin).
+    if (sec) {
+      const act = m?.name || '';
+      if ((sec.dataset.act || '') !== act) { if (act) sec.dataset.act = act; else delete sec.dataset.act; }
+    }
+  }
+
+  function act(t) { moves.start(t); }
+
+  // Until it has arrived and settled, keep every frame coming.
+  return { frame, act, hit: model, busy: (t) => !!moves.at(t) || arrived < 0 || t - arrived < ARRIVE };
 }
 
 /* ════════════ The desk ════════════ */
@@ -836,7 +1094,11 @@ const SETUPS = {
   astronaut: { build: buildAstronaut, fov: 30, target: [0, 0.02, 0], from: [0, 0.1, 1], pad: 1.08 },
   desk: { build: buildDesk, fov: 30, target: [0, 0.24, 0], from: [0, 0.14, 1], pad: 1.06 },
   // Chest up, at a fixed framing (the canvas edge cuts him off at the chest); no dragging.
-  peek: { build: buildPeek, fov: 26, target: [0, 0.3, 0], from: [0, 0.04, 1], fit: 0.23, noDrag: true },
+  // The canvas overhangs the box (styles/astro-peek.css) so the pencil's magic isn't cut off.
+  peek: { build: buildPeek, fov: 26, target: [0, 0.3, 0], from: [0, 0.04, 1], fit: 0.23, noDrag: true, hostFrame: true },
+  // Seen from a little above. The canvas overhangs its box (room to bank and
+  // hop), so this frames the saucer to about the box's width.
+  ufo: { build: buildUfo, fov: 24, target: [0, 0.06, 0], from: [0, 0.3, 1], fit: 0.84 },
 };
 
 /** Mounts a figure into `host`; returns a disposer. Adds `is-ready` to the
@@ -847,6 +1109,7 @@ export function mountFigure(host, kind, base = '/models/contact/') {
   const setup = SETUPS[kind];
   let st;
   try { st = stage(host, setup); } catch { host.classList.add('is-failed'); return () => {}; }
+  st.host = host;
 
   const still = window.matchMedia('(prefers-reduced-motion: reduce)');
   let api = null, raf = 0, last = 0, t = 0, onScreen = false, dead = false;

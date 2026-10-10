@@ -13,6 +13,8 @@ it. This script:
   3. cuts the glove's triangles free of the pencil's (duplicating the shared
      vertices) and drops the scraps of glove texture left on the pencil, so
      the glove can lift away cleanly;
+  3b. takes both of the model's four-fingered mitts off, leaving the dark
+     cuff rings (scripts/build-gloves.py makes five-fingered gloves to go on);
   4. writes the weight as a `_WAVE` vertex attribute (`_wave` in three.js).
 The page then turns the arm about the shoulder by that weight and fills the
 gap in the pencil with a gold core.
@@ -28,13 +30,16 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 from scipy.sparse import coo_matrix
-from scipy.sparse.csgraph import dijkstra
+from scipy.sparse.csgraph import connected_components, dijkstra
 
 DIR = Path(__file__).resolve().parent.parent / 'public' / 'models' / 'contact'
 SRC, DST = DIR / 'astronaut.glb', DIR / 'astronaut-wave.glb'
 
 GLOVE = np.array([0.2, 0.02, -0.14])  # the left glove, around the pencil (model space)
 ARM_END = (0.56, 0.68)                # surface distance from the glove where the arm eases out
+MITTS = np.array([[0.184, 0.054, -0.133], [0.185, 0.159, 0.121]])  # inside each original mitt
+WAVE_WRIST = np.array([0.184, 0.055, -0.17])                        # the waving arm's wrist (as in build-gloves.py)
+WAVE_OUT = np.array([0.88, -0.08, 0.46]) / np.linalg.norm([0.88, -0.08, 0.46])
 
 
 def smoothstep(a, b, x):
@@ -111,6 +116,34 @@ goldT = (sat > 0.35) & (tc[:, 0] > tc[:, 2] + 30)
 tt = t[I].mean(1)
 wT = w[I].max(1)
 drop = (triPen & whiteT & (tt > 0.22) & (tt < 0.52)) | (~triPen & (wT > 0.3) & (goldT | (pen[I].any(1) & ~whiteT)))
+
+# ── 3b. Take off both four-fingered mitts (gloves.glb replaces them) ──
+# Each mitt is a white patch of surface that ends at the dark ring of its cuff.
+mxv = C.max(1)
+whiteV = ((mxv - C.min(1)) / np.maximum(mxv, 1) < 0.22) & (mxv > 140)
+allWhite = np.ones(n, bool)
+np.logical_and.at(allWhite, inv, whiteV)
+we = np.r_[T[:, [0, 1]], T[:, [1, 2]], T[:, [2, 0]]]
+we = we[allWhite[we[:, 0]] & allWhite[we[:, 1]]]
+_, lab = connected_components(coo_matrix((np.ones(len(we)), (we[:, 0], we[:, 1])), shape=(n, n)), directed=False)
+sizes = np.bincount(lab)
+mitt = np.zeros(n, bool)
+for c in MITTS:
+    near = np.where(allWhite & (np.linalg.norm(Pw - c, axis=1) < 0.05))[0]
+    near = near[sizes[lab[near]] < 3000]  # not the suit itself
+    k = np.bincount(lab[near]).argmax()
+    mitt |= lab == k
+    print('mitt at', c, sizes[k], 'vertices')
+drop |= mitt[T].sum(1) >= 2
+# ...and the scraps of glove they leave floating loose.
+kt = T[~drop]
+ke = np.r_[kt[:, [0, 1]], kt[:, [1, 2]], kt[:, [2, 0]]]
+_, lab = connected_components(coo_matrix((np.ones(len(ke)), (ke[:, 0], ke[:, 1])), shape=(n, n)), directed=False)
+sizes = np.bincount(lab)
+drop |= sizes[lab[T[:, 0]]] < 2000
+# ...and whatever of the waving mitt's lining still reaches past the wrist.
+past = (P - WAVE_WRIST) @ WAVE_OUT > 0.012
+drop |= (w[I].min(1) > 0.95) & past[I].all(1)
 I, triPen = I[~drop], triPen[~drop]
 
 newV, newW, dup = [V], [w], {}

@@ -32,7 +32,6 @@ export default function Figure3D({ kind, className, label, fallback }: {
       aria-label={`${label}. Drag or use the arrow keys to turn it; tap or press Enter to see it move.`}
     >
       <div className="ct-3d-fallback">{fallback}</div>
-      <span className="ct-3d-hint" aria-hidden="true">Drag to spin · Tap me</span>
     </div>
   );
 }

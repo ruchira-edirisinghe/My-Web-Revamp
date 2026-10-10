@@ -330,21 +330,6 @@ main.ct { overflow-x: clip; }
 .ct-3d.is-ready { touch-action: pan-y; }
 .ct-3d:focus { outline: none; }
 .ct-3d:focus-visible { outline: 2px solid rgba(140, 210, 255, 0.6); outline-offset: 4px; border-radius: 18px; }
-.ct-3d-hint {
-  position: absolute; left: 50%; bottom: 4%; z-index: 2;
-  transform: translate(-50%, 6px);
-  padding: 6px 12px; border-radius: 999px;
-  font-size: 0.72rem; letter-spacing: 0.04em; white-space: nowrap;
-  color: rgba(225, 235, 255, 0.85);
-  /* Solid rather than a backdrop blur, which would re-blur the live canvas
-     behind it on every frame. */
-  background: rgba(14, 18, 38, 0.82);
-  border: 1px solid rgba(140, 210, 255, 0.22);
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.6s ease 1.2s, transform 0.6s ease 1.2s;
-}
-.ct-3d.is-ready .ct-3d-hint { opacity: 1; transform: translate(-50%, 0); }
-.ct-3d.is-ready.is-touched .ct-3d-hint, .ct-3d.is-failed .ct-3d-hint { opacity: 0; transition-delay: 0s; }
 /* The desk scene is wider than its column; let it spill into the gap. */
 .ct-3d-desk { --bleed: 16%; width: 122%; margin-left: -11%; aspect-ratio: 1 / 0.92; }
 .ct-3d-desk.is-failed { width: 100%; margin-left: 0; aspect-ratio: auto; }
