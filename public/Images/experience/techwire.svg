@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 125 1230 305" role="img" aria-label="Techwire Lanka Pvt Ltd">
+  <g fill="none" stroke="#E53935" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M125 148 L308 383"/>
+    <path d="M308 148 L48 267"/>
+    <path d="M190 232 L308 267 L48 375"/>
+    <path d="M125 148 L137 410 L250 230"/>
+  </g>
+  <text x="405" y="285" fill="#FFFFFF" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="156" textLength="835" lengthAdjust="spacingAndGlyphs">TECHWIRE</text>
+  <text x="414" y="390" fill="#FFFFFF" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="400" font-size="84" textLength="566" lengthAdjust="spacingAndGlyphs">Lanka Pvt Ltd</text>
+</svg>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@/styles/experience/expadditional.css';
 import '@/styles/experience/experience-inline.css';
 import '@/styles/experience/exp-v2.css';
+import '@/styles/voices.css';
 import '@/styles/signoff.css';
 import '@/styles/astro-peek.css';
 import ExperienceClient from '@/components/pages/ExperienceClient';

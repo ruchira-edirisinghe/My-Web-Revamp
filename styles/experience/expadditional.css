@@ -47,7 +47,6 @@ transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 animation: ufoFloat 4s ease-in-out infinite;
 }
 
-
 /* .ufo-container:hover .beam-top {
 stop-color: rgba(160, 80, 255, 0.9);
 transition: stop-color 0.5s ease;
@@ -72,7 +71,6 @@ text-transform: uppercase;
 transition: fill 0.5s ease;
 pointer-events: none;
 }
-
 
 @keyframes ufoFloat {
 0%, 100% { transform: translateY(0); }
@@ -475,8 +473,6 @@ opacity: 0.7;
   100% { transform: translateX(450%); opacity: 0; }
 }
 
-
-
 @media (max-width: 768px) {
   .about-content {
     grid-template-columns: 1fr;
@@ -497,8 +493,6 @@ opacity: 0.7;
     margin-top: 0 !important;
   }
 }
-
-
 
 /* ══════════════════════════════════════
    TESTIMONIALS SECTION - cinematic auto-cycle
@@ -897,7 +891,6 @@ opacity: 0.7;
   }
 }
 
-
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .ufo-stats-section {
@@ -1002,101 +995,14 @@ body::after {
   background: radial-gradient(ellipse at center, transparent 30%, rgba(2, 3, 10, 0.5) 100%);
 }
 
-/* ══════════════════════════════════
-   PRELOADER
-══════════════════════════════════ */
-#preloader {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  background: #02030a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-#preloader-canvas {
-  display: block;
-  width: min(500px, 72vw);
-  height: auto;
-}
-
-#progress-track {
-  width: min(500px, 72vw);
-  height: 2px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-}
-
-#progress-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0%;
-  background: #ffffff;
-  border-radius: 2px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.3);
-}
-
-#preloader-tagline {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.38);
-  text-align: center;
-}
-
 .tagline-br {
   display: none;
 }
-
 
 @media (max-width:768px) {
   .tagline-br {
     display: block;
   }
-}
-
-#split-top,
-#split-bottom {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 99998;
-  background: #02030a;
-  transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-#split-top {
-  top: 0;
-  height: 50%;
-  transform: translateY(0);
-}
-
-#split-bottom {
-  bottom: 0;
-  height: 50%;
-  transform: translateY(0);
-}
-
-#split-top.open {
-  transform: translateY(-100%);
-}
-
-#split-bottom.open {
-  transform: translateY(100%);
-}
-
-#split-top.gone,
-#split-bottom.gone {
-  display: none;
 }
 
 /* ══════════════════════════════════════
@@ -2566,7 +2472,6 @@ footer {
     display: none;
   }
 
-
   /* Photo centred and enlarged */
   .hero-intro-photo-wrap {
     order: 1;
@@ -2946,7 +2851,6 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 @media (max-width: 768px) {
   .bio-body {
@@ -3578,8 +3482,6 @@ footer {
   width: 100%;
 }
 
-
-
 @media (max-width: 768px) {
   .about-content {
     grid-template-columns: 1fr;
@@ -3600,7 +3502,6 @@ footer {
     margin-top: 0 !important;
   }
 }
-
 
 /* ══════════════════════════════════════
    CV MODAL - inline styles (moved here)
@@ -3644,7 +3545,6 @@ footer {
             background: rgba(255, 255, 255, 0.15);
             transform: rotate(90deg) scale(1.1);
           }
-
 
 /* ════════════════════════════════════════
    QA polish - keyboard focus & touch cursor (appended)

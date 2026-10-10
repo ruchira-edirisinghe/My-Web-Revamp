@@ -13,6 +13,8 @@ main.page.xp {
 }
 .xp-hero, .xp-sec { width: min(1180px, 92%); margin-inline: auto; }
 .xp-sec { padding-top: 130px; scroll-margin-top: 30px; }
+/* The timeline has no heading of its own, so it sits just under the jump links. */
+#work.xp-sec { padding-top: 53px; scroll-margin-top: 110px; }
 
 .xp-i { width: 16px; height: 16px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
@@ -149,6 +151,9 @@ main.page.xp {
   transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .xp-card:hover .xp-logo { transform: scale(1.06); }
+/* ZUSE's mark is tall, so it fills the box's full height; brought down to sit
+   with the others. */
+.xp-logo[src$="zuse.webp"] { width: 70%; height: 70%; }
 .xp-card-id { min-width: 0; }
 .xp-date {
   display: inline-block; margin: 0; padding: 4px 10px; border-radius: 999px;
@@ -402,6 +407,7 @@ main.page.xp {
 @media (max-width: 900px) {
   main.page.xp { padding-top: 120px; }
   .xp-sec { padding-top: 96px; }
+  #work.xp-sec { padding-top: 32px; }
   .xp-head { margin-bottom: 40px; }
 
   /* Timeline: one column, nodes down the left edge. */

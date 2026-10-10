@@ -2,6 +2,7 @@
 import { type CSSProperties, type ReactNode, useEffect, useRef, useState } from 'react';
 import StandardShell from '@/components/StandardShell';
 import SignOff from '@/components/SignOff';
+import AboutVoices from '@/components/about/AboutVoices';
 import { initExperience } from '@/lib/scripts/experience';
 
 /* Experience - a hero with the headline numbers and jump links, then the
@@ -29,6 +30,11 @@ const ROLES: Role[] = [
     co: 'Trex Labs', role: 'UI/UX Consultant', from: '2025 Dec', to: 'Present', place: 'Nugegoda, Sri Lanka',
     logo: 'trexlabs.webp', c: '#8cd2ff', tags: ['Part time'],
     desc: <>I&rsquo;m working part time with Trex Labs on InsiderHub, a social media platform, where I look after the UI/UX from start to finish. That covers everything from mapping out how people move through the app to designing the screens themselves, with the aim of keeping it simple to use while still hitting what the platform needs to achieve.</>,
+  },
+  {
+    co: 'Techwire Lanka', role: 'UI/UX Engineer', from: '2025 Aug', to: 'Present', place: 'Colombo, Sri Lanka',
+    logo: 'techwire-mark.svg', c: '#ff6b6b', tags: ['Full time'],
+    desc: <>At Techwire Lanka I design and build the interfaces for the company&rsquo;s software products, from early user flows and wireframes through to polished screens and a shared design system. I work closely with the developers to bring those designs to life in the front end, so what ships stays true to the design and feels clear, consistent and easy to use.</>,
   },
   {
     co: 'Ruach Holdings', role: 'Contract UI/UX Engineer', from: '2024 Sept', to: '2024 Nov', place: 'Colombo, Sri Lanka',
@@ -156,26 +162,11 @@ const VOL: { era: string; place: string; items: Vol[] }[] = [
   },
 ];
 
-const TESTI = [
-  { name: 'Thaanu Perera', role: 'Software Engineer · Eyepax', img: 'thaanu.webp', text: "I had the pleasure of working with Ruchira on several projects, and I can confidently say he's one of the most talented and dedicated UI/UX designers I've encountered. His expertise in both UI/UX design and engineering is truly remarkable, allowing him to craft visually compelling interfaces that are not only user-friendly but also highly functional." },
-  { name: 'Suraji Ekanayake', role: 'UI/UX Designer · Freelance', img: 'suraji.webp', text: 'Working with Ruchira on UI/UX design projects has been an incredible experience. He has a great talent for blending the latest trends with user-friendly designs. Whenever we team up, we always create solutions that go above and beyond expectations. His creative vision combined with my design skills results in experiences that truly connect with users. I highly recommend Ruchira for any UI/UX work.' },
-  { name: 'Sandakelum Senevirathne', role: 'Tech Lead · ZUSE Technologies', img: 'sandakelum.webp', text: "Ruchira is a rare combination of creative vision and technical precision. His work consistently demonstrates a deep understanding of both user behaviour and aesthetic excellence. On every project we've collaborated on, he brought ideas to life in ways that felt fresh, polished, and genuinely purposeful." },
-  { name: 'Janith Perera', role: 'Software Engineer · RACEDATA', img: 'janith.webp', text: "Ruchira's eye for detail and dedication to user-centric design make him an outstanding designer. His work on our platform demonstrated both strategic thinking and meticulous execution. Every interface he touched became cleaner, more intuitive, and more engaging for our users." },
-  { name: 'Wenupa Mandinu', role: 'Cyber Security Engineer · Freelance', img: 'wenupa.webp', text: 'Embarking on projects with Ruchira has been nothing short of a creative adventure in the world of UI/UX design. His ability to seamlessly merge cutting-edge trends with user-centric functionality is truly commendable. Together, we harmonise his innovative vision with my UI designing talents, crafting experiences that resonate with audiences on a profound level.' },
-  { name: 'Avishka Dilshan', role: 'Senior DevOps Engineer · LSEG', img: 'avishka.webp', text: "I've had the opportunity to observe Ruchira's work across multiple projects and his commitment to excellence is unmatched. He approaches every challenge with a methodical mindset, delivers on time, and always brings a level of polish that elevates the entire product." },
-  { name: 'Sandev Dulleva', role: 'Software Engineer · ZUSE Technologies', img: 'sandev-dullewa.webp', text: "I had the pleasure of working with Ruchira on a recent web development project, and I was truly impressed by his exceptional UI/UX design skills. Ruchira's ability to create visually appealing and user-friendly interfaces is unparalleled. He has a keen eye for detail, a deep understanding of user behavior, and a knack for turning complex concepts into intuitive designs." },
-  { name: 'Atheeque Hasan', role: 'Senior Data Analyst · AiSCOUT', img: 'atheeque.webp', text: 'I had the pleasure of managing Ruchira directly during his time as a developer at TAKG, and I can confidently say that he is one of the most talented and dedicated professionals I have worked with. Ruchira consistently demonstrated exceptional technical skills, creativity, and a strong work ethic. His ability to tackle complex problems and deliver high-quality solutions was truly impressive.' },
-  { name: 'Ramuthu Senanayake', role: 'Associate Project Manager · Sysco LABS Sri Lanka', img: 'ramuthu.webp', text: 'I am pleased to recommend Ruchira for any role pertaining to UI/UX engineering. During our collaboration on website development projects, where I served as the project manager, he consistently demonstrated exceptional skills in crafting user-friendly interfaces. Ruchira possesses a remarkable talent for designing aesthetically pleasing and functional websites. His meticulous attention to detail ensures that every aspect of the user experience is carefully considered.' },
-];
-
-const JUMPS: [string, string][] = [['work', 'Work'], ['certs', 'Certifications'], ['skills', 'Skills'], ['edu', 'Education'], ['vol', 'Volunteering'], ['words', 'Kind words']];
+const JUMPS: [string, string][] = [['work', 'Work'], ['certs', 'Certifications'], ['skills', 'Skills'], ['edu', 'Education'], ['vol', 'Volunteering']];
 
 const I = {
   pin: <><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z" /><circle cx="12" cy="9.5" r="2.5" /></>,
   arrow: <path d="M7 17 17 7M8 7h9v9" />,
-  left: <path d="M15 5 8 12l7 7" />,
-  right: <path d="m9 5 7 7-7 7" />,
-  quote: <path d="M9.5 7C6.5 8 5 10.5 5 14v3h5v-5H7.6c.2-1.9 1.1-3.1 2.6-3.7L9.5 7Zm9 0c-3 1-4.5 3.5-4.5 7v3h5v-5h-2.4c.2-1.9 1.1-3.1 2.6-3.7L18.5 7Z" />,
 };
 const Icon = ({ d, cls = '' }: { d: ReactNode; cls?: string }) => (
   <svg className={`xp-i ${cls}`} viewBox="0 0 24 24" aria-hidden="true">{d}</svg>
@@ -382,52 +373,6 @@ function Skills() {
   );
 }
 
-function Testimonials() {
-  const [i, setI] = useState(0);
-  const [hold, setHold] = useState(false);
-  const n = TESTI.length;
-  const go = (d: number) => setI((v) => (v + d + n) % n);
-  useEffect(() => {
-    if (hold || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const t = setTimeout(() => setI((v) => (v + 1) % n), 9000);
-    return () => clearTimeout(t);
-  }, [i, hold, n]);
-  const t = TESTI[i];
-  return (
-    <div
-      className="xp-words xp-rv"
-      onMouseEnter={() => setHold(true)} onMouseLeave={() => setHold(false)}
-      onFocus={() => setHold(true)} onBlur={() => setHold(false)}
-    >
-      <figure className="xp-quote" key={i} aria-live="polite">
-        <Icon d={I.quote} cls="xp-quote-mark" />
-        <blockquote>{t.text}</blockquote>
-        <figcaption>
-          <img src={'/Images/testimonials/' + t.img} alt="" width={48} height={48} decoding="async" />
-          <span><strong>{t.name}</strong><span>{t.role}</span></span>
-        </figcaption>
-      </figure>
-      <div className="xp-words-bar">
-        <div className="xp-faces" role="tablist" aria-label="Choose a testimonial">
-          {TESTI.map((p, k) => (
-            <button
-              key={p.name} type="button" role="tab" aria-selected={k === i} aria-label={p.name}
-              className="xp-face xp-snd" onClick={() => setI(k)}
-            >
-              <img src={'/Images/testimonials/' + p.img} alt="" loading="lazy" decoding="async" />
-            </button>
-          ))}
-        </div>
-        <div className="xp-words-nav">
-          <span className="xp-count">{String(i + 1).padStart(2, '0')}<span> / {String(n).padStart(2, '0')}</span></span>
-          <button type="button" className="xp-arrow xp-snd" aria-label="Previous testimonial" onClick={() => go(-1)}><Icon d={I.left} /></button>
-          <button type="button" className="xp-arrow xp-snd" aria-label="Next testimonial" onClick={() => go(1)}><Icon d={I.right} /></button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function ExperienceClient() {
   useEffect(() => {
     const d = [initExperience()];
@@ -458,9 +403,6 @@ export default function ExperienceClient() {
 
         {/* ══ WORK TIMELINE ══ */}
         <section id="work" className="xp-sec" aria-label="Work experience">
-          <Head kicker="Where I've worked" title="The" glow="timeline">
-            A quick walk through the places I&rsquo;ve worked and what I did at each of them, newest first.
-          </Head>
           <ol className="xp-tl">
             {ROLES.map((r, k) => (
               <li key={r.co} className={`xp-role ${k % 2 ? 'is-right' : 'is-left'}`} style={{ '--c': r.c } as Css}>
@@ -562,10 +504,7 @@ export default function ExperienceClient() {
         </section>
 
         {/* ══ TESTIMONIALS ══ */}
-        <section id="words" className="xp-sec" aria-label="Testimonials">
-          <Head kicker="Kind words" title="What people" glow="say" />
-          <Testimonials />
-        </section>
+        <AboutVoices className="xp-sec" rv="xp-rv" head={<Head kicker="Kind words" title="What people" glow="say" />} />
 
         {/* ══ SIGN-OFF ══ */}
         <SignOff className="xp-sec xp-rv" />
