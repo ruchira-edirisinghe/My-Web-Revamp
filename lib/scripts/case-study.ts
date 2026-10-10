@@ -62,8 +62,8 @@ export function initCaseStudy(): () => void {
        ══════════════════════════════════════════════════════════════════ */
 
     const tocEl = document.getElementById('cs-toc');
-    /* VeBuild uses a panel-aware data-target TOC driven by initVebuildTabs();
-       running this one there would give the page two TOC systems fighting. */
+    /* A page with tabbed panels (.cs-tabs) would need a panel-aware TOC;
+       running this one there would give it two TOC systems fighting. */
     const wantToc = !!tocEl && !document.querySelector('.cs-tabs');
     const tocItems = wantToc ? tocEl.querySelectorAll('.cs-toc-item') : [];
 
