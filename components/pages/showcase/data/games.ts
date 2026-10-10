@@ -4,7 +4,7 @@ import type { Shot, WebGame } from '../types';
 const shots = (dir: string, list: [string, string][]): Shot[] =>
   list.map(([file, caption]) => ({ src: `${dir}/${file}.webp`, caption }));
 
-const ENGINE = 'https://game-engine-snowy.vercel.app/games';
+const ENGINE = 'https://showcase-game-engine.netlify.app/games';
 
 /* Web games from the Game Engine arcade, in the order the projects grid lists them. */
 export const GAMES: WebGame[] = [
