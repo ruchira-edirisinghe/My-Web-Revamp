@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '@/styles/quicklinks/quicklinks.css';
 import '@/styles/quicklinks/links-deck.css';
+import '@/styles/bento-cards.css';
 import QuicklinksClient from '@/components/pages/QuicklinksClient';
 
 export const metadata: Metadata = {
