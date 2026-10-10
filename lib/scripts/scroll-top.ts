@@ -25,8 +25,13 @@ export function initScrollTop(): () => void {
     '.scroll-top-btn .st-text{writing-mode:vertical-rl;text-orientation:mixed;font-size:10px;' +
     'font-weight:600;letter-spacing:.28em;text-transform:uppercase;}' +
     '.scroll-top-btn .st-line{width:1px;height:54px;background:linear-gradient(to bottom,currentColor,transparent);opacity:.65;}' +
-    '@media (max-width:768px){.scroll-top-btn{right:8px;bottom:18px;gap:9px;}.scroll-top-btn .st-line{height:34px;}' +
-    '.scroll-top-btn .st-text{font-size:9px;letter-spacing:.22em;}}';
+    // Phones: the vertical rail would sit over the text, so it becomes a small
+    // round glass button with just the arrow.
+    '@media (max-width:768px){.scroll-top-btn{right:14px;bottom:88px;width:44px;height:44px;padding:0;gap:0;' +
+    'justify-content:center;border-radius:50%;color:#fff;background:rgba(14,16,34,.72);' +
+    'border:1px solid rgba(255,255,255,.16);box-shadow:0 8px 24px rgba(0,0,0,.45);' +
+    '-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}' +
+    '.scroll-top-btn .st-arrow{font-size:16px;}.scroll-top-btn .st-text,.scroll-top-btn .st-line{display:none;}}';
 
   const style = document.createElement('style');
   style.id = 'scroll-top-style';

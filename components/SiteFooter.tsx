@@ -24,7 +24,7 @@ export default function SiteFooter() {
           </svg>
         </a>
       </div>
-      <span className="copyright">© 2026 Ruchira Edirisinghe</span>
+      <span className="copyright">© 2026 Ruchira <span className="copyright-last">Edirisinghe</span></span>
     </footer>
   );
 }

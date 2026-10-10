@@ -88,6 +88,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     // attribute diff without silencing warnings for the rest of the tree.
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        {/* The site is already dark: this tells Dark Reader to leave it alone, so it
+            doesn't rewrite inline styles before hydration (a hydration mismatch). */}
+        <meta name="darkreader-lock" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="stylesheet" href={GOOGLE_FONTS_HREF} />
