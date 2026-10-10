@@ -1,5 +1,6 @@
 'use client';
-import { type CSSProperties, type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import Sheet from '@/components/Sheet';
 import '@/styles/ext-guard.css';
 
 /* "You're leaving the site" confirmation, for every page (mounted once in
@@ -52,10 +53,12 @@ const Svg = ({ children, cls }: { children: ReactNode; cls?: string }) => (
 
 export default function ExternalGuard() {
   const [p, setP] = useState<Pending | null>(null);
+  const [open, setOpen] = useState(false);
   const opener = useRef<HTMLElement | null>(null);
-  const stayRef = useRef<HTMLButtonElement>(null);
 
-  const close = useCallback(() => {
+  const close = useCallback(() => setOpen(false), []);
+  // Once the sheet has folded away: drop the content, hand focus back.
+  const closed = useCallback(() => {
     setP(null);
     opener.current?.focus?.({ preventScroll: true });
     opener.current = null;
@@ -72,29 +75,11 @@ export default function ExternalGuard() {
       e.preventDefault();
       opener.current = a;
       setP(describe(a, url));
+      setOpen(true);
     };
     document.addEventListener('click', onClick);
     return () => document.removeEventListener('click', onClick);
   }, []);
-
-  useEffect(() => {
-    if (!p) return;
-    // The safe choice takes focus, so a stray Enter doesn't leave the site.
-    stayRef.current?.focus({ preventScroll: true });
-    const html = document.documentElement;
-    const prev = html.style.overflow;
-    html.style.overflow = 'hidden';
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { e.preventDefault(); close(); return; }
-      if (e.key !== 'Tab') return;
-      const stops = Array.from(document.querySelectorAll<HTMLElement>('.xg-card button'));
-      const i = stops.indexOf(document.activeElement as HTMLElement);
-      if (e.shiftKey && i <= 0) { e.preventDefault(); stops[stops.length - 1]?.focus(); }
-      else if (!e.shiftKey && i === stops.length - 1) { e.preventDefault(); stops[0]?.focus(); }
-    };
-    document.addEventListener('keydown', onKey);
-    return () => { html.style.overflow = prev; document.removeEventListener('keydown', onKey); };
-  }, [p, close]);
 
   const go = () => {
     if (!p) return;
@@ -102,36 +87,37 @@ export default function ExternalGuard() {
     close();
   };
 
-  if (!p) return null;
   return (
-    <div className="xg" onClick={(e) => { if (e.target === e.currentTarget) close(); }} style={{ '--c': p.c } as CSSProperties}>
-      <div className="xg-card" role="dialog" aria-modal="true" aria-labelledby="xg-title" aria-describedby="xg-desc">
-        <span className="xg-grab" aria-hidden="true" />
-        <div className="xg-orb" aria-hidden="true">
-          <span className="xg-orb-ring" />
-          {p.brand
-            ? <Svg cls="xg-orb-icon is-brand"><path d={p.brand.d} /></Svg>
-            : <Svg cls="xg-orb-icon">{GLOBE}</Svg>}
-        </div>
-        <p className="xg-kicker">Leaving the site</p>
-        <h2 id="xg-title" className="xg-title">{p.title}</h2>
-        {p.detail && <p className="xg-detail">{p.detail}</p>}
-        <p id="xg-desc" className="xg-desc">
-          This opens <strong>{p.label}</strong> in a new tab. This page stays right where you left it.
-        </p>
-        <div className="xg-dest" title={p.url}>
-          <Svg cls="xg-lock"><rect x="5" y="11" width="14" height="10" rx="2.5" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></Svg>
-          <span>{p.host}</span>
-          <Svg cls="xg-newtab"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" /></Svg>
-        </div>
-        <div className="xg-actions">
-          <button ref={stayRef} type="button" className="xg-btn" onClick={close}>Stay here</button>
-          <button type="button" className="xg-btn is-go" onClick={go}>
-            Continue
-            <Svg><path d="M7 17 17 7M8 7h9v9" /></Svg>
-          </button>
-        </div>
-      </div>
-    </div>
+    <Sheet open={open} onClose={close} onClosed={closed} color={p?.c} labelledBy="xg-title" describedBy="xg-desc">
+      {p && (
+        <>
+          <div className="xg-orb" aria-hidden="true">
+            <span className="xg-orb-ring" />
+            {p.brand
+              ? <Svg cls="xg-orb-icon is-brand"><path d={p.brand.d} /></Svg>
+              : <Svg cls="xg-orb-icon">{GLOBE}</Svg>}
+          </div>
+          <p className="xg-kicker">Leaving the site</p>
+          <h2 id="xg-title" className="xg-title">{p.title}</h2>
+          {p.detail && <p className="xg-detail">{p.detail}</p>}
+          <p id="xg-desc" className="xg-desc">
+            This opens <strong>{p.label}</strong> in a new tab. This page stays right where you left it.
+          </p>
+          <div className="xg-dest" title={p.url}>
+            <Svg cls="xg-lock"><rect x="5" y="11" width="14" height="10" rx="2.5" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></Svg>
+            <span>{p.host}</span>
+            <Svg cls="xg-newtab"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" /></Svg>
+          </div>
+          <div className="xg-actions">
+            {/* The safe choice takes focus, so a stray Enter doesn't leave the site. */}
+            <button type="button" className="xg-btn" onClick={close} data-autofocus>Stay here</button>
+            <button type="button" className="xg-btn is-go" onClick={go}>
+              Continue
+              <Svg><path d="M7 17 17 7M8 7h9v9" /></Svg>
+            </button>
+          </div>
+        </>
+      )}
+    </Sheet>
   );
 }

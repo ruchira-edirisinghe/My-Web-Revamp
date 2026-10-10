@@ -2,6 +2,8 @@
    "Leaving the site" dialog (components/ExternalGuard.tsx), on every page.
    A centred card on desktop, a bottom sheet on phones. --c is the
    destination's brand colour. Motion is transform/opacity only.
+   Rendered by components/Sheet.tsx (also the About page's CV popup): it
+   rises in on open, and .is-out plays it back out before it unmounts.
    ══════════════════════════════════════ */
 .xg {
   position: fixed; inset: 0; z-index: 99990;
@@ -11,6 +13,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 @keyframes xg-fade { from { opacity: 0; } to { opacity: 1; } }
+.xg.is-out { animation: xg-fade-out 0.3s ease both; }
+@keyframes xg-fade-out { to { opacity: 0; } }
 
 .xg-card {
   position: relative; width: min(420px, 100%); overflow: hidden;
@@ -23,6 +27,8 @@
   animation: xg-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 @keyframes xg-pop { from { opacity: 0; transform: translateY(18px) scale(0.94); } to { opacity: 1; transform: none; } }
+.xg.is-out .xg-card { animation: xg-pop-out 0.26s cubic-bezier(0.4, 0, 1, 1) both; }
+@keyframes xg-pop-out { to { opacity: 0; transform: translateY(14px) scale(0.95); } }
 /* A thin line of the brand colour across the top edge. */
 .xg-card::before {
   content: ''; position: absolute; top: 0; left: 18%; right: 18%; height: 2px; border-radius: 2px;
@@ -83,6 +89,18 @@
 .xg-btn.is-go:hover { transform: translateY(-1px); box-shadow: 0 12px 30px color-mix(in srgb, var(--c) 45%, transparent); }
 .xg-btn.is-go:hover svg { transform: translate(2px, -2px); }
 .xg-btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+a.xg-btn { text-decoration: none; }
+
+/* Optional close button in the card's corner. */
+.xg-x {
+  position: absolute; top: 14px; right: 14px; z-index: 1;
+  display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%;
+  color: rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color 0.2s, background 0.2s, transform 0.3s;
+}
+.xg-x:hover { color: #fff; background: rgba(255, 255, 255, 0.1); transform: rotate(90deg); }
+.xg-x:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.xg-x svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 
 /* Phones: a bottom sheet within thumb reach. */
 @media (max-width: 600px) {
@@ -90,9 +108,16 @@
   .xg-card {
     width: 100%; border-radius: 28px 28px 0 0; border-bottom: none;
     padding: 14px 20px calc(20px + env(safe-area-inset-bottom));
-    animation-name: xg-sheet; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-duration: 0.35s;
+    /* Rises like a native sheet: fast off the mark, settling gently. */
+    animation: xg-sheet 0.55s cubic-bezier(0.32, 0.72, 0, 1) both;
+    will-change: transform;
   }
   @keyframes xg-sheet { from { transform: translateY(100%); } to { transform: none; } }
+  /* Closing folds it back down the way it came. */
+  .xg.is-out { animation: xg-fade-out 0.36s ease 0.04s both; }
+  .xg.is-out .xg-card { animation: xg-sheet-out 0.36s cubic-bezier(0.4, 0, 0.8, 0.4) both; }
+  @keyframes xg-sheet-out { from { transform: none; } to { transform: translateY(100%); } }
+  .xg-x { top: 12px; right: 12px; }
   .xg-grab { display: block; width: 40px; height: 4px; margin: 0 auto 18px; border-radius: 4px; background: rgba(255, 255, 255, 0.2); }
   .xg-orb { width: 72px; height: 72px; }
   .xg-title { font-size: 18px; }
@@ -103,3 +128,11 @@
 @media (prefers-reduced-motion: reduce) {
   .xg, .xg-card, .xg-orb-ring { animation: none !important; }
 }
+
+/* While a popup is open the custom cursor (lib/scripts/cursor.ts, drawn on
+   top of everything) gets brighter, so it stands out against the card. */
+body:has(.xg) .cursor-ring {
+  border: 2px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35), 0 0 18px rgba(140, 200, 255, 0.45) !important;
+}
+body:has(.xg) #cursor-dot { box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.5), 0 0 8px #fff !important; }
