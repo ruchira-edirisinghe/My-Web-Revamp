@@ -4,10 +4,10 @@ import type { DesignStudy } from './types';
 
 /**
  * The "Visual Design System" section of a UI/UX case study, as something to
- * use rather than read: pick a colour from the strip to inspect it (values you
- * can copy, WCAG contrast against white and black), watch a small UI built
- * from the palette re-theme around it, and type into a live specimen of each
- * typeface at any size and weight.
+ * use rather than read: pick a colour from the strip to inspect it (HEX and
+ * RGB to copy, its contrast on white and black), watch a small UI built from
+ * the palette re-theme around it, and type into a live specimen of each
+ * typeface at any size and weight. Kept deliberately light: one idea per card.
  */
 
 type System = DesignStudy['system'];
@@ -19,16 +19,6 @@ const rgbOf = (hex: string) => {
   if (h.length === 3) h = h.split('').map((c) => c + c).join('');
   const n = parseInt(h.slice(0, 6), 16);
   return [(n >> 16) & 255, (n >> 8) & 255, n & 255] as const;
-};
-
-const hslOf = ([r, g, b]: readonly number[]) => {
-  const [rr, gg, bb] = [r / 255, g / 255, b / 255];
-  const max = Math.max(rr, gg, bb), min = Math.min(rr, gg, bb), d = max - min;
-  const l = (max + min) / 2;
-  if (!d) return [0, 0, Math.round(l * 100)];
-  const s = d / (1 - Math.abs(2 * l - 1));
-  const h = max === rr ? ((gg - bb) / d) % 6 : max === gg ? (bb - rr) / d + 2 : (rr - gg) / d + 4;
-  return [Math.round((h * 60 + 360) % 360), Math.round(s * 100), Math.round(l * 100)];
 };
 
 const luminance = (hex: string) => {
@@ -82,11 +72,9 @@ export default function DesignSystem({ system, title }: { system: System; title:
 
   const c = colors[sel];
   const rgb = rgbOf(c.hex);
-  const [h, s, l] = hslOf(rgb);
   const values = [
     { k: 'HEX', v: c.hex.toUpperCase() },
     { k: 'RGB', v: `${rgb[0]}, ${rgb[1]}, ${rgb[2]}` },
-    { k: 'HSL', v: `${h}°, ${s}%, ${l}%` },
   ];
 
   // The preview's surface: the palette's own darkest or lightest colour (or
@@ -115,7 +103,7 @@ export default function DesignSystem({ system, title }: { system: System; title:
       {/* Palette strip */}
       <div className="gs-ds-head">
         <h3 className="gs-h3">Colour palette</h3>
-        <span className="gs-ds-hint">Select a colour to inspect it and re-theme the preview</span>
+        <span className="gs-ds-hint">Tap a colour to try it</span>
       </div>
       <div className="gs-ds-strip" role="radiogroup" aria-label={`${title} colour palette`}>
         {colors.map((col, i) => (
@@ -147,19 +135,16 @@ export default function DesignSystem({ system, title }: { system: System; title:
               </button>
             ))}
           </div>
-          <div className="gs-ds-contrast">
+          <div className="gs-ds-contrast" aria-label="Contrast">
             {(['#ffffff', '#000000'] as const).map((bg) => {
               const r = contrast(c.hex, bg);
               const g = grade(r);
               return (
-                <div key={bg} className="gs-ds-ratio">
+                <span key={bg} className="gs-ds-ratio" title={`${r.toFixed(2)}:1 on ${bg === '#ffffff' ? 'white' : 'black'}`}>
                   <span className="gs-ds-ratio-swatch" style={{ background: bg, color: c.hex }}>Aa</span>
-                  <span>
-                    <b>{r.toFixed(2)}:1</b>
-                    <small>on {bg === '#ffffff' ? 'white' : 'black'}</small>
-                  </span>
+                  <b>{r.toFixed(1)}</b>
                   <em className={`gs-ds-grade ${g === 'Fail' ? 'fail' : g === 'AA Large' ? 'mid' : 'pass'}`}>{g}</em>
-                </div>
+                </span>
               );
             })}
           </div>
@@ -181,18 +166,10 @@ export default function DesignSystem({ system, title }: { system: System; title:
           <div className="gs-ds-mock" style={{ background: surface, color: ink, fontFamily: familyOf(system.fonts[0].name) }}>
             <span className="gs-ds-mock-kicker" style={{ color: accent }}>{title}</span>
             <h4>Designed around one palette</h4>
-            <p>Every background, button and state in this project is built from the colour and type tokens on the left.</p>
+            <p>Every screen is built from these colour and type tokens.</p>
             <div className="gs-ds-mock-row">
               <span className="gs-ds-btn" style={{ background: accent, color: onAccent }}>Get started</span>
               <span className="gs-ds-btn ghost" style={{ borderColor: accent, color: accentRatio >= 3 ? accent : ink }}>Learn more</span>
-            </div>
-            <div className="gs-ds-mock-row">
-              {colors.slice(0, 4).map((col, i) => (
-                <span key={col.hex + i} className="gs-ds-tag"
-                  style={{ background: `color-mix(in srgb, ${col.hex} 18%, transparent)`, borderColor: col.hex }}>
-                  {col.name || col.hex}
-                </span>
-              ))}
             </div>
             <div className="gs-ds-mock-row gs-ds-mock-controls">
               <span className="gs-ds-progress" style={{ background: `color-mix(in srgb, ${ink} 14%, transparent)` }}>
@@ -206,19 +183,13 @@ export default function DesignSystem({ system, title }: { system: System; title:
               </button>
             </div>
           </div>
-          <div className="gs-ds-live-foot">
-            Accent on this surface <b>{accentRatio.toFixed(2)}:1</b>
-            <em className={`gs-ds-grade ${grade(accentRatio) === 'Fail' ? 'fail' : grade(accentRatio) === 'AA Large' ? 'mid' : 'pass'}`}>
-              {grade(accentRatio)}
-            </em>
-          </div>
         </div>
       </div>
 
       {/* Type specimen */}
       <div className="gs-ds-head">
         <h3 className="gs-h3">Typography</h3>
-        <span className="gs-ds-hint">Type in your own text and try out different sizes and weights</span>
+        <span className="gs-ds-hint">Type your own text</span>
       </div>
       <div className="gs-ds-card gs-ds-type">
         {system.fonts.length > 1 && (
@@ -256,9 +227,6 @@ export default function DesignSystem({ system, title }: { system: System; title:
               </button>
             ))}
           </div>
-        </div>
-        <div className="gs-ds-glyphs" style={{ fontFamily: familyOf(f.name), fontWeight: weight }} aria-hidden="true">
-          ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />abcdefghijklmnopqrstuvwxyz<br />0123456789 &amp; ? ! @ % ₹ $
         </div>
       </div>
       <p className="gs-ds-live-region" aria-live="polite">{copied ? `Copied ${copied}` : ''}</p>
