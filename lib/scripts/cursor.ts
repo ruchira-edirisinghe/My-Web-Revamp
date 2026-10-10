@@ -21,6 +21,11 @@ import type { Bag } from './_util';
 
 const HOVER = 'a, button, [role="button"], .nav-link, .nav-cta, label, summary';
 const SIZE = 52;
+/* Above everything, popups included (the sheets and the external-link guard
+   sit at 99990). It used to copy the old canvas's z-index, which on several
+   pages was under 10000, so with the system cursor hidden the pointer
+   vanished whenever a popup opened. */
+const Z = '2147483600';
 
 /** A hover target that swaps the ring into a bigger state with its own label. */
 export interface CursorState { sel: string; scale: number; html: string }
@@ -38,10 +43,9 @@ export function initCursor(bag: Bag, hoverSel: string = HOVER, states: CursorSta
   const ring = document.createElement('div');
   ring.className = 'cursor-ring';
   ring.setAttribute('aria-hidden', 'true');
-  const z = (canvas && getComputedStyle(canvas).zIndex) || '100001';
   Object.assign(ring.style, {
     position: 'fixed', left: '0', top: '0', width: SIZE + 'px', height: SIZE + 'px',
-    borderRadius: '50%', pointerEvents: 'none', zIndex: z === 'auto' ? '100001' : z,
+    borderRadius: '50%', pointerEvents: 'none', zIndex: Z,
     border: '1.5px solid rgba(225, 240, 255, 0.55)',
     background: 'radial-gradient(circle, rgba(200, 230, 255, 0.03) 55%, rgba(150, 200, 255, 0.09) 100%)',
     boxShadow: '0 0 16px rgba(120, 180, 255, 0.12), inset 0 0 6px rgba(255, 255, 255, 0.07)',
@@ -72,11 +76,13 @@ export function initCursor(bag: Bag, hoverSel: string = HOVER, states: CursorSta
     Object.assign(d.style, {
       position: 'fixed', left: '0', top: '0', width: '5px', height: '5px', borderRadius: '50%',
       background: '#fff', boxShadow: '0 0 5px rgba(200, 230, 255, 0.7)', pointerEvents: 'none',
-      zIndex: ring.style.zIndex, opacity: '0', transition: 'opacity 0.4s ease',
+      zIndex: Z, opacity: '0', transition: 'opacity 0.4s ease',
     } as Partial<CSSStyleDeclaration>);
     document.body.appendChild(d);
     bag.add(() => d.remove());
     dot = d;
+  } else {
+    dot.style.zIndex = Z;
   }
 
   let mx = -200, my = -200, rx = -200, ry = -200, scale = 1, targetScale = 1;
