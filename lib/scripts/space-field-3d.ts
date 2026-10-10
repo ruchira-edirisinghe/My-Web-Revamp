@@ -76,7 +76,7 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
       canvas,
       alpha: true,
       antialias: false, // points and additive sprites gain nothing from MSAA
-      powerPreference: 'high-performance',
+      powerPreference: 'low-power', // a soft backdrop; no need to wake a laptop's dedicated GPU
     });
   } catch {
     return;

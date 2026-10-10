@@ -1,5 +1,5 @@
 'use client';
-import { type ReactNode, useEffect, useLayoutEffect, useRef } from 'react';
+import { type ReactNode, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import Preloader from './Preloader';
 import Navbar, { type NavKey } from './Navbar';
@@ -7,6 +7,7 @@ import MobileMenu from './MobileMenu';
 import SiteFooter from './SiteFooter';
 import ScrollTop from './ScrollTop';
 import { useBodyDataPage } from '@/lib/useBodyDataPage';
+import { pauseOffscreen } from '@/lib/pause-offscreen';
 
 interface StandardShellProps {
   /** Highlights the active item in the desktop/mobile nav. */
@@ -33,6 +34,9 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
   const pathname = usePathname();
   const isFirstMount = useRef(true);
 
+  // Sections out of view stop their CSS animations (lib/pause-offscreen).
+  useEffect(() => pauseOffscreen(), [pathname]);
+
   // Restore body state if the browser serves this page from bfcache
   useEffect(() => {
     function handlePageShow(e: PageTransitionEvent) {
@@ -50,11 +54,6 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
     }
     window.addEventListener('pageshow', handlePageShow);
     return () => window.removeEventListener('pageshow', handlePageShow);
-  }, []);
-
-  // Play the preloader on every load and every in-site navigation (no session skip).
-  useLayoutEffect(() => {
-    document.body.classList.remove('skip-preloader');
   }, []);
 
   // Smooth page-enter transition on client-side navigations + close mobile menu
