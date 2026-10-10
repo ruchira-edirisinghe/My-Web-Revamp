@@ -3,10 +3,11 @@ import { useEffect, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import SiteFooter from './SiteFooter';
 import ScrollTop from './ScrollTop';
+import Preloader from './Preloader';
 import { initSpaceBackground } from '@/lib/scripts/space-background';
 import { initScatterMenuCursor } from '@/lib/scripts/scatter-menu-cursor';
-import { initPreloader } from '@/lib/scripts/preloader';
 import { initSoundMusic } from '@/lib/scripts/sound-music';
+import { pauseOffscreen } from '@/lib/pause-offscreen';
 
 export default function HomeClient() {
   useLayoutEffect(() => {
@@ -18,19 +19,16 @@ export default function HomeClient() {
     // hero (enlarged photo, one-line name, mis-placed elements). Home never
     // wants a data-page, so clear it unconditionally before first paint.
     document.body.removeAttribute('data-page');
-
-    // Play the preloader on every load and every in-site navigation (no session skip).
-    document.body.classList.remove('skip-preloader');
   }, []);
 
   useEffect(() => {
     // Load order matches the original index.html: space bg (no deps),
-    // scatter/menu/cursor, preloader, then sound.
+    // scatter/menu/cursor, then sound. The preloader runs itself (<Preloader />).
     const disposers = [
       initSpaceBackground(),
       initScatterMenuCursor(),
-      initPreloader(),
       initSoundMusic(),
+      pauseOffscreen(),
     ];
 
     // Restore body state if the browser serves this page from bfcache
@@ -54,29 +52,7 @@ export default function HomeClient() {
     <>
       {/* Non-fixed scroll target so Next's route auto-scroll doesn't iterate the fixed chrome */}
       <div aria-hidden="true" style={{ position: 'absolute', height: 0, width: 0 }} />
-      {/* Split panels reveal the page behind the preloader */}
-      <div id="split-top"></div>
-      <div id="split-bottom"></div>
-
-      {/* Preloader */}
-      <div id="preloader">
-        <div className="aurora-container">
-          <div className="aurora-bg-pulse"></div>
-          <div className="aurora-blob blob-1"></div>
-          <div className="aurora-blob blob-2"></div>
-          <div className="aurora-blob blob-3"></div>
-          <div id="preloader-stars"></div>
-          {/* Depth starfield + completion flash; stays empty without WebGL,
-              and the CSS stars above still carry the look on their own. */}
-          <canvas id="preloader-fx"></canvas>
-        </div>
-        <div className="preloader-content">
-          <canvas id="preloader-canvas"></canvas>
-          <div id="progress-track">
-            <div id="progress-fill"></div>
-          </div>
-        </div>
-      </div>
+      <Preloader />
 
       {/* Background canvases */}
       <canvas id="space-canvas"></canvas>

@@ -1,8 +1,9 @@
 'use client';
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { initComingSoon } from '@/lib/scripts/comingsoon';
 import ScrollTop from '@/components/ScrollTop';
+import Preloader from '@/components/Preloader';
 
 /**
  * Standalone "Coming Soon" page. Unlike the projects-family pages this is NOT
@@ -12,11 +13,6 @@ import ScrollTop from '@/components/ScrollTop';
  * shared <ScrollTop/> component.
  */
 export default function ComingSoonClient() {
-  useLayoutEffect(() => {
-    // Play the preloader on every load and every in-site navigation (no session skip).
-    document.body.classList.remove('skip-preloader');
-  }, []);
-
   useEffect(() => initComingSoon(), []);
 
   return (
@@ -37,25 +33,7 @@ export default function ComingSoonClient() {
       <div className="cs-corner cs-corner-br"></div>
 
       <div id="nav-fade-mask"></div>
-      <div id="split-top"></div>
-      <div id="split-bottom"></div>
-
-      <div id="preloader">
-        <div className="aurora-container">
-          <div className="aurora-bg-pulse"></div>
-          <div className="aurora-blob blob-1"></div>
-          <div className="aurora-blob blob-2"></div>
-          <div className="aurora-blob blob-3"></div>
-          <div id="preloader-stars"></div>
-        </div>
-        <div className="preloader-content">
-          <canvas id="preloader-canvas"></canvas>
-          <div id="progress-track">
-            <div id="progress-fill"></div>
-          </div>
-          <p id="preloader-tagline">Something beautiful is<br className="tagline-br" /> <span className="tagline-name">Coming Soon</span></p>
-        </div>
-      </div>
+      <Preloader tagline={<>Something beautiful is<br className="tagline-br" /> <span className="tagline-name">Coming Soon</span></>} />
 
       {/* Desktop nav - logo only, no pill */}
       <div id="navbar-wrap">
@@ -211,7 +189,7 @@ export default function ComingSoonClient() {
             </svg>
           </a>
         </div>
-        <span className="copyright">© 2026 Ruchira Edirisinghe</span>
+        <span className="copyright">© 2026 Ruchira <span className="copyright-last">Edirisinghe</span></span>
       </footer>
 
       <ScrollTop />

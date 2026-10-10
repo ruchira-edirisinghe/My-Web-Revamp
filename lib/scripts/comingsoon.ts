@@ -11,7 +11,6 @@
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
 import { initCursor } from './cursor';
-import { initPreloaderFx } from './preloader-fx';
 import { initSpaceField3D } from './space-field';
 import { wireAmbientControls } from './ambient-audio';
 
@@ -147,132 +146,7 @@ export function initComingSoon(): () => void {
     bag.add(() => { running = false; cancelAnimationFrame(rafId); });
   })();
 
-  /* ══════════ PRELOADER ══════════ */
-  (function () {
-    const pl = document.getElementById('preloader'), cv = document.getElementById('preloader-canvas'), cx = cv && cv.getContext('2d'), pf = document.getElementById('progress-fill'), st = document.getElementById('split-top'), sb = document.getElementById('split-bottom');
-    if (!pl || !cv || !cx || !pf) return;
-    initPreloaderFx(bag);
-    if (pl.style.display === 'none') return;
-    const CW = 900, CH = 240; cv.width = CW; cv.height = CH;
-    const DUR = 2200, HOLD = 300, SPLIT = 900;
-    let t0 = null, lt2 = 0, fp = 0, wp = 0, li = new Image(), lr = false;
-    let rafId = 0, alive = true;
-    const timeouts: any[] = [];
-    const later = (fn, ms) => { const id = setTimeout(fn, ms); timeouts.push(id); return id; };
-    function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
-
-    // Generate stars for Aurora Background
-    const starsContainer = document.getElementById('preloader-stars');
-    const createdStars: HTMLElement[] = [];
-    if (starsContainer) {
-      const starCount = 55;
-      for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.className = 'preloader-star';
-        const x = Math.random() * 100;
-        const y = Math.random() * 100;
-        const size = 1 + Math.pow(Math.random(), 1.6) * 2;
-        const delay = Math.random() * 6;
-        const duration = 3 + Math.random() * 4;
-        const opacity = 0.35 + Math.random() * 0.45;
-
-        star.style.left = `${x}%`;
-        star.style.top = `${y}%`;
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.setProperty('--star-opacity', opacity);
-        star.style.animation = `star-twinkle ${duration}s infinite ${delay}s ease-in-out`;
-        starsContainer.appendChild(star);
-        createdStars.push(star);
-      }
-    }
-
-    function frame(ts) {
-      if (!alive) return;
-      if (!t0) { t0 = ts; lt2 = ts; }
-      const dT = Math.min(ts - lt2, 50); lt2 = ts;
-      const raw = Math.min((ts - t0) / DUR, 1);
-      fp = ease(raw);
-      wp += 0.045 * (dT / 16.667);
-      pf.style.width = (fp * 100) + '%';
-      cx.clearRect(0, 0, CW, CH);
-      if (lr) {
-        cx.save();
-        cx.globalAlpha = 0.1;
-        cx.drawImage(li, 0, 0, CW, CH);
-        cx.restore();
-      }
-      const wt = CH * (1 - fp), amp = 5 + (1 - fp) * 9;
-      cx.save();
-      cx.beginPath();
-      cx.moveTo(0, wt);
-      for (let x = 0; x <= CW; x += 3) {
-        const y = wt + Math.sin((x / CW) * Math.PI * 5 + wp) * amp + Math.sin((x / CW) * Math.PI * 9 + wp * 1.5) * amp * 0.35;
-        cx.lineTo(x, y);
-      }
-      cx.lineTo(CW, CH);
-      cx.lineTo(0, CH);
-      cx.closePath();
-      cx.clip();
-      if (lr) {
-        cx.globalAlpha = 1;
-        cx.drawImage(li, 0, 0, CW, CH);
-        cx.globalCompositeOperation = 'source-atop';
-        cx.fillStyle = '#ffffff';
-        cx.fillRect(0, 0, CW, CH);
-      } else {
-        cx.fillStyle = 'rgba(255,255,255,0.9)';
-        cx.fillRect(0, 0, CW, CH);
-      }
-      cx.restore();
-      cx.save();
-      cx.beginPath();
-      cx.moveTo(0, wt);
-      for (let x = 0; x <= CW; x += 3) {
-        const y = wt + Math.sin((x / CW) * Math.PI * 5 + wp) * amp + Math.sin((x / CW) * Math.PI * 9 + wp * 1.5) * amp * 0.35;
-        cx.lineTo(x, y);
-      }
-      cx.strokeStyle = 'rgba(255,255,255,0.5)';
-      cx.lineWidth = 1.5;
-      cx.stroke();
-      cx.restore();
-      if (raw < 1) {
-        rafId = requestAnimationFrame(frame);
-      } else {
-        cx.clearRect(0, 0, CW, CH);
-        if (lr) {
-          cx.save();
-          cx.drawImage(li, 0, 0, CW, CH);
-          cx.globalCompositeOperation = 'source-atop';
-          cx.fillStyle = '#ffffff';
-          cx.fillRect(0, 0, CW, CH);
-          cx.restore();
-        }
-        pf.style.width = '100%';
-        later(() => {
-          pl.style.opacity = '0';
-          pl.style.pointerEvents = 'none';
-          requestAnimationFrame(() => {
-            if (st) st.classList.add('open');
-            if (sb) sb.classList.add('open');
-          });
-          later(() => {
-            // Original removed these nodes; under React we hide them instead so
-            // unmount reconciliation never trips over a missing child.
-            pl.style.display = 'none';
-            if (st) { st.classList.add('gone'); st.style.display = 'none'; }
-            if (sb) { sb.classList.add('gone'); sb.style.display = 'none'; }
-          }, SPLIT + 100);
-        }, HOLD);
-      }
-    }
-    li.onload = () => { lr = true; };
-    li.onerror = () => { lr = false; };
-    li.src = '/Images/longlogo.svg';
-    rafId = requestAnimationFrame(frame);
-
-    bag.add(() => { alive = false; cancelAnimationFrame(rafId); timeouts.forEach(clearTimeout); createdStars.forEach(s => s.remove()); });
-  })();
+  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/signature-loader.ts). */
 
   /* ══════════ CURSOR + MUSIC + SOUNDS + MOBILE MENU ══════════ */
   (function () {

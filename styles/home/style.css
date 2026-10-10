@@ -376,33 +376,11 @@ body.exploded .cta-row {
 #music-btn.playing {
   animation: musicPulse 2s ease infinite, fadeUp 0.8s cubic-bezier(0.22,0.61,0.36,1) 1.1s forwards;
 }
-
-/* On return visits (preloader skipped), show the music button immediately.
-   These rules use body.skip-preloader (specificity 1,1,1) to override any
-   #music-btn rules that other pages' CSS may have left behind (specificity 1,0,0). */
-body.skip-preloader #music-btn {
-  position: fixed;
-  top: 28px; left: 36px;
-  z-index: 201;
-  opacity: 0;
-  animation: fadeUp 0.48s cubic-bezier(0.22,0.61,0.36,1) 0.1s both;
-}
-body.skip-preloader #music-btn.playing {
-  animation: musicPulse 2s ease infinite, fadeUp 0.48s cubic-bezier(0.22,0.61,0.36,1) 0.1s both;
-}
 @media (max-width: 600px) {
-  body.skip-preloader #music-btn {
-    top: 18px;
-    left: 16px;
-  }
   /* Close button mirrors the music button position on mobile:
      right: 16px to match the left: 16px gutter; top matches the music button. */
   #menu-close {
     top: 28px;
-    right: 16px;
-  }
-  body.skip-preloader #menu-close {
-    top: 18px;
     right: 16px;
   }
 }
@@ -443,124 +421,6 @@ body:not([data-page]) .page {
   80%  { transform:translateY(-4px) scale(1.01); }
   100% { opacity:1; transform:translateY(0) scale(1); filter:blur(0px); }
 }
-
-/* ══════════════════════════════════
-   WATER FILL PRELOADER
-══════════════════════════════════ */
-#preloader {
-  position:fixed; inset:0; z-index:99999;
-  background:#000;
-  display:flex; flex-direction:column;
-  align-items:center; justify-content:center;
-  gap:32px;
-  overflow: hidden;
-}
-
-.aurora-container {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.aurora-bg-pulse {
-  position: absolute;
-  inset: 0;
-  opacity: 0.5;
-  background-image: 
-    radial-gradient(circle, var(--aurora-color1) 0%, transparent 80%),
-    radial-gradient(circle, var(--aurora-color2) 0%, transparent 80%);
-  background-size: 100% 100%;
-  animation: aurora-pulse 10s infinite;
-}
-
-.aurora-blob {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.4;
-  mix-blend-mode: screen;
-}
-
-.blob-1 { top: -25%; left: -25%; background: #9333ea; animation: blob-move-1 30s infinite alternate ease-in-out; }
-.blob-2 { bottom: -25%; right: -25%; background: #c026d3; animation: blob-move-2 40s infinite alternate ease-in-out; }
-.blob-3 { top: 33%; left: 33%; width: 33%; height: 33%; background: #4338ca; animation: blob-move-3 50s infinite alternate ease-in-out; opacity: 0.3; }
-
-.preloader-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 32px; }
-
-.preloader-star { position: absolute; width: 2px; height: 2px; background: #eff4ff; border-radius: 50%; box-shadow: 0 0 4px rgba(200,222,255,0.5); opacity: 0; }
-
-@keyframes aurora-pulse {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.05); }
-}
-
-@keyframes blob-move-1 {
-  0% { transform: translate(-50px, -20px) scale(1); }
-  50% { transform: translate(50px, 20px) scale(1.2); }
-  100% { transform: translate(-50px, -20px) scale(1); }
-}
-
-@keyframes blob-move-2 {
-  0% { transform: translate(50px, 20px) scale(1); }
-  50% { transform: translate(-50px, -20px) scale(1.3); }
-  100% { transform: translate(50px, 20px) scale(1); }
-}
-
-@keyframes blob-move-3 {
-  0% { transform: translate(20px, -30px) rotate(0deg); }
-  50% { transform: translate(-20px, 30px) rotate(180deg); }
-  100% { transform: translate(20px, -30px) rotate(360deg); }
-}
-
-@keyframes star-twinkle {
-  0%, 100% { opacity: calc(var(--star-opacity, 0.6) * 0.42); }
-  50% { opacity: var(--star-opacity, 0.6); }
-}
-
-#preloader-canvas {
-  display:block;
-  width: min(500px, 72vw);
-  height: auto;
-}
-
-/* Progress bar track */
-#progress-track {
-  width: min(500px, 72vw);
-  height: 2px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Glowing fill line */
-#progress-fill {
-  position: absolute;
-  top: 0; left: 0;
-  height: 100%;
-  width: 0%;
-  background: #ffffff;
-  border-radius: 2px;
-  box-shadow: 0 0 8px rgba(255,255,255,0.8),
-              0 0 20px rgba(255,255,255,0.3);
-  transition: none;
-}
-
-/* ── Split screen panels (for reveal) ── */
-#split-top, #split-bottom {
-  position:fixed; left:0; right:0; z-index:99998;
-  background:#02030a;
-  transition: transform 0.85s cubic-bezier(0.76,0,0.24,1);
-}
-#split-top    { top:0; height:50%; transform:translateY(0); }
-#split-bottom { bottom:0; height:50%; transform:translateY(0); }
-#split-top.open    { transform:translateY(-100%); }
-#split-bottom.open { transform:translateY(100%); }
-#split-top.gone, #split-bottom.gone { display:none; }
 
 /* Desktop: standalone vibe line hidden; inline span visible */
 .subtitle-vibe { display:none; }
