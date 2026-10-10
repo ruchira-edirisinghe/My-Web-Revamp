@@ -1,0 +1,83 @@
+/* ══════════════════════════════════════
+   Bento cards (components/BentoCard.tsx): the brand-tinted profile and
+   Zenitron Gaming channel cards. Used by Quick Links and the About page.
+   --c is the brand colour.
+   ══════════════════════════════════════ */
+.ql-bento .ql-i { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.ql-bento .ql-b { width: 22px; height: 22px; fill: var(--c); }
+.ql-bento .ql-go { width: 16px; height: 16px; color: rgba(255, 255, 255, 0.4); transition: transform 0.3s ease, color 0.3s ease; }
+.ql-bento a { color: #fff; text-decoration: none; font-family: 'Montserrat', sans-serif; -webkit-tap-highlight-color: transparent; }
+@keyframes ql-blink { 50% { opacity: 0.35; } }
+
+/* 02 + 03 - bento cards (profiles and channels) */
+/* Bento of profile cards: wide LinkedIn and Instagram bookend GitHub and
+   Behance. Each is tinted by its brand, with the mark oversized and faint in
+   the corner. */
+.ql-bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.ql-bento .is-wide { grid-column: 1 / -1; }
+.ql-bento a {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+  height: 100%; padding: 16px;
+  border-radius: 22px;
+  border: 1px solid color-mix(in srgb, var(--c) 22%, transparent);
+  background: linear-gradient(150deg, color-mix(in srgb, var(--c) 15%, transparent) 0%, rgba(255, 255, 255, 0.02) 62%);
+  text-align: left;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+.ql-bento .is-wide a { flex-direction: row; align-items: center; gap: 14px; padding: 16px 16px 16px 14px; }
+.ql-soc-mark {
+  position: absolute; right: -20px; bottom: -26px; z-index: -1;
+  width: 112px; height: 112px;
+  fill: var(--c); opacity: 0.08;
+  transform: rotate(-12deg);
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.4s ease;
+}
+.ql-bento .is-wide .ql-soc-mark { right: 92px; bottom: -40px; }
+.ql-soc-ico {
+  display: grid; place-items: center; flex: none;
+  width: 48px; height: 48px; border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+  background: color-mix(in srgb, var(--c) 12%, transparent);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+.ql-soc-txt { display: flex; flex: 1; flex-direction: column; gap: 3px; min-width: 0; }
+.ql-soc-note { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--c) 80%, #fff); }
+.ql-soc-txt b { font-family: 'Epic Pro', 'Poppins', sans-serif; font-weight: 400; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; }
+.ql-soc-txt > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11.5px; color: var(--ql-muted, rgba(255, 255, 255, 0.58)); }
+.ql-soc-cta {
+  display: inline-flex; align-items: center; gap: 6px; flex: none;
+  min-height: 38px; padding: 0 12px 0 15px;
+  border-radius: 50px;
+  background: #fff; color: #0a0b14;
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ql-soc-cta .ql-i { width: 14px; height: 14px; stroke-width: 2; }
+.ql-bento .ql-go, .ql-bento .ql-live { position: absolute; top: 16px; right: 14px; }
+
+/* 03 - video channels, live row */
+.ql-live {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 8px; border-radius: 999px;
+  font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.1em; line-height: 1; text-transform: uppercase;
+  color: #ff8a8a; background: rgba(255, 70, 70, 0.14); border: 1px solid rgba(255, 70, 70, 0.3);
+}
+.ql-live i { width: 5px; height: 5px; border-radius: 50%; background: #ff5a5a; animation: ql-blink 1.6s ease-in-out infinite; }
+
+.ql-bento a:active { transform: scale(0.97); }
+@media (hover: hover) {
+  .ql-bento a:hover { border-color: color-mix(in srgb, var(--c) 45%, transparent); }
+  .ql-bento a:hover .ql-soc-mark { opacity: 0.14; transform: rotate(-4deg) scale(1.08); }
+  .ql-bento a:hover .ql-soc-cta { transform: translateX(-3px); }
+  .ql-bento a:hover .ql-go { color: var(--c); transform: translate(2px, -2px); }
+}
+@media (max-width: 380px) {
+  .ql-bento a { padding-left: 12px; padding-right: 12px; }
+  .ql-bento .is-wide a { gap: 12px; }
+  .ql-soc-ico { width: 44px; height: 44px; border-radius: 14px; }
+  .ql-soc-cta { padding: 0 10px 0 12px; letter-spacing: 0.1em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ql-live i { animation: none; }
+}

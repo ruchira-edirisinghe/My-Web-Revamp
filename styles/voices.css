@@ -1,0 +1,116 @@
+/* ════════════════════════════════════════
+   Testimonials as a crew constellation (components/about/AboutVoices.tsx),
+   shared by the About and Experience pages.
+   ════════════════════════════════════════ */
+
+@keyframes ab-spin { to { transform: rotate(360deg); } }
+@keyframes ab-word { from { opacity: 0; transform: translateY(8px); filter: blur(4px); } }
+@keyframes ab-twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* ── Testimonials: the crew constellation ── */
+/* The chart: faint rings and cross-hairs turning slowly, the lines drawing in
+   when the section first shows, those touching the current person lit. A
+   comet runs the line to each new person (an SVG animateMotion). */
+.ab-cn { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 56px; align-items: center; max-width: 1160px; margin: 0 auto; }
+.ab-cn-map { position: relative; aspect-ratio: 6 / 5; }
+.ab-cn-chart { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.ab-cn-grid { fill: none; stroke: rgba(140, 210, 255, 0.07); stroke-width: 1; stroke-dasharray: 2 6; transform-origin: 300px 230px; animation: ab-spin 120s linear infinite; }
+.ab-cn-link {
+  stroke: rgba(160, 220, 255, 0.22); stroke-width: 1.2; stroke-linecap: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  transition: stroke 0.5s, stroke-width 0.5s, stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1) calc(0.3s + var(--k) * 0.09s);
+}
+.ab-cn.is-in .ab-cn-link { stroke-dashoffset: 0; }
+.ab-cn-link.is-hot { stroke: url(#ab-cn-hot); stroke-width: 2; filter: drop-shadow(0 0 4px rgba(140, 210, 255, 0.8)); }
+.ab-cn-trail { stroke: #fff; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 0.35 1; stroke-dashoffset: 0.35; opacity: 0; animation: ab-trail 0.8s cubic-bezier(0.45, 0, 0.2, 1) both; filter: drop-shadow(0 0 6px #8cd2ff); }
+@keyframes ab-trail { 0% { stroke-dashoffset: 0.35; opacity: 1; } 85% { opacity: 1; } 100% { stroke-dashoffset: -1; opacity: 0; } }
+.ab-cn-comet { fill: #fff; filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 14px #5ce0ff); animation: ab-comet 0.9s ease-out both; }
+@keyframes ab-comet { 0%, 80% { opacity: 1; } 100% { opacity: 0; } }
+
+/* The people: photos as stars, popping in one after another. */
+.ab-cn-stars { list-style: none; margin: 0; padding: 0; }
+.ab-cn-star { position: absolute; left: var(--x); top: var(--y); translate: -50% -50%; z-index: 1; }
+.ab-cn-star.is-on { z-index: 2; }
+.ab-cn-node {
+  position: relative; display: block; width: 54px; height: 54px; padding: 0; border-radius: 50%; cursor: pointer;
+  background: #0a0c1a; border: 0;
+  box-shadow: 0 0 0 2px rgba(160, 220, 255, 0.25), 0 0 18px rgba(92, 224, 255, 0.25);
+  transform: scale(0); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s;
+}
+.ab-cn.is-in .ab-cn-node { transform: scale(1); transition-delay: calc(0.2s + var(--k) * 0.07s), 0s; }
+.ab-cn-node img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; filter: grayscale(0.85) brightness(0.75); transition: filter 0.4s; }
+.ab-cn-node:hover img { filter: none; }
+.ab-cn-node:hover { box-shadow: 0 0 0 2px rgba(160, 220, 255, 0.6), 0 0 24px rgba(92, 224, 255, 0.5); }
+.ab-cn-node:focus-visible { outline: 2px solid #8cd2ff; outline-offset: 6px; }
+/* A soft star-glint behind every photo, twinkling. */
+.ab-cn-node::before {
+  content: ''; position: absolute; inset: -16px; z-index: -1; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(160, 225, 255, 0.35), transparent);
+  animation: ab-twinkle 3s ease-in-out infinite; animation-delay: calc(var(--k) * -0.37s);
+}
+.ab-cn.is-in .ab-cn-star.is-on .ab-cn-node { transform: scale(1.32); }
+.ab-cn-star.is-on .ab-cn-node { box-shadow: 0 0 0 2px #0a0c1a, 0 0 0 3px rgba(188, 111, 255, 0.5), 0 0 34px rgba(188, 111, 255, 0.6); }
+.ab-cn-star.is-on .ab-cn-node img { filter: none; }
+.ab-cn-star.is-on .ab-cn-node::before { inset: -30px; background: radial-gradient(closest-side, rgba(188, 111, 255, 0.45), rgba(92, 224, 255, 0.15) 60%, transparent); }
+/* The current person's time, as a ring filling round them. */
+.ab-cn-ring { position: absolute; inset: -7px; width: calc(100% + 14px); height: calc(100% + 14px); transform: rotate(-90deg); overflow: visible; pointer-events: none; }
+.ab-cn-ring circle {
+  fill: none; stroke: url(#ab-cn-hot); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: ab-ring-fill 9s linear forwards;
+}
+@keyframes ab-ring-fill { to { stroke-dashoffset: 0; } }
+.ab-cn:not(.is-in) .ab-cn-ring circle, .ab-cn:hover .ab-cn-ring circle, .ab-cn:has(:focus-visible) .ab-cn-ring circle { animation-play-state: paused; }
+.ab-cn-tag {
+  position: absolute; left: 50%; top: calc(100% + 18px); translate: -50% 0; white-space: nowrap; pointer-events: none;
+  padding: 4px 10px; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: #fff; background: rgba(188, 111, 255, 0.22); border: 1px solid rgba(188, 111, 255, 0.45);
+  animation: ab-word 0.5s ease 0.5s both;
+}
+
+/* The message: no card, the words tuning in. Every message sits unseen in
+   the same grid cell, so the box keeps the height of the longest one. */
+.ab-tx { position: relative; }
+.ab-tx-deck { display: grid; }
+.ab-tx-deck > * { grid-area: 1 / 1; align-self: center; }
+.ab-tx-msg.is-sizer { visibility: hidden; animation: none; pointer-events: none; }
+.ab-tx-msg { position: relative; margin: 0; animation: ab-tune 0.5s steps(1, end) both; }
+@keyframes ab-tune { 0% { opacity: 0.2; translate: -4px 0; } 25% { opacity: 0.9; translate: 3px 0; } 50% { opacity: 0.4; translate: -1px 0; } 75%, 100% { opacity: 1; translate: none; } }
+.ab-tx-q { position: absolute; left: -6px; top: -6px; width: 92px; fill: rgba(188, 111, 255, 0.12); }
+.ab-tx-quote { position: relative; margin: 0 0 28px; padding-top: 18px; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.7; font-weight: 500; color: rgba(255, 255, 255, 0.9); }
+.ab-tx-quote span { animation: ab-word 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both; animation-delay: calc(0.25s + var(--i) * 0.022s); }
+.ab-tx-from { display: flex; align-items: center; gap: 14px; animation: ab-word 0.7s ease 0.35s both; }
+.ab-tx-from img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px #0a0c1a, 0 0 0 3.5px #bc6fff; }
+.ab-tx-name b { display: block; font-size: 15px; font-weight: 700; color: #fff; }
+.ab-tx-name small { display: block; margin-top: 4px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(140, 210, 255, 0.75); }
+.ab-tx-stars { margin-left: auto; display: flex; gap: 3px; font-size: 15px; color: #ffc94d; text-shadow: 0 0 12px rgba(255, 201, 77, 0.5); }
+.ab-tx-stars i { font-style: normal; display: inline-block; animation: ab-star 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; animation-delay: calc(0.6s + var(--s) * 0.08s); }
+@keyframes ab-star { from { opacity: 0; transform: scale(0) rotate(-90deg); } }
+.ab-tx-nav { display: flex; gap: 10px; margin-top: 26px; }
+.ab-tx-btn {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; color: #fff;
+  background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+}
+.ab-tx-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(140, 210, 255, 0.5); transform: scale(1.08); }
+.ab-tx-btn:focus-visible { outline: 2px solid #8cd2ff; outline-offset: 3px; }
+.ab-tx-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 900px) {
+  .ab-cn { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .ab-cn-map { width: min(560px, 100%); margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  .ab-cn-map { width: calc(100% - 24px); }
+  .ab-cn-node { width: 40px; height: 40px; }
+  .ab-cn-node::before { inset: -10px; }
+  .ab-cn-tag { top: calc(100% + 14px); font-size: 9px; padding: 3px 8px; }
+  .ab-tx-q { width: 70px; }
+  .ab-tx-quote { font-size: 16px; margin-bottom: 22px; }
+  .ab-tx-from { flex-wrap: wrap; gap: 12px 14px; }
+  .ab-tx-stars { margin-left: 64px; width: 100%; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ab-tx-quote span, .ab-tx-from, .ab-tx-stars i, .ab-tx-msg, .ab-cn-grid, .ab-cn-tag, .ab-cn-node::before { animation: none; }
+  .ab-cn-ring { display: none; }
+  .ab-cn-link, .ab-cn-node { transition: none; }
+}
