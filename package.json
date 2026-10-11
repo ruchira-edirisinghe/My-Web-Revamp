@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "description": "Personal portfolio of Ruchira Edirisinghe - Next.js + React + TypeScript",
+  "author": "Ruchira Edirisinghe",
+  "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -28,5 +30,8 @@
     "@types/react-dom": "^19.0.0",
     "@types/three": "^0.185.4",
     "typescript": "^5.7.0"
+  },
+  "overrides": {
+    "postcss": "^8.5.29"
   }
 }

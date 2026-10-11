@@ -621,7 +621,7 @@ export default function CaseStudyPanchaKeliya() {
 
             <div className="cs-cta-row">
               <a href="https://github.com/ruchira-edirisinghe/Game-Engine" target="_blank"
-                rel="noopener" className="cs-cta-btn ghost">View Source ↗</a>
+                rel="noopener noreferrer" className="cs-cta-btn ghost">View Source ↗</a>
             </div>
           </section>
 

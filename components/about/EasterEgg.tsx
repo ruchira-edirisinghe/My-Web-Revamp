@@ -80,6 +80,7 @@ export default function EasterEgg({ open, onClose }: { open: boolean; onClose: (
               allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
               allowFullScreen
               referrerPolicy="strict-origin-when-cross-origin"
+              sandbox="allow-scripts allow-same-origin allow-presentation"
             />
           </div>
           {caption && (

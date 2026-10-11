@@ -1,0 +1,43 @@
+Copyright (c) 2026 Ruchira Edirisinghe. All rights reserved.
+
+This repository contains the source code, design and content of the personal
+portfolio website of Ruchira Edirisinghe (https://ruchira-edirisinghe.vercel.app).
+It is published so that it can be viewed, not reused.
+
+1. Ownership
+   The source code, visual design, layouts, animations, copywriting, logos and
+   signature, illustrations, artwork, photographs, 3D models, audio and every
+   other file in this repository ("the Work") are the property of Ruchira
+   Edirisinghe, except where noted in section 4.
+
+2. What you may do
+   - View the Work on GitHub and on the live website.
+   - Fork the repository on GitHub only as far as GitHub's Terms of Service
+     require, without using the fork for anything listed in section 3.
+   - Quote or link to small parts of the code for discussion, review or
+     commentary, with credit and a link back to this repository.
+
+3. What you may not do without prior written permission
+   - Copy, reproduce, modify, merge, publish, distribute, sublicense or sell
+     the Work or any substantial part of it.
+   - Deploy, host or present the Work, or a site derived from it, as your own
+     portfolio or for any other purpose.
+   - Use the name, likeness, signature, logo, photographs or personal brand of
+     Ruchira Edirisinghe.
+   - Use any part of the Work to train, fine-tune or evaluate machine-learning
+     models, or to build datasets.
+
+4. Third-party material
+   Open-source dependencies (listed in package.json) remain under their own
+   licenses. Fonts, brand logos, client and employer names, project
+   screenshots and other third-party trademarks shown on the site belong to
+   their respective owners and appear only to describe work done for or with
+   them. Nothing in this license grants rights to any of them.
+
+5. No warranty
+   The Work is provided "as is", without warranty of any kind. In no event
+   shall the author be liable for any claim, damages or other liability
+   arising from, out of or in connection with the Work.
+
+For permission requests or licensing enquiries, contact Ruchira Edirisinghe
+through the contact page of the website.
