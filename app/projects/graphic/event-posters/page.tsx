@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
-import '@/styles/projects/artworks.css';
-import GalleryEventPosters from '@/components/pages/galleries/event-posters';
+import '@/styles/projects/graphic.css';
+import GalleryPage from '@/components/pages/galleries/GalleryPage';
 
-export const metadata: Metadata = { title: 'Event Posters | Ruchira Edirisinghe' };
+export const metadata: Metadata = {
+  title: 'Event Posters | Ruchira Edirisinghe',
+  description: 'Event and social media posters designed by Ruchira Edirisinghe.',
+};
 
 export default function EventPostersPage() {
-  return <GalleryEventPosters />;
+  return <GalleryPage slug="event-posters" />;
 }

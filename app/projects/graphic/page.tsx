@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
+import '@/styles/projects/projects-index.css';
+import '@/styles/projects/graphic.css';
 import GraphicProjectsClient from '@/components/pages/GraphicProjectsClient';
 
 export const metadata: Metadata = {
