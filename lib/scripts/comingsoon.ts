@@ -12,6 +12,7 @@
 import { makeBag } from './_util';
 import { initCursor } from './cursor';
 import { initSpaceField3D } from './space-field';
+import { sfxClick, sfxHover, sfxTap } from '@/lib/sfx';
 import { wireAmbientControls } from './ambient-audio';
 
 export function initComingSoon(): () => void {
@@ -146,13 +147,12 @@ export function initComingSoon(): () => void {
     bag.add(() => { running = false; cancelAnimationFrame(rafId); });
   })();
 
-  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/signature-loader.ts). */
+  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/preloader.ts). */
 
   /* ══════════ CURSOR + MUSIC + SOUNDS + MOBILE MENU ══════════ */
   (function () {
     initCursor(bag, 'a, button, [role="button"], .cs-tag');
 
-    let ac = null; function gAC() { if (!ac) ac = new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === 'suspended') ac.resume(); return ac; }
     // Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
     // continuously across every page; this engine only reads the playing flag.
     let sp = false;
@@ -167,12 +167,10 @@ export function initComingSoon(): () => void {
     let ls = 0, dsRunning = true, dsRaf = 0; function ds(ts) { if (!dsRunning) return; const dt = Math.min((ts - ls) / 1000, 0.05); ls = ts; bars.forEach(b => { if (sp) { b.phase += b.speed * dt; b.tH = 2 + ((Math.sin(b.phase) * 0.5 + 0.5)) * (SH - 3); } else b.tH = 1; b.cH += (b.tH - b.cH) * 0.18; }); db(sX); db(sXm); if (!sp && bars.every(b => Math.abs(b.cH - 1) < 0.02)) { dsRaf = 0; return; } dsRaf = requestAnimationFrame(ds); } dsRaf = requestAnimationFrame(ds); wakeDs = () => { if (dsRunning && !dsRaf) { ls = performance.now(); dsRaf = requestAnimationFrame(ds); } };
     bag.add(() => { dsRunning = false; cancelAnimationFrame(dsRaf); });
 
-    function pC() { try { const a = gAC(), o = a.createOscillator(), g = a.createGain(), f = a.createBiquadFilter(); o.type = 'sine'; o.frequency.setValueAtTime(660, a.currentTime); o.frequency.exponentialRampToValueAtTime(440, a.currentTime + 0.12); f.type = 'lowpass'; f.frequency.value = 3000; g.gain.setValueAtTime(0, a.currentTime); g.gain.linearRampToValueAtTime(0.2, a.currentTime + 0.008); g.gain.exponentialRampToValueAtTime(0.0001, a.currentTime + 0.18); o.connect(f); f.connect(g); g.connect(a.destination); o.start(); o.stop(a.currentTime + 0.3); } catch (e) { } }
-    function pH() { try { const a = gAC(), o = a.createOscillator(), g = a.createGain(), f = a.createBiquadFilter(); o.type = 'sine'; o.frequency.setValueAtTime(440, a.currentTime); o.frequency.linearRampToValueAtTime(520, a.currentTime + 0.08); f.type = 'bandpass'; f.frequency.value = 1000; f.Q.value = 2; g.gain.setValueAtTime(0, a.currentTime); g.gain.linearRampToValueAtTime(0.18, a.currentTime + 0.03); g.gain.exponentialRampToValueAtTime(0.0001, a.currentTime + 0.14); o.connect(f); f.connect(g); g.connect(a.destination); o.start(); o.stop(a.currentTime + 0.15); } catch (e) { } }
-    document.querySelectorAll('a,button,.cs-tag,footer a').forEach(el => { bag.on(el, 'mouseenter', pH); bag.on(el, 'click', () => pC()); });
+    document.querySelectorAll('a,button,.cs-tag,footer a').forEach(el => { bag.on(el, 'mouseenter', sfxHover); bag.on(el, 'click', () => sfxClick()); });
 
     function sp2(x, y) { const colors = ['rgba(255,255,255,0.7)', 'rgba(180,220,255,0.65)', 'rgba(200,200,255,0.55)', 'rgba(220,160,255,0.6)']; for (let i = 0; i < 6; i++) { const p = document.createElement('div'); p.className = 'click-particle'; const a = (i / 6) * Math.PI * 2 + (Math.random() - 0.5) * 0.5, d = 28 + Math.random() * 22; p.style.cssText = `left:${x}px;top:${y}px;width:${3 + Math.random() * 3}px;height:${3 + Math.random() * 3}px;background:${colors[i % colors.length]};--tx:calc(-50% + ${Math.cos(a) * d}px);--ty:calc(-50% + ${Math.sin(a) * d}px);animation-duration:${0.45 + Math.random() * 0.15}s;`; document.body.appendChild(p); p.addEventListener('animationend', () => p.remove()); } }
-    bag.on(document, 'click', e => { pC(); sp2(e.clientX, e.clientY); });
+    bag.on(document, 'click', e => { sfxTap(); sp2(e.clientX, e.clientY); });
 
     const mb = document.getElementById('menu-btn'), mm2 = document.getElementById('mobile-menu'), mc = document.getElementById('menu-close-mobile'), ml = document.querySelectorAll('.mobile-menu-link');
     const cp = document.body.dataset.page || ''; ml.forEach(l => { l.classList.toggle('active', l.dataset.page === cp); });

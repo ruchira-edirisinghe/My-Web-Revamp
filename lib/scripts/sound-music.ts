@@ -4,18 +4,12 @@
    (faithful port of styles/home/sound-music.js)
    ════════════════════════════════════════ */
 import { makeBag } from './_util';
+import { sfxClick, sfxHover, sfxTap } from '@/lib/sfx';
 import { wireAmbientControls } from './ambient-audio';
 
 export function initSoundMusic(): () => void {
   const bag = makeBag();
 
-  /* ── Audio Context ── */
-  let audioCtx = null;
-  function getAC() {
-    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    if (audioCtx.state === 'suspended') audioCtx.resume();
-    return audioCtx;
-  }
 
   let spectrumPlaying = false;
 
@@ -103,54 +97,10 @@ export function initSoundMusic(): () => void {
   });
 
   /* ════════════════════════════════════════
-     CLICK SOUND
+     CLICK & HOVER SOUNDS: lib/sfx.ts
   ════════════════════════════════════════ */
-  function playClick(isButton) {
-    try {
-      const ac   = getAC();
-      const osc  = ac.createOscillator();
-      const gain = ac.createGain();
-      const filt = ac.createBiquadFilter();
+  const playHover = sfxHover;
 
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(isButton ? 900 : 660, ac.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(isButton ? 600 : 440, ac.currentTime + 0.12);
-
-      filt.type = 'lowpass';
-      filt.frequency.value = 3000;
-
-      gain.gain.setValueAtTime(0, ac.currentTime);
-      gain.gain.linearRampToValueAtTime(isButton ? 0.35 : 0.2, ac.currentTime + 0.008);
-      gain.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + (isButton ? 0.28 : 0.18));
-
-      osc.connect(filt); filt.connect(gain); gain.connect(ac.destination);
-      osc.start(); osc.stop(ac.currentTime + 0.25);
-    } catch (e) {}
-  }
-
-  function playHover() {
-    try {
-      const ac   = getAC();
-      const osc  = ac.createOscillator();
-      const gain = ac.createGain();
-      const filt = ac.createBiquadFilter();
-
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(440, ac.currentTime);
-      osc.frequency.linearRampToValueAtTime(520, ac.currentTime + 0.08);
-
-      filt.type = 'bandpass';
-      filt.frequency.value = 1000;
-      filt.Q.value = 2;
-
-      gain.gain.setValueAtTime(0, ac.currentTime);
-      gain.gain.linearRampToValueAtTime(0.18, ac.currentTime + 0.03);
-      gain.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + 0.14);
-
-      osc.connect(filt); filt.connect(gain); gain.connect(ac.destination);
-      osc.start(); osc.stop(ac.currentTime + 0.14);
-    } catch (e) {}
-  }
 
   /* ════════════════════════════════════════
      RIPPLE & PARTICLE EFFECTS
@@ -205,14 +155,14 @@ export function initSoundMusic(): () => void {
   document.querySelectorAll('.btn').forEach(btn => {
     bag.on(btn, 'click', e => {
       spawnRipple(btn, e);
-      playClick(true);
+      sfxClick(true);
       spawnParticles(e.clientX, e.clientY);
     });
   });
 
   document.querySelectorAll('.menu-item, .social-links a').forEach(el => {
     bag.on(el, 'click', e => {
-      playClick(false);
+      sfxClick();
       spawnParticles(e.clientX, e.clientY);
     });
   });
@@ -220,7 +170,7 @@ export function initSoundMusic(): () => void {
   bag.on(document, 'click', e => {
     const isHandled = e.target.closest('.btn, .menu-item, .social-links a, #music-btn');
     if (!isHandled) {
-      playClick(false);
+      sfxTap();
       spawnParticles(e.clientX, e.clientY);
     }
   });
@@ -228,7 +178,6 @@ export function initSoundMusic(): () => void {
   bag.add(() => {
     specRunning = false;
     cancelAnimationFrame(specRaf);
-    try { if (audioCtx) audioCtx.close(); } catch {}
     document.querySelectorAll('.click-particle').forEach(p => p.remove());
   });
   return () => bag.dispose();

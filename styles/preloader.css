@@ -1,0 +1,131 @@
+/* ════════════════════════════════════════
+   The hyperspace preloader (components/Preloader.tsx, lib/scripts/preloader.ts).
+   Coming: stars streak in and slow to a drift (canvas), the signature tunes
+   in like a hologram and fills with the site's neon, left to right.
+   Going (.is-out): back into warp, the name rushes past, the overlay
+   dissolves. Motion is transform / opacity / filter only.
+   ════════════════════════════════════════ */
+
+.pl {
+  position: fixed; inset: 0; z-index: 99999;
+  display: grid; place-items: center; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 50%, #0b0d24 0%, #05060f 55%, #02030a 100%);
+  transition: opacity 0.6s ease 0.4s;
+}
+.pl.is-out { opacity: 0; pointer-events: none; }
+
+.pl-warp { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+/* A faint nebula behind the name, in the site's cyan and violet. */
+.pl-neb {
+  position: absolute; left: 50%; top: 50%; width: min(900px, 140vw); aspect-ratio: 2 / 1; translate: -50% -50%;
+  border-radius: 50%; pointer-events: none;
+  background:
+    radial-gradient(closest-side at 35% 50%, rgba(92, 224, 255, 0.16), transparent),
+    radial-gradient(closest-side at 65% 50%, rgba(188, 111, 255, 0.18), transparent);
+  filter: blur(20px);
+  animation: pl-fade 1.2s ease 0.2s both;
+}
+
+.pl-core {
+  position: relative; display: flex; flex-direction: column; align-items: center;
+  transition: transform 0.75s cubic-bezier(0.6, 0, 0.8, 0.4), opacity 0.5s ease 0.2s, filter 0.6s ease;
+}
+.pl.is-out .pl-core { transform: scale(2.6); opacity: 0; filter: blur(10px); }
+
+/* The name's box: the logo's own proportions (2574 x 973). */
+.pl-mark { position: relative; width: min(440px, 76vw); aspect-ratio: 2574 / 973; }
+
+/* ── The name: copies of the logo as masks ── */
+.pl-logo {
+  position: absolute; inset: 0;
+  -webkit-mask: url('/Images/longlogo.svg') center / contain no-repeat;
+  mask: url('/Images/longlogo.svg') center / contain no-repeat;
+}
+/* The faint outline that tunes in, waiting to be filled. */
+.pl-logo.is-base {
+  background: rgba(255, 255, 255, 0.16);
+  animation: pl-tune 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
+}
+/* The fill: the site's neon flowing through the letters, revealed left to
+   right as --p climbs. */
+.pl-logo.is-fill {
+  background: linear-gradient(90deg, #5ce0ff, #bc6fff, #ff6bd5, #6dff8a, #5ce0ff) 0 0 / 300% 100%;
+  clip-path: inset(-10% calc((1 - var(--p, 0)) * 100%) -10% 0);
+  filter: drop-shadow(0 0 14px rgba(140, 210, 255, 0.55));
+  animation: pl-flow 2.4s linear infinite;
+  transition: filter 0.4s ease;
+}
+@keyframes pl-flow { to { background-position: 150% 0; } }
+/* The bright edge riding the fill, lit only where it crosses the ink. */
+.pl-edge {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, transparent, #fff 50%, transparent) no-repeat;
+  background-size: 9% 100%;
+  background-position: calc(var(--p, 0) * 100%) 0;
+  -webkit-mask: url('/Images/longlogo.svg') center / contain no-repeat;
+  mask: url('/Images/longlogo.svg') center / contain no-repeat;
+  filter: drop-shadow(0 0 8px #8cd2ff) drop-shadow(0 0 16px rgba(188, 111, 255, 0.8));
+  opacity: 0; animation: pl-fade-in 0.4s ease 0.5s forwards;
+}
+@keyframes pl-fade-in { to { opacity: 1; } }
+.pl.is-done .pl-edge { animation: none; opacity: 0; transition: opacity 0.3s; }
+.pl.is-done .pl-logo.is-fill { filter: brightness(1.25) drop-shadow(0 0 22px rgba(140, 210, 255, 0.85)); }
+@keyframes pl-tune {
+  0% { opacity: 0; filter: blur(12px); transform: scale(1.08); }
+  18% { opacity: 0.7; } 26% { opacity: 0.2; } 38% { opacity: 0.9; } 46% { opacity: 0.5; }
+  70% { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: none; }
+}
+/* The ghosts arrive split apart and close in on the name, flickering. */
+.pl-logo.is-c { background: #5ce0ff; mix-blend-mode: screen; animation: pl-ghost-c 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both; }
+.pl-logo.is-m { background: #ff6bd5; mix-blend-mode: screen; animation: pl-ghost-m 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both; }
+@keyframes pl-ghost-c { 0% { opacity: 0; translate: -34px -4px; } 20% { opacity: 0.85; } 75% { opacity: 0.5; } 100% { opacity: 0; translate: 0 0; } }
+@keyframes pl-ghost-m { 0% { opacity: 0; translate: 34px 4px; } 20% { opacity: 0.85; } 75% { opacity: 0.5; } 100% { opacity: 0; translate: 0 0; } }
+
+/* A sheen runs across the name once it's filled. */
+.pl-sheen {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(92, 224, 255, 0.95) 45%, #fff 50%, rgba(188, 111, 255, 0.95) 55%, transparent 65%) 0 0 / 300% 100% no-repeat;
+  -webkit-mask: url('/Images/longlogo.svg') center / contain no-repeat;
+  mask: url('/Images/longlogo.svg') center / contain no-repeat;
+  opacity: 0;
+}
+.pl.is-done .pl-sheen { opacity: 1; animation: pl-sheen 0.9s ease-in-out both; }
+@keyframes pl-sheen { from { background-position: 100% 0; } to { background-position: 0 0; } }
+
+/* When the fill completes: a ring of light bursts from the name. */
+.pl-pulse {
+  position: absolute; left: 50%; top: 50%; width: 120%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%;
+  border: 2px solid rgba(140, 210, 255, 0.7); box-shadow: 0 0 30px rgba(140, 210, 255, 0.5), inset 0 0 30px rgba(188, 111, 255, 0.4);
+  opacity: 0; scale: 0.2; pointer-events: none;
+}
+.pl.is-done .pl-pulse { animation: pl-pulse 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+@keyframes pl-pulse { 0% { opacity: 0.9; scale: 0.2; } 100% { opacity: 0; scale: 1.4; } }
+
+/* Still loading after the arrival (slow network): the name breathes. */
+.pl.is-waiting .pl-logo.is-fill { animation: pl-breathe 1.6s ease-in-out infinite; }
+@keyframes pl-breathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+
+.pl-tagline {
+  margin: 34px 0 0; padding: 0 20px; text-align: center; animation: pl-fade 0.7s ease 0.6s both;
+  font: 400 11px/1.7 'Montserrat', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4);
+}
+.pl-tagline .tagline-name { color: rgba(255, 255, 255, 0.78); }
+.pl-tagline .tagline-br { display: none; }
+@keyframes pl-fade { from { opacity: 0; } }
+
+@media (max-width: 640px) {
+  .pl-mark { width: 70vw; }
+  .pl-tagline { font-size: 10px; letter-spacing: 0.14em; }
+  .pl-tagline .tagline-br { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pl-warp { display: none; }
+  .pl-neb, .pl-logo.is-base, .pl-logo.is-fill, .pl-tagline { animation: none; }
+  .pl-logo.is-c, .pl-logo.is-m, .pl-sheen, .pl-pulse, .pl-edge { display: none; }
+  .pl-core { transition: opacity 0.3s ease; }
+  .pl.is-out .pl-core { transform: none; filter: none; }
+  .pl { transition: opacity 0.3s ease; }
+}

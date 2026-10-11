@@ -9,6 +9,7 @@
 import { initCursor } from './cursor';
 import { makeBag, makeDirtyClear } from './_util';
 import { initSpaceField3D } from './space-field';
+import { sfxClick, sfxHover, sfxTap } from '@/lib/sfx';
 import { wireAmbientControls } from './ambient-audio';
 
 export function initAbout(): () => void {
@@ -107,7 +108,7 @@ export function initAbout(): () => void {
     bag.add(() => { running = false; cancelAnimationFrame(rafId); clearInterval(shooterInterval); });
   })();
 
-  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/signature-loader.ts). */
+  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/preloader.ts). */
 
   /* ══════════ 4. LIQUID CURSOR, AMBIENT AUDIO, SFX & MOBILE MENU ══════════ */
   (function () {
@@ -115,8 +116,6 @@ export function initAbout(): () => void {
     initCursor(bag, 'a, button, [role="button"], .nav-link, .nav-cta, .skill-tag, .stat-pill');
 
     /* ── Audio ── */
-    let audioCtx = null;
-    function getAC() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); if (audioCtx.state === 'suspended') audioCtx.resume(); return audioCtx; }
 
     /* Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
        continuously across every page and remembers its paused state; this engine
@@ -170,29 +169,13 @@ export function initAbout(): () => void {
       else if (!specRunning) { specRunning = true; lastSpec = performance.now(); specRaf = requestAnimationFrame(drawSpectrum); }
     });
 
-    /* Click & hover sounds */
-    function playClick(isBtn) {
-      try {
-        const ac = getAC(), osc = ac.createOscillator(), gain = ac.createGain(), filt = ac.createBiquadFilter();
-        osc.type = 'sine'; osc.frequency.setValueAtTime(isBtn ? 900 : 660, ac.currentTime); osc.frequency.exponentialRampToValueAtTime(isBtn ? 600 : 440, ac.currentTime + 0.12);
-        filt.type = 'lowpass'; filt.frequency.value = 3000;
-        gain.gain.setValueAtTime(0, ac.currentTime); gain.gain.linearRampToValueAtTime(isBtn ? 0.35 : 0.2, ac.currentTime + 0.008); gain.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + (isBtn ? 0.28 : 0.18));
-        osc.connect(filt); filt.connect(gain); gain.connect(ac.destination); osc.start(); osc.stop(ac.currentTime + 0.3);
-      } catch (e) { }
-    }
-    function playHover() {
-      try {
-        const ac = getAC(), osc = ac.createOscillator(), gain = ac.createGain(), filt = ac.createBiquadFilter();
-        osc.type = 'sine'; osc.frequency.setValueAtTime(440, ac.currentTime); osc.frequency.linearRampToValueAtTime(520, ac.currentTime + 0.08);
-        filt.type = 'bandpass'; filt.frequency.value = 1000; filt.Q.value = 2;
-        gain.gain.setValueAtTime(0, ac.currentTime); gain.gain.linearRampToValueAtTime(0.18, ac.currentTime + 0.03); gain.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + 0.14);
-        osc.connect(filt); filt.connect(gain); gain.connect(ac.destination); osc.start(); osc.stop(ac.currentTime + 0.15);
-      } catch (e) { }
-    }
+    /* Click & hover sounds: lib/sfx.ts */
+    const playClick = () => sfxClick();
+    const playHover = sfxHover;
 
     document.querySelectorAll('.nav-link,.nav-cta,.ab-craft,.ab-cn-node,.ql-bento a,.ab-tx-btn,.so-btn,footer a').forEach(el => {
       bag.on(el, 'mouseenter', playHover);
-      bag.on(el, 'click', () => playClick(false));
+      bag.on(el, 'click', () => playClick());
     });
 
     /* Particles */
@@ -206,7 +189,7 @@ export function initAbout(): () => void {
         p.addEventListener('animationend', () => p.remove());
       }
     }
-    bag.on(document, 'click', e => { playClick(false); spawnParticles(e.clientX, e.clientY); });
+    bag.on(document, 'click', e => { sfxTap(); spawnParticles(e.clientX, e.clientY); });
 
     /* ── Mobile menu toggle ── */
     const menuBtn = document.getElementById('menu-btn');
@@ -292,7 +275,6 @@ export function initAbout(): () => void {
 
     bag.add(() => {
       specRunning = false; cancelAnimationFrame(specRaf);
-      try { if (audioCtx) audioCtx.close(); } catch { }
       document.querySelectorAll('.click-particle').forEach(p => p.remove());
       menuTimeouts.forEach(clearTimeout);
       document.body.classList.remove('menu-open');

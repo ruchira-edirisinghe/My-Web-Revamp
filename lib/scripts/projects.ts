@@ -7,6 +7,7 @@
 import { initCursor } from './cursor';
 import { makeBag, makeDirtyClear } from './_util';
 import { initSpaceField3D } from './space-field';
+import { sfxClick, sfxHover } from '@/lib/sfx';
 import { wireAmbientControls } from './ambient-audio';
 
 export function initProjects(): () => void {
@@ -107,7 +108,7 @@ export function initProjects(): () => void {
     bag.add(() => { running = false; cancelAnimationFrame(rafId); });
   })();
 
-  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/signature-loader.ts). */
+  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/preloader.ts). */
 
   /* ══════════ 3. CURSOR & INTERACTION SFX ══════════ */
   (function () {
@@ -131,10 +132,8 @@ export function initProjects(): () => void {
       bag.on(el, 'click', () => { spawnParticles(mX, mY); playClick(); });
     });
 
-    let audioCtx = null;
-    function getAC() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); return audioCtx; }
-    function playClick() { try { const ac = getAC(); const osc = ac.createOscillator(); const gain = ac.createGain(); osc.type = 'sine'; osc.frequency.setValueAtTime(660, ac.currentTime); osc.frequency.exponentialRampToValueAtTime(440, ac.currentTime + 0.1); gain.gain.setValueAtTime(0, ac.currentTime); gain.gain.linearRampToValueAtTime(0.1, ac.currentTime + 0.02); gain.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + 0.15); osc.connect(gain); gain.connect(ac.destination); osc.start(); osc.stop(ac.currentTime + 0.2); } catch (e) { } }
-    function playHover() { try { const ac = getAC(); const osc = ac.createOscillator(); const gain = ac.createGain(); osc.type = 'sine'; osc.frequency.setValueAtTime(440, ac.currentTime); osc.frequency.linearRampToValueAtTime(520, ac.currentTime + 0.08); gain.gain.setValueAtTime(0, ac.currentTime); gain.gain.linearRampToValueAtTime(0.08, ac.currentTime + 0.03); gain.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + 0.14); osc.connect(gain); gain.connect(ac.destination); osc.start(); osc.stop(ac.currentTime + 0.15); } catch (e) { } }
+    const playClick = () => sfxClick();
+    const playHover = sfxHover;
 
     function spawnParticles(x, y) {
       for (let i = 0; i < 6; i++) {
@@ -147,7 +146,6 @@ export function initProjects(): () => void {
 
     bag.add(() => {
       cursorRunning = false; cancelAnimationFrame(rafId);
-      try { if (audioCtx) audioCtx.close(); } catch {}
       document.querySelectorAll('.click-particle').forEach(p => p.remove());
     });
   })();

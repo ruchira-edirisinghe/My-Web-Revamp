@@ -8,12 +8,13 @@
 import { initCursor } from './cursor';
 import { makeBag } from './_util';
 import { initSpaceField3D } from './space-field';
+import { sfxClick, sfxHover } from '@/lib/sfx';
 import { wireAmbientControls } from './ambient-audio';
 
 export function initContact(): () => void {
   const bag = makeBag();
 
-  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/signature-loader.ts). */
+  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/preloader.ts). */
 
   /* ══════════ 2. SPACE BACKGROUND - with Aurora & Shooting Stars ══════════ */
   (function () {
@@ -194,12 +195,6 @@ export function initContact(): () => void {
 
     if (!musicBtn && !musicBtnD) return;
 
-    let audioContext = null;
-    function getAC() {
-      if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      if (audioContext.state === 'suspended') audioContext.resume();
-      return audioContext;
-    }
 
     /* Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
        continuously across every page and remembers its paused state; this engine
@@ -262,34 +257,11 @@ export function initContact(): () => void {
     specRaf = requestAnimationFrame(drawSpectrum);
     wakeSpectrum = () => { if (specRunning && !specRaf) { lastSpec = performance.now(); specRaf = requestAnimationFrame(drawSpectrum); } };
 
-    // Click & hover sounds
-    function playSfx(type) {
-      try {
-        const ac = getAC();
-        const osc = ac.createOscillator(), gain = ac.createGain();
-        if (type === 'hover') {
-          osc.type = 'sine'; osc.frequency.setValueAtTime(440, ac.currentTime);
-          osc.frequency.linearRampToValueAtTime(520, ac.currentTime + 0.08);
-          gain.gain.setValueAtTime(0, ac.currentTime);
-          gain.gain.linearRampToValueAtTime(0.1, ac.currentTime + 0.02);
-          gain.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + 0.12);
-          osc.connect(gain); gain.connect(ac.destination);
-          osc.start(); osc.stop(ac.currentTime + 0.15);
-        } else {
-          osc.type = 'sine'; osc.frequency.setValueAtTime(660, ac.currentTime);
-          osc.frequency.exponentialRampToValueAtTime(440, ac.currentTime + 0.1);
-          gain.gain.setValueAtTime(0, ac.currentTime);
-          gain.gain.linearRampToValueAtTime(0.15, ac.currentTime + 0.01);
-          gain.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + 0.15);
-          osc.connect(gain); gain.connect(ac.destination);
-          osc.start(); osc.stop(ac.currentTime + 0.2);
-        }
-      } catch (e) {}
-    }
+    // Click & hover sounds: lib/sfx.ts
 
     document.querySelectorAll('a, button').forEach(el => {
-      bag.on(el, 'mouseenter', () => playSfx('hover'));
-      bag.on(el, 'click', () => playSfx('click'));
+      bag.on(el, 'mouseenter', sfxHover);
+      bag.on(el, 'click', () => sfxClick());
     });
 
     // Click Particles
@@ -317,7 +289,6 @@ export function initContact(): () => void {
     bag.add(() => {
       specRunning = false;
       cancelAnimationFrame(specRaf);
-      try { if (audioContext) audioContext.close(); } catch {}
       document.querySelectorAll('.click-particle').forEach(p => p.remove());
     });
   })();

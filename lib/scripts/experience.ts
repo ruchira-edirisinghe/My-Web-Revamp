@@ -14,6 +14,7 @@
 import { initCursor } from './cursor';
 import { makeBag } from './_util';
 import { initSpaceField3D } from './space-field';
+import { sfxClick, sfxHover, sfxTap } from '@/lib/sfx';
 import { wireAmbientControls } from './ambient-audio';
 
 export function initExperience(): () => void {
@@ -114,7 +115,7 @@ export function initExperience(): () => void {
     bag.add(() => { running = false; cancelAnimationFrame(rafId); });
   })();
 
-  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/signature-loader.ts). */
+  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/preloader.ts). */
 
   /* ══════════ 4. CURSOR & MUSIC & SOUNDS (experience.js #4) ══════════ */
   (function () {
@@ -122,8 +123,6 @@ export function initExperience(): () => void {
     initCursor(bag);
 
     /* ── Audio ── */
-    let audioCtx = null;
-    function getAC() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); if (audioCtx.state === 'suspended') audioCtx.resume(); return audioCtx; }
 
     /* Ambient music - one shared <audio> (lib/scripts/ambient-audio.ts) plays
        continuously across every page and remembers its paused state; this engine
@@ -173,29 +172,13 @@ export function initExperience(): () => void {
     specRaf = requestAnimationFrame(drawSpectrum);
     wakeSpectrum = () => { if (specRunning && !specRaf) { lastSpec = performance.now(); specRaf = requestAnimationFrame(drawSpectrum); } };
 
-    /* Click & hover sounds */
-    function playClick(isBtn) {
-      try {
-        const ac = getAC(), osc = ac.createOscillator(), gain = ac.createGain(), filt = ac.createBiquadFilter();
-        osc.type = 'sine'; osc.frequency.setValueAtTime(isBtn ? 900 : 660, ac.currentTime); osc.frequency.exponentialRampToValueAtTime(isBtn ? 600 : 440, ac.currentTime + 0.12);
-        filt.type = 'lowpass'; filt.frequency.value = 3000;
-        gain.gain.setValueAtTime(0, ac.currentTime); gain.gain.linearRampToValueAtTime(isBtn ? 0.35 : 0.2, ac.currentTime + 0.008); gain.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + (isBtn ? 0.28 : 0.18));
-        osc.connect(filt); filt.connect(gain); gain.connect(ac.destination); osc.start(); osc.stop(ac.currentTime + 0.3);
-      } catch (e) { }
-    }
-    function playHover() {
-      try {
-        const ac = getAC(), osc = ac.createOscillator(), gain = ac.createGain(), filt = ac.createBiquadFilter();
-        osc.type = 'sine'; osc.frequency.setValueAtTime(440, ac.currentTime); osc.frequency.linearRampToValueAtTime(520, ac.currentTime + 0.08);
-        filt.type = 'bandpass'; filt.frequency.value = 1000; filt.Q.value = 2;
-        gain.gain.setValueAtTime(0, ac.currentTime); gain.gain.linearRampToValueAtTime(0.18, ac.currentTime + 0.03); gain.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + 0.14);
-        osc.connect(filt); filt.connect(gain); gain.connect(ac.destination); osc.start(); osc.stop(ac.currentTime + 0.15);
-      } catch (e) { }
-    }
+    /* Click & hover sounds: lib/sfx.ts */
+    const playClick = () => sfxClick();
+    const playHover = sfxHover;
 
     document.querySelectorAll('.nav-link,.nav-cta,.xp-snd,.so-btn,footer a').forEach(el => {
       bag.on(el, 'mouseenter', playHover);
-      bag.on(el, 'click', () => playClick(false));
+      bag.on(el, 'click', () => playClick());
     });
 
     /* Particles */
@@ -212,13 +195,12 @@ export function initExperience(): () => void {
     bag.on(document, 'click', e => {
       // Don't fire particles/sounds for menu button or menu overlay clicks
       if (e.target.closest('#menu-btn') || e.target.closest('#menu-close-mobile') || e.target.closest('#mobile-menu')) return;
-      playClick(false); spawnParticles(e.clientX, e.clientY);
+      sfxTap(); spawnParticles(e.clientX, e.clientY);
     });
 
     bag.add(() => {
       cursorRunning = false; cancelAnimationFrame(cursorRaf);
       specRunning = false; cancelAnimationFrame(specRaf);
-      try { if (audioCtx) audioCtx.close(); } catch { }
       document.querySelectorAll('.click-particle').forEach(p => p.remove());
     });
   })();
@@ -466,15 +448,19 @@ export function initExperience(): () => void {
       if (want > target) target = want;
       if (target >= (pts[pts.length - 1]?.y ?? H)) target = H;
     }
+    // Measure (aim) at the start of a frame, then write (paint): reading the
+    // timeline's position straight from every scroll event, after the last
+    // frame's writes, forced the browser to redo layout on each one.
     function loop() {
       raf = 0;
+      aim();
       const diff = target - drawn;
       drawn += diff * 0.07;
       if (Math.abs(diff) < 0.5) drawn = target;
       paint();
       if (drawn !== target) raf = requestAnimationFrame(loop);
     }
-    const wake = () => { aim(); if (!raf && drawn !== target) raf = requestAnimationFrame(loop); };
+    const wake = () => { if (!raf) raf = requestAnimationFrame(loop); };
 
     function rebuild() {
       build();
