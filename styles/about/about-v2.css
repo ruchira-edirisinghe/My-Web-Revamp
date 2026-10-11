@@ -13,7 +13,9 @@
 @keyframes ab-pulse { 0%, 100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.08); } }
 @keyframes ab-wave { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(16deg); } 20%, 40% { transform: rotate(-10deg); } }
 @keyframes ab-shine { from { background-position: 0% 50%; } to { background-position: 200% 50%; } }
-@keyframes ab-word { from { opacity: 0; transform: translateY(8px); filter: blur(4px); } }
+/* Words fade in one by one. (Opacity only: a blur on hundreds of inline spans
+   repaints the whole paragraph every frame, and transforms do not apply to inline boxes.) */
+@keyframes ab-word { from { opacity: 0; } }
 @keyframes ab-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes ab-ping { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(2.6); opacity: 0; } }
 
@@ -39,7 +41,7 @@
   -webkit-text-fill-color: transparent; color: transparent;
   /* The gradient only paints inside this box; it reaches past Burgundia's swashes. */
   padding: 0.2em 0.45em 0.3em; margin: -0.2em -0.45em -0.3em;
-  animation: ab-shine 9s linear infinite;
+  animation: ab-shine 9s steps(270) infinite; /* ~30 repaints/s */
 }
 .ab-lede {
   margin: 28px auto 0; max-width: 860px;
@@ -68,11 +70,12 @@
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor; mask-composite: exclude;
   opacity: 0; transition: opacity 0.4s;
-  animation: ab-rim 4s linear infinite;
+  /* Only turns while it shows: a hidden rim restyling 30 times a second still costs. */
+  animation: ab-rim 4s steps(120) infinite paused;
 }
 @keyframes ab-rim { to { --ab-ang: 360deg; } }
 .ab-spot:hover::before, .ab-spot:focus-visible::before, .ab-spot.is-on::before { opacity: 1; }
-.ab-spot:hover::after, .ab-spot:focus-visible::after, .ab-spot.is-on::after { opacity: 1; }
+.ab-spot:hover::after, .ab-spot:focus-visible::after, .ab-spot.is-on::after { opacity: 1; animation-play-state: running; }
 .ab-spot:not(:hover):not(:focus-visible):not(.is-on)::after { animation-play-state: paused; }
 
 /* ── Hero: the photo on a glowing disc, two phrases either side (AboutHero.tsx) ──
@@ -122,13 +125,15 @@
   filter: saturate(0.8);
   animation: ab-spin 90s linear infinite;
 }
-/* A rim of light running round the disc. */
+/* A rim of light running round the disc. It's a ring, so spinning the
+   element looks the same as spinning its gradient, and a transform runs on
+   the GPU instead of repainting every frame. */
 .ab-halo-core::before {
   content: ''; position: absolute; z-index: 1; inset: 0; border-radius: 50%; padding: 2px;
-  background: conic-gradient(from var(--ab-ang), #5ce0ff, #bc6fff 25%, transparent 45%, transparent 60%, #ff6bd5 80%, #5ce0ff);
+  background: conic-gradient(#5ce0ff, #bc6fff 25%, transparent 45%, transparent 60%, #ff6bd5 80%, #5ce0ff);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  animation: ab-rim 7s linear infinite;
+  animation: ab-spin 7s linear infinite;
 }
 /* Two orbits round it, each carrying a little moon. */
 .ab-halo-orbit {
@@ -182,7 +187,7 @@
 .ab-halo-side li.is-on .ab-halo-a { color: #fff; animation: ab-halo-kick 0.55s cubic-bezier(0.22, 0.61, 0.36, 1); }
 .ab-halo-side li.is-on .ab-halo-b {
   filter: drop-shadow(0 0 18px color-mix(in srgb, var(--c) 55%, transparent));
-  animation: ab-halo-lit 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), ab-shine 2.2s linear infinite;
+  animation: ab-halo-lit 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), ab-shine 2.2s steps(66) infinite;
 }
 /* The wire, from the phrase's inner edge towards the disc, ending in a dot. */
 .ab-halo-wire {
@@ -348,7 +353,7 @@
 
 /* ── Story: an ID badge beside the bio in three chapters (AboutStory.tsx) ── */
 @keyframes ab-id-sway { 0%, 100% { rotate: -1.4deg; } 50% { rotate: 1.4deg; } }
-@keyframes ab-id-holo { to { background-position: 200% 0; } }
+@keyframes ab-id-holo { to { transform: translateX(-50%); } }
 .ab-story {
   display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start;
   margin-top: 160px;
@@ -382,12 +387,17 @@
   background: linear-gradient(165deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015) 55%), rgba(10, 12, 28, 0.78);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
-.ab-id::before {
-  content: ''; position: absolute; inset: 0; z-index: 2; border-radius: inherit; padding: 1px; pointer-events: none;
-  background: conic-gradient(from var(--ab-ang), rgba(92, 224, 255, 0.9), rgba(188, 111, 255, 0.7) 20%, rgba(255, 255, 255, 0.08) 35%, rgba(255, 255, 255, 0.08) 65%, rgba(109, 255, 138, 0.7) 82%, rgba(92, 224, 255, 0.9));
+/* The rim is a 1px ring cut out of a big conic gradient that spins behind it:
+   a transform, so it runs on the GPU instead of repainting the card. */
+.ab-id-rim {
+  position: absolute; inset: 0; z-index: 2; border-radius: inherit; padding: 1px; pointer-events: none; overflow: hidden;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  animation: ab-rim 9s linear infinite;
+}
+.ab-id-rim::before {
+  content: ''; position: absolute; left: 50%; top: 50%; width: 220%; aspect-ratio: 1; margin: -110% 0 0 -110%;
+  background: conic-gradient(rgba(92, 224, 255, 0.9), rgba(188, 111, 255, 0.7) 20%, rgba(255, 255, 255, 0.08) 35%, rgba(255, 255, 255, 0.08) 65%, rgba(109, 255, 138, 0.7) 82%, rgba(92, 224, 255, 0.9));
+  animation: ab-spin 9s linear infinite;
 }
 .ab-id-grid {
   position: absolute; inset: 0; z-index: -1; opacity: 0.5;
@@ -414,9 +424,11 @@
 .ab-id-chip::before, .ab-id-chip::after { content: ''; position: absolute; border: 1px solid rgba(90, 60, 10, 0.55); }
 .ab-id-chip::before { inset: 9px 0; border-width: 1px 0; }
 .ab-id-chip::after { inset: 0 14px; border-width: 0 1px; }
-.ab-id-holo {
-  flex: 1; height: 10px; border-radius: 6px; opacity: 0.75;
-  background: linear-gradient(90deg, #5ce0ff, #bc6fff, #ff6bd5, #ffc94d, #6dff8a, #5ce0ff) 0 0 / 200% 100%;
+.ab-id-holo { position: relative; overflow: hidden; flex: 1; height: 10px; border-radius: 6px; opacity: 0.75; }
+/* The foil slides along by one tile of its gradient (a transform, not a repaint). */
+.ab-id-holo::before {
+  content: ''; position: absolute; inset: 0 auto 0 0; width: 400%;
+  background: linear-gradient(90deg, #5ce0ff, #bc6fff, #ff6bd5, #ffc94d, #6dff8a, #5ce0ff) 0 0 / 50% 100% repeat-x;
   animation: ab-id-holo 6s linear infinite;
 }
 
@@ -765,7 +777,7 @@
 /* ── Tech stack: three decks (AboutStack.tsx) ──
    Every tool in view on a 3 x 2 grid per deck. The tiles pop in when the deck
    arrives; after that a glow passes from tile to tile (each waits its turn
-   with --j), while a radar sweep turns slowly behind them. */
+   with --j). */
 @keyframes ab-tool-in { from { opacity: 0; transform: translateY(18px) scale(0.85); } }
 @keyframes ab-tool-ping {
   0%, 14%, 100% { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 22%, transparent); }
@@ -777,15 +789,6 @@
   padding: 26px 24px 24px; border-radius: 30px;
   background: linear-gradient(170deg, color-mix(in srgb, var(--c) 12%, transparent), rgba(255, 255, 255, 0.012) 50%), rgba(10, 12, 26, 0.62);
   border: 1px solid color-mix(in srgb, var(--c) 20%, transparent);
-}
-/* The radar: a soft wedge of the deck's colour turning round the middle of the grid. */
-.ab-deck-radar {
-  position: absolute; z-index: -1; left: 50%; top: 62%; width: 160%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; pointer-events: none;
-  background:
-    conic-gradient(from 0deg, transparent 0 78%, color-mix(in srgb, var(--c) 22%, transparent) 96%, color-mix(in srgb, var(--c) 40%, transparent) 100%),
-    repeating-radial-gradient(circle, transparent 0 56px, color-mix(in srgb, var(--c) 9%, transparent) 56px 57px);
-  -webkit-mask: radial-gradient(circle, #000 25%, transparent 62%); mask: radial-gradient(circle, #000 25%, transparent 62%);
-  animation: ab-spin 9s linear infinite;
 }
 
 .ab-deck-head { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
@@ -830,7 +833,7 @@
 .ab-tool:hover .ab-tool-ico { transform: rotate(-8deg) scale(1.1); }
 .ab-tool-ico svg { width: 26px; height: 26px; }
 .ab-tool-name {
-  max-width: 100%; text-align: center; line-height: 1.25; overflow-wrap: anywhere;
+  max-width: 100%; text-align: center; line-height: 1.25; overflow-wrap: normal; /* a name never breaks mid-word */
   font-family: 'Epic Pro', sans-serif; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85);
 }
 
@@ -968,7 +971,7 @@
   .ab-tool { padding: 14px 4px 11px; border-radius: 16px; }
   .ab-tool-ico { width: 44px; height: 44px; border-radius: 13px; }
   .ab-tool-ico svg { width: 24px; height: 24px; }
-  .ab-tool-name { font-size: 10px; letter-spacing: 0.04em; }
+  .ab-tool-name { font-size: clamp(8.5px, 2.5vw, 10px); letter-spacing: 0.02em; }
   .ab-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .ab-bento .is-wide { grid-column: 1 / -1; }
   .ab-bento a, .ab-bento .is-wide a { padding: 16px; gap: 16px; border-radius: 22px; }
@@ -976,7 +979,7 @@
   .ab-bento .ql-soc-txt b { font-size: 15px; }
   /* The logo bar closer under the hero, with bigger logos. */
   .ab-ticker-k { margin-top: 26px; }
-  .ab-ticker-k + .logo-ticker-wrap { padding-top: 10px; }
+  .ab-ticker-k + .logo-ticker-wrap { padding-top: 22px; }
   .ab-ticker-k + .logo-ticker-wrap .ticker-logo { height: 46px; }
   .ab-ticker-k + .logo-ticker-wrap .ticker-set { gap: 44px; }
 }
@@ -999,8 +1002,8 @@
 /* ── Reduced motion: everything in place, nothing loops ── */
 @media (prefers-reduced-motion: reduce) {
   .ab-rv, .ab-fact, .ab-halo-side li { opacity: 1; translate: none; transform: none; transition: none; }
-  .ab-halo-tap, .ab-halo-ripple, .ab-halo-tap b, .egg-burst i, .egg-twinkles i, .egg-confetti b, .xg-x.egg-x-ready, .egg-orb, .egg-orb::after, .egg-title, .egg-caption, .egg-caption-big, .ab-id-hang, .ab-id::before, .ab-id-orb, .ab-id-holo, .ab-glow, .ab-halo-pic, .ab-halo-glow, .ab-halo-core::before, .ab-halo-core::after, .ab-halo-orbit, .ab-halo-side li, .ab-halo-b, .ab-halo-wire::after, .ab-halo-ctas, .ab-wave, .ab-roles-reel, .ab-craft-orbit,
-  .ab-play-logo img, .ab-play-halo, .ab-spot::after, .ab-deck-radar, .ab-deck-emblem i, .ab-tool-ico, .ab-deck.is-in .ab-tool,
+  .ab-halo-tap, .ab-halo-ripple, .ab-halo-tap b, .egg-burst i, .egg-twinkles i, .egg-confetti b, .xg-x.egg-x-ready, .egg-orb, .egg-orb::after, .egg-title, .egg-caption, .egg-caption-big, .ab-id-hang, .ab-id-rim::before, .ab-id-orb, .ab-id-holo::before, .ab-glow, .ab-halo-pic, .ab-halo-glow, .ab-halo-core::before, .ab-halo-core::after, .ab-halo-orbit, .ab-halo-side li, .ab-halo-b, .ab-halo-wire::after, .ab-halo-ctas, .ab-wave, .ab-roles-reel, .ab-craft-orbit,
+  .ab-play-logo img, .ab-play-halo, .ab-spot::after, .ab-deck-emblem i, .ab-tool-ico, .ab-deck.is-in .ab-tool,
   .ab-tx-quote span, .ab-tx-from, .ab-tx-stars i, .ab-tx-msg, .ab-cn-grid, .ab-cn-tag, .ab-cn-node::before,
   .ab-words.is-in span { animation: none; }
   .ab-words span { opacity: 1; }

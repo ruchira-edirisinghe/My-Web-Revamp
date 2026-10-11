@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import { onNearOrIdle } from '@/lib/when-idle';
 
 /* The Contact page's 3D astronaut, peeking up from the bottom of the page
    between the footer's links: chest up, waving with his right glove and
@@ -17,14 +18,11 @@ export default function AstroPeek() {
     let dispose: (() => void) | undefined;
     let cancelled = false;
 
-    const load = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
-      load.disconnect();
+    const cancelLoad = onNearOrIdle(box, () => {
       import('@/lib/scripts/contact-3d')
         .then(({ mountFigure }) => { if (!cancelled) dispose = mountFigure(el, 'peek'); })
         .catch(() => el.classList.add('is-failed'));
-    }, { rootMargin: '700px 0px' });
-    load.observe(box);
+    });
 
     const rise = new IntersectionObserver(([e]) => {
       if (!e.isIntersecting) return;
@@ -41,7 +39,7 @@ export default function AstroPeek() {
     const ro = new ResizeObserver(sync);
     if (foot) ro.observe(foot);
 
-    return () => { cancelled = true; load.disconnect(); rise.disconnect(); ro.disconnect(); dispose?.(); };
+    return () => { cancelled = true; cancelLoad(); rise.disconnect(); ro.disconnect(); dispose?.(); };
   }, []);
 
   return (

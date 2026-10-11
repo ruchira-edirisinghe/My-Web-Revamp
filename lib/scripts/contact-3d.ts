@@ -141,6 +141,9 @@ function stage(host, { fov, target, from, hostFrame = false }) {
   // Capped, and lowered further by mountFigure if frames start to drop.
   let dpr = min(window.devicePixelRatio || 1, 1.5);
   renderer.setPixelRatio(dpr);
+  // Reading the shader compile log is synchronous and stalls the page on a
+  // slow GPU; only worth it while developing.
+  renderer.debug.checkShaderErrors = process.env.NODE_ENV !== 'production';
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   // Neutral keeps the models' colours; ACES washed the saturated ones out.
   renderer.toneMapping = THREE.NeutralToneMapping;
@@ -1228,11 +1231,16 @@ export function mountFigure(host, kind, base = '/models/contact/') {
   const onMotion = () => { if (still.matches && api) drawStill(); schedule(); };
   still.addEventListener('change', onMotion);
 
-  setup.build(st, base).then((built) => {
+  setup.build(st, base).then(async (built) => {
     if (dead) return;
     api = built;
     api.frame(0, 0.016);
     st.fitTo(setup.fit || reach(st.root, setup.target) * setup.pad);
+    // Compile the figure's shaders in the background before the first draw;
+    // drawing first compiles them on the spot and freezes scrolling while the
+    // driver works (the figure mounts while the visitor scrolls towards it).
+    try { await st.renderer.compileAsync(st.scene, st.camera); } catch { /* draw compiles them instead */ }
+    if (dead) return;
     if (still.matches) drawStill(); else render();
     host.classList.add('is-ready');
     schedule();

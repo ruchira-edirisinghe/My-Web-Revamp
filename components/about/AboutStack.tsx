@@ -3,8 +3,8 @@ import { ORBITS } from '@/components/about/data';
 
 /* About: the tech stack as three decks - one per kind of tool, each with
    every tool in view at once on a small grid. Each deck has a turning orbit
-   emblem and a slow radar sweep behind its tiles; the tiles pop in when the
-   deck comes into view, then a glow passes from one to the next in turn.
+   emblem; the tiles pop in when the deck comes into view, then a glow passes
+   from one to the next in turn.
    Styles: styles/about/about-v2.css (.ab-deck). */
 
 export default function AboutStack() {
@@ -25,7 +25,6 @@ export default function AboutStack() {
       <div className="ab-decks">
         {ORBITS.map((o, i) => (
           <article key={o.key} className="ab-deck ab-spot ab-rv" style={cssVars({ '--c': o.c, '--d': `${i * 0.12}s`, '--n': o.tools.length })}>
-            <i className="ab-deck-radar" aria-hidden="true" />
             <header className="ab-deck-head">
               <span className="ab-deck-emblem" aria-hidden="true">
                 <i className="is-1"><b /></i>

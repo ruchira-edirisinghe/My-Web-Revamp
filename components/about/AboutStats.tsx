@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import { onNearOrIdle } from '@/lib/when-idle';
 import { cssVars } from '@/lib/css';
 
 /* About: the mission log. A 3D flying saucer ('ufo' in lib/scripts/contact-3d.ts,
@@ -33,15 +34,12 @@ export default function AboutStats() {
     if (!el) return;
     let dispose: (() => void) | undefined;
     let cancelled = false;
-    const load = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
-      load.disconnect();
+    const cancelLoad = onNearOrIdle(el, () => {
       import('@/lib/scripts/contact-3d')
         .then(({ mountFigure }) => { if (!cancelled) dispose = mountFigure(el, 'ufo', '/models/about/'); })
         .catch(() => el.classList.add('is-failed'));
-    }, { rootMargin: '700px 0px' });
-    load.observe(el);
-    return () => { cancelled = true; load.disconnect(); dispose?.(); };
+    });
+    return () => { cancelled = true; cancelLoad(); dispose?.(); };
   }, []);
 
   return (

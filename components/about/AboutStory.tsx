@@ -59,6 +59,7 @@ export default function AboutStory() {
           <div className="ab-id-hang">
             <span className="ab-id-strap" aria-hidden="true"><i /></span>
             <div className="ab-id">
+              <i className="ab-id-rim" aria-hidden="true" />
               <i className="ab-id-grid" aria-hidden="true" />
               <i className="ab-id-orb" aria-hidden="true" />
               <span className="ab-id-slot" aria-hidden="true" />

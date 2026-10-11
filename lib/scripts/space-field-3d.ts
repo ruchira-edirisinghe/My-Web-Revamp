@@ -299,6 +299,20 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
     pos.needsUpdate = true;
   }
 
+  /* ── Shader warm-up ───────────────────────────────────────────────
+     three.js compiles a material the first time an object using it is
+     drawn. The shooting stars start hidden, so their material used to
+     compile when the first one launched, a few seconds in, usually while
+     the visitor was scrolling, and the main thread then sat waiting on the
+     driver (seconds on a slow GPU). Compile everything now, in the
+     background, with the shooters briefly marked visible so they're
+     included. In production also skip three's shader-error check: it reads
+     the compile log synchronously, which is what forces that wait. */
+  renderer.debug.checkShaderErrors = process.env.NODE_ENV !== 'production';
+  for (const s of shooters) s.line.visible = true;
+  renderer.compileAsync(scene, camera).catch(() => {});
+  for (const s of shooters) s.line.visible = false;
+
   /* ── Sizing ───────────────────────────────────────────────────── */
   function resize() {
     const w = window.innerWidth;
