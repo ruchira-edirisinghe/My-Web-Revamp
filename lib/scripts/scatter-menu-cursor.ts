@@ -200,8 +200,9 @@ export function initScatterMenuCursor(): () => void {
   });
 
   bag.add(() => {
-    cursorRunning = false; animating = false;
-    cancelAnimationFrame(cursorRaf); cancelAnimationFrame(loopRaf);
+    // The cursor tears itself down via initCursor's own bag entries.
+    animating = false;
+    cancelAnimationFrame(loopRaf);
     timeouts.forEach(clearTimeout);
     document.body.classList.remove('exploded');
   });

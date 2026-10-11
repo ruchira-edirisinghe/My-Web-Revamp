@@ -19,6 +19,9 @@ export default function HomeClient() {
     // hero (enlarged photo, one-line name, mis-placed elements). Home never
     // wants a data-page, so clear it unconditionally before first paint.
     document.body.removeAttribute('data-page');
+    // `exploded` hides the hero while the scatter menu is open; leaving home
+    // through that menu must not bring it back hidden.
+    document.body.classList.remove('exploded');
   }, []);
 
   useEffect(() => {
@@ -37,7 +40,7 @@ export default function HomeClient() {
       // On bfcache restore React effects don't re-run, so re-assert the home
       // invariant here too: no stale data-page (see useLayoutEffect above).
       document.body.removeAttribute('data-page');
-      document.body.classList.remove('modal-active', 'modal-open', 'menu-open', 'page-transitioning');
+      document.body.classList.remove('modal-active', 'modal-open', 'menu-open', 'page-transitioning', 'exploded');
       document.body.style.overflow = '';
     }
     window.addEventListener('pageshow', handlePageShow);

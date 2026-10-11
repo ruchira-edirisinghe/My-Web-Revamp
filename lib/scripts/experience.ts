@@ -199,7 +199,6 @@ export function initExperience(): () => void {
     });
 
     bag.add(() => {
-      cursorRunning = false; cancelAnimationFrame(cursorRaf);
       specRunning = false; cancelAnimationFrame(specRaf);
       document.querySelectorAll('.click-particle').forEach(p => p.remove());
     });
