@@ -18,7 +18,7 @@ interface StandardShellProps {
   tagline?: ReactNode;
   /** Page <main> content. */
   children: ReactNode;
-  /** Render the shared footer (default true). Quick Links has none. */
+  /** Render the shared footer (default true). */
   footer?: boolean;
 }
 

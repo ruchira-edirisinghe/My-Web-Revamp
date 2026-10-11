@@ -413,6 +413,11 @@ body[data-page="projects"] main {
   display: flex;
   flex-direction: column;
 }
+/* Phones: the usual 16px side gutter, so cards and titles get the width. */
+@media (max-width: 600px) {
+  body[data-page="projects-hub"] main,
+  body[data-page="projects"] main { padding-left: 16px; padding-right: 16px; }
+}
 
 /* Case studies use full-bleed strips (.ui-gallery marquee, modal overlay) sized
    with `width: 100vw; margin-left: -50vw`. On a page with a vertical scrollbar,

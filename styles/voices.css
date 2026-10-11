@@ -100,10 +100,21 @@
   .ab-cn-map { width: min(560px, 100%); margin: 0 auto; }
 }
 @media (max-width: 640px) {
-  .ab-cn-map { width: calc(100% - 24px); }
+  .ab-cn { gap: 0; }
+  /* The chart's lowest stars sit well above its bottom edge, so pull the
+     message up under them; and start each message at the top of the deck
+     (sized to the longest one) rather than centring it. */
+  .ab-cn-map { width: calc(100% - 24px); margin-bottom: -5%; }
+  .ab-tx-deck > * { align-self: start; }
+  /* On a phone the longest message is far taller than the rest, so the deck
+     fits the one showing instead, and the arrows move above it where they
+     stay put whichever message is up. */
+  .ab-tx { display: flex; flex-direction: column; }
+  .ab-tx-nav { order: -1; justify-content: flex-end; margin: 0 0 6px; }
+  .ab-tx-msg.is-sizer { display: none; }
   .ab-cn-node { width: 40px; height: 40px; }
   .ab-cn-node::before { inset: -10px; }
-  .ab-cn-tag { top: calc(100% + 14px); font-size: 9px; padding: 3px 8px; }
+  .ab-cn-tag { top: calc(100% + 14px); font-size: 10px; padding: 3px 8px; }
   .ab-tx-q { width: 70px; }
   .ab-tx-quote { font-size: 16px; margin-bottom: 22px; }
   .ab-tx-from { flex-wrap: wrap; gap: 12px 14px; }

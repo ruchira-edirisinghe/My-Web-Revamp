@@ -93,6 +93,13 @@ export default function QuicklinksClient() {
   }, []);
 
   const time = useColomboTime();
+  // The scroll cue (phones only, see links-deck.css) goes once the visitor scrolls.
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const on = () => { if (window.scrollY > 60) { setScrolled(true); window.removeEventListener('scroll', on); } };
+    window.addEventListener('scroll', on, { passive: true });
+    return () => window.removeEventListener('scroll', on);
+  }, []);
   const [toast, setToast] = useState('');
   const toastTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   useEffect(() => () => clearTimeout(toastTimer.current), []);
@@ -115,7 +122,6 @@ export default function QuicklinksClient() {
     <StandardShell
       active="links"
       dataPage="links"
-      footer={false}
       tagline={<>Opening The Gateway To My <span className="tagline-name">Digital Presence</span></>}
     >
       <main className="ql">
@@ -210,6 +216,9 @@ export default function QuicklinksClient() {
           </div>
         </div>
 
+        <p className={`ql-scroll${scrolled ? ' is-gone' : ''}`} aria-hidden="true">
+          Scroll for more<span className="ql-scroll-chev"><i /><i /></span>
+        </p>
         <p className={`ql-toast${toast ? ' on' : ''}`} role="status" aria-live="polite">{toast}</p>
       </main>
     </StandardShell>

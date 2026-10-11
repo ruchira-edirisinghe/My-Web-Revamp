@@ -193,7 +193,7 @@ body:has(.gs-page) footer {
   font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
   color: var(--gs-a);
 }
-.gs-page .gs-lede { color: var(--gs-muted); font-size: 14px; margin: -8px 0 22px; }
+.gs-page .gs-lede { color: var(--gs-muted); font-size: 14px; line-height: 1.7; margin: -8px 0 22px; }
 
 .gs-pitch { display: grid; gap: 16px; max-width: 820px; margin-bottom: 30px; }
 .gs-pitch p { font-size: 16px; line-height: 1.8; }

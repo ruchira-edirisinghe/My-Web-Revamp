@@ -370,12 +370,20 @@ body.menu-open { overflow: hidden; }
   }
 }
 
-/* Phones: the copyright sits in the right-hand corner on two lines
-   ("© 2026 Ruchira" / "Edirisinghe"), right-aligned, with the scroll-to-top
-   control (lib/scripts/scroll-top.ts) standing above it. */
+/* Phones: the four social icons on one row, the copyright on its own line
+   under them, both centred. Same on every page (the per-route stylesheets
+   lay the footer out as a row, hence the !important). */
 @media (max-width: 768px) {
-  footer .copyright { margin-left: auto; text-align: right; white-space: nowrap; line-height: 1.6; }
-  footer .copyright-last { display: block; }
+  body footer {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    text-align: center;
+  }
+  body footer .social-links { justify-content: center; flex-wrap: nowrap; }
+  body footer .copyright { margin: 0 !important; text-align: center !important; white-space: nowrap; line-height: 1.6; }
+  body footer .copyright-last { display: inline; }
 }
 
 /* ════════════════════════════════════════

@@ -345,7 +345,9 @@ main.ct { overflow-x: clip; }
   .ct-hero { grid-template-columns: 1fr; gap: 20px; min-height: 0; text-align: center; }
   .ct-hero-art { order: -1; }
   .ct-comms { width: min(380px, 88vw); --chip: 46px; }
-  .ct-3d-desk { width: min(520px, 100%); margin: 0 auto; }
+  /* 15% smaller than the column, with room under it: the canvas overhangs
+     the box (--bleed), so a spinning figure would otherwise reach the text. */
+  .ct-3d-desk { width: min(442px, 85%); margin: 0 auto 13%; }
   .ct-intro { margin-inline: auto; }
   .ct-actions, .ct-meta { justify-content: center; }
   .ct-sec { margin-top: 110px; }
