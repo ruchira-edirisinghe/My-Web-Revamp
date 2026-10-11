@@ -14,6 +14,10 @@
    the <audio> element - is created fresh.
    ════════════════════════════════════════ */
 
+// A calm, dreamy space jazz piece: lead violin over brushed drums, Rhodes and
+// hazy pads, with a slow organ swell and a ticking pulse underneath (generated
+// with Sonilo Music on Higgsfield, then cross-faded end into start so it loops
+// without a seam).
 const SRC          = '/audio/ambient.mp3';
 const MUSIC_VOLUME = 0.35;
 const TIME_KEY     = 'musicTime';
