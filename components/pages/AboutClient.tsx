@@ -51,13 +51,13 @@ export default function AboutClient() {
               </p>
               <div className="xg-dest">
                 <svg className="xg-lock" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" /><path d="M14 3v5h5" /></svg>
-                <span>ruchiraedirisinghe-cv.pdf</span>
+                <span>Ruchira_Edirisinghe_CV.pdf</span>
               </div>
               <div className="xg-actions">
                 {/* The choice is already made here, so Drive skips the leaving-the-site check. */}
                 <a
                   className="xg-btn"
-                  href="https://drive.google.com/file/d/1VOlUmLOLnbNnXnkU8TE6Y9E5qZbVBvOY/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1E5UvpOwRNGgFh2ydXeXSLnmDQmYIR3Cs/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-no-guard
@@ -67,7 +67,7 @@ export default function AboutClient() {
                 </a>
                 <a
                   className="xg-btn is-go"
-                  href="/docs/ruchiraedirisinghe-cv.pdf"
+                  href="/docs/Ruchira_Edirisinghe_CV.pdf"
                   download="Ruchira_Edirisinghe_CV.pdf"
                   data-autofocus
                   onClick={() => setIsCvModalOpen(false)}
