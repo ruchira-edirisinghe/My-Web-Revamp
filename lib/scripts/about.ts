@@ -396,11 +396,11 @@ export function initAbout(): () => void {
           requestAnimationFrame(function step(ts) {
             if (!alive) return;
             if (!t0) t0 = ts;
-            const p = Math.min((ts - t0) / 1600, 1);
+            const p = Math.min((ts - t0) / 1000, 1);
             b.textContent = String(Math.round((1 - Math.pow(1 - p, 3)) * target));
             if (p < 1) requestAnimationFrame(step);
           });
-        }, delay + 650));
+        }, delay + 400));
       }, scene ? SCENE : { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
       io.observe(scene || g);
       bag.add(() => io.disconnect());

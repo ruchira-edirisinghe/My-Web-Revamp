@@ -591,7 +591,7 @@
   position: relative; z-index: 2; width: min(500px, 92%); aspect-ratio: 2 / 1.1; margin: -24px auto -7%;
   opacity: 0;
 }
-.ab-ufo.is-in .ab-ufo-craft { animation: ab-ufo-in 1.5s cubic-bezier(0.2, 0.75, 0.25, 1) both; }
+.ab-ufo.is-in .ab-ufo-craft { animation: ab-ufo-in 0.95s cubic-bezier(0.2, 0.75, 0.25, 1) both; }
 @keyframes ab-ufo-in {
   0% { opacity: 0; translate: 32% -44vh; scale: 0.35; rotate: 16deg; }
   18% { opacity: 1; }
@@ -623,7 +623,7 @@
   mask-image: linear-gradient(180deg, transparent, #000 90px, #000 40%, rgba(0, 0, 0, 0.5) 80%, transparent);
   transition: filter 0.35s;
 }
-.ab-ufo.is-in .ab-beam { animation: ab-lamp 0.9s linear 1.55s both, ab-hum 4.2s ease-in-out 2.5s infinite; }
+.ab-ufo.is-in .ab-beam { animation: ab-lamp 0.6s linear 0.95s both, ab-hum 4.2s ease-in-out 1.6s infinite; }
 @keyframes ab-lamp {
   0% { opacity: 0; } 8% { opacity: 0.7; } 14% { opacity: 0.08; } 22% { opacity: 0.85; } 30% { opacity: 0.3; }
   42% { opacity: 1; } 50% { opacity: 0.6; } 64%, 100% { opacity: 1; }
@@ -686,7 +686,7 @@
   background: radial-gradient(closest-side, rgba(200, 245, 255, 0.3), rgba(92, 224, 255, 0.14) 45%, rgba(188, 111, 255, 0.06) 75%, transparent);
   mix-blend-mode: screen; opacity: 0; pointer-events: none;
 }
-.ab-ufo.is-in .ab-beam-pool { animation: ab-show 0.5s ease 2.1s both, ab-pool 4.2s ease-in-out 2.6s infinite; }
+.ab-ufo.is-in .ab-beam-pool { animation: ab-show 0.35s ease 1.35s both, ab-pool 4.2s ease-in-out 1.7s infinite; }
 @keyframes ab-pool { 0%, 100% { opacity: 1; scale: 1; } 50% { opacity: 0.7; scale: 0.96; } }
 
 /* ── The stats: three things beamed down ── */
@@ -750,7 +750,7 @@
   -webkit-mask-image: radial-gradient(closest-side, #000 30%, transparent);
   mask-image: radial-gradient(closest-side, #000 30%, transparent);
 }
-.ab-ufo.is-in .ab-pod-spark { animation: ab-spark 1.3s ease-out var(--d) both; }
+.ab-ufo.is-in .ab-pod-spark { animation: ab-spark 0.85s ease-out var(--d) both; }
 @keyframes ab-spark {
   0% { opacity: 0; transform: scaleX(0.2); background-position: 0 -40px, 8px -30px; }
   30% { opacity: 1; transform: scaleX(1); }
@@ -759,11 +759,11 @@
 .ab-ufo .ab-pod-float { opacity: 0; }
 /* The glow and the twinkles pulse on their own, so they wait out of sight. */
 .ab-ufo .ab-pod-pad, .ab-ufo .ab-pod-twinkle { visibility: hidden; }
-.ab-ufo.is-in .ab-pod-pad { visibility: visible; transition: visibility 0s calc(var(--d) + 0.9s); }
-.ab-ufo.is-in .ab-pod-twinkle { visibility: visible; transition: visibility 0s calc(var(--d) + 1.3s); }
+.ab-ufo.is-in .ab-pod-pad { visibility: visible; transition: visibility 0s calc(var(--d) + 0.6s); }
+.ab-ufo.is-in .ab-pod-twinkle { visibility: visible; transition: visibility 0s calc(var(--d) + 0.85s); }
 .ab-ufo.is-in .ab-pod-float {
-  animation: ab-fig-in 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--d) + 0.2s) both, ab-pod-bob 6s ease-in-out infinite;
-  animation-delay: calc(var(--d) + 0.2s), calc(var(--i) * -2.1s);
+  animation: ab-fig-in 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--d) + 0.12s) both, ab-pod-bob 6s ease-in-out infinite;
+  animation-delay: calc(var(--d) + 0.12s), calc(var(--i) * -2.1s);
 }
 @keyframes ab-fig-in {
   0% { opacity: 0; translate: 0 -150px; scale: 0.5; filter: brightness(3) blur(6px) saturate(0); }
@@ -772,7 +772,7 @@
   100% { opacity: 1; translate: none; scale: none; filter: brightness(1); }
 }
 .ab-ufo .ab-pod-text > * { opacity: 0; }
-.ab-ufo.is-in .ab-pod-text > * { opacity: 1; animation: ab-word 0.7s ease both; animation-delay: calc(var(--d) + 0.8s + var(--n, 0) * 0.12s); }
+.ab-ufo.is-in .ab-pod-text > * { opacity: 1; animation: ab-word 0.5s ease both; animation-delay: calc(var(--d) + 0.5s + var(--n, 0) * 0.08s); }
 .ab-pod-text > :nth-child(2) { --n: 1; }
 .ab-pod-text > :nth-child(3) { --n: 2; }
 

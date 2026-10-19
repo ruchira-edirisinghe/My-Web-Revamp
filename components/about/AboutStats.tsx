@@ -76,7 +76,7 @@ export default function AboutStats() {
 
           <ul className="ab-pods">
             {STATS.map((s, i) => (
-              <li key={s.label} className={`ab-pod is-${s.art}`} style={cssVars({ '--c': s.c, '--d': `${2.1 + i * 0.45}s`, '--i': i })}>
+              <li key={s.label} className={`ab-pod is-${s.art}`} style={cssVars({ '--c': s.c, '--d': `${1.35 + i * 0.3}s`, '--i': i })}>
                 <div className="ab-pod-fig" aria-hidden="true">
                   <i className="ab-pod-pad" />
                   <i className="ab-pod-spark" />
