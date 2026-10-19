@@ -1,5 +1,5 @@
 'use client';
-import { type CSSProperties, type ReactNode, useEffect, useRef, useState } from 'react';
+import { type CSSProperties, type ReactNode, useEffect, useState } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { initQuicklinks } from '@/lib/scripts/quicklinks';
@@ -12,7 +12,6 @@ import { BentoCard, BRAND, ZEN_CHANNELS as CHANNELS } from '@/components/BentoCa
    Every link opens on the first tap. */
 
 const EMAIL = 'ruchira.ed@proton.me';
-const PHONE = '+94 77 400 9851';
 const WHATSAPP = 'https://wa.me/94774009851';
 const VCARD = '/ruchira-edirisinghe.vcf';
 
@@ -22,7 +21,6 @@ const ICON = {
   mail: <><rect x="3" y="5" width="18" height="14" rx="3" /><path d="m4 7 8 6 8-6" /></>,
   chat: <><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z" /><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.6-2-1-.9.9a3.6 3.6 0 0 1-2-2l.9-.9-1-2L9 9.5Z" /></>,
   save: <><circle cx="10" cy="8" r="3.5" /><path d="M3.5 19a6.5 6.5 0 0 1 11-4.7M18 14v6M15 17h6" /></>,
-  copy: <><rect x="8" y="8" width="12" height="12" rx="2.5" /><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8" /></>,
   pin: <><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z" /><circle cx="12" cy="9.5" r="2.5" /></>,
   clock: <><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></>,
   globe: <><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></>,
@@ -100,24 +98,6 @@ export default function QuicklinksClient() {
     window.addEventListener('scroll', on, { passive: true });
     return () => window.removeEventListener('scroll', on);
   }, []);
-  const [toast, setToast] = useState('');
-  const toastTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
-  useEffect(() => () => clearTimeout(toastTimer.current), []);
-  const say = (msg: string) => {
-    setToast(msg);
-    clearTimeout(toastTimer.current);
-    toastTimer.current = setTimeout(() => setToast(''), 2200);
-  };
-
-  const copy = async (text: string, what: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      say(`${what} copied`);
-    } catch {
-      say(`Couldn't copy - ${text}`);
-    }
-  };
-
   return (
     <StandardShell
       active="links"
@@ -137,7 +117,7 @@ export default function QuicklinksClient() {
                 <img src="/Images/links/portrait.webp" alt="Ruchira Edirisinghe" width={560} height={560} decoding="async" />
               </div>
             </div>
-            <p className="ql-sub">UI UX Engineer <span aria-hidden="true">|</span> Game Developer</p>
+            <p className="ql-sub">UI UX Engineer <span aria-hidden="true">|</span> Game Developer<br />Vibe Coding Enthusiast</p>
             <h1 className="ql-name">Ruchira Edirisinghe</h1>
             <p className="ql-status"><i aria-hidden="true" />Available for new projects</p>
             <p className="ql-meta">
@@ -155,14 +135,6 @@ export default function QuicklinksClient() {
                 <Svg>{ICON.save}</Svg>Save contact
               </a>
             </div>
-            <p className="ql-handles">
-              <button type="button" onClick={() => copy(EMAIL, 'Email')} aria-label={`Copy email address ${EMAIL}`}>
-                {EMAIL}<Svg>{ICON.copy}</Svg>
-              </button>
-              <button type="button" onClick={() => copy(PHONE.replace(/\s/g, ''), 'Number')} aria-label={`Copy phone number ${PHONE}`}>
-                {PHONE}<Svg>{ICON.copy}</Svg>
-              </button>
-            </p>
           </header>
 
           <div className="ql-flow">
@@ -219,7 +191,6 @@ export default function QuicklinksClient() {
         <p className={`ql-scroll${scrolled ? ' is-gone' : ''}`} aria-hidden="true">
           Scroll for more<span className="ql-scroll-chev"><i /><i /></span>
         </p>
-        <p className={`ql-toast${toast ? ' on' : ''}`} role="status" aria-live="polite">{toast}</p>
       </main>
     </StandardShell>
   );

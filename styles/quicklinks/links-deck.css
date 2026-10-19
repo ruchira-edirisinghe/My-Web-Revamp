@@ -73,12 +73,13 @@ body.ql-ready .ql-rv { animation: ql-in 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) c
   position: relative; z-index: 1;
   margin: 40px 0 0;
   font-size: 10.5px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+  line-height: 2;
   color: rgba(255, 255, 255, 0.78);
 }
 .ql-sub span { margin: 0 8px; color: rgba(255, 255, 255, 0.4); }
 .ql-name {
   position: relative; z-index: 1;
-  margin: 12px 0 0;
+  margin: 24px 0 0;
   font-family: 'Burgundia', cursive; font-weight: 700;
   font-size: clamp(48px, 13vw, 64px); line-height: 1.04;
   color: #fff;
@@ -113,14 +114,6 @@ body.ql-ready .ql-rv { animation: ql-in 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) c
 .ql-btn .ql-i { width: 17px; height: 17px; }
 .ql-btn-outline .ql-i { color: var(--c, #fff); }
 .ql-btn-wide { grid-column: 1 / -1; }
-.ql-handles { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 16px; margin: 6px 0 0; }
-.ql .ql-handles button {
-  display: inline-flex; align-items: center; gap: 6px;
-  min-height: 44px; padding: 0 4px; border: 0; background: none;
-  font-size: 12px; color: var(--ql-muted);
-  transition: color 0.25s ease;
-}
-.ql-handles .ql-i { width: 13px; height: 13px; opacity: 0.6; }
 .ql-btn-solid { background: #fff; border: 1px solid rgba(255, 255, 255, 0.9); color: #0a0b14 !important; }
 .ql-btn-outline {
   background: rgba(255, 255, 255, 0.06);
@@ -230,27 +223,12 @@ body.ql-ready .ql-rv { animation: ql-in 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) c
 .ql-tile-txt span { font-size: 11.5px; color: var(--ql-muted); }
 .ql-go { width: 16px; height: 16px; color: rgba(255, 255, 255, 0.4); transition: transform 0.3s ease, color 0.3s ease; }
 
-/* ── Toast ── */
-.ql-toast {
-  position: fixed; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom)); z-index: 400;
-  margin: 0; padding: 11px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(140, 210, 255, 0.3);
-  background: rgba(12, 16, 32, 0.96);
-  font-size: 13px; font-weight: 600; white-space: nowrap;
-  opacity: 0; transform: translate(-50%, 16px);
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.ql-toast.on { opacity: 1; transform: translate(-50%, 0); }
-
 /* ── Press + hover ── */
 .ql-btn:active { transform: scale(0.96); }
 .ql-portal:active, .ql-tile:active { transform: scale(0.97); }
 @media (hover: hover) {
   .ql-btn:hover { transform: translateY(-3px) scale(1.03); }
   .ql-btn-outline:hover { border-color: rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.1); }
-  .ql .ql-handles button:hover { color: #fff; }
   .ql-portal:hover .ql-portal-go { transform: translateX(3px) scale(1.06); }
   .ql-tile:hover { border-color: color-mix(in srgb, var(--c) 45%, transparent); }
   .ql-tile:hover .ql-go { color: var(--c); transform: translate(2px, -2px); }
@@ -306,7 +284,6 @@ body.ql-ready .ql-rv { animation: ql-in 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) c
   .ql-avatar-dash { inset: -18px; }
   .ql-sub { font-size: 9.5px; }
   .ql-name { font-size: clamp(37px, 10vw, 49px); }
-  .ql-handles { display: none; }
 
   .ql-scroll {
     position: fixed; left: 50%; bottom: 22px; z-index: 300; translate: -50% 0;
