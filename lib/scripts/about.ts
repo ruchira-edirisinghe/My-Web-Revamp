@@ -417,6 +417,36 @@ export function initAbout(): () => void {
         });
       });
     }
+
+    // Holo tilt: the ID badge leans towards the pointer (up to 8deg), and its
+    // foil and glare follow it (--hx/--hy); it springs back when left.
+    if (!still && window.matchMedia('(hover: hover)').matches) {
+      document.querySelectorAll('.ab-id').forEach((el: HTMLElement) => {
+        let raf = 0;
+        let px = 0.5, py = 0.5;
+        const paint = () => {
+          raf = 0;
+          el.style.setProperty('--hx', `${(px * 100).toFixed(1)}%`);
+          el.style.setProperty('--hy', `${(py * 100).toFixed(1)}%`);
+          el.style.setProperty('--rx', `${((px - 0.5) * 16).toFixed(2)}deg`);
+          el.style.setProperty('--ry', `${((0.5 - py) * 16).toFixed(2)}deg`);
+        };
+        bag.on(el, 'pointermove', (e: PointerEvent) => {
+          const r = el.getBoundingClientRect();
+          px = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
+          py = Math.min(Math.max((e.clientY - r.top) / r.height, 0), 1);
+          el.classList.add('is-tilt');
+          if (!raf) raf = requestAnimationFrame(paint);
+        });
+        bag.on(el, 'pointerleave', () => {
+          cancelAnimationFrame(raf); raf = 0;
+          el.classList.remove('is-tilt');
+          el.style.setProperty('--rx', '0deg');
+          el.style.setProperty('--ry', '0deg');
+        });
+        bag.add(() => cancelAnimationFrame(raf));
+      });
+    }
   })();
 
   /* (The gaming channel cards are outside links: components/ExternalGuard.tsx asks first.) */

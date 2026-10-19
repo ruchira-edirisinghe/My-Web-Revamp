@@ -355,7 +355,6 @@
 
 /* ── Story: an ID badge beside the bio in three chapters (AboutStory.tsx) ── */
 @keyframes ab-id-sway { 0%, 100% { rotate: -1.4deg; } 50% { rotate: 1.4deg; } }
-@keyframes ab-id-holo { to { transform: translateX(-50%); } }
 .ab-story {
   display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start;
   margin-top: 160px;
@@ -388,6 +387,56 @@
   padding: 26px 28px 24px; border-radius: 30px;
   background: linear-gradient(165deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015) 55%), rgba(10, 12, 28, 0.78);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transform: perspective(1000px) rotateX(var(--ry, 0deg)) rotateY(var(--rx, 0deg));
+  transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+/* Holo tilt: while the pointer is over it (.is-tilt, with --hx/--hy and
+   --rx/--ry from lib/scripts/about.ts) the card leans towards it, a band of
+   rainbow foil slides across with the light and a glare sits under the
+   pointer. On touch screens the foil drifts slowly by itself instead. */
+.ab-id.is-tilt { transition: transform 0.12s ease-out; }
+.ab-id-foil, .ab-id-glare { position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 0.5s ease; }
+.ab-id-foil {
+  mix-blend-mode: color-dodge;
+  background:
+    repeating-linear-gradient(115deg, #5ce0ff 0%, #bc6fff 6%, #ff6bd5 12%, #ffc94d 18%, #6dff8a 24%, #5ce0ff 30%) var(--hx, 50%) var(--hy, 50%) / 300% 300%,
+    radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 0.8px, transparent 1.2px) 0 0 / 7px 7px;
+  filter: brightness(0.55) contrast(1.6) saturate(1.3);
+  -webkit-mask: radial-gradient(farthest-corner circle at var(--hx, 50%) var(--hy, 50%), #000, rgba(0, 0, 0, 0.3) 45%, transparent 80%);
+  mask: radial-gradient(farthest-corner circle at var(--hx, 50%) var(--hy, 50%), #000, rgba(0, 0, 0, 0.3) 45%, transparent 80%);
+}
+.ab-id-glare {
+  mix-blend-mode: overlay;
+  background: radial-gradient(circle at var(--hx, 50%) var(--hy, 50%), rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.12) 30%, transparent 60%);
+}
+.ab-id.is-tilt .ab-id-foil { opacity: 0.75; transition-duration: 0.25s; }
+.ab-id.is-tilt .ab-id-glare { opacity: 1; transition-duration: 0.25s; }
+@media (hover: none) {
+  .ab-id-foil { opacity: 0.4; animation: ab-id-drift 9s ease-in-out infinite alternate; }
+}
+@keyframes ab-id-drift {
+  0% { --hx: 15%; --hy: 10%; }
+  100% { --hx: 85%; --hy: 90%; }
+}
+@property --hx { syntax: '<percentage>'; inherits: true; initial-value: 50%; }
+@property --hy { syntax: '<percentage>'; inherits: true; initial-value: 50%; }
+
+/* The scan: as the card comes in a laser line sweeps down it, the facts
+   appear as it passes them and the barcode reads back 'Verified'. */
+.ab-id-scan {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0; translate: 0 -100%;
+  background: linear-gradient(180deg, transparent 60%, rgba(92, 224, 255, 0.07) 92%, rgba(92, 224, 255, 0.16));
+}
+.ab-id-scan::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, #8fe9ff 15%, #fff 50%, #8fe9ff 85%, transparent);
+  box-shadow: 0 0 14px 3px rgba(92, 224, 255, 0.7), 0 0 40px 8px rgba(92, 224, 255, 0.25);
+}
+.is-in .ab-id-scan { animation: ab-id-scan 1.5s linear 0.35s both; }
+@keyframes ab-id-scan {
+  0% { translate: 0 -100%; opacity: 0; }
+  6%, 90% { opacity: 1; }
+  100% { translate: 0 0; opacity: 0; }
 }
 /* The rim is a 1px ring cut out of a big conic gradient that spins behind it:
    a transform, so it runs on the GPU instead of repainting the card. */
@@ -416,8 +465,32 @@
   width: 64px; height: 10px; border-radius: 6px; margin-bottom: 22px;
   background: rgba(0, 0, 0, 0.6); box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
-/* A gold chip and a strip of hologram foil. */
-.ab-id-band { display: flex; align-items: center; gap: 12px; width: 100%; margin-bottom: 26px; }
+/* The header: a gold chip, the pass number and a round hologram seal -
+   rainbow foil turning under fine guilloche rings. */
+.ab-id-head { display: flex; align-items: center; gap: 12px; width: 100%; margin-bottom: 24px; text-align: left; }
+.ab-id-tag {
+  flex: 1; display: flex; flex-direction: column; gap: 3px;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: 12px; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.82);
+}
+.ab-id-tag small { font-family: 'Epic Pro', 'Montserrat', sans-serif; font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(140, 210, 255, 0.6); }
+.ab-id-seal {
+  position: relative; overflow: hidden; flex: none; width: 34px; height: 34px; border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3), 0 0 16px rgba(188, 111, 255, 0.35);
+}
+.ab-id-seal::before {
+  content: ''; position: absolute; inset: 0; opacity: 0.85;
+  background: conic-gradient(#5ce0ff, #bc6fff, #ff6bd5, #ffc94d, #6dff8a, #5ce0ff);
+  animation: ab-spin 6s linear infinite;
+}
+.ab-id-seal::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: repeating-radial-gradient(circle, rgba(10, 12, 28, 0.4) 0 1px, transparent 1px 3px); }
+/* The greeting, typed at a prompt with a blinking caret. */
+.ab-id-hello {
+  margin: 0 0 10px; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: 12.5px; letter-spacing: 0.04em; color: #8fe9ff;
+}
+.ab-id-hello > span { color: rgba(143, 233, 255, 0.45); }
+.ab-id-caret { display: inline-block; width: 0.55em; height: 1.1em; margin-left: 3px; vertical-align: -0.2em; background: #8fe9ff; box-shadow: 0 0 8px rgba(143, 233, 255, 0.7); animation: ab-id-blink 1.1s steps(1) infinite; }
+@keyframes ab-id-blink { 50% { opacity: 0; } }
+/* The chip. */
 .ab-id-chip {
   position: relative; flex: none; width: 42px; height: 32px; border-radius: 7px;
   background: linear-gradient(135deg, #f6dc8f, #b98a2e 55%, #f1cf73);
@@ -426,20 +499,18 @@
 .ab-id-chip::before, .ab-id-chip::after { content: ''; position: absolute; border: 1px solid rgba(90, 60, 10, 0.55); }
 .ab-id-chip::before { inset: 9px 0; border-width: 1px 0; }
 .ab-id-chip::after { inset: 0 14px; border-width: 0 1px; }
-.ab-id-holo { position: relative; overflow: hidden; flex: 1; height: 10px; border-radius: 6px; opacity: 0.75; }
-/* The foil slides along by one tile of its gradient (a transform, not a repaint). */
-.ab-id-holo::before {
-  content: ''; position: absolute; inset: 0 auto 0 0; width: 400%;
-  background: linear-gradient(90deg, #5ce0ff, #bc6fff, #ff6bd5, #ffc94d, #6dff8a, #5ce0ff) 0 0 / 50% 100% repeat-x;
-  animation: ab-id-holo 6s linear infinite;
-}
 
 .ab-hi {
   margin: 0;
   font-family: 'Burgundia', cursive; font-weight: 400; line-height: 1.1;
   font-size: clamp(38px, 3.4vw, 50px); color: rgba(255, 255, 255, 0.94);
 }
-.ab-wave { display: inline-block; translate: 0 -0.14em; font-size: 0.8em; transform-origin: 70% 80%; animation: ab-wave 2.6s ease-in-out 1s infinite; }
+/* 'Hi, I'm' as a small clean line, so the name is the headline. */
+.ab-hi-pre {
+  display: block; margin-bottom: 6px;
+  font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.4em; letter-spacing: 0.02em; color: rgba(255, 255, 255, 0.78);
+}
+.ab-wave { display: inline-block; translate: 0 -0.06em; font-size: 1.15em; transform-origin: 70% 80%; animation: ab-wave 2.6s ease-in-out 1s infinite; }
 /* The roles, turning over inside a pill. */
 .ab-roles {
   display: inline-flex; align-items: center; gap: 10px; margin: 22px 0 0; padding: 9px 18px 9px 16px; border-radius: 40px;
@@ -466,31 +537,52 @@
   100% { transform: translateY(-8em); }
 }
 
-/* The facts: one ID field per row - icon, label, then the value on the right. */
+/* The facts: three glass tiles side by side - icon, label, then the value. */
 .ab-facts {
-  list-style: none; display: grid; width: 100%;
-  margin: 26px 0 0; padding: 6px 0 0; border-top: 1px dashed rgba(255, 255, 255, 0.12);
+  list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; width: 100%;
+  margin: 24px 0 0; padding: 0;
 }
 .ab-fact {
-  display: flex; align-items: center; gap: 12px; padding: 11px 0; text-align: left;
-  font-size: 14.5px; font-weight: 600; line-height: 1.3; color: rgba(255, 255, 255, 0.92);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px 11px 13px; border-radius: 14px; text-align: left;
+  font-size: 13px; font-weight: 600; line-height: 1.3; color: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
   opacity: 0; transform: translateY(12px);
-  transition: opacity 0.7s ease calc(0.3s + var(--i) * 0.12s), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) calc(0.3s + var(--i) * 0.12s);
+  /* Each tile comes in, left to right, as the scan line reaches them. */
+  transition: opacity 0.5s ease calc(1.3s + var(--i) * 0.14s), transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) calc(1.3s + var(--i) * 0.14s), box-shadow 0.3s;
 }
-.ab-fact + .ab-fact { border-top: 1px solid rgba(255, 255, 255, 0.06); }
+.ab-fact:hover { box-shadow: inset 0 0 0 1px rgba(92, 224, 255, 0.35), 0 0 22px rgba(92, 224, 255, 0.12); }
 .is-in .ab-fact { opacity: 1; transform: none; }
 .ab-fact svg {
-  width: 34px; height: 34px; flex: none; padding: 8px; border-radius: 10px;
+  width: 28px; height: 28px; flex: none; padding: 6px; border-radius: 8px;
   fill: none; stroke: #8fe9ff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
   background: rgba(92, 224, 255, 0.08); box-shadow: inset 0 0 0 1px rgba(92, 224, 255, 0.2);
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
 }
 .ab-fact:hover svg { transform: translateY(-2px) rotate(-6deg); box-shadow: inset 0 0 0 1px rgba(92, 224, 255, 0.5), 0 0 18px rgba(92, 224, 255, 0.3); }
-.ab-fact > span { display: flex; flex: 1; align-items: baseline; justify-content: space-between; gap: 12px; }
-.ab-fact small { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(140, 210, 255, 0.6); }
-/* A barcode across the foot, for the look. */
+.ab-fact > span { display: flex; flex-direction: column; gap: 4px; }
+.ab-fact small { font-size: 8.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(140, 210, 255, 0.6); }
+/* A barcode across the foot, for the look; it flashes as the scan reaches
+   it and a 'Verified' stamp lands on it. */
+.ab-id-foot { position: relative; display: grid; place-items: center; width: 100%; margin-top: 16px; }
+.ab-id-ok {
+  position: absolute; padding: 4px 10px 4px 11px; border-radius: 6px; opacity: 0;
+  font-family: 'Epic Pro', 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
+  color: #6dff8a; background: rgba(10, 12, 28, 0.88); border: 1px solid rgba(109, 255, 138, 0.55);
+  box-shadow: 0 0 18px rgba(109, 255, 138, 0.3), inset 0 0 10px rgba(109, 255, 138, 0.12);
+  text-shadow: 0 0 10px rgba(109, 255, 138, 0.6);
+}
+.ab-id-ok::before { content: '\2713'; margin-right: 0.5em; letter-spacing: 0; }
+.is-in .ab-id-ok { animation: ab-id-ok 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 1.8s both; }
+.is-in .ab-id-code { animation: ab-id-code 0.6s ease 1.65s both; }
+@keyframes ab-id-ok {
+  0% { opacity: 0; scale: 1.5; }
+  30% { opacity: 1; scale: 1; }
+  45% { opacity: 0.35; } 60%, 100% { opacity: 1; scale: 1; }
+}
+@keyframes ab-id-code { 40% { opacity: 1; filter: drop-shadow(0 0 6px #8fe9ff); } }
 .ab-id-code {
-  width: 100%; height: 30px; margin-top: 16px; opacity: 0.45;
+  width: 100%; height: 30px; opacity: 0.45;
   background: repeating-linear-gradient(90deg, #fff 0 2px, transparent 2px 4px, #fff 4px 5px, transparent 5px 9px, #fff 9px 12px, transparent 12px 14px, #fff 14px 15px, transparent 15px 19px);
   -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
@@ -936,12 +1028,12 @@
   .ab-id-strap { top: -72px; }
   .ab-id { padding: 22px 20px 20px; border-radius: 26px; }
   .ab-story { gap: 60px; }
-  .ab-id-band { margin-bottom: 22px; }
+  .ab-id-head { margin-bottom: 20px; }
   .ab-roles { padding: 8px 14px; gap: 8px; font-size: 12px; }
-  .ab-facts { margin-top: 22px; }
-  .ab-fact { gap: 10px; padding: 9px 0; font-size: 13.5px; }
-  .ab-fact small { font-size: 8.5px; letter-spacing: 0.16em; }
-  .ab-fact svg { width: 32px; height: 32px; padding: 7px; }
+  .ab-facts { margin-top: 20px; gap: 6px; }
+  .ab-fact { gap: 8px; padding: 10px 9px 11px; border-radius: 12px; font-size: 12.5px; }
+  .ab-fact small { font-size: 7.5px; letter-spacing: 0.12em; }
+  .ab-fact svg { width: 26px; height: 26px; padding: 5.5px; }
   .ab-chap { padding-left: 54px; }
   .ab-chap::before { left: 17px; top: 42px; }
   .ab-chap-mark { width: 36px; height: 36px; font-size: 11px; }
@@ -1004,13 +1096,17 @@
 /* ── Reduced motion: everything in place, nothing loops ── */
 @media (prefers-reduced-motion: reduce) {
   .ab-rv, .ab-fact, .ab-halo-side li { opacity: 1; translate: none; transform: none; transition: none; }
-  .ab-halo-tap, .ab-halo-ripple, .ab-halo-tap b, .egg-burst i, .egg-twinkles i, .egg-confetti b, .xg-x.egg-x-ready, .egg-orb, .egg-orb::after, .egg-title, .egg-caption, .egg-caption-big, .ab-id-hang, .ab-id-rim::before, .ab-id-orb, .ab-id-holo::before, .ab-glow, .ab-halo-pic, .ab-halo-glow, .ab-halo-core::before, .ab-halo-core::after, .ab-halo-orbit, .ab-halo-side li, .ab-halo-b, .ab-halo-wire::after, .ab-halo-ctas, .ab-wave, .ab-roles-reel, .ab-craft-orbit,
+  .ab-halo-tap, .ab-halo-ripple, .ab-halo-tap b, .egg-burst i, .egg-twinkles i, .egg-confetti b, .xg-x.egg-x-ready, .egg-orb, .egg-orb::after, .egg-title, .egg-caption, .egg-caption-big, .ab-id-hang, .ab-id-rim::before, .ab-id-orb, .ab-id-seal::before, .ab-id-caret, .ab-glow, .ab-halo-pic, .ab-halo-glow, .ab-halo-core::before, .ab-halo-core::after, .ab-halo-orbit, .ab-halo-side li, .ab-halo-b, .ab-halo-wire::after, .ab-halo-ctas, .ab-wave, .ab-roles-reel, .ab-craft-orbit,
   .ab-play-logo img, .ab-play-halo, .ab-spot::after, .ab-deck-emblem i, .ab-tool-ico, .ab-deck.is-in .ab-tool,
   .ab-tx-quote span, .ab-tx-from, .ab-tx-stars i, .ab-tx-msg, .ab-cn-grid, .ab-cn-tag, .ab-cn-node::before,
   .ab-words.is-in span { animation: none; }
   .ab-words span { opacity: 1; }
   .ab-tool { opacity: 1; }
   .ab-halo-tap, .egg-burst, .egg-confetti i { display: none; }
+  /* The badge: no scan or drifting foil; it simply reads 'Verified'. */
+  .ab-id-scan { display: none; }
+  .ab-id-foil, .is-in .ab-id-code { animation: none; }
+  .ab-id-ok, .is-in .ab-id-ok { animation: none; opacity: 1; }
   .ab-cn-ring { display: none; }
   .ab-cn-link, .ab-cn-node { transition: none; }
   /* The saucer is simply there, its beam on and the stats held in it. */

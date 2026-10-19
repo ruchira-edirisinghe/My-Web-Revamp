@@ -54,7 +54,9 @@ export default function AboutStory() {
     <>
       <section className="ab-sec ab-story" aria-labelledby="ab-hi">
         {/* An ID badge on a lanyard: the greeting, the roles and the facts.
-            The clip, chip, hologram and barcode are only decoration. */}
+            The clip, chip, hologram and barcode are only decoration. It
+            tilts towards the pointer under a sliding holo foil and glare
+            (lib/scripts/about.ts), and is scanned as it comes into view. */}
         <div className="ab-story-side ab-rv">
           <div className="ab-id-hang">
             <span className="ab-id-strap" aria-hidden="true"><i /></span>
@@ -63,11 +65,16 @@ export default function AboutStory() {
               <i className="ab-id-grid" aria-hidden="true" />
               <i className="ab-id-orb" aria-hidden="true" />
               <span className="ab-id-slot" aria-hidden="true" />
-              <span className="ab-id-band" aria-hidden="true"><i className="ab-id-chip" /><i className="ab-id-holo" /></span>
+              <span className="ab-id-head" aria-hidden="true">
+                <i className="ab-id-chip" />
+                <span className="ab-id-tag"><small>Crew pass</small>No. RE-0425</span>
+                <i className="ab-id-seal" />
+              </span>
 
-              <p className="ab-kicker">Hello, world</p>
+              <p className="ab-id-hello"><span aria-hidden="true">&gt; </span>hello, world<i className="ab-id-caret" aria-hidden="true" /></p>
               <h2 className="ab-hi" id="ab-hi">
-                Hi <span className="ab-wave" aria-hidden="true">👋</span>, I&rsquo;m <span className="ab-glow">Ruchira Edirisinghe</span>
+                <span className="ab-hi-pre">Hi <span className="ab-wave" aria-hidden="true">👋</span>, I&rsquo;m</span>{' '}
+                <span className="ab-glow">Ruchira Edirisinghe</span>
               </h2>
               <p className="ab-roles">
                 <span className="ab-roles-pre">I&rsquo;m a</span>
@@ -87,7 +94,13 @@ export default function AboutStory() {
                   </li>
                 ))}
               </ul>
-              <i className="ab-id-code" aria-hidden="true" />
+              <span className="ab-id-foot" aria-hidden="true">
+                <i className="ab-id-code" />
+                <b className="ab-id-ok">Verified</b>
+              </span>
+              <i className="ab-id-foil" aria-hidden="true" />
+              <i className="ab-id-glare" aria-hidden="true" />
+              <i className="ab-id-scan" aria-hidden="true" />
             </div>
           </div>
         </div>
