@@ -242,9 +242,10 @@ body.ql-ready .ql-rv { animation: ql-in 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) c
   .ql-hero {
     position: fixed; z-index: 2;
     top: 96px; bottom: 0;
-    left: max(24px, calc(50% - 540px)); width: 380px;
+    left: calc(max(24px, calc(50% - 540px)) - 16px); width: 412px;
     justify-content: safe center;
-    padding-bottom: 24px;
+    /* The side gutter keeps hovered buttons from being clipped by the scroll box. */
+    padding: 0 16px 24px;
     overflow-y: auto; scrollbar-width: none;
   }
   .ql-flow { grid-column: 2; }

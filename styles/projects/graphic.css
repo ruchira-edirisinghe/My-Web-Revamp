@@ -176,7 +176,8 @@
 .gx-col:hover .gx-col-go i { transform: translateX(4px); }
 
 /* Highlights: two strips drifting opposite ways. */
-.gx-high { margin: 0 -40px 40px; overflow: hidden; }
+/* Clipped sideways only, so a lifted card and its glow aren't cut at the bottom. */
+.gx-high { margin: 0 -40px 40px; overflow-x: clip; }
 .gx-high-head { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 30px; padding: 0 24px; }
 .gx-high-head .section-label { margin-bottom: 12px; color: rgba(140, 210, 255, 0.75); }
 .gx-high-title { margin: 0; font-family: 'Burgundia', cursive; font-size: clamp(38px, 4vw, 56px); font-weight: 700; color: #fff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
@@ -384,7 +385,7 @@
 .gx-next {
   position: relative;
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); align-items: center; gap: 24px;
-  margin: 10px 0 30px; padding: 22px 40px 22px 44px;
+  margin: 10px 0 30px; padding: 36px 44px; /* room for the middle card's hover lift */
   border-radius: 28px;
   border: 1px solid var(--gx-border);
   background:
@@ -562,7 +563,10 @@ body:has(.gx-lb) #cursor-dot { box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.5), 0 0 8
   .gx-col.is-flip .gx-col-art { order: 0; }
   .gx-col-art { margin: 0 auto; width: min(520px, 100%); }
   .is-phones .gx-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .gx-next { grid-template-columns: minmax(0, 1fr); padding: 26px 24px 10px; }
+  .gx-next { grid-template-columns: minmax(0, 1fr); padding: 26px 24px 30px; }
+  /* A narrower fan on hover, so the side cards stay inside the panel. */
+  .gx-next:hover .gx-fan-card.is-0 { --x: -54%; --rot: -11deg; }
+  .gx-next:hover .gx-fan-card.is-1 { --x: 54%; --rot: 11deg; }
   .gx-next-txt { align-items: center; text-align: center; }
   .gx-high { margin: 0 -24px 30px; }
   .gx-lb-fig { padding: 0 20px 90px; }
