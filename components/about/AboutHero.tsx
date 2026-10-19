@@ -112,7 +112,7 @@ export default function AboutHero({ onCv }: { onCv: () => void }) {
             </span>
           )}
         </div>
-        <img src="/Images/mefront.webp" alt="Ruchira Edirisinghe" decoding="async" />
+        <img src="/Images/mefront-navy.webp" alt="Ruchira Edirisinghe" decoding="async" />
       </div>
 
       <ul className="ab-halo-side is-r" aria-label="What I do">{[2, 3].map(phrase)}</ul>
