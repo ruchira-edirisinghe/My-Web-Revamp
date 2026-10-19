@@ -169,7 +169,9 @@
   color: rgba(255, 255, 255, 0.75);
 }
 .ab-halo-b {
-  margin-top: 4px; font-family: 'Burgundia', cursive; font-weight: 400; line-height: 1.05; font-size: clamp(30px, 3.1vw, 46px);
+  /* Burgundia's tall swashes (the f) rise above a tight line box, and the
+     clipped gradient only paints inside the box, so give them room on top. */
+  margin-top: 4px; padding: 0.14em 0 0.04em; font-family: 'Burgundia', cursive; font-weight: 400; line-height: 1.15; font-size: clamp(30px, 3.1vw, 46px);
   background: linear-gradient(110deg, #fff 10%, var(--c) 60%, #fff 110%); background-size: 200% 100%;
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   transition: filter 0.45s ease;
