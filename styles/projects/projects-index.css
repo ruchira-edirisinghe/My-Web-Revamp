@@ -84,16 +84,6 @@
 }
 .pj-kind b { font-family: 'Epic Pro', 'Poppins', sans-serif; font-size: 34px; font-weight: 400; line-height: 1; }
 .pj-kind-label { font-size: 12.5px; font-weight: 700; color: rgba(255, 255, 255, 0.72); }
-/* One row on desktop - the largest kind has 12, so tiles are sized to hold 12. */
-.pj-kind-dots { display: flex; flex-wrap: nowrap; gap: 4px; min-width: 128px; margin-top: 12px; }
-.pj-kind-dots i {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--pj-a);
-  opacity: 0.75;
-  animation: pj-dot 0.4s cubic-bezier(0.3, 1.6, 0.5, 1) calc(0.45s + var(--d) * 0.08s + var(--j) * 0.035s) both;
-  transition: opacity 0.25s ease;
-}
-@keyframes pj-dot { from { transform: scale(0); opacity: 0; } }
 .pj-kind:hover, .pj-kind:focus-visible {
   transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--pj-a) 55%, transparent);
@@ -102,7 +92,6 @@
 .pj-kind:hover::before, .pj-kind:focus-visible::before { opacity: 1; left: 0; right: 0; }
 .pj-kind:hover .pj-kind-go, .pj-kind:focus-visible .pj-kind-go { stroke: var(--pj-a); transform: translate(2px, -2px); }
 .pj-kind:hover .pj-kind-label { color: #fff; }
-.pj-kind:hover .pj-kind-dots i, .pj-kind:focus-visible .pj-kind-dots i { opacity: 1; box-shadow: 0 0 8px var(--pj-a); }
 .pj-kind:focus { outline: none; }
 .pj-kind:focus-visible { outline: 2px solid var(--pj-a); outline-offset: 3px; }
 
@@ -117,9 +106,8 @@
   .pj-kind { padding: 14px 14px 16px; border-radius: 18px; }
   .pj-kind-ico { width: 32px; height: 32px; padding: 7px; }
   .pj-kind b { font-size: 30px; }
-  .pj-kind-dots { flex-wrap: wrap; min-width: 0; }
 }
-@media (prefers-reduced-motion: reduce) { .pj-kind, .pj-kind-dots i { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .pj-kind { animation: none; } }
 
 /* ── Section headings ── */
 .pj-section-h {

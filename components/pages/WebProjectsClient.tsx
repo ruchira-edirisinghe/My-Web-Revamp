@@ -450,9 +450,6 @@ export default function WebProjectsClient() {
                       </span>
                       <b>{n}</b>
                       <span className="pj-kind-label">{k.short}</span>
-                      <span className="pj-kind-dots" aria-hidden="true">
-                        {Array.from({ length: n }, (_, j) => <i key={j} style={{ '--j': j } as CSSProperties} />)}
-                      </span>
                     </button>
                   </li>
                 );
