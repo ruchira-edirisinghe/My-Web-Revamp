@@ -37,6 +37,9 @@ body {
   margin: 0;
   padding: 0;
   background: #02030a;
+  /* Nothing can make a page scroll sideways (a full-bleed band or an off-canvas
+     decoration poking past the edge). clip, not hidden, so sticky still works. */
+  overflow-x: clip;
 }
 
 /* ── Universal micro-interaction polish ──
@@ -179,6 +182,10 @@ body.page-transitioning #music-btn-desktop {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  /* A full-size touch target round the 24px logo. */
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 8px;
 }
 .mobile-logo {
   height: 24px;
@@ -510,3 +517,18 @@ body.menu-open { overflow: hidden; }
 [data-off] *,
 [data-off] *::before,
 [data-off] *::after { animation-play-state: paused !important; }
+
+/* ── Readable small print on phones ──
+   The site's tracked uppercase labels run 7.5-9.75px on desktop; on a phone
+   that's below comfortable reading size, so they come up to 10.5px there.
+   (html body: these beat each page's own rules for the same elements.) */
+@media (max-width: 760px) {
+  html body :is(
+    .ab-id-tag small, .ab-fact small, .ab-tool-name,
+    .xp-date, .xp-tag, .xp-tix-cat, .xp-bub-name,
+    .ql-sub, .ql-scroll,
+    .cs-cd-lbl,
+    .gx-card-tag,
+    .gs-fact-body dt, .gs-rail-now small, .gs-problem b, .gs-solution b
+  ) { font-size: 10.5px; }
+}
