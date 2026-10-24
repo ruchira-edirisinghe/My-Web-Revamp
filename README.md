@@ -130,9 +130,6 @@ Then open **http://localhost:3000**.
 |---|---|
 | `npm run dev` | Starts the development server with hot reload. |
 | `npm run build` | Builds the static site into `out/`. |
-| `npm run images:check` | Shows what the image optimiser would change, without changing anything. |
-| `npm run images` | Resizes images and creates the small `-card` versions. |
-| `npm run images:webp` | Converts images to WebP and updates every reference to them. |
 
 > **Tip:** `npm run build` rewrites the `.next` folder. Stop `npm run dev` before you build,
 > or the running dev server will break.
@@ -165,7 +162,6 @@ lib/
 
 styles/                 CSS, one file per page
 public/                 Images, audio, models and documents that get deployed
-scripts/                Helper scripts: image optimiser, asset installers, Blender renders
 assets-src/             Original source images (kept in git, never deployed)
 docs/readme/            The screenshots in this README
 ```
@@ -212,7 +208,7 @@ things make that happen:
 ## Working with images
 
 <details>
-<summary><b>Image pipeline</b> (formats, sizes and the helper scripts)</summary>
+<summary><b>Image formats</b> (and sizes)</summary>
 
 <br />
 
@@ -225,17 +221,6 @@ Everything under `public/Images` ships as **WebP** (quality 85).
 - Two things stay PNG on purpose: `Images/favicon/**` (the web manifest expects PNG) and
   `Images/mynew.png` (the social-share image, since some crawlers don't read WebP).
 
-Run the scripts in this order:
-
-```bash
-npm run images:check   # preview: report what would change, touch nothing
-npm run images         # resize in place and write missing -card versions
-npm run images:webp    # convert to WebP and update every src in the code
-```
-
-The scripts only touch images git already has, so a new screenshot you haven't committed
-yet is reported and left alone. Pass `--include-untracked` to override that.
-
 </details>
 
 <details>
@@ -244,16 +229,7 @@ yet is reported and left alone. Pass `--include-untracked` to override that.
 <br />
 
 All ten games ship `cover.webp` at **1600×900**, `cover-thumb.webp` at **700×394** and
-`cover-card.webp` at **1100×619**, matching the 16:9 cards they appear in. To reinstall them
-from the sources in `assets-src/banners/`:
-
-```bash
-node scripts/install-game-banners.mjs
-npm run images:webp    # the installers write PNG, so convert afterwards
-```
-
-`scripts/install-wam-captures.mjs` does the same for Whack-A-Mole's screenshots and crops the
-browser bar off the top of each one.
+`cover-card.webp` at **1100×619**, matching the 16:9 cards they appear in.
 
 </details>
 

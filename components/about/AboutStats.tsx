@@ -16,7 +16,7 @@ import { cssVars } from '@/lib/css';
    download fails, the beam and the stats still show without the saucer.
    Styles: styles/about/about-v2.css. */
 
-// The art is rendered in Blender (scripts/render-stat-art.py).
+// The art is rendered in Blender.
 const STATS = [
   { n: 50, label: 'Projects completed', note: 'Sites, apps, games and brand work, sketch to launch.', c: '#5ce0ff', art: 'laptop' },
   { n: 4, label: 'Years of experience', note: 'Working where design and code meet.', c: '#bc6fff', art: 'planet' },

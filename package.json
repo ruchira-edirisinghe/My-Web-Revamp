@@ -9,11 +9,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "images": "node scripts/optimize-images.mjs",
-    "images:check": "node scripts/optimize-images.mjs --dry-run",
-    "images:webp": "node scripts/to-webp.mjs",
-    "images:webp:check": "node scripts/to-webp.mjs --dry-run"
+    "lint": "next lint"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

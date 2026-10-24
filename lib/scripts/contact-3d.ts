@@ -502,7 +502,7 @@ async function buildPeek(st, base) {
   const loader = new GLTFLoader();
   const [gltf, gloves] = await Promise.all([loader.loadAsync(base + 'astronaut-wave.glb'), loader.loadAsync(base + 'gloves.glb')]);
   const model = gltf.scene;
-  // The five-fingered gloves (scripts/build-gloves.py) go on in model space:
+  // The five-fingered gloves go on in model space:
   // the waving one is weighted to turn with the arm, the other stays on the pencil.
   for (const g of [...gloves.scene.children]) {
     const w = g.name.includes('Wave') ? 1 : 0;
@@ -660,7 +660,7 @@ ${PEEK_BEND_MAIN}
 
 /* ════════════ The UFO ════════════ */
 
-/* Built in Blender (scripts/build-ufo.py) after the site's old UFO artwork,
+/* Built in Blender after the site's old UFO artwork,
    for the About page's "The story so far" (components/about/AboutStats.tsx).
    It flies in over the stats and holds its tractor beam on them; the beam and
    the stats it beams down are the page's own markup. The parts are restyled

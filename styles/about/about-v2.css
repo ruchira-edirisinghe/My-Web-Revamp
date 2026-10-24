@@ -91,7 +91,7 @@
 }
 
 /* The photo and its disc: a street-art roundel of brushed bands and paint
-   splatter (scripts/render-halo-paint.py), with a soft glow and orbits round
+   splatter, with a soft glow and orbits round
    it. The disc starts a little below the top of his head, so his hair breaks
    over its rim. */
 .ab-halo-pic { grid-area: pic; position: relative; aspect-ratio: 1; animation: ab-halo-pop 1s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s both; }
@@ -780,7 +780,7 @@
 @keyframes ab-pool { 0%, 100% { opacity: 1; scale: 1; } 50% { opacity: 0.7; scale: 0.96; } }
 
 /* ── The stats: three things beamed down ── */
-/* Each is a 3D illustration (scripts/render-stat-art.py) with its words set
+/* Each is a 3D illustration with its words set
    beneath it. At its --d: a shimmer of sparks, then the object drops out of
    the light, flickering as it resolves, and comes to hover - bobbing over a
    glow in its colour, with a few twinkles round it. Its number counts up
