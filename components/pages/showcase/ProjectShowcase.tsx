@@ -10,6 +10,7 @@ import type { Challenge, DesignStudy, DevProject, Item, Metric, Project, ShotGro
 import { PROJECTS, projectBySlug } from './data/index';
 import DesignSystem from './DesignSystem';
 import SectionRail from './SectionRail';
+import ProjectJsonLd from '@/components/ProjectJsonLd';
 import Facts from './Facts';
 import TechLogo from './TechLogo';
 import ProjectPager from './ProjectPager';
@@ -278,6 +279,7 @@ export default function ProjectShowcase({ slug }: { slug: string }) {
   return (
     <StandardShell active="projects" dataPage="projects"
       tagline={<>Loading <span className="tagline-name">{p.title}</span></>}>
+      <ProjectJsonLd slug={p.slug} name={p.title} description={p.tagline} kind={p.kind} />
       <main>
         <div className={`gs-page gs-kind-${p.kind}`} style={cssVars({ '--gs-a': p.accent, '--gs-b': p.accent2 })}>
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>

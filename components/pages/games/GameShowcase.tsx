@@ -10,6 +10,7 @@ import { GAMES, gameBySlug } from './gameData';
 import Facts from '@/components/pages/showcase/Facts';
 import SectionRail from '@/components/pages/showcase/SectionRail';
 import ProjectPager from '@/components/pages/showcase/ProjectPager';
+import ProjectJsonLd from '@/components/ProjectJsonLd';
 
 /**
  * One page per Unity game, laid out like a developer's game page rather than a
@@ -49,6 +50,7 @@ export default function GameShowcase({ slug }: { slug: string }) {
       dataPage="projects"
       tagline={<>Loading <span className="tagline-name">{g.title}</span></>}
     >
+      <ProjectJsonLd slug={g.slug} name={g.title} description={g.tagline} kind="game" />
       <main>
         <div className="gs-page" style={cssVars({ '--gs-a': g.accent, '--gs-b': g.accent2 })}>
           <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
