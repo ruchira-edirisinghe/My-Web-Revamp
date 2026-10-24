@@ -1076,7 +1076,7 @@ body::after {
 
 /* Logo outside the pill */
 .nav-logo {
-  height: 42px;
+  height: 28px;
   width: auto;
   display: block;
   opacity: 1;

@@ -107,7 +107,7 @@ body::after {
   pointer-events: none;
 }
 
-.nav-logo { height: 42px; }
+.nav-logo { height: 28px; }
 
 #navbar {
   display: flex;
