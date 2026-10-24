@@ -512,5 +512,3 @@ body:not([data-page]) .page {
 /* ── Home menu close ── */
 #menu-close:active { transform: rotate(90deg) scale(0.88) !important; transition: transform 0.08s ease !important; }
 
-/* ── Hero photo wrap: active press effect ── */
-.hero-intro-photo-wrap:active .hero-intro-photo img { transform: scale(1.01); transition: transform 0.1s ease; }

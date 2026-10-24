@@ -414,13 +414,6 @@ body.menu-open { overflow: hidden; }
     min-height: 44px;
   }
 
-  /* "View Case Study" was only as tall as its 14px line box. */
-  .projects-grid .project-link-btn {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-  }
-
   /* The vertical scroll-to-top rail is 23px wide (styles injected by
      lib/scripts/scroll-top.ts, hence the extra specificity here). */
   body .scroll-top-btn { min-width: 44px; }
@@ -474,11 +467,10 @@ body.menu-open { overflow: hidden; }
      opacity 0 if the animation is merely disabled, so these are landed at their
      end state instead of cancelled. */
   body .cs-hero-title,
-  body .cs-hero-subtitle,
-  body .cs-hero-labels,
-  body .cs-cover-banner,
-  body .project-card,
-  body #mobile-topbar {
+body .cs-hero-subtitle,
+body .cs-cover-banner,
+body .project-card,
+body #mobile-topbar {
     opacity: 1;
     transform: none;
     animation-duration: 0.01ms;
