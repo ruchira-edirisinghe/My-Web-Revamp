@@ -1,23 +1,26 @@
 'use client';
 import { type ReactNode, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import LogoFillAnimation from './LogoFillAnimation';
 import { onTagline } from '@/lib/cosmic/controller';
 import type { PageTransitions } from '@/lib/cosmic/transition';
 import '@/styles/cosmic.css';
 
 /**
- * The short page transition between internal pages (lib/cosmic/transition.ts):
- * Nova's 3D spaceship streaks across on an energy edge that covers the page,
- * the RE monogram charges with the destination's real readiness (with its
- * tagline under it), and Astra's ship wipes the cover away onto the new page.
- * The ships are drawn in the .pt-ships canvas (lib/cosmic/ships.ts); the
- * .pt-rider elements carry only their exhaust trails.
+ * The short page transition between internal pages (lib/cosmic/transition.ts),
+ * the intro's liquid (lib/cosmic/liquid.ts): the page floods with the liquid
+ * nebula of the part of the site you're leaving, it pours into the
+ * destination's while drops set into the RE monogram at the destination's
+ * real readiness (with its tagline under it), and drains off onto the new
+ * page. The .pt-fallback panel covers before the stage draws, and stands in
+ * for it without WebGL or with reduced motion.
  * Mounted once in app/layout.tsx. It takes over same-site link clicks in the
  * capture phase (so Next's <Link> stands down), then navigates with the
  * router; back/forward and deep links are handled from the route change.
  * Links opt out with data-no-transition.
  */
+/** The pages the navigation leads to. */
+const MAIN_ROUTES = ['/', '/about/', '/experience/', '/projects/', '/projects/web/', '/projects/graphic/', '/contact/', '/links/'];
+
 export default function PageTransitionOverlay() {
   const root = useRef<HTMLDivElement>(null);
   const pt = useRef<PageTransitions | null>(null);
@@ -35,6 +38,9 @@ export default function PageTransitionOverlay() {
       if (gone || !root.current) return;
       pt.current = new PageTransitions(root.current, (href) => router.push(href));
       if (document.documentElement.classList.contains('pt-cover')) pt.current.initial();
+      // On a session's first page, fetch the main pages while the intro plays,
+      // so the first trips to them don't wait on the network.
+      if (document.documentElement.classList.contains('intro')) MAIN_ROUTES.forEach((r) => router.prefetch(r));
     }).catch(async () => {
       // No transitions this visit; never leave the page covered.
       const { reveal } = await import('@/lib/cosmic/controller');
@@ -70,17 +76,12 @@ export default function PageTransitionOverlay() {
 
   return (
     <div className="pt" ref={root} data-state="idle" aria-hidden="true">
-      <div className="pt-panel">
-        <div className="pt-centre">
-          <LogoFillAnimation mark="monogram" className="pt-mono" />
-          <p className="pt-tag">{tagline}</p>
-        </div>
+      <div className="pt-fallback">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/Images/shortlogo.svg" alt="" draggable={false} data-loader-ignore />
       </div>
-      <i className="pt-edge is-a" />
-      <i className="pt-edge is-b" />
-      <i className="pt-rider is-a" />
-      <i className="pt-rider is-b" />
-      <canvas className="pt-ships" />
+      <canvas className="pt-gl" />
+      <p className="pt-tag">{tagline}</p>
     </div>
   );
 }

@@ -42,7 +42,7 @@ const GOOGLE_FONTS_HREF =
   ].join('&') +
   '&display=swap';
 
-// Before first paint: a session's first page gets the Cosmic Clash intro
+// Before first paint: a session's first page gets the liquid intro
 // (.intro), any later full load starts under the page transition's cover
 // (.pt-cover), and crawlers get neither (lib/cosmic/controller.ts).
 const INTRO_GATE =

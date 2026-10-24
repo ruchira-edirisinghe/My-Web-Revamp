@@ -1,29 +1,32 @@
 'use client';
-import { useEffect, useRef } from 'react';
-import LogoFillAnimation from './LogoFillAnimation';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
+import { onTagline } from '@/lib/cosmic/controller';
 import '@/styles/cosmic.css';
 
 /**
- * "Cosmic Clash", the intro on a visitor's first page of a session: two
- * little 3D astronauts scuffle in zero gravity above the RUCHIRA EDIRISINGHE
- * logotype, and everything they throw ends up as energy filling it, at the
- * pace of the page's real loading. The astronauts and planets are drawn in
- * the .cz-3d canvas (lib/cosmic/cast.ts); the .cz-actor elements are their
- * invisible stand-ins, which the choreography moves and the models follow. Mounted once in app/layout.tsx; it only
- * shows when the head script has put .intro on <html> (once per session,
- * never for crawlers). The choreography (lib/cosmic/clash.ts, with GSAP) is
- * loaded only when it plays. Styles: styles/cosmic.css.
+ * The intro on a visitor's first page of a session, after the WebGL liquid
+ * texture loader: the screen is liquid space, pouring from one nebula into
+ * the next at the pace of the page's real loading, while drops of liquid
+ * glass gather into the RUCHIRA EDIRISINGHE logotype. Once everything is in
+ * the letters set (with the page's tagline under them), a sheen sweeps them,
+ * and the liquid drains off the screen onto the page as its own entrance
+ * plays. Mounted once in app/layout.tsx; it only shows when the head script has put .intro on <html> (once per
+ * session, never for crawlers). Timeline: lib/cosmic/intro.ts (GSAP); the
+ * stage: lib/cosmic/liquid.ts (WebGL). Styles: styles/cosmic.css.
  */
 export default function CosmicPreloader() {
   const root = useRef<HTMLDivElement>(null);
+  const [tagline, setTagline] = useState<ReactNode>(null);
+
+  useEffect(() => onTagline(setTagline), []);
 
   useEffect(() => {
     const el = root.current;
     if (!el || !document.documentElement.classList.contains('intro')) return;
     let stop: (() => void) | undefined;
     let gone = false;
-    import('@/lib/cosmic/clash')
-      .then(({ runCosmicClash }) => { if (!gone) stop = runCosmicClash(el); })
+    import('@/lib/cosmic/intro')
+      .then(({ runIntro }) => { if (!gone) stop = runIntro(el); })
       .catch(async () => {
         // The animation couldn't load: open the page rather than strand it.
         const { reveal } = await import('@/lib/cosmic/controller');
@@ -35,36 +38,19 @@ export default function CosmicPreloader() {
 
   return (
     <div id="cosmic" className="czr" ref={root}>
-      <div className="cz">
-        <i className="cz-neb" aria-hidden="true" />
-        <canvas className="cz-bg" aria-hidden="true" />
-
-        <div className="cz-stage" aria-hidden="true">
-          <LogoFillAnimation mark="logotype" className="cz-logo" />
-        </div>
-        <canvas className="cz-3d" aria-hidden="true" />
-        <div className="cz-fx" aria-hidden="true">
-          {(['nova', 'astra'] as const).map((v) => (
-            <div key={v} className={`cz-actor is-${v}`}>
-              <b className="cz-mark">!</b>
-              <div className="cz-float"><div className="cz-pose" /></div>
-            </div>
-          ))}
-          <i className="cz-orb" />
-          <svg className="cz-star" viewBox="-12 -12 24 24">
-            <path d="M0 -11 L3.2 -3.6 L11 -3.4 L4.9 1.6 L6.9 9.4 L0 5 L-6.9 9.4 L-4.9 1.6 L-11 -3.4 L-3.2 -3.6 Z" fill="#ffd166" stroke="#fff6d6" strokeWidth="1.2" strokeLinejoin="round" />
-          </svg>
-        </div>
-
-        <div className="cz-meta" role="progressbar" aria-label="Loading the site" aria-valuemin={0} aria-valuemax={100} aria-valuenow={0}>
-          <span className="cz-status">Fuelling thrusters</span>
-          <span className="cz-bar" aria-hidden="true"><i /></span>
-          <b className="cz-pct" aria-hidden="true">0%</b>
-        </div>
-
-        <button type="button" className="cz-skip">Skip intro <span aria-hidden="true">→</span></button>
+      <canvas className="cz-gl" aria-hidden="true" />
+      {/* Without WebGL: the plain logo. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img className="cz-fallback" src="/Images/longlogo.svg" alt="" aria-hidden="true" draggable={false} data-loader-ignore />
+      <p className="cz-tag" aria-hidden="true">{tagline}</p>
+      <div className="cz-meta" role="progressbar" aria-label="Loading the site" aria-valuemin={0} aria-valuemax={100} aria-valuenow={0}>
+        <div className="cz-count" aria-hidden="true"><span className="cz-num">0</span><small>%</small></div>
+        {/* The liquid thread is drawn into this box by the stage. */}
+        <span className="cz-track" aria-hidden="true"><i /></span>
+        <span className="cz-status"><i>Charting the void</i></span>
       </div>
-      <i className="cz-ring" aria-hidden="true" />
+      <p className="cz-credit">Cosmic Cliffs, Carina Nebula · NASA, ESA, CSA, STScI</p>
+      <button type="button" className="cz-skip">Skip <span aria-hidden="true">→</span></button>
     </div>
   );
 }

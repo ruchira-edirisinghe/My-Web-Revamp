@@ -1,7 +1,7 @@
 /* ════════════════════════════════════════
    controller.ts - who reveals the page.
 
-   Two systems cover the site: the Cosmic Clash intro (a visitor's first page
+   Two systems cover the site: the liquid intro (a visitor's first page
    of a session, components/cosmic/CosmicPreloader.tsx) and the short page
    transition (every other page, PageTransitionOverlay.tsx). Whichever is up
    calls reveal() when its destination is genuinely ready; pages wait for it
