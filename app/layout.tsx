@@ -70,14 +70,14 @@ export const metadata: Metadata = {
     title: 'Ruchira Edirisinghe - UI/UX Engineer & Game Developer',
     description:
       'The portfolio of Ruchira Edirisinghe, with detailed UI/UX case studies, web and mobile products, games and graphic design projects.',
-    images: [{ url: '/Images/mynew.png', alt: 'Ruchira Edirisinghe' }],
+    images: [{ url: '/Images/og-card.jpg', width: 1200, height: 630, alt: 'Ruchira Edirisinghe - UI/UX Engineer & Game Developer' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ruchira Edirisinghe - UI/UX Engineer & Game Developer',
     description:
       'The portfolio of Ruchira Edirisinghe, with UI/UX case studies, web and mobile products, games and graphic design projects.',
-    images: ['/Images/mynew.png'],
+    images: ['/Images/og-card.jpg'],
   },
   icons: {
     icon: [

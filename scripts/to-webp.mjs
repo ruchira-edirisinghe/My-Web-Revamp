@@ -26,9 +26,10 @@
      `type: image/png`, and favicon handling is the one place where an exotic
      format is still a real compatibility risk for zero gain (these files are
      a few kB).
-   • mynew.png - the Open Graph / Twitter card image. Crawlers, not browsers,
+   • og-card.jpg - the Open Graph / Twitter card, left alone entirely.
+   • mynew.png - the JSON-LD Person image. Crawlers, not browsers,
      fetch it, and several still do not take WebP. The webp copy is generated
-     and used by the on-page <img>; the png stays for the meta tags only.
+     and used by the on-page <img>; the png stays for the structured data.
    • SVGs, which are already the right thing.
 
    SAFE TO RE-RUN
@@ -65,7 +66,8 @@ const QUALITY = 85;
 const EFFORT = 6;
 
 /** Not touched at all - no .webp is even generated. See the header for why. */
-const SKIP = (p) => p.replace(/\\/g, '/').includes('/Images/favicon/');
+const SKIP = (p) =>
+  p.replace(/\\/g, '/').includes('/Images/favicon/') || path.basename(p) === 'og-card.jpg';
 
 /** Converted, but the original stays because something else still reads it. */
 const KEEP_ORIGINAL = (p) => path.basename(p).toLowerCase() === 'mynew.png';
@@ -165,6 +167,8 @@ async function rewriteReferences() {
     let hits = 0;
     const next = text.replace(ref, (whole, stem) => {
       if (/\/Images\/favicon\//i.test(whole)) return whole;
+      // lib/site.ts names mynew.png as the JSON-LD Person image, a crawler read.
+      if (KEEP_ORIGINAL(whole) || SKIP(whole)) return whole;
       hits++;
       return `${stem}.webp`;
     });
