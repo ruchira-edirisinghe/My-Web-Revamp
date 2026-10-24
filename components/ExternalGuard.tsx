@@ -5,7 +5,8 @@ import '@/styles/ext-guard.css';
 
 /* "You're leaving the site" confirmation, for every page (mounted once in
    app/layout.tsx). A delegated click listener catches any link to another
-   site, asks first, and opens the destination in a new tab on Continue.
+   site, asks first, and opens the destination in a new tab on Continue
+   (itself a plain link, so nothing can block it as a popup).
    Ctrl/Cmd/Shift/middle clicks are left to the browser - those already say
    "new tab". A link opts out with data-no-guard; a click an earlier handler
    already took (defaultPrevented) is left alone. */
@@ -81,11 +82,6 @@ export default function ExternalGuard() {
     return () => document.removeEventListener('click', onClick);
   }, []);
 
-  const go = () => {
-    if (!p) return;
-    window.open(p.url, '_blank', 'noopener,noreferrer');
-    close();
-  };
 
   return (
     <Sheet open={open} onClose={close} onClosed={closed} color={p?.c} labelledBy="xg-title" describedBy="xg-desc">
@@ -111,10 +107,12 @@ export default function ExternalGuard() {
           <div className="xg-actions">
             {/* The safe choice takes focus, so a stray Enter doesn't leave the site. */}
             <button type="button" className="xg-btn" onClick={close} data-autofocus>Stay here</button>
-            <button type="button" className="xg-btn is-go" onClick={go}>
+            {/* A real link, not window.open(): popup and ad blockers can swallow
+                a scripted open, but never a click on a target=_blank link. */}
+            <a className="xg-btn is-go" href={p.url} target="_blank" rel="noopener noreferrer" data-no-guard onClick={close}>
               Continue
               <Svg><path d="M7 17 17 7M8 7h9v9" /></Svg>
-            </button>
+            </a>
           </div>
         </>
       )}
