@@ -25,6 +25,7 @@
    ════════════════════════════════════════ */
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { trackCritical } from '@/lib/cosmic/progress';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 
@@ -1231,7 +1232,7 @@ export function mountFigure(host, kind, base = '/models/contact/') {
   const onMotion = () => { if (still.matches && api) drawStill(); schedule(); };
   still.addEventListener('change', onMotion);
 
-  setup.build(st, base).then(async (built) => {
+  const ready = setup.build(st, base).then(async (built) => {
     if (dead) return;
     api = built;
     api.frame(0, 0.016);
@@ -1245,6 +1246,8 @@ export function mountFigure(host, kind, base = '/models/contact/') {
     host.classList.add('is-ready');
     schedule();
   }).catch((err) => { if (!dead) { console.error(err); host.classList.add('is-failed'); } });
+  // An on-screen figure is part of its page's first screen: the page waits for it (lib/cosmic/progress.ts).
+  trackCritical(`3d ${kind}`, ready, host);
 
   return () => {
     dead = true;
