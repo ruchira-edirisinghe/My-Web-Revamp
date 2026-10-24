@@ -184,7 +184,6 @@ body.page-transitioning #music-btn-desktop {
   height: 24px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
 }
 
 /* Hamburger button */
