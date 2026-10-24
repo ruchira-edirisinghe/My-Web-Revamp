@@ -16,8 +16,6 @@
 /* Words fade in one by one. (Opacity only: a blur on hundreds of inline spans
    repaints the whole paragraph every frame, and transforms do not apply to inline boxes.) */
 @keyframes ab-word { from { opacity: 0; } }
-@keyframes ab-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes ab-ping { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(2.6); opacity: 0; } }
 
 /* ── Shared ── */
 .ab-sec { width: min(1180px, 100%); margin: 180px auto 0; position: relative; }
