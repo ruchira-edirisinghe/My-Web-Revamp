@@ -1,4 +1,5 @@
 import { PERSON, SITE_URL } from '@/lib/site';
+import { jsonLd } from '@/lib/jsonld';
 
 // schema.org Person + WebSite, rendered once in the root layout. This is what lets
 // Google treat the site and the profiles in `sameAs` as one person when someone
@@ -50,8 +51,7 @@ export default function PersonJsonLd() {
   return (
     <script
       type="application/ld+json"
-      // Escape `<` so no string in the data can close the script tag early.
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph).replace(/</g, '\u003c') }}
+      dangerouslySetInnerHTML={{ __html: jsonLd(graph) }}
     />
   );
 }
