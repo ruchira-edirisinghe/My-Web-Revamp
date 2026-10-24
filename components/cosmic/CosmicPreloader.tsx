@@ -1,14 +1,15 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import AstronautCharacter from './AstronautCharacter';
 import LogoFillAnimation from './LogoFillAnimation';
 import '@/styles/cosmic.css';
 
 /**
  * "Cosmic Clash", the intro on a visitor's first page of a session: two
- * little astronauts scuffle in zero gravity above the RUCHIRA EDIRISINGHE
+ * little 3D astronauts scuffle in zero gravity above the RUCHIRA EDIRISINGHE
  * logotype, and everything they throw ends up as energy filling it, at the
- * pace of the page's real loading. Mounted once in app/layout.tsx; it only
+ * pace of the page's real loading. The astronauts and planets are drawn in
+ * the .cz-3d canvas (lib/cosmic/cast.ts); the .cz-actor elements are their
+ * invisible stand-ins, which the choreography moves and the models follow. Mounted once in app/layout.tsx; it only
  * shows when the head script has put .intro on <html> (once per session,
  * never for crawlers). The choreography (lib/cosmic/clash.ts, with GSAP) is
  * loaded only when it plays. Styles: styles/cosmic.css.
@@ -40,10 +41,13 @@ export default function CosmicPreloader() {
 
         <div className="cz-stage" aria-hidden="true">
           <LogoFillAnimation mark="logotype" className="cz-logo" />
+        </div>
+        <canvas className="cz-3d" aria-hidden="true" />
+        <div className="cz-fx" aria-hidden="true">
           {(['nova', 'astra'] as const).map((v) => (
             <div key={v} className={`cz-actor is-${v}`}>
               <b className="cz-mark">!</b>
-              <div className="cz-float"><div className="cz-pose"><AstronautCharacter variant={v} /></div></div>
+              <div className="cz-float"><div className="cz-pose" /></div>
             </div>
           ))}
           <i className="cz-orb" />
