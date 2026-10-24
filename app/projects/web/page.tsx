@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import '@/styles/projects/projects.css';
 import '@/styles/projects/projects-index.css';
 import WebProjectsClient from '@/components/pages/WebProjectsClient';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta('/projects/web/', {
   title: 'Web Projects - Ruchira Edirisinghe',
   description:
     'UI/UX case studies, full-stack products, and web and Unity games you can play, all designed and built by Ruchira Edirisinghe.',
-};
+});
 
 export default function WebProjectsPage() {
   return <WebProjectsClient />;

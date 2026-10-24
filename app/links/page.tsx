@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import '@/styles/quicklinks/quicklinks.css';
 import '@/styles/quicklinks/links-deck.css';
 import '@/styles/bento-cards.css';
 import QuicklinksClient from '@/components/pages/QuicklinksClient';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta('/links/', {
   title: 'Quick Links - Ruchira Edirisinghe',
   description:
     'All the ways to reach Ruchira Edirisinghe in one place, including email, WhatsApp, a contact card you can save, the portfolio, LinkedIn, GitHub, Behance, Instagram and the Zenitron Gaming channels.',
-};
+});
 
 export default function LinksPage() {
   return <QuicklinksClient />;
