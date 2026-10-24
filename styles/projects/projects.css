@@ -107,7 +107,7 @@ body::after {
   pointer-events: none;
 }
 
-.nav-logo { height: 42px; filter: brightness(0) invert(1); }
+.nav-logo { height: 42px; }
 
 #navbar {
   display: flex;
@@ -243,7 +243,6 @@ body::after {
   height: 36px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
 }
 
 .glass-round-btn,

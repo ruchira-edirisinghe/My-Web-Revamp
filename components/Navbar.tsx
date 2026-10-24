@@ -12,7 +12,7 @@ export default function Navbar({ active = null }: { active?: NavKey }) {
   return (
     <div id="navbar-wrap">
       <Link href="/" aria-label="Home">
-        <img className="nav-logo" src="/Images/longlogo.svg" alt="Logo" decoding="async" />
+        <img className="nav-logo" src="/Images/longlogo.svg" alt="Ruchira Edirisinghe" decoding="async" />
       </Link>
       <nav id="navbar">
         <div className="nav-links">

@@ -19,7 +19,7 @@ export default function MobileMenu({ active = null }: { active?: NavKey }) {
           <canvas id="spectrum-canvas" width="26" height="18"></canvas>
         </button>
         <Link href="/" className="mobile-logo-link" aria-label="Home">
-          <img className="mobile-logo" src="/Images/longlogo.svg" alt="Logo" decoding="async" />
+          <img className="mobile-logo" src="/Images/shortlogo.svg" alt="Ruchira Edirisinghe" decoding="async" />
         </Link>
         <button id="menu-btn" className="glass-round-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span></span><span></span>

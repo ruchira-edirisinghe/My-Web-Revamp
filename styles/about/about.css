@@ -1080,7 +1080,6 @@ body::after {
   width: auto;
   display: block;
   opacity: 1;
-  filter: brightness(0) invert(1);
   flex-shrink: 0;
 }
 
@@ -1270,7 +1269,6 @@ a:has(.nav-logo) {
   height: 36px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
 }
 
 /* ── Mobile menu overlay - Great Vibes style matching index.html ── */
