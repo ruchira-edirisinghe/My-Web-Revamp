@@ -4,6 +4,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import ExternalGuard from '@/components/ExternalGuard';
 import PersonJsonLd from '@/components/PersonJsonLd';
+import { SITE_URL } from '@/lib/site';
 
 // Union of every Google-Fonts family used across the original site, loaded once
 // site-wide. Faithful to the originals (which loaded subsets per page) while
@@ -39,15 +40,30 @@ const GOOGLE_FONTS_HREF =
   ].join('&') +
   '&display=swap';
 
-// Deployed origin - set NEXT_PUBLIC_SITE_URL at build time so Open Graph / Twitter
-// image URLs resolve to absolute links. Update the fallback to your production domain.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ruchira-edirisinghe.vercel.app';
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Ruchira Edirisinghe',
+  title: 'Ruchira Edirisinghe - UI/UX Engineer & Game Developer',
   description:
     'The portfolio of Ruchira Edirisinghe, a UI/UX engineer and game developer. See his product design, web and mobile UI/UX work, development projects and games.',
+  applicationName: 'Ruchira Edirisinghe',
+  authors: [{ name: 'Ruchira Edirisinghe', url: '/' }],
+  creator: 'Ruchira Edirisinghe',
+  // './' resolves against each route's own path, so every page names itself
+  // (on whatever domain SITE_URL points at) as the one URL to index.
+  alternates: { canonical: './' },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
+  // Search Console / Bing Webmaster verification codes, set as env vars in Vercel
+  // so verifying a new property is a redeploy rather than a code change.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+      : undefined,
+  },
   openGraph: {
     type: 'website',
     siteName: 'Ruchira Edirisinghe',
