@@ -130,6 +130,9 @@ Then open **http://localhost:3000**.
 |---|---|
 | `npm run dev` | Starts the development server with hot reload. |
 | `npm run build` | Builds the static site into `out/`. |
+| `npm run images:check` | Shows what the image optimiser would change, without changing anything. |
+| `npm run images` | Resizes images and creates the small `-card` versions. |
+| `npm run images:webp` | Converts images to WebP and updates every reference to them. |
 
 > **Tip:** `npm run build` rewrites the `.next` folder. Stop `npm run dev` before you build,
 > or the running dev server will break.
@@ -162,6 +165,7 @@ lib/
 
 styles/                 CSS, one file per page
 public/                 Images, audio, models and documents that get deployed
+scripts/                The image optimiser and WebP converter
 docs/readme/            The screenshots in this README
 ```
 
@@ -207,7 +211,7 @@ things make that happen:
 ## Working with images
 
 <details>
-<summary><b>Image formats</b> (and sizes)</summary>
+<summary><b>Image pipeline</b> (formats, sizes and the helper scripts)</summary>
 
 <br />
 
@@ -219,6 +223,17 @@ Everything under `public/Images` ships as **WebP** (quality 85).
   (`…/original/`). That's what the download button gives you.
 - Two things stay PNG on purpose: `Images/favicon/**` (the web manifest expects PNG) and
   `Images/mynew.png` (the social-share image, since some crawlers don't read WebP).
+
+Run the scripts in this order:
+
+```bash
+npm run images:check   # preview: report what would change, touch nothing
+npm run images         # resize in place and write missing -card versions
+npm run images:webp    # convert to WebP and update every src in the code
+```
+
+The scripts only touch images git already has, so a new screenshot you haven't committed
+yet is reported and left alone. Pass `--include-untracked` to override that.
 
 </details>
 

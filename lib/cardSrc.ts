@@ -3,10 +3,10 @@
  *
  * Case-study captures are stored at up to 1920px because the lightbox draws
  * them at viewport width, but the marquee cards they scroll past in are 540px
- * on desktop and 300px on a phone. So every capture has a 1100px `-card`
- * sibling beside it for exactly that job - 1100px covers a 540px card at
- * DPR 2 and a 300px one at DPR 3 - and what ships is `<name>.webp` /
- * `<name>-card.webp`.
+ * on desktop and 300px on a phone. `scripts/optimize-images.mjs` writes a
+ * 1100px `-card` sibling beside every capture for exactly that job - 1100px
+ * covers a 540px card at DPR 2 and a 300px one at DPR 3 - and `to-webp.mjs`
+ * re-encodes the pair, so what ships is `<name>.webp` / `<name>-card.webp`.
  * This maps one filename onto the other.
  *
  * Most galleries are written out as literal markup and carry the `-card`
