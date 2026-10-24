@@ -164,7 +164,7 @@ body::after {
 }
 
 .mobile-logo {
-  height: 36px;
+  height: 24px;
   width: auto;
   display: block;
 }
@@ -377,7 +377,7 @@ body.menu-open {
 }
 
 .mobile-logo {
-  height: 36px;
+  height: 24px;
   width: auto;
   display: block;
 }
