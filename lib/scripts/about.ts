@@ -108,7 +108,7 @@ export function initAbout(): () => void {
     bag.add(() => { running = false; cancelAnimationFrame(rafId); clearInterval(shooterInterval); });
   })();
 
-  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/preloader.ts). */
+  /* The preloader is the cosmic overlay system now (lib/cosmic/*, components/Preloader.tsx). */
 
   /* ══════════ 4. LIQUID CURSOR, AMBIENT AUDIO, SFX & MOBILE MENU ══════════ */
   (function () {

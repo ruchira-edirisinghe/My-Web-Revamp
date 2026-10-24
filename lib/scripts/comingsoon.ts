@@ -147,7 +147,7 @@ export function initComingSoon(): () => void {
     bag.add(() => { running = false; cancelAnimationFrame(rafId); });
   })();
 
-  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/preloader.ts). */
+  /* The preloader is the cosmic overlay system now (lib/cosmic/*, components/Preloader.tsx). */
 
   /* ══════════ CURSOR + MUSIC + SOUNDS + MOBILE MENU ══════════ */
   (function () {

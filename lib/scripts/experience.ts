@@ -115,7 +115,7 @@ export function initExperience(): () => void {
     bag.add(() => { running = false; cancelAnimationFrame(rafId); });
   })();
 
-  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/preloader.ts). */
+  /* The preloader is the cosmic overlay system now (lib/cosmic/*, components/Preloader.tsx). */
 
   /* ══════════ 4. CURSOR & MUSIC & SOUNDS (experience.js #4) ══════════ */
   (function () {

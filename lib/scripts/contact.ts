@@ -14,7 +14,7 @@ import { wireAmbientControls } from './ambient-audio';
 export function initContact(): () => void {
   const bag = makeBag();
 
-  /* The preloader runs itself now: components/Preloader.tsx (lib/scripts/preloader.ts). */
+  /* The preloader is the cosmic overlay system now (lib/cosmic/*, components/Preloader.tsx). */
 
   /* ══════════ 2. SPACE BACKGROUND - with Aurora & Shooting Stars ══════════ */
   (function () {

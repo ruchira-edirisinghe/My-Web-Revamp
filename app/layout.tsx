@@ -3,6 +3,8 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import ExternalGuard from '@/components/ExternalGuard';
+import CosmicPreloader from '@/components/cosmic/CosmicPreloader';
+import PageTransitionOverlay from '@/components/cosmic/PageTransitionOverlay';
 import PersonJsonLd from '@/components/PersonJsonLd';
 import { SITE_URL } from '@/lib/site';
 
@@ -39,6 +41,12 @@ const GOOGLE_FONTS_HREF =
     'family=Rubik:wght@400;500;700',
   ].join('&') +
   '&display=swap';
+
+// Before first paint: a session's first page gets the Cosmic Clash intro
+// (.intro), any later full load starts under the page transition's cover
+// (.pt-cover), and crawlers get neither (lib/cosmic/controller.ts).
+const INTRO_GATE =
+  "try{var d=document.documentElement;if(!/bot|crawl|spider|slurp|lighthouse|headlesschrome|preview/i.test(navigator.userAgent))d.classList.add(sessionStorage.getItem('re-intro')?'pt-cover':'intro')}catch(e){}";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -109,12 +117,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* The site is already dark: this tells Dark Reader to leave it alone, so it
             doesn't rewrite inline styles before hydration (a hydration mismatch). */}
         <meta name="darkreader-lock" />
+        {/* Before first paint: which overlay covers this load (see INTRO_GATE). */}
+        <script dangerouslySetInnerHTML={{ __html: INTRO_GATE }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="stylesheet" href={GOOGLE_FONTS_HREF} />
         <PersonJsonLd />
       </head>
-      <body>{children}<ExternalGuard /><Analytics /><SpeedInsights /></body>
+      <body><CosmicPreloader /><PageTransitionOverlay />{children}<ExternalGuard /><Analytics /><SpeedInsights /></body>
     </html>
   );
 }
