@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/google49d7cf1a338c5916.html",
+      "destination": "/google49d7cf1a338c5916/"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
