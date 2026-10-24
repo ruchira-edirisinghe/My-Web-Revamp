@@ -94,7 +94,7 @@ export default function GalleryPage({ slug }: { slug: string }) {
       </main>
 
       {open !== null && (
-        <Lightbox slides={slides} index={open} accent={c.accent} download={c.downloadable}
+        <Lightbox slides={slides} index={open} accent={c.accent} download={c.downloadable} fullSize={c.layout !== 'logos'}
           noun={c.unit[0]} phone={c.layout === 'phones'}
           onIndex={setOpen} onClose={() => setOpen(null)} />
       )}

@@ -25,11 +25,13 @@ export interface Slide {
  * the Download button first shows a thank-you card that counts down from 3
  * and then starts the download (DownloadCard below). Styles: graphic.css.
  */
-export default function Lightbox({ slides, index, accent, download, noun = 'image', phone = false, onIndex, onClose }: {
+export default function Lightbox({ slides, index, accent, download, fullSize = true, noun = 'image', phone = false, onIndex, onClose }: {
   slides: Slide[];
   index: number;
   accent: string;
   download?: boolean;
+  /** Show the "Full size" link (off for logos). Ignored when downloadable. */
+  fullSize?: boolean;
   /** What a piece is called in the download card ("wallpaper", "artwork"). */
   noun?: string;
   /** Wallpapers: the card talks about the visitor's phone. */
@@ -107,7 +109,7 @@ export default function Lightbox({ slides, index, accent, download, noun = 'imag
       <div className="gx-lb-top">
         <span className="gx-lb-count"><b>{String(index + 1).padStart(2, '0')}</b> / {String(n).padStart(2, '0')}</span>
         <div className="gx-lb-acts">
-          <a className="gx-lb-btn" href={file} target="_blank" rel="noopener noreferrer" download={name}
+          {(download || fullSize) && <a className="gx-lb-btn" href={file} target="_blank" rel="noopener noreferrer" download={name}
             onClick={(e) => {
               if (!download || !name) return;
               e.preventDefault();
@@ -118,7 +120,7 @@ export default function Lightbox({ slides, index, accent, download, noun = 'imag
             ) : (
               <><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8 4H4v12h12v-4M11 3h6v6M17 3l-8 8" /></svg>Full size</>
             )}
-          </a>
+          </a>}
           <button ref={closeBtn} type="button" className="gx-lb-x" onClick={close} aria-label="Close">
             <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" /></svg>
           </button>
