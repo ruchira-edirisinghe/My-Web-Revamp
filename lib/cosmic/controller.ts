@@ -20,8 +20,6 @@ let covered =
   (document.documentElement.classList.contains('intro') || document.documentElement.classList.contains('pt-cover'));
 const waiting = new Set<() => void>();
 
-export const isCovered = () => covered;
-
 /** An overlay is now hiding the page. */
 export function cover() { covered = true; }
 
