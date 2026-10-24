@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import ExternalGuard from '@/components/ExternalGuard';
+import PersonJsonLd from '@/components/PersonJsonLd';
 
 // Union of every Google-Fonts family used across the original site, loaded once
 // site-wide. Faithful to the originals (which loaded subsets per page) while
@@ -94,6 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="stylesheet" href={GOOGLE_FONTS_HREF} />
+        <PersonJsonLd />
       </head>
       <body>{children}<ExternalGuard /><Analytics /><SpeedInsights /></body>
     </html>
