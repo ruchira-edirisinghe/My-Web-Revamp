@@ -4,7 +4,7 @@
 // Deployed origin - set NEXT_PUBLIC_SITE_URL at build time (e.g. in Vercel's
 // env vars) when the site moves to a custom domain; every absolute URL follows it.
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://ruchira-edirisinghe.vercel.app'
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://ruchiraedirisinghe.vercel.app'
 ).replace(/\/+$/, '');
 
 export const PERSON = {

@@ -9,7 +9,7 @@
 A space-themed personal portfolio: case studies, playable browser games, design galleries
 and a few 3D surprises, built with Next.js and shipped as a fully static site.
 
-[![Live site](https://img.shields.io/badge/Live%20site-ruchira--edirisinghe.vercel.app-5ce0ff?style=for-the-badge&logo=vercel&logoColor=white)](https://ruchira-edirisinghe.vercel.app)
+[![Live site](https://img.shields.io/badge/Live%20site-ruchiraedirisinghe.vercel.app-5ce0ff?style=for-the-badge&logo=vercel&logoColor=white)](https://ruchiraedirisinghe.vercel.app)
 
 ![Next.js](https://img.shields.io/badge/Next.js%2015-000?style=flat-square&logo=nextdotjs)
 ![React](https://img.shields.io/badge/React%2019-20232a?style=flat-square&logo=react)
@@ -271,7 +271,7 @@ without written permission. See [LICENSE](LICENSE) for the full terms.
 <br />
 
 Made with ☕ and a lot of stars in Sri Lanka ·
-[Portfolio](https://ruchira-edirisinghe.vercel.app) ·
+[Portfolio](https://ruchiraedirisinghe.vercel.app) ·
 [LinkedIn](https://www.linkedin.com/in/ruchiraedirisinghe) ·
 [Behance](https://www.behance.net/ruchiraedirisinghe) ·
 [GitHub](https://github.com/ruchira-edirisinghe)

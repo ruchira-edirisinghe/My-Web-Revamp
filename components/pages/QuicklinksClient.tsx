@@ -148,7 +148,7 @@ export default function QuicklinksClient() {
                 <span className="ql-portal-txt">
                   <span className="ql-portal-kick">The full site</span>
                   <b>Enter the Portfolio</b>
-                  <span className="ql-portal-url"><Svg>{ICON.globe}</Svg>ruchira-edirisinghe.vercel.app</span>
+                  <span className="ql-portal-url"><Svg>{ICON.globe}</Svg>ruchiraedirisinghe.vercel.app</span>
                 </span>
                 <span className="ql-portal-go" aria-hidden="true"><Svg>{ARROW}</Svg></span>
               </Link>
