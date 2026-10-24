@@ -754,8 +754,16 @@ body:has(.gs-page) footer {
   .gs-ds-card { padding: 20px; border-radius: 20px; }
   .gs-ds-grid { gap: 18px; }
   .gs-ds-mock { padding: 24px 20px; }
-  .gs-ds-strip { height: 96px; }
-  .gs-ds-chip { padding: 8px; }
+  /* Eight or nine colours in one row leave each ~25px wide and the selected
+     one's name cut to "R…": on a phone the selected colour gets the full top
+     row, readable, and the rest wrap below it as proper tap targets. */
+  .gs-ds-strip { height: auto; flex-wrap: wrap; }
+  .gs-ds-chip { flex: 1 1 calc(25% - 6px); min-width: 44px; height: 44px; padding: 8px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .gs-ds-chip.on { order: -1; flex-basis: 100%; height: 76px; padding: 12px; }
+  /* Ten colours leave nine below: three even rows of three, not 4 + 4 + 1. */
+  .gs-ds-strip:has(> .gs-ds-chip:nth-child(10):last-child) .gs-ds-chip:not(.on) { flex-basis: calc(33.333% - 6px); }
+  /* A taller hit area for the size slider's thumb. */
+  .gs-ds-range input[type="range"] { height: 28px; }
   .gs-ds-type-main { flex-direction: column; align-items: flex-start; gap: 6px; }
   .gs-ds-range { min-width: 0; }
   .gs-ds-seg button { min-height: 36px; }
