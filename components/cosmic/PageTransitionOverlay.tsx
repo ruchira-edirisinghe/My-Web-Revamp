@@ -1,7 +1,6 @@
 'use client';
 import { type ReactNode, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import AstronautCharacter from './AstronautCharacter';
 import LogoFillAnimation from './LogoFillAnimation';
 import { onTagline } from '@/lib/cosmic/controller';
 import type { PageTransitions } from '@/lib/cosmic/transition';
@@ -9,9 +8,11 @@ import '@/styles/cosmic.css';
 
 /**
  * The short page transition between internal pages (lib/cosmic/transition.ts):
- * Nova streaks across on an energy edge that covers the page, the RE
- * monogram charges with the destination's real readiness (with its tagline
- * under it), and Astra's edge wipes the cover away onto the new page.
+ * Nova's 3D spaceship streaks across on an energy edge that covers the page,
+ * the RE monogram charges with the destination's real readiness (with its
+ * tagline under it), and Astra's ship wipes the cover away onto the new page.
+ * The ships are drawn in the .pt-ships canvas (lib/cosmic/ships.ts); the
+ * .pt-rider elements carry only their exhaust trails.
  * Mounted once in app/layout.tsx. It takes over same-site link clicks in the
  * capture phase (so Next's <Link> stands down), then navigates with the
  * router; back/forward and deep links are handled from the route change.
@@ -77,8 +78,9 @@ export default function PageTransitionOverlay() {
       </div>
       <i className="pt-edge is-a" />
       <i className="pt-edge is-b" />
-      <div className="pt-rider is-a"><AstronautCharacter variant="nova" /></div>
-      <div className="pt-rider is-b"><AstronautCharacter variant="astra" /></div>
+      <i className="pt-rider is-a" />
+      <i className="pt-rider is-b" />
+      <canvas className="pt-ships" />
     </div>
   );
 }

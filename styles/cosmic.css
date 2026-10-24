@@ -1,9 +1,10 @@
 /* ══════════════════════════════════════════════════════════════════════════
    COSMIC - the Cosmic Clash intro (components/cosmic/CosmicPreloader.tsx,
    lib/cosmic/clash.ts), the page transition (PageTransitionOverlay.tsx,
-   lib/cosmic/transition.ts) and the pieces they share: the astronauts
-   (AstronautCharacter.tsx) and the brand mark filling with energy
-   (LogoFillAnimation.tsx). --p is the real loading progress (0-1).
+   lib/cosmic/transition.ts) and the brand mark they share, filling with
+   energy (LogoFillAnimation.tsx). The astronauts, planets and spaceships are
+   3D, drawn into canvases (lib/cosmic/cast.ts, lib/cosmic/ships.ts).
+   --p is the real loading progress (0-1).
 
    The head script in app/layout.tsx sets .intro or .pt-cover on <html>
    before first paint, so the right overlay is already up when the page
@@ -13,9 +14,6 @@
 html.intro, html.intro body,
 html.pt-cover, html.pt-cover body,
 html.pt-busy, html.pt-busy body { overflow: hidden; }
-
-/* ── The astronauts ── */
-.ac { display: block; width: 100%; height: auto; overflow: visible; }
 
 /* ── The brand mark, filling with energy ── */
 .lf { position: relative; width: 100%; aspect-ratio: 1762 / 446; --lf-mask: url(/Images/longlogo.svg); }
@@ -214,9 +212,9 @@ html.pt-cover .pt { --a: 1; }
 }
 .pt[data-state="covering"] .pt-edge.is-a, .pt[data-state="revealing"] .pt-edge.is-b { opacity: 1; }
 
-/* The astronauts riding them, with a streak behind. */
-.pt-rider { position: absolute; left: 0; top: 0; width: clamp(48px, 5.5vw, 74px); opacity: 0; will-change: transform; }
-.pt-rider.is-b .ac { transform: scaleX(-1); } /* Astra faces the way she's flying */
+/* The ships riding them (3D, in .pt-ships), with an exhaust streak behind. */
+.pt-ships { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; }
+.pt-rider { position: absolute; left: 0; top: 0; width: clamp(64px, 7vw, 110px); aspect-ratio: 1; opacity: 0; will-change: transform; }
 .pt-rider::before {
   content: ''; position: absolute; right: 55%; top: 46%;
   width: 260%; height: 18%;
@@ -229,5 +227,5 @@ html.pt-cover .pt { --a: 1; }
 
 @media (prefers-reduced-motion: reduce) {
   .cz-neb, .lf-energy::before, .lf-surface { animation: none; }
-  .pt-edge, .pt-rider { display: none; }
+  .pt-edge, .pt-rider, .pt-ships { display: none; }
 }
