@@ -162,7 +162,6 @@ lib/
 
 styles/                 CSS, one file per page
 public/                 Images, audio, models and documents that get deployed
-assets-src/             Original source images (kept in git, never deployed)
 docs/readme/            The screenshots in this README
 ```
 
