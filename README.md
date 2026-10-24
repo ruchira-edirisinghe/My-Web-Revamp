@@ -220,7 +220,8 @@ Everything under `public/Images` ships as **WebP** (quality 85).
 - Case-study screenshots are stored up to **1920px** wide. Each one also gets a
   **`<name>-card.webp` at 1100px** for the gallery cards.
 - Wallpapers and artworks also keep their **original high-resolution file**
-  (`…/original/`). That's what the download button gives you.
+  (`…/original/`). That's what the download button gives you, so the scripts never touch
+  those folders.
 - Two things stay PNG on purpose: `Images/favicon/**` (the web manifest expects PNG) and
   `Images/mynew.png` (the social-share image, since some crawlers don't read WebP).
 

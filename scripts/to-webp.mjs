@@ -27,6 +27,8 @@
      format is still a real compatibility risk for zero gain (these files are
      a few kB).
    • og-card.jpg - the Open Graph / Twitter card, left alone entirely.
+   • Every `original/` folder - the full-size wallpapers and artworks the
+     download buttons hand out, in their own format and resolution.
    • mynew.png - the JSON-LD Person image. Crawlers, not browsers,
      fetch it, and several still do not take WebP. The webp copy is generated
      and used by the on-page <img>; the png stays for the structured data.
@@ -66,8 +68,10 @@ const QUALITY = 85;
 const EFFORT = 6;
 
 /** Not touched at all - no .webp is even generated. See the header for why. */
-const SKIP = (p) =>
-  p.replace(/\\/g, '/').includes('/Images/favicon/') || path.basename(p) === 'og-card.jpg';
+const SKIP = (p) => {
+  const f = p.replace(/\\/g, '/');
+  return f.includes('/Images/favicon/') || f.includes('/original/') || path.basename(p) === 'og-card.jpg';
+};
 
 /** Converted, but the original stays because something else still reads it. */
 const KEEP_ORIGINAL = (p) => path.basename(p).toLowerCase() === 'mynew.png';
@@ -126,6 +130,10 @@ async function convertImages(tracked) {
     }
 
     const buf = await sharp(file).webp({ quality: QUALITY, effort: EFFORT }).toBuffer();
+    // A kept original's .webp may already exist, tuned smaller than q85 gives:
+    // never swap it for a heavier one.
+    const have = keep ? await stat(dest).then((s) => s.size, () => Infinity) : Infinity;
+    if (buf.length >= have) { skipped++; continue; }
     await writeFile(dest, buf);
     // The og:image keeps its png; everything else has no second reader.
     if (!keep) await unlink(file);
@@ -140,7 +148,7 @@ async function convertImages(tracked) {
     DRY
       ? `\n${done} images would be converted (${kb(before)} of source), ${skipped} skipped`
       : `\n${done} images converted: ${kb(before)} -> ${kb(after)} ` +
-        `(${Math.round((1 - after / before) * 100)}% smaller), ${skipped} skipped`,
+        `(${before ? Math.round((1 - after / before) * 100) : 0}% smaller), ${skipped} skipped`,
   );
 }
 

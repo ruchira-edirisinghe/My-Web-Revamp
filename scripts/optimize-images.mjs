@@ -40,6 +40,10 @@ import { readdir, stat, rename, unlink } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 
+// libvips keeps recently read files open in its cache, and Windows won't let
+// the encoded copy replace a file that's still open (EPERM on the rename).
+sharp.cache(false);
+
 const ROOT = 'public/Images';
 const MAX_W = 1920;
 /* Bytes per pixel above which a PNG is worth re-deflating in place. A tightly
@@ -92,7 +96,12 @@ async function walk(dir, out = []) {
 
 const mb = (n) => (n / 1048576).toFixed(2);
 
-const files = (await walk(ROOT)).sort();
+/* The `original/` folders under artworks and wallpapers hold the full-size
+   files the download buttons hand out. They are meant to be big, so they are
+   never resized or re-encoded. */
+const ORIGINAL = (p) => p.split(path.sep).join('/').includes('/original/');
+
+const files = (await walk(ROOT)).filter((f) => !ORIGINAL(f)).sort();
 const tracked = trackedSet();
 let touched = 0, before = 0, after = 0, skipped = 0, failed = 0, untracked = 0;
 let totalBefore = 0;
