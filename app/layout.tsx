@@ -81,7 +81,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/Images/favicon/favicon.ico', type: 'image/x-icon' },
+      { url: '/Images/favicon/favicon.ico', sizes: '48x48', type: 'image/x-icon' },
+      { url: '/Images/favicon/icon.svg', type: 'image/svg+xml' },
       { url: '/Images/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/Images/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/Images/favicon/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
