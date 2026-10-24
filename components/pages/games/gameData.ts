@@ -42,8 +42,8 @@ export interface GameData {
   credits: string;
 }
 
-/** Where the Unity WebGL builds are published. */
-const SHOWCASE = 'https://showcase-game-engine.netlify.app/games';
+/** Where the Unity WebGL builds are published (the 747 Sandbox arcade). */
+const SHOWCASE = 'https://arcade.747sandbox.com/games';
 
 export const GAMES: GameData[] = [
   /* ═══════════════════════════════ AETHER DYNASTY ═══════════════════════════════ */

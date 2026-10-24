@@ -4,7 +4,7 @@ import type { Shot, WebGame } from '../types';
 const shots = (dir: string, list: [string, string][]): Shot[] =>
   list.map(([file, caption]) => ({ src: `${dir}/${file}.webp`, caption }));
 
-const ENGINE = 'https://showcase-game-engine.netlify.app/games';
+const ENGINE = 'https://arcade.747sandbox.com/games';
 
 /* Web games from the Game Engine arcade, in the order the projects grid lists them. */
 export const GAMES: WebGame[] = [
@@ -26,7 +26,7 @@ export const GAMES: WebGame[] = [
       { label: 'Multiplayer', value: 'Firebase Realtime Database' },
       { label: 'Platform', value: 'Browser · Game Engine arcade' },
     ],
-    links: [{ label: 'Play the game', href: `${ENGINE}/horse-racing` }],
+    links: [{ label: 'Play the game', href: `${ENGINE}/derby-kings` }],
     pitch: [
       'Horse Racing Elite is a betting arena that runs in the browser. There are six horses, you get 30 seconds to place a bet, then the race runs live and you’re paid out the moment it finishes. The whole thing sits inside a neon e-sports style theme, and you can switch between a few colour palettes if you want a different look.',
       'The most important decision I made was that the game never picks a winner. Instead, it simulates the race. Each horse gets a starting speed based on its stats and a random seed, and then a physics loop moves them along the track step by step. So the race you’re watching isn’t a replay of a result that was decided earlier. The animation is the actual calculation happening in front of you.',
@@ -122,7 +122,7 @@ export const GAMES: WebGame[] = [
       { label: 'Multiplayer', value: 'Firebase Realtime Database' },
       { label: 'Platform', value: 'Browser · Game Engine arcade' },
     ],
-    links: [{ label: 'Play the game', href: `${ENGINE}/car-racing` }],
+    links: [{ label: 'Play the game', href: `${ENGINE}/nitro-nights` }],
     pitch: [
       'Ready To Race Unlimited takes the Horse Racing Elite arena and gives it a completely new look built around supercars. The grid has a Ferrari 488 GTB, a Porsche 911 Turbo, a Lamborghini Huracán, a Bugatti Chiron, a Mazda RX-7 and a Nissan GT-R, all racing on a deep violet neon track.',
       'Underneath, it runs on exactly the same engine: a seeded race with a fixed timestep, where the animation you see is the calculation itself. Building it taught me a lot about how to fork a game properly, including what should be shared between the two, what needs to be kept separate and what shouldn’t be copied at all.',
@@ -211,7 +211,7 @@ export const GAMES: WebGame[] = [
       { label: 'Fairness', value: 'Block-seeded mulberry32' },
       { label: 'Platform', value: 'Browser · Game Engine arcade' },
     ],
-    links: [{ label: 'Play the game', href: `${ENGINE}/sky-crash` }],
+    links: [{ label: 'Play the game', href: `${ENGINE}/propbet` }],
     pitch: [
       'PropBet is a crash game that runs in the browser. A plane takes off and climbs along a multiplier curve that gets steeper and steeper, and it can crash at any moment. You can place up to two bets each round, and the goal is to cash out before the plane flies off.',
       'On the surface, a crash game is just one number going up. But everything important happens in the final frame before it stops. The curve has to climb smoothly at 60fps, the crash point has to be fair and stay hidden until it happens, and when you cash out you need to get exactly the multiplier that was showing on the frame you tapped.',
@@ -497,7 +497,7 @@ export const GAMES: WebGame[] = [
       { label: 'Scale', value: '~16k lines · 200 instanced spectators' },
       { label: 'Fairness', value: 'Block seed, sealed per match' },
     ],
-    links: [{ label: 'Play the game', href: `${ENGINE}/kamba-adeema` }],
+    links: [{ label: 'Play the game', href: `${ENGINE}/tug-of-war` }],
     pitch: [
       'Kamba Adeema is the tug of war that usually wraps up a Sri Lankan Avurudu sports day, rebuilt as a betting game. Two halves of a village, Uda Pila and Yati Pila, put four people each on one rope, with around two hundred spectators watching.',
       'On every heave, each of the eight pullers either grips or slips, like eight separate fair coin tosses. The difference between the two sides settles the bet and drags the rope that many marks. Traditional games don’t come with a paytable, so most of the work was figuring out the one honest question you can bet on, and deciding what to leave out.',
