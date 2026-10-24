@@ -8,3 +8,9 @@ import type { CSSProperties } from 'react';
 export function cssVars(vars: Record<string, string | number>): CSSProperties {
   return vars as CSSProperties;
 }
+
+/** --gs-word for a case study title: its longest word's length in letters, so
+ *  the CSS can shrink the title just enough for that word to fit on a phone. */
+export function titleFit(title: string): CSSProperties {
+  return cssVars({ '--gs-word': Math.max(...title.split(/\s+/).map((w) => w.length)) });
+}

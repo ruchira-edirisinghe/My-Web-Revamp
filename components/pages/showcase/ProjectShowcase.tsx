@@ -2,7 +2,7 @@
 import { type ReactNode, useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
-import { cssVars } from '@/lib/css';
+import { cssVars, titleFit } from '@/lib/css';
 import { cardSrc } from '@/lib/cardSrc';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
@@ -290,7 +290,7 @@ export default function ProjectShowcase({ slug }: { slug: string }) {
             </div>
             <div className="gs-hero-copy">
               <div className="gs-kicker">{p.kicker}</div>
-              <h1 className="gs-title">{p.title}</h1>
+              <h1 className="gs-title" style={titleFit(p.title)}>{p.title}</h1>
               <p className="gs-tagline">{p.tagline}</p>
               <div className="gs-cta-row">
                 {p.links.map((l, i) => (

@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
-import { cssVars } from '@/lib/css';
+import { cssVars, titleFit } from '@/lib/css';
 import { cardSrc } from '@/lib/cardSrc';
 import { initProjects } from '@/lib/scripts/projects';
 import { initCaseStudy } from '@/lib/scripts/case-study';
@@ -63,7 +63,7 @@ export default function GameShowcase({ slug }: { slug: string }) {
             </div>
             <div className="gs-hero-copy">
               <div className="gs-kicker">Unity Game · Solo Project</div>
-              <h1 className="gs-title">{g.title}</h1>
+              <h1 className="gs-title" style={titleFit(g.title)}>{g.title}</h1>
               <p className="gs-tagline">{g.tagline}</p>
               <div className="gs-cta-row">
                 {g.links.map((l) => (

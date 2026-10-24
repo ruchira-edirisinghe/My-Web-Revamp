@@ -64,6 +64,7 @@ body:has(.gs-page) footer {
 }
 .gs-hero-copy {
   position: relative;
+  container-type: inline-size; /* the title sizes its longest word to this */
   margin: -64px 28px 0;
   padding: 26px 28px 24px;
   border-radius: 18px;
@@ -81,6 +82,10 @@ body:has(.gs-page) footer {
 .gs-title {
   font-family: 'Epic Pro', 'Poppins', sans-serif;
   font-size: clamp(34px, 6vw, 60px);
+  /* No smaller than that, unless its longest word (--gs-word letters, set by
+     titleFit) wouldn't fit the card: Epic Pro runs up to ~0.82em a letter, so
+     "Management" or "Whack-A-Mole" shrink on a phone instead of breaking. */
+  font-size: min(clamp(34px, 6vw, 60px), calc(100cqi / (var(--gs-word, 1) * 0.82)));
   line-height: 1.02;
   margin: 0 0 10px;
   color: #fff;
