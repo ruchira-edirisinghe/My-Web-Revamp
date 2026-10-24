@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
 import '@/styles/projects/project-showcase.css';
-import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
-import { projectBySlug } from '@/components/pages/showcase/data';
+import GameShowcase from '@/components/pages/games/GameShowcase';
+import { gameBySlug } from '@/components/pages/games/gameData';
 
 export const metadata: Metadata = {
-  title: 'Horse Racing Elite - Web Game | Ruchira Edirisinghe',
-  description: projectBySlug('horse-racing').tagline,
+  title: 'Derby Kings - Unity Game | Ruchira Edirisinghe',
+  description: gameBySlug('horse-racing').tagline,
 };
 
 export default function Page() {
-  return <ProjectShowcase slug="horse-racing" />;
+  return <GameShowcase slug="horse-racing" />;
 }

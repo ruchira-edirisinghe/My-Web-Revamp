@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
 import '@/styles/projects/project-showcase.css';
-import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
-import { projectBySlug } from '@/components/pages/showcase/data';
+import GameShowcase from '@/components/pages/games/GameShowcase';
+import { gameBySlug } from '@/components/pages/games/gameData';
 
 export const metadata: Metadata = {
-  title: 'PropBet - Web Game | Ruchira Edirisinghe',
-  description: projectBySlug('propbet').tagline,
+  title: 'PropBet - Unity Game | Ruchira Edirisinghe',
+  description: gameBySlug('propbet').tagline,
 };
 
 export default function Page() {
-  return <ProjectShowcase slug="propbet" />;
+  return <GameShowcase slug="propbet" />;
 }

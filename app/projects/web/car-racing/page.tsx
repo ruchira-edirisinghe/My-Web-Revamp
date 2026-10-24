@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import '@/styles/projects/projects.css';
 import '@/styles/projects/project-showcase.css';
-import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
-import { projectBySlug } from '@/components/pages/showcase/data';
+import GameShowcase from '@/components/pages/games/GameShowcase';
+import { gameBySlug } from '@/components/pages/games/gameData';
 
 export const metadata: Metadata = {
-  title: 'Ready To Race Unlimited - Web Game | Ruchira Edirisinghe',
-  description: projectBySlug('car-racing').tagline,
+  title: 'Nitro Nights - Unity Game | Ruchira Edirisinghe',
+  description: gameBySlug('car-racing').tagline,
 };
 
 export default function Page() {
-  return <ProjectShowcase slug="car-racing" />;
+  return <GameShowcase slug="car-racing" />;
 }
