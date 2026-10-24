@@ -154,15 +154,33 @@ export default function Lightbox({ slides, index, accent, download, noun = 'imag
   );
 }
 
-/** The thank-you card shown before a piece downloads: a ring counts down
- *  3, 2, 1, then the download starts and the card says so. "Download now"
- *  skips the wait; Cancel or Esc backs out before it starts. */
+/** Neon confetti for the thank-you: the site's accent colours, fanned out
+ *  from the ring. Positions are fixed per index so every burst looks the same. */
+const CONFETTI_COLOURS = ['#5ce0ff', '#bc6fff', '#ff6bd5', '#6dff8a', '#ffd166'];
+const CONFETTI = Array.from({ length: 28 }, (_, i) => {
+  const angle = (i / 28) * Math.PI * 2 + (i % 2 ? 0.11 : -0.07);
+  const dist = 90 + ((i * 37) % 70);
+  return {
+    x: Math.round(Math.cos(angle) * dist),
+    y: Math.round(Math.sin(angle) * dist * 0.8 - 20),
+    r: (i * 53) % 360,
+    c: CONFETTI_COLOURS[i % CONFETTI_COLOURS.length],
+    d: (i % 7) * 25,
+    round: i % 3 === 0,
+  };
+});
+
+/** The card shown when a piece downloads: a ring counts down 3, 2, 1, then
+ *  the download starts and the card turns into a thank-you, with a confetti
+ *  burst and a "Download again" button in case the browser blocked it.
+ *  "Download now" skips the wait; Cancel or Esc backs out before it starts. */
 function DownloadCard({ href, name, title, noun, phone, onDone }: {
   href: string; name: string; title: string; noun: string; phone: boolean; onDone: () => void;
 }) {
   const [left, setLeft] = useState(3);
   const started = left <= 0;
   const btn = useRef<HTMLButtonElement>(null);
+  const ext = (name.split('.').pop() || '').toUpperCase();
 
   const start = useCallback(() => {
     const a = document.createElement('a');
@@ -186,6 +204,15 @@ function DownloadCard({ href, name, title, noun, phone, onDone }: {
     <div className="gx-dl" role="alertdialog" aria-modal="true" aria-labelledby="gx-dl-t" aria-describedby="gx-dl-d"
       onClick={(e) => { if (e.target === e.currentTarget) onDone(); }}>
       <div className={`gx-dl-card${started ? ' is-done' : ''}`}>
+        {started && (
+          <div className="gx-dl-confetti" aria-hidden="true">
+            {CONFETTI.map((p, i) => (
+              <i key={i} className={p.round ? 'is-dot' : undefined} style={{
+                '--x': `${p.x}px`, '--y': `${p.y}px`, '--rot': `${p.r}deg`, '--c': p.c, '--d': `${p.d}ms`,
+              } as React.CSSProperties} />
+            ))}
+          </div>
+        )}
         <div className="gx-dl-ring" aria-hidden="true">
           <svg viewBox="0 0 100 100">
             <circle className="gx-dl-track" cx="50" cy="50" r="44" />
@@ -197,18 +224,30 @@ function DownloadCard({ href, name, title, noun, phone, onDone }: {
             <b key={left}>{left}</b>
           )}
         </div>
-        <h2 id="gx-dl-t">{started ? 'Your download has started' : 'Thank you for downloading!'}</h2>
+        <h2 id="gx-dl-t">{started ? 'Thank you!' : `Your ${noun} is on its way`}</h2>
         <p id="gx-dl-d">
           {started ? (
-            <>Enjoy <strong>{title}</strong>{phone ? ' on your phone' : ''}. If the download didn&apos;t start, <a href={href} download={name}>tap here</a>.</>
+            <><strong>{title}</strong> is downloading in full resolution. {phone ? 'I hope it looks great on your phone.' : 'I hope you enjoy it as much as I enjoyed making it.'}</>
           ) : (
-            <>{phone ? <>I hope <strong>{title}</strong> looks great on your phone.</> : <>I hope you enjoy <strong>{title}</strong>.</>} The full-resolution {noun} will start downloading in {left} second{left === 1 ? '' : 's'}.</>
+            <>The full-resolution <strong>{title}</strong> will start downloading in {left} second{left === 1 ? '' : 's'}.</>
           )}
         </p>
-        <span className="gx-sr" aria-live="polite">{started ? 'Download started' : `${left}`}</span>
+        {started && (
+          <div className="gx-dl-meta">
+            <span className="gx-dl-chip">{ext ? `${ext} · ` : ''}Full resolution</span>
+          </div>
+        )}
+        <span className="gx-sr" aria-live="polite">{started ? 'Download started. Thank you!' : `${left}`}</span>
+        {started && <p className="gx-dl-hint">Didn&apos;t start? Use Download again.</p>}
         <div className="gx-dl-acts">
           {started ? (
-            <button ref={btn} type="button" className="gx-dl-btn is-main" onClick={onDone}>Done</button>
+            <>
+              <a className="gx-dl-btn is-ghost" href={href} download={name} onClick={() => sfxClick(true)}>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 16.5h12" /></svg>
+                Download again
+              </a>
+              <button ref={btn} type="button" className="gx-dl-btn is-main" onClick={onDone}>Done</button>
+            </>
           ) : (
             <>
               <button type="button" className="gx-dl-btn" onClick={onDone}>Cancel</button>

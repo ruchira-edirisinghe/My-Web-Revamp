@@ -502,7 +502,16 @@
 }
 @keyframes gx-dl-pop { from { opacity: 0; transform: translateY(16px) scale(0.94); } }
 .gx-dl-ring { position: relative; display: grid; place-items: center; width: 92px; height: 92px; margin-bottom: 6px; }
-.gx-dl-ring > svg:first-child { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+/* overflow: visible so the progress ring's glow isn't clipped to a square. */
+.gx-dl-ring > svg:first-child { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); overflow: visible; }
+.gx-dl-card.is-done .gx-dl-ring { animation: gx-dl-badge 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) both; }
+.gx-dl-card.is-done .gx-dl-ring::before {
+  content: ''; position: absolute; inset: -14px; border-radius: 50%; z-index: -1;
+  background: radial-gradient(circle, color-mix(in srgb, var(--a) 35%, transparent), transparent 70%);
+  animation: gx-dl-halo 2.4s ease-in-out infinite;
+}
+@keyframes gx-dl-badge { 0% { transform: scale(0.7); } 60% { transform: scale(1.12); } 100% { transform: none; } }
+@keyframes gx-dl-halo { 0%, 100% { opacity: 0.55; transform: scale(0.92); } 50% { opacity: 1; transform: scale(1.08); } }
 .gx-dl-ring circle { fill: none; stroke-width: 5; }
 .gx-dl-track { stroke: rgba(255, 255, 255, 0.08); }
 .gx-dl-prog {
@@ -529,18 +538,62 @@
 .gx-dl-card h2 { margin: 0; font-family: 'Burgundia', cursive; font-size: 34px; font-weight: 700; line-height: 1.1; color: #fff; }
 .gx-dl-card p { margin: 0; font-size: 13.5px; line-height: 1.65; color: rgba(255, 255, 255, 0.66); }
 .gx-dl-card p strong { color: #fff; }
-.gx-dl-card p a { color: var(--a); }
+.gx-dl-card.is-done h2 {
+  font-size: 46px;
+  /* Burgundia's swashes (the T's crossbar) overhang the glyph box, and a
+     text-clipped background only paints inside the box: pad it so they show. */
+  padding: 0.08em 0.3em; margin: -0.08em -0.3em;
+  background: linear-gradient(90deg, #5ce0ff, var(--a), #ff6bd5) 0 0 / 200% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: gx-dl-rise 0.5s ease 0.1s both, gx-dl-shine 4s linear 0.6s infinite;
+}
+@keyframes gx-dl-rise { from { opacity: 0; transform: translateY(8px); } }
+@keyframes gx-dl-shine { to { background-position: 200% 0; } }
+
+/* Thank-you extra: the file chip. */
+.gx-dl-meta { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.gx-dl-chip {
+  padding: 5px 12px; border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--a) 45%, transparent);
+  background: color-mix(in srgb, var(--a) 12%, transparent);
+  font: 700 11px 'Montserrat', sans-serif; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--a) 70%, #fff);
+}
+.gx-dl-card .gx-dl-hint { margin-top: 4px; font-size: 12px; color: rgba(255, 255, 255, 0.45); }
+
+/* Confetti: fanned out from the ring, then falling away. */
+.gx-dl-confetti { position: absolute; left: 50%; top: 78px; width: 0; height: 0; pointer-events: none; z-index: 0; }
+.gx-dl-confetti i {
+  position: absolute; left: -4px; top: -7px; width: 8px; height: 14px; border-radius: 2px;
+  background: var(--c); box-shadow: 0 0 8px var(--c);
+  opacity: 0;
+  animation: gx-dl-burst 1.5s cubic-bezier(0.15, 0.7, 0.3, 1) var(--d) forwards;
+}
+.gx-dl-confetti i.is-dot { width: 7px; height: 7px; top: -3.5px; border-radius: 50%; }
+@keyframes gx-dl-burst {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0) scale(0.4); }
+  12% { opacity: 1; }
+  70% { opacity: 1; transform: translate(var(--x), var(--y)) rotate(var(--rot)) scale(1); }
+  100% { opacity: 0; transform: translate(var(--x), calc(var(--y) + 60px)) rotate(calc(var(--rot) + 140deg)) scale(0.8); }
+}
+.gx-dl-card > :not(.gx-dl-confetti) { position: relative; z-index: 1; }
+
 .gx-dl-acts { display: flex; gap: 10px; width: 100%; margin-top: 10px; }
 .gx-dl-btn {
   flex: 1;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   height: 44px; border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.04);
   font: 800 13px 'Montserrat', sans-serif; color: #fff;
+  text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
+.gx-dl-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .gx-dl-btn:hover { background: rgba(255, 255, 255, 0.08); }
+.gx-dl-btn.is-ghost { border-color: color-mix(in srgb, var(--a) 55%, transparent); color: color-mix(in srgb, var(--a) 65%, #fff); }
+.gx-dl-btn.is-ghost:hover { background: color-mix(in srgb, var(--a) 14%, transparent); transform: translateY(-2px); }
 .gx-dl-btn.is-main { border-color: transparent; background: var(--a); color: #0a0b14; }
 .gx-dl-btn.is-main:hover { transform: translateY(-2px); box-shadow: 0 12px 26px -10px color-mix(in srgb, var(--a) 80%, transparent); }
 .gx-dl-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
@@ -630,4 +683,6 @@ body:has(.gx-lb) #cursor-dot { box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.5), 0 0 8
   .gx-rv { opacity: 1; transform: none; transition: none; }
   .gx-marquee-track { animation: none; }
   .gx-fan-card, .gx-lb, .gx-lb-fig, .gx-intro, .gx-meta, .gx-switch, .gx-dl, .gx-dl-card, .gx-dl-ring b { transition: none; animation: none; }
+  .gx-dl-card.is-done .gx-dl-ring, .gx-dl-card.is-done .gx-dl-ring::before, .gx-dl-card.is-done h2 { animation: none; }
+  .gx-dl-confetti { display: none; }
 }
