@@ -68,6 +68,7 @@ export const COLLECTIONS: Collection[] = [
         logo('akila.webp', 'Akila Physics', 'Identity Design', 'A logo for a physics tuition teacher, used for their classes, marketing and branding.'),
         logo('bumpie.webp', 'Bumpie', 'Software Brand', 'The visual identity for Bumpie, a software platform for maternity status monetization.'),
         logo('celeritas.webp', 'Celeritas', 'Logistics Branding', 'A logo for an agent management system used by an international courier service.'),
+        logo('ciao.webp', 'Ciao Chat', 'Chat App Brand', 'A friendly robot mark for Ciao Chat, with the bot’s face drawn as a speech bubble.'),
         logo('dairy.webp', 'Lanka Dairy', 'Corporate Identity', 'Branding for a company that produces and distributes dairy milk.'),
         logo('dns.webp', 'D.N.S.', 'Community Club', 'A logo for the Networking Department’s community club at my university.'),
         logo('electra.webp', 'Electra', 'Energy Software', 'The visual identity for a university software project focused on solar energy.'),
