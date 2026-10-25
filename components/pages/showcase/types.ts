@@ -14,8 +14,10 @@
  * Content lives in data/*.ts; the template decides the order and layout.
  */
 
+import type { IconName } from '@/components/ui/Icon';
+
 export interface Fact { label: string; value: string }
-export interface Item { icon?: string; title: string; text: string }
+export interface Item { icon?: IconName; title: string; text: string }
 export interface Metric { value: string; label: string }
 export interface Shot { src: string; caption: string }
 export interface ShotGroup {
@@ -25,7 +27,7 @@ export interface ShotGroup {
   shots: Shot[];
 }
 export interface Link { label: string; href: string }
-export interface Persona { icon: string; name: string; role: string; traits: string[]; quote: string }
+export interface Persona { icon: IconName; name: string; role: string; traits: string[]; quote: string }
 export interface Challenge { problem: string; solution: string }
 
 interface Base {

@@ -570,7 +570,10 @@
   box-shadow: 0 0 18px rgba(109, 255, 138, 0.3), inset 0 0 10px rgba(109, 255, 138, 0.12);
   text-shadow: 0 0 10px rgba(109, 255, 138, 0.6);
 }
-.ab-id-ok::before { content: '\2713'; margin-right: 0.5em; letter-spacing: 0; }
+.ab-id-ok::before {
+  content: ''; display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.5em; vertical-align: -0.2em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236dff8a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
 .is-in .ab-id-ok { animation: ab-id-ok 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 1.8s both; }
 .is-in .ab-id-code { animation: ab-id-code 0.6s ease 1.65s both; }
 @keyframes ab-id-ok {

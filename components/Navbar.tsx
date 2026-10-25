@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Icon } from '@/components/ui/Icon';
 
 export type NavKey = 'about' | 'experience' | 'projects' | 'links' | 'contact' | null;
 
@@ -22,7 +23,7 @@ export default function Navbar({ active = null }: { active?: NavKey }) {
           <Link href="/links" {...linkProps('links')}>Quick Links</Link>
         </div>
         <div className="nav-divider"></div>
-        <Link href="/contact" {...linkProps('contact', 'nav-cta')}>Say Hi 👋</Link>
+        <Link href="/contact" {...linkProps('contact', 'nav-cta')}>Say Hi <Icon name="Hand" /></Link>
       </nav>
     </div>
   );

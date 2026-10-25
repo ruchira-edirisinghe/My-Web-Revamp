@@ -5,6 +5,7 @@ import StandardShell from '@/components/StandardShell';
 import { initProjects } from '@/lib/scripts/projects';
 import { COLLECTIONS, type Collection, countOf, hrefOf, piecesOf, thumbOf } from '@/components/pages/galleries/data';
 import { Fan, ICONS, pad2, useReveal } from '@/components/pages/galleries/parts';
+import { Icon } from '@/components/ui/Icon';
 
 /* Graphic Design: the way into the five collections. The hero counts the
    work (a tile per collection with its count, like the Web Projects page),
@@ -35,7 +36,7 @@ export default function GraphicProjectsClient() {
     >
       <main className="gx gx-home pj-page">
         <header className="pj-hero">
-          <Link href="/projects" className="back-link"><span>←</span> Back to Project Categories</Link>
+          <Link href="/projects" className="back-link"><span><Icon name="ArrowLeft" /></span> Back to Project Categories</Link>
           <p className="section-label">Visual Artistry</p>
           <h1 className="page-title">Graphic Design</h1>
           <p className="pj-intro">
@@ -122,7 +123,7 @@ function Showcase({ c, i }: { c: Collection; i: number }) {
           {c.tags.map((t) => <li key={t}>{t}</li>)}
         </ul>
         <span className="gx-col-go">
-          Open the {n} {c.unit[1]} <i aria-hidden="true">→</i>
+          Open the {n} {c.unit[1]} <i><Icon name="ArrowRight" /></i>
         </span>
       </div>
     </article>

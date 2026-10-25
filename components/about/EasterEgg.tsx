@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import Sheet from '@/components/Sheet';
 import { cssVars } from '@/lib/css';
+import { Icon } from '@/components/ui/Icon';
 
 /* The About page's easter egg: five quick taps on the photo (AboutHero.tsx)
    open an "achievement unlocked" popup with a burst of sparkles. Its button
@@ -85,7 +86,7 @@ export default function EasterEgg({ open, onClose }: { open: boolean; onClose: (
           </div>
           {caption && (
             <p className="egg-caption" role="status">
-              <span className="egg-caption-big">Imagine getting rickrolled by a portfolio website. In 2026. <span aria-hidden="true">💀</span></span>
+              <span className="egg-caption-big">Imagine getting rickrolled by a portfolio website. In 2026. <Icon name="Skull" /></span>
               <span className="egg-caption-small">You tapped my face five times for this. No refunds, but I&rsquo;m never gonna let you down.</span>
             </p>
           )}

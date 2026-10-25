@@ -6,6 +6,7 @@ import { initProjects } from '@/lib/scripts/projects';
 import { COLLECTIONS, type Collection, type Piece, collection, countOf, fullOf, hrefOf, originalOf, thumbOf } from './data';
 import Lightbox, { type Slide } from './Lightbox';
 import { Fan, ICONS, pad2, useReveal } from './parts';
+import { Icon } from '@/components/ui/Icon';
 
 /**
  * One graphic design collection (logos, artworks, posters, wallpapers or
@@ -37,7 +38,7 @@ export default function GalleryPage({ slug }: { slug: string }) {
     >
       <main className={`gx gx-gallery is-${c.layout}`} style={{ '--a': c.accent } as CSSProperties}>
         <header className="gx-hero">
-          <Link href="/projects/graphic" className="back-link"><span>←</span> Back to Graphic Design</Link>
+          <Link href="/projects/graphic" className="back-link"><span><Icon name="ArrowLeft" /></span> Back to Graphic Design</Link>
           <p className="section-label">{c.kicker}</p>
           <h1 className="page-title">{c.title}</h1>
           <p className="gx-intro">{c.intro}</p>
@@ -87,7 +88,7 @@ export default function GalleryPage({ slug }: { slug: string }) {
           <span className="gx-next-txt">
             <small>Next collection</small>
             <b>{next.title}</b>
-            <span>{countOf(next)} {next.unit[1]} <i aria-hidden="true">→</i></span>
+            <span>{countOf(next)} {next.unit[1]} <i><Icon name="ArrowRight" /></i></span>
           </span>
           <Fan c={next} />
         </Link>

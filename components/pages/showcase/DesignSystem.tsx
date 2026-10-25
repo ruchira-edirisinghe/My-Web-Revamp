@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DesignStudy } from './types';
+import { Icon } from '@/components/ui/Icon';
 
 /**
  * The "Visual Design System" section of a UI/UX case study, as something to
@@ -131,7 +132,7 @@ export default function DesignSystem({ system, title }: { system: System; title:
                 aria-label={`Copy ${v.k} ${v.v}`}>
                 <small>{v.k}</small>
                 <code>{v.v}</code>
-                <i aria-hidden="true">{copied === v.v ? '✓' : '⧉'}</i>
+                <i><Icon name={copied === v.v ? 'Check' : 'Copy'} /></i>
               </button>
             ))}
           </div>

@@ -11,6 +11,7 @@ import Facts from '@/components/pages/showcase/Facts';
 import SectionRail from '@/components/pages/showcase/SectionRail';
 import ProjectPager from '@/components/pages/showcase/ProjectPager';
 import ProjectJsonLd from '@/components/ProjectJsonLd';
+import { Icon } from '@/components/ui/Icon';
 
 /**
  * One page per Unity game, laid out like a developer's game page rather than a
@@ -53,7 +54,7 @@ export default function GameShowcase({ slug }: { slug: string }) {
       <ProjectJsonLd slug={g.slug} name={g.title} description={g.tagline} kind="game" />
       <main>
         <div className="gs-page" style={cssVars({ '--gs-a': g.accent, '--gs-b': g.accent2 })}>
-          <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
+          <Link href="/projects/web" className="back-link"><span><Icon name="ArrowLeft" /></span> Back to Projects</Link>
 
           {/* ── HERO ── */}
           <header className="gs-hero">
@@ -68,7 +69,7 @@ export default function GameShowcase({ slug }: { slug: string }) {
               <div className="gs-cta-row">
                 {g.links.map((l) => (
                   <a key={l.href} className="gs-btn gs-btn-primary" href={l.href} target="_blank" rel="noopener">
-                    ▶ {l.label}
+                    <Icon name="Play" fill="currentColor" /> {l.label}
                   </a>
                 ))}
                 <a className="gs-btn" href="#gs-media">Screenshots</a>
@@ -133,7 +134,7 @@ export default function GameShowcase({ slug }: { slug: string }) {
             <div className="gs-features">
               {g.features.map((f) => (
                 <div className="gs-feature" key={f.title}>
-                  <div className="gs-feature-icon" aria-hidden="true">{f.icon}</div>
+                  <div className="gs-feature-icon"><Icon name={f.icon} /></div>
                   <h3>{f.title}</h3>
                   <p>{f.text}</p>
                 </div>

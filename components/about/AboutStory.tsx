@@ -1,4 +1,5 @@
 import { cssVars } from '@/lib/css';
+import { Icon } from '@/components/ui/Icon';
 
 /* About: the story (a crew card with the greeting, rotating roles and quick
    facts, beside the bio as three chapters on a rail, whose words fade in one
@@ -73,7 +74,7 @@ export default function AboutStory() {
 
               <p className="ab-id-hello"><span aria-hidden="true">&gt; </span>hello, world<i className="ab-id-caret" aria-hidden="true" /></p>
               <h2 className="ab-hi" id="ab-hi">
-                <span className="ab-hi-pre">Hi <span className="ab-wave" aria-hidden="true">👋</span>, I&rsquo;m</span>{' '}
+                <span className="ab-hi-pre">Hi <span className="ab-wave"><Icon name="Hand" /></span>, I&rsquo;m</span>{' '}
                 <span className="ab-glow">Ruchira Edirisinghe</span>
               </h2>
               <p className="ab-roles">

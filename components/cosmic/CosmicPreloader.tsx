@@ -2,6 +2,7 @@
 import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { onTagline } from '@/lib/cosmic/controller';
 import '@/styles/cosmic.css';
+import { Icon } from '@/components/ui/Icon';
 
 /**
  * The intro on a visitor's first page of a session, after the WebGL liquid
@@ -50,7 +51,7 @@ export default function CosmicPreloader() {
         <span className="cz-status"><i>Charting the void</i></span>
       </div>
       <p className="cz-credit">Cosmic Cliffs, Carina Nebula · NASA, ESA, CSA, STScI</p>
-      <button type="button" className="cz-skip">Skip <span aria-hidden="true">→</span></button>
+      <button type="button" className="cz-skip">Skip <Icon name="ArrowRight" /></button>
     </div>
   );
 }

@@ -11,6 +11,8 @@
  * projects section uses.
  */
 
+import type { IconName } from '@/components/ui/Icon';
+
 export interface GameShot {
   /** File name (no extension) under /Images/projects/<slug>/. */
   file: string;
@@ -33,7 +35,7 @@ export interface GameData {
   pitch: string[];
   pillars: { title: string; text: string }[];
   loop: { title: string; text: string }[];
-  features: { icon: string; title: string; text: string }[];
+  features: { icon: IconName; title: string; text: string }[];
   shots: GameShot[];
   role: string[];
   tech: { title: string; text: string }[];
@@ -82,12 +84,12 @@ export const GAMES: GameData[] = [
       { title: 'Collect', text: 'The official result shows the distances (a nose, a head, lengths) and the prices, and your winning bets are paid out.' },
     ],
     features: [
-      { icon: '🎥', title: 'Camera director', text: 'Gate, chase, tracking, aerial, head-on and finish shots are cut automatically, or you can lock the camera you like.' },
-      { icon: '🏇', title: 'Race physics', text: 'A smoothed pace model with a break from the stalls. Front-runners, stalkers and closers hold their lines and give way, the gallop matches the stride, and close finishes go to a photo.' },
-      { icon: '🌅', title: 'Four kinds of light', text: 'The same course under a bright day, golden hour, dusk or floodlit night, with skies and turf from Poly Haven.' },
-      { icon: '🎟️', title: 'Four markets', text: 'WIN, PLACE (top two), SHOW (top three) and FORECAST (the first two in order), with up to four bets on one slip.' },
-      { icon: '👥', title: 'Arenas', text: 'Rooms for 2 to 8 players with an invite code and an optional password, a synced 30-second betting window, a leaderboard and a daily bounty for three wins.' },
-      { icon: '🔒', title: 'Sealed demo wallet', text: 'The play balance and the next seed are sealed on the device, so they can’t be edited, and play credits only top up once they run out.' },
+      { icon: 'Video', title: 'Camera director', text: 'Gate, chase, tracking, aerial, head-on and finish shots are cut automatically, or you can lock the camera you like.' },
+      { icon: 'Gauge', title: 'Race physics', text: 'A smoothed pace model with a break from the stalls. Front-runners, stalkers and closers hold their lines and give way, the gallop matches the stride, and close finishes go to a photo.' },
+      { icon: 'Sunrise', title: 'Four kinds of light', text: 'The same course under a bright day, golden hour, dusk or floodlit night, with skies and turf from Poly Haven.' },
+      { icon: 'Ticket', title: 'Four markets', text: 'WIN, PLACE (top two), SHOW (top three) and FORECAST (the first two in order), with up to four bets on one slip.' },
+      { icon: 'Users', title: 'Arenas', text: 'Rooms for 2 to 8 players with an invite code and an optional password, a synced 30-second betting window, a leaderboard and a daily bounty for three wins.' },
+      { icon: 'Lock', title: 'Sealed demo wallet', text: 'The play balance and the next seed are sealed on the device, so they can’t be edited, and play credits only top up once they run out.' },
     ],
     shots: [
       { file: 'title', caption: 'Title screen - the 3D logo over the stalls' },
@@ -163,12 +165,12 @@ export const GAMES: GameData[] = [
       { title: 'Lights out', text: 'Five red lights, then the race. The podium board shows the time gaps, and you can go to the next race, replay it or head home.' },
     ],
     features: [
-      { icon: '🏁', title: 'Four circuits', text: 'Thunder Circuit in a storm, Sunset Speedway at golden hour, Neon City at night and Desert Oval at noon, with races of 2, 3 or 4 laps.' },
-      { icon: '📺', title: 'TV director', text: 'The TV, chase, heli, onboard, head-on and finish cameras are cut automatically, or you can pick one yourself.' },
-      { icon: '🎙️', title: 'Live calls', text: 'The commentary ticker calls overtakes, the final lap and wheel-to-wheel finishes as they happen.' },
-      { icon: '🔢', title: 'Five markets', text: 'WIN, TOP 2, PODIUM, FORECAST (the first two in order) and NUMBERS, where you bet on the winner’s number being odd or even, high or low.' },
-      { icon: '💨', title: 'Weather & effects', text: 'Smoke, rain spray, nitro and under-glow, on dry, hot, damp or wet tracks.' },
-      { icon: '👥', title: 'Arenas', text: 'Rooms with an invite code and a password, a synced 30-second window on the classic six-car grid, a leaderboard and a 1,500 daily bounty for three wins.' },
+      { icon: 'Flag', title: 'Four circuits', text: 'Thunder Circuit in a storm, Sunset Speedway at golden hour, Neon City at night and Desert Oval at noon, with races of 2, 3 or 4 laps.' },
+      { icon: 'Tv', title: 'TV director', text: 'The TV, chase, heli, onboard, head-on and finish cameras are cut automatically, or you can pick one yourself.' },
+      { icon: 'Mic', title: 'Live calls', text: 'The commentary ticker calls overtakes, the final lap and wheel-to-wheel finishes as they happen.' },
+      { icon: 'Hash', title: 'Five markets', text: 'WIN, TOP 2, PODIUM, FORECAST (the first two in order) and NUMBERS, where you bet on the winner’s number being odd or even, high or low.' },
+      { icon: 'Wind', title: 'Weather & effects', text: 'Smoke, rain spray, nitro and under-glow, on dry, hot, damp or wet tracks.' },
+      { icon: 'Users', title: 'Arenas', text: 'Rooms with an invite code and a password, a synced 30-second window on the classic six-car grid, a leaderboard and a 1,500 daily bounty for three wins.' },
     ],
     shots: [
       { file: 'title', caption: 'Title screen - the 3D logo over the grid' },
@@ -244,12 +246,12 @@ export const GAMES: GameData[] = [
       { title: 'Seven marks', text: 'The first team to drag the ribbon seven marks wins. The match seed is revealed and the next match seals itself after a short countdown.' },
     ],
     features: [
-      { icon: '🏟️', title: 'Village arena at dusk', text: 'A packed-earth strip with a chalk line, marker flags, a red-and-blue barrier, tiered stands, lanterns, drummers and palms under a violet-to-gold sky.' },
-      { icon: '👏', title: 'A crowd that reacts', text: '222 low-poly villagers in sarees, sarongs and banians wave team flags and Sri Lankan flags and cheer every heave.' },
-      { icon: '🪢', title: 'Rope physics', text: 'The rope runs on a damped spring, and every puller leans on a spring of their own, kicked by the strain, each grip, each slip and the heave.' },
-      { icon: '😭', title: 'Match-end reactions', text: 'The rope drops, the winners face the camera and jump with their fists up, and the losers slump to the ground and cry.' },
-      { icon: '🍬', title: 'Candy 3D interface', text: 'Glossy slab buttons with a lip that sinks when pressed, jelly pick cards and cream panels under ribbons, all in Baloo 2, with big touch targets.' },
-      { icon: '🪔', title: 'Pahana loading screen', text: 'A brass oil lamp whose seven wicks, one for each mark, light up as the game loads.' },
+      { icon: 'Tent', title: 'Village arena at dusk', text: 'A packed-earth strip with a chalk line, marker flags, a red-and-blue barrier, tiered stands, lanterns, drummers and palms under a violet-to-gold sky.' },
+      { icon: 'PartyPopper', title: 'A crowd that reacts', text: '222 low-poly villagers in sarees, sarongs and banians wave team flags and Sri Lankan flags and cheer every heave.' },
+      { icon: 'Link', title: 'Rope physics', text: 'The rope runs on a damped spring, and every puller leans on a spring of their own, kicked by the strain, each grip, each slip and the heave.' },
+      { icon: 'Frown', title: 'Match-end reactions', text: 'The rope drops, the winners face the camera and jump with their fists up, and the losers slump to the ground and cry.' },
+      { icon: 'Candy', title: 'Candy 3D interface', text: 'Glossy slab buttons with a lip that sinks when pressed, jelly pick cards and cream panels under ribbons, all in Baloo 2, with big touch targets.' },
+      { icon: 'Flame', title: 'Pahana loading screen', text: 'A brass oil lamp whose seven wicks, one for each mark, light up as the game loads.' },
     ],
     shots: [
       { file: 'loading', caption: 'Loading - the pahana’s seven wicks' },
@@ -324,12 +326,12 @@ export const GAMES: GameData[] = [
       { title: 'Summon the storm', text: 'Fill the board to 46,656 ways and you trigger 8 storm free games with a rising multiplier and the Golden Treasure.' },
     ],
     features: [
-      { icon: '⚡', title: 'Divine interventions', text: 'Zeus, Athena and Aphrodite can step in on any spin to help you out, and if you fill the board completely, Zeus’s Wrath goes off.' },
-      { icon: '🏛️', title: 'Expanding reels', text: 'The reels grow from 3 to 6 rows, which can take the board from 729 to 46,656 ways in a single chain of wins.' },
-      { icon: '🖼️', title: 'Golden frames', text: 'When a framed symbol wins, it turns into a WILD with a count of ×1 to ×3, and the count goes down with every win it’s part of.' },
-      { icon: '🌩️', title: 'Storm free games', text: 'You get 8 free games that start with 4 rows, and the multiplier goes up on every winning spin.' },
-      { icon: '🔁', title: 'Autoplay & turbo', text: 'Autoplay you can set up the way you like, with options to stop on free games or big wins, plus turbo spins if you want things faster.' },
-      { icon: '📜', title: 'Round history', text: 'Every round is listed with its stake, how much it paid and the hash that proves the result was fixed before you spun.' },
+      { icon: 'Zap', title: 'Divine interventions', text: 'Zeus, Athena and Aphrodite can step in on any spin to help you out, and if you fill the board completely, Zeus’s Wrath goes off.' },
+      { icon: 'Landmark', title: 'Expanding reels', text: 'The reels grow from 3 to 6 rows, which can take the board from 729 to 46,656 ways in a single chain of wins.' },
+      { icon: 'Image', title: 'Golden frames', text: 'When a framed symbol wins, it turns into a WILD with a count of ×1 to ×3, and the count goes down with every win it’s part of.' },
+      { icon: 'CloudLightning', title: 'Storm free games', text: 'You get 8 free games that start with 4 rows, and the multiplier goes up on every winning spin.' },
+      { icon: 'Repeat', title: 'Autoplay & turbo', text: 'Autoplay you can set up the way you like, with options to stop on free games or big wins, plus turbo spins if you want things faster.' },
+      { icon: 'ScrollText', title: 'Round history', text: 'Every round is listed with its stake, how much it paid and the hash that proves the result was fixed before you spun.' },
     ],
     shots: [
       { file: 'home', caption: 'Title screen - the three gods on Olympus' },
@@ -404,12 +406,12 @@ export const GAMES: GameData[] = [
       { title: 'Sink the fleet', text: 'When you score a hit, you get to fire again. The first commander to sink the other fleet wins the battle and the payout.' },
     ],
     features: [
-      { icon: '🔫', title: 'Five weapon systems', text: 'The Plasma Lance is free and lets you fire again on a hit. There’s also an Orbital Barrage that hits in a plus shape, a railgun that sweeps a row or column, a 3×3 scan and a shield that blocks one hit.' },
-      { icon: '🤖', title: 'AI commanders', text: 'Veteran goes after damaged ships and finishes them off, and beating it pays 1.30×. Warlord uses heat-map targeting and special abilities, and beating it pays 1.80×.' },
-      { icon: '🌐', title: 'Play a friend', text: 'Open a private room, send your friend the 4-character code, and the battle starts as soon as they join. It’s free to play, with a move timer and a rematch option.' },
-      { icon: '☄️', title: 'Asteroid sectors', text: 'Blocked cells change where fleets can hide and how the weapons sweep across the board.' },
-      { icon: '📱', title: 'Always landscape', text: 'If your phone is stuck in portrait, a "virtual landscape" mode rotates the UI and the camera for you, so you don’t have to unlock screen rotation.' },
-      { icon: '💥', title: 'Pop-art feedback', text: 'HIT!, FIRE AGAIN! and ENEMY HIT! stickers, a turn timer and a live fleet tracker for both commanders.' },
+      { icon: 'Crosshair', title: 'Five weapon systems', text: 'The Plasma Lance is free and lets you fire again on a hit. There’s also an Orbital Barrage that hits in a plus shape, a railgun that sweeps a row or column, a 3×3 scan and a shield that blocks one hit.' },
+      { icon: 'Bot', title: 'AI commanders', text: 'Veteran goes after damaged ships and finishes them off, and beating it pays 1.30×. Warlord uses heat-map targeting and special abilities, and beating it pays 1.80×.' },
+      { icon: 'Globe', title: 'Play a friend', text: 'Open a private room, send your friend the 4-character code, and the battle starts as soon as they join. It’s free to play, with a move timer and a rematch option.' },
+      { icon: 'Orbit', title: 'Asteroid sectors', text: 'Blocked cells change where fleets can hide and how the weapons sweep across the board.' },
+      { icon: 'Smartphone', title: 'Always landscape', text: 'If your phone is stuck in portrait, a "virtual landscape" mode rotates the UI and the camera for you, so you don’t have to unlock screen rotation.' },
+      { icon: 'Bomb', title: 'Pop-art feedback', text: 'HIT!, FIRE AGAIN! and ENEMY HIT! stickers, a turn timer and a live fleet tracker for both commanders.' },
     ],
     shots: [
       { file: 'menu', caption: 'Main menu' },
@@ -485,12 +487,12 @@ export const GAMES: GameData[] = [
       { title: 'Upgrade', text: 'Spend them on heroes, sleds, cosmetics, blasters and upgrades, and then head back out for another run.' },
     ],
     features: [
-      { icon: '🐧', title: 'Five heroes with perks', text: 'Pip, Kit the fox, Hoot the owl, Bjorn the polar bear and Yeti Jr each have their own perk that gets stronger over 5 levels.' },
-      { icon: '🔫', title: 'Four blasters', text: 'The Snow Blaster, the Icicle Rifle that shoots straight through enemies, the 3-way Frost Shotgun and the rapid-fire Plasma Freezer.' },
-      { icon: '🚀', title: 'Power-ups', text: 'Shield, Coin Magnet, Double Coins, Rocket (which lets you fly over everything) and Rapid Fire.' },
-      { icon: '🏔️', title: 'Four difficulties', text: 'From Easy to Insane, with speeds from 12 up to 48 m/s. Harder levels have more hazards and bigger rewards as you unlock them.' },
-      { icon: '🎁', title: 'Reward chest', text: 'It refills every 15 minutes in real time with coins, gems and 2 or 3 power-ups.' },
-      { icon: '🎬', title: 'Studio intro', text: 'A Zenitron Gaming startup sequence and a 3D logo that flies in, with a loading bar that tracks real loading work.' },
+      { icon: 'Award', title: 'Five heroes with perks', text: 'Pip, Kit the fox, Hoot the owl, Bjorn the polar bear and Yeti Jr each have their own perk that gets stronger over 5 levels.' },
+      { icon: 'Crosshair', title: 'Four blasters', text: 'The Snow Blaster, the Icicle Rifle that shoots straight through enemies, the 3-way Frost Shotgun and the rapid-fire Plasma Freezer.' },
+      { icon: 'Rocket', title: 'Power-ups', text: 'Shield, Coin Magnet, Double Coins, Rocket (which lets you fly over everything) and Rapid Fire.' },
+      { icon: 'Mountain', title: 'Four difficulties', text: 'From Easy to Insane, with speeds from 12 up to 48 m/s. Harder levels have more hazards and bigger rewards as you unlock them.' },
+      { icon: 'Gift', title: 'Reward chest', text: 'It refills every 15 minutes in real time with coins, gems and 2 or 3 power-ups.' },
+      { icon: 'Clapperboard', title: 'Studio intro', text: 'A Zenitron Gaming startup sequence and a 3D logo that flies in, with a loading bar that tracks real loading work.' },
     ],
     shots: [
       { file: 'get-ready', caption: 'Get Ready - difficulty and boosts' },
@@ -565,12 +567,12 @@ export const GAMES: GameData[] = [
       { title: 'Cash out or cross', text: 'You can cash out from the third pair onwards, or cross every pair to win the top prize.' },
     ],
     features: [
-      { icon: '🪟', title: 'Runtime glass fracture', text: 'Panes shatter outwards from where the runner lands, breaking into real prism-shaped shards.' },
-      { icon: '🏃', title: 'Procedural animation', text: 'The runners hop, squash, stretch, flail and cheer without a single pre-made animation clip.' },
-      { icon: '🎌', title: 'Manga-panel UI', text: 'The UI is built entirely in code, and it rebuilds itself when you rotate the screen, fold or unfold a foldable, use split-screen or switch to a cover display.' },
-      { icon: '📈', title: 'Live payout ladder', text: 'The multiplier for every step is shown on screen, and you can set it to cash out automatically at a step you choose.' },
-      { icon: '⏱️', title: 'Run clock', text: 'There’s a 16-minute timer. If it runs out, your runners walk off and you’re paid at the step you’ve reached.' },
-      { icon: '⚙️', title: 'Comfort settings', text: 'Options for vibration, flashing effects and gore, which are saved between sessions.' },
+      { icon: 'AppWindow', title: 'Runtime glass fracture', text: 'Panes shatter outwards from where the runner lands, breaking into real prism-shaped shards.' },
+      { icon: 'Footprints', title: 'Procedural animation', text: 'The runners hop, squash, stretch, flail and cheer without a single pre-made animation clip.' },
+      { icon: 'LayoutDashboard', title: 'Manga-panel UI', text: 'The UI is built entirely in code, and it rebuilds itself when you rotate the screen, fold or unfold a foldable, use split-screen or switch to a cover display.' },
+      { icon: 'TrendingUp', title: 'Live payout ladder', text: 'The multiplier for every step is shown on screen, and you can set it to cash out automatically at a step you choose.' },
+      { icon: 'Timer', title: 'Run clock', text: 'There’s a 16-minute timer. If it runs out, your runners walk off and you’re paid at the step you’ve reached.' },
+      { icon: 'Settings', title: 'Comfort settings', text: 'Options for vibration, flashing effects and gore, which are saved between sessions.' },
     ],
     shots: [
       { file: 'title', caption: 'Title screen' },
@@ -646,12 +648,12 @@ export const GAMES: GameData[] = [
       { title: 'Win the series', text: 'Play best of 3 or best of 5, with lifetime stats and win streaks.' },
     ],
     features: [
-      { icon: '🤠', title: 'Outlaw AI', text: 'Greenhorn, Deputy and Sheriff difficulty levels, powered by alpha-beta search.' },
-      { icon: '🌵', title: 'Three modes', text: 'Classic, Tumbleweed (once you have 3 marks on the board, your oldest one blows away) and Big Ranch, a 5×5 board where you need four in a row.' },
-      { icon: '🌐', title: 'Online Posse', text: 'Public and private rooms you can join with a code or an invite link, reactions shown in speech bubbles, rematches and automatic reconnection.' },
-      { icon: '📱', title: 'Every phone shape', text: 'Portrait, square and landscape layouts that switch on the fly, all the way down to the cover screens on flip phones.' },
-      { icon: '🎵', title: 'Country soundtrack', text: 'Music for the menu, the match and the quick-draw timer, with wood, rope, whip and coin sounds on every interaction.' },
-      { icon: '⭐', title: 'Game feel', text: 'Vibration, screen shake, puffs of dust, a shower of coins and a brass sheriff’s star trophy.' },
+      { icon: 'Crosshair', title: 'Outlaw AI', text: 'Greenhorn, Deputy and Sheriff difficulty levels, powered by alpha-beta search.' },
+      { icon: 'TreePalm', title: 'Three modes', text: 'Classic, Tumbleweed (once you have 3 marks on the board, your oldest one blows away) and Big Ranch, a 5×5 board where you need four in a row.' },
+      { icon: 'Globe', title: 'Online Posse', text: 'Public and private rooms you can join with a code or an invite link, reactions shown in speech bubbles, rematches and automatic reconnection.' },
+      { icon: 'Smartphone', title: 'Every phone shape', text: 'Portrait, square and landscape layouts that switch on the fly, all the way down to the cover screens on flip phones.' },
+      { icon: 'Music', title: 'Country soundtrack', text: 'Music for the menu, the match and the quick-draw timer, with wood, rope, whip and coin sounds on every interaction.' },
+      { icon: 'Star', title: 'Game feel', text: 'Vibration, screen shake, puffs of dust, a shower of coins and a brass sheriff’s star trophy.' },
     ],
     shots: [
       { file: 'menu', caption: 'Main menu - the corral at sunset' },
@@ -726,12 +728,12 @@ export const GAMES: GameData[] = [
       { title: 'Cash out or bust', text: 'Cash out on a panel at any moment to get stake × multiplier. When the round busts, every stake still riding is lost.' },
     ],
     features: [
-      { icon: '🪂', title: 'Physics-driven bail-out', text: 'When you cash out, the pilot stands up, leaps over the side, falls arched, throws the pilot chute and swings under a ram-air canopy.' },
-      { icon: '🌍', title: 'A flight that changes with altitude', text: 'The airfield and farmland, then balloons and an airship, a sea of clouds with airliners, the stratosphere, and finally black space with the curve of the Earth and the planets.' },
-      { icon: '🎯', title: 'Two bet panels', text: 'Two stakes ride the same flight, each with its own auto cash-out, just like in the original game.' },
-      { icon: '👥', title: 'Live All bets list', text: 'Real players’ stakes and cash-outs on the provider’s table, or a simulated crowd in the demo.' },
-      { icon: '🛩️', title: 'Hangar & missions', text: 'XP across 30 pilot levels, daily missions, a leaderboard and 8 liveries for the plane, which change how it looks and never the odds.' },
-      { icon: '🔐', title: 'Provably Fair screen', text: 'Every past round can be recomputed from its revealed seed, right inside the game.' },
+      { icon: 'Wind', title: 'Physics-driven bail-out', text: 'When you cash out, the pilot stands up, leaps over the side, falls arched, throws the pilot chute and swings under a ram-air canopy.' },
+      { icon: 'Earth', title: 'A flight that changes with altitude', text: 'The airfield and farmland, then balloons and an airship, a sea of clouds with airliners, the stratosphere, and finally black space with the curve of the Earth and the planets.' },
+      { icon: 'Target', title: 'Two bet panels', text: 'Two stakes ride the same flight, each with its own auto cash-out, just like in the original game.' },
+      { icon: 'Users', title: 'Live All bets list', text: 'Real players’ stakes and cash-outs on the provider’s table, or a simulated crowd in the demo.' },
+      { icon: 'Plane', title: 'Hangar & missions', text: 'XP across 30 pilot levels, daily missions, a leaderboard and 8 liveries for the plane, which change how it looks and never the odds.' },
+      { icon: 'KeyRound', title: 'Provably Fair screen', text: 'Every past round can be recomputed from its revealed seed, right inside the game.' },
     ],
     shots: [
       { file: 'home', caption: 'Home - the biplane on the airfield' },

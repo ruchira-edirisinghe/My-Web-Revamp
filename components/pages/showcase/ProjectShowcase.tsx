@@ -14,6 +14,7 @@ import ProjectJsonLd from '@/components/ProjectJsonLd';
 import Facts from './Facts';
 import TechLogo from './TechLogo';
 import ProjectPager from './ProjectPager';
+import { Icon } from '@/components/ui/Icon';
 
 /**
  * The project pages. Three templates, one per kind of work (see types.ts),
@@ -32,7 +33,7 @@ function Cards({ items, variant = 'card' }: { items: Item[]; variant?: 'card' | 
     <div className={`gs-grid gs-grid-${variant}`}>
       {items.map((it) => (
         <div className={variant === 'tech' ? 'gs-tech-card' : `gs-${variant}`} key={it.title}>
-          {it.icon && <div className="gs-feature-icon" aria-hidden="true">{it.icon}</div>}
+          {it.icon && <div className="gs-feature-icon"><Icon name={it.icon} /></div>}
           <h3>{it.title}</h3>
           <p>{it.text}</p>
         </div>
@@ -154,7 +155,7 @@ function designSections(p: DesignStudy): Sec[] {
             {r.personas.map((u) => (
               <div className="gs-persona" key={u.name}>
                 <div className="gs-persona-head">
-                  <span className="gs-persona-icon" aria-hidden="true">{u.icon}</span>
+                  <span className="gs-persona-icon"><Icon name={u.icon} /></span>
                   <div><h3>{u.name}</h3><div className="gs-persona-role">{u.role}</div></div>
                 </div>
                 <div className="gs-persona-traits">{u.traits.map((t) => <span key={t}>{t}</span>)}</div>
@@ -171,7 +172,7 @@ function designSections(p: DesignStudy): Sec[] {
         {p.structure.flow && (
           <div className="gs-flow">
             {p.structure.flow.map((f, i) => (
-              <span key={f}>{i > 0 && <i aria-hidden="true">→</i>}<b>{f}</b></span>
+              <span key={f}>{i > 0 && <i><Icon name="ArrowRight" /></i>}<b>{f}</b></span>
             ))}
           </div>
         )}
@@ -192,10 +193,10 @@ function designSections(p: DesignStudy): Sec[] {
         {p.outcome.metrics && <Metrics items={p.outcome.metrics} />}
         {p.outcome.quote && <blockquote className="gs-quote">{p.outcome.quote}</blockquote>}
         <Cards items={[
-          { icon: '📈', title: 'Outcome', text: p.outcome.summary },
-          { icon: '🧗', title: 'Hardest Part', text: p.outcome.challenge },
-          { icon: '💡', title: 'What I Learned', text: p.outcome.learned },
-          ...(p.outcome.next ? [{ icon: '🚀', title: 'Next Steps', text: p.outcome.next }] : []),
+          { icon: 'TrendingUp', title: 'Outcome', text: p.outcome.summary },
+          { icon: 'Mountain', title: 'Hardest Part', text: p.outcome.challenge },
+          { icon: 'Lightbulb', title: 'What I Learned', text: p.outcome.learned },
+          ...(p.outcome.next ? [{ icon: 'Rocket' as const, title: 'Next Steps', text: p.outcome.next }] : []),
         ]} />
       </>
     ) },
@@ -282,7 +283,7 @@ export default function ProjectShowcase({ slug }: { slug: string }) {
       <ProjectJsonLd slug={p.slug} name={p.title} description={p.tagline} kind={p.kind} />
       <main>
         <div className={`gs-page gs-kind-${p.kind}`} style={cssVars({ '--gs-a': p.accent, '--gs-b': p.accent2 })}>
-          <Link href="/projects/web" className="back-link"><span>←</span> Back to Projects</Link>
+          <Link href="/projects/web" className="back-link"><span><Icon name="ArrowLeft" /></span> Back to Projects</Link>
 
           <header className="gs-hero">
             <div className="gs-hero-art" id="hero-banner">
@@ -295,7 +296,7 @@ export default function ProjectShowcase({ slug }: { slug: string }) {
               <div className="gs-cta-row">
                 {p.links.map((l, i) => (
                   <a key={l.href} className={`gs-btn${i === 0 ? ' gs-btn-primary' : ''}`} href={l.href} target="_blank" rel="noopener">
-                    {l.label} ↗
+                    {l.label} <Icon name="ArrowUpRight" />
                   </a>
                 ))}
                 <a className="gs-btn" href="#gs-screens">{p.kind === 'design' ? 'See the screens' : 'Screenshots'}</a>

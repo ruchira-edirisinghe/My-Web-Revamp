@@ -3,6 +3,7 @@ import { type CSSProperties, type ReactNode, useEffect, useLayoutEffect, useMemo
 import Link from 'next/link';
 import StandardShell from '@/components/StandardShell';
 import { initProjects } from '@/lib/scripts/projects';
+import { Icon } from '@/components/ui/Icon';
 
 interface WebProject {
   cat: string;
@@ -168,10 +169,10 @@ function Spotlight() {
             {cur.facts.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
           </dl>
           <div className="px-actions">
-            <Link href={cur.p.href} className="px-btn">{KIND[kind].cta} <i>→</i></Link>
+            <Link href={cur.p.href} className="px-btn">{KIND[kind].cta} <i><Icon name="ArrowRight" /></i></Link>
             {cur.p.play && (
               <a href={cur.p.play} target="_blank" rel="noopener" className="px-btn px-btn-ghost" aria-label={`Play ${cur.p.title} (opens in a new tab)`}>
-                ▶ Play now
+                <Icon name="Play" fill="currentColor" /> Play now
               </a>
             )}
           </div>
@@ -238,10 +239,10 @@ function Card({ p, i }: { p: WebProject; i: number }) {
         </dl>
       </div>
       <div className="pc-foot">
-        <span className="pc-cta" aria-hidden="true">{KIND[kind].cta} <i>→</i></span>
+        <span className="pc-cta" aria-hidden="true">{KIND[kind].cta} <i><Icon name="ArrowRight" /></i></span>
         {p.play && (
           <a href={p.play} target="_blank" rel="noopener" className="pc-play" aria-label={`Play ${p.title} (opens in a new tab)`}>
-            ▶ Play
+            <Icon name="Play" fill="currentColor" /> Play
           </a>
         )}
       </div>
@@ -279,9 +280,9 @@ function IndexList({ items }: { items: WebProject[] }) {
               <span className="px-row-tags">{p.tags.join(' · ')}</span>
               <span className="px-row-end">
                 {p.play && (
-                  <a href={p.play} target="_blank" rel="noopener" className="px-row-play" aria-label={`Play ${p.title} (opens in a new tab)`}>▶ Play</a>
+                  <a href={p.play} target="_blank" rel="noopener" className="px-row-play" aria-label={`Play ${p.title} (opens in a new tab)`}><Icon name="Play" fill="currentColor" /> Play</a>
                 )}
-                <span className="px-row-arrow" aria-hidden="true">→</span>
+                <span className="px-row-arrow"><Icon name="ArrowRight" /></span>
               </span>
             </li>
           );
@@ -424,7 +425,7 @@ export default function WebProjectsClient() {
     >
       <main className="pj-page">
         <header className="pj-hero">
-          <Link href="/projects" className="back-link"><span>←</span> Back to Project Categories</Link>
+          <Link href="/projects" className="back-link"><span><Icon name="ArrowLeft" /></span> Back to Project Categories</Link>
           <p className="section-label">Digital Craft</p>
           <h1 className="page-title">Web Projects</h1>
           <p className="pj-intro">
