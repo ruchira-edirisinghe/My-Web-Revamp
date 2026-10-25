@@ -77,7 +77,7 @@ Every page is designed for small screens too, down to 320px wide.
 | | Feature | What it does |
 |---|---|---|
 | 🌌 | **Living starfield** | A three.js star field drifts behind every page, with the odd shooting star. |
-| ✍️ | **Signature preloader** | My signature writes itself, then opens out like a portal into the page. |
+| 💧 | **Liquid space preloader** | Nebula skies pour into one another while the logo gathers from liquid, counting the site in as it really loads. Page changes flood and drain in a different sky each time. |
 | 🛸 | **3D figures** | A UFO, an astronaut peeking over the footer and a desk scene, all real-time WebGL. |
 | 🎮 | **Playable games** | Nine browser games and five Unity games, each with its own case-study page. |
 | 🖼️ | **Galleries & lightbox** | Logos, artworks, posters, wallpapers and more, in a swipeable full-screen viewer. |
@@ -222,8 +222,9 @@ Everything under `public/Images` ships as **WebP** (quality 85).
 - Wallpapers and artworks also keep their **original high-resolution file**
   (`…/original/`). That's what the download button gives you, so the scripts never touch
   those folders.
-- Two things stay PNG on purpose: `Images/favicon/**` (the web manifest expects PNG) and
-  `Images/mynew.png` (the social-share image, since some crawlers don't read WebP).
+- A few files keep their format on purpose, because crawlers and the web manifest don't all
+  read WebP: `Images/favicon/**` (PNG), `Images/og-card.jpg` (the 1200×630 card shown when a
+  link is shared) and `Images/mynew.png` (the photo in the structured data search engines read).
 
 Run the scripts in this order:
 
