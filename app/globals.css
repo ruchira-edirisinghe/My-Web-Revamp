@@ -42,6 +42,33 @@ body {
   overflow-x: clip;
 }
 
+/* ── Scrollbars ──
+   The logo's cyan-to-violet on the night sky, everywhere something scrolls:
+   10px for the page, 8px for anything scrolling inside it. Strips that hide
+   their bar on purpose (`scrollbar-width: none`) keep it hidden.
+   Chrome and Safari take the ::-webkit-scrollbar rules, gradient and all, as
+   long as nothing sets the standard properties on the element. Firefox only
+   has the standard ones, which take flat colours, so it gets the nearest. */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+body *::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.03); }
+html::-webkit-scrollbar-track { background: #02030a; box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.05); }
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #5ce0ff, #8b7bff 55%, #bc6fff) padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  border-width: 1px;
+  background: linear-gradient(180deg, #8aebff, #a597ff 55%, #cf94ff) padding-box;
+}
+::-webkit-scrollbar-thumb:active { background: linear-gradient(180deg, #b3f3ff, #c2b8ff 55%, #dfb5ff) padding-box; }
+::-webkit-scrollbar-corner { background: transparent; }
+@supports not selector(::-webkit-scrollbar) {
+  * { scrollbar-width: thin; scrollbar-color: #8b7bff rgba(255, 255, 255, 0.04); }
+  html { scrollbar-color: #8b7bff #02030a; }
+}
+
 /* ── Universal micro-interaction polish ──
    Applied globally so every page benefits without duplication. */
 
