@@ -25,13 +25,11 @@ export interface Slide {
  * the Download button first shows a thank-you card that counts down from 3
  * and then starts the download (DownloadCard below). Styles: graphic.css.
  */
-export default function Lightbox({ slides, index, accent, download, fullSize = true, noun = 'image', phone = false, onIndex, onClose }: {
+export default function Lightbox({ slides, index, accent, download, noun = 'image', phone = false, onIndex, onClose }: {
   slides: Slide[];
   index: number;
   accent: string;
   download?: boolean;
-  /** Show the "Full size" link (off for logos). Ignored when downloadable. */
-  fullSize?: boolean;
   /** What a piece is called in the download card ("wallpaper", "artwork"). */
   noun?: string;
   /** Wallpapers: the card talks about the visitor's phone. */
@@ -109,17 +107,13 @@ export default function Lightbox({ slides, index, accent, download, fullSize = t
       <div className="gx-lb-top">
         <span className="gx-lb-count"><b>{String(index + 1).padStart(2, '0')}</b> / {String(n).padStart(2, '0')}</span>
         <div className="gx-lb-acts">
-          {(download || fullSize) && <a className="gx-lb-btn" href={file} target="_blank" rel="noopener noreferrer" download={name}
+          {download && <a className="gx-lb-btn" href={file} target="_blank" rel="noopener noreferrer" download={name}
             onClick={(e) => {
-              if (!download || !name) return;
+              if (!name) return;
               e.preventDefault();
               setDl({ href: file, name, title: s.title });
             }}>
-            {download ? (
-              <><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 16.5h12" /></svg>Download</>
-            ) : (
-              <><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8 4H4v12h12v-4M11 3h6v6M17 3l-8 8" /></svg>Full size</>
-            )}
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 16.5h12" /></svg>Download
           </a>}
           <button ref={closeBtn} type="button" className="gx-lb-x" onClick={close} aria-label="Close">
             <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" /></svg>
