@@ -27,6 +27,7 @@
 import { gsap } from 'gsap';
 import { cover, reveal } from './controller';
 import { collectInitial, startLoad, type LoadState } from './progress';
+import { MAIN_ROUTES, warmSite } from './warm';
 import { LiquidStage, logoBox } from './liquid';
 
 const KEY = 're-intro';
@@ -78,6 +79,9 @@ export function runIntro(root: HTMLElement): () => void {
   let state: LoadState = load.state;
   const unsub = load.subscribe((s) => { state = s; });
   collectInitial(load);
+  // The other pages' models, music, code and first-screen images, so the
+  // visit never stalls on them later (it waits on them for a few seconds at most).
+  load.add('the rest of the site', warmSite(MAIN_ROUTES), 2);
 
   // The photo is one of the scenes: the load waits for it like any image. It
   // goes up to the GPU between pours (sceneAt), never in the middle of one.

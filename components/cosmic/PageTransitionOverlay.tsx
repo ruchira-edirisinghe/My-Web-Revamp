@@ -2,6 +2,7 @@
 import { type ReactNode, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { onTagline } from '@/lib/cosmic/controller';
+import { MAIN_ROUTES } from '@/lib/cosmic/warm';
 import type { PageTransitions } from '@/lib/cosmic/transition';
 import '@/styles/cosmic.css';
 
@@ -18,9 +19,6 @@ import '@/styles/cosmic.css';
  * router; back/forward and deep links are handled from the route change.
  * Links opt out with data-no-transition.
  */
-/** The pages the navigation leads to. */
-const MAIN_ROUTES = ['/', '/about/', '/experience/', '/projects/', '/projects/web/', '/projects/graphic/', '/contact/', '/links/'];
-
 export default function PageTransitionOverlay() {
   const root = useRef<HTMLDivElement>(null);
   const pt = useRef<PageTransitions | null>(null);
