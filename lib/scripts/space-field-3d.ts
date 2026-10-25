@@ -21,7 +21,7 @@
 
    WHAT IT DRAWS
    -------------
-   Three things, in the palette the 2D version used, so the site's look
+   Four things, in the palette the 2D version used, so the site's look
    is carried over rather than replaced:
 
      • Three star layers at different depths. Depth is the whole point -
@@ -31,6 +31,7 @@
        same four aurora colours the 2D version cycled through.
      • Shooting stars, recycled from a fixed pool so nothing allocates
        during the animation loop.
+     • Aurora curtains along the top of the sky, coming and going.
 
    The camera eases toward the pointer and the scroll position. Motion is
    damped, not snapped: a background that tracks the cursor exactly reads
@@ -248,6 +249,70 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
     nebulae.push(mesh);
   }
 
+  /* ── Aurora ───────────────────────────────────────────────────────
+     Three soft curtains winding across the upper sky (below the fade the
+     pages lay under the navbar), in the nebula
+     palette, each fading in and out on its own slow cycle so the sky is
+     sometimes clear. A screen-space quad behind everything else: it's light
+     on the sky, not part of the 3D scene, so it doesn't parallax. Pixels
+     below the curtains bail out before any noise is computed. */
+  const auroraMat = new THREE.ShaderMaterial({
+    transparent: true,
+    depthTest: false,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+    uniforms: {
+      uTime: { value: Math.random() * 200 },
+      uAspect: { value: 1 },
+      uColA: { value: new THREE.Vector3(...NEBULA_COLORS[0]) },
+      uColB: { value: new THREE.Vector3(...NEBULA_COLORS[1]) },
+      uColC: { value: new THREE.Vector3(...NEBULA_COLORS[3]) },
+    },
+    vertexShader: `
+      varying vec2 vUv;
+      void main() { vUv = uv; gl_Position = vec4(position.xy * 2.0, 0.0, 1.0); }
+    `,
+    fragmentShader: `
+      varying vec2 vUv;
+      uniform float uTime, uAspect;
+      uniform vec3 uColA, uColB, uColC;
+      float hash(float n) { return fract(sin(n) * 43758.5453); }
+      float noise(float x) { float i = floor(x), f = fract(x); return mix(hash(i), hash(i + 1.0), f * f * (3.0 - 2.0 * f)); }
+      void main() {
+        if (vUv.y < 0.38) discard;
+        float x = vUv.x * uAspect;
+        vec3 col = vec3(0.0);
+        for (int i = 0; i < 3; i++) {
+          float fi = float(i);
+          // each curtain shows for a while, then the sky clears
+          float show = smoothstep(0.35, 0.75, sin(uTime * (0.045 + fi * 0.012) + fi * 2.3) * 0.5 + 0.5);
+          if (show < 0.01) continue;
+          float y0 = 0.64 + fi * 0.05 + 0.06 * sin(x * (0.8 + fi * 0.3) + uTime * (0.07 + fi * 0.02) + fi * 2.1)
+                   + 0.03 * sin(x * 2.3 - uTime * 0.05 + fi * 4.0);
+          float th = 0.06 + 0.018 * fi;
+          float dy = vUv.y - y0;
+          // a soft lower edge, rising in rays, gathered into patches
+          float band = smoothstep(-th, th * 0.3, dy) * exp(-max(dy, 0.0) / (th * 2.4));
+          float rays = 0.5 + 0.6 * noise(x * 26.0 + fi * 7.0 + uTime * 0.12) * noise(x * 9.0 - uTime * 0.05 + fi * 3.0);
+          float clump = smoothstep(0.2, 0.7, noise(x * 1.6 + fi * 5.0 + uTime * 0.03));
+          vec3 tint = mix(i == 1 ? uColB : uColA, uColC, clamp(dy / (th * 2.5), 0.0, 1.0));
+          col += tint * band * rays * clump * show * (0.34 - fi * 0.07);
+        }
+        float a = max(col.r, max(col.g, col.b));
+        if (a < 0.002) discard;
+        // additive blending scales by alpha, so hand it the colour un-scaled
+        gl_FragColor = vec4(col / a, a);
+      }
+    `,
+  });
+  disposables.push(auroraMat);
+  const auroraGeom = new THREE.PlaneGeometry(1, 1);
+  disposables.push(auroraGeom);
+  const aurora = new THREE.Mesh(auroraGeom, auroraMat);
+  aurora.frustumCulled = false;
+  aurora.renderOrder = -1;
+  scene.add(aurora);
+
   /* ── Shooting stars ───────────────────────────────────────────── */
   type Shooter = {
     line: THREE.Line;
@@ -320,6 +385,7 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
+    auroraMat.uniforms.uAspect.value = w / h;
     // Under reduced motion there is no loop to pick the new size up on the next
     // frame, so the one static frame has to be redrawn here.
     if (reduceMotion) renderer.render(scene, camera);
@@ -381,6 +447,8 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
       layer.pts.rotation.z += dt * 0.004 * layer.speed;
       layer.mat.uniforms.uTime.value = elapsed;
     }
+
+    auroraMat.uniforms.uTime.value += dt;
 
     for (let i = 0; i < nebulae.length; i++) {
       const mat = nebulae[i].material as THREE.ShaderMaterial;

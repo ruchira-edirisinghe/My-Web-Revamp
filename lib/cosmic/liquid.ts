@@ -18,7 +18,7 @@
                same way, along the same displacement, with a neon surface
      flash     a sheen sweeping across the set letters
      prog      the loading progress, as a thread of liquid (the intro's)
-     fx        the sky's life: aurora, twinkling stars, shooting stars
+     fx        the sky's life: twinkling stars, shooting stars
    The displacement map is a tileable fbm, baked once and scrolled over time,
    so everything keeps flowing even while a load stalls. Nothing heavy runs
    per frame: the gas is baked, the frame is a few texture reads per pixel at
@@ -28,22 +28,19 @@
 export type Mark = 'logotype' | 'monogram';
 type RGB = [number, number, number];
 
-/** The skies: a nebula's gas, a second gas through it and its glow, and the
- *  two colours of the aurora over it (lower edge, upper reaches). */
-export const PALETTES: { a: RGB; b: RGB; c: RGB; aur: [RGB, RGB] }[] = [
-  { a: [0.26, 0.11, 0.6], b: [0.05, 0.32, 0.78], c: [0.86, 0.4, 1], aur: [[0, 0.86, 0.63], [0.35, 0.27, 0.94]] }, // 0 violet deep
-  { a: [0.04, 0.42, 0.66], b: [0.62, 0.1, 0.52], c: [0.36, 0.88, 1], aur: [[0.2, 0.9, 1], [0.9, 0.3, 0.8]] }, // 1 cyan and magenta
-  { a: [0.6, 0.2, 0.1], b: [0.28, 0.07, 0.46], c: [1, 0.64, 0.32], aur: [[1, 0.55, 0.25], [0.9, 0.25, 0.5]] }, // 2 ember
-  { a: [0.09, 0.13, 0.42], b: [0.34, 0.14, 0.6], c: [0.42, 0.78, 1], aur: [[0, 0.86, 0.63], [0.2, 0.65, 0.94]] }, // 3 calm navy (the site's own)
-  { a: [0.03, 0.38, 0.36], b: [0.1, 0.14, 0.52], c: [0.4, 1, 0.82], aur: [[0.2, 1, 0.7], [0.3, 0.5, 1]] }, // 4 teal aurora
-  { a: [0.5, 0.08, 0.38], b: [0.2, 0.1, 0.55], c: [1, 0.5, 0.86], aur: [[1, 0.45, 0.8], [0.55, 0.35, 1]] }, // 5 rose
-  { a: [0.05, 0.4, 0.22], b: [0.35, 0.3, 0.06], c: [1, 0.85, 0.4], aur: [[0.3, 1, 0.55], [1, 0.8, 0.3]] }, // 6 emerald and gold
-  { a: [0.1, 0.28, 0.45], b: [0.25, 0.3, 0.5], c: [0.75, 0.9, 1], aur: [[0.6, 0.95, 1], [0.5, 0.6, 1]] }, // 7 ice
-  { a: [0.5, 0.05, 0.12], b: [0.15, 0.08, 0.5], c: [1, 0.4, 0.4], aur: [[1, 0.3, 0.4], [0.5, 0.3, 1]] }, // 8 crimson and indigo
-  { a: [0.45, 0.25, 0.08], b: [0.35, 0.1, 0.35], c: [1, 0.75, 0.45], aur: [[1, 0.7, 0.35], [1, 0.4, 0.6]] }, // 9 golden dusk
+/** The skies: a nebula's gas, a second gas through it and its glow. */
+export const PALETTES: { a: RGB; b: RGB; c: RGB }[] = [
+  { a: [0.26, 0.11, 0.6], b: [0.05, 0.32, 0.78], c: [0.86, 0.4, 1] }, // 0 violet deep
+  { a: [0.04, 0.42, 0.66], b: [0.62, 0.1, 0.52], c: [0.36, 0.88, 1] }, // 1 cyan and magenta
+  { a: [0.6, 0.2, 0.1], b: [0.28, 0.07, 0.46], c: [1, 0.64, 0.32] }, // 2 ember
+  { a: [0.09, 0.13, 0.42], b: [0.34, 0.14, 0.6], c: [0.42, 0.78, 1] }, // 3 calm navy (the site's own)
+  { a: [0.03, 0.38, 0.36], b: [0.1, 0.14, 0.52], c: [0.4, 1, 0.82] }, // 4 teal
+  { a: [0.5, 0.08, 0.38], b: [0.2, 0.1, 0.55], c: [1, 0.5, 0.86] }, // 5 rose
+  { a: [0.05, 0.4, 0.22], b: [0.35, 0.3, 0.06], c: [1, 0.85, 0.4] }, // 6 emerald and gold
+  { a: [0.1, 0.28, 0.45], b: [0.25, 0.3, 0.5], c: [0.75, 0.9, 1] }, // 7 ice
+  { a: [0.5, 0.05, 0.12], b: [0.15, 0.08, 0.5], c: [1, 0.4, 0.4] }, // 8 crimson and indigo
+  { a: [0.45, 0.25, 0.08], b: [0.35, 0.1, 0.35], c: [1, 0.75, 0.45] }, // 9 golden dusk
 ];
-/** The aurora over a photo. */
-const PHOTO_AUR: [RGB, RGB] = [[0.2, 0.65, 0.94], [0.35, 0.27, 0.94]];
 
 const MARKS = {
   logotype: { src: '/Images/longlogo.svg', w: 1762, h: 446 },
@@ -142,7 +139,6 @@ uniform vec4 uRect;
 uniform float uMix, uTime, uIn, uOut, uForm, uFlash, uLogoOn, uAngle;
 uniform vec4 uBar;
 uniform float uProg, uBarOn, uDpr, uFx;
-uniform vec3 uAuA1, uAuA2, uAuB1, uAuB2;
 const vec3 CYAN = vec3(0.36, 0.88, 1.0), VIOLET = vec3(0.74, 0.44, 1.0), PINK = vec3(1.0, 0.42, 0.84);
 ${HASH}
 // Mirrored at the edges, so a pull past them reflects rather than smearing the edge.
@@ -174,27 +170,11 @@ void main() {
   col += mix(CYAN, PINK, n) * m * (1.0 - m) * 4.0 * 0.35;
   col *= 1.0 - 0.5 * smoothstep(0.4, 1.0, length(uv - 0.5) * 1.414);
 
-  // The sky's life, as on the site's own background and kept quiet: aurora
-  // curtains near the top, a few stars that twinkle and glint, and now and
-  // then a shooting star.
+  // The sky's life, kept quiet: a few stars that twinkle and glint, and now
+  // and then a shooting star. (The aurora is the site background's alone.)
   if (uFx > 0.0) {
     vec3 sky = vec3(0.0);
-    vec3 au1 = mix(uAuA1, uAuB1, m), au2 = mix(uAuA2, uAuB2, m);
     float x = uv.x * asp;
-    for (int i = 0; i < 3; i++) {
-      float fi = float(i);
-      // each curtain winds across the top, in patches rather than one band
-      float y0 = 0.8 + fi * 0.05 + 0.07 * sin(x * (0.9 + fi * 0.35) + uTime * (0.09 + fi * 0.025) + fi * 2.1)
-               + 0.035 * sin(x * 2.6 - uTime * 0.06 + fi * 4.0) + (d1.b - 0.5) * 0.05;
-      float th = 0.065 + 0.02 * fi;
-      float dy = uv.y - y0;
-      // a soft lower edge, the curtain fading up from it in rays
-      float band = smoothstep(-th, th * 0.3, dy) * exp(-max(dy, 0.0) / (th * 2.2));
-      float rays = 0.55 + 0.6 * pow(texture2D(uDisp, vec2(x * 1.7 + fi * 0.31 + uTime * 0.004, 0.23 * fi + uTime * 0.008)).r, 2.0);
-      float patch = 0.25 + 0.75 * smoothstep(0.25, 0.65, texture2D(uDisp, vec2(x * 0.22 + fi * 0.37 + uTime * 0.005, 0.71 + fi * 0.13)).g);
-      float breathe = 0.6 + 0.4 * sin(uTime * 0.21 + fi * 1.7);
-      sky += mix(au1, au2, clamp(dy / (th * 2.5), 0.0, 1.0)) * band * rays * patch * breathe * (0.62 - fi * 0.12);
-    }
     vec2 sp = gl_FragCoord.xy / uDpr;
     vec2 cid = floor(sp / 48.0), cf = sp - (cid + 0.5) * 48.0;
     float ch = hash(cid + 3.7);
@@ -278,7 +258,7 @@ void main() {
   gl_FragColor = vec4(col * alpha, alpha);
 }`;
 
-interface Tex { t: WebGLTexture; w: number; h: number; aur?: [RGB, RGB] }
+interface Tex { t: WebGLTexture; w: number; h: number }
 
 export class LiquidStage {
   /* What the timelines move. */
@@ -294,7 +274,7 @@ export class LiquidStage {
   barOn = 1;
   /** How fast the liquid flows (0 holds it still, for reduced motion). */
   speed = 1;
-  /** The sky's aurora, twinkles and shooting stars (0 turns them off, for reduced motion). */
+  /** The sky's twinkles and shooting stars (0 turns them off, for reduced motion). */
   fx = 1;
   onFirstFrame?: () => void;
   onLost?: () => void;
@@ -346,7 +326,7 @@ export class LiquidStage {
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
 
     this.main = this.program(MAIN);
-    for (const n of ['uA', 'uB', 'uDisp', 'uLogo', 'uBlur', 'uSA', 'uSB', 'uRes', 'uRect', 'uMix', 'uTime', 'uIn', 'uOut', 'uForm', 'uFlash', 'uLogoOn', 'uAngle', 'uBar', 'uProg', 'uBarOn', 'uDpr', 'uFx', 'uAuA1', 'uAuA2', 'uAuB1', 'uAuB2']) {
+    for (const n of ['uA', 'uB', 'uDisp', 'uLogo', 'uBlur', 'uSA', 'uSB', 'uRes', 'uRect', 'uMix', 'uTime', 'uIn', 'uOut', 'uForm', 'uFlash', 'uLogoOn', 'uAngle', 'uBar', 'uProg', 'uBarOn', 'uDpr', 'uFx']) {
       this.u[n] = gl.getUniformLocation(this.main, n);
     }
     const dispProg = this.program(BAKE_DISP);
@@ -379,7 +359,6 @@ export class LiquidStage {
         gl.uniform2f(gl.getUniformLocation(prog, 'uSize'), w, h);
       }));
       s = this.scenes.length - 1;
-      this.scenes[s].aur = p.aur;
       this.baked.set(i, s);
     }
     return s;
@@ -541,11 +520,6 @@ export class LiquidStage {
     };
     gl.uniform2fv(u.uSA, fit(A));
     gl.uniform2fv(u.uSB, fit(B));
-    const aA = A.aur ?? PHOTO_AUR, aB = B.aur ?? PHOTO_AUR;
-    gl.uniform3fv(u.uAuA1, aA[0]);
-    gl.uniform3fv(u.uAuA2, aA[1]);
-    gl.uniform3fv(u.uAuB1, aB[0]);
-    gl.uniform3fv(u.uAuB2, aB[1]);
     gl.uniform1f(u.uFx, this.fx);
     gl.uniform2f(u.uRes, W, H);
     gl.uniform4fv(u.uRect, this.rect);
