@@ -3,7 +3,7 @@
    components/cosmic/PageTransitionOverlay.tsx, styles: styles/cosmic.css),
    drawn on the intro's liquid stage (lib/cosmic/liquid.ts).
 
-   The intro's liquid, in under a second each way, and a different sky every
+   The intro's liquid, in about a second each way, and a different sky every
    time (one of the stage's PALETTES, never the one before). On a click the
    page floods from the bottom up with the sky the last transition left,
    while drops gather in the middle into the RE monogram. While the
@@ -13,8 +13,8 @@
    sweeps the monogram and the liquid drains off from the bottom up onto the
    new page, the tagline fading as the surface passes it.
 
-     click -> flood (~650 ms) -> navigate -> hold until the destination's
-     above-the-fold images and critical work are ready -> drain (~820 ms)
+     click -> flood (~1.05 s) -> navigate -> hold until the destination's
+     above-the-fold images and critical work are ready -> drain (~1.2 s)
 
    Back/forward and other route changes the click handler didn't see start
    already flooded (before paint) and go straight to hold and drain. A full
@@ -32,8 +32,8 @@ import { cover, onTagline, reveal, setTagline } from './controller';
 import { collectImages, collectInitial, startLoad, trackCritical, type LoadingProgressManager } from './progress';
 import { LiquidStage, logoBox, PALETTES } from './liquid';
 
-const IN_MS = 650;
-const OUT_MS = 820;
+const IN_MS = 1050;
+const OUT_MS = 1220;
 const MIN_HOLD_MS = 280; // long enough for the pour and the monogram to register
 const HOLD_CAP_MS = 6000;
 const TAG_MS = 1000; // the destination's tagline stays up at least this long, to be read
