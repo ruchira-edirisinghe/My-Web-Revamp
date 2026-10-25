@@ -623,9 +623,10 @@
 .ab-craft {
   display: flex; flex-direction: column;
   padding: 34px 30px 30px; border-radius: 28px; overflow: hidden;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.012) 60%), rgba(10, 12, 26, 0.6);
+  /* No backdrop blur: over the moving starfield it had to be redrawn every
+     frame for a difference a slightly denser fill already makes. */
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.012) 60%), rgba(10, 12, 26, 0.68);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
   transition: var(--ab-in), transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.4s;
 }
 .ab-craft.is-in:hover { transform: translateY(-8px); border-color: color-mix(in srgb, var(--c) 30%, transparent); }
@@ -902,7 +903,6 @@
   position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 10px;
   padding: 16px 6px 13px; border-radius: 18px;
   background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.07);
-  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
   opacity: 0;
   transition: border-color 0.3s, background 0.3s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
