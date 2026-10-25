@@ -31,7 +31,6 @@ const GOOGLE_FONTS_HREF =
     'family=Poppins:wght@300;400;500;600;700',
     'family=Rajdhani:wght@400;500;600;700',
     'family=Sora:wght@300;400;500;600;700',
-    'family=Spectral:wght@300;400;500;600;700',
     'family=Baloo+2:wght@600;700;800',
     'family=Nunito:wght@400;600;700',
     'family=Nunito+Sans:wght@600;700;800',
