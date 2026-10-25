@@ -254,8 +254,10 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
      pages lay under the navbar), in the nebula
      palette, each fading in and out on its own slow cycle so the sky is
      sometimes clear. A screen-space quad behind everything else: it's light
-     on the sky, not part of the 3D scene, so it doesn't parallax. Pixels
-     below the curtains bail out before any noise is computed. */
+     on the sky, not part of the 3D scene, so it doesn't parallax. Each
+     curtain has no hard edge: its foot wanders with drifting 2D noise and
+     thins out into mist, and the whole layer fades out down the sky rather
+     than stopping at a line. Pixels below it bail out before any noise. */
   const auroraMat = new THREE.ShaderMaterial({
     transparent: true,
     depthTest: false,
@@ -278,26 +280,47 @@ export function mountSpaceField(bag: Bag, canvas: HTMLCanvasElement): void {
       uniform vec3 uColA, uColB, uColC;
       float hash(float n) { return fract(sin(n) * 43758.5453); }
       float noise(float x) { float i = floor(x), f = fract(x); return mix(hash(i), hash(i + 1.0), f * f * (3.0 - 2.0 * f)); }
+      float hash2(vec2 p) { vec3 p3 = fract(vec3(p.xyx) * 0.1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }
+      float noise2(vec2 p) {
+        vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);
+        return mix(mix(hash2(i), hash2(i + vec2(1.0, 0.0)), u.x), mix(hash2(i + vec2(0.0, 1.0)), hash2(i + 1.0), u.x), u.y);
+      }
+      float fbm(vec2 p) {
+        float v = 0.0, a = 0.5;
+        for (int k = 0; k < 3; k++) { v += a * noise2(p); p = p * 2.07 + vec2(1.7, 9.2); a *= 0.5; }
+        return v / 0.875;
+      }
       void main() {
-        if (vUv.y < 0.38) discard;
-        float x = vUv.x * uAspect;
+        // the layer thins out down the sky instead of ending at a line
+        float fade = smoothstep(0.3, 0.62, vUv.y);
+        if (fade <= 0.0) discard;
+        float x = vUv.x * uAspect, y = vUv.y;
+        float t = mod(uTime, 1000.0);
+        // two drifting mists: one shapes where the curtains sit, one eats into them
+        float shape = fbm(vec2(x * 1.3 + t * 0.018, y * 2.4 - t * 0.011));
+        float mist = fbm(vec2(x * 3.4 - t * 0.026, y * 5.5 + t * 0.017));
         vec3 col = vec3(0.0);
         for (int i = 0; i < 3; i++) {
           float fi = float(i);
           // each curtain shows for a while, then the sky clears
           float show = smoothstep(0.35, 0.75, sin(uTime * (0.045 + fi * 0.012) + fi * 2.3) * 0.5 + 0.5);
           if (show < 0.01) continue;
-          float y0 = 0.64 + fi * 0.05 + 0.06 * sin(x * (0.8 + fi * 0.3) + uTime * (0.07 + fi * 0.02) + fi * 2.1)
-                   + 0.03 * sin(x * 2.3 - uTime * 0.05 + fi * 4.0);
+          float y0 = 0.66 + fi * 0.05 + 0.06 * sin(x * (0.8 + fi * 0.3) + uTime * (0.07 + fi * 0.02) + fi * 2.1)
+                   + 0.03 * sin(x * 2.3 - uTime * 0.05 + fi * 4.0) + (shape - 0.5) * 0.16;
           float th = 0.06 + 0.018 * fi;
-          float dy = vUv.y - y0;
-          // a soft lower edge, rising in rays, gathered into patches
-          float band = smoothstep(-th, th * 0.3, dy) * exp(-max(dy, 0.0) / (th * 2.4));
-          float rays = 0.5 + 0.6 * noise(x * 26.0 + fi * 7.0 + uTime * 0.12) * noise(x * 9.0 - uTime * 0.05 + fi * 3.0);
-          float clump = smoothstep(0.2, 0.7, noise(x * 1.6 + fi * 5.0 + uTime * 0.03));
-          vec3 tint = mix(i == 1 ? uColB : uColA, uColC, clamp(dy / (th * 2.5), 0.0, 1.0));
-          col += tint * band * rays * clump * show * (0.34 - fi * 0.07);
+          float dy = y - y0;
+          // a long, misty foot below and a slower fade above: no edge either way
+          float below = exp(-pow(max(-dy, 0.0) / (th * 1.5), 2.0));
+          float above = exp(-max(dy, 0.0) / (th * 2.6));
+          // the lower it reaches, the more the mist dissolves it
+          float wisp = smoothstep(0.15, 0.85, mist + 0.35 * below - 0.15 * fi);
+          float band = below * above * mix(0.35, 1.0, wisp);
+          float rays = 0.7 + 0.45 * noise(x * 22.0 + fi * 7.0 + uTime * 0.1) * noise(x * 8.0 - uTime * 0.04 + fi * 3.0);
+          float clump = smoothstep(0.15, 0.75, noise(x * 1.6 + fi * 5.0 + uTime * 0.03));
+          vec3 tint = mix(i == 1 ? uColB : uColA, uColC, clamp(dy / (th * 2.5) + 0.5, 0.0, 1.0));
+          col += tint * band * rays * clump * show * (0.3 - fi * 0.06);
         }
+        col *= fade;
         float a = max(col.r, max(col.g, col.b));
         if (a < 0.002) discard;
         // additive blending scales by alpha, so hand it the colour un-scaled
