@@ -70,7 +70,10 @@ varying vec2 vUv;
 uniform vec3 uA, uB, uC;
 uniform float uSeed;
 uniform vec2 uSize;
-${HASH}
+// Scales its input down before fract(): the fbm reaches coordinates in the
+// thousands, where HASH's fract(p * 851.73) runs out of float precision and
+// the gas breaks into flat, straight-edged blocks.
+float hash(vec2 p) { vec3 p3 = fract(vec3(p.xyx) * 0.1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }
 float noise(vec2 p) {
   vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);
   return mix(mix(hash(i), hash(i + vec2(1, 0)), u.x), mix(hash(i + vec2(0, 1)), hash(i + 1.0), u.x), u.y);
