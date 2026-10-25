@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/site';
+import { LOGO_BRANDS } from '@/components/pages/logos/data';
 
 export const dynamic = 'force-static';
 
@@ -30,6 +31,8 @@ function priority(route: string) {
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes: string[] = [];
   collectRoutes(path.join(process.cwd(), 'app'), '/', routes);
+  // Dynamic routes the walk skips: each logo's brand guidelines.
+  routes.push(...LOGO_BRANDS.map((b) => `/projects/graphic/logos/${b.slug}/`));
   const lastModified = new Date();
   return routes
     .filter((r) => !EXCLUDE.has(r))

@@ -105,17 +105,30 @@ export default function GalleryPage({ slug }: { slug: string }) {
 
 function Card({ c, p, i, onOpen }: { c: Collection; p: Piece; i: number; onOpen: () => void }) {
   const phone = c.layout === 'phones';
+  // Each logo has its own brand guidelines page instead of the viewer.
+  const brand = c.layout === 'logos' ? p.file.replace(/\.\w+$/, '') : null;
+  const media = (
+    <span className={phone ? 'gx-phone' : 'gx-card-media'}>
+      {phone && <i className="gx-phone-island" aria-hidden="true" />}
+      <img src={thumbOf(c, p)} alt={p.title} width={p.w} height={p.h} loading={i < 4 ? 'eager' : 'lazy'} decoding="async" />
+      <span className="gx-card-zoom" aria-hidden="true">
+        {brand
+          ? <svg viewBox="0 0 20 20"><path d="M5 10h10M11 6l4 4-4 4" /></svg>
+          : <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5" /><path d="m12.5 12.5 4 4M8.5 6.5v4M6.5 8.5h4" /></svg>}
+      </span>
+    </span>
+  );
   return (
     <li className="gx-card gx-rv" style={{ '--i': i % 8, '--r': p.w / p.h } as CSSProperties}>
-      <button type="button" className="gx-card-btn" onClick={onOpen} aria-label={`View ${p.title}${p.tag && !phone ? `, ${p.tag}` : ''}`}>
-        <span className={phone ? 'gx-phone' : 'gx-card-media'}>
-          {phone && <i className="gx-phone-island" aria-hidden="true" />}
-          <img src={thumbOf(c, p)} alt={p.title} width={p.w} height={p.h} loading={i < 4 ? 'eager' : 'lazy'} decoding="async" />
-          <span className="gx-card-zoom" aria-hidden="true">
-            <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5" /><path d="m12.5 12.5 4 4M8.5 6.5v4M6.5 8.5h4" /></svg>
-          </span>
-        </span>
-      </button>
+      {brand ? (
+        <Link href={`/projects/graphic/logos/${brand}`} className="gx-card-btn" aria-label={`${p.title} brand guidelines${p.tag ? `, ${p.tag}` : ''}`}>
+          {media}
+        </Link>
+      ) : (
+        <button type="button" className="gx-card-btn" onClick={onOpen} aria-label={`View ${p.title}${p.tag && !phone ? `, ${p.tag}` : ''}`}>
+          {media}
+        </button>
+      )}
       {!phone ? (
         <div className="gx-card-cap">
           {p.tag && <span className="gx-card-tag">{p.tag}</span>}
