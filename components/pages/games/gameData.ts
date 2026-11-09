@@ -1,7 +1,7 @@
 /**
- * The nine Unity games, as data for <GameShowcase>. The last four are rebuilds
- * of web games and keep those games' routes (horse-racing, car-racing, propbet,
- * kamba-adeema) so existing links still land on them.
+ * The ten Unity games, as data for <GameShowcase>. Five are rebuilds of web
+ * games and keep those games' routes (kana-mutti, horse-racing, car-racing,
+ * propbet, kamba-adeema) so existing links still land on them.
  *
  * Everything here comes from the games' own repos (READMEs, CREDITS, source and
  * test output) in `Game Platform & Games/`. The pages are laid out the way game
@@ -51,6 +51,86 @@ const SHOWCASE = 'https://arcade.747sandbox.com/games';
 
 /* Newest first: add a new game at the top of this list, not the bottom. */
 export const GAMES: GameData[] = [
+  /* ═══════════════════════════ BLIND-FOLD POT SMASH ═══════════════════════════ */
+  {
+    slug: 'kana-mutti',
+    title: 'Blind-Fold Pot Smash',
+    tagline: 'Kana Mutti, the Avurudu blindfold pot game, rebuilt in 3D: a blindfolded striker, a rope of clay pots, coins in most and a bomb in a few.',
+    accent: '#d63828',
+    accent2: '#f2b33d',
+    orientation: 'portrait',
+    facts: [
+      { label: 'Engine', value: 'Unity 6 (URP)' },
+      { label: 'Platforms', value: 'WebGL · Windows' },
+      { label: 'Genre', value: 'Pot smash · cash-out ladder' },
+      { label: 'Orientation', value: 'Portrait, mobile-first' },
+      { label: 'Role', value: 'Solo developer' },
+      { label: 'Year', value: '2026' },
+    ],
+    links: [{ label: 'Play in the browser', href: `${SHOWCASE}/kana-mutti` }],
+    pitch: [
+      'Kana mutti (කණා මුට්ටි, "blind pots") is the pot game of every Sinhala and Tamil New Year. Clay pots hang from a rope across the village yard, and a blindfolded player is spun round and sent off with a long stick to break one while the crowd shouts directions, mostly wrong ones. It started as a three.js game in my Next.js arcade, and this is its Unity 6 rebuild, set in a 3D village yard with a cheering crowd, a woodcraft interface and art made in Blender.',
+      'You pick CAREFUL, RISKY or DAREDEVIL, set a stake and send the striker at the pots one at a time. A coin pot moves you up the multiplier ladder, and a bomb blasts the striker coal black and ends the round. You can cash out or bank half after any coin pot, one round in four hides a golden pot that triples the prize, and the ladder returns 96% however you play. In the arcade, every paid round is dealt and settled by the game provider.',
+    ],
+    pillars: [
+      { title: 'Avurudu first', text: 'The elder ties the blindfold and spins the striker round, the crowd cheers and groans, and a conch and the koel sound over the yard, so it feels like the New Year games before it feels like a bet.' },
+      { title: 'No timing beats the house', text: 'The ladder is priced so every cash-out point is worth the same 96% on average. Stopping early or pushing on is a matter of taste, never a strategy.' },
+      { title: 'Sealed before you bet', text: 'Every demo board is dealt from a hashed server seed, your client seed and a public blockchain block, and History deals each past board again so you can check it.' },
+    ],
+    loop: [
+      { title: 'Pick a mode', text: 'CAREFUL hangs 5 pots with 1 bomb (up to 9.6×), RISKY 7 with 2 (up to 40.32×) and DAREDEVIL 9 with 4 (up to 241.92×).' },
+      { title: 'Place the bet', text: 'Set the stake with the chips, − and +, or by typing it. PLACE BET deals and seals the board, and the elder blindfolds the striker and spins him round.' },
+      { title: 'Smash a pot', text: 'Tap a pot and he feels his way over and swings. Coins move you up the ladder, and a bomb ends the round.' },
+      { title: 'Cash out or ride', text: 'After any coin pot, CASH OUT, or BANK HALF to settle half the stake and let the rest ride. Clear every coin pot for the top of the ladder.' },
+    ],
+    features: [
+      { icon: 'Bomb', title: 'The KA-BOOM', text: 'A bomb pot drops a lit bomb: a fireball, a shockwave, charred shards, embers, a scorch mark and a screen flash. The striker ends up coal black, flat on the sand with birds circling his head.' },
+      { icon: 'Star', title: 'The golden pot', text: 'One round in four hides a golden pot. Smash it and the prize triples, and the board shows the golden ladder beside the normal one.' },
+      { icon: 'Coins', title: 'Coin showers', text: 'Coin pots burst into coins and rupee notes that land in the yard and stay there for the rest of the round.' },
+      { icon: 'Target', title: 'The swing ring', text: 'Tap as the ring closes for a PERFECT or GREAT swing. It’s just for show: what’s in each pot was decided before the round began, and the help screen says so.' },
+      { icon: 'Paintbrush', title: 'Village woodcraft UI', text: 'Plank frames, enamel buttons, carved wooden discs and leaves, all drawn procedurally in Python rather than painted by hand.' },
+      { icon: 'Accessibility', title: 'Reduce motion', text: 'A Reduce motion setting turns off the camera shake and freeze frames and softens the flashes. It starts on when the device asks for less motion.' },
+    ],
+    shots: [
+      { file: 'title', caption: 'Title screen - the plank sign over the yard' },
+      { file: 'place-bet', caption: 'Choosing a mode and a stake' },
+      { file: 'smash', caption: 'A coin pot breaks, +1.27×' },
+      { file: 'golden-win', caption: 'A golden-pot win, with half banked' },
+      { file: 'bomb', caption: 'KA-BOOM - a bomb pot goes off' },
+      { file: 'ka-boom', caption: 'The round lost to the bomb' },
+      { file: 'fairness', caption: 'The Fairness screen, sealed before the bet' },
+    ],
+    role: [
+      'I designed the three modes, the ladder, the golden pot, bank half and the round flow.',
+      'I programmed the gameplay, the effects and every screen in C#, building the UI in code with UI Toolkit.',
+      'I wrote the rules and the fair deal as a pure C# package that the game provider also compiles and runs for paid play.',
+      'I built the Blender Python scripts that make the village yard, the pots, the striker, the crowd and the 3D logo.',
+      'I also drew the woodcraft skin and icons in Python, found and mixed the sounds, and wrote the fairness, layout and device screenshot tests.',
+    ],
+    tech: [
+      { title: 'One rules engine, two homes', text: 'PotRules (the paytable and its checks) and PotRandom (the fair deal) are pure C# with no Unity code. The game runs them for the demo, and the game provider runs the same source for paid play, where the board never reaches the client while a round is live.' },
+      { title: 'A martingale ladder', text: 'Each step is priced at exactly the chance of clearing the board from there, times the 96% return. PotRules.Check(), the play-mode tests and a .NET simulator all confirm that return in every mode.' },
+      { title: 'The demo seal', text: 'Each board is HMAC-SHA256 of a secret server seed (its SHA-256 shown before you bet), your client seed, a public Ethereum block hash fetched when you bet, and the round number. Only a real 0x block hash is accepted, and with no chain in reach the board is sealed local.' },
+      { title: 'A purse you can’t edit', text: 'The board in play is sealed on the device and the balance is tagged against edits. An unfinished round is resumed, never dealt again, and the demo purse is only topped up once it can’t cover the smallest bet.' },
+    ],
+    pipeline: [
+      { title: 'A yard from scripts', text: 'build_yard.py makes the village yard, the ropes and the clay pots, and build_people.py builds the striker, the elder and the crowd on KayKit characters and animations.' },
+      { title: 'A 3D logo, shaped first', text: 'Blender lays text out a glyph at a time and can’t form Sinhala vowel signs or conjuncts, so shape_text.py shapes the title with HarfBuzz and hands Blender the outlines. generate_logo.py builds the plank sign and build_logo.py finishes it.' },
+      { title: 'Sounds of the yard', text: 'find_sounds.py found CC0 recordings on Freesound: breaking pots, a fuse, explosions, coins, a conch, rope firecrackers, a Sri Lankan street market and the koel. build_audio.py synthesises the shimmer, slide whistle, swish, heartbeat and tick.' },
+    ],
+    challenges: [
+      { problem: 'The swing needed to feel skilful, but a fair game can’t let timing change what’s inside a pot.', solution: 'The board is dealt and sealed before the striker moves. The PERFECT and GREAT ring only changes the swing, and the help screen says that no timing changes the result.' },
+      { problem: 'If cashing out at the right moment paid better, the advertised return would be wrong for most players.', solution: 'The ladder is a martingale, so every stopping point returns 96% on average, and the tests and the simulator check it for every mode.' },
+      { problem: 'A portrait-first game still gets opened on tablets, foldables and desktop windows.', solution: 'The UI scales portrait-first with safe areas and size classes, a layout sweep test checks every screen for overlaps and clipped labels, and screenshot tests capture every screen on nine device shapes.' },
+    ],
+    stack: ['Unity 6 · URP', 'C#', 'UI Toolkit', 'Blender (Python)', 'HarfBuzz', 'HMAC-SHA256 fairness', '.NET RTP simulator', 'WebGL · Windows'],
+    learned: [
+      'A betting game can be loud with its drama and strict with its maths at the same time: the KA-BOOM is big, but the ladder is exact.',
+      'Pricing the ladder as a martingale turned cash-out timing into a matter of taste, which is fairer and much easier to explain.',
+      'Rebuilding a web game in Unity was the moment to put the rules in one pure C# package that the game and the provider share.',
+    ],
+    credits: 'The striker, the elder and the crowd are built on KayKit Adventurers and Character Animations by Kay Lousberg (CC0). The music is by Kevin MacLeod (CC BY 4.0) with a CC0 recording from Freesound, the sounds come from Freesound creators (CC0), Kenney (CC0) and Gregor Quendel (CC BY 4.0), and the fonts are Titan One, Nunito and Noto Sans Sinhala (OFL). The yard, the pots, the logo, the interface skin, the icons and several sounds were made for the game. Everything is credited on the in-game About screen.',
+  },
   /* ═══════════════════════════════ DERBY KINGS ═══════════════════════════════ */
   {
     slug: 'horse-racing',
