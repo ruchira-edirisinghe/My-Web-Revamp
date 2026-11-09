@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import { projectMeta } from '@/lib/seo';
 import '@/styles/projects/projects.css';
 import '@/styles/projects/project-showcase.css';
-import ProjectShowcase from '@/components/pages/showcase/ProjectShowcase';
-import { projectBySlug } from '@/components/pages/showcase/data';
+import GameShowcase from '@/components/pages/games/GameShowcase';
+import { gameBySlug } from '@/components/pages/games/gameData';
 
 export const metadata: Metadata = projectMeta('/projects/web/kana-mutti/', 'kana-mutti', {
-  name: 'Kana Mutti',
-  title: 'Kana Mutti - Web Game | Ruchira Edirisinghe',
-  description: `${projectBySlug('kana-mutti').tagline} A web game by Ruchira Edirisinghe.`,
+  name: 'Blind-Fold Pot Smash (Kana Mutti)',
+  title: 'Blind-Fold Pot Smash (Kana Mutti) - Unity Game | Ruchira Edirisinghe',
+  description: `${gameBySlug('kana-mutti').tagline} A Unity game by Ruchira Edirisinghe.`,
 });
 
 export default function Page() {
-  return <ProjectShowcase slug="kana-mutti" />;
+  return <GameShowcase slug="kana-mutti" />;
 }
