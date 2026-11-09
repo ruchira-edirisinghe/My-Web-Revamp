@@ -35,7 +35,10 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  /* clip, not hidden: html is already overflow-x: clip (globals.css), so a
+     `hidden` here is not handed to the viewport and turns <body> into a scroll
+     box that never scrolls, which stops the sticky filter bar from pinning. */
+  overflow-x: clip;
 }
 
 body[data-page="projects-hub"] {
