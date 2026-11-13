@@ -845,9 +845,9 @@ export const DESIGN: DesignStudy[] = [
       { label: 'Published', value: 'Behance · Figma' },
     ],
     links: [
-      { label: 'Behance (final)', href: 'https://www.behance.net/gallery/198713933' },
+      { label: 'Behance (final)', href: 'https://www.behance.net/gallery/198713933/VEBUILD-Clean-Sleek-UI-Design' },
       { label: 'Figma (final)', href: 'https://www.figma.com/design/zwKbWePPKM1ujfCR418sg1?node-id=177-795' },
-      { label: 'Behance (block UI)', href: 'https://www.behance.net/gallery/198687327' },
+      { label: 'Behance (block UI)', href: 'https://www.behance.net/gallery/198687327/VEBUILD-Web-UI-Design' },
       { label: 'Figma (block UI)', href: 'https://www.figma.com/design/zwKbWePPKM1ujfCR418sg1?node-id=0-1' },
     ],
     brief: [
