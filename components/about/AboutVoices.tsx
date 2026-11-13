@@ -119,7 +119,7 @@ export default function AboutVoices({ head, className = 'ab-sec', rv = 'ab-rv' }
               <div key={p.name} className="ab-tx-msg is-sizer" aria-hidden="true">
                 <blockquote className="ab-tx-quote">{p.quote}</blockquote>
                 <div className="ab-tx-from">
-                  <img alt="" />
+                  <span className="ab-tx-avatar" />
                   <span className="ab-tx-name"><b>{p.name}</b><small>{p.role}</small></span>
                   <span className="ab-tx-stars"><i>{[0, 1, 2, 3, 4].map((s) => <Icon key={s} name="Star" fill="currentColor" />)}</i></span>
                 </div>
@@ -138,7 +138,7 @@ export default function AboutVoices({ head, className = 'ab-sec', rv = 'ab-rv' }
                   <b>{t.name}</b>
                   <small>{t.role}</small>
                 </span>
-                <span className="ab-tx-stars" aria-label="Five stars">
+                <span className="ab-tx-stars" role="img" aria-label="Five stars">
                   {[0, 1, 2, 3, 4].map((s) => <i key={s} style={cssVars({ '--s': s })}><Icon name="Star" fill="currentColor" /></i>)}
                 </span>
               </figcaption>
