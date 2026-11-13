@@ -65,6 +65,8 @@ export default function GalleryPage({ slug }: { slug: string }) {
 
         {c.sections.map((s, si) => (
           <section key={si} className="gx-sec" aria-label={s.title ?? c.title}>
+            {/* An untitled section still gets an <h2>, so the cards' <h3>s don't follow the <h1> directly. */}
+            {!s.title && <h2 className="sr-only">{`All ${c.unit[1]}`}</h2>}
             {s.title && (
               <header className="gx-sec-head gx-rv">
                 <span className="gx-sec-no" aria-hidden="true">{pad2(si + 1)}</span>
