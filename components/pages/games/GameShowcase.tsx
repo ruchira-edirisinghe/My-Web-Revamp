@@ -210,7 +210,7 @@ export default function GameShowcase({ slug }: { slug: string }) {
       </main>
 
       {/* ── SCREENSHOT LIGHTBOX (driven by initCaseStudy) ── */}
-      <div id="cs-modal" className="cs-modal-overlay" aria-hidden="true">
+      <div id="cs-modal" className="cs-modal-overlay" aria-hidden="true" inert>
         <button id="cs-modal-zoom" className="cs-modal-btn zoom-btn" aria-label="Zoom image">
           <svg viewBox="0 0 24 24">
             <path d="M11 19a8 8 0 100-16 8 8 0 000 16zM21 21l-4.35-4.35" />
