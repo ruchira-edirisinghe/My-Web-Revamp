@@ -10,7 +10,7 @@ export default function Navbar({ active = null }: { active?: NavKey }) {
       ? { className: `${base} active`, 'aria-current': 'page' as const }
       : { className: base };
   return (
-    <div id="navbar-wrap">
+    <header id="navbar-wrap">
       <Link href="/" aria-label="Home">
         <img className="nav-logo" src="/Images/longlogo.svg" alt="Ruchira Edirisinghe" decoding="async" />
       </Link>
@@ -24,6 +24,6 @@ export default function Navbar({ active = null }: { active?: NavKey }) {
         <div className="nav-divider"></div>
         <Link href="/contact" {...linkProps('contact', 'nav-cta')}>Say Hi 👋</Link>
       </nav>
-    </div>
+    </header>
   );
 }

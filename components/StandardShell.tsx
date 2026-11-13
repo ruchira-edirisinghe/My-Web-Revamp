@@ -96,7 +96,7 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
 
       <div className="top-content-fade"></div>
 
-      <canvas id="space-canvas"></canvas>
+      <canvas id="space-canvas" aria-hidden="true"></canvas>
 
       <Navbar active={active} />
       <MobileMenu active={active} />
@@ -110,7 +110,7 @@ export default function StandardShell({ active = null, dataPage, tagline, childr
       </button>
 
       <div id="cursor-dot"></div>
-      <canvas id="cursor-canvas"></canvas>
+      <canvas id="cursor-canvas" aria-hidden="true"></canvas>
 
       <ScrollTop />
     </>

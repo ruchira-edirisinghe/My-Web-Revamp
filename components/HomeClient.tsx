@@ -58,8 +58,8 @@ export default function HomeClient() {
       <Preloader />
 
       {/* Background canvases */}
-      <canvas id="space-canvas"></canvas>
-      <canvas id="scatter-canvas"></canvas>
+      <canvas id="space-canvas" aria-hidden="true"></canvas>
+      <canvas id="scatter-canvas" aria-hidden="true"></canvas>
 
       <main className="page">
         <div className="hero">
@@ -136,7 +136,7 @@ export default function HomeClient() {
         <canvas id="spectrum-canvas" width="26" height="18"></canvas>
       </button>
 
-      <canvas id="cursor-canvas"></canvas>
+      <canvas id="cursor-canvas" aria-hidden="true"></canvas>
 
       <ScrollTop />
     </>
