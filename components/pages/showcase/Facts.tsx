@@ -49,18 +49,20 @@ export default function Facts({ facts }: { facts: { label: string; value: string
         const parts = f.value.split(' · ');
         const live = /^status$/i.test(f.label) && /live|ongoing|shipped|playable/i.test(f.value);
         return (
+          // A <dl> may only hold <dt>/<dd> directly or in one <div>, so the icon lives inside the <dt>
+          // (and is laid out beside the pair by the CSS) rather than in a wrapper of its own.
           <div className="gs-fact" key={f.label}>
-            <span className="gs-fact-ico" aria-hidden="true">
-              <svg viewBox="0 0 20 20">{ICON[FACT_ICON[f.label.toLowerCase()] ?? 'spark']}</svg>
-            </span>
-            <div className="gs-fact-body">
-              <dt>{f.label}{live && <span className="gs-fact-live" aria-hidden="true" />}</dt>
-              <dd>
-                {parts.length > 1
-                  ? <ul className="gs-fact-tags">{parts.map((t) => <li key={t}>{t}</li>)}</ul>
-                  : f.value}
-              </dd>
-            </div>
+            <dt>
+              <span className="gs-fact-ico" aria-hidden="true">
+                <svg viewBox="0 0 20 20">{ICON[FACT_ICON[f.label.toLowerCase()] ?? 'spark']}</svg>
+              </span>
+              {f.label}{live && <span className="gs-fact-live" aria-hidden="true" />}
+            </dt>
+            <dd>
+              {parts.length > 1
+                ? <ul className="gs-fact-tags">{parts.map((t) => <li key={t}>{t}</li>)}</ul>
+                : f.value}
+            </dd>
           </div>
         );
       })}

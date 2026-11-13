@@ -135,13 +135,15 @@ body:has(.gs-page) footer {
   opacity: 0.8;
 }
 .gs-fact {
-  display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: start; gap: 14px;
-  padding: 22px 22px 20px;
+  position: relative;
+  min-width: 0;
+  padding: 22px 22px 20px 76px; /* 22px edge + 40px icon + 14px gap */
   box-shadow: 1px 0 0 var(--gs-border), 0 1px 0 var(--gs-border);
   transition: background 0.3s ease;
 }
 .gs-fact:hover { background: rgba(255, 255, 255, 0.025); }
 .gs-fact-ico {
+  position: absolute; left: 22px; top: 22px;
   display: grid; place-items: center;
   width: 40px; height: 40px;
   border-radius: 12px;
@@ -154,7 +156,6 @@ body:has(.gs-page) footer {
   width: 19px; height: 19px;
   fill: none; stroke: var(--gs-a); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
 }
-.gs-fact-body { min-width: 0; }
 .gs-fact dt {
   display: flex; align-items: center; gap: 8px;
   margin: 2px 0 8px;
@@ -346,7 +347,8 @@ body:has(.gs-page) footer {
   .gs-hero-art { border-radius: 16px; }
   .gs-hero-copy { margin: -28px 10px 0; padding: 20px 18px; }
   .gs-facts { grid-template-columns: minmax(0, 1fr); margin-bottom: 56px; }
-  .gs-fact { padding: 18px; }
+  .gs-fact { padding: 18px 18px 18px 72px; }
+  .gs-fact-ico { left: 18px; top: 18px; }
   .gs-challenge { grid-template-columns: 1fr; gap: 12px; }
   .gs-page .cs-section { margin-bottom: 60px; }
 }
