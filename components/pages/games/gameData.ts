@@ -27,8 +27,11 @@ export interface GameData {
   /** Accent colours the page is tinted with, picked from the key art. */
   accent: string;
   accent2: string;
-  /** Portrait games get a phone-shaped screenshot grid, landscape games a wide one. */
-  orientation: 'portrait' | 'landscape';
+  /**
+   * Portrait games get a phone-shaped screenshot grid, landscape games a wide one. 'landscape-phone' is for
+   * phone-first games played with the phone on its side: whole 20:9 phone captures in a phone frame.
+   */
+  orientation: 'portrait' | 'landscape' | 'landscape-phone';
   facts: { label: string; value: string }[];
   links: { label: string; href: string }[];
   /** The elevator pitch. */
