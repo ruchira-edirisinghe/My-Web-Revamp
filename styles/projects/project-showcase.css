@@ -226,6 +226,8 @@ body:has(.gs-page) footer {
 .gs-gallery { display: grid; gap: 16px; }
 .gs-gallery-landscape { grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); }
 .gs-gallery-portrait { grid-template-columns: repeat(auto-fill, minmax(min(150px, 44%), 1fr)); }
+/* Phone-first games played with the phone on its side: whole 20:9 captures in a phone frame, never cropped to 16:9. */
+.gs-gallery-landscape-phone { grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); }
 .gs-shot {
   margin: 0;
   cursor: zoom-in;
@@ -236,6 +238,7 @@ body:has(.gs-page) footer {
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .gs-gallery-portrait .gs-shot { border-radius: 20px; padding: 6px 6px 0; background: #0b0d16; }
+.gs-gallery-landscape-phone .gs-shot { border-radius: 20px; padding: 6px 6px 0; background: #0b0d16; }
 .gs-shot:hover, .gs-shot:focus-visible {
   transform: translateY(-4px);
   border-color: var(--gs-a);
@@ -245,6 +248,7 @@ body:has(.gs-page) footer {
 .gs-shot img { display: block; width: 100%; height: auto; }
 .gs-gallery-landscape .gs-shot img { aspect-ratio: 16 / 9; object-fit: cover; object-position: top; }
 .gs-gallery-portrait .gs-shot img { aspect-ratio: 9 / 19.5; object-fit: cover; object-position: top; border-radius: 15px; }
+.gs-gallery-landscape-phone .gs-shot img { aspect-ratio: 20 / 9; object-fit: cover; border-radius: 15px; }
 .gs-shot .ui-card-label {
   display: block;
   padding: 10px 12px 12px;
