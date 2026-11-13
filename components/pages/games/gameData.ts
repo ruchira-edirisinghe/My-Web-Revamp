@@ -59,7 +59,7 @@ export const GAMES: GameData[] = [
     slug: 'pixel-poker',
     title: 'Pixel Perfect Poker',
     tagline: 'My browser Hold’em tournament, rebuilt in Unity 6 at a grand anime casino table: five rivals with faces and habits, a dealer behind the felt and manga panels for every big moment.',
-    accent: '#d4243c',
+    accent: '#ec3f57',
     accent2: '#f5c542',
     orientation: 'landscape-phone',
     facts: [

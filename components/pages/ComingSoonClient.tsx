@@ -19,8 +19,8 @@ export default function ComingSoonClient() {
     <>
       {/* Non-fixed scroll target so Next's route auto-scroll doesn't iterate the fixed chrome */}
       <div aria-hidden="true" style={{ position: 'absolute', height: 0, width: 0 }} />
-      <canvas id="space-canvas"></canvas>
-      <canvas id="cursor-canvas"></canvas>
+      <canvas id="space-canvas" aria-hidden="true"></canvas>
+      <canvas id="cursor-canvas" aria-hidden="true"></canvas>
       <div id="cursor-dot"></div>
 
       <div className="cs-orb cs-orb-a"></div>
@@ -36,9 +36,9 @@ export default function ComingSoonClient() {
       <Preloader tagline={<>Something beautiful is<br className="tagline-br" /> <span className="tagline-name">Coming Soon</span></>} />
 
       {/* Desktop nav - logo only, no pill */}
-      <div id="navbar-wrap">
+      <header id="navbar-wrap">
         <Link href="/" aria-label="Home"><img className="nav-logo" src="/Images/longlogo.svg" alt="Ruchira Edirisinghe" decoding="async" /></Link>
-      </div>
+      </header>
 
       <button id="music-btn-desktop" aria-label="Toggle music">
         <canvas id="spectrum-canvas-desktop" width="26" height="18"></canvas>

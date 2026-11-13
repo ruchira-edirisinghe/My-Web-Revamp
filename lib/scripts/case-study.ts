@@ -384,6 +384,8 @@ export function initCaseStudy(): () => void {
       currentIndex = index; resetZoom(); updateModal();
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
+      // Closed, the lightbox is only faded out, so `inert` is what keeps its buttons out of the tab order.
+      modal.inert = false;
       document.body.style.overflow = 'hidden';
       document.body.classList.add('modal-open');
       if (closeBtn && typeof closeBtn.focus === 'function') closeBtn.focus();
@@ -391,6 +393,7 @@ export function initCaseStudy(): () => void {
     function closeModal() {
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
+      modal.inert = true;
       document.body.style.overflow = '';
       document.body.classList.remove('modal-open');
       resetZoom();

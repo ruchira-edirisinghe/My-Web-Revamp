@@ -387,7 +387,8 @@ export default function ExperienceClient() {
     >
       <main className="page xp">
         {/* ══ HERO ══ */}
-        <section className="xp-hero" aria-labelledby="xp-h1">
+        {/* Not a labelled landmark: its name would repeat the timeline's "Work experience". */}
+        <section className="xp-hero">
           <p className="xp-kicker">My professional journey</p>
           <h1 id="xp-h1" className="xp-big"><span className="xp-plain">Work</span> <span className="xp-glow">Experience</span></h1>
           <p className="xp-intro">
@@ -402,7 +403,9 @@ export default function ExperienceClient() {
         </section>
 
         {/* ══ WORK TIMELINE ══ */}
-        <section id="work" className="xp-sec" aria-label="Work experience">
+        <section id="work" className="xp-sec" aria-labelledby="xp-work-t">
+          {/* The timeline has no visible heading; this one keeps the roles' <h3>s under an <h2>. */}
+          <h2 id="xp-work-t" className="sr-only">Work experience</h2>
           <ol className="xp-tl">
             {ROLES.map((r, k) => (
               <li key={r.co} className={`xp-role ${k % 2 ? 'is-right' : 'is-left'}`} style={{ '--c': r.c } as Css}>
