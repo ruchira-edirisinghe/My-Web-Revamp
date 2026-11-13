@@ -1,7 +1,7 @@
 /**
- * The ten Unity games, as data for <GameShowcase>. Five are rebuilds of web
- * games and keep those games' routes (kana-mutti, horse-racing, car-racing,
- * propbet, kamba-adeema) so existing links still land on them.
+ * The eleven Unity games, as data for <GameShowcase>. Six are rebuilds of web
+ * games and keep those games' routes (pixel-poker, kana-mutti, horse-racing,
+ * car-racing, propbet, kamba-adeema) so existing links still land on them.
  *
  * Everything here comes from the games' own repos (READMEs, CREDITS, source and
  * test output) in `Game Platform & Games/`. The pages are laid out the way game
@@ -54,6 +54,87 @@ const SHOWCASE = 'https://arcade.747sandbox.com/games';
 
 /* Newest first: add a new game at the top of this list, not the bottom. */
 export const GAMES: GameData[] = [
+  /* ═══════════════════════════ PIXEL PERFECT POKER ═══════════════════════════ */
+  {
+    slug: 'pixel-poker',
+    title: 'Pixel Perfect Poker',
+    tagline: 'My browser Hold’em tournament, rebuilt in Unity 6 at a grand anime casino table: five rivals with faces and habits, a dealer behind the felt and manga panels for every big moment.',
+    accent: '#d4243c',
+    accent2: '#f5c542',
+    orientation: 'landscape-phone',
+    facts: [
+      { label: 'Engine', value: 'Unity 6 (URP)' },
+      { label: 'Platforms', value: 'WebGL · Windows' },
+      { label: 'Genre', value: 'No-Limit Hold’em · Sit & Go' },
+      { label: 'Orientation', value: 'Landscape, mobile-first' },
+      { label: 'Role', value: 'Solo developer' },
+      { label: 'Year', value: '2026' },
+    ],
+    links: [{ label: 'Play in the browser', href: `${SHOWCASE}/pixel-poker` }],
+    pitch: [
+      'Pixel Perfect Poker started as a six-player No-Limit Hold’em Sit & Go in my Next.js arcade, drawn in pixel art. This is its Unity 6 rebuild. You sit at a wide red table with a brass rim in a casino hall of velvet curtains and chandeliers, an animated dealer shuffles and deals from behind the felt, and the five original rivals, Viper, Luna, Dmitri, Sasha and Kane, are back as anime portraits that react to every move.',
+      'It’s built for a phone held on its side first, then flip covers, foldables, tablets and desktop windows. The original’s betting steps are kept: buy in, pick a blind speed, see the prizes and deal in. Everyone starts with 2,000 chips and no rebuys, the blinds climb from 10/20, and finishing first pays 4.50× the buy-in and second 1.10×. Every deck is sealed with a SHA-256 commitment before the first card and can be checked when the tournament ends.',
+    ],
+    pillars: [
+      { title: 'Rivals with a face', text: 'Every rival breathes, sways and tilts while thinking, and pulls a face for each move: smug for a raise, fierce for an all-in, teary for a fold, overjoyed for a pot and shocked for a bust.' },
+      { title: 'Manga for the big moments', text: 'An all-in cuts in across the screen, a showdown splits it between the players’ faces, a win plays as a comic page and the champion gets a page of their own.' },
+      { title: 'Fair, and checkable', text: 'The whole match, the deck and the rivals’ mixed play, comes from one seeded stream. Its hash is shown before the first card, and the seed is revealed in the results.' },
+    ],
+    loop: [
+      { title: 'Buy in', text: 'Pick a buy-in from 10 to 1,000 demo chips. It’s the only thing at stake: everyone gets 2,000 tournament chips.' },
+      { title: 'Pick a blind speed', text: 'TURBO raises the blinds every 4 hands, NORMAL every 6 and SLOW every 10, through ten levels from 10/20.' },
+      { title: 'Play your hands', text: 'Fold, check, call or raise on a 25-second clock, with pre-actions, a raise panel and your odds of winning on screen.' },
+      { title: 'Finish top two', text: 'Outlast the five rivals. First pays 4.50× the buy-in, second 1.10×, and the results reveal the deck’s seed.' },
+    ],
+    features: [
+      { icon: 'Drama', title: 'Anime rivals', text: 'Viper the aggressive shark, Luna the loose dreamer, Dmitri the tight rock, Sasha the wild maniac and Kane the balanced grinder, each with five expressions, banter, emotes and notes on their habits.' },
+      { icon: 'Sparkles', title: 'Manga panels', text: 'ALL IN!! cut-ins, SHOWDOWN! splits, three-panel win pages, bust and champion pages, golden auras, rays and sparkles, and a big countdown with red edges for the last five seconds of your turn.' },
+      { icon: 'User', title: 'A dealer at the table', text: 'A rigged 3D dealer idles, shuffles at the start of a hand, flicks out the cards, nods at a check, opens an arm to the winner and claps a big pot.' },
+      { icon: 'SlidersHorizontal', title: 'A proper raise panel', text: 'MIN, ½ POT, POT and ALL-IN presets, a slider and ±BB nudges, pre-actions like CHECK/FOLD and CALL ANY, squeeze to peek at your cards, and keyboard shortcuts on desktop.' },
+      { icon: 'Smartphone', title: 'Every screen sideways', text: 'Played in landscape on phones from 720p to 20:9 with notches, flip covers, unfolded foldables, tablets and desktop windows. A phone held upright gets a turn-your-phone card.' },
+      { icon: 'Gauge', title: 'Light on low-end phones', text: 'A performance governor watches the real frame time and lowers the render scale, anti-aliasing and shadows a step at a time when frames slip, while the UI stays sharp at full resolution.' },
+    ],
+    shots: [
+      { file: 'title', caption: 'Title screen - the gold logo at the table' },
+      { file: 'table-setup', caption: 'Table setup: buy-in, blind speed, prizes and rivals' },
+      { file: 'your-turn', caption: 'Your turn, with the odds of winning' },
+      { file: 'raise', caption: 'The raise panel' },
+      { file: 'all-in', caption: 'ALL IN!! - the cut-in' },
+      { file: 'river-bet', caption: 'Viper bets the river' },
+      { file: 'showdown', caption: 'Showdown - the rivals’ cards turned over' },
+      { file: 'win', caption: 'A manga win page: three of a kind, Jacks' },
+    ],
+    role: [
+      'I designed the table, the hand flow, the raise panel, the manga effects and the casino chrome.',
+      'I programmed the game and every screen in C#, building the UI in code with UI Toolkit.',
+      'I ported the original game’s rules and rival AI line by line into a pure C# package, PokerCore, and improved the rivals.',
+      'I built the table, the chips and the dealer’s moves with Blender Python scripts, and drew the cards, chips, felt and interface skin in Python.',
+      'I directed the portraits, the dealer, the hall, the logo and the music with Higgsfield, mixed the sounds, and wrote the rules checks and device screenshot tests.',
+    ],
+    tech: [
+      { title: 'One rules engine for every table', text: 'PokerCore holds the rules, the hand evaluator, the AI, the seeded deck and the match as pure C# with no Unity code. The game runs it on the device for demo play, and the same source is written to run on the game provider for paid tournaments and online tables.' },
+      { title: 'Sharper rivals, same brains', text: 'The original’s AI is kept: the Chen formula before the flop and Monte Carlo equity after it, now with 200 trials instead of 130. The rivals now also read position, count each player’s habits to guess a bettor’s range, commit when short-stacked, and sometimes trap or semi-bluff. They never see a hidden card.' },
+      { title: 'A deck you can check', text: 'Every random choice comes from SHA-256 in counter mode over a secret 32-byte seed, drawn by rejection rather than a bare modulo, as GLI-19 asks of a game RNG. A match is stored as its seed and a counter, so it replays exactly and can be continued on any server.' },
+      { title: 'Online tables are back', text: 'The original hid its Firebase tables. Here you can create an open or private table with a code, or join one from the list, and fill empty chairs with AI rivals. The tables are written for the game provider’s multiplayer hub, and without a provider session they run as a preview on the device.' },
+    ],
+    pipeline: [
+      { title: 'A table from scripts', text: 'build_scene.py builds the wide red table, its black leather rail and brass rim, the printed felt, the chips and the dealer button in Blender, and animate_dealer.py gives the dealer her idle, shuffle, deal, nod, present and clap.' },
+      { title: 'Faces and a hall', text: 'make_portraits.py draws each rival and player look with five expressions, make_dealer.py draws the dealer from three sides and turns her into a rigged model, and make_casino_art.py paints the hall and the gold logo.' },
+      { title: 'Everything else in code', text: 'build_textures.py draws both card decks, the chips, the felt, the carpet, the burgundy and gold skin, the icons and the screentone. build_audio.py levels the music loops and puts the table sounds in a hall reverb.' },
+    ],
+    challenges: [
+      { problem: 'Six seats, a board, a pot, a dealer and the action buttons all have to fit on a phone held sideways without covering each other.', solution: 'The board’s cards are sized to the felt on every screen, the bets keep clear of the name plates, and screenshot tests play a real tournament on nine device shapes to catch overlaps.' },
+      { problem: 'Poker needs its deck kept secret while it’s being played, but players should still be able to check it afterwards.', solution: 'The deck comes from a secret seed whose SHA-256 is shown before the first card. The seed is only revealed in the results, so every deal can be replayed and checked once it no longer matters.' },
+      { problem: 'A 3D casino with a rigged dealer has to run on the cheap phones a mobile-first game gets opened on.', solution: 'A performance governor trades render scale, anti-aliasing and shadows for frame rate a step at a time, and steps back up when the device keeps up again.' },
+    ],
+    stack: ['Unity 6 · URP', 'C#', 'UI Toolkit', 'Blender (Python)', 'Higgsfield', 'SHA-256 seeded deck', 'Monte Carlo AI', 'WebGL · Windows'],
+    learned: [
+      'Characters make a card game. The same AI feels much smarter when the rival smirks before raising.',
+      'A betting game played on a phone held sideways lives or dies by its layout, so it was worth testing every screen shape with real tournaments rather than mock-ups.',
+      'Porting the original rules line by line first, and only then improving the AI, kept the rebuild honest: the same hands play the same way.',
+    ],
+    credits: 'The rivals’ and players’ portraits, the dealer and her model, the casino hall and the logo were made for the game with Higgsfield (Nano Banana 2, GPT Image 2.5 and image-to-3D), and the four chiptune-jazz music tracks with ElevenLabs Music through Higgsfield. The sounds come from Kenney’s Casino Audio, Interface, Impact, RPG and Music Jingles packs (CC0), the fonts are Lilita One, Bangers and Poppins (OFL), and the icons are drawn from Google’s Material Icons (Apache 2.0). The table, the chips, the cards and the interface were made for the game. Everything is credited on the in-game About screen.',
+  },
   /* ═══════════════════════════ BLIND-FOLD POT SMASH ═══════════════════════════ */
   {
     slug: 'kana-mutti',
