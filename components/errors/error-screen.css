@@ -1,0 +1,310 @@
+/* Branded error screens (404, the /errors/<code>/ pages, error.tsx and
+   global-error.tsx). Matches the site's cosmic dark theme with the fonts the
+   root layout loads (Orbitron / Sora / Montserrat). Pure CSS, no space-canvas
+   engine, so a page renders even when the thing that broke is the app. */
+
+.err-page {
+  --err-accent: #6facff;
+  --err-accent-glow: rgba(80, 150, 255, 0.55);
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  padding: 104px 16px 72px;
+  color: #f2f6ff;
+  background:
+    radial-gradient(1200px 620px at 50% -12%, rgba(60, 120, 255, 0.16), transparent 62%),
+    #02030a;
+}
+/* 5xx: the fault is on our side, so the status light turns amber. */
+.err-page[data-tone='server'] {
+  --err-accent: #ffb86b;
+  --err-accent-glow: rgba(255, 170, 80, 0.55);
+}
+
+/* Layered starfield - a subtle twinkle keeps the empty space alive */
+.err-stars {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 18% 28%, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(1px 1px at 68% 62%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1.6px 1.6px at 42% 80%, rgba(180, 220, 255, 0.75), transparent),
+    radial-gradient(1px 1px at 85% 24%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 54% 14%, rgba(180, 220, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 9% 68%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1.4px 1.4px at 78% 82%, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1px 1px at 32% 46%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1.2px 1.2px at 92% 52%, rgba(200, 180, 255, 0.55), transparent),
+    radial-gradient(1px 1px at 4% 12%, rgba(255, 255, 255, 0.45), transparent);
+  animation: errTwinkle 6.5s ease-in-out infinite alternate;
+}
+@keyframes errTwinkle {
+  from { opacity: 0.35; }
+  to   { opacity: 0.8; }
+}
+
+/* Soft nebula glow behind the number for depth */
+.err-nebula {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: min(680px, 92vw);
+  height: min(680px, 92vw);
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 42% 46%, rgba(70, 120, 255, 0.2), rgba(70, 120, 255, 0) 58%),
+    radial-gradient(circle at 62% 58%, rgba(188, 111, 255, 0.1), rgba(188, 111, 255, 0) 52%);
+  filter: blur(28px);
+}
+
+/* Logotype: the way home that's always in the same place */
+.err-logo {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: block;
+  border-radius: 8px;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+.err-logo:hover { opacity: 1; }
+.err-logo img { display: block; height: 28px; width: auto; }
+
+.err-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+/* ── The code, orbited by a ring and a satellite ───────────────── */
+.err-hero {
+  position: relative;
+  display: inline-block;
+  font-size: clamp(88px, 22vw, 210px);
+}
+.err-hero--wide { font-size: clamp(72px, 17vw, 170px); }
+
+.err-code {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 1em;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  background: linear-gradient(180deg, #eaf4ff 0%, #8cc4ff 46%, #3f7bff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 10px 46px rgba(60, 120, 255, 0.4));
+}
+
+/* One ellipse drawn twice: the whole of it behind the digits, and its lower
+   half again in front, so the ring wraps the number like a planet's. */
+.err-ring,
+.err-sat {
+  position: absolute;
+  left: -0.4em;
+  right: -0.4em;
+  top: 50%;
+  height: 0.42em;
+  margin-top: -0.21em;
+  pointer-events: none;
+}
+.err-ring {
+  border-radius: 50%;
+  border: 1px solid rgba(140, 200, 255, 0.28);
+  transform: rotate(-8deg);
+}
+.err-ring--back { z-index: 1; }
+.err-ring--front {
+  z-index: 3;
+  border-color: rgba(140, 200, 255, 0.4);
+  clip-path: inset(50% 0 0 0);
+}
+
+/* The satellite rides the ellipse: x and y each swing edge to edge, a quarter
+   orbit apart, and it passes in front of the digits on the near half. */
+.err-sat {
+  z-index: 3;
+  transform: rotate(-8deg);
+  animation: errSatZ 18s step-end infinite;
+}
+.err-sat-x,
+.err-sat-y {
+  position: absolute;
+  inset: 0;
+}
+.err-sat-x { animation: errSatX 9s ease-in-out infinite alternate; }
+.err-sat-y { animation: errSatY 9s ease-in-out -4.5s infinite alternate; }
+.err-sat-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: var(--err-accent);
+  box-shadow: 0 0 10px 2px var(--err-accent-glow);
+}
+@keyframes errSatX {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(50%); }
+}
+@keyframes errSatY {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(50%); }
+}
+@keyframes errSatZ {
+  0%   { z-index: 3; }
+  50%  { z-index: 1; }
+}
+
+/* ── Status pill, title, copy ──────────────────────────────────── */
+.err-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0 0;
+  padding: 7px 15px 7px 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(220, 235, 255, 0.78);
+}
+.err-dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--err-accent);
+  box-shadow: 0 0 8px var(--err-accent-glow);
+  animation: errPulse 2.4s ease-in-out infinite;
+}
+@keyframes errPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+.err-title {
+  margin: 18px 0 0;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: clamp(22px, 4.2vw, 38px);
+  letter-spacing: -0.01em;
+  color: #f2f6ff;
+  text-wrap: balance;
+}
+
+.err-text {
+  margin: 16px auto 0;
+  max-width: 48ch;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 2.4vw, 16px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  text-wrap: pretty;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────── */
+.err-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.err-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 26px;
+  border: 0;
+  border-radius: 14px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+.err-btn svg { width: 17px; height: 17px; flex: none; }
+
+.err-btn-primary {
+  color: #02030a;
+  background: linear-gradient(180deg, #bfe0ff, #6facff);
+  box-shadow: 0 10px 30px rgba(80, 150, 255, 0.35);
+}
+.err-btn-ghost {
+  color: #dce9ff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+@media (hover: hover) and (pointer: fine) {
+  .err-btn-primary:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 16px 42px rgba(80, 150, 255, 0.5);
+  }
+  .err-btn-ghost:hover {
+    transform: translateY(-2px) scale(1.03);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(140, 200, 255, 0.4);
+  }
+}
+.err-btn:active { transform: translateY(0) scale(0.97); }
+
+.err-btn:focus-visible,
+.err-logo:focus-visible {
+  outline: 2px solid rgba(140, 205, 255, 0.9);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .err-page { padding-top: 92px; }
+  .err-logo { top: 24px; }
+  .err-logo img { height: 22px; }
+  .err-pill { font-size: 10px; letter-spacing: 0.16em; }
+  .err-actions { flex-direction: column; align-items: stretch; max-width: 300px; margin-inline: auto; }
+  .err-btn { justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .err-stars,
+  .err-dot,
+  .err-sat,
+  .err-sat-x,
+  .err-sat-y { animation: none; }
+  /* Parked at the front of the ring rather than frozen mid-swing. */
+  .err-sat-y { transform: translateY(50%); }
+  .err-btn { transition: background 0.2s ease, border-color 0.2s ease; }
+  .err-btn:hover,
+  .err-btn:active { transform: none; }
+}
