@@ -56,6 +56,30 @@ export const ERROR_PAGES = {
     text: 'Too many requests came from your connection in a short time, so things are paused for a moment. Wait a little, then try again.',
     action: 'retry',
   },
+  '500': {
+    name: 'Internal server error',
+    title: 'Something broke on board',
+    text: "An unexpected error stopped this page from loading. It's nothing you did. Try again in a moment, or head back to the homepage.",
+    action: 'retry',
+  },
+  '502': {
+    name: 'Bad gateway',
+    title: "The relay station isn't answering",
+    text: 'A server between you and this site sent back a response that made no sense. It usually clears up within a minute, so try again shortly.',
+    action: 'retry',
+  },
+  '503': {
+    name: 'Service unavailable',
+    title: 'Docked for maintenance',
+    text: "The site is offline for a short while, either for maintenance or because it's busy. It'll be back soon, so please check again in a little while.",
+    action: 'retry',
+  },
+  '504': {
+    name: 'Gateway timeout',
+    title: 'No reply from mission control',
+    text: 'A server between you and this site waited too long for an answer. This is usually brief, so try again in a moment.',
+    action: 'retry',
+  },
 } satisfies Record<string, ErrorPage>;
 
 export type ErrorCode = keyof typeof ERROR_PAGES;
