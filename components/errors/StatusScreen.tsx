@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import ErrorScreen, { ErrorLink } from './ErrorScreen';
 import RetryButton from './RetryButton';
+import { ERROR_ART } from './artworks';
 import { ERROR_PAGES, type ErrorAction, type ErrorCode, type ErrorPage } from './data';
 
 const SECONDARY: Record<ErrorAction, ReactNode> = {
@@ -22,6 +23,7 @@ export default function StatusScreen({ code }: { code: ErrorCode }) {
       text={page.text}
       tone={code.startsWith('5') ? 'server' : 'client'}
       secondary={secondary}
+      art={ERROR_ART[code]}
     />
   );
 }

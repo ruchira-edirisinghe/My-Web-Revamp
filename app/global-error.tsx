@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import ErrorScreen from '@/components/errors/ErrorScreen';
 import RetryButton from '@/components/errors/RetryButton';
+import { CrashArt } from '@/components/errors/artworks';
 
 // The three faces the error screen uses. The root layout normally loads them,
 // but this page replaces the layout, so it has to load them itself.
@@ -36,6 +37,7 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
           text="Something went wrong and the site couldn't load. It's nothing you did. Try again, or head back to the homepage for a fresh start."
           tone="server"
           secondary={<RetryButton onRetry={reset} />}
+          art={<CrashArt />}
           hardHome
         />
       </body>
