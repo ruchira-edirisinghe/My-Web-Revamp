@@ -7,6 +7,9 @@
   --err-accent: #6facff;
   --err-accent-glow: rgba(80, 150, 255, 0.55);
   position: relative;
+  /* border-box: the padding sits inside the viewport height instead of
+     adding to it, so a page that fits doesn't scroll. */
+  box-sizing: border-box;
   min-height: 100dvh;
   display: flex;
   align-items: center;
