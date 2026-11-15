@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import ErrorScreen from '@/components/errors/ErrorScreen';
 import RetryButton from '@/components/errors/RetryButton';
+import { CrashArt } from '@/components/errors/artworks';
 
 /**
  * Shown when a page throws while rendering in the browser, in place of Next's
@@ -21,6 +22,7 @@ export default function RouteError({ error, reset }: { error: Error & { digest?:
       text="Something went wrong while this page was loading. Trying again usually fixes it. If it doesn't, the homepage is a safe place to land."
       tone="server"
       secondary={<RetryButton onRetry={reset} />}
+      art={<CrashArt />}
     />
   );
 }

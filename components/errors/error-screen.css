@@ -7,6 +7,9 @@
   --err-accent: #6facff;
   --err-accent-glow: rgba(80, 150, 255, 0.55);
   position: relative;
+  /* border-box: the padding sits inside the viewport height instead of
+     adding to it, so a page that fits doesn't scroll. */
+  box-sizing: border-box;
   min-height: 100dvh;
   display: flex;
   align-items: center;
@@ -80,10 +83,93 @@
 .err-logo:hover { opacity: 1; }
 .err-logo img { display: block; height: 28px; width: auto; }
 
-.err-content {
+/* ── Layout: art above the words on phones and portrait tablets,
+      beside them on wide and landscape screens (see the media query
+      at the end). ───────────────────────────────────────────────── */
+.err-layout {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1120px;
+}
+
+.err-content {
+  position: relative;
   max-width: 640px;
+  min-width: 0;
+}
+
+/* Sized by width and by height, so a short screen gets a smaller picture
+   rather than pushing the buttons out of view. */
+.err-art {
+  flex: none;
+  width: min(320px, 58vw, 30svh);
+  margin: 0 auto clamp(4px, 2svh, 18px);
+  filter: drop-shadow(0 18px 40px rgba(40, 90, 255, 0.22));
+}
+.err-art-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* ── Artwork motion (classes used inside artworks.tsx) ─────────── */
+.err-art-svg .ea-float { animation: eaFloat 7s ease-in-out infinite; }
+.err-art-svg .ea-tw { animation: eaTwinkle 3.2s ease-in-out infinite; }
+.err-art-svg .ea-blink { animation: eaBlink 1.6s steps(1, end) infinite; }
+.err-art-svg .ea-flicker {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  animation: eaFlicker 0.18s ease-in-out infinite alternate;
+}
+.err-art-svg .ea-drift { animation: eaDrift 5s linear infinite; }
+.err-art-svg .ea-rise {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: eaRise 4.2s ease-out infinite;
+}
+.err-art-svg .ea-flow { animation: eaFlow 0.9s linear infinite; }
+.err-art-svg .ea-spin {
+  transform-box: view-box;
+  animation: eaSpin 6s linear infinite;
+}
+.err-art-svg .ea-spin-slow { animation-duration: 72s; }
+
+@keyframes eaFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+@keyframes eaTwinkle {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 1; }
+}
+@keyframes eaBlink {
+  0%  { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+@keyframes eaFlicker {
+  from { transform: scaleY(0.84); }
+  to   { transform: scaleY(1.08); }
+}
+@keyframes eaDrift {
+  0%   { transform: translate(0, 0); opacity: 0; }
+  15%  { opacity: 1; }
+  100% { transform: translate(26px, -30px); opacity: 0; }
+}
+@keyframes eaRise {
+  0%   { transform: translate(0, 0) scale(0.7); opacity: 0; }
+  20%  { opacity: 0.9; }
+  100% { transform: translate(-6px, -26px) scale(1.25); opacity: 0; }
+}
+@keyframes eaFlow {
+  to { stroke-dashoffset: -16; }
+}
+@keyframes eaSpin {
+  to { transform: rotate(360deg); }
 }
 
 /* ── The code, orbited by a ring and a satellite ───────────────── */
@@ -287,8 +373,46 @@
   outline-offset: 3px;
 }
 
+/* Wide screens, and any landscape screen roomy enough for two columns
+   (phones on their side included): the art moves beside the words. */
+@media (min-width: 900px), (orientation: landscape) and (min-width: 640px) {
+  .err-layout {
+    flex-direction: row;
+    justify-content: center;
+    gap: clamp(28px, 5vw, 88px);
+  }
+  .err-art {
+    order: 2;
+    width: min(480px, 40vw, 66svh);
+    margin: 0;
+  }
+  .err-content {
+    flex: 0 1 560px;
+    text-align: left;
+    /* Room for the ring, which reaches past the code's left edge. */
+    padding-left: clamp(16px, 3vw, 40px);
+  }
+  .err-hero,
+  .err-hero--wide { font-size: clamp(72px, min(10.5vw, 22svh), 184px); }
+  .err-text { margin-left: 0; }
+  .err-actions { justify-content: flex-start; }
+}
+
+/* Short screens (landscape phones, small laptop windows): tighten the
+   vertical rhythm so everything fits without scrolling where it can. */
+@media (max-height: 560px) {
+  .err-page { padding-top: 72px; padding-bottom: 28px; }
+  .err-logo { top: 20px; }
+  .err-logo img { height: 22px; }
+  .err-pill { margin-top: 16px; }
+  .err-title { margin-top: 12px; font-size: clamp(20px, 3.4vw, 30px); }
+  .err-text { margin-top: 10px; font-size: 14px; line-height: 1.6; }
+  .err-actions { margin-top: 20px; }
+  .err-btn { padding: 11px 22px; }
+}
+
 @media (max-width: 480px) {
-  .err-page { padding-top: 92px; }
+  .err-page { padding-top: 92px; padding-bottom: 40px; }
   .err-logo { top: 24px; }
   .err-logo img { height: 22px; }
   .err-pill { font-size: 10px; letter-spacing: 0.16em; }
@@ -296,12 +420,44 @@
   .err-btn { justify-content: center; }
 }
 
+/* Phones on their side (375-430px tall): the tightest fit, with a smaller
+   picture so the words get a wider column and fewer lines. */
+@media (max-height: 440px) and (orientation: landscape) {
+  .err-page { padding-top: 54px; padding-bottom: 14px; }
+  .err-logo { top: 14px; }
+  .err-logo img { height: 20px; }
+  .err-art { width: min(300px, 30vw, 60svh); }
+  .err-hero,
+  .err-hero--wide { font-size: min(9vw, 18svh); }
+  .err-pill { margin-top: 12px; }
+  .err-title { margin-top: 8px; font-size: clamp(18px, 3vw, 24px); }
+  .err-text { margin-top: 8px; font-size: 13px; line-height: 1.5; }
+  .err-actions { margin-top: 14px; }
+  .err-btn { padding: 10px 20px; font-size: 13px; }
+}
+
+/* Small phones in portrait (iPhone SE and the like): a smaller picture and
+   code so the buttons stay on the first screen. */
+@media (max-width: 480px) and (max-height: 700px) {
+  .err-page { padding-top: 72px; padding-bottom: 20px; }
+  .err-logo { top: 20px; }
+  .err-art { width: min(280px, 58vw, 22svh); }
+  .err-hero,
+  .err-hero--wide { font-size: 68px; }
+  .err-pill { margin-top: 18px; }
+  .err-title { margin-top: 12px; }
+  .err-text { margin-top: 10px; font-size: 14px; line-height: 1.6; }
+  .err-actions { margin-top: 22px; gap: 10px; }
+  .err-btn { padding: 11px 22px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .err-stars,
   .err-dot,
   .err-sat,
   .err-sat-x,
-  .err-sat-y { animation: none; }
+  .err-sat-y,
+  .err-art-svg * { animation: none !important; }
   /* Parked at the front of the ring rather than frozen mid-swing. */
   .err-sat-y { transform: translateY(50%); }
   .err-btn { transition: background 0.2s ease, border-color 0.2s ease; }

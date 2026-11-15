@@ -13,17 +13,20 @@ interface ErrorScreenProps {
   tone?: 'client' | 'server';
   /** A second button beside Back to home. */
   secondary?: ReactNode;
+  /** The page's illustration (components/errors/artworks.tsx). */
+  art?: ReactNode;
   /** A plain <a> home instead of <Link>: global-error can't trust the router. */
   hardHome?: boolean;
 }
 
 /**
- * The cosmic error screen every error page shares: starfield, the code with a
- * ring and a satellite around it, a status pill, the message and a Back to home
- * button. Self-contained (no space-canvas engine) so it renders as a static
+ * The cosmic error screen every error page shares: starfield, the page's
+ * illustration, the code with a ring and a satellite around it, a status pill,
+ * the message and a Back to home button. The art sits beside the words on wide
+ * and landscape screens and above them on phones (error-screen.css). Self-contained (no space-canvas engine) so it renders as a static
  * export page and when the app itself has crashed.
  */
-export default function ErrorScreen({ code, label, title, text, tone = 'client', secondary, hardHome }: ErrorScreenProps) {
+export default function ErrorScreen({ code, label, title, text, tone = 'client', secondary, art, hardHome }: ErrorScreenProps) {
   const Home = hardHome ? 'a' : Link;
 
   return (
@@ -35,36 +38,40 @@ export default function ErrorScreen({ code, label, title, text, tone = 'client',
         <img src="/Images/longlogo.svg" alt="" width={1762} height={446} decoding="async" />
       </Home>
 
-      <div className="err-content">
-        {/* The pill below says the code in words; this is the picture of it. */}
-        <div className={`err-hero${code.length > 3 ? ' err-hero--wide' : ''}`} aria-hidden="true">
-          <span className="err-ring err-ring--back" />
-          <p className="err-code">{code}</p>
-          <span className="err-ring err-ring--front" />
-          <span className="err-sat">
-            <span className="err-sat-x">
-              <span className="err-sat-y">
-                <span className="err-sat-dot" />
+      <div className="err-layout">
+        {art && <div className="err-art">{art}</div>}
+
+        <div className="err-content">
+          {/* The pill below says the code in words; this is the picture of it. */}
+          <div className={`err-hero${code.length > 3 ? ' err-hero--wide' : ''}`} aria-hidden="true">
+            <span className="err-ring err-ring--back" />
+            <p className="err-code">{code}</p>
+            <span className="err-ring err-ring--front" />
+            <span className="err-sat">
+              <span className="err-sat-x">
+                <span className="err-sat-y">
+                  <span className="err-sat-dot" />
+                </span>
               </span>
             </span>
-          </span>
-        </div>
+          </div>
 
-        <div>
-          <p className="err-pill">
-            <span className="err-dot" aria-hidden="true" />
-            {label}
-          </p>
-        </div>
-        <h1 className="err-title">{title}</h1>
-        <p className="err-text">{text}</p>
+          <div>
+            <p className="err-pill">
+              <span className="err-dot" aria-hidden="true" />
+              {label}
+            </p>
+          </div>
+          <h1 className="err-title">{title}</h1>
+          <p className="err-text">{text}</p>
 
-        <div className="err-actions">
-          <Home href="/" className="err-btn err-btn-primary">
-            <HomeIcon />
-            Back to home
-          </Home>
-          {secondary}
+          <div className="err-actions">
+            <Home href="/" className="err-btn err-btn-primary">
+              <HomeIcon />
+              Back to home
+            </Home>
+            {secondary}
+          </div>
         </div>
       </div>
     </main>
