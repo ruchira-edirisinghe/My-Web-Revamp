@@ -14,11 +14,47 @@ export interface ErrorPage {
 }
 
 export const ERROR_PAGES = {
+  '400': {
+    name: 'Bad request',
+    title: 'That signal came through garbled',
+    text: "Something in the request didn't make sense, so the page couldn't load. A mistyped or half-copied link is the usual cause. Check the address, or start again from the homepage.",
+    action: 'work',
+  },
+  '401': {
+    name: 'Unauthorized',
+    title: 'Clearance required',
+    text: "This area needs you to sign in, and this request didn't come with a valid sign-in. Everything public on the site is one click away from the homepage.",
+    action: 'contact',
+  },
+  '403': {
+    name: 'Forbidden',
+    title: 'Restricted airspace',
+    text: "You don't have permission to view this page. It's closed off on purpose. The rest of the site is open, so head back home, or get in touch if you think this is a mistake.",
+    action: 'contact',
+  },
   '404': {
     name: 'Page not found',
     title: 'This page drifted out of orbit',
     text: "The page you're looking for doesn't exist or may have moved. Let's get you back to familiar stars.",
     action: 'work',
+  },
+  '408': {
+    name: 'Request timeout',
+    title: 'Signal lost in transit',
+    text: 'The request took too long to arrive, so the connection was closed. A slow or patchy network is the usual cause. Give it another try.',
+    action: 'retry',
+  },
+  '410': {
+    name: 'Gone',
+    title: 'This star has burned out',
+    text: "This page used to be here, but it was removed for good and won't be coming back. The rest of my work is still a click away.",
+    action: 'work',
+  },
+  '429': {
+    name: 'Too many requests',
+    title: 'Easy on the thrusters',
+    text: 'Too many requests came from your connection in a short time, so things are paused for a moment. Wait a little, then try again.',
+    action: 'retry',
   },
 } satisfies Record<string, ErrorPage>;
 
