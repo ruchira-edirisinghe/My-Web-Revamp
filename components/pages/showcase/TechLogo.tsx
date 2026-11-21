@@ -1,11 +1,11 @@
 import type { ReactNode } from 'react';
 import {
   type SimpleIcon,
-  siAndroid, siBetterauth, siCaddy, siCss, siDjango, siDocker, siDrizzle, siExpress, siFigma, siFirebase,
+  siAndroid, siBetterauth, siCaddy, siCss, siDependabot, siDjango, siDocker, siDrizzle, siEsbuild, siExpress, siFigma, siFirebase,
   siFramer, siGit, siGithub, siGithubactions, siHtml5, siJavascript, siJetpackcompose, siJunit5,
-  siKotlin, siMaterialdesign, siNextdotjs, siNodedotjs, siNumpy, siOpenapiinitiative, siPandas,
-  siPostgresql, siPwa, siPython, siReact, siScikitlearn, siSqlite, siSvg, siThreedotjs, siTypescript,
-  siVite, siVitest, siZod,
+  siKotlin, siMaterialdesign, siNextdotjs, siNodedotjs, siNumpy, siObsstudio, siOpenapiinitiative, siPandas,
+  siPostgresql, siPwa, siPython, siReact, siScikitlearn, siSqlite, siSvg, siTailwindcss, siThreedotjs, siTypescript,
+  siVercel, siVite, siVitest, siZod,
 } from 'simple-icons';
 
 /**
@@ -53,6 +53,11 @@ const BRANDS: [RegExp, SimpleIcon][] = [
   [/html5|canvas/i, siHtml5],
   [/^svg$/i, siSvg],
   [/better-auth/i, siBetterauth],
+  [/tailwind/i, siTailwindcss],
+  [/vercel/i, siVercel],
+  [/esbuild/i, siEsbuild],
+  [/\bobs\b/i, siObsstudio],
+  [/dependabot/i, siDependabot],
 ];
 
 const GENERIC: [RegExp, ReactNode][] = [

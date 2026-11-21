@@ -29,7 +29,7 @@ const PATHS: Path[] = [
     color: '#8cd2ff',
     label: 'Digital Systems',
     title: ['Web Design &', 'Development'],
-    count: '30 projects',
+    count: '31 projects',
     desc: 'Websites, apps and games I’ve designed and built, with UI/UX case studies that explain how each one came together.',
     tags: ['UI/UX case studies', 'Full-stack apps', 'Unity games', 'Web games'],
     cta: 'Enter portfolio',
